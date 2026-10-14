@@ -1,0 +1,41 @@
+name: Usine à sites ORBE
+
+on:
+  schedule:
+    - cron: "17 2 * * *"   # chaque nuit vers 4 h (heure de Paris)
+  workflow_dispatch:
+    inputs:
+      nombre:
+        description: "Combien de sites ?"
+        default: "15"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: usine
+  cancel-in-progress: false
+
+jobs:
+  usine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fabriquer les sites
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          NOMBRE: ${{ github.event.inputs.nombre || '15' }}
+        run: python usine.py
+      - name: Mettre en ligne
+        run: |
+          git config user.name "Usine ORBE"
+          git config user.email "usine-orbe@users.noreply.github.com"
+          git add -A docs data
+          git commit -m "Usine : sites du $(date +%F)" || exit 0
+          git push
