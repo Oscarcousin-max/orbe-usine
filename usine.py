@@ -61,6 +61,9 @@ SECTEURS = [
 # Bordeaux, Bassin d'Arcachon, Médoc, Libournais, Entre-deux-Mers.
 BBOX = os.environ.get("USINE_BBOX", "44.55,-1.35,45.15,0.05")
 OVERPASS = os.environ.get("USINE_OVERPASS", "https://overpass-api.de/api/interpreter")
+MIROIR_OSM = os.environ.get("USINE_MIROIR", "https://overpass.kumi.systems/api/interpreter")
+# Un email ou un message vaut mieux qu'un coup de téléphone à passer.
+RANG_CANAL = {"Email": 0, "Instagram": 1, "SMS": 2, "Facebook": 3, "Téléphone": 4}
 # Overpass refuse les faux navigateurs : il veut qu'un outil se présente comme tel.
 UA_OSM = "OrbeUsine/1.0 (https://github.com/%s; societe.orbe@gmail.com)" % DEPOT
 
@@ -117,10 +120,23 @@ def overpass(filtre, limite=250):
     contact = '[~"^(phone|contact:phone|email|contact:email|contact:instagram|contact:facebook)$"~"."]'
     sans_site = '["name"][!"website"][!"contact:website"][!"brand"][!"brand:website"]'
     q = "[out:json][timeout:180];nwr%s%s%s(%s);out tags center %d;" % (filtre, sans_site, contact, BBOX, limite)
-    req = urllib.request.Request(OVERPASS, data=urllib.parse.urlencode({"data": q}).encode(),
-                                 headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": UA_OSM})
-    with urllib.request.urlopen(req, timeout=240) as r:
-        return json.loads(r.read().decode("utf-8")).get("elements", [])
+    # Le serveur principal est souvent saturé (502) : on réessaie, puis on change de serveur.
+    derniere = None
+    for essai, serveur in enumerate((OVERPASS, OVERPASS, OVERPASS, MIROIR_OSM)):
+        if essai:
+            time.sleep(15)
+        try:
+            if serveur is MIROIR_OSM:
+                req = urllib.request.Request(serveur + "?data=" + urllib.parse.quote(q), headers={"User-Agent": UA_OSM})
+            else:
+                req = urllib.request.Request(serveur, data=urllib.parse.urlencode({"data": q}).encode(),
+                                             headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": UA_OSM})
+            with urllib.request.urlopen(req, timeout=240) as r:
+                return json.loads(r.read().decode("utf-8")).get("elements", [])
+        except Exception as e:
+            derniere = e
+            journal("    carte : %s (nouvel essai)" % str(e)[:90])
+    raise derniere
 
 
 def fiche_osm(e, secteur):
@@ -396,7 +412,9 @@ def main():
         vus = set()
         neufs = [f for f in neufs if not (norm(f["nom"]) in vus or vus.add(norm(f["nom"])))]
         journal("  %d sur la carte, %d sans site et joignables" % (len(trouves), len(neufs)))
-        candidats += trier_haut_de_gamme(neufs, sect)
+        retenus = trier_haut_de_gamme(neufs, sect)
+        retenus.sort(key=lambda f: RANG_CANAL.get(contact_de(f)[0], 9))  # tri stable : l'ordre de l'IA est gardé
+        candidats += retenus
 
     # 2. Un commerce par secteur à tour de rôle, pour ne pas faire 15 fleuristes.
     candidats = entrelacer(candidats)
