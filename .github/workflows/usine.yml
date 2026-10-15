@@ -19,7 +19,7 @@ concurrency:
 jobs:
   usine:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 320   # un site prend 2 à 6 min quand les IA sont chargées
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
