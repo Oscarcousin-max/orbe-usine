@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Château Haut-Galouchey — Domaine Viticole Familial à Soulignac</title>
+<meta name="description" content="Découvrez le Château Haut-Galouchey, domaine viticole et château familial situé au Galouchey à Soulignac. Vins de propriété et tradition familiale.">
+<meta property="og:title" content="Château Haut-Galouchey — Domaine Viticole à Soulignac">
+<meta property="og:description" content="Domaine viticole et château familial au cœur de Soulignac. Vins de propriété.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v8c0 7 6 12 12 14 6-2 12-7 12-14V8L16 2z' fill='%231C2822'/%3E%3Cpath d='M16 6L7 10.5v6.5C7 22 11 25.5 16 27c5-1.5 9-5 9-10v-6.5L16 6z' fill='%23D4AF37'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Winery",
+  "name": "Château Haut-Galouchey",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Le Galouchey",
+    "addressLocality": "Soulignac",
+    "postalCode": "33760",
+    "addressCountry": "FR"
+  },
+  "telephone": "+33 6 30 60 28 03",
+  "email": "bruno-laville@orange.fr"
+}
+</script>
+<style>
+:root {
+  --color-dark: #121915;
+  --color-olive: #24332A;
+  --color-gold: #C5A059;
+  --color-gold-light: #E2C98E;
+  --color-sand: #F7F5F0;
+  --color-cream: #FCFBF9;
+  --color-text: #2C3530;
+  --color-text-muted: #6B7570;
+  --color-white: #FFFFFF;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+/* Utilitaires typographiques */
+h1, h2, h3, .serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+/* En-tête */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(252, 251, 249, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  transition: background-color 0.4s var(--transition-smooth), padding 0.4s var(--transition-smooth);
+}
+
+.nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.brand-svg {
+  width: 36px;
+  height: 36px;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.3s var(--transition-smooth);
+}
+
+.nav-links a:hover {
+  color: var(--color-gold);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  z-index: 102;
+}
+
+.menu-toggle span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: var(--color-dark);
+  border-radius: 2px;
+  transition: 0.3s var(--transition-smooth);
+}
+
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 11px; }
+.menu-toggle span:nth-child(3) { top: 22px; }
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 11px;
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 11px;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 8rem 2rem 5rem;
+  background-color: var(--color-olive);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.hero-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: radial-gradient(var(--color-gold) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.hero-text h1 span {
+  font-style: italic;
+  color: var(--color-gold-light);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2.25rem;
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  border-radius: 0;
+  transition: all 0.3s var(--transition-smooth);
+  border: 1px solid var(--color-gold);
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+}
+
+.hero-visual {
+  position: relative;
+  height: 500px;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(36, 51, 42, 0.9), rgba(18, 25, 21, 0.95));
+}
+
+.hero-badge-tag {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  padding: 0.4rem 0.8rem;
+}
+
+.custom-photo-placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px dashed rgba(197, 160, 89, 0.4);
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.custom-photo-placeholder svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--color-gold);
+  opacity: 0.6;
+}
+
+/* L'Esprit de la Maison */
+.section-esprit {
+  padding: 8rem 2rem;
+  background-color: var(--color-sand);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 5rem;
+  max-width: 700px;
+}
+
+.section-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+  display: block;
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  color: var(--color-dark);
+  font-weight: 300;
+}
+
+.esprit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.esprit-text p {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.esprit-text p:first-of-type {
+  font-size: 1.25rem;
+  color: var(--color-dark);
+  font-family: var(--font-serif);
+  line-height: 1.5;
+}
+
+.esprit-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.stat-item h3 {
+  font-size: 2.2rem;
+  color: var(--color-dark);
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+}
+
+.stat-item p {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+  margin: 0 !important;
+}
+
+/* L'Offre / Savoir-Faire */
+.section-offre {
+  padding: 8rem 2rem;
+  background-color: var(--color-cream);
+}
+
+.offre-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.offre-card {
+  background-color: var(--color-white);
+  padding: 3.5rem 2.5rem;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  position: relative;
+  transition: transform 0.4s var(--transition-smooth), border-color 0.4s var(--transition-smooth);
+}
+
+.offre-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-gold);
+}
+
+.offre-card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 2rem;
+}
+
+.offre-card-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--color-gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.offre-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+}
+
+.offre-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Infos Pratiques & Contact */
+.section-contact-info {
+  padding: 8rem 2rem;
+  background-color: var(--color-olive);
+  color: var(--color-white);
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.info-block h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: var(--color-white);
+}
+
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+}
+
+.info-value, .info-value a {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 300;
+}
+
+.info-value a:hover {
+  color: var(--color-gold);
+}
+
+.contact-form-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 3rem;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.contact-form-wrapper h3 {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.direct-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.direct-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.direct-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-dark);
+  border-color: var(--color-gold);
+}
+
+/* Pied de page */
+footer {
+  background-color: #0b100e;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 5rem 2rem 3rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-brand .brand-name {
+  color: var(--color-white);
+  margin-top: 1rem;
+  display: block;
+}
+
+.footer-brand p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 350px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-col h4 {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.alcohol-warning {
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Badge fixe ORBE */
+.orbe-badge {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--color-dark);
+  color: var(--color-gold);
+  padding: 0.6rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  z-index: 99;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.orbe-badge:hover {
+  border-color: var(--color-gold);
+  background-color: var(--color-olive);
+}
+
+/* Animations d'apparition */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-content,
+  .esprit-grid,
+  .contact-info-grid,
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .offre-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-cream);
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .hero {
+    padding-top: 7rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- En-tête fixe -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <svg class="brand-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 3L4 10v10c0 7.5 6.5 13.5 14 15.5 7.5-2 14-8 14-15.5V10L18 3z" stroke="#C5A059" stroke-width="1.5" fill="#24332A"/>
+          <path d="M18 9L8 14.5v6.5C8 25 12 28.5 18 30c6-1.5 10-5 10-10v-6.5L18 9z" fill="#C5A059" fill-opacity="0.2"/>
+          <path d="M18 12v12M14 16h8" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">Haut-Galouchey</span>
+      </a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#esprit">L'Esprit</a></li>
+          <li><a href="#offre">Le Domaine</a></li>
+          <li><a href="#contact">Contact & Accès</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Château Haut-Galouchey, <span>tradition & terroir</span></h1>
+        <p class="hero-subtitle">Domaine viticole et château familial ancré au cœur de Soulignac, perpétuant le savoir-faire de la vigne de génération en génération.</p>
+        <a href="#contact" class="btn">
+          Nous contacter
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-badge-tag">Soulignac · 33760</div>
+        <div class="custom-photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Vos photos ici</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'Esprit de la Maison -->
+  <section class="section-esprit" id="esprit">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">L'Esprit de la Maison</span>
+        <h2 class="section-title">Une histoire de famille et de passion vigneronne</h2>
+      </div>
+      <div class="esprit-grid">
+        <div class="esprit-text reveal">
+          <p>Niché au cœur du lieu-dit Le Galouchey à Soulignac, le Château Haut-Galouchey incarne l'authenticité d'un domaine viticole familial profondément attaché à ses terres.</p>
+          <p>La culture de la vigne et l'élaboration de nos vins s'inscrivent dans une démarche de respect de la nature et du fruit. Chaque parcelle est cultivée avec exigence, dans la plus pure tradition des châteaux familiaux bordelais.</p>
+          <div class="esprit-stats">
+            <div class="stat-item">
+              <h3>Famille</h3>
+              <p>Domaine indépendant</p>
+            </div>
+            <div class="stat-item">
+              <h3>Soulignac</h3>
+              <p>Terroir d'exception</p>
+            </div>
+          </div>
+        </div>
+        <div class="esprit-visual reveal">
+          <div style="border: 1px solid rgba(197, 160, 89, 0.3); height: 450px; background: #fff; display: flex; align-items: center; justify-content: center; position: relative;">
+            <div class="custom-photo-placeholder" style="border-color: rgba(197, 160, 89, 0.3); color: var(--color-text-muted);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Vos photos ici</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'Offre -->
+  <section class="section-offre" id="offre">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Savoir-Faire</span>
+        <h2 class="section-title">Nos vins de propriété</h2>
+      </div>
+      <div class="offre-grid">
+        <div class="offre-card reveal">
+          <div class="offre-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M8 22h8m-4-4v4m0-12a5 5 0 0 0 5-5H7a5 5 0 0 0 5 5zM12 2v6"/></svg>
+          </div>
+          <h3>Viticulture</h3>
+          <p>Un travail rigoureux conduit dans les vignes du Galouchey pour veiller au parfait épanouissement du raisin et exprimer toute la typicité du terroir.</p>
+        </div>
+        <div class="offre-card reveal">
+          <div class="offre-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <h3>Élaboration</h3>
+          <p>Un savoir-faire transmis au fil des ans, associant gestes traditionnels et attention minutieuse apportée à chaque cuvée du domaine.</p>
+        </div>
+        <div class="offre-card reveal">
+          <div class="offre-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 12V8H4v4m16 0v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4m16 0H4"/></svg>
+          </div>
+          <h3>Vente directe</h3>
+          <p>Rencontrez le vigneron au domaine pour découvrir la production du Château Haut-Galouchey et échanger sur notre passion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infos Pratiques & Contact -->
+  <section class="section-contact-info" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" style="color: var(--color-gold-light);">Informations & Contact</span>
+        <h2 class="section-title" style="color: var(--color-white);">Venez nous rendre visite</h2>
+      </div>
+      <div class="contact-info-grid">
+        <div class="info-block reveal">
+          <h3>Coordonnées du domaine</h3>
+          <ul class="info-list">
+            <li class="info-item">
+              <span class="info-label">Adresse</span>
+              <span class="info-value">Le Galouchey, 33760 Soulignac</span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">Téléphone</span>
+              <span class="info-value"><a href="tel:+33630602803">+33 6 30 60 28 03</a></span>
+            </li>
+            <li class="info-item">
+              <span class="info-label">Email</span>
+              <span class="info-value"><a href="mailto:bruno-laville@orange.fr">bruno-laville@orange.fr</a></span>
+            </li>
+          </ul>
+          <div style="margin-top: 3rem;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Château%20Haut-Galouchey%2033760%20Soulignac" target="_blank" rel="noopener noreferrer" class="btn" style="background-color: transparent; color: var(--color-white); border-color: var(--color-gold);">
+              Itinéraire Google Maps
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper reveal">
+          <h3>Échanger avec Bruno Laville</h3>
+          <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 2rem;">Pour toute question concernant nos vins, nos disponibilités ou pour organiser votre venue, contactez-nous directement.</p>
+          
+          <div class="direct-contacts">
+            <a href="tel:+33630602803" class="direct-btn">
+              <span>Appeler le +33 6 30 60 28 03</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="mailto:bruno-laville@orange.fr" class="direct-btn">
+              <span>Envoyer un courriel</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="alcohol-warning">
+      L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+    </div>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <svg class="brand-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 3L4 10v10c0 7.5 6.5 13.5 14 15.5 7.5-2 14-8 14-15.5V10L18 3z" stroke="#C5A059" stroke-width="1.5" fill="#24332A"/>
+          <path d="M18 9L8 14.5v6.5C8 25 12 28.5 18 30c6-1.5 10-5 10-10v-6.5L18 9z" fill="#C5A059" fill-opacity="0.2"/>
+          <path d="M18 12v12M14 16h8" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">Château Haut-Galouchey</span>
+        <p>Domaine viticole familial situé au Galouchey à Soulignac (33760).</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#esprit">L'Esprit</a></li>
+          <li><a href="#offre">Le Domaine</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Accès</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Château%20Haut-Galouchey%2033760%20Soulignac" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+          <li><a href="tel:+33630602803">+33 6 30 60 28 03</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Château Haut-Galouchey. Tous droits réservés.</div>
+      <div>Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com</div>
+    </div>
+  </footer>
+
+  <!-- Badge fixe ORBE -->
+  <a href="mailto:societe.orbe@gmail.com" class="orbe-badge">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+    Maquette proposée par ORBE
+  </a>
+
+  <script>
+    // Menu mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Apparition douce au défilement (IntersectionObserver)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal').forEach(element => {
+        observer.observe(element);
+      });
+    } else {
+      document.querySelectorAll('.reveal').forEach(element => {
+        element.classList.add('active');
+      });
+    }
+
+    // Effet header au scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.style.backgroundColor = 'rgba(252, 251, 249, 0.95)';
+      } else {
+        header.style.backgroundColor = 'rgba(252, 251, 249, 0.85)';
+      }
+    });
+  </script>
+</body>
+</html>

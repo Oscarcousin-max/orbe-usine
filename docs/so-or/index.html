@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>SO OR — Joaillerie & Horlogerie à Villenave-d'Ornon</title>
+    <meta name="description" content="Découvrez SO OR, joaillier et horloger d'exception situé au 2 Avenue des Pyrénées à Villenave-d'Ornon. Créations sur mesure et pièces d'artisanat.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SO OR — Joaillerie & Horlogerie">
+    <meta property="og:description" content="Joaillier, bijoutier et horloger à Villenave-d'Ornon. L'art de la haute précision et de la préciosité.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Favicon SVG Data URI -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2311100F'/%3E%3Cpath d='M16 6L24 16L16 26L8 16Z' fill='none' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23D4AF37'/%3E%3C/svg%3E">
+
+    <!-- JSON-LD LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "JewelryStore",
+      "name": "SO OR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2 Avenue des Pyrénées",
+        "addressLocality": "Villenave-d'Ornon",
+        "postalCode": "33140",
+        "addressCountry": "FR"
+      },
+      "telephone": "+33 6 82 47 58 35",
+      "email": "soorvillenave@hotmail.com",
+      "currenciesAccepted": "EUR",
+      "priceRange": "$$$"
+    }
+    </script>
+
+    <style>
+        :root {
+            --or: #D4AF37;
+            --or-clair: #F3E5AB;
+            --or-fonce: #9A7B1C;
+            --fond: #121110;
+            --fond-alt: #1A1817;
+            --texte: #F5F2EB;
+            --texte-secondaire: #A8A39A;
+            --ligne: rgba(212, 175, 55, 0.2);
+            --transition: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--fond);
+            color: var(--texte);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            overflow-x: hidden;
+            letter-spacing: 0.02em;
+        }
+
+        h1, h2, h3, h4, .serif {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Accessibilité focus */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--or);
+            outline-offset: 4px;
+        }
+
+        /* Utilitaires de mise en page */
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 8rem 0;
+        }
+
+        /* En-tête fixe */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(18, 17, 16, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--ligne);
+            transition: background 0.4s var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center.center;
+            gap: 1rem;
+        }
+
+        .monogramme {
+            width: 42px;
+            height: 42px;
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            letter-spacing: 0.15em;
+            color: var(--texte);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--texte-secondaire);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--or);
+            transition: width 0.3s var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--or);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 32px;
+            height: 24px;
+            position: relative;
+            z-index: 102;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: var(--or);
+            position: absolute;
+            transition: transform 0.3s ease, top 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-toggle span:nth-child(1) { top: 0; }
+        .menu-toggle span:nth-child(2) { top: 11px; }
+        .menu-toggle span:nth-child(3) { top: 22px; }
+
+        .menu-toggle.open span:nth-child(1) {
+            top: 11px;
+            transform: rotate(45deg);
+        }
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.open span:nth-child(3) {
+            top: 11px;
+            transform: rotate(-45deg);
+        }
+
+        /* Hero Bandeau d'accueil */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 90px;
+            overflow: hidden;
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50vw;
+            height: 100%;
+            opacity: 0.04;
+            background: radial-gradient(circle, var(--or) 10%, transparent 10%);
+            background-size: 30px 30px;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            line-height: 1.05;
+            margin-bottom: 2rem;
+            color: var(--texte);
+        }
+
+        .hero-content h1 span {
+            font-style: italic;
+            color: var(--or);
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: var(--texte-secondaire);
+            max-width: 540px;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.1rem 2.5rem;
+            background: transparent;
+            border: 1px solid var(--or);
+            color: var(--or);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.4s var(--transition), border-color 0.4s var(--transition);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--or);
+            transition: transform 0.4s var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: var(--fond);
+            border-color: var(--or);
+        }
+
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 550px;
+            border: 1px solid var(--ligne);
+            background: var(--fond-alt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-visual svg.art-line {
+            width: 70%;
+            height: 70%;
+            stroke: var(--or);
+            fill: none;
+            stroke-width: 1;
+            opacity: 0.6;
+        }
+
+        .photo-label {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--texte-secondaire);
+            border: 1px dashed var(--ligne);
+            padding: 0.5rem 1rem;
+            background: rgba(18, 17, 16, 0.6);
+        }
+
+        /* L'Esprit de la Maison */
+        .esprit {
+            background: var(--fond-alt);
+            border-top: 1px solid var(--ligne);
+            border-bottom: 1px solid var(--ligne);
+            position: relative;
+        }
+
+        .esprit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--or);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            line-height: 1.15;
+        }
+
+        .esprit-text p {
+            color: var(--texte-secondaire);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .esprit-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--ligne);
+            padding-top: 3rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.25rem;
+            color: var(--texte);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--texte-secondaire);
+            margin-bottom: 0;
+        }
+
+        /* L'Offre */
+        .offre {
+            position: relative;
+        }
+
+        .offre-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .offre-card {
+            background: var(--fond-alt);
+            border: 1px solid var(--ligne);
+            padding: 3rem 2.5rem;
+            position: relative;
+            transition: transform 0.4s var(--transition), border-color 0.4s var(--transition);
+        }
+
+        .offre-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--or);
+        }
+
+        .offre-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 2rem;
+            stroke: var(--or);
+            fill: none;
+            stroke-width: 1.2;
+        }
+
+        .offre-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--texte);
+        }
+
+        .offre-card p {
+            color: var(--texte-secondaire);
+            font-size: 0.95rem;
+        }
+
+        /* Infos Pratiques & Contact réunis ou séparés avec élégance */
+        .contact-section {
+            background: var(--fond-alt);
+            border-top: 1px solid var(--ligne);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+
+        .info-box {
+            margin-bottom: 3rem;
+        }
+
+        .info-box h3 {
+            font-size: 1.25rem;
+            color: var(--or);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+
+        .info-box p {
+            font-size: 1.15rem;
+            color: var(--texte);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--texte);
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-link:hover {
+            color: var(--or);
+            padding-left: 10px;
+        }
+
+        .map-frame-container {
+            position: relative;
+            height: 100%;
+            min-height: 400px;
+            border: 1px solid var(--ligne);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 3rem;
+            background: linear-gradient(to bottom, rgba(18,17,16,0.2), rgba(18,17,16,0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%231a1817" width="100" height="100"/><path d="M0 0l100 100M100 0L0 100" stroke="%23222" stroke-width="1"/></svg>');
+        }
+
+        /* Pied de page */
+        footer {
+            background: var(--fond);
+            border-top: 1px solid var(--ligne);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-legal {
+            font-size: 0.75rem;
+            color: var(--texte-secondaire);
+            letter-spacing: 0.05em;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .orbe-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(18, 17, 16, 0.9);
+            border: 1px solid var(--ligne);
+            padding: 8px 14px;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--texte-secondaire);
+            z-index: 99;
+            backdrop-filter: blur(5px);
+            transition: border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .orbe-badge:hover {
+            border-color: var(--or);
+            color: var(--or);
+        }
+
+        /* Animations apparition */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-grid, .esprit-grid, .offre-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            .hero-visual {
+                height: 350px;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--fond);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.5s var(--transition);
+                z-index: 101;
+            }
+            .nav-menu.open {
+                right: 0;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .offre-grid {
+                grid-template-columns: 1fr;
+            }
+            .esprit-features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Badge fixe discret -->
+    <a href="#contact" class="orbe-badge">Maquette proposée par ORBE</a>
+
+    <!-- En-tête fixe -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg class="monogramme" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="40" height="40" stroke="var(--or)" stroke-width="0.75" opacity="0.4"/>
+                    <path d="M21 8L31 21L21 34L11 21Z" stroke="var(--or)" stroke-width="1.25"/>
+                    <circle cx="21" cy="21" r="3.5" fill="var(--or)"/>
+                </svg>
+                <span class="logo-text">SO OR</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#esprit" class="nav-link">La Maison</a></li>
+                    <li><a href="#offre" class="nav-link">Créations & Savoir-faire</a></li>
+                    <li><a href="#infos" class="nav-link">Informations</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Bandeau d'accueil -->
+        <section class="hero">
+            <div class="hero-bg-pattern"></div>
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content reveal">
+                        <h1>L'art de la joaillerie, <span>sublimé</span> à Villenave-d'Ornon.</h1>
+                        <p class="hero-desc">Bienvenue chez SO OR. Joailliers, bijoutiers et horlogers d'exception, nous perpétuons l'alliance du geste précis et de la rareté des matières.</p>
+                        <a href="#contact" class="btn">Prendre rendez-vous</a>
+                    </div>
+                    <div class="hero-visual reveal">
+                        <svg class="art-line" viewBox="0 0 200 200">
+                            <polygon points="100,20 180,100 100,180 20,100" />
+                            <circle cx="100" cy="100" r="40" />
+                            <line x1="100" y1="20" x2="100" y2="180" stroke-width="0.5" />
+                            <line x1="20" y1="100" x2="180" y2="100" stroke-width="0.5" />
+                        </svg>
+                        <span class="photo-label">Vos photos ici</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'Esprit de la Maison -->
+        <section id="esprit" class="esprit section-padding">
+            <div class="container">
+                <div class="esprit-grid">
+                    <div class="reveal">
+                        <div class="section-header">
+                            <span class="section-subtitle">L'Esprit de la Maison</span>
+                            <h2 class="section-title">L'exigence au cœur de chaque création.</h2>
+                        </div>
+                        <div class="esprit-text">
+                            <p>Au 2 Avenue des Pyrénées, notre maison incarne une vision intemporelle de la joaillerie et de l'horlogerie. Chaque pièce est pensée comme une œuvre unique, façonnée dans le respect des traditions de l'artisanat d'art.</p>
+                            <p>Notre atelier veille avec rigueur sur vos biens les plus précieux, qu'il s'agisse de concevoir une bague sur mesure ou de redonner vie à un garde-temps d'exception.</p>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <div style="position: relative; height: 450px; border: 1px solid var(--ligne); background: var(--fond); display: flex; align-items: center; justify-content: center;">
+                            <svg style="width: 50%; height: 50%; stroke: var(--or); fill: none; stroke-width: 0.75; opacity: 0.5;" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45"/>
+                                <circle cx="50" cy="50" r="30"/>
+                                <path d="M50 5v20M50 75v20M5 50h20M75 50h20"/>
+                            </svg>
+                            <span class="photo-label">Vos photos ici</span>
+                        </div>
+                        <div class="esprit-features">
+                            <div class="feature-item">
+                                <h3>Sur-mesure</h3>
+                                <p>Un accompagnement personnalisé pour donner vie à vos projets uniques.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Précision</h3>
+                                <p>Une maîtrise technique absolue en horlogerie et en joaillerie.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- L'Offre -->
+        <section id="offre" class="offre section-padding">
+            <div class="container">
+                <div class="section-header reveal" style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+                    <span class="section-subtitle">Savoir-Faire</span>
+                    <h2 class="section-title">Joaillerie, Bijouterie & Horlogerie</h2>
+                </div>
+                
+                <div class="offre-grid">
+                    <div class="offre-card reveal">
+                        <svg class="offre-icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <h3>Joaillerie</h3>
+                        <p>Création de pièces uniques, mise en valeur de pierres précieuses et montages d'exception réalisés selon les règles de l'art.</p>
+                    </div>
+                    <div class="offre-card reveal">
+                        <svg class="offre-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <h3>Horlogerie</h3>
+                        <p>Entretien, révision et restauration de garde-temps avec toute la minutie requise par la haute horlogerie.</p>
+                    </div>
+                    <div class="offre-card reveal">
+                        <svg class="offre-icon" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                        <h3>Bijouterie</h3>
+                        <p>Transformation, mise à taille et soins attentifs apportés à vos bijoux du quotidien ou de transmission.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infos Pratiques & Contact -->
+        <section id="infos" class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="reveal">
+                        <div class="section-header">
+                            <span class="section-subtitle">Informations & Contact</span>
+                            <h2 class="section-title">Venir à la rencontre de la maison SO OR.</h2>
+                        </div>
+
+                        <div class="info-box">
+                            <h3>Adresse</h3>
+                            <p>2 Avenue des Pyrénées<br>33140 Villenave-d'Ornon</p>
+                        </div>
+
+                        <div class="info-box" id="contact">
+                            <h3>Ligne directe</h3>
+                            <div class="contact-links">
+                                <a href="tel:+33682475835" class="contact-link">+33 6 82 47 58 35</a>
+                                <a href="mailto:soorvillenave@hotmail.com" class="contact-link" style="font-size: 1.5rem;">soorvillenave@hotmail.com</a>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 3rem;">
+                            <a href="https://www.google.com/maps/search/?api=1&query=2%20Avenue%20des%20Pyr%C3%A9n%C3%A9es%2C%2033140%20Villenave-d%27Ornon" target="_blank" rel="noopener noreferrer" class="btn">Obtenir l'itinéraire</a>
+                        </div>
+                    </div>
+
+                    <div class="reveal">
+                        <div class="map-frame-container">
+                            <div style="background: rgba(18, 17, 16, 0.9); border: 1px solid var(--ligne); padding: 2.5rem; backdrop-filter: blur(10px);">
+                                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 1rem; color: var(--texte);">Accueil sur rendez-vous</h3>
+                                <p style="color: var(--texte-secondaire); font-size: 0.9rem; margin-bottom: 1.5rem;">Pour vous garantir une attention exclusive et confidentielle lors de l'étude de vos projets joailliers ou horlogers.</p>
+                                <a href="tel:+33682475835" class="btn" style="width: 100%; justify-content: center;">Appeler l'atelier</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo" style="justify-content: center;">
+                    <span class="logo-text" style="font-size: 1.5rem;">SO OR</span>
+                </a>
+                <p class="footer-legal">
+                    Joaillier · Bijoutier · Horloger<br>
+                    2 Avenue des Pyrénées, 33140 Villenave-d'Ornon<br><br>
+                    Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script minimal et robuste -->
+    <script>
+        // Menu mobile toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+
+        // Apparition douce au défilement (IntersectionObserver)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

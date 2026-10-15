@@ -1,0 +1,1233 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>A l'ombre des Platanes — Fleuristes Créateurs</title>
+  <meta name="description" content="Atelier d'art floral et fleuristes créateurs. Compositions sur mesure, évènements et décors végétaux au 12 ZI Les Platanes.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="A l'ombre des Platanes — Fleuristes Créateurs">
+  <meta property="og:description" content="Art floral d'exception, créations botaniques sur mesure et accompagnement végétal pour particuliers et professionnels.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231C3026'/%3E%3Cpath d='M32 12 C32 12, 35 22, 44 24 C36 28, 38 38, 32 42 C26 38, 28 28, 20 24 C29 22, 32 12, 32 12 Z' fill='none' stroke='%23C5A880' stroke-width='2' stroke-linejoin='round'/%3E%3Cline x1='32' y1='42' x2='32' y2='52' stroke='%23C5A880' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* VARIABLES & ART DIRECTION */
+    :root {
+      --bg-main: #F9F7F2;
+      --bg-surface: #F1EFE6;
+      --bg-card: #E8E4D8;
+      --primary: #1C3026;      /* Vert forêt sombre */
+      --primary-light: #2D483B;
+      --accent: #C5A880;       /* Bronze doré chaleureux */
+      --accent-muted: #8C7355;
+      --text-dark: #1A1D1A;
+      --text-muted: #575D58;
+      --border: #D3CBD0;
+      --border-subtle: rgba(28, 48, 38, 0.12);
+      
+      --font-title: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+      --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* BASE & RESET */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 100%;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: var(--font-title);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    /* UTILITY & CONTAINERS */
+    .container {
+      width: 90%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .section-padding {
+      padding: 100px 0;
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 60px 0;
+      }
+    }
+
+    .tagline {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-muted);
+      margin-bottom: 12px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    /* HEADER & NAV */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(249, 247, 242, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 84px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--primary);
+    }
+
+    .brand-svg {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-title);
+      font-size: 1.45rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .brand-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-muted);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+      color: var(--primary);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg-main);
+      background-color: var(--primary);
+      border-radius: 2px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    /* Mobile Nav Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 28px;
+      height: 22px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-main);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s var(--transition-smooth);
+        z-index: 999;
+      }
+
+      .nav-menu.active {
+        right: 0;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 28px;
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .nav-links a {
+        font-size: 1.3rem;
+        font-family: var(--font-title);
+      }
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding-top: 150px;
+      padding-bottom: 90px;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(197, 168, 128, 0.1) 0%, rgba(249, 247, 242, 0) 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 620px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      color: var(--primary);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent-muted);
+      font-weight: 300;
+    }
+
+    .hero-text {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 38px;
+      font-weight: 300;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background-color: var(--primary);
+      color: var(--bg-main);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(28, 48, 38, 0.12);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 16px 28px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(28, 48, 38, 0.05);
+      border-color: var(--primary);
+    }
+
+    /* ARTISTIC IMAGE PLACEHOLDER 1 */
+    .hero-visual {
+      position: relative;
+    }
+
+    .photo-placeholder-frame {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+    }
+
+    .photo-placeholder-frame::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed rgba(140, 115, 85, 0.3);
+      pointer-events: none;
+    }
+
+    .placeholder-badge {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-muted);
+      background: rgba(255,255,255,0.7);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      margin-top: 16px;
+    }
+
+    .botanical-illustration-svg {
+      width: 180px;
+      height: 180px;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .photo-placeholder-frame {
+        height: 340px;
+      }
+    }
+
+    /* SECTION PHILOSOPHY / L'ESPRIT */
+    .esprit-section {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .esprit-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .esprit-title {
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      color: var(--primary);
+    }
+
+    .esprit-content p {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      font-weight: 300;
+    }
+
+    .esprit-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote-box {
+      margin-top: 32px;
+      padding-left: 24px;
+      border-left: 2px solid var(--accent);
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .esprit-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    /* SECTION SERVICES / OFFRE */
+    .offre-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 60px auto;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: var(--bg-main);
+      border: 1px solid var(--border-subtle);
+      padding: 40px 30px;
+      border-radius: 2px;
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(28, 48, 38, 0.06);
+      border-color: var(--accent);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 24px;
+      color: var(--accent-muted);
+    }
+
+    .service-title {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .service-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* PHOTO PLACEHOLDER 2 */
+    .second-photo-wrapper {
+      margin-top: 60px;
+    }
+
+    .photo-placeholder-wide {
+      width: 100%;
+      height: 320px;
+      background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-card) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* SECTION INFOS PRATIQUES & CARTE */
+    .infos-section {
+      background-color: var(--primary);
+      color: var(--bg-main);
+      position: relative;
+    }
+
+    .infos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .infos-content .tagline {
+      color: var(--accent);
+    }
+
+    .infos-title {
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      color: var(--bg-main);
+      margin-bottom: 30px;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .info-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(249, 247, 242, 0.6);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .info-value {
+      font-size: 1.1rem;
+      color: var(--bg-main);
+      font-weight: 300;
+    }
+
+    .info-value a {
+      color: var(--bg-main);
+    }
+
+    .info-value a:hover {
+      color: var(--accent);
+    }
+
+    .map-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 40px;
+      border-radius: 4px;
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+
+    .map-card-title {
+      font-size: 1.8rem;
+      color: var(--bg-main);
+      margin-bottom: 12px;
+    }
+
+    .map-card-address {
+      color: rgba(249, 247, 242, 0.8);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+      font-weight: 300;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background-color: var(--accent);
+      color: var(--primary);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .btn-gold:hover {
+      background-color: #D3B68E;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .infos-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+      background-color: var(--bg-main);
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 60px 40px;
+      border-radius: 4px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    .contact-button-large {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 28px;
+      background-color: var(--primary);
+      color: var(--bg-main);
+      border-radius: 2px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-button-large:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .contact-button-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 28px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      border-radius: 2px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-button-outline:hover {
+      background-color: rgba(28, 48, 38, 0.05);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background-color: #121F19;
+      color: rgba(249, 247, 242, 0.7);
+      padding: 60px 0 30px 0;
+      font-size: 0.88rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand-title {
+      font-size: 1.6rem;
+      color: var(--bg-main);
+      margin-bottom: 12px;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      max-width: 360px;
+      font-weight: 300;
+    }
+
+    .footer-col-title {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: var(--bg-main);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: rgba(249, 247, 242, 0.5);
+    }
+
+    .footer-agency-credit {
+      color: rgba(249, 247, 242, 0.7);
+    }
+
+    .footer-agency-credit a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* BADGE MAQUETTE FIXE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background: var(--primary);
+      color: var(--bg-main);
+      border: 1px solid var(--accent);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(6px);
+      pointer-events: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .orbe-badge:hover {
+      transform: translateY(-2px);
+    }
+
+    .orbe-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* ANIMATIONS & REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+
+  <!-- Structured Data JSON-LD (Only verified true facts from business card) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "A l'ombre des Platanes",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12 ZI Les Platanes",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33556721813",
+    "email": "alombredesplatanes.camblanes@gmail.com",
+    "sameAs": [
+      "https://www.facebook.com/fleuristealombredesplatanes"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="Accueil A l'ombre des Platanes">
+        <!-- SVG Monogram / Emblem -->
+        <svg class="brand-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="30" stroke="#1C3026" stroke-width="1.5" stroke-dasharray="2 2"/>
+          <path d="M32 14 C32 14, 36 24, 46 26 C38 30, 40 40, 32 44 C24 40, 26 30, 18 26 C28 24, 32 14, 32 14 Z" fill="none" stroke="#C5A880" stroke-width="2" stroke-linejoin="round"/>
+          <line x1="32" y1="44" x2="32" y2="52" stroke="#C5A880" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">A l'ombre des Platanes</span>
+          <span class="brand-sub">Fleuristes Créateurs</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#esprit">L'Esprit</a></li>
+          <li><a href="#creations">Nos Créations</a></li>
+          <li><a href="#infos">Infos Pratiques</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:+33556721813" class="nav-cta">Appeler l'atelier</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <span class="tagline">Atelier Botanique &amp; Art Floral</span>
+        <h1 class="hero-title">L'élégance végétale, <em>sculptée avec passion</em></h1>
+        <p class="hero-text">
+          Créateurs fleuristes dédiés aux compositions raffinées, aux arrangements sur mesure et à la poésie de la nature. Chaque fleur est sélectionnée pour sublimer vos moments précieux.
+        </p>
+        <div class="hero-actions">
+          <a href="#creations" class="btn-primary">
+            Découvrir l'univers
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-secondary">Contactez-nous</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="photo-placeholder-frame">
+          <!-- Custom SVG Botanical Pattern Illustration -->
+          <svg class="botanical-illustration-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 20 C100 20, 120 70, 170 80 C130 100, 140 150, 100 170 C60 150, 70 100, 30 80 C80 70, 100 20, 100 20 Z" fill="none" stroke="#C5A880" stroke-width="1.5" />
+            <path d="M100 170 L100 190" stroke="#C5A880" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M100 70 Q120 100 100 140" stroke="#8C7355" stroke-width="1" stroke-dasharray="3 3"/>
+            <circle cx="100" cy="100" r="75" stroke="#1C3026" stroke-width="0.8" stroke-opacity="0.2"/>
+            <circle cx="100" cy="100" r="85" stroke="#C5A880" stroke-width="0.5" stroke-opacity="0.3"/>
+          </svg>
+          <span class="placeholder-badge">Vos photos ici</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION L'ESPRIT -->
+  <section class="esprit-section section-padding" id="esprit">
+    <div class="container esprit-grid">
+      <div class="esprit-title-col reveal">
+        <span class="tagline">Maison Créative</span>
+        <h2 class="esprit-title">L'art du détail &amp; la fraîcheur de la saison</h2>
+      </div>
+
+      <div class="esprit-content reveal">
+        <p>
+          Installer l’art floral au cœur de vos vies est la vocation de notre atelier. « A l'ombre des Platanes » imagine des pièces végétales uniques où harmonies de couleurs, textures organiques et équilibres délicats dialoguent avec grâce.
+        </p>
+        <p>
+          Que ce soit pour offrir une attention délicate, embellir votre intérieur ou fleurir les instants majeurs de votre vie, nous abordons chaque création avec le même degré d’exigence artisanale.
+        </p>
+        <div class="quote-box">
+          « Donner forme à l'éphémère et faire parler le langage des fleurs. »
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION OFFRE / CREATIONS -->
+  <section class="section-padding" id="creations">
+    <div class="container">
+      <div class="offre-header reveal">
+        <span class="tagline">Savoir-faire</span>
+        <h2 class="section-title">Nos Prestations sur Mesure</h2>
+        <p class="section-desc">
+          Un accompagnement attentionné pour concevoir des décors botaniques adaptés à toutes vos envies.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Card 1 -->
+        <div class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/>
+            <path d="M12 8V16M8 12H16"/>
+          </svg>
+          <h3 class="service-title">Bouquets &amp; Compositions</h3>
+          <p class="service-text">
+            Assemblages harmonieux composés selon les fleurs de saison, le travail des volumes et l’équilibre des nuances. Des bouquets uniques façonnés à la demande.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+          <h3 class="service-title">Événements &amp; Célébrations</h3>
+          <p class="service-text">
+            Fleurissement sur mesure pour réceptions, mariages et moments d'exception. Nous dessinons la scénographie florale adaptée à vos lieux et votre style.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 3V21M3 12H21M7 7L17 17M17 7L7 17"/>
+          </svg>
+          <h3 class="service-title">Végétalisation &amp; Espaces</h3>
+          <p class="service-text">
+            Conseil et agencement végétal pour espaces professionnels, résidences privées et vitrines. Une touche naturelle et durable pensée avec subtilité.
+          </p>
+        </div>
+      </div>
+
+      <!-- PHOTO PLACEHOLDER 2 -->
+      <div class="second-photo-wrapper reveal">
+        <div class="photo-placeholder-wide">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C5A880" stroke-width="1.2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5L5 21"/>
+          </svg>
+          <span class="placeholder-badge" style="margin-top:12px;">Vos photos ici</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION INFOS PRATIQUES -->
+  <section class="infos-section section-padding" id="infos">
+    <div class="container infos-grid">
+      <div class="infos-content reveal">
+        <span class="tagline">Atelier &amp; Visites</span>
+        <h2 class="infos-title">Informations Pratiques</h2>
+
+        <ul class="info-list">
+          <li class="info-item">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <div>
+              <span class="info-label">Adresse de l'atelier</span>
+              <span class="info-value">12 ZI Les Platanes</span>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <div>
+              <span class="info-label">Téléphone</span>
+              <span class="info-value"><a href="tel:+33556721813">05 56 72 18 13</a></span>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <div>
+              <span class="info-label">Courrier électronique</span>
+              <span class="info-value"><a href="mailto:alombredesplatanes.camblanes@gmail.com">alombredesplatanes.camblanes@gmail.com</a></span>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <div>
+              <span class="info-label">Horaires &amp; Accueil</span>
+              <span class="info-value">Nous vous accueillons à l'atelier. Contactez-nous pour toute commande spécifique.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="infos-map-box reveal">
+        <div class="map-card">
+          <h3 class="map-card-title">A l'ombre des Platanes</h3>
+          <p class="map-card-address">12 ZI Les Platanes</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=12+ZI+Les+Platanes" target="_blank" rel="noopener noreferrer" class="btn-gold">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Obtenir l'itinéraire
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section section-padding" id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <span class="tagline">Contact &amp; Commandes</span>
+        <h2 class="section-title">Échangeons sur votre projet</h2>
+        <p class="section-desc">
+          Une envie particulière, une commande sur-mesure ou une demande de renseignements ? Notre équipe reste à votre entière disposition.
+        </p>
+
+        <div class="contact-links">
+          <a href="tel:+33556721813" class="contact-button-large">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            05 56 72 18 13
+          </a>
+
+          <a href="mailto:alombredesplatanes.camblanes@gmail.com" class="contact-button-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Nous écrire par e-mail
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-brand-title">A l'ombre des Platanes</h3>
+          <p class="footer-text">
+            Fleuristes créateurs. Atelier dédié à la création florale élégante, aux événements et aux aménagements végétaux personnalisés.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#esprit">L'Esprit</a></li>
+            <li><a href="#creations">Nos Créations</a></li>
+            <li><a href="#infos">Infos Pratiques</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Réseaux Sociaux</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/fleuristealombredesplatanes" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; A l'ombre des Platanes. Tous droits réservés.</div>
+        <div class="footer-agency-credit">
+          Proposition de site réalisée par <a href="mailto:societe.orbe@gmail.com">ORBE, studio digital</a> · societe.orbe@gmail.com
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE ORBE FIXE -->
+  <div class="orbe-badge">
+    <span class="orbe-dot"></span>
+    Maquette proposée par ORBE
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Nav Toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          const isOpen = navMenu.classList.contains('active');
+          menuToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', false);
+          });
+        });
+      }
+
+      // Scroll Reveal Animation via IntersectionObserver
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion) {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        reveals.forEach(el => observer.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+      }
+    });
+  </script>
+</body>
+</html>

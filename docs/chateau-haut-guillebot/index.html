@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Château Haut Guillebot — Domaines viticoles et châteaux familiaux à Lugaignac</title>
+  <meta name="description" content="Découvrez le Château Haut Guillebot, domaine viticole familial situé à Guillebot, Lugaignac. Vins d'exception et tradition de terroir.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Château Haut Guillebot — Domaines viticoles à Lugaignac">
+  <meta property="og:description" content="Domaine viticole familial et château à Lugaignac. L'excellence d'un terroir préservé.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG en data URI -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2L4 8v16l12 6 12-6V8L16 2z' fill='%231B2A1D' stroke='%23C5A059' stroke-width='1.5'/%3E%3Cpath d='M16 6v20M8 12l8 4 8-4' stroke='%23C5A059' stroke-width='1' fill='none'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Winery",
+    "name": "Château Haut Guillebot",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "8",
+      "addressLocality": "Lugaignac",
+      "postalCode": "33420",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33 5 57 84 53 92",
+    "email": "mariechristine@chateauhautguillebot.com"
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-primary: #1B2A1D;    /* Vert vigne profond */
+      --color-secondary: #2C3E2D;  /* Vert mousse */
+      --color-gold: #C5A059;       /* Or sobre */
+      --color-sand: #F7F5F0;       /* Sable chaud / écru */
+      --color-dark: #121813;       /* Noir végétal */
+      --color-white: #FFFFFF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-sand);
+      color: var(--color-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Typographie */
+    h1, h2, h3, .serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+    }
+
+    /* Utilitaires visuels */
+    .gold-text {
+      color: var(--color-gold);
+    }
+
+    .border-gold {
+      border-color: var(--color-gold);
+    }
+
+    /* Animations douces (IntersectionObserver) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* Navigation fixe */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(247, 245, 240, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--color-primary);
+    }
+
+    .monogram {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .monogram svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-primary);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--color-gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 30px;
+      height: 20px;
+      position: relative;
+    }
+
+    .menu-toggle span {
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: var(--color-primary);
+      transition: var(--transition);
+    }
+
+    .menu-toggle span:nth-child(1) { top: 0; }
+    .menu-toggle span:nth-child(2) { top: 9px; }
+    .menu-toggle span:nth-child(3) { top: 18px; }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 8rem 2rem 4rem;
+      background-color: var(--color-primary);
+      color: var(--color-sand);
+      overflow: hidden;
+    }
+
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: radial-gradient(var(--color-gold) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: rgba(247, 245, 240, 0.85);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 2.25rem;
+      background-color: transparent;
+      border: 1px solid var(--color-gold);
+      color: var(--color-sand);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      background-color: var(--color-gold);
+      color: var(--color-dark);
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 480px;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(25,38,27,0.8), rgba(18,24,19,0.9));
+    }
+
+    .photo-placeholder {
+      text-align: center;
+      color: var(--color-gold);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      border: 1px dashed rgba(197, 160, 89, 0.4);
+      padding: 3rem;
+      width: 85%;
+      height: 85%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .photo-placeholder span {
+      font-size: 0.75rem;
+      font-family: var(--font-sans);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* Sections Générales */
+    section {
+      padding: 7rem 2rem;
+    }
+
+    .section-header {
+      max-width: 800px;
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(2.25rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      color: var(--color-primary);
+    }
+
+    /* Esprit de la maison */
+    .spirit-section {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .spirit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .spirit-text p {
+      font-size: 1.15rem;
+      color: var(--color-secondary);
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .spirit-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(197, 160, 89, 0.3);
+      padding-top: 2rem;
+    }
+
+    .stat-item h3 {
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-item p {
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-secondary);
+    }
+
+    /* Offre / Vins & Domaine */
+    .offer-section {
+      background-color: var(--color-white);
+      border-top: 1px solid rgba(197, 160, 89, 0.2);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .offer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .offer-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .offer-card {
+      background: var(--color-sand);
+      padding: 3rem 2.5rem;
+      border: 1px solid rgba(197, 160, 89, 0.2);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .offer-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--color-gold);
+    }
+
+    .offer-card h3 {
+      font-size: 1.75rem;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    .offer-card p {
+      font-size: 0.95rem;
+      color: var(--color-secondary);
+      font-weight: 300;
+    }
+
+    .card-line {
+      width: 40px;
+      height: 1px;
+      background-color: var(--color-gold);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Infos Pratiques & Contact */
+    .info-contact-section {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .info-box {
+      background: var(--color-white);
+      padding: 3.5rem;
+      border: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .info-box h3 {
+      font-size: 2rem;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .info-list li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
+    .info-value {
+      font-size: 1.1rem;
+      color: var(--color-primary);
+    }
+
+    .info-value a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .info-value a:hover {
+      color: var(--color-gold);
+    }
+
+    /* Pied de page */
+    footer {
+      background-color: var(--color-dark);
+      color: var(--color-sand);
+      padding: 5rem 2rem 3rem;
+      border-top: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 2rem;
+    }
+
+    .footer-brand .brand-name {
+      color: var(--color-sand);
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      display: block;
+    }
+
+    .footer-info p {
+      font-size: 0.9rem;
+      color: rgba(247, 245, 240, 0.7);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 3rem auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: rgba(247, 245, 240, 0.5);
+    }
+
+    .alcohol-warning {
+      text-align: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-top: 2rem;
+    }
+
+    /* Badge ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--color-dark);
+      color: var(--color-sand);
+      padding: 0.5rem 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--color-gold);
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .orbe-badge:hover {
+      background: var(--color-gold);
+      color: var(--color-dark);
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 1024px) {
+      .hero-content, .spirit-grid, .info-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .offer-cards {
+        grid-template-columns: 1fr;
+      }
+      .hero-visual {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--color-sand);
+        flex-direction: column;
+        padding: 2rem;
+        border-bottom: 1px solid var(--color-gold);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .footer-content {
+        flex-direction: column;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+      section {
+        padding: 4rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête fixe -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="monogram">
+          <!-- Monogramme SVG dessiné sur mesure -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="#C5A059" stroke-width="1.2"/>
+            <path d="M12 6L6 9.5V14.5L12 18L18 14.5V9.5L12 6Z" fill="#C5A059" fill-opacity="0.15" stroke="#C5A059" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <span class="brand-name">Château Haut Guillebot</span>
+      </a>
+      <button class="menu-toggle" aria-label="Menu" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#esprit">La Maison</a></li>
+        <li><a href="#offre">Le Domaine</a></li>
+        <li><a href="#informations">Informations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Grand bandeau d'accueil -->
+    <section class="hero">
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-content">
+        <div class="reveal">
+          <span class="hero-subtitle">Domaine viticole &amp; châteaux familiaux</span>
+          <h1>Château Haut Guillebot</h1>
+          <p>L'expression authentique d'un terroir d'exception à Lugaignac. Un héritage familial voué à l'excellence de la vigne.</p>
+          <a href="#contact" class="btn">
+            Nous contacter
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.333 8h9.334M8 3.333L12.667 8 8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="photo-placeholder">
+            <span>Vos photos ici</span>
+            Vue sur le château et les vignes
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'esprit de la maison -->
+    <section id="esprit">
+      <div class="spirit-section">
+        <div class="section-header reveal">
+          <span class="section-tag">Tradition &amp; Sincérité</span>
+          <h2 class="section-title">L'esprit de la maison</h2>
+        </div>
+        <div class="spirit-grid">
+          <div class="spirit-text reveal">
+            <p>Niché au cœur du lieu-dit Guillebot à Lugaignac, le Château Haut Guillebot incarne la pérennité d'un savoir-faire viticole transmis avec passion.</p>
+            <p>Notre démarche s'inscrit dans le respect le plus strict de la terre et des traditions. Chaque parcelle est cultivée avec une attention minutieuse, permettant au terroir d'exprimer toute sa richesse et sa complexité naturelle.</p>
+            <div class="spirit-stats">
+              <div class="stat-item">
+                <h3>Terroir</h3>
+                <p>Lugaignac</p>
+              </div>
+              <div class="stat-item">
+                <h3>Savoir-faire</h3>
+                <p>Familial</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal">
+            <div style="background: var(--color-white); border: 1px solid rgba(197,160,89,0.3); padding: 3rem; position: relative;">
+              <div class="photo-placeholder" style="height: 300px; width: 100%;">
+                <span>Vos photos ici</span>
+                Le chai et les vignes
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'offre -->
+    <section id="offre" class="offer-section">
+      <div class="offer-container">
+        <div class="section-header reveal">
+          <span class="section-tag">Nos productions</span>
+          <h2 class="section-title">Vins &amp; Vignes</h2>
+        </div>
+        <div class="offer-cards">
+          <div class="offer-card reveal">
+            <div class="card-line"></div>
+            <h3>Vins de Propriété</h3>
+            <p>Élaborés dans le respect des traditions de notre domaine, nos vins traduisent le caractère unique du sol de Lugaignac et le soin apporté à chaque vendange.</p>
+          </div>
+          <div class="offer-card reveal">
+            <div class="card-line"></div>
+            <h3>Tradition Familiale</h3>
+            <p>Ancré dans les châteaux familiaux de la région, le domaine perpétue une vision exigeante et intègre de l'art viticole, de la vigne jusqu'à la bouteille.</p>
+          </div>
+          <div class="offer-card reveal">
+            <div class="card-line"></div>
+            <h3>Visite du Domaine</h3>
+            <p>Le Château Haut Guillebot vous accueille sur rendez-vous pour vous faire découvrir son cadre privilégié et échanger autour de notre passion commune.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infos pratiques & Contact -->
+    <section id="informations">
+      <div class="info-contact-section">
+        <div class="section-header reveal">
+          <span class="section-tag">Venir &amp; Échanger</span>
+          <h2 class="section-title">Informations &amp; Contact</h2>
+        </div>
+        <div class="info-grid">
+          
+          <!-- Infos Pratiques -->
+          <div class="info-box reveal" id="contact">
+            <h3>Informations pratiques</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Adresse</span>
+                <span class="info-value">8, 33420 Lugaignac, France</span>
+              </li>
+              <li>
+                <span class="info-label">Secteur</span>
+                <span class="info-value">Domaines viticoles et châteaux familiaux</span>
+              </li>
+            </ul>
+            <a href="https://www.google.com/maps/search/?api=1&query=8,%2033420%20Lugaignac" target="_blank" rel="noopener noreferrer" class="btn" style="color: var(--color-primary); border-color: var(--color-primary);">
+              Itinéraire
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.333 8h9.334M8 3.333L12.667 8 8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Contact -->
+          <div class="info-box reveal">
+            <h3>Nous joindre</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-label">Téléphone</span>
+                <span class="info-value">
+                  <a href="tel:+33557845392">+33 5 57 84 53 92</a>
+                </span>
+              </li>
+              <li>
+                <span class="info-label">Courrier électronique</span>
+                <span class="info-value">
+                  <a href="mailto:mariechristine@chateauhautguillebot.com">mariechristine@chateauhautguillebot.com</a>
+                </span>
+              </li>
+            </ul>
+            <p style="font-size: 0.95rem; color: var(--color-secondary); font-weight: 300; margin-top: 2rem;">
+              Pour toute demande concernant nos vins ou pour organiser une visite, n'hésitez pas à nous contacter par téléphone ou par e-mail.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="monogram" style="border-color: rgba(197,160,89,0.4);">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="#C5A059" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <span class="brand-name">Château Haut Guillebot</span>
+      </div>
+      <div class="footer-info">
+        <p>8, 33420 Lugaignac</p>
+        <p>Guillebot</p>
+        <p><a href="tel:+33557845392" style="color: inherit; text-decoration: none;">+33 5 57 84 53 92</a></p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div>Proposition de site réalisée par ORBE, studio digital &middot; societe.orbe@gmail.com</div>
+      <div>&copy; Château Haut Guillebot. Tous droits réservés.</div>
+    </div>
+    <div class="alcohol-warning">
+      L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+    </div>
+  </footer>
+
+  <!-- Badge fixe discret -->
+  <a href="mailto:societe.orbe@gmail.com" class="orbe-badge">Maquette proposée par ORBE</a>
+
+  <!-- Script JavaScript (Menu mobile & IntersectionObserver) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Gestion du menu mobile
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+          });
+        });
+      }
+
+      // Apparitions douces au défilement (IntersectionObserver)
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

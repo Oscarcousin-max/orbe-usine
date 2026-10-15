@@ -1,6 +1,70 @@
 {
  "items": [
   {
+   "id": "agent-20261015-chateau-haut-galouchey",
+   "nom": "Château Haut-Galouchey",
+   "type": "domaines viticoles et châteaux familiaux",
+   "quartier": "Le Galouchey, Soulignac",
+   "adresse": "33760 Soulignac",
+   "canal": "Email",
+   "contact": "bruno-laville@orange.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Ch%C3%A2teau%20Haut-Galouchey%20Soulignac",
+   "objet": "Votre nouveau site pour le Château Haut‑Galouchey",
+   "message": "Bonjour Bruno,\nJ’ai remarqué que le Château Haut‑Galouchey se trouve à Soulignac, dans le quartier Le Galouchey, un cadre idéal pour votre domaine viticole.\nJ’ai donc pris l’initiative de créer un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/chateau-haut-galouchey/\nVous pouvez le mettre en ligne à votre nom et y ajouter vos propres photos quand vous le souhaitez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/chateau-haut-galouchey/",
+   "par": "gemini-3.5-flash-lite",
+   "cree_le": "2026-10-15T18:43:30Z"
+  },
+  {
+   "id": "agent-20261015-a-l-ombre-des-platanes",
+   "nom": "A l'ombre des Platanes",
+   "type": "fleuristes créateurs",
+   "quartier": "",
+   "adresse": "12 ZI Les Platanes",
+   "canal": "Email",
+   "contact": "alombredesplatanes.camblanes@gmail.com",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=A%20l%27ombre%20des%20Platanes%20Bordeaux",
+   "objet": "Votre nouveau site pour A l'ombre des Platanes",
+   "message": "Bonjour,\nJ’ai remarqué que votre boutique « A l'ombre des Platanes », fleuriste créateur à la ZI Les Platanes, propose des compositions uniques.\nJ’ai donc pris l’initiative de vous préparer un site sur mesure, à voir ici : https://oscarcousin-max.github.io/orbe-usine/a-l-ombre-des-platanes/\nVous pourrez le mettre en ligne à votre nom, y ajouter vos propres photos et le gérer comme vous le souhaitez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et vous ne serez plus relancé.\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/a-l-ombre-des-platanes/",
+   "par": "gemini-3.6-flash",
+   "cree_le": "2026-10-15T18:44:51Z"
+  },
+  {
+   "id": "agent-20261015-so-or",
+   "nom": "SO OR",
+   "type": "bijoutiers, joailliers, horlogers",
+   "quartier": "Villenave-d'Ornon",
+   "adresse": "2 Avenue des Pyrénées, 33140 Villenave-d'Ornon",
+   "canal": "Email",
+   "contact": "soorvillenave@hotmail.com",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=SO%20OR%20Villenave-d%27Ornon",
+   "objet": "Votre futur site pour SO OR",
+   "message": "Bonjour,\nJ’ai remarqué que votre boutique SO OR, située au 2 Avenue des Pyrénées à Villenave-d'Ornon, propose des bijoux et montres d’exception.\nPour vous aider à les mettre en valeur en ligne, j’ai conçu un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/so-or/\nVous pourrez le publier à votre nom et y ajouter vos propres photos dès que vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital – societe.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/so-or/",
+   "par": "gemini-3.5-flash-lite",
+   "cree_le": "2026-10-15T18:46:18Z"
+  },
+  {
+   "id": "agent-20261015-chateau-haut-guillebot",
+   "nom": "Château Haut Guillebot",
+   "type": "domaines viticoles et châteaux familiaux",
+   "quartier": "Guillebot, Lugaignac",
+   "adresse": "8, 33420 Lugaignac",
+   "canal": "Email",
+   "contact": "mariechristine@chateauhautguillebot.com",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Ch%C3%A2teau%20Haut%20Guillebot%20Lugaignac",
+   "objet": "Un site web dédié à Château Haut Guillebot",
+   "message": "Bonjour,\nJ’ai découvert que le Château Haut Guillebot, niché à Lugaignac dans le quartier Guillebot, perpétue une belle tradition familiale de vinification.\nJ’ai donc pris l’initiative de créer un site web sur mesure pour vous, que vous pouvez visualiser ici : https://oscarcousin-max.github.io/orbe-usine/chateau-haut-guillebot/\nVous pourrez le mettre en ligne à votre nom, en y intégrant vos propres photos et contenus quand vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et nous ne vous relancerons pas.\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/chateau-haut-guillebot/",
+   "par": "gemini-3.5-flash-lite",
+   "cree_le": "2026-10-15T18:47:55Z"
+  },
+  {
    "id": "agent-20261015-chateau-courtade-dubuc",
    "nom": "Château Courtade Dubuc",
    "type": "domaines viticoles et châteaux familiaux",
@@ -33,5 +97,5 @@
    "cree_le": "2026-10-15T18:37:57Z"
   }
  ],
- "maj": "2026-10-15T18:37:57Z"
+ "maj": "2026-10-15T18:47:55Z"
 }
