@@ -1,6 +1,38 @@
 {
  "items": [
   {
+   "id": "agent-20261015-domaine-brana",
+   "nom": "Domaine Brana",
+   "type": "domaines viticoles et châteaux familiaux",
+   "quartier": "",
+   "adresse": "",
+   "canal": "Email",
+   "contact": "delle.vedove@hotmail.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Domaine%20Brana%20Bordeaux",
+   "objet": "Un site web pour le Domaine Brana",
+   "message": "Bonjour Madame,\nJ’ai remarqué que le Domaine Brana ouvre ses portes du lundi au samedi, de 8h à 13h puis de 14h à 19h, pour accueillir les amateurs de vin.\nEn pensant à votre belle histoire familiale dans les domaines viticoles, j’ai réalisé un site web sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/domaine-brana/\nVous pourrez le mettre en ligne à votre nom et y ajouter vos propres photos du vignoble et des chais.\nSi cela vous convient, faites‑le moi savoir, sinon un simple « non merci » suffit et vous ne serez plus relancé.\nAu plaisir d’échanger avec vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/domaine-brana/",
+   "par": "gemini-3.7-flash",
+   "cree_le": "2026-10-15T20:59:33Z"
+  },
+  {
+   "id": "agent-20261015-l-atelier-du-vegetal",
+   "nom": "L'Atelier du Végétal",
+   "type": "fleuristes créateurs",
+   "quartier": "Saint-Sever",
+   "adresse": "18 Place du Cap de Pouy, Saint-Sever",
+   "canal": "Email",
+   "contact": "latelierduvegetal@orange.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=L%27Atelier%20du%20V%C3%A9g%C3%A9tal%20Saint-Sever",
+   "objet": "Un site dédié à L'Atelier du Végétal",
+   "message": "Bonjour,\nJ’ai remarqué que votre boutique fleuriste créateur se situe au 18 Place du Cap de Pouy à Saint‑Sever et que vous accueillez vos clients du lundi au samedi avec des horaires généreux.\nPour mettre en valeur votre savoir‑faire, j’ai préparé un site web sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/l-atelier-du-vegetal/.\nVous pouvez le publier à votre nom, en y intégrant vos propres photos et textes, quand vous le souhaiterez.\nSi vous préférez ne pas donner suite, il suffit de répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital – societe.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/l-atelier-du-vegetal/",
+   "par": "gemini-3.5-flash-lite",
+   "cree_le": "2026-10-15T21:00:22Z"
+  },
+  {
    "id": "agent-20261015-chateau-la-hitte",
    "nom": "Château La Hitte",
    "type": "domaines viticoles et châteaux familiaux",
@@ -161,5 +193,5 @@
    "cree_le": "2026-10-15T18:37:57Z"
   }
  ],
- "maj": "2026-10-15T20:40:17Z"
+ "maj": "2026-10-15T21:00:22Z"
 }

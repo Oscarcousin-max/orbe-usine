@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>L'Atelier du Végétal — Fleuristes créateurs à Saint-Sever</title>
+    <meta name="description" content="L'Atelier du Végétal, fleuristes créateurs à Saint-Sever. Compositions florales sur mesure pour tous les instants de la vie. 18 Place du Cap de Pouy.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="L'Atelier du Végétal — Fleuristes créateurs à Saint-Sever">
+    <meta property="og:description" content="Compositions florales sur mesure et créations végétales à Saint-Sever.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicon SVG en data URI -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2C16 12 8 16 2 16C12 16 16 24 16 30C16 20 24 16 30 16C24 16 16 12 16 2Z' fill='%28%232C4A3E%27/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Three.js (uniquement autorisé) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+    <style>
+        :root {
+            --bg-color: #F8F7F4;
+            --surface-color: #FFFFFF;
+            --primary: #2C4A3E; /* Vert profond et feutré */
+            --accent: #D4AF37;  /* Or discret */
+            --text-main: #1A1A1A;
+            --text-muted: #5A5A5A;
+            --border-color: #E2DFD8;
+            --transition: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* En-tête fixe */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(248, 247, 244, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: transform 0.3s var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .monogram {
+            width: 36px;
+            height: 36px;
+        }
+
+        .brand-name {
+            font-size: 1.3rem;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 30px;
+            height: 20px;
+            position: relative;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+            position: absolute;
+            transition: 0.3s;
+        }
+
+        .menu-toggle span:nth-child(1) { top: 0; }
+        .menu-toggle span:nth-child(2) { top: 9px; }
+        .menu-toggle span:nth-child(3) { top: 18px; }
+
+        /* Bandeau d'accueil 3D */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2C4A3E 0%, #1A2E26 100%);
+            color: #FFFFFF;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(26,46,38,0.3) 0%, rgba(26,46,38,0.7) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 0 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 1s 0.3s forwards var(--transition);
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 1s 0.5s forwards var(--transition);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            color: #E2DFD8;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeIn 1s 0.7s forwards var(--transition);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--accent);
+            color: #FFFFFF;
+            background: transparent;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.4s var(--transition);
+            opacity: 0;
+            animation: fadeIn 1s 0.9s forwards var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(20px); }
+        }
+
+        /* Sections communes */
+        section {
+            padding: 7rem 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        /* L'esprit de la maison */
+        .spirit-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .spirit-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .spirit-text p:first-of-type {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .photo-card {
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            filter: brightness(0.95) contrast(1.05);
+            display: block;
+        }
+
+        .photo-credit {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            background: rgba(0,0,0,0.6);
+            color: #FFF;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            letter-spacing: 0.05em;
+        }
+
+        /* L'offre / Spécialités */
+        .offer-section {
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            max-width: 100%;
+            padding: 7rem 0;
+        }
+
+        .offer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .offer-item {
+            padding: 3rem 2rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.4s var(--transition), border-color 0.4s;
+        }
+
+        .offer-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .offer-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .offer-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .offer-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Infos pratiques & Contact */
+        .practical-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .info-box {
+            background: var(--surface-color);
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-box h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .info-list li {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .info-value {
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .hours-table {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .hours-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hours-table td {
+            padding: 0.8rem 0;
+            font-size: 0.95rem;
+        }
+
+        .hours-table td:last-child {
+            text-align: right;
+            color: var(--text-muted);
+        }
+
+        .action-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.8rem;
+            background: var(--primary);
+            color: #FFFFFF;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .action-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            font-size: 1.4rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--accent);
+        }
+
+        /* Pied de page */
+        footer {
+            background: var(--primary);
+            color: #E2DFD8;
+            padding: 5rem 2rem 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-brand {
+            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .footer-address {
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            color: #C5C2B8;
+        }
+
+        .legal-notice {
+            font-size: 0.8rem;
+            color: #9A978E;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            line-height: 1.8;
+        }
+
+        /* Badge ORBE fixe */
+        .orbe-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            z-index: 99;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 1px solid var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .orbe-badge:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animations d'apparition */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .hero-subtitle, .hero-title, .hero-description, .btn { animation: none; opacity: 1; transform: none; }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .spirit-grid, .practical-grid, .offer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--bg-color);
+                flex-direction: column;
+                justify-content: center;
+                transition: right 0.4s var(--transition);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            }
+            .nav-menu.open {
+                right: 0;
+            }
+            .menu-toggle {
+                display: block;
+                z-index: 101;
+            }
+            .menu-toggle.open span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+            .menu-toggle.open span:nth-child(2) { opacity: 0; }
+            .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <!-- Monogramme SVG dessiné -->
+                <svg class="monogram" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="#2C4A3E" stroke-width="1.5"/>
+                    <path d="M20 8C20 18 12 22 6 22C16 22 20 28 20 34C20 28 24 22 34 22C28 22 20 18 20 8Z" fill="#D4AF37" fill-opacity="0.2" stroke="#D4AF37" stroke-width="1"/>
+                </svg>
+                <span class="brand-name">L'Atelier du Végétal</span>
+            </a>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#esprit" class="nav-link">L'Esprit</a></li>
+                    <li><a href="#offre" class="nav-link">Créations</a></li>
+                    <li><a href="#infos" class="nav-link">Informations</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Bandeau d'accueil 3D -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <span class="hero-subtitle">Fleuristes créateurs · Saint-Sever</span>
+            <h1 class="hero-title">L'art floral sur mesure</h1>
+            <p class="hero-description">L'Atelier du Végétal façonne vos émotions au rythme des saisons à Saint-Sever.</p>
+            <a href="#contact" class="btn">Nous contacter</a>
+        </div>
+    </section>
+
+    <!-- L'esprit de la maison -->
+    <section id="esprit">
+        <div class="section-header reveal">
+            <span class="section-tag">Philosophie</span>
+            <h2 class="section-title">L'esprit de la maison</h2>
+        </div>
+        <div class="spirit-grid">
+            <div class="spirit-text reveal">
+                <p>Au cœur de Saint-Sever, notre atelier célèbre la beauté brute et délicate de la nature à travers des compositions florales pensées pour chaque instant de votre vie.</p>
+                <p>Sensibles aux formes, aux textures et aux nuances chromatiques que nous offre le monde végétal, nous composons avec exigence et poésie. Chaque création est unique, façonnée sur mesure selon vos envies et la disponibilité de nos arrivages.</p>
+                <p>La carte suit les saisons, garantissant des fleurs d'une fraîcheur absolue et un respect profond de l'environnement qui nous entoure.</p>
+            </div>
+            <div class="photo-card reveal">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Florist_choosing_flowers_for_a_bouquet.jpg/1920px-Florist_choosing_flowers_for_a_bouquet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Composition florale artisanale" loading="lazy">
+                <div class="photo-credit">Image d'illustration · direct2Florist (CC BY 2.0)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- L'offre -->
+    <section id="offre" class="offer-section">
+        <div class="offer-container">
+            <div class="section-header reveal">
+                <span class="section-tag">Savoir-faire</span>
+                <h2 class="section-title">Nos expertises</h2>
+            </div>
+            <div class="offer-grid">
+                <div class="offer-item reveal">
+                    <span class="offer-number">01</span>
+                    <h3>Compositions sur mesure</h3>
+                    <p>Des bouquets et arrangements floraux personnalisés pour célébrer les grands moments comme les douces attentions du quotidien.</p>
+                </div>
+                <div class="offer-item reveal">
+                    <span class="offer-number">02</span>
+                    <h3>Botanique & Décoration</h3>
+                    <p>Une sélection rigoureuse de plantes et d'éléments végétaux pour habiller vos intérieurs avec élégance et authenticité.</p>
+                </div>
+                <div class="offer-item reveal">
+                    <span class="offer-number">03</span>
+                    <h3>Événements & Accompagnement</h3>
+                    <p>Un accompagnement attentif et artistique pour fleurir vos réceptions, mariages et cérémonies selon vos inspirations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infos pratiques -->
+    <section id="infos">
+        <div class="section-header reveal">
+            <span class="section-tag">Venir à nous</span>
+            <h2 class="section-title">Informations pratiques</h2>
+        </div>
+        <div class="practical-grid">
+            <div class="info-box reveal">
+                <h3>Adresse & Horaires</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-label">Localisation</span>
+                        <span class="info-value">18 Place du Cap de Pouy<br>40500 Saint-Sever</span>
+                    </li>
+                </ul>
+                <table class="hours-table">
+                    <tr><td>Lundi</td><td>09:00 - 12:30, 14:30 - 18:00</td></tr>
+                    <tr><td>Mardi - Vendredi</td><td>09:00 - 12:30, 14:30 - 19:00</td></tr>
+                    <tr><td>Samedi</td><td>08:30 - 12:30, 14:30 - 19:00</td></tr>
+                    <tr><td>Dimanche</td><td>09:00 - 12:30</td></tr>
+                </table>
+                <a href="https://www.google.com/maps/search/?api=1&query=18%20Place%20du%20Cap%20de%20Pouy,%20Saint-Sever" target="_blank" rel="noopener" class="action-link">Itinéraire</a>
+            </div>
+
+            <div class="info-box reveal" id="contact">
+                <h3>Contact</h3>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Pour toute commande sur mesure ou demande spécifique, notre équipe est à votre écoute.</p>
+                <div class="contact-methods">
+                    <a href="tel:+33558760507" class="contact-item">+33 5 58 76 05 07</a>
+                    <a href="mailto:latelierduvegetal@orange.fr" class="contact-item">latelierduvegetal@orange.fr</a>
+                </div>
+                <div style="margin-top: 3rem;">
+                    <a href="https://www.facebook.com/latelierduvegetal40" target="_blank" rel="noopener" class="action-link" style="background: transparent; border: 1px solid var(--primary); color: var(--primary);">Suivre sur Facebook</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emplacement photo additionnel (Vos photos ici) -->
+    <section style="padding: 0 2rem 7rem 2rem; max-width: 1300px; margin: 0 auto;">
+        <div class="photo-card reveal" style="background: #EAE5DC; height: 350px; display: flex; align-items: center; justify-content: center; border: 2px dashed var(--border-color);">
+            <div style="text-align: center; color: var(--text-muted);">
+                <span class="serif" style="font-size: 1.5rem; color: var(--primary); display: block; margin-bottom: 0.5rem;">Vos photos ici</span>
+                <span style="font-size: 0.85rem; letter-spacing: 0.05em;">Emplacement réservé pour les visuels de votre boutique</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-content">
+            <h3 class="footer-brand">L'Atelier du Végétal</h3>
+            <p class="footer-address">18 Place du Cap de Pouy, Saint-Sever</p>
+            
+            <div style="margin: 2rem 0;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg/1920px-Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Chrysanthème d'illustration" loading="lazy" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; opacity: 0.8; filter: brightness(0.9);">
+                <div style="font-size: 0.7rem; color: #9A978E; margin-top: 0.5rem;">Photo : Andy Mabbett (CC BY-SA 4.0)</div>
+            </div>
+
+            <div class="legal-notice">
+                Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com<br>
+                Données issues d'OpenStreetMap.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Badge ORBE -->
+    <a href="mailto:societe.orbe@gmail.com" class="orbe-badge">Maquette proposée par ORBE</a>
+
+    <!-- JSON-LD LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Florist",
+      "name": "L'Atelier du Végétal",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "18 Place du Cap de Pouy",
+        "addressLocality": "Saint-Sever",
+        "postalCode": "40500",
+        "addressCountry": "FR"
+      },
+      "telephone": "+33558760507",
+      "email": "latelierduvegetal@orange.fr",
+      "sameAs": [
+        "https://www.facebook.com/latelierduvegetal40"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "09:00",
+          "closes": "12:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "14:30",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "12:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "14:30",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:30",
+          "closes": "12:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "14:30",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "12:30"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Script Menu & Three.js & Observer -->
+    <script>
+        // Menu mobile
+        const toggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                toggle.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+
+        // Intersection Observer pour les apparitions douces
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scène 3D sobre et lente (fonds organiques / sphères de verre et rubans)
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+            window.addEventListener('DOMContentLoaded', () => {
+                try {
+                    if (window.THREE) {
+                        const canvas = document.getElementById('hero-canvas');
+                        const renderer = new THREE.WebGLRenderer({
+                            canvas: canvas,
+                            alpha: true,
+                            antialias: true,
+                            powerPreference: "low-power"
+                        });
+                        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+                        const scene = new THREE.Scene();
+                        const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+                        camera.position.z = 30;
+
+                        // Création de formes abstraites organiques (sphères de verre / pétales abstraits)
+                        const geometry = new THREE.IcosahedronGeometry(3, 1);
+                        const material = new THREE.MeshPhysicalMaterial({
+                            color: 0xD4AF37,
+                            roughness: 0.2,
+                            metalness: 0.1,
+                            transmission: 0.6,
+                            thickness: 1.2,
+                            transparent: true,
+                            opacity: 0.4
+                        });
+
+                        const group = new THREE.Group();
+                        const count = 5;
+                        const meshes = [];
+
+                        for (let i = 0; i < count; i++) {
+                            const mesh = new THREE.Mesh(geometry, material);
+                            mesh.position.set(
+                                (Math.random() - 0.5) * 25,
+                                (Math.random() - 0.5) * 15,
+                                (Math.random() - 0.5) * 10
+                            );
+                            const scale = 0.5 + Math.random() * 1.2;
+                            mesh.scale.set(scale, scale, scale);
+                            group.add(mesh);
+                            meshes.push({
+                                mesh: mesh,
+                                speedX: (Math.random() - 0.5) * 0.002,
+                                speedY: (Math.random() - 0.5) * 0.002
+                            });
+                        }
+                        scene.add(group);
+
+                        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+                        scene.add(ambientLight);
+
+                        const pointLight = new THREE.PointLight(0xD4AF37, 2, 50);
+                        pointLight.position.set(10, 10, 10);
+                        scene.add(pointLight);
+
+                        let animationFrameId;
+                        let isVisible = true;
+
+                        const animate = () => {
+                            if (!isVisible) return;
+                            animationFrameId = requestAnimationFrame(animate);
+
+                            group.rotation.y += 0.001;
+                            
+                            meshes.forEach(item => {
+                                item.mesh.rotation.x += item.speedX;
+                                item.mesh.rotation.y += item.speedY;
+                            });
+
+                            renderer.render(scene, camera);
+                        };
+
+                        animate();
+
+                        // Gestion de la visibilité de l'onglet pour stopper l'animation
+                        document.addEventListener('visibilitychange', () => {
+                            if (document.hidden) {
+                                isVisible = false;
+                                cancelAnimationFrame(animationFrameId);
+                            } else {
+                                isVisible = true;
+                                animate();
+                            }
+                        });
+
+                        window.addEventListener('resize', () => {
+                            if (!canvas.parentElement) return;
+                            camera.aspect = canvas.parentElement.clientWidth / canvas.parentElement.clientHeight;
+                            camera.updateProjectionMatrix();
+                            renderer.setSize(canvas.parentElement.clientWidth, canvas.parentElement.clientHeight);
+                        });
+                    }
+                } catch (e) {
+                    console.error("Erreur d'initialisation 3D :", e);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

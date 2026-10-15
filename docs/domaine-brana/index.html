@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Domaine Brana — Vignoble d'Exception &amp; Vins de Caractère</title>
+  <meta name="description" content="Découvrez le Domaine Brana. Accueil au domaine du lundi au samedi, dégustation et vente de nos cuvées.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Domaine Brana — Vignoble &amp; Vins de Caractère">
+  <meta property="og:description" content="Vignoble et savoir-faire viticole. Vente directe et accueil au domaine du lundi au samedi.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG en Data URI -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23191412'/%3E%3Cpath d='M10 8h7a5 5 0 0 1 0 10H10zm0 8h7.5a4.5 4.5 0 0 1 0 9H10z' fill='none' stroke='%23c5a880' stroke-width='1.8' stroke-miterlimit='10'/%3E%3Ccircle cx='21.5' cy='16' r='1.5' fill='%23872b38'/%3E%3C/svg%3E" type="image/svg+xml">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (defer) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Winery",
+    "name": "Domaine Brana",
+    "telephone": "+33562697770",
+    "email": "delle.vedove@hotmail.fr",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "13:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "14:00",
+        "closes": "19:00"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Variables & Thème Domaine Brana */
+    :root {
+      --bg-deep: #120e0d;
+      --bg-surface: #1a1513;
+      --bg-elevated: #231c19;
+      --bg-subtle: #2d2420;
+      
+      --accent-wine: #6e1c29;
+      --accent-wine-light: #8f2738;
+      --gold-primary: #cbb08c;
+      --gold-muted: #8e7a63;
+      --gold-faint: rgba(203, 176, 140, 0.12);
+
+      --text-main: #f5f1ea;
+      --text-muted: #a69e94;
+      --text-faint: #6e655c;
+
+      --border-fine: rgba(203, 176, 140, 0.2);
+      --border-subtle: rgba(255, 255, 255, 0.07);
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+      --trans-gentle: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Accessibilité Clavier */
+    :focus-visible {
+      outline: 2px solid var(--gold-primary);
+      outline-offset: 4px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Typographie */
+    h1, h2, h3, .serif-title {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+    }
+
+    .editorial-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.25rem;
+    }
+
+    .editorial-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold-primary);
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+      background: rgba(18, 14, 13, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(203, 176, 140, 0.1);
+    }
+
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      fill: none;
+      stroke: var(--gold-primary);
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .nav-desktop {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.25rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold-primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Menu Hamburger Mobile */
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 120;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: var(--gold-primary);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle.is-active span:nth-child(1) {
+      transform: translateY(8.5px) rotate(45deg);
+    }
+    .menu-toggle.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.is-active span:nth-child(3) {
+      transform: translateY(-8.5px) rotate(-45deg);
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 320px;
+      height: 100vh;
+      background: var(--bg-surface);
+      z-index: 110;
+      padding: 6rem 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px solid var(--border-fine);
+      transform: translateX(100%);
+      transition: transform 0.4s var(--trans-gentle);
+    }
+
+    .mobile-drawer.is-open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .mobile-nav-list a {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--text-main);
+      display: block;
+    }
+
+    .mobile-nav-footer {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.5rem;
+    }
+
+    /* Hero & Bandeau 3D */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 1.5rem 4rem;
+      background: radial-gradient(circle at 50% 40%, #2b1318 0%, #150f0e 65%, #0d0a09 100%);
+      overflow: hidden;
+    }
+
+    .hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-veil {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: radial-gradient(circle at 50% 50%, rgba(18, 14, 13, 0.4) 0%, rgba(18, 14, 13, 0.85) 80%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 860px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-crest {
+      display: inline-block;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 7.5vw, 5.2rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+      color: var(--text-main);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-primary);
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* Boutons de prestige */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.95rem 1.85rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold {
+      background: var(--gold-primary);
+      color: #120e0d;
+      border: 1px solid var(--gold-primary);
+    }
+
+    .btn-gold:hover {
+      background: #dbc19f;
+      border-color: #dbc19f;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-fine);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-primary);
+      transform: translateY(-2px);
+    }
+
+    /* Structure de section */
+    .section-wrap {
+      padding: 6.5rem 1.5rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .grid-duo {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    /* Section Esprit / Maison */
+    .section-story {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-heading {
+      font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+      margin-bottom: 1.75rem;
+      color: var(--text-main);
+    }
+
+    .editorial-quote {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--gold-primary);
+      border-left: 2px solid var(--gold-primary);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.5;
+    }
+
+    .story-text p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      font-size: 1.02rem;
+    }
+
+    /* Cadre Illustration / Emplacement Photo */
+    .media-card {
+      position: relative;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--border-fine);
+      background: var(--bg-elevated);
+    }
+
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.82) contrast(1.08) saturate(0.9);
+      transition: transform 0.8s ease;
+    }
+
+    .media-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .media-label-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(18, 14, 13, 0.75);
+      border: 1px solid rgba(203, 176, 140, 0.3);
+      padding: 0.25rem 0.65rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      backdrop-filter: blur(4px);
+    }
+
+    .placeholder-card {
+      border: 1px dashed var(--gold-muted);
+      background: rgba(35, 28, 25, 0.4);
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .placeholder-card .icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid var(--border-fine);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--gold-primary);
+    }
+
+    .placeholder-card p {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--gold-primary);
+      letter-spacing: 0.05em;
+    }
+
+    .placeholder-card span {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-top: 0.4rem;
+    }
+
+    /* Section Offre & Vins */
+    .section-offer {
+      background-color: var(--bg-deep);
+    }
+
+    .offer-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 4rem;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .offer-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 2.5rem 2rem;
+      position: relative;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .offer-card:hover {
+      border-color: var(--border-fine);
+      transform: translateY(-4px);
+    }
+
+    .offer-symbol {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 1.5rem;
+      stroke: var(--gold-primary);
+      fill: none;
+    }
+
+    .offer-card h3 {
+      font-size: 1.65rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .offer-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .offer-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1rem;
+    }
+
+    /* Section Pratique / Visite & Horaires */
+    .section-practical {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .practical-box {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-fine);
+      padding: 3rem 2.25rem;
+      position: relative;
+    }
+
+    .schedule-table {
+      width: 100%;
+      margin: 2rem 0;
+      border-collapse: collapse;
+    }
+
+    .schedule-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.95rem;
+    }
+
+    .schedule-row:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-day {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .schedule-hours {
+      color: var(--gold-primary);
+      text-align: right;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-deep);
+      border: 1px solid var(--border-fine);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold-primary);
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .contact-value {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .contact-value:hover {
+      color: var(--gold-primary);
+    }
+
+    /* Bandeau d'avertissement alcool */
+    .legal-warning-strip {
+      background: #0d0a09;
+      color: #999086;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--bg-deep);
+      padding: 4.5rem 1.5rem 6.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand h4 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 320px;
+    }
+
+    .footer-credits {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--text-faint);
+    }
+
+    .footer-credits a {
+      color: var(--gold-muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-credits a:hover {
+      color: var(--gold-primary);
+    }
+
+    /* Badge fixe ORBE */
+    .orbe-floating-badge {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 999;
+      background: rgba(18, 14, 13, 0.92);
+      border: 1px solid var(--border-fine);
+      backdrop-filter: blur(8px);
+      padding: 0.45rem 0.9rem;
+      border-radius: 100px;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+    }
+
+    .orbe-floating-badge::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+    }
+
+    /* Effets de révélation progressive */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s var(--trans-gentle);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Règle prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .hero-canvas {
+        display: none !important;
+      }
+    }
+
+    /* Media Queries pour écrans larges */
+    @media (min-width: 768px) {
+      .site-header {
+        padding: 1.5rem 3.5rem;
+      }
+
+      .nav-desktop {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .section-wrap {
+        padding: 8.5rem 3rem;
+      }
+
+      .grid-duo {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4.5rem;
+      }
+
+      .offer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+
+      .footer-credits {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid-duo-rev {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Principale -->
+  <header class="site-header" id="header">
+    <a href="#accueil" class="site-brand" aria-label="Domaine Brana - Accueil">
+      <!-- Monogramme SVG dessiné sur-mesure -->
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" stroke="rgba(203,176,140,0.3)" stroke-width="1"/>
+        <path d="M14 11h6.5a4.5 4.5 0 0 1 0 9H14zm0 9h7.5a4.5 4.5 0 0 1 0 9H14z" stroke="var(--gold-primary)" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="1.8" fill="var(--accent-wine-light)"/>
+      </svg>
+      <span class="brand-title">Domaine Brana</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Navigation principale">
+      <ul class="nav-links">
+        <li><a href="#esprit" class="nav-link">L'Esprit</a></li>
+        <li><a href="#vins" class="nav-link">Le Domaine</a></li>
+        <li><a href="#visite" class="nav-link">Horaires &amp; Visite</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Tiroir de Navigation Mobile -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div>
+      <span class="editorial-label">Sommaire</span>
+      <ul class="mobile-nav-list">
+        <li><a href="#accueil" class="mobile-nav-link">Accueil</a></li>
+        <li><a href="#esprit" class="mobile-nav-link">L'Esprit</a></li>
+        <li><a href="#vins" class="mobile-nav-link">Le Domaine</a></li>
+        <li><a href="#visite" class="mobile-nav-link">Horaires &amp; Visite</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav-footer">
+      <p>Domaine Brana</p>
+      <p style="margin-top: 4px; color: var(--gold-primary);">Mo–Sa : 08:00–13:00 / 14:00–19:00</p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Bandeau d'Accueil avec Canvas 3D Sobre -->
+    <section class="hero-section" id="accueil">
+      <!-- Toile Three.js -->
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-veil" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-crest">
+          <span class="editorial-label">Vignoble &amp; Vins de Caractère</span>
+        </div>
+        <h1 class="hero-title">
+          L'expression du terroir, <em>l'art de la vigne.</em>
+        </h1>
+        <p class="hero-lead">
+          Le Domaine Brana perpétue la tradition viticole avec rigueur et authenticité. Un accueil privilégié du lundi au samedi pour partager l'amour de la terre et du vin.
+        </p>
+        <div class="hero-actions">
+          <a href="#visite" class="btn btn-gold">Venir au Domaine</a>
+          <a href="tel:+33562697770" class="btn btn-outline">Nous appeler</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section L'Esprit de la Maison -->
+    <section class="section-wrap section-story" id="esprit">
+      <div class="container">
+        <div class="grid-duo reveal-on-scroll">
+          <div class="story-text">
+            <span class="editorial-label">La Philosophie</span>
+            <h2 class="section-heading">Une passion sincère du cep jusqu'au flacon.</h2>
+            <div class="editorial-quote">
+              « Observer la vigne, accompagner le cycle naturel et laisser le caractère du vin s'exprimer avec vérité. »
+            </div>
+            <p>
+              Au Domaine Brana, le travail viticole s'articule autour de l'écoute du terroir. Chaque saison impose son rythme, de la taille hivernale jusqu'à la vendange manuelle, guidée par la recherche constante de l'équilibre.
+            </p>
+            <p>
+              Notre domaine vous ouvre ses portes tout au long de la semaine pour vous permettre de découvrir nos créations dans le respect des usages et de la convivialité propre aux domaines indépendants.
+            </p>
+          </div>
+
+          <!-- Image libre de droits fournie avec voile -->
+          <div>
+            <figure class="media-card" style="aspect-ratio: 4/5;">
+              <span class="media-label-tag">Image d'illustration</span>
+              
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section L'Offre / Activités du Domaine -->
+    <section class="section-wrap section-offer" id="vins">
+      <div class="container">
+        <div class="offer-header reveal-on-scroll">
+          <span class="editorial-label">Savoir-Faire &amp; Accueil</span>
+          <h2 class="section-heading">L'expérience au Domaine Brana</h2>
+          <p style="color: var(--text-muted);">
+            Une démarche attentive dédiée aux amateurs d'authenticité viticole et d'accueil direct au domaine.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <!-- Carte 1 -->
+          <div class="offer-card reveal-on-scroll">
+            <div>
+              <svg class="offer-symbol" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 22h8"/>
+                <path d="M12 15v7"/>
+                <path d="M12 15a5 5 0 0 0 5-5c0-4-5-8-5-8s-5 4-5 8a5 5 0 0 0 5 5z"/>
+              </svg>
+              <h3>Vins &amp; Cuvées</h3>
+              <p>
+                L'élaboration de vins issus de nos parcelles, reflétant le travail de la vigne et le respect scrupuleux du raisin lors des vinifications.
+              </p>
+            </div>
+            <span class="offer-badge">Production Viticole</span>
+          </div>
+
+          <!-- Carte 2 -->
+          <div class="offer-card reveal-on-scroll">
+            <div>
+              <svg class="offer-symbol" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+              <h3>Accueil &amp; Dégustation</h3>
+              <p>
+                Un échange sur place pour apprécier les arômes, comprendre la composition de chaque vin et partager un instant privilégié.
+              </p>
+            </div>
+            <span class="offer-badge">Du Lundi au Samedi</span>
+          </div>
+
+          <!-- Carte 3 -->
+          <div class="offer-card reveal-on-scroll">
+            <div>
+              <svg class="offer-symbol" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <h3>Vente Directe</h3>
+              <p>
+                La possibilité d'acquérir les bouteilles directement au chai, avec les conseils avisés sur la garde et les accords idéaux.
+              </p>
+            </div>
+            <span class="offer-badge">Au Domaine</span>
+          </div>
+        </div>
+
+        <!-- Deuxième volet avec un emplacement "Vos photos ici" -->
+        <div class="grid-duo grid-duo-rev" style="margin-top: 5rem; align-items: center;">
+          <div class="placeholder-card reveal-on-scroll">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+            <p>Vos photos ici</p>
+            <span>Clichés du chai, des parcelles ou des flacons</span>
+          </div>
+
+          <div class="reveal-on-scroll">
+            <span class="editorial-label">Authenticité</span>
+            <h3 class="serif-title" style="font-size: 2.2rem; margin-bottom: 1.25rem;">La sincérité du circuit court</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+              En rencontrant directement ceux qui façonnent la terre, vous partagez une compréhension vivante de la boisson et de son environnement naturel.
+            </p>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">
+              Nous vous accueillons avec simplicité pour vous faire découvrir les différentes cuvées disponibles selon les millésimes.
+            </p>
+            <a href="mailto:delle.vedove@hotmail.fr" class="btn btn-outline">Écrire au domaine</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Horaires & Informations Pratiques -->
+    <section class="section-wrap section-practical" id="visite">
+      <div class="container">
+        <div class="grid-duo">
+          <!-- Colonne Horaires & Venue -->
+          <div class="practical-box reveal-on-scroll">
+            <span class="editorial-label">Venir au Domaine</span>
+            <h2 class="serif-title" style="font-size: 2.4rem; margin-bottom: 1rem;">Heures d'Ouverture</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Le Domaine Brana assure une permanence régulière tout au long de la semaine pour votre approvisionnement et vos visites.
+            </p>
+
+            <div class="schedule-table" role="region" aria-label="Horaires d'ouverture">
+              <div class="schedule-row">
+                <span class="schedule-day">Lundi à Vendredi</span>
+                <span class="schedule-hours">08:00 – 13:00<br>14:00 – 19:00</span>
+              </div>
+              <div class="schedule-row">
+                <span class="schedule-day">Samedi</span>
+                <span class="schedule-hours">08:00 – 13:00<br>14:00 – 19:00</span>
+              </div>
+              <div class="schedule-row">
+                <span class="schedule-day">Dimanche</span>
+                <span class="schedule-hours" style="color: var(--text-faint);">Fermé</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <!-- Bouton itinéraire Google Maps avec nom du domaine encodé -->
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Domaine+Brana" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                </svg>
+                Ouvrir l'Itinéraire
+              </a>
+            </div>
+          </div>
+
+          <!-- Colonne Coordonnées Directes -->
+          <div class="reveal-on-scroll" id="contact">
+            <span class="editorial-label">Contact Direct</span>
+            <h2 class="section-heading">À votre écoute</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2.5rem;">
+              Pour toute question relative à nos vins, commandes de cartons ou pour préparer votre passage au domaine, nous sommes joignables par téléphone et par courrier électronique.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-label">Téléphone</span>
+                  <a href="tel:+33562697770" class="contact-value">+33 5 62 69 77 70</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-label">Adresse Courriel</span>
+                  <a href="mailto:delle.vedove@hotmail.fr" class="contact-value">delle.vedove@hotmail.fr</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-label">Exploitation</span>
+                  <span class="contact-value" style="color: var(--text-muted); cursor: default;">Domaine Brana</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Avertissement Légal Alcool Obligatoire -->
+  <aside class="legal-warning-strip" role="note" aria-label="Avertissement sanitaire">
+    L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+  </aside>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>DOMAINE BRANA</h4>
+          <p>Domaine viticole et château familial dédié au vin authentique et à la préservation du savoir-faire.</p>
+        </div>
+
+        <div>
+          <span class="editorial-label" style="margin-bottom: 0.75rem;">Navigation</span>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem; color: var(--text-muted);">
+            <li><a href="#accueil">Bandeau Principal</a></li>
+            <li><a href="#esprit">L'Esprit du Vin</a></li>
+            <li><a href="#vins">Accueil au Domaine</a></li>
+            <li><a href="#visite">Horaires &amp; Plan</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="editorial-label" style="margin-bottom: 0.75rem;">Rendez-vous</span>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Du lundi au samedi<br>
+            08h00–13h00 / 14h00–19h00<br>
+            <a href="tel:+33562697770" style="color: var(--gold-primary);">+33 5 62 69 77 70</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        <div>
+          Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
+        </div>
+        <div>
+          Photo : Grand Parc - Bordeaux, France from France (<a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge Fixe Obligatoire -->
+  <aside class="orbe-floating-badge" aria-label="Crédit de maquette">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- Logique JavaScript : Menu Mobile, Three.js & Scroll Reveal -->
+  <script>
+    (function() {
+      'use strict';
+
+      // 1. Menu Mobile
+      const menuBtn = document.getElementById('menuToggle');
+      const drawer = document.getElementById('mobileDrawer');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMenu() {
+        const isOpen = drawer.classList.toggle('is-open');
+        menuBtn.classList.toggle('is-active', isOpen);
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        drawer.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      if (menuBtn && drawer) {
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (drawer.classList.contains('is-open')) {
+              toggleMenu();
+            }
+          });
+        });
+      }
+
+      // 2. Animations au Défilement (IntersectionObserver)
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReduced && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15
+        });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+      } else {
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('is-visible'));
+      }
+
+      // 3. Scène 3D Abstraite Three.js (Teintes Vigne & Lie-de-Vin)
+      window.addEventListener('load', () => {
+        if (prefersReduced) return;
+        if (typeof window.THREE === 'undefined') return;
+
+        try {
+          const canvas = document.getElementById('heroCanvas');
+          if (!canvas) return;
+
+          const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: true,
+            powerPreference: 'high-performance'
+          });
+
+          // Limitation du ratio de pixels à 2 maximum
+          const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+          renderer.setPixelRatio(pixelRatio);
+
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+          camera.position.z = 7;
+
+          // Groupe de volumes abstraits évoquant les courbes de terrasses et la robe rubis
+          const clusterGroup = new THREE.Group();
+          scene.add(clusterGroup);
+
+          // Forme torique entrelacée noble
+          const torusGeo = new THREE.TorusKnotGeometry(1.8, 0.42, 120, 20, 2, 3);
+          const torusMat = new THREE.MeshStandardMaterial({
+            color: 0x5a1922,        // Lie de vin profond
+            roughness: 0.35,
+            metalness: 0.65,
+            wireframe: false
+          });
+          const mainMesh = new THREE.Mesh(torusGeo, torusMat);
+          clusterGroup.add(mainMesh);
+
+          // Anneaux fins en suspension dorée
+          const ringGeo = new THREE.TorusGeometry(3.1, 0.015, 16, 100);
+          const ringMat = new THREE.MeshBasicMaterial({
+            color: 0xcbb08c,
+            transparent: true,
+            opacity: 0.35
+          });
+          const ring1 = new THREE.Mesh(ringGeo, ringMat);
+          ring1.rotation.x = Math.PI / 3;
+          clusterGroup.add(ring1);
+
+          const ring2 = new THREE.Mesh(ringGeo, ringMat);
+          ring2.rotation.y = Math.PI / 4;
+          clusterGroup.add(ring2);
+
+          // Lumières douces et chaleureuses
+          const ambientLight = new THREE.AmbientLight(0xfff3e6, 0.7);
+          scene.add(ambientLight);
+
+          const pointLight1 = new THREE.PointLight(0xcbb08c, 2.2, 20);
+          pointLight1.position.set(4, 5, 4);
+          scene.add(pointLight1);
+
+          const pointLight2 = new THREE.PointLight(0x8f2738, 3.5, 20);
+          pointLight2.position.set(-5, -4, -2);
+          scene.add(pointLight2);
+
+          // Redimensionnement
+          function resizeRenderer() {
+            const hero = document.getElementById('accueil');
+            if (!hero) return;
+            const width = hero.clientWidth;
+            const height = hero.clientHeight;
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height, false);
+          }
+          resizeRenderer();
+          window.addEventListener('resize', resizeRenderer, { passive: true });
+
+          // Boucle d'animation avec contrôle d'onglet visible
+          let animationFrameId;
+          let isTabActive = true;
+
+          function render() {
+            if (isTabActive) {
+              // Rotation lente et contemplative
+              clusterGroup.rotation.y += 0.0018;
+              clusterGroup.rotation.x += 0.0009;
+              ring1.rotation.z += 0.0012;
+              ring2.rotation.z -= 0.0008;
+
+              renderer.render(scene, camera);
+            }
+            animationFrameId = requestAnimationFrame(render);
+          }
+
+          document.addEventListener('visibilitychange', () => {
+            isTabActive = !document.hidden;
+          });
+
+          render();
+        } catch (err) {
+          // En cas d'indisponibilité ou d'erreur Three.js, le fond dégradé CSS prend élégamment le relais
+          console.warn('Three.js n\'a pas pu être initialisé:', err);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
