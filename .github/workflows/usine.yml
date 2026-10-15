@@ -31,8 +31,12 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           NOMBRE: ${{ github.event.inputs.nombre || '15' }}
-        run: python usine.py
+        run: |
+          mkdir -p data
+          set -o pipefail
+          python usine.py 2>&1 | tee data/journal.txt
       - name: Mettre en ligne
+        if: always()
         run: |
           git config user.name "Usine ORBE"
           git config user.email "usine-orbe@users.noreply.github.com"
