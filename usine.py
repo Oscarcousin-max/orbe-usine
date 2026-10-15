@@ -102,7 +102,7 @@ def appel_http(url, data=None, headers=None, timeout=300):
         with urllib.request.urlopen(req, timeout=timeout) as r:
             return json.loads(r.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
-        corps = e.read().decode("utf-8", "ignore")[:300]
+        corps = " ".join(e.read().decode("utf-8", "ignore").split())[:150]  # une ligne, sinon le journal est illisible
         code = ("limite" if e.code == 429 else "cle" if e.code in (401, 403) else "modele" if e.code == 404
                 else "serveur" if e.code >= 500 else "demande")
         raise ErreurIA(code, "%s %s" % (e.code, corps))

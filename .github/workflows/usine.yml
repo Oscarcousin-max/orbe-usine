@@ -2,7 +2,7 @@ name: Usine à sites ORBE
 
 on:
   schedule:
-    - cron: "17 2 * * *"   # chaque nuit vers 4 h (heure de Paris)
+    - cron: "17 2 */2 * *"   # une nuit sur deux, vers 4 h (heure de Paris)
   workflow_dispatch:
     inputs:
       nombre:
