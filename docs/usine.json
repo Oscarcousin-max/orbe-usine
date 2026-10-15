@@ -1,6 +1,38 @@
 {
  "items": [
   {
+   "id": "agent-20261015-chateau-la-hitte",
+   "nom": "Château La Hitte",
+   "type": "domaines viticoles et châteaux familiaux",
+   "quartier": "",
+   "adresse": "",
+   "canal": "Email",
+   "contact": "chateau.la.hitte@gmail.com",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Ch%C3%A2teau%20La%20Hitte%20Bordeaux",
+   "objet": "Un site web dédié à Château La Hitte",
+   "message": "Bonjour,\nJ’ai remarqué que Château La Hitte fait partie des domaines viticoles familiaux, un vrai trésor de la région.\nJ’ai donc pris l’initiative de créer un site web sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/chateau-la-hitte/\nVous pourrez le mettre en ligne à votre nom, en y ajoutant vos propres photos et contenus.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et nous ne vous recontacterons pas.\nOscar · ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/chateau-la-hitte/",
+   "par": "gemini-3.7-flash",
+   "cree_le": "2026-10-15T20:33:36Z"
+  },
+  {
+   "id": "agent-20261015-marion-les-fleurs",
+   "nom": "Marion les fleurs",
+   "type": "fleuristes créateurs",
+   "quartier": "",
+   "adresse": "",
+   "canal": "Email",
+   "contact": "marionlesfleurs@yahoo.com",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Marion%20les%20fleurs%20Bordeaux",
+   "objet": "Un site dédié à Marion les fleurs",
+   "message": "Bonjour Marion,\nJ’ai découvert votre boutique « Marion les fleurs », fleuriste créateur, et j’ai pensé à vous.\nJ’ai donc préparé un site sur mesure que vous pouvez consulter ici : https://oscarcousin-max.github.io/orbe-usine/marion-les-fleurs/\nVous pourrez le mettre en ligne à votre nom, avec vos propres photos, si cela vous convient.\nSi vous préférez ne pas le retenir, il suffit de répondre « non merci » et je ne vous relancerai pas.\nAu plaisir d’échanger,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/marion-les-fleurs/",
+   "par": "gemini-3.7-flash",
+   "cree_le": "2026-10-15T20:40:17Z"
+  },
+  {
    "id": "agent-20261015-chateau-couteau",
    "nom": "Château Couteau",
    "type": "domaines viticoles et châteaux familiaux",
@@ -129,5 +161,5 @@
    "cree_le": "2026-10-15T18:37:57Z"
   }
  ],
- "maj": "2026-10-15T20:17:22Z"
+ "maj": "2026-10-15T20:40:17Z"
 }

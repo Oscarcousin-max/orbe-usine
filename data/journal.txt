@@ -1,35 +1,31 @@
-20:05:24 Carte : domaines viticoles et châteaux familiaux (Gironde + Landes) — 22 trouvés, 17 sans site et joignables
-20:05:24     modèles groq : openai/gpt-oss-120b, allam-2-7b, qwen/qwen3.8-27b, whisper-large-v3-turbo, whisper-large-v3, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-arabic-saudi, openai/gpt-oss-safeguard-20b, openai/gpt-oss-20b, meta-llama/llama-prompt-guard-2-86m
-20:05:31   16 retenus comme haut de gamme
-20:06:43     carte : HTTP Error 502: Bad Gateway (nouvel essai)
-20:06:59     carte : HTTP Error 502: Bad Gateway (nouvel essai)
-20:08:33 Carte : fleuristes créateurs (Gironde + Landes) — 48 trouvés, 45 sans site et joignables
-20:08:42   22 retenus comme haut de gamme
-20:10:06 Carte : bijoutiers, joailliers, horlogers (Gironde + Landes) — 34 trouvés, 27 sans site et joignables
-20:10:15   19 retenus comme haut de gamme
-20:10:15 57 candidats
-20:10:15 Commerce : Château Couteau
-20:10:15   fabrication du site…
-20:10:15     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
-20:10:15     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-20:10:16     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-20:11:49   prêt : https://oscarcousin-max.github.io/orbe-usine/chateau-couteau/
-20:11:49 Commerce : L'Atelier familial
-20:11:49   fabrication du site…
-20:11:49     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-20:11:49     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-20:11:51     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-20:12:31     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-20:13:16     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-20:13:17     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-20:13:17     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-20:13:17     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-20:13:17     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-20:15:32     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-20:15:58     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-20:16:02     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-20:16:02     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-20:16:50     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-20:16:51     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-20:17:22   prêt : https://oscarcousin-max.github.io/orbe-usine/l-atelier-familial/
-20:17:22 Terminé : 2 site(s) prêt(s).
+20:22:57     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+20:24:22     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+20:26:00 Carte : domaines viticoles et châteaux familiaux (Gironde + Landes) — 22 trouvés, 16 sans site et joignables
+20:26:00     modèles groq : openai/gpt-oss-20b, qwen/qwen3.8-27b, openai/gpt-oss-120b, allam-2-7b, canopylabs/orpheus-arabic-saudi, whisper-large-v3, openai/gpt-oss-safeguard-20b, meta-llama/llama-prompt-guard-2-86m, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-22m, whisper-large-v3-turbo
+20:26:08   14 retenus comme haut de gamme
+20:26:08     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+20:26:24     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+20:27:35     carte : HTTP Error 504: Gateway Timeout (nouvel essai)
+20:27:51     carte : HTTP Error 500: Internal Server Error (nouvel essai)
+20:27:51   fleuristes créateurs / Gironde : carte illisible (HTTP Error 500: Internal Server Error)
+20:29:07 Carte : fleuristes créateurs (Gironde + Landes) — 20 trouvés, 20 sans site et joignables
+20:29:15   16 retenus comme haut de gamme
+20:30:00     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+20:30:15     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+20:31:23 Carte : bijoutiers, joailliers, horlogers (Gironde + Landes) — 34 trouvés, 27 sans site et joignables
+20:31:32   19 retenus comme haut de gamme
+20:31:32 49 candidats
+20:31:32 Commerce : Château La Hitte
+20:31:33     2 photos d'illustration trouvées
+20:31:33   fabrication du site…
+20:31:33     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
+20:31:34     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+20:31:35     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
+20:33:36   prêt : https://oscarcousin-max.github.io/orbe-usine/chateau-la-hitte/
+20:33:36 Commerce : Marion les fleurs
+20:33:38     3 photos d'illustration trouvées
+20:33:38   fabrication du site…
+20:33:38     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+20:37:23     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
+20:40:17   prêt : https://oscarcousin-max.github.io/orbe-usine/marion-les-fleurs/
+20:40:17 Terminé : 2 site(s) prêt(s).
