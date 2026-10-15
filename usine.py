@@ -15,6 +15,7 @@ import sys
 import time
 import unicodedata
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -42,24 +43,26 @@ NAVIGATEUR = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.3
 DEPOT = os.environ.get("GITHUB_REPOSITORY", "moi/orbe-usine")
 BASE_SITE = os.environ.get("USINE_BASE", "https://%s.github.io/%s/" % (DEPOT.split("/")[0].lower(), DEPOT.split("/")[-1]))
 
+# Chaque secteur : le nom lisible, puis le filtre OpenStreetMap qui va le chercher.
 SECTEURS = [
-    "domaines viticoles et châteaux familiaux qui reçoivent à la propriété",
-    "caves à vin et bars à vin",
-    "restaurants bistronomiques ou gastronomiques indépendants",
-    "chambres d'hôtes et gîtes de charme",
-    "fleuristes créateurs",
-    "pâtissiers, chocolatiers, épiceries fines",
-    "artisans d'art (ébéniste, tapissier, ferronnier, céramiste, encadreur)",
-    "architectes d'intérieur, décorateurs, paysagistes",
-    "bijoutiers et joailliers créateurs, horlogers",
-    "instituts de beauté, barbiers et coiffeurs haut de gamme",
-    "traiteurs événementiels, chefs à domicile, photographes de mariage",
-    "conciergeries, location de bateaux ou de voitures de prestige, coachs sportifs privés",
+    ("domaines viticoles et châteaux familiaux", '["craft"="winery"]'),
+    ("caves à vin et bars à vin", '["shop"="wine"]'),
+    ("restaurants indépendants de qualité", '["amenity"="restaurant"]'),
+    ("chambres d'hôtes et gîtes de charme", '["tourism"~"^(guest_house|chalet|apartment)$"]'),
+    ("fleuristes créateurs", '["shop"="florist"]'),
+    ("pâtissiers, chocolatiers, épiceries fines", '["shop"~"^(chocolate|confectionery|pastry|deli|cheese|greengrocer)$"]'),
+    ("artisans d'art", '["craft"~"^(cabinet_maker|upholsterer|blacksmith|pottery|carpenter|stonemason|glaziery|sculptor|painter)$"]'),
+    ("décorateurs, antiquaires, galeries", '["shop"~"^(interior_decoration|antiques|art|furniture|frame)$"]'),
+    ("bijoutiers, joailliers, horlogers", '["shop"~"^(jewelry|watches)$"]'),
+    ("instituts de beauté et coiffeurs", '["shop"~"^(beauty|hairdresser)$"]'),
+    ("traiteurs et photographes", '["craft"~"^(caterer|photographer)$"]'),
+    ("boutiques de mode et maroquinerie", '["shop"~"^(boutique|clothes|bag|shoes|leather)$"]'),
 ]
-ZONE = ("Bordeaux (Chartrons, Triangle d'or, Saint-Seurin, Caudéran, Saint-Pierre, Le Bouscat), "
-        "Bassin d'Arcachon (Arcachon, Cap Ferret, Pyla, Andernos), Saint-Émilion et Libournais, Médoc, Entre-deux-Mers")
-PAS_UN_SITE = ("Instagram, Facebook, TikTok, LinkedIn, Google Maps, PagesJaunes, TripAdvisor, TheFork/LaFourchette, Booking, "
-               "Airbnb, Gîtes de France, Vivino, Planity, Treatwell, societe.com, Pappers, annuaires, articles de presse")
+# Bordeaux, Bassin d'Arcachon, Médoc, Libournais, Entre-deux-Mers.
+BBOX = os.environ.get("USINE_BBOX", "44.55,-1.35,45.15,0.05")
+OVERPASS = os.environ.get("USINE_OVERPASS", "https://overpass-api.de/api/interpreter")
+# Overpass refuse les faux navigateurs : il veut qu'un outil se présente comme tel.
+UA_OSM = "OrbeUsine/1.0 (https://github.com/%s; societe.orbe@gmail.com)" % DEPOT
 
 CONSIGNE_SITE = """Tu es directeur artistique et développeur d'une très bonne agence web. Tu crées le site vitrine d'un commerce haut de gamme, pour une clientèle aisée. Il doit avoir l'air conçu sur mesure pour CE commerce, jamais générique.
 FORMAT : un seul fichier HTML autonome (tout le CSS et le JS dedans). Seule ressource externe permise : Google Fonts. Entre 25 et 80 Ko.
@@ -97,10 +100,52 @@ def appel_http(url, data=None, headers=None, timeout=300):
             return json.loads(r.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         corps = e.read().decode("utf-8", "ignore")[:300]
-        code = "limite" if e.code == 429 else "cle" if e.code in (401, 403) else "serveur" if e.code >= 500 else "demande"
+        code = ("limite" if e.code == 429 else "cle" if e.code in (401, 403) else "modele" if e.code == 404
+                else "serveur" if e.code >= 500 else "demande")
         raise ErreurIA(code, "%s %s" % (e.code, corps))
     except Exception as e:  # réseau, délai dépassé
         raise ErreurIA("reseau", str(e)[:200])
+
+
+def overpass(filtre, limite=250):
+    """Demande à OpenStreetMap les commerces d'un secteur qui n'ont pas de site.
+
+    OpenStreetMap note pour chaque commerce son adresse, son téléphone et,
+    quand il en a un, son site internet. On garde donc ceux qui ont un
+    contact mais aucun site : ce sont de vrais commerces, pas des inventions.
+    """
+    contact = '[~"^(phone|contact:phone|email|contact:email|contact:instagram|contact:facebook)$"~"."]'
+    sans_site = '["name"][!"website"][!"contact:website"][!"brand"][!"brand:website"]'
+    q = "[out:json][timeout:180];nwr%s%s%s(%s);out tags center %d;" % (filtre, sans_site, contact, BBOX, limite)
+    req = urllib.request.Request(OVERPASS, data=urllib.parse.urlencode({"data": q}).encode(),
+                                 headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": UA_OSM})
+    with urllib.request.urlopen(req, timeout=240) as r:
+        return json.loads(r.read().decode("utf-8")).get("elements", [])
+
+
+def fiche_osm(e, secteur):
+    """Transforme une fiche OpenStreetMap brute en fiche de commerce lisible."""
+    t = e.get("tags", {})
+    rue = " ".join(x for x in (t.get("addr:housenumber"), t.get("addr:street")) if x)
+    ville = t.get("addr:city") or ""
+    adresse = ", ".join(x for x in (rue, " ".join(x for x in (t.get("addr:postcode"), ville) if x)) if x.strip())
+    details = [t.get(k) for k in ("cuisine", "craft", "shop", "tourism", "amenity", "description", "note")]
+    return {
+        "nom": t.get("name", ""),
+        "secteur": secteur,
+        "ville": ville,
+        "quartier": t.get("addr:suburb") or t.get("addr:place") or "",
+        "adresse": adresse,
+        "telephone": t.get("phone") or t.get("contact:phone") or "",
+        "email": t.get("email") or t.get("contact:email") or "",
+        "instagram": t.get("contact:instagram") or "",
+        "facebook": t.get("contact:facebook") or "",
+        "horaires": t.get("opening_hours") or "",
+        "specialites": ", ".join(x.replace(";", ", ") for x in details if x)[:200],
+        "ambiance": "",
+        "histoire": "",
+        "osm_url": "https://www.openstreetmap.org/%s/%s" % (e.get("type", "node"), e.get("id", "")),
+    }
 
 
 MODELES = {}
@@ -139,12 +184,17 @@ def classer(p, but=""):
     """
     liste = modeles(p)
     if p == "gemini":
-        flash = [n for n in liste if n.startswith("gemini-") and "flash" in n
-                 and not re.search(r"lite|image|tts|live|audio|embedding|8b|robotics|computer|thinking", n)]
-        flash = [n for n in flash if not re.search(r"preview|exp", n)] or flash
-        flash.sort(key=lambda n: (-version(n), len(n)))
+        def tri(noms):
+            noms = [n for n in noms if not re.search(r"preview|exp", n)] or noms
+            return sorted(noms, key=lambda n: (-version(n), len(n)))
+        interdits = r"image|tts|live|audio|embedding|8b|robotics|computer|thinking|transcribe"
+        flash = tri([n for n in liste if n.startswith("gemini-") and "flash" in n
+                     and "lite" not in n and not re.search(interdits, n)])
+        # Les « lite » sont les seuls à garder un palier gratuit : ils ferment la marche.
+        lite = tri([n for n in liste if n.startswith("gemini-") and "flash" in n
+                    and "lite" in n and not re.search(interdits, n)])
         pro = sorted([n for n in liste if re.fullmatch(r"gemini-[\d.]+-pro", n)], key=version, reverse=True)
-        return (pro + flash) if but == "fort" else flash
+        return (pro + flash + lite) if but == "fort" else (flash + lite)
     if p == "groq":
         utiles = [i for i in liste if not re.search(r"whisper|tts|guard|playai|orpheus|embed|distil|prompt|allam", i, re.I)]
         if but == "web":  # il faut un modèle qui sait vraiment chercher sur internet
@@ -192,7 +242,7 @@ def ia(chaine, systeme, texte):
         if not CLES.get(p) or (p, but) in EPUISE:
             continue
         try:
-            liste = list(dict.fromkeys(classer(p, but)))[:6]
+            liste = list(dict.fromkeys(classer(p, but)))[:8]
         except ErreurIA as e:
             derniere = e
             journal("    %s : liste des modèles refusée (%s)" % (p, e))
@@ -212,8 +262,9 @@ def ia(chaine, systeme, texte):
                 if e.code == "limite":
                     satures += 1  # pas de quota gratuit : on redescend d'un modèle
                     continue
-                if e.code in ("cle", "demande"):
-                    break  # clé ou requête en cause : les autres modèles échoueront pareil
+                if e.code in ("modele", "serveur", "vide", "reseau"):
+                    continue  # ce modèle-là est indisponible : au suivant
+                break  # clé refusée ou requête invalide : les autres modèles échoueront pareil
         if satures and satures == len(liste):
             EPUISE.add((p, but))  # tout le fournisseur est à sec pour aujourd'hui
     raise derniere or ErreurIA("aucune", "aucune IA disponible")
@@ -277,6 +328,47 @@ def slug_libre(nom):
     return s
 
 
+CONSIGNE_TRI = ("Tu aides un studio web à choisir ses prospects. On te donne une liste numérotée de commerces réels, "
+                "relevés sur une carte. Garde ceux qui ont l'air INDÉPENDANTS et plutôt HAUT DE GAMME, ou au moins "
+                "soignés et attachés à leur image. Écarte : les chaînes et franchises connues, les enseignes de "
+                "supermarché ou de centre commercial, les commerces bas de gamme, et tout ce qui ressemble à un nom "
+                "générique sans identité (« Coiffure », « Pizza 2000 »). Classe les meilleurs en premier. "
+                'Réponds uniquement en JSON : {"garder": [numéros]}')
+
+
+def trier_haut_de_gamme(fiches, secteur):
+    """Demande à une IA lesquels ont l'air haut de gamme. En cas d'échec, on garde tout."""
+    if len(fiches) <= 3:
+        return fiches
+    apercu = "\n".join("%d. %s — %s" % (i + 1, f["nom"], ", ".join(x for x in (f["quartier"], f["ville"]) if x) or "?")
+                       for i, f in enumerate(fiches[:60]))
+    try:
+        txt, _, _ = ia([("groq", "", False), ("gemini", "", False), ("or", "", False)], CONSIGNE_TRI,
+                       "Secteur : %s\n\n%s" % (secteur, apercu))
+        gardes = [fiches[n - 1] for n in lire_json(txt).get("garder", [])
+                  if isinstance(n, int) and 1 <= n <= min(60, len(fiches))]
+    except Exception as e:
+        journal("  tri impossible, on garde tout (%s)" % str(e)[:120])
+        return fiches
+    journal("  %d retenus comme haut de gamme" % len(gardes))
+    return gardes or fiches
+
+
+def entrelacer(fiches):
+    """Alterne les secteurs, pour ne pas sortir quinze fleuristes d'affilée."""
+    paquets = {}
+    for f in fiches:
+        paquets.setdefault(f["secteur"], []).append(f)
+    melange, restants = [], list(paquets.values())
+    while restants:
+        for p in list(restants):
+            if p:
+                melange.append(p.pop(0))
+            if not p:
+                restants.remove(p)
+    return melange
+
+
 def main():
     if not (CLES["gemini"] or CLES["groq"]):
         sys.exit("Il manque la clé GEMINI_API_KEY (ou GROQ_API_KEY) dans les secrets du dépôt.")
@@ -287,72 +379,45 @@ def main():
     noms = set(json.loads(NOMS.read_text("utf-8"))) if NOMS.exists() else set()
     noms |= {norm(x.get("nom")) for x in liste.get("items", [])}
     jour = datetime.now(timezone.utc).timetuple().tm_yday
-    secteurs = [SECTEURS[(jour + k) % 12] for k in (0, 4, 8)]
-    recherche = [("gemini", "", True), ("groq", "web", True)]
+    secteurs = [SECTEURS[(jour + k) % len(SECTEURS)] for k in (0, 4, 8)]
     nouveaux = []
 
-    # 1. Candidats
+    # 1. Candidats : de vrais commerces lus sur la carte OpenStreetMap.
     candidats = []
-    for sect in secteurs:
-        if len(candidats) >= NOMBRE * 2:
-            break
-        journal("Recherche : " + sect)
-        q = ("Cherche sur internet des commerces indépendants HAUT DE GAMME, secteur : %s, dans cette zone : %s. "
-             "Je veux UNIQUEMENT ceux qui n'ont PAS de site internet à eux (seulement %s). Exclus : chaînes, franchises, "
-             "professions réglementées (santé, avocats, notaires, immobilier), commerces fermés, et ces noms déjà vus : %s. "
-             "Donne jusqu'à %d commerces RÉELS trouvés dans tes résultats de recherche, jamais inventés, avec seulement des informations trouvées publiquement. "
-             'Réponds uniquement en JSON, sans texte autour : {"commerces": [{"nom": "", "secteur": "", "ville": "", "quartier": "", "adresse": "", '
-             '"telephone": "", "email": "", "instagram": "", "facebook": "", "horaires": "", "specialites": "", "ambiance": "", "histoire": "", '
-             '"source_url": "", "site_web": "url de son propre site si tu en as vu un, sinon vide"}]}') % (
-            sect, ZONE, PAS_UN_SITE, ", ".join(sorted(noms)[-150:]), min(10, NOMBRE))
+    for sect, filtre in secteurs:
+        journal("Carte : " + sect)
         try:
-            txt, src, _ = ia(recherche, "Tu es un assistant de prospection précis et honnête. Tu ne cites que des commerces réellement trouvés en ligne.", q)
-            for c in lire_json(txt).get("commerces", []):
-                if isinstance(c, dict) and c.get("nom") and not c.get("site_web") and norm(c["nom"]) not in noms:
-                    noms.add(norm(c["nom"]))
-                    c.setdefault("source_url", src[0] if src else "")
-                    candidats.append(c)
+            trouves = overpass(filtre)
         except Exception as e:
-            journal("  recherche impossible : %s" % e)
+            journal("  carte illisible : %s" % str(e)[:200])
+            continue
+        neufs = [fiche_osm(e, sect) for e in trouves]
+        neufs = [f for f in neufs if f["nom"] and norm(f["nom"]) not in noms and contact_de(f)]
+        vus = set()
+        neufs = [f for f in neufs if not (norm(f["nom"]) in vus or vus.add(norm(f["nom"])))]
+        journal("  %d sur la carte, %d sans site et joignables" % (len(trouves), len(neufs)))
+        candidats += trier_haut_de_gamme(neufs, sect)
+
+    # 2. Un commerce par secteur à tour de rôle, pour ne pas faire 15 fleuristes.
+    candidats = entrelacer(candidats)
     journal("%d candidats" % len(candidats))
 
-    # 2 à 4. Vérifier, fabriquer, écrire
-    for c in candidats:
+    # 3 et 4. Fabriquer le site, écrire le message
+    for fiche in candidats:
         if len(nouveaux) >= NOMBRE:
             break
-        nom = c["nom"]
-        journal("Vérification : " + nom)
-        try:
-            txt, src, _ = ia(recherche, "Tu vérifies des faits sur internet. Tu réponds honnêtement, et tu mets doute à true si tu n'es pas sûr.",
-                             ("Vérifie sur internet le commerce « %s » (%s). 1) A-t-il son PROPRE site internet (un domaine à lui, ou une page Wix, Squarespace, "
-                              "Google Sites ou Linktree menant à un vrai site) ? Ne comptent pas comme un site : %s. 2) Est-il toujours ouvert ? "
-                              "3) Relève son contact professionnel affiché publiquement par le commerce lui-même. Réponds uniquement en JSON : "
-                              '{"a_un_site": false, "site": "url ou vide", "ferme": false, "doute": false, "email": "", "telephone": "", "instagram": "", '
-                              '"facebook": "", "adresse": "", "horaires": "", "preuve": "une phrase simple sur ce que tu as trouvé à la place d\'un site", "source_url": ""}')
-                             % (nom, ", ".join(x for x in (c.get("adresse"), c.get("quartier"), c.get("ville")) if x), PAS_UN_SITE))
-            v = lire_json(txt)
-            if not v.get("source_url") and src:
-                v["source_url"] = src[0]
-        except Exception as e:
-            journal("  écarté (vérification impossible : %s)" % e)
+        nom = fiche["nom"]
+        if norm(nom) in noms:
             continue
-        if v.get("a_un_site") is True or v.get("site") or v.get("ferme") is True or v.get("doute") is True:
-            journal("  écarté (site, fermé ou pas sûr)")
-            continue
-        fiche = dict(c)
-        for k in ("email", "telephone", "instagram", "facebook", "adresse", "horaires"):
-            if v.get(k):
-                fiche[k] = v[k]
+        noms.add(norm(nom))
+        journal("Commerce : " + nom)
         ct = contact_de(fiche)
-        if not ct:
-            journal("  écarté (aucun contact public)")
-            continue
         faits = {k: fiche.get(k, "") for k in ("nom", "secteur", "ville", "quartier", "adresse", "telephone", "email", "instagram",
                                                "facebook", "horaires", "specialites", "ambiance", "histoire")}
         journal("  fabrication du site…")
         try:
             txt, _, modele = ia([("gemini", "fort", False), ("gemini", "", False), ("or", "coder", False), ("groq", "", False)],
-                                CONSIGNE_SITE, "Fiche du commerce (faits vérifiés : n'utilise rien d'autre) :\n" + json.dumps(faits, ensure_ascii=False, indent=1))
+                                CONSIGNE_SITE, "Fiche du commerce (faits relevés sur la carte OpenStreetMap : n'utilise rien d'autre) :\n" + json.dumps(faits, ensure_ascii=False, indent=1))
             html = finir_site(txt)
         except Exception as e:
             journal("  site impossible : %s" % e)
@@ -382,7 +447,10 @@ def main():
             "id": "agent-" + maintenant[:10].replace("-", "") + "-" + slug[:40],
             "nom": nom, "type": fiche.get("secteur", ""), "quartier": ", ".join(x for x in (fiche.get("quartier"), fiche.get("ville")) if x),
             "adresse": fiche.get("adresse", ""), "canal": ct[0], "contact": ct[1],
-            "preuve": str(v.get("preuve") or "")[:300], "preuve_url": v.get("source_url") or c.get("source_url") or "",
+            "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. "
+                      "Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+            "preuve_url": "https://www.google.com/search?q=" + urllib.parse.quote(
+                " ".join(x for x in (nom, fiche.get("ville") or "Bordeaux") if x)),
             "objet": str(m.get("objet") or ("Un site pour " + nom)) if ct[0] == "Email" else "",
             "message": msg.replace("{LIEN}", lien), "site_url": lien, "par": modele, "cree_le": maintenant,
         })
