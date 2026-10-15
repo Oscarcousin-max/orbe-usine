@@ -1,6 +1,38 @@
 {
  "items": [
   {
+   "id": "agent-20261015-chateau-couteau",
+   "nom": "Château Couteau",
+   "type": "domaines viticoles et châteaux familiaux",
+   "quartier": "Capian",
+   "adresse": "485 Couteau, 33550 Capian",
+   "canal": "Email",
+   "contact": "chateaucouteau@gmail.com",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Ch%C3%A2teau%20Couteau%20Capian",
+   "objet": "Votre nouveau site pour Château Couteau",
+   "message": "Bonjour,\nJ’ai découvert votre magnifique domaine viticole à Capian, situé au 485 Couteau.\nJ’ai pris l’initiative de créer un site sur mesure pour vous, que vous pouvez consulter ici : https://oscarcousin-max.github.io/orbe-usine/chateau-couteau/\nVous pourrez le mettre en ligne à votre nom, en y ajoutant vos propres photos et contenus quand vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et je ne vous relancerai pas.\nBien à vous,\nOscar · ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/chateau-couteau/",
+   "par": "gemini-3.7-flash",
+   "cree_le": "2026-10-15T20:11:49Z"
+  },
+  {
+   "id": "agent-20261015-l-atelier-familial",
+   "nom": "L'Atelier familial",
+   "type": "fleuristes créateurs",
+   "quartier": "",
+   "adresse": "",
+   "canal": "Email",
+   "contact": "latelierfamilial@live.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=L%27Atelier%20familial%20Bordeaux",
+   "objet": "Un petit site pour L'Atelier familial",
+   "message": "Bonjour,\nJ’ai découvert votre atelier « L'Atelier familial » et j’ai été séduit par votre travail de fleuriste créateur.\nJ’ai donc préparé un site web spécialement pour vous, à visualiser ici : https://oscarcousin-max.github.io/orbe-usine/l-atelier-familial/\nVous pourrez le publier à votre nom et y intégrer vos propres photos et descriptions.\nSi cela ne vous convient pas, répondez simplement « non merci » et je ne vous relancerai pas.\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/l-atelier-familial/",
+   "par": "gemini-3.5-flash-lite",
+   "cree_le": "2026-10-15T20:17:22Z"
+  },
+  {
    "id": "agent-20261015-chateau-haut-galouchey",
    "nom": "Château Haut-Galouchey",
    "type": "domaines viticoles et châteaux familiaux",
@@ -97,5 +129,5 @@
    "cree_le": "2026-10-15T18:37:57Z"
   }
  ],
- "maj": "2026-10-15T18:47:55Z"
+ "maj": "2026-10-15T20:17:22Z"
 }

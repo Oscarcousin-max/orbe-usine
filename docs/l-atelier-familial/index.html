@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>L'Atelier familial — Fleuristes créateurs</title>
+  <meta name="description" content="L'Atelier familial, fleuristes créateurs. Compositions florales sur mesure, art floral d'exception. Contactez-nous au 09 83 23 21 01.">
+  
+  <meta property="og:title" content="L'Atelier familial — Fleuristes créateurs">
+  <meta property="og:description" content="Compositions florales sur mesure et art floral d'exception.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 4C10 4 6 10 6 16c0 6 4 12 10 12s10-6 10-12c0-6-4-12-10-12z' fill='%28none' stroke='%23324133' stroke-width='2'/%3E%3Cpath d='M16 10c-3 3-4 6-4 6s3-1 6-4-2-2-2-2z' fill='%23637365'/%3E%3C/svg%3E">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "L'Atelier familial",
+    "telephone": "+33 9 83 23 21 01",
+    "email": "latelierfamilial@live.fr"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #F9F8F5;
+      --surface: #F2EFE9;
+      --primary: #2C352D;
+      --accent: #616F62;
+      --terracotta: #A66E58;
+      --text: #1F2420;
+      --text-light: #5A635C;
+      --line: #D9D3C7;
+      --white: #FFFFFF;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Utilitaires typographiques & mise en page */
+    h1, h2, h3, .serif {
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media(min-width: 768px) {
+      .container { padding: 0 3rem; }
+    }
+
+    /* En-tête fixe */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba(249, 248, 245, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media(min-width: 900px) {
+      .nav-links { display: flex; }
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--terracotta);
+    }
+
+    .nav-cta {
+      padding: 0.6rem 1.25rem;
+      background-color: var(--primary);
+      color: var(--white) !important;
+      border-radius: 2px;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    @media(min-width: 900px) {
+      .menu-toggle { display: none; }
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background-color: var(--primary);
+      transition: transform 0.3s;
+    }
+
+    /* Menu mobile */
+    .mobile-menu {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 80px);
+      background-color: var(--bg);
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 99;
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: 2rem;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    /* Hero section */
+    .hero {
+      padding-top: calc(80px + 4rem);
+      padding-bottom: 6rem;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media(min-width: 900px) {
+      .hero-grid { grid-template-columns: 1.2fr 0.8fr; gap: 4rem; }
+    }
+
+    .hero-content h1 {
+      font-size.clamp: 3rem;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1.1;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background-color: var(--primary);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      border-radius: 2px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    @media(min-width: 900px) {
+      .hero-visual { height: 520px; }
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      color: var(--accent);
+    }
+
+    /* Esprit de la maison */
+    .section-esprit {
+      padding: 7rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .esprit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media(min-width: 900px) {
+      .esprit-grid { grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .esprit-content h2 {
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      line-height: 1.2;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .esprit-content p {
+      color: var(--text-light);
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .esprit-visual {
+      width: 100%;
+      height: 380px;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media(min-width: 900px) {
+      .esprit-visual { height: 480px; }
+    }
+
+    /* Offre */
+    .section-offre {
+      padding: 7rem 0;
+      background-color: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .offre-header {
+      max-width: 600px;
+      margin-bottom: 4rem;
+    }
+
+    .offre-header h2 {
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .offre-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media(min-width: 768px) {
+      .offre-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .offre-card {
+      background-color: var(--bg);
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s;
+    }
+
+    .offre-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .offre-card h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .offre-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .offre-card span {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    /* Infos pratiques & Contact */
+    .section-contact {
+      padding: 7rem 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+    @media(min-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr 1fr; gap: 6rem; }
+    }
+
+    .contact-info h2 {
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info p {
+      color: var(--text-light);
+      margin-bottom: 2.5rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .info-value {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .info-value:hover {
+      color: var(--terracotta);
+    }
+
+    .map-box {
+      width: 100%;
+      height: 400px;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .map-box p {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Pied de page */
+    footer {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media(min-width: 900px) {
+      .footer-grid { grid-template-columns: 2fr 1fr; }
+    }
+
+    .footer-brand .brand-name {
+      color: var(--white);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 400px;
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer-meta a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+    }
+
+    .footer-meta a:hover {
+      color: var(--white);
+    }
+
+    /* Badge ORBE discret */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .orbe-badge:hover {
+      transform: scale(1.05);
+    }
+
+    /* Animations douces */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <svg class="brand-logo" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="19" cy="19" r="17" stroke="#2C352D" stroke-width="1.5"/>
+          <path d="M19 10C14 10 11 15 11 19C11 23 14 28 19 28C24 28 27 23 27 19C27 15 24 10 19 10Z" fill="#616F62" fill-opacity="0.2" stroke="#2C352D" stroke-width="1.5"/>
+          <path d="M19 14C17 16 16 18 16 19C16 21 17 22 19 24C21 22 22 21 22 19C22 18 21 16 19 14Z" fill="#A66E58"/>
+        </svg>
+        <span class="brand-name">L'Atelier familial</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#esprit">L'Esprit</a></li>
+        <li><a href="#offre">Créations</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Prendre contact</a></li>
+      </ul>
+
+      <button class="menu-toggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#esprit" class="mobile-link">L'Esprit</a>
+    <a href="#offre" class="mobile-link">Créations</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#contact" class="mobile-link" style="color: var(--terracotta);">Prendre contact</a>
+  </div>
+
+  <!-- Hero section -->
+  <main>
+    <section class="hero container">
+      <div class="hero-grid">
+        <div class="hero-content reveal">
+          <span class="section-tag">Fleuristes créateurs</span>
+          <h1>L'art floral pensé avec exigence et sensibilité.</h1>
+          <p>Bienvenue à L'Atelier familial. Nous façonnons les fleurs au rythme des saisons pour exprimer vos émotions avec un savoir-faire d'artisan.</p>
+          <a href="#contact" class="btn">
+            Nous joindre
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.333 8H12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 3.333L12.667 8 8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        
+        <div class="hero-visual reveal">
+          <!-- Illustration SVG sur mesure inspirée de la botanique -->
+          <svg width="140" height="200" viewBox="0 0 140 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M70 190V60" stroke="#616F62" stroke-width="1.5"/>
+            <path d="M70 120C50 120 35 105 35 90C35 75 50 75 70 95" stroke="#616F62" stroke-width="1.2" fill="#616F62" fill-opacity="0.1"/>
+            <path d="M70 95C90 95 105 80 105 65C105 50 90 50 70 70" stroke="#616F62" stroke-width="1.2" fill="#616F62" fill-opacity="0.1"/>
+            <circle cx="70" cy="50" r="12" fill="#A66E58" fill-opacity="0.8"/>
+            <circle cx="70" cy="50" r="4" fill="#F9F8F5"/>
+          </svg>
+          <div class="photo-placeholder">Vos photos ici</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Esprit de la maison -->
+    <section id="esprit" class="section-esprit">
+      <div class="container">
+        <div class="esprit-grid">
+          <div class="esprit-visual reveal">
+            <!-- Illustration botanique épurée -->
+            <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="80" cy="80" r="60" stroke="#D9D3C7" stroke-width="1"/>
+              <path d="M80 130C80 100 100 80 130 80" stroke="#A66E58" stroke-width="1.5"/>
+              <path d="M80 130C80 100 60 80 30 80" stroke="#A66E58" stroke-width="1.5"/>
+              <path d="M80 130C80 90 80 60 80 30" stroke="#616F62" stroke-width="1.5"/>
+            </svg>
+            <div class="photo-placeholder">Vos photos ici</div>
+          </div>
+          
+          <div class="esprit-content reveal">
+            <span class="section-tag">L'esprit de la maison</span>
+            <h2>Une approche sensible et sur mesure.</h2>
+            <p>La carte suit les saisons et chaque création florale est pensée comme une pièce unique. Notre exigence guide le choix de chaque tige pour révéler la beauté naturelle des végétaux.</p>
+            <p>À l'écoute de vos envies, nous concevons des compositions adaptées à tous vos moments de vie.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offre -->
+    <section id="offre" class="section-offre">
+      <div class="container">
+        <div class="offre-header reveal">
+          <span class="section-tag">Notre savoir-faire</span>
+          <h2>L'art floral sous toutes ses formes</h2>
+        </div>
+
+        <div class="offre-grid">
+          <div class="offre-card reveal">
+            <div>
+              <h3>Compositions sur mesure</h3>
+              <p>Des bouquets façonnés selon vos aspirations, assemblant les plus belles fleurs fraîches du moment.</p>
+            </div>
+            <span>Sur commande</span>
+          </div>
+
+          <div class="offre-card reveal">
+            <div>
+              <h3>Événements & Célébrations</h3>
+              <p>Une scénographie florale élégante et délicate pour habiller vos instants précieux et réceptions.</p>
+            </div>
+            <span>Sur rendez-vous</span>
+          </div>
+
+          <div class="offre-card reveal">
+            <div>
+              <h3>Abonnements floraux</h3>
+              <p>L'élégance végétale au rythme de vos espaces, pour les particuliers comme pour les professionnels.</p>
+            </div>
+            <span>Sur mesure</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infos & Contact -->
+    <section id="contact" class="section-contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <span class="section-tag">Informations & Contact</span>
+            <h2>Entrons en relation</h2>
+            <p>Pour toute demande de création florale, de commande personnalisée ou de renseignement, nous sommes à votre écoute.</p>
+
+            <ul class="info-list">
+              <li class="info-item">
+                <span class="info-label">Téléphone</span>
+                <a href="tel:+33983232101" class="info-value">+33 9 83 23 21 01</a>
+              </li>
+              <li class="info-item">
+                <span class="info-label">Courrier électronique</span>
+                <a href="mailto:latelierfamilial@live.fr" class="info-value">latelierfamilial@live.fr</a>
+              </li>
+            </ul>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=L'Atelier+familial+fleuriste" target="_blank" rel="noopener" class="btn">
+              Voir l'itinéraire
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.333 8H12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 3.333L12.667 8 8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <div class="map-box reveal">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <p>Retrouvez notre atelier et nos créations florales.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=L'Atelier+familial+fleuriste" target="_blank" rel="noopener" class="btn" style="background-color: var(--accent);">Ouvrir Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name">L'Atelier familial</span>
+          <p>Fleuristes créateurs. Art floral d'exception, compositions sur mesure.</p>
+        </div>
+        <div class="footer-meta">
+          <span>Contact direct : <a href="tel:+33983232101">+33 9 83 23 21 01</a></span>
+          <span>Email : <a href="mailto:latelierfamilial@live.fr">latelierfamilial@live.fr</a></span>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);">
+        <p>&copy; L'Atelier familial. Tous droits réservés.</p>
+        <p>Proposition de site réalisée par ORBE, studio digital &middot; societe.orbe@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge ORBE -->
+  <a href="mailto:societe.orbe@gmail.com" class="orbe-badge">Maquette proposée par ORBE</a>
+
+  <script>
+    // Menu mobile toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Apparition douce au défilement (IntersectionObserver)
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

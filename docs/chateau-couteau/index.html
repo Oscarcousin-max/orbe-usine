@@ -1,0 +1,1419 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Château Couteau — Domaine viticole familial à Capian</title>
+  <meta name="description" content="Château Couteau, domaine viticole familial situé à Capian (33550). Accueil, découverte des vins de la propriété et contact direct avec le domaine.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Château Couteau — Domaine viticole familial à Capian">
+  <meta property="og:description" content="Propriété viticole familiale au cœur des coteaux de Capian. Vins de la propriété et accueil sur rendez-vous.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG Data URI -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f080c'/%3E%3Cpath d='M16 6 L18 10 L14 10 Z' fill='%23c5a059'/%3E%3Ccircle cx='16' cy='14' r='2' fill='%23c5a059'/%3E%3Ccircle cx='13' cy='18' r='2' fill='%23c5a059'/%3E%3Ccircle cx='19' cy='18' r='2' fill='%23c5a059'/%3E%3Ccircle cx='16' cy='22' r='2' fill='%23c5a059'/%3E%3Ccircle cx='16' cy='25' r='1.3' fill='%23c5a059'/%3E%3C/svg%3E" type="image/svg+xml">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Winery",
+    "name": "Château Couteau",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "485 Couteau",
+      "addressLocality": "Capian",
+      "postalCode": "33550",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33620353627",
+    "email": "chateaucouteau@gmail.com",
+    "url": "https://www.chateau-couteau.fr",
+    "description": "Domaine viticole familial situé à Capian en Gironde."
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-burgundy-deep: #1a080d;
+      --color-burgundy-soft: #2d1017;
+      --color-gold-muted: #c5a059;
+      --color-gold-light: #dfc282;
+      --color-sand: #f5f1eb;
+      --color-sand-tint: #eae3d6;
+      --color-charcoal: #23201e;
+      --color-text-muted: #6e6761;
+      --color-border: rgba(197, 160, 89, 0.28);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --space-unit: clamp(1rem, 2.5vw, 2rem);
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-sand);
+      color: var(--color-charcoal);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Accessibility focus */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--color-gold-muted);
+      outline-offset: 4px;
+    }
+
+    /* Typography */
+    h1, h2, h3, .brand-font {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-weight: 300;
+      color: var(--color-charcoal);
+      max-width: 62ch;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(26, 8, 13, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(223, 194, 130, 0.15);
+      transition: transform 0.4s ease, background 0.3s ease;
+    }
+
+    .header-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      color: #fff;
+    }
+
+    .brand-svg {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-title span {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      font-family: var(--font-sans);
+      color: var(--color-gold-light);
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* Navigation */
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-gold-muted);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-block;
+      padding: 0.65rem 1.4rem;
+      border: 1px solid var(--color-gold-muted);
+      color: var(--color-gold-light) !important;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--color-gold-muted);
+      color: var(--color-burgundy-deep) !important;
+    }
+
+    .burger-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--color-gold-light);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      background: radial-gradient(circle at 75% 25%, rgba(66, 21, 33, 0.85) 0%, rgba(26, 8, 13, 0.98) 70%),
+                  radial-gradient(circle at 15% 85%, rgba(197, 160, 89, 0.12) 0%, transparent 50%),
+                  #1a080d;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 5rem;
+      overflow: hidden;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: radial-gradient(#ffffff 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: clamp(3rem, 8vw, 7rem) 1.5rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--color-gold-light);
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 5.8vw, 5.4rem);
+      line-height: 1.05;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--color-gold-light);
+      font-weight: 300;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--color-gold-muted);
+      color: var(--color-burgundy-deep);
+      padding: 0.95rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid var(--color-gold-muted);
+      transition: all 0.35s var(--transition-smooth);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: #fff;
+      padding: 0.95rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.35s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-gold-light);
+      color: var(--color-gold-light);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(223, 194, 130, 0.25);
+      padding: 2.8rem 2.2rem;
+      position: relative;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 1px solid rgba(223, 194, 130, 0.12);
+      pointer-events: none;
+    }
+
+    .hero-card-badge {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--color-gold-light);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .hero-card h3 {
+      font-size: 1.85rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero-card p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-details-list {
+      list-style: none;
+      border-top: 1px solid rgba(223, 194, 130, 0.2);
+      padding-top: 1.2rem;
+      margin-top: 1.2rem;
+    }
+
+    .hero-details-list li {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-details-list li svg {
+      width: 14px;
+      height: 14px;
+      color: var(--color-gold-light);
+      flex-shrink: 0;
+    }
+
+    /* Section Foundations */
+    section {
+      padding: clamp(4rem, 7vw, 7.5rem) 1.5rem;
+      position: relative;
+    }
+
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-gold-muted);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-heading {
+      font-size: clamp(2.1rem, 3.8vw, 3.4rem);
+      color: var(--color-burgundy-deep);
+      line-height: 1.15;
+      margin-bottom: 1.8rem;
+      max-width: 24ch;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--color-gold-muted);
+      margin-bottom: 2.2rem;
+    }
+
+    /* Esprit Maison Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.4rem;
+      color: #3b3532;
+    }
+
+    .about-quote {
+      border-left: 2px solid var(--color-gold-muted);
+      padding-left: 1.5rem;
+      margin-top: 2rem;
+      font-style: italic;
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--color-burgundy-soft);
+      line-height: 1.45;
+    }
+
+    /* Photo Frame Elegant CSS Placeholder */
+    .photo-frame {
+      position: relative;
+      background: #dfd7cc;
+      aspect-ratio: 4/5;
+      width: 100%;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(26, 8, 13, 0.08);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+    }
+
+    .photo-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, rgba(245, 241, 235, 0.4) 0%, rgba(45, 16, 23, 0.08) 100%);
+      pointer-events: none;
+    }
+
+    .photo-frame-inner {
+      border: 1px dashed rgba(197, 160, 89, 0.55);
+      position: absolute;
+      inset: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(245, 241, 235, 0.5);
+    }
+
+    .photo-frame svg {
+      width: 36px;
+      height: 36px;
+      color: var(--color-gold-muted);
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+
+    .photo-placeholder-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-burgundy-soft);
+      font-family: var(--font-sans);
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+    }
+
+    .photo-placeholder-sub {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    /* Offre du domaine */
+    .section-offer {
+      background-color: #f0ebe2;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .card {
+      background: #faf7f2;
+      padding: 2.4rem 2rem;
+      border: 1px solid rgba(197, 160, 89, 0.22);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(45, 16, 23, 0.07);
+      border-color: var(--color-gold-muted);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.8rem;
+      color: var(--color-gold-muted);
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      color: var(--color-burgundy-deep);
+      margin-bottom: 0.9rem;
+      line-height: 1.25;
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #554e48;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-meta {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gold-muted);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Section Visite & Capian */
+    .terroir-showcase {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .features-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .features-list li {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .feature-bullet {
+      width: 8px;
+      height: 8px;
+      background: var(--color-gold-muted);
+      border-radius: 50%;
+      margin-top: 0.55rem;
+      flex-shrink: 0;
+    }
+
+    .feature-content h4 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--color-burgundy-deep);
+      margin-bottom: 0.2rem;
+    }
+
+    .feature-content p {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Infos Pratiques & Contact */
+    .section-contact {
+      background: var(--color-burgundy-deep);
+      color: #fff;
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      margin-top: 3rem;
+    }
+
+    .contact-panel {
+      border: 1px solid rgba(223, 194, 130, 0.25);
+      padding: clamp(2rem, 4vw, 3rem);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .contact-title {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .contact-icon {
+      width: 22px;
+      height: 22px;
+      color: var(--color-gold-light);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .contact-value {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.5;
+    }
+
+    .contact-value a:hover {
+      color: var(--color-gold-light);
+    }
+
+    .action-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn-itineraire {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--color-gold-muted);
+      color: var(--color-burgundy-deep);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.6rem;
+      border: 1px solid var(--color-gold-muted);
+      transition: all 0.3s ease;
+    }
+
+    .btn-itineraire:hover {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .form-wrap {
+      background: rgba(255, 255, 255, 0.04);
+      padding: clamp(2rem, 4vw, 3rem);
+      border: 1px solid rgba(223, 194, 130, 0.2);
+    }
+
+    .form-row {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(223, 194, 130, 0.25);
+      padding: 0.85rem 1rem;
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-gold-light);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: transparent;
+      color: var(--color-gold-light);
+      border: 1px solid var(--color-gold-light);
+      padding: 0.9rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background: var(--color-gold-light);
+      color: var(--color-burgundy-deep);
+    }
+
+    /* Avertissement Alcool */
+    .alcohol-warning {
+      background-color: #120508;
+      color: #9c8e85;
+      text-align: center;
+      padding: 1.2rem 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(197, 160, 89, 0.15);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #140508;
+      color: #a4978d;
+      padding: 3.5rem 1.5rem 2.5rem;
+      font-size: 0.85rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: #8c8077;
+      max-width: 34ch;
+      line-height: 1.6;
+    }
+
+    .footer-col h5 {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-gold-light);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: #7a6f67;
+    }
+
+    .footer-bottom a {
+      color: #a4978d;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--color-gold-light);
+    }
+
+    /* Badge ORBE fixe */
+    .orbe-badge {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 999;
+      background: rgba(26, 8, 13, 0.9);
+      border: 1px solid rgba(223, 194, 130, 0.35);
+      color: var(--color-gold-light);
+      padding: 0.45rem 0.85rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      pointer-events: auto;
+    }
+
+    .orbe-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-gold-muted);
+      display: inline-block;
+    }
+
+    .orbe-badge:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    /* Responsive Mobile Menu */
+    @media (max-width: 992px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-top: 3rem;
+      }
+      .about-grid, .contact-grid, .terroir-showcase {
+        grid-template-columns: 1fr;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .burger-btn {
+        display: block;
+      }
+      .nav-menu {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 8, 13, 0.98);
+        flex-direction: column;
+        padding: 2.5rem 1.5rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(223, 194, 130, 0.2);
+        transform: translateY(-120%);
+        transition: transform 0.4s var(--transition-smooth);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      }
+      .nav-menu.is-open {
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    }
+
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête fixe -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="#accueil" class="brand-mark" aria-label="Château Couteau - Retour à l'accueil">
+        <!-- Monogramme CC SVG dessiné sur mesure -->
+        <svg class="brand-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="47" stroke="#c5a059" stroke-width="1.5" stroke-dasharray="2 3"/>
+          <circle cx="50" cy="50" r="43" stroke="#dfc282" stroke-width="0.75"/>
+          <!-- Première lettre C stylisée vigne -->
+          <path d="M48 35 C38 35 30 42 30 50 C30 58 38 65 48 65 C52 65 55 63 57 60" stroke="#dfc282" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- Seconde lettre C enlacée -->
+          <path d="M62 38 C56 38 48 44 48 50 C48 56 56 62 64 62 C68 62 71 59 72 57" stroke="#c5a059" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Baie de vigne au cœur -->
+          <circle cx="50" cy="27" r="2.5" fill="#c5a059"/>
+          <circle cx="47" cy="30" r="2" fill="#c5a059"/>
+          <circle cx="53" cy="30" r="2" fill="#c5a059"/>
+          <path d="M50 22 L50 27" stroke="#c5a059" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-title">
+          Château Couteau
+          <span>Capian · Domaine Viticole</span>
+        </div>
+      </a>
+
+      <button class="burger-btn" id="burgerToggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+      </button>
+
+      <nav aria-label="Navigation principale">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#esprit" class="nav-link">L'Esprit</a></li>
+          <li><a href="#offre" class="nav-link">Le Domaine</a></li>
+          <li><a href="#visites" class="nav-link">Visite &amp; Terroir</a></li>
+          <li><a href="#pratique" class="nav-link">Accès</a></li>
+          <li><a href="#contact" class="nav-cta">Prendre Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Grand bandeau d'accueil -->
+    <section class="hero" id="accueil">
+      <div class="hero-pattern"></div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="hero-eyebrow">Domaine viticole familial · Gironde</span>
+          <h1 class="hero-title">L’attachement au terroir de <em>Capian</em>.</h1>
+          <p class="hero-lead">
+            Au lieu-dit Couteau, le Château Couteau perpétue la vocation viticole d’un domaine familial où chaque saison façonne le travail de la vigne et l’élaboration des vins de la propriété.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">
+              Prendre contact
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#pratique" class="btn-secondary">
+              Venir au domaine
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <span class="hero-card-badge">Accueil &amp; Propriété</span>
+          <h3>Château Couteau</h3>
+          <p>
+            Vignoble familial situé dans le département de la Gironde, à Capian. Nous vous accueillons sur rendez-vous pour échanger autour de notre production et partager l'esprit de notre domaine.
+          </p>
+          <ul class="hero-details-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>485 Couteau, 33550 Capian</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+33 6 20 35 36 27</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>Visites et dégustations : sur rendez-vous</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'esprit de la maison -->
+    <section class="section-wrap" id="esprit">
+      <div class="fade-in">
+        <span class="section-kicker">La Vocation Viticole</span>
+        <h2 class="section-heading">Une propriété viticole ancrée dans les coteaux de Gironde</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p>
+            Implanté à Capian, au cœur d’un paysage vallonné caractéristique des terres bordelaises, le <strong>Château Couteau</strong> s’inscrit dans la lignée des châteaux familiaux attentifs à préserver la sincérité de leur outil de travail.
+          </p>
+          <p>
+            Ici, le quotidien suit le rythme des ceps et des saisons : le débourrement printanier, les soins minutieux apportés au feuillage durant l'été, l'attente patiente de la juste maturité des raisins, puis les vendanges et les vinifications au chai.
+          </p>
+          <div class="about-quote">
+            « Respecter la nature du raisin et laisser parler le terroir de Capian à chaque millésime. »
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <!-- Emplacement photo réservé 1 -->
+          <div class="photo-frame">
+            <div class="photo-frame-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <div class="photo-placeholder-label">Vos photos ici</div>
+              <div class="photo-placeholder-sub">Le vignoble et les bâtiments du domaine</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'offre du domaine -->
+    <section class="section-offer" id="offre">
+      <div class="section-wrap">
+        <div class="fade-in">
+          <span class="section-kicker">L'Offre du Domaine</span>
+          <h2 class="section-heading">L'expérience viticole au Château Couteau</h2>
+          <div class="section-divider"></div>
+          <p>
+            Château familial et exploitation viticole, nous proposons nos vins et accueillons les amateurs curieux d’en savoir plus sur nos méthodes et notre production.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="card fade-in">
+            <div>
+              <div class="card-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                  <path d="M8 22h8"></path>
+                  <path d="M12 11v11"></path>
+                  <path d="M17 3H7c0 4.5 2.5 8 5 8s5-3.5 5-8z"></path>
+                </svg>
+              </div>
+              <h3 class="card-title">Vins de la Propriété</h3>
+              <p class="card-desc">
+                Découverte et acquisition des vins élaborés au château. Les cuvées reflètent le caractère de nos parcelles et l'exigence d'une production suivie avec soin de la taille à la mise en bouteille.
+              </p>
+            </div>
+            <span class="card-meta">Vente directe au domaine</span>
+          </div>
+
+          <div class="card fade-in">
+            <div>
+              <div class="card-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <h3 class="card-title">Accueil &amp; Rencontre</h3>
+              <p class="card-desc">
+                Parce qu'un vin s'apprécie d'autant mieux lorsqu'il est partagé par ceux qui le façonnent, nous recevons particuliers et passionnés sur rendez-vous préalable pour une présentation du domaine.
+              </p>
+            </div>
+            <span class="card-meta">Sur réservation</span>
+          </div>
+
+          <div class="card fade-in">
+            <div>
+              <div class="card-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <h3 class="card-title">Au Rythme des Saisons</h3>
+              <p class="card-desc">
+                La vie de l'exploitation s'accorde aux travaux du vignoble et du chai. Les disponibilités d'accueil s'organisent en fonction des temps forts du travail de la vigne.
+              </p>
+            </div>
+            <span class="card-meta">Contact direct</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visites & Terroir -->
+    <section class="section-wrap" id="visites">
+      <div class="terroir-showcase">
+        <div class="fade-in">
+          <!-- Emplacement photo réservé 2 -->
+          <div class="photo-frame" style="aspect-ratio: 1/1;">
+            <div class="photo-frame-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                <path d="M12 2a10 10 0 0 0-7.5 16.6l.5.5V22h14v-2.9l.5-.5A10 10 0 0 0 12 2z"></path>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <div class="photo-placeholder-label">Vos photos ici</div>
+              <div class="photo-placeholder-sub">Le chai, les fûts et la dégustation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <span class="section-kicker">Capian · Entre-deux-Mers</span>
+          <h2 class="section-heading">Venir découvrir le vignoble</h2>
+          <div class="section-divider"></div>
+          <p>
+            La commune de Capian déploie ses coteaux vallonnés propices à la culture de la vigne. À quelques encablures des grands axes girondins, Château Couteau offre une parenthèse authentique à l'écart de l'agitation.
+          </p>
+
+          <ul class="features-list">
+            <li>
+              <span class="feature-bullet"></span>
+              <div class="feature-content">
+                <h4>Domaine familial à taille humaine</h4>
+                <p>Un échange direct et sans intermédiaire avec les acteurs du domaine viticole.</p>
+              </div>
+            </li>
+            <li>
+              <span class="feature-bullet"></span>
+              <div class="feature-content">
+                <h4>Accès facile depuis la Gironde</h4>
+                <p>Situé au 485 Couteau à Capian, accessible pour les visiteurs désireux d'approvisionner leur cave.</p>
+              </div>
+            </li>
+            <li>
+              <span class="feature-bullet"></span>
+              <div class="feature-content">
+                <h4>Disponibilité par téléphone et courriel</h4>
+                <p>N'hésitez pas à nous prévenir avant votre venue afin de convenir du meilleur créneau.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infos Pratiques & Contact -->
+    <section class="section-contact" id="pratique">
+      <div class="section-wrap">
+        <div class="fade-in">
+          <span class="section-kicker" style="color: var(--color-gold-light);">Informations &amp; Échanges</span>
+          <h2 class="section-heading" style="color: #fff;">Nous contacter &amp; Préparer votre venue</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Coordonnées -->
+          <div class="contact-panel fade-in">
+            <h3 class="contact-title">Château Couteau</h3>
+
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <span class="contact-label">Adresse de la propriété</span>
+                <div class="contact-value">
+                  485 Couteau<br>
+                  33550 Capian<br>
+                  Gironde, France
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <div>
+                <span class="contact-label">Téléphone</span>
+                <div class="contact-value">
+                  <a href="tel:+33620353627">+33 6 20 35 36 27</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div>
+                <span class="contact-label">Courrier électronique</span>
+                <div class="contact-value">
+                  <a href="mailto:chateaucouteau@gmail.com">chateaucouteau@gmail.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div>
+                <span class="contact-label">Horaires d'accueil</span>
+                <div class="contact-value">
+                  Accueil et commandes sur rendez-vous. Merci de nous contacter préalablement.
+                </div>
+              </div>
+            </div>
+
+            <div class="action-links">
+              <a href="https://www.google.com/maps/search/?api=1&query=485%20Couteau%2C%2033550%20Capian" target="_blank" rel="noopener noreferrer" class="btn-itineraire">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                Itinéraire Google Maps
+              </a>
+            </div>
+          </div>
+
+          <!-- Formulaire de contact direct -->
+          <div class="form-wrap fade-in" id="contact">
+            <h3 class="contact-title">Écrire au domaine</h3>
+            <form action="mailto:chateaucouteau@gmail.com" method="post" enctype="text/plain">
+              <div class="form-row">
+                <label for="form-name" class="form-label">Votre nom complet</label>
+                <input type="text" id="form-name" name="nom" class="form-input" placeholder="M. ou Mme..." required>
+              </div>
+              <div class="form-row">
+                <label for="form-email" class="form-label">Votre adresse email</label>
+                <input type="email" id="form-email" name="email" class="form-input" placeholder="exemple@domaine.fr" required>
+              </div>
+              <div class="form-row">
+                <label for="form-message" class="form-label">Votre demande (visite, commande, information)</label>
+                <textarea id="form-message" name="message" class="form-textarea" placeholder="Indiquez l'objet de votre démarche..." required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Transmettre votre message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Avertissement légal sur l'alcool -->
+  <aside class="alcohol-warning" aria-label="Avertissement sanitaire">
+    L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+  </aside>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand-title">Château Couteau</div>
+        <p class="footer-tagline">
+          Domaine viticole et château familial situé au 485 Couteau, 33550 Capian.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul class="footer-links">
+          <li><a href="#esprit">L'Esprit de la Maison</a></li>
+          <li><a href="#offre">L'Offre du Domaine</a></li>
+          <li><a href="#visites">Visite &amp; Terroir</a></li>
+          <li><a href="#pratique">Plan d'Accès</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Liaison Directe</h5>
+        <ul class="footer-links">
+          <li><a href="tel:+33620353627">+33 6 20 35 36 27</a></li>
+          <li><a href="mailto:chateaucouteau@gmail.com">chateaucouteau@gmail.com</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=485%20Couteau%2C%2033550%20Capian" target="_blank" rel="noopener noreferrer">Capian, Gironde</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        &copy; <span id="yearSpan"></span> Château Couteau. Tous droits réservés.
+      </div>
+      <div>
+        Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge fixe ORBE -->
+  <aside class="orbe-badge" aria-label="Identification maquette">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- Scripts JavaScript sobres et sécurisés -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Année dynamique footer
+      const yearSpan = document.getElementById('yearSpan');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+
+      // Menu mobile toggle
+      const burgerToggle = document.getElementById('burgerToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      if (burgerToggle && navMenu) {
+        burgerToggle.addEventListener('click', () => {
+          const isExpanded = burgerToggle.getAttribute('aria-expanded') === 'true';
+          burgerToggle.setAttribute('aria-expanded', !isExpanded);
+          navMenu.classList.toggle('is-open');
+        });
+
+        // Fermeture automatique au clic sur un lien
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            burgerToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('is-open');
+          });
+        });
+      }
+
+      // Intersection Observer pour les apparitions douces
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+      } else {
+        document.querySelectorAll('.fade-in').forEach(el => el.classList.add('is-visible'));
+      }
+    });
+  </script>
+</body>
+</html>
