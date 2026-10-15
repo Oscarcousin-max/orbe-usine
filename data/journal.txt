@@ -1,37 +1,94 @@
-18:09:39 Recherche : domaines viticoles et châteaux familiaux qui reçoivent à la propriété
-18:09:40     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
-18:09:40     gemini/gemini-3.8-flash : 429 {
+18:10:53 Recherche : domaines viticoles et châteaux familiaux qui reçoivent à la propriété
+18:10:54     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
+18:10:54     gemini/gemini-3.8-flash : 429 {
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
     "stat
-18:09:40     gemini/gemini-3.7-flash : 429 {
+18:10:54     gemini/gemini-3.7-flash : 429 {
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
     "stat
-18:09:40     gemini/gemini-3.6-flash : 429 {
+18:10:54     gemini/gemini-3.6-flash : 429 {
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
     "stat
-18:09:40     gemini/gemini-3.5-flash : 429 {
+18:10:54     gemini/gemini-3.5-flash : 429 {
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
     "stat
-18:09:40     modèles groq : allam-2-7b, meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-safeguard-20b, openai/gpt-oss-120b, canopylabs/orpheus-arabic-saudi, meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-v1-english, openai/gpt-oss-20b, whisper-large-v3-turbo, qwen/qwen3.8-27b, whisper-large-v3
-18:09:40     groq : aucun modèle qui convient
-18:09:40   recherche impossible : 429 {
+18:10:54     gemini/gemini-2.5-flash : 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs
+18:10:54     modèles groq : openai/gpt-oss-120b, canopylabs/orpheus-v1-english, openai/gpt-oss-safeguard-20b, allam-2-7b, whisper-large-v3-turbo, openai/gpt-oss-20b, whisper-large-v3, meta-llama/llama-prompt-guard-2-86m, meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-arabic-saudi, qwen/qwen3.8-27b
+18:10:54     groq : aucun modèle qui convient
+18:10:54   recherche impossible : 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs
+18:10:54 Recherche : fleuristes créateurs
+18:10:55     gemini/gemini-3.8-flash : 429 {
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
     "stat
-18:09:40 Recherche : fleuristes créateurs
-18:09:40     groq : aucun modèle qui convient
-18:09:40   recherche impossible : aucune IA disponible
-18:09:40 Recherche : bijoutiers et joailliers créateurs, horlogers
-18:09:40     groq : aucun modèle qui convient
-18:09:40   recherche impossible : aucune IA disponible
-18:09:40 0 candidats
-18:09:40 Terminé : 0 site(s) prêt(s).
+18:10:55     gemini/gemini-3.7-flash : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:10:55     gemini/gemini-3.6-flash : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:10:55     gemini/gemini-3.5-flash : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:10:55     gemini/gemini-2.5-flash : 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs
+18:10:55     groq : aucun modèle qui convient
+18:10:55   recherche impossible : 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs
+18:10:55 Recherche : bijoutiers et joailliers créateurs, horlogers
+18:10:55     gemini/gemini-3.8-flash : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:10:55     gemini/gemini-3.7-flash : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:10:55     gemini/gemini-3.6-flash : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:10:56     gemini/gemini-3.5-flash : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:10:56     gemini/gemini-2.5-flash : 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs
+18:10:56     groq : aucun modèle qui convient
+18:10:56   recherche impossible : 404 {
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs
+18:10:56 0 candidats
+18:10:56 Terminé : 0 site(s) prêt(s).
