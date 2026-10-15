@@ -1,31 +1,30 @@
-=== GEMINI ===
-gemini-3.8-flash           sans recherche : HTTP 503 : {   "error": {     "code": 503,     "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",     "status": "UNAVAILABLE"   } } 
-gemini-3.1-flash-lite      sans recherche : OK : bonjour
-gemini-3.5-flash-lite      sans recherche : OK : bonjour
-gemini-flash-latest        sans recherche : HTTP 503 : {   "error": {     "code": 503,     "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",     "status": "UNAVAILABLE"   } } 
-gemini-3.8-flash           AVEC recherche  : HTTP 429 : {   "error": {     "code": 429,     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.
-gemini-3.1-flash-lite      AVEC recherche  : HTTP 429 : {   "error": {     "code": 429,     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.
-gemini-flash-latest        AVEC recherche  : HTTP 429 : {   "error": {     "code": 429,     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.
+=== Quelle façon d'appeler Overpass passe ? ===
+overpass-api.de | POST-form | UA outil     OK — 5 fleuristes (Bresttes Fleurs)
+overpass-api.de | POST-form | UA navigateur HTTP 406 <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Accept
+overpass-api.de | POST-form | UA aucun     HTTP 406 <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Accept
+overpass-api.de | GET | UA outil           HTTP 502 # 502 Gateway Timeout  This Overpass API server is currently at capacity. All query worker
+overpass-api.de | GET | UA navigateur      HTTP 406 <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Accept
+overpass-api.de | GET | UA aucun           HTTP 406 <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Accept
+overpass-api.de | POST-brut | UA outil     OK — 5 fleuristes (Bresttes Fleurs)
+overpass-api.de | POST-brut | UA navigateur HTTP 406 <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Accept
+overpass-api.de | POST-brut | UA aucun     HTTP 406 <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Accept
+kumi.systems | POST-form | UA outil        HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+kumi.systems | POST-form | UA navigateur   HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+kumi.systems | POST-form | UA aucun        HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+kumi.systems | GET | UA outil              OK — 5 fleuristes (Bresttes Fleurs)
+kumi.systems | GET | UA navigateur         HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+kumi.systems | GET | UA aucun              HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+kumi.systems | POST-brut | UA outil        HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+kumi.systems | POST-brut | UA navigateur   HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+kumi.systems | POST-brut | UA aucun        HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+private.coffee | POST-form | UA outil      HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+private.coffee | POST-form | UA navigateur HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+private.coffee | POST-form | UA aucun      OK — 5 fleuristes (Bresttes Fleurs)
+private.coffee | GET | UA outil            HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+private.coffee | GET | UA navigateur       HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+private.coffee | GET | UA aucun            HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+private.coffee | POST-brut | UA outil      HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+private.coffee | POST-brut | UA navigateur HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+private.coffee | POST-brut | UA aucun      HTTP 500 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
-=== GROQ ===
-openai/gpt-oss-120b        : OK : bonjour
-qwen/qwen3.8-27b           : OK : bonjour
-
-=== OPENROUTER ===
-modèles gratuits (15) : nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, liquid/lfm-2.5-2.6b:free, nvidia/nemotron-3.5-lightning:free, thinkingmachines/inkling-small:free, poolside/laguna-s-2.1:free, thinkingmachines/inkling:free, poolside/laguna-xs-2.1:free, cohere/north-mini-code:free, nvidia/nemotron-3.5-content-safety:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free, nvidia/nemotron-3-super-120b-a12b:free
-nvidia/nemotron-3.5-super-vl:free        : OK : bonjour
-dots-studio/dots-3-note-preview:free     : OK : Bonjour
-liquid/lfm-2.5-2.6b:free                 : OK : Bonjour
-nvidia/nemotron-3.5-lightning:free       : OK : bonjour
-
-=== OPENSTREETMAP (sans clé) ===
-bijoutiers                             : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
-fleuristes                             : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
-décoration / antiquités                : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
-chocolat, pâtisserie, épicerie fine    : réseau : Remote end closed connection without response
-vin                                    : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
-artisans d'art                         : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
-chambres d'hôtes                       : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
-restaurants                            : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
-beauté / coiffure                      : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
-TOTAL sans site et joignables : 0
+PREMIER QUI MARCHE : overpass-api.de | POST-form | UA outil
