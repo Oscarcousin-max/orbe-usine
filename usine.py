@@ -36,6 +36,9 @@ URL = {  # modifiables seulement pour les tests
 }
 NOMBRE = max(1, min(30, int(os.environ.get("NOMBRE", "15") or 15)))
 PAUSE = float(os.environ.get("USINE_PAUSE", "6"))
+# Sans cette carte de visite, Cloudflare bloque Python à l'entrée (erreur 403 / code 1010).
+NAVIGATEUR = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36")
 DEPOT = os.environ.get("GITHUB_REPOSITORY", "moi/orbe-usine")
 BASE_SITE = os.environ.get("USINE_BASE", "https://%s.github.io/%s/" % (DEPOT.split("/")[0].lower(), DEPOT.split("/")[-1]))
 
@@ -87,7 +90,8 @@ def norm(s):
 
 def appel_http(url, data=None, headers=None, timeout=300):
     req = urllib.request.Request(url, data=json.dumps(data).encode() if data is not None else None,
-                                 headers={"Content-Type": "application/json", **(headers or {})})
+                                 headers={"Content-Type": "application/json", "Accept": "application/json",
+                                          "User-Agent": NAVIGATEUR, **(headers or {})})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
             return json.loads(r.read().decode("utf-8"))
@@ -187,8 +191,10 @@ def ia(chaine, systeme, texte):
             modele = choisir(p, but)
         except ErreurIA as e:
             derniere = e
+            journal("    %s : liste des modèles refusée (%s)" % (p, e))
             continue
         if not modele:
+            journal("    %s : aucun modèle qui convient" % p)
             continue
         for essai in range(2):
             try:
@@ -197,6 +203,7 @@ def ia(chaine, systeme, texte):
                 return txt, src, modele
             except ErreurIA as e:
                 derniere = e
+                journal("    %s/%s : %s" % (p, modele, e))
                 if e.code == "limite" and essai == 0:
                     time.sleep(40)
                     continue
