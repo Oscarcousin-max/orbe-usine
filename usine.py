@@ -109,17 +109,21 @@ MODELES = {}
 def modeles(p):
     if p in MODELES:
         return MODELES[p]
+    MODELES[p] = _demander_modeles(p)
+    journal("    modèles %s : %s" % (p, ", ".join(MODELES[p][:40]) or "aucun"))
+    return MODELES[p]
+
+
+def _demander_modeles(p):
     if p == "gemini":
         j = appel_http(URL["gemini"] + "/models?pageSize=200", headers={"x-goog-api-key": CLES["gemini"]})
-        MODELES[p] = [m["name"].split("/", 1)[-1] for m in j.get("models", []) if "generateContent" in m.get("supportedGenerationMethods", [])]
-    elif p == "groq":
+        return [m["name"].split("/", 1)[-1] for m in j.get("models", []) if "generateContent" in m.get("supportedGenerationMethods", [])]
+    if p == "groq":
         j = appel_http(URL["groq"] + "/models", headers={"Authorization": "Bearer " + CLES["groq"]})
-        MODELES[p] = [m["id"] for m in j.get("data", []) if m.get("active", True)]
-    else:
-        j = appel_http(URL["or"] + "/models")
-        MODELES[p] = [m["id"] for m in sorted(j.get("data", []), key=lambda m: -(m.get("created") or 0))
-                      if str(m.get("id", "")).endswith(":free")]
-    return MODELES[p]
+        return [m["id"] for m in j.get("data", []) if m.get("active", True)]
+    j = appel_http(URL["or"] + "/models")
+    return [m["id"] for m in sorted(j.get("data", []), key=lambda m: -(m.get("created") or 0))
+            if str(m.get("id", "")).endswith(":free")]
 
 
 def version(n):
@@ -127,30 +131,30 @@ def version(n):
     return float(m.group(1)) if m else 0
 
 
-def choisir(p, but=""):
+def classer(p, but=""):
+    """Tous les modèles qui conviennent, du plus souhaitable au moins souhaitable.
+
+    On en renvoie plusieurs : les modèles les plus récents n'ont souvent aucun
+    quota gratuit, et il faut alors redescendre d'une génération.
+    """
     liste = modeles(p)
     if p == "gemini":
-        if but == "fort":
-            pro = sorted([n for n in liste if re.fullmatch(r"gemini-[\d.]+-pro", n)], key=version, reverse=True)
-            return pro[0] if pro else None
-        ok = [n for n in liste if n.startswith("gemini-") and "flash" in n and not re.search(r"lite|image|tts|live|audio|embedding|8b|robotics|computer", n)]
-        stable = [n for n in ok if not re.search(r"preview|exp", n)] or ok
-        stable.sort(key=lambda n: (-version(n), len(n)))
-        return stable[0] if stable else None
+        flash = [n for n in liste if n.startswith("gemini-") and "flash" in n
+                 and not re.search(r"lite|image|tts|live|audio|embedding|8b|robotics|computer|thinking", n)]
+        flash = [n for n in flash if not re.search(r"preview|exp", n)] or flash
+        flash.sort(key=lambda n: (-version(n), len(n)))
+        pro = sorted([n for n in liste if re.fullmatch(r"gemini-[\d.]+-pro", n)], key=version, reverse=True)
+        return (pro + flash) if but == "fort" else flash
     if p == "groq":
-        utiles = [i for i in liste if not re.search(r"whisper|tts|guard|playai|orpheus|embed|distil|prompt", i, re.I)]
-        motifs = {"web": [r"^groq/compound$", r"compound"], "rapide": [r"8b-instant", r"gpt-oss-20b"]}.get(but, [r"kimi", r"gpt-oss-120b", r"qwen", r"llama-3\.3-70b", r"70b"])
-        for mo in motifs:
-            for i in utiles:
-                if re.search(mo, i, re.I):
-                    return i
-        return None if but == "web" else (utiles[0] if utiles else None)
+        utiles = [i for i in liste if not re.search(r"whisper|tts|guard|playai|orpheus|embed|distil|prompt|allam", i, re.I)]
+        if but == "web":  # il faut un modèle qui sait vraiment chercher sur internet
+            return [i for i in utiles if re.search(r"compound|search|browse|sonar|online", i, re.I)]
+        motifs = {"rapide": [r"8b-instant", r"gpt-oss-20b"]}.get(but, [r"kimi", r"gpt-oss-120b", r"qwen", r"llama-3\.3-70b", r"70b"])
+        ordre = [i for mo in motifs for i in utiles if re.search(mo, i, re.I)]
+        return ordre + [i for i in utiles if i not in ordre]
     familles = {"coder": [r"coder", r"glm|z-ai", r"deepseek", r"qwen"], "deepseek": [r"deepseek", r"qwen"]}.get(but, [r"deepseek"])
-    for mo in familles:
-        for i in liste:
-            if re.search(mo, i, re.I) and "distill" not in i:
-                return i
-    return liste[0] if liste else None
+    ordre = [i for mo in familles for i in liste if re.search(mo, i, re.I) and "distill" not in i]
+    return ordre + [i for i in liste if i not in ordre]
 
 
 def appeler(p, modele, systeme, texte, web=False):
@@ -188,15 +192,16 @@ def ia(chaine, systeme, texte):
         if not CLES.get(p) or (p, but) in EPUISE:
             continue
         try:
-            modele = choisir(p, but)
+            liste = list(dict.fromkeys(classer(p, but)))[:4]
         except ErreurIA as e:
             derniere = e
             journal("    %s : liste des modèles refusée (%s)" % (p, e))
             continue
-        if not modele:
+        if not liste:
             journal("    %s : aucun modèle qui convient" % p)
             continue
-        for essai in range(2):
+        satures = 0
+        for modele in liste:
             try:
                 txt, src = appeler(p, modele, systeme, texte, web)
                 time.sleep(PAUSE)
@@ -204,12 +209,13 @@ def ia(chaine, systeme, texte):
             except ErreurIA as e:
                 derniere = e
                 journal("    %s/%s : %s" % (p, modele, e))
-                if e.code == "limite" and essai == 0:
-                    time.sleep(40)
-                    continue
                 if e.code == "limite":
-                    EPUISE.add((p, but))
-                break
+                    satures += 1  # pas de quota gratuit : on redescend d'un modèle
+                    continue
+                if e.code in ("cle", "demande"):
+                    break  # clé ou requête en cause : les autres modèles échoueront pareil
+        if satures and satures == len(liste):
+            EPUISE.add((p, but))  # tout le fournisseur est à sec pour aujourd'hui
     raise derniere or ErreurIA("aucune", "aucune IA disponible")
 
 
