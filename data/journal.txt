@@ -1,0 +1,25 @@
+18:06:22 Recherche : domaines viticoles et châteaux familiaux qui reçoivent à la propriété
+18:06:22     gemini/gemini-3.8-flash : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:07:03     gemini/gemini-3.8-flash : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:07:03     groq : aucun modèle qui convient
+18:07:03   recherche impossible : 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ",
+    "stat
+18:07:03 Recherche : fleuristes créateurs
+18:07:03     groq : aucun modèle qui convient
+18:07:03   recherche impossible : aucune IA disponible
+18:07:03 Recherche : bijoutiers et joailliers créateurs, horlogers
+18:07:03     groq : aucun modèle qui convient
+18:07:03   recherche impossible : aucune IA disponible
+18:07:03 0 candidats
+18:07:03 Terminé : 0 site(s) prêt(s).
