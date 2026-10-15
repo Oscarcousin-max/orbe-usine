@@ -2,7 +2,8 @@
 
 Une nuit sur deux, vers 4 h, cette usine travaille toute seule et gratuitement :
 
-1. elle lit la carte **OpenStreetMap** pour trouver des commerces de la région bordelaise
+1. elle lit la carte **OpenStreetMap** pour trouver, en Gironde et dans un département
+   voisin différent à chaque passage, des commerces
    qui ont une adresse et un contact, mais **aucun site internet** ;
 2. elle demande à une IA lesquels ont l'air indépendants et haut de gamme ;
 3. elle fabrique un site sur mesure pour chacun et le met en ligne ;
@@ -39,5 +40,6 @@ La liste complète est dans `docs/usine.json`, et le journal du dernier passage 
 ## Régler le rythme et la zone
 
 - Le rythme est la ligne `cron` de `.github/workflows/usine.yml`.
-- La zone géographique est `BBOX` en haut de `usine.py`.
+- La zone est `MAISON` (la Gironde, prise à chaque fois) et `VOISINS`
+  (les 11 autres départements, pris à tour de rôle), en haut de `usine.py`.
 - Les 12 secteurs cherchés sont la liste `SECTEURS`, juste en dessous.

@@ -58,8 +58,23 @@ SECTEURS = [
     ("traiteurs et photographes", '["craft"~"^(caterer|photographer)$"]'),
     ("boutiques de mode et maroquinerie", '["shop"~"^(boutique|clothes|bag|shoes|leather)$"]'),
 ]
-# Bordeaux, Bassin d'Arcachon, Médoc, Libournais, Entre-deux-Mers.
-BBOX = os.environ.get("USINE_BBOX", "44.55,-1.35,45.15,0.05")
+# La Gironde à chaque passage (c'est chez Oscar), plus un département voisin qui tourne.
+# Interroger toute la Nouvelle-Aquitaine d'un coup ramènerait toujours les mêmes
+# commerces, les premiers de la liste : en découpant, chaque nuit explore ailleurs.
+MAISON = ("Gironde", "44.19,-1.30,45.58,0.32")
+VOISINS = [
+    ("Dordogne", "44.57,0.03,45.72,1.45"),
+    ("Charente-Maritime", "45.09,-1.56,46.38,-0.03"),
+    ("Landes", "43.47,-1.52,44.54,-0.03"),
+    ("Lot-et-Garonne", "43.97,-0.10,44.75,1.10"),
+    ("Charente", "45.17,-0.46,46.14,0.95"),
+    ("Pyrénées-Atlantiques", "42.78,-1.79,43.60,-0.17"),
+    ("Vienne", "46.03,-0.08,47.18,1.22"),
+    ("Deux-Sèvres", "45.94,-0.90,47.14,0.21"),
+    ("Haute-Vienne", "45.46,0.61,46.44,1.95"),
+    ("Corrèze", "44.92,1.22,45.78,2.52"),
+    ("Creuse", "45.66,1.37,46.44,2.61"),
+]
 OVERPASS = os.environ.get("USINE_OVERPASS", "https://overpass-api.de/api/interpreter")
 MIROIR_OSM = os.environ.get("USINE_MIROIR", "https://overpass.kumi.systems/api/interpreter")
 # Un email ou un message vaut mieux qu'un coup de téléphone à passer.
@@ -110,7 +125,7 @@ def appel_http(url, data=None, headers=None, timeout=300):
         raise ErreurIA("reseau", str(e)[:200])
 
 
-def overpass(filtre, limite=250):
+def overpass(filtre, bbox, limite=250):
     """Demande à OpenStreetMap les commerces d'un secteur qui n'ont pas de site.
 
     OpenStreetMap note pour chaque commerce son adresse, son téléphone et,
@@ -119,7 +134,7 @@ def overpass(filtre, limite=250):
     """
     contact = '[~"^(phone|contact:phone|email|contact:email|contact:instagram|contact:facebook)$"~"."]'
     sans_site = '["name"][!"website"][!"contact:website"][!"brand"][!"brand:website"]'
-    q = "[out:json][timeout:180];nwr%s%s%s(%s);out tags center %d;" % (filtre, sans_site, contact, BBOX, limite)
+    q = "[out:json][timeout:180];nwr%s%s%s(%s);out tags center %d;" % (filtre, sans_site, contact, bbox, limite)
     # Le serveur principal est souvent saturé (502) : on réessaie, puis on change de serveur.
     derniere = None
     for essai, serveur in enumerate((OVERPASS, OVERPASS, OVERPASS, MIROIR_OSM)):
@@ -396,22 +411,28 @@ def main():
     noms |= {norm(x.get("nom")) for x in liste.get("items", [])}
     jour = datetime.now(timezone.utc).timetuple().tm_yday
     secteurs = [SECTEURS[(jour + k) % len(SECTEURS)] for k in (0, 4, 8)]
+    zones = [MAISON, VOISINS[jour % len(VOISINS)]]
     nouveaux = []
 
     # 1. Candidats : de vrais commerces lus sur la carte OpenStreetMap.
     candidats = []
     for sect, filtre in secteurs:
-        journal("Carte : " + sect)
-        try:
-            trouves = overpass(filtre)
-        except Exception as e:
-            journal("  carte illisible : %s" % str(e)[:200])
-            continue
-        neufs = [fiche_osm(e, sect) for e in trouves]
+        trouves, neufs = [], []
+        for zone, bbox in zones:
+            try:
+                bruts = overpass(filtre, bbox)
+            except Exception as e:
+                journal("  %s / %s : carte illisible (%s)" % (sect, zone, str(e)[:120]))
+                continue
+            trouves += bruts
+            neufs += [fiche_osm(e, sect) for e in bruts]
         neufs = [f for f in neufs if f["nom"] and norm(f["nom"]) not in noms and contact_de(f)]
         vus = set()
         neufs = [f for f in neufs if not (norm(f["nom"]) in vus or vus.add(norm(f["nom"])))]
-        journal("  %d sur la carte, %d sans site et joignables" % (len(trouves), len(neufs)))
+        journal("Carte : %s (%s) — %d trouvés, %d sans site et joignables"
+                % (sect, " + ".join(z for z, _ in zones), len(trouves), len(neufs)))
+        if not neufs:
+            continue
         retenus = trier_haut_de_gamme(neufs, sect)
         retenus.sort(key=lambda f: RANG_CANAL.get(contact_de(f)[0], 9))  # tri stable : l'ordre de l'IA est gardé
         candidats += retenus
