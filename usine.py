@@ -83,8 +83,10 @@ RANG_CANAL = {"Email": 0, "Instagram": 1, "SMS": 2, "Facebook": 3, "Téléphone"
 UA_OSM = "OrbeUsine/1.0 (https://github.com/%s; societe.orbe@gmail.com)" % DEPOT
 
 CONSIGNE_SITE = """Tu es directeur artistique et développeur d'une très bonne agence web. Tu crées le site vitrine d'un commerce haut de gamme, pour une clientèle aisée. Il doit avoir l'air conçu sur mesure pour CE commerce, jamais générique.
-FORMAT : un seul fichier HTML autonome (tout le CSS et le JS dedans). Seule ressource externe permise : Google Fonts. Entre 25 et 80 Ko.
-DIRECTION ARTISTIQUE : une palette de 4 à 6 couleurs adaptée au métier (variables CSS), une paire de polices Google Fonts élégante (ex. une serif éditoriale + une sans-serif sobre), une mise en page éditoriale (grandes typographies, beaucoup d'espace, grille asymétrique, filets fins, détails soignés), un monogramme ou emblème en SVG dessiné par toi. Aucune photo externe, aucune image de banque d'images, aucun logo copié : visuels en CSS et SVG (dégradés subtils, grain léger, formes, illustrations au trait liées au métier). Au maximum 2 emplacements photo élégants marqués discrètement « Vos photos ici ».
+FORMAT : un seul fichier HTML autonome (tout le CSS et le JS dedans). Ressources externes permises, et elles seules : Google Fonts, Three.js (uniquement https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js) et les photos listées dans la fiche. Entre 30 et 120 Ko.
+BANDEAU 3D (en haut de page, obligatoire) : une scène Three.js sobre et lente, en fond du bandeau d'accueil, derrière le texte. Elle doit évoquer le métier par des formes abstraites, jamais figuratives : par exemple des sphères de verre qui dérivent pour un bijoutier, des rubans qui ondulent pour un fleuriste, des volumes sombres et chauds pour un domaine viticole. Règles : couleurs de la palette du site, mouvement très lent, aucune interaction obligatoire, rendu limité à devicePixelRatio 2 maximum, animation arrêtée quand l'onglet est caché et jamais lancée si prefers-reduced-motion est actif. Le bandeau doit rester beau SANS la 3D : mets d'abord un dégradé CSS en fond, la 3D par-dessus dans un <canvas> en position absolue, et entoure tout le code Three.js d'un try/catch avec un test `if (window.THREE)`. Charge le script avec l'attribut defer et dessine seulement après son chargement. Le texte du bandeau reste parfaitement lisible : prévois un voile sombre ou clair entre le canvas et le texte.
+PHOTOS : la fiche peut contenir une liste « photos ». Ce sont des images d'illustration libres de droits, PAS des photos de ce commerce. Tu peux en utiliser au maximum 3, en arrière-plan de section ou dans une bande, toujours avec un filtre ou un voile pour qu'elles restent discrètes, en loading="lazy", et toujours accompagnées de la mention visible « Image d'illustration ». Crédite chaque photo dans le pied de page sous la forme « Photo : auteur (licence) ». N'utilise aucune autre image venue d'ailleurs. Garde en plus un emplacement « Vos photos ici » pour les vraies photos du commerçant.
+DIRECTION ARTISTIQUE : une palette de 4 à 6 couleurs adaptée au métier (variables CSS), une paire de polices Google Fonts élégante (ex. une serif éditoriale + une sans-serif sobre), une mise en page éditoriale (grandes typographies, beaucoup d'espace, grille asymétrique, filets fins, détails soignés), un monogramme ou emblème en SVG dessiné par toi. Aucun logo copié, aucune banque d'images autre que les photos fournies : le reste des visuels est en CSS et SVG (dégradés subtils, grain léger, formes, illustrations au trait liées au métier). Au maximum 2 emplacements photo élégants marqués discrètement « Vos photos ici ».
 SECTIONS : en-tête fixe avec menu (repliable sur téléphone) ; grand bandeau d'accueil avec le nom, une phrase forte fondée sur ce qui est vrai et un bouton d'action ; l'esprit de la maison ; l'offre ; infos pratiques (adresse, horaires si connus, bouton « Itinéraire » vers https://www.google.com/maps/search/?api=1&query= suivi de l'adresse encodée) ; contact avec téléphone et email cliquables ; pied de page.
 HONNÊTETÉ (règle absolue) : utilise SEULEMENT les faits de la fiche. N'invente aucun avis, témoignage, note, prix, récompense, année, nom de personne, chiffre, label, plat ou produit précis. Quand une info manque, écris des phrases vraies et générales (« La carte suit les saisons », « Sur rendez-vous »).
 OBLIGATOIRE : <html lang="fr"> ; meta viewport ; <meta name="robots" content="noindex, nofollow"> ; title et meta description ; balises Open Graph ; JSON-LD LocalBusiness avec seulement des données vraies ; favicon SVG en data URI ; un petit badge fixe et discret en bas « Maquette proposée par ORBE » ; dans le pied de page « Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com ». Si le commerce vend de l'alcool : « L'abus d'alcool est dangereux pour la santé, à consommer avec modération. »
@@ -152,6 +154,60 @@ def overpass(filtre, bbox, limite=250):
             derniere = e
             journal("    carte : %s (nouvel essai)" % str(e)[:90])
     raise derniere
+
+
+PHOTOS = {
+    "domaines viticoles et châteaux familiaux": "vineyard Bordeaux wine barrel cellar",
+    "caves à vin et bars à vin": "wine shop bottles cellar",
+    "restaurants indépendants de qualité": "restaurant table setting gastronomy plate",
+    "chambres d'hôtes et gîtes de charme": "guest house bedroom interior stone house",
+    "fleuristes créateurs": "florist bouquet flower shop",
+    "pâtissiers, chocolatiers, épiceries fines": "pastry chocolate shop display",
+    "artisans d'art": "craftsman workshop woodworking hands tools",
+    "décorateurs, antiquaires, galeries": "interior design antique furniture gallery",
+    "bijoutiers, joailliers, horlogers": "jewellery goldsmith workshop ring",
+    "instituts de beauté et coiffeurs": "hair salon interior beauty",
+    "traiteurs et photographes": "catering buffet photographer camera",
+    "boutiques de mode et maroquinerie": "boutique clothing shop leather bag",
+}
+CACHE_PHOTOS = {}
+
+
+def photos_libres(secteur, combien=3):
+    """Cherche sur Wikimedia Commons des photos d'ambiance réutilisables.
+
+    Ce ne sont pas des photos DU commerce : elles servent d'illustration, et le
+    site doit le dire. On renvoie l'auteur et la licence, à créditer.
+    """
+    if secteur in CACHE_PHOTOS:
+        return CACHE_PHOTOS[secteur]
+    params = {
+        "action": "query", "format": "json", "generator": "search", "gsrnamespace": "6",
+        "gsrsearch": PHOTOS.get(secteur, secteur), "gsrlimit": "20",
+        "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": "1600",
+    }
+    url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params)
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA_OSM})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            pages = json.loads(r.read().decode("utf-8")).get("query", {}).get("pages", {})
+    except Exception as e:
+        journal("    photos indisponibles (%s)" % str(e)[:90])
+        CACHE_PHOTOS[secteur] = []
+        return []
+    trouvees = []
+    for p in pages.values():
+        info = (p.get("imageinfo") or [{}])[0]
+        meta = info.get("extmetadata") or {}
+        lien = info.get("thumburl") or info.get("url") or ""
+        licence = re.sub("<[^>]+>", "", str(meta.get("LicenseShortName", {}).get("value", "")))
+        auteur = re.sub("<[^>]+>", "", str(meta.get("Artist", {}).get("value", "")))[:60]
+        if (lien.lower().split("?")[0].endswith((".jpg", ".jpeg", ".png")) and info.get("width", 0) >= 1200
+                and "fair use" not in licence.lower()):
+            trouvees.append({"url": lien, "auteur": auteur.strip() or "Wikimedia Commons", "licence": licence or "libre"})
+    CACHE_PHOTOS[secteur] = trouvees[:combien]
+    journal("    %d photos d'illustration trouvées" % len(CACHE_PHOTOS[secteur]))
+    return CACHE_PHOTOS[secteur]
 
 
 def fiche_osm(e, secteur):
@@ -453,6 +509,7 @@ def main():
         ct = contact_de(fiche)
         faits = {k: fiche.get(k, "") for k in ("nom", "secteur", "ville", "quartier", "adresse", "telephone", "email", "instagram",
                                                "facebook", "horaires", "specialites", "ambiance", "histoire")}
+        faits["photos"] = photos_libres(fiche["secteur"])
         journal("  fabrication du site…")
         try:
             txt, _, modele = ia([("gemini", "fort", False), ("gemini", "", False), ("or", "coder", False), ("groq", "", False)],
@@ -471,7 +528,8 @@ def main():
         m = {}
         try:
             txt, _, _ = ia([("groq", "", False), ("gemini", "", False), ("or", "deepseek", False)], CONSIGNE_MSG,
-                           "Canal : %s\nFiche : %s" % (ct[0], json.dumps(faits, ensure_ascii=False)))
+                           "Canal : %s\nFiche : %s" % (ct[0], json.dumps(
+                               {k: v for k, v in faits.items() if k != "photos"}, ensure_ascii=False)))
             m = lire_json(txt)
         except Exception as e:
             journal("  message par défaut (%s)" % e)
