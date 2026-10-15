@@ -1,0 +1,31 @@
+name: Tester les clés
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tester
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python test_cles.py
+      - name: Garder le rapport
+        if: always()
+        run: |
+          git config user.name "Usine ORBE"
+          git config user.email "usine-orbe@users.noreply.github.com"
+          git add -A data
+          git commit -m "Test des clés" || exit 0
+          git push
