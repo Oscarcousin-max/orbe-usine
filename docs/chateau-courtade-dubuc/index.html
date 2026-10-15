@@ -1,0 +1,1237 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Château Courtade Dubuc | Domaine Viticole à Camblanes-et-Meynac</title>
+  <meta name="description" content="Découvrez le Château Courtade Dubuc, domaine viticole situé à Camblanes-et-Meynac en Gironde. Vinification soignée et accueil au château.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Château Courtade Dubuc | Domaine Viticole">
+  <meta property="og:description" content="Vignoble et propriété viticole à Camblanes-et-Meynac. Renseignements et accueil au domaine.">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG en data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23220b12' rx='4'/%3E%3Cpath d='M16 6 L22 14 L18 14 L18 24 L14 24 L14 14 L10 14 Z' fill='%23c9a875' opacity='0.25'/%3E%3Ccircle cx='16' cy='16' r='10' stroke='%23c9a875' stroke-width='1.2' fill='none'/%3E%3Ctext x='16' y='20' font-family='serif' font-size='11' fill='%23c9a875' text-anchor='middle' font-weight='600'%3EC%3C/text%3E%3C/svg%3E">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Winery",
+    "name": "Château Courtade Dubuc",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "22 Chemin du Jonc",
+      "addressLocality": "Camblanes-et-Meynac",
+      "postalCode": "33360",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33 5 56 20 77 07"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-light: #fbf9f6;
+      --bg-cream: #f4efe8;
+      --bg-dark: #1e0910;
+      --bg-wine: #38131e;
+      --text-dark: #1b1918;
+      --text-muted: #6a645f;
+      --text-light: #f8f6f2;
+      --text-light-muted: #bfb5ab;
+      --accent-gold: #c9a875;
+      --accent-gold-soft: #dfca9f;
+      --border-light: rgba(201, 168, 117, 0.28);
+      --border-dark: rgba(255, 255, 255, 0.12);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --transition: 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.65;
+      background-color: var(--bg-light);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition), opacity var(--transition);
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent-gold);
+      outline-offset: 3px;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* En-tête */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(30, 9, 16, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-dark);
+      transition: all var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    .brand-subtitle {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-top: 2px;
+    }
+
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      width: 42px;
+      height: 42px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      height: 1px;
+      width: 24px;
+      background: var(--accent-gold);
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .main-nav {
+      position: absolute;
+      top: 76px;
+      left: 0;
+      width: 100%;
+      background: var(--bg-dark);
+      border-bottom: 1px solid var(--border-dark);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transform: translateY(-120%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .main-nav.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .main-nav a {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .main-nav a:hover {
+      color: var(--accent-gold);
+      padding-left: 0.35rem;
+    }
+
+    .nav-tel-direct {
+      font-family: var(--font-sans);
+      color: var(--accent-gold) !important;
+      font-weight: 500;
+    }
+
+    @media (min-width: 900px) {
+      .nav-toggle {
+        display: none;
+      }
+      .main-nav {
+        position: static;
+        width: auto;
+        padding: 0;
+        background: transparent;
+        border: none;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .main-nav a {
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        border-bottom: none;
+        padding: 0;
+      }
+      .main-nav a:hover {
+        padding-left: 0;
+      }
+      .nav-tel-direct {
+        padding: 0.5rem 1rem !important;
+        border: 1px solid var(--border-light) !important;
+        border-radius: 2px;
+      }
+      .nav-tel-direct:hover {
+        background-color: var(--accent-gold);
+        color: var(--bg-dark) !important;
+      }
+    }
+
+    /* Boutons élégants */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.95rem 1.85rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+    }
+
+    .btn-gold {
+      background: var(--accent-gold);
+      color: var(--bg-dark);
+      border-color: var(--accent-gold);
+    }
+    .btn-gold:hover {
+      background: var(--accent-gold-soft);
+      border-color: var(--accent-gold-soft);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+    }
+    .btn-outline-gold:hover {
+      background: rgba(201, 168, 117, 0.1);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: var(--bg-dark);
+      color: #fff;
+      border-color: var(--bg-dark);
+    }
+    .btn-dark:hover {
+      background: var(--bg-wine);
+      border-color: var(--bg-wine);
+      color: var(--accent-gold-soft);
+    }
+
+    /* Bandeau d'accueil (Hero) */
+    .hero {
+      position: relative;
+      background: radial-gradient(circle at 65% 30%, #3a1521 0%, #1a080e 70%);
+      color: var(--text-light);
+      padding: 140px 0 80px;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(var(--border-light) 0.75px, transparent 0.75px),
+        radial-gradient(var(--border-light) 0.75px, transparent 0.75px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hero-badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--accent-gold);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 6.2vw, 4.4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-family: var(--font-serif);
+      color: var(--accent-gold-soft);
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-weight: 300;
+      color: var(--text-light-muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 680px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-facts {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-dark);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .fact-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fact-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .fact-val {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    /* Section : Esprit de la Maison */
+    .section {
+      padding: 5rem 0;
+    }
+
+    @media (min-width: 900px) {
+      .section {
+        padding: 7.5rem 0;
+      }
+    }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      line-height: 1.18;
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+      color: var(--text-dark);
+    }
+
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .editorial-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 5rem;
+      }
+    }
+
+    .text-column p {
+      color: var(--text-muted);
+      margin-bottom: 1.35rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .quote-box {
+      margin: 2.2rem 0;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--accent-gold);
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--bg-wine);
+    }
+
+    /* Espace visuel / gravure vectorielle */
+    .visual-frame {
+      position: relative;
+      background: #eee8de;
+      border-radius: 2px;
+      padding: 1.5rem;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-light);
+    }
+
+    .art-canvas {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(145deg, #2b0f18, #18060d);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .art-motif {
+      width: 130px;
+      height: 130px;
+      opacity: 0.9;
+      margin-bottom: 1.25rem;
+      stroke: var(--accent-gold);
+    }
+
+    .photo-placeholder-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      border: 1px dashed var(--accent-gold);
+      color: var(--accent-gold-soft);
+      border-radius: 2px;
+      margin-top: 1rem;
+      background: rgba(0,0,0,0.3);
+    }
+
+    /* Section L'Offre / Activités */
+    .section-cards {
+      background-color: var(--bg-cream);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    @media (min-width: 800px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 2px;
+      border: 1px solid rgba(201, 168, 117, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(30, 9, 16, 0.06);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      stroke: var(--accent-gold);
+      stroke-width: 1.3;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: var(--bg-wine);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-link {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bg-wine);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .card-link::after {
+      content: "→";
+      transition: transform var(--transition);
+    }
+
+    .card:hover .card-link::after {
+      transform: translateX(4px);
+    }
+
+    /* Section Terroir & Deuxième Visuel */
+    .section-terroir {
+      background: var(--bg-light);
+    }
+
+    .terroir-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .terroir-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 5rem;
+      }
+    }
+
+    .art-canvas-alt {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(135deg, #1b1918 0%, #2f1d24 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      border: 1px solid var(--border-light);
+    }
+
+    /* Section Infos Pratiques & Contact */
+    .section-contact {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      position: relative;
+    }
+
+    .section-contact .section-title {
+      color: #fff;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4.5rem;
+      }
+    }
+
+    .info-pane {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 2.5rem;
+      border: 1px solid var(--border-dark);
+      border-radius: 2px;
+    }
+
+    .info-group {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .info-group:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .info-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info-body {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #f0eae1;
+    }
+
+    .tel-highlight {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: #fff;
+      display: inline-block;
+      margin-top: 0.35rem;
+      letter-spacing: 0.02em;
+      border-bottom: 1px dotted var(--accent-gold);
+    }
+
+    .tel-highlight:hover {
+      color: var(--accent-gold);
+    }
+
+    .direct-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 480px) {
+      .direct-actions {
+        flex-direction: row;
+      }
+    }
+
+    .aside-card {
+      background: var(--bg-wine);
+      padding: 2.5rem;
+      border: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .aside-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent-gold-soft);
+      font-weight: 400;
+    }
+
+    .aside-card p {
+      font-size: 0.95rem;
+      color: var(--text-light-muted);
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+
+    /* Mentions légales & Santé */
+    .health-warning {
+      background: #110408;
+      color: #9c918a;
+      text-align: center;
+      padding: 1.25rem 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Pied de page */
+    .site-footer {
+      background: #0d0306;
+      color: #7d756f;
+      padding: 3.5rem 0 4.5rem;
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-agency {
+      color: #8c827a;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .footer-agency a {
+      color: var(--accent-gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Badge ORBE fixe */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 999;
+      background: rgba(30, 9, 16, 0.92);
+      border: 1px solid var(--border-light);
+      color: var(--accent-gold-soft);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Animations d'apparition */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .btn, .card, .main-nav {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#accueil" class="brand" aria-label="Château Courtade Dubuc - Retour à l'accueil">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" stroke="var(--accent-gold)" stroke-width="1.2"/>
+            <path d="M12 20C12 15.5 15.5 12 20 12C22.5 12 24.8 13.2 26 15" stroke="var(--accent-gold)" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M28 20C28 24.5 24.5 28 20 28C17.5 28 15.2 26.8 14 25" stroke="var(--accent-gold)" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="20" cy="20" r="2.5" fill="var(--accent-gold)"/>
+          </svg>
+          <div class="brand-text">
+            <span class="brand-title">Courtade Dubuc</span>
+            <span class="brand-subtitle">Domaine Viticole</span>
+          </div>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu de navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+          <a href="#domaine">Le Domaine</a>
+          <a href="#activites">L'Exploitation</a>
+          <a href="#terroir">Terroir</a>
+          <a href="#contact">Contact &amp; Accès</a>
+          <a href="tel:+33556207707" class="nav-tel-direct">05 56 20 77 07</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Bandeau d'accueil (Hero) -->
+    <section class="hero" id="accueil">
+      <div class="container">
+        <div class="hero-content reveal">
+          <span class="hero-badge">Propriété Viticole Familiale</span>
+          <h1>Château Courtade Dubuc</h1>
+          <p class="hero-lead">
+            Au cœur de Camblanes-et-Meynac, le domaine perpétue le travail de la terre et de la vigne avec rigueur, discrétion et authenticité.
+          </p>
+          <div class="hero-actions">
+            <a href="tel:+33556207707" class="btn btn-gold">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              Contacter le domaine
+            </a>
+            <a href="#domaine" class="btn btn-outline-gold">Découvrir le château</a>
+          </div>
+
+          <div class="hero-facts">
+            <div class="fact-item">
+              <span class="fact-label">Localisation</span>
+              <span class="fact-val">Camblanes-et-Meynac</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Vocation</span>
+              <span class="fact-val">Domaine viticole</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Accueil &amp; Relations</span>
+              <span class="fact-val">Sur rendez-vous</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'esprit de la maison -->
+    <section class="section" id="domaine">
+      <div class="container">
+        <div class="editorial-grid">
+          <div class="text-column reveal">
+            <span class="section-eyebrow">La Philosophie</span>
+            <h2 class="section-title">L'art patient de la vigne et du temps</h2>
+            <p>
+              Situé au 22 Chemin du Jonc, le Château Courtade Dubuc s'inscrit dans la noble tradition des domaines viticoles et châteaux familiaux de Gironde. Ici, chaque étape de la vinification répond à l'exigence d'une production respectueuse de la terre.
+            </p>
+            <div class="quote-box">
+              <p class="quote-text">
+                « Élaborer un vin sincère, attentif au rythme des saisons et à la singularité de notre terroir communal. »
+              </p>
+            </div>
+            <p>
+              Le travail au chai comme au vignoble s'articule autour de gestes mesurés, où l'humain reste au centre de l'ouvrage. Les visites et échanges au domaine s'effectuent sur contact direct, préservant ainsi la tranquillité requise pour le travail de la vigne.
+            </p>
+          </div>
+
+          <div class="visual-column reveal">
+            <div class="visual-frame">
+              <div class="art-canvas" role="img" aria-label="Illustration stylisée de grappes et vignoble au trait doré">
+                <svg class="art-motif" viewBox="0 0 100 100" fill="none" stroke-width="1.3">
+                  <!-- Monogramme & Allégorie de la vigne -->
+                  <circle cx="50" cy="50" r="46" stroke="var(--accent-gold)" opacity="0.4"/>
+                  <path d="M50 22 C50 22 42 34 38 42 C34 50 38 60 50 68 C62 60 66 50 62 42 C58 34 50 22 50 22 Z" stroke="var(--accent-gold)"/>
+                  <circle cx="45" cy="44" r="3" fill="var(--accent-gold)"/>
+                  <circle cx="55" cy="44" r="3" fill="var(--accent-gold)"/>
+                  <circle cx="50" cy="52" r="3" fill="var(--accent-gold)"/>
+                  <circle cx="43" cy="58" r="2.5" fill="var(--accent-gold)"/>
+                  <circle cx="57" cy="58" r="2.5" fill="var(--accent-gold)"/>
+                  <circle cx="50" cy="63" r="2" fill="var(--accent-gold)"/>
+                  <path d="M50 22 L50 14 C50 14 55 12 56 16" stroke="var(--accent-gold)" stroke-linecap="round"/>
+                </svg>
+                <span style="font-family: var(--font-serif); font-size: 1.25rem; letter-spacing: 0.1em; color: #fff;">Château Courtade Dubuc</span>
+                <span class="photo-placeholder-tag">Vos photos ici · Domaine &amp; Chai</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'Offre / Activités -->
+    <section class="section section-cards" id="activites">
+      <div class="container">
+        <div style="max-width: 650px;" class="reveal">
+          <span class="section-eyebrow">Domaine &amp; Savoir-faire</span>
+          <h2 class="section-title">L’attachement au geste viticole</h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">
+            Une activité de viticulteur guidée par la constance et la discrétion d'une structure familiale établie à Camblanes-et-Meynac.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Carte 1 -->
+          <article class="card reveal">
+            <div>
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 22h8M12 11v11M19 3H5l2 8a5 5 0 0 0 10 0l2-8z"/>
+              </svg>
+              <h3>La Vinification</h3>
+              <p>
+                Le travail en cuverie et l'élevage des vins sont conduits avec patience, dans le respect de l'identité du domaine et des caractéristiques de chaque récolte.
+              </p>
+            </div>
+            <a href="tel:+33556207707" class="card-link">Renseignements</a>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="card reveal">
+            <div>
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18M5 21V7l7-4 7 4v14M9 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+              </svg>
+              <h3>Le Domaine Familial</h3>
+              <p>
+                Une propriété ancrée dans son paysage viticole girondin, attachée à la pérennité de son exploitation et à la valeur du travail de la terre.
+              </p>
+            </div>
+            <a href="#contact" class="card-link">Nous situer</a>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="card reveal">
+            <div>
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <h3>Accueil &amp; Disponibilité</h3>
+              <p>
+                Afin de vous recevoir dans les meilleures conditions ou pour toute commande, la prise de contact préalable par téléphone est recommandée.
+              </p>
+            </div>
+            <a href="tel:+33556207707" class="card-link">Prendre contact</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terroir & Cadre -->
+    <section class="section section-terroir" id="terroir">
+      <div class="container">
+        <div class="terroir-grid">
+          <div class="visual-column reveal">
+            <div class="visual-frame">
+              <div class="art-canvas-alt" role="img" aria-label="Illustration stylisée du terroir et des rangs de vignes">
+                <svg width="120" height="90" viewBox="0 0 120 90" fill="none" stroke="var(--accent-gold)" stroke-width="1.2" style="margin-bottom: 1rem;">
+                  <path d="M5 80 C30 50 60 70 115 35" stroke-linecap="round"/>
+                  <path d="M10 85 C45 60 75 75 118 50" stroke-linecap="round"/>
+                  <line x1="25" y1="58" x2="25" y2="70"/>
+                  <line x1="45" y1="55" x2="45" y2="72"/>
+                  <line x1="68" y1="58" x2="68" y2="78"/>
+                  <line x1="90" y1="46" x2="90" y2="65"/>
+                  <circle cx="60" cy="22" r="12" stroke-dasharray="2 2"/>
+                </svg>
+                <span style="font-family: var(--font-serif); font-size: 1.15rem; color: #fff;">Coteaux de Camblanes-et-Meynac</span>
+                <span class="photo-placeholder-tag">Vos photos ici · Terroir &amp; Vignes</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-column reveal">
+            <span class="section-eyebrow">Environnement</span>
+            <h2 class="section-title">L'enracinement à Camblanes-et-Meynac</h2>
+            <p>
+              Bordée par l'atmosphère propre à la Gironde, la commune de Camblanes-et-Meynac offre un cadre privilégié pour la culture de la vigne. Les parcelles profitent d'un sol nourri et d'une exposition propice à la maturation progressive des raisins.
+            </p>
+            <p>
+              Au Château Courtade Dubuc, la recherche d'équilibre prime : respecter le végétal, accompagner les millésimes selon leurs particularités climatiques et proposer un vin fidèle à son origine.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="https://www.google.com/maps/search/?api=1&query=22+Chemin+du+Jonc%2C+33360+Camblanes-et-Meynac" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+                Localiser sur la carte
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informations Pratiques & Contact -->
+    <section class="section section-contact" id="contact">
+      <div class="container">
+        <div style="max-width: 700px;" class="reveal">
+          <span class="section-eyebrow">Renseignements &amp; Échanges</span>
+          <h2 class="section-title">Contacter le domaine</h2>
+          <p style="color: var(--text-light-muted); font-size: 1.05rem;">
+            Pour toute demande d'information, acquisition de vin ou visite de notre exploitation, n'hésitez pas à nous joindre directement.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Panneau d'informations -->
+          <div class="info-pane reveal">
+            <div class="info-group">
+              <span class="info-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Adresse du Château
+              </span>
+              <p class="info-body">
+                Château Courtade Dubuc<br>
+                22 Chemin du Jonc<br>
+                33360 Camblanes-et-Meynac
+              </p>
+            </div>
+
+            <div class="info-group">
+              <span class="info-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Ligne Téléphonique
+              </span>
+              <p class="info-body">
+                <a href="tel:+33556207707" class="tel-highlight">05 56 20 77 07</a><br>
+                <span style="font-size: 0.85rem; color: var(--text-light-muted);">Ligne directe du domaine</span>
+              </p>
+            </div>
+
+            <div class="info-group">
+              <span class="info-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Accueil &amp; Disponibilités
+              </span>
+              <p class="info-body" style="font-size: 0.95rem; color: var(--text-light-muted);">
+                Afin de vous consacrer un temps dédié, les réceptions et passages au château se font sur rendez-vous téléphonique préalable.
+              </p>
+            </div>
+
+            <div class="direct-actions">
+              <a href="tel:+33556207707" class="btn btn-gold">
+                Appeler maintenant
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=22+Chemin+du+Jonc%2C+33360+Camblanes-et-Meynac" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold">
+                Itinéraire d'accès
+              </a>
+            </div>
+          </div>
+
+          <!-- Carte d'accompagnement -->
+          <div class="aside-card reveal">
+            <h3>Venir au Château</h3>
+            <p>
+              Le domaine est implanté sur la rive droite de la Garonne, dans un environnement verdoyant et viticole à proximité immédiate de Bordeaux et de l'Entre-deux-Mers.
+            </p>
+            <p style="font-size: 0.88rem; border-top: 1px solid var(--border-light); padding-top: 1.25rem;">
+              <strong>Repère GPS :</strong><br>
+              22 Chemin du Jonc, 33360 Camblanes-et-Meynac.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mention légale obligatoire liée au vin -->
+  <aside class="health-warning" aria-label="Avertissement légal">
+    L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+  </aside>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">Château Courtade Dubuc</div>
+          <p>Domaine viticole · 22 Chemin du Jonc, 33360 Camblanes-et-Meynac</p>
+          <p style="margin-top: 0.35rem;">Téléphone : <a href="tel:+33556207707" style="color: var(--accent-gold);">+33 5 56 20 77 07</a></p>
+        </div>
+
+        <div class="footer-agency">
+          <p>Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge fixe discret -->
+  <div class="orbe-badge" aria-hidden="true">
+    Maquette proposée par ORBE
+  </div>
+
+  <script>
+    // Menu mobile
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        mainNav.classList.toggle('is-open');
+      });
+
+      // Fermeture lors du clic sur un lien
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 900) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            mainNav.classList.remove('is-open');
+          }
+        });
+      });
+    }
+
+    // Apparitions douces au défilement (IntersectionObserver)
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>

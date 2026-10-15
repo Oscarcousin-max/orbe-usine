@@ -1,4 +1,37 @@
 {
- "items": [],
- "maj": "2026-10-15T18:10:56Z"
+ "items": [
+  {
+   "id": "agent-20261015-chateau-courtade-dubuc",
+   "nom": "Château Courtade Dubuc",
+   "type": "domaines viticoles et châteaux familiaux",
+   "quartier": "Camblanes-et-Meynac",
+   "adresse": "22 Chemin du Jonc, 33360 Camblanes-et-Meynac",
+   "canal": "Téléphone",
+   "contact": "+33 5 56 20 77 07",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Ch%C3%A2teau%20Courtade%20Dubuc%20Camblanes-et-Meynac",
+   "objet": "",
+   "message": "Bonjour, c’est Oscar du studio digital ORBE à Bordeaux. J’ai remarqué que votre domaine Château Courtade Dubuc, situé au 22 Chemin du Jonc à Camblanes‑et‑Meynac, est une exploitation familiale reconnue. J’ai donc préparé un site web sur‑mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/chateau-courtade-dubuc/. Vous pouvez le mettre en ligne à votre nom, avec vos propres photos, quand vous le souhaitez. Si cela ne vous intéresse pas, il suffit de répondre « non merci » et je ne vous relancerai pas. Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/chateau-courtade-dubuc/",
+   "par": "gemini-3.8-flash",
+   "cree_le": "2026-10-15T18:32:54Z"
+  },
+  {
+   "id": "agent-20261015-chateau-brethous",
+   "nom": "Château Brethous",
+   "type": "domaines viticoles et châteaux familiaux",
+   "quartier": "Camblanes-et-Meynac",
+   "adresse": "28 Chemin du Jonc, 33360 Camblanes-et-Meynac",
+   "canal": "Téléphone",
+   "contact": "+33 5 56 20 77 76",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Ch%C3%A2teau%20Brethous%20Camblanes-et-Meynac",
+   "objet": "",
+   "message": "Bonjour, c’est Oscar du studio digital ORBE à Bordeaux.\nJ’ai remarqué que le Château Brethous, situé au 28 Chemin du Jonc à Camblanes‑et‑Meynac, est un domaine viticole familial.\nJ’ai préparé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/chateau-brethous/.\nVous pourrez le mettre en ligne à votre nom, avec vos propres photos, quand vous le souhaiterez.\nSi cela ne vous intéresse pas, il suffit de dire « non merci » et je ne vous recontacterai plus.\nOscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/chateau-brethous/",
+   "par": "gemini-3.8-flash",
+   "cree_le": "2026-10-15T18:37:57Z"
+  }
+ ],
+ "maj": "2026-10-15T18:37:57Z"
 }

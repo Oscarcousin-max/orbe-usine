@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Château Brethous — Domaine Viticole Familial à Camblanes-et-Meynac</title>
+  <meta name="description" content="Découvrez le Château Brethous, propriété viticole familiale située à Camblanes-et-Meynac. Vins du domaine et accueil au chai sur rendez-vous.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Château Brethous — Domaine Viticole Familial">
+  <meta property="og:description" content="Propriété viticole familiale située à Camblanes-et-Meynac. Authenticité, travail de la terre et accueil au domaine.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG en data URI -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%232B0B14'/%3E%3Cpath d='M24 10c-3 4-8 10-8 17a8 8 0 0 0 16 0c0-7-5-13-8-17z' fill='none' stroke='%23C5A059' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M24 17v12M20 22h8' stroke='%23C5A059' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E" type="image/svg+xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Winery",
+    "name": "Château Brethous",
+    "description": "Domaine viticole et château familial situé à Camblanes-et-Meynac.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "28 Chemin du Jonc",
+      "addressLocality": "Camblanes-et-Meynac",
+      "postalCode": "33360",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33 5 56 20 77 76"
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-primary: #4A1724;       /* Pourpre bordelais profond */
+      --color-primary-dark: #230810;  /* Lie de vin très sombre */
+      --color-accent: #C5A059;        /* Or vieilli / bronze noble */
+      --color-accent-soft: #E5D5BA;   /* Teinte dorée diaphane */
+      --color-bg: #FAF7F2;            /* Calcaire / papier vergé */
+      --color-card-bg: #FFFFFF;
+      --color-sand: #F2ECE1;          /* Pierre blonde */
+      --color-text: #2A2421;          /* Noir d'encre doux */
+      --color-text-muted: #6E645F;
+      --color-border: #E4DCD0;
+      
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      
+      --ease-out-quad: cubic-bezier(0.25, 1, 0.5, 1);
+      --container-max: 1180px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+      background-image: radial-gradient(var(--color-sand) 0.75px, transparent 0.75px);
+      background-size: 24px 24px;
+    }
+
+    /* Accessibilité clavier */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    /* Typographie */
+    h1, h2, h3, .serif-title {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--color-primary-dark);
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--color-text-muted);
+      font-weight: 300;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .badge-sub {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-sub::before, .badge-sub::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background-color: var(--color-accent);
+      opacity: 0.7;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* Boutons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.95rem 2rem;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease-out-quad);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      border: 1px solid var(--color-primary);
+      box-shadow: 0 4px 18px rgba(74, 23, 36, 0.15);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(74, 23, 36, 0.25);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-primary-dark);
+      border: 1px solid var(--color-primary-dark);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-border);
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 82px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: var(--color-primary-dark);
+    }
+
+    .brand-emblem {
+      width: 44px;
+      height: 44px;
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--color-primary-dark);
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-text);
+      position: relative;
+      padding: 0.4rem 0;
+      font-weight: 500;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--color-accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--color-primary);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-primary-dark);
+      cursor: pointer;
+      padding: 0.5rem;
+      margin-right: -0.5rem;
+    }
+
+    .menu-toggle svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* Mobile drawer */
+    @media (max-width: 900px) {
+      .nav-menu {
+        position: fixed;
+        top: 82px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-bg);
+        flex-direction: column;
+        align-items: center;
+        padding: 2.5rem 1.5rem;
+        gap: 1.75rem;
+        border-bottom: 1px solid var(--color-border);
+        transform: translateY(-120%);
+        transition: transform 0.35s var(--ease-out-quad);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      }
+
+      .nav-menu.is-active {
+        transform: translateY(0);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding-top: 140px;
+      padding-bottom: 90px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.015em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--color-primary);
+    }
+
+    .hero-desc {
+      font-size: 1.18rem;
+      margin-bottom: 2.2rem;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+    }
+
+    /* Emplacement Photo 1 (Hero Illustration / Placeholder) */
+    .photo-slot {
+      position: relative;
+      background: linear-gradient(135deg, #FAF4EB 0%, #EDE4D4 100%);
+      border: 1px solid var(--color-border);
+      border-radius: 3px;
+      overflow: hidden;
+      aspect-ratio: 4 / 4.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      box-shadow: 0 20px 45px rgba(50, 20, 30, 0.06);
+    }
+
+    .photo-slot-watermark {
+      width: 140px;
+      height: 140px;
+      color: var(--color-accent);
+      opacity: 0.28;
+      margin-bottom: 1.5rem;
+    }
+
+    .photo-slot-tag {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      font-weight: 600;
+      border: 1px dashed var(--color-accent);
+      padding: 0.4rem 0.9rem;
+      border-radius: 2px;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    .photo-slot-legend {
+      margin-top: 0.8rem;
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--color-primary-dark);
+      text-align: center;
+    }
+
+    /* Filigrane d'arche */
+    .hero-arch-decor {
+      position: absolute;
+      top: 50%;
+      right: -80px;
+      transform: translateY(-50%);
+      width: 480px;
+      height: 600px;
+      pointer-events: none;
+      opacity: 0.08;
+      stroke: var(--color-primary);
+    }
+
+    /* Section L'Esprit */
+    .section {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    .section-border-top {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 4rem auto;
+    }
+
+    .section-title {
+      font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+
+    .spirit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .spirit-card {
+      background-color: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      padding: 3rem 2.2rem 2.5rem 2.2rem;
+      position: relative;
+      transition: transform 0.35s var(--ease-out-quad), box-shadow 0.35s var(--ease-out-quad);
+    }
+
+    .spirit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    .spirit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.04);
+    }
+
+    .spirit-card:hover::before {
+      background-color: var(--color-accent);
+    }
+
+    .spirit-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--color-accent);
+      margin-bottom: 1.8rem;
+      stroke-width: 1.3;
+    }
+
+    .spirit-title {
+      font-size: 1.55rem;
+      margin-bottom: 0.9rem;
+      font-family: var(--font-serif);
+      color: var(--color-primary-dark);
+    }
+
+    /* Section Domaine & Terroir avec Emplacement Photo 2 */
+    .estate-highlight {
+      background-color: var(--color-primary-dark);
+      color: #FAF6F0;
+      padding: 7rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .estate-highlight p {
+      color: #D3C7C0;
+    }
+
+    .estate-highlight h2, .estate-highlight h3 {
+      color: #FFFFFF;
+    }
+
+    .estate-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .estate-photo-slot {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      aspect-ratio: 16 / 11;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .estate-photo-slot .photo-slot-tag {
+      background-color: rgba(35, 8, 16, 0.7);
+      color: var(--color-accent-soft);
+      border-color: var(--color-accent);
+    }
+
+    .estate-photo-slot .photo-slot-legend {
+      color: #FAF6F0;
+      margin-top: 1rem;
+    }
+
+    .estate-points {
+      margin-top: 2rem;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .estate-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .estate-item-bullet {
+      width: 20px;
+      height: 20px;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Section Offre & Savoir-faire */
+    .offer-band {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .offer-box {
+      border: 1px solid var(--color-border);
+      background-color: #FFFFFF;
+      padding: 3rem;
+      position: relative;
+    }
+
+    .offer-box-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .offer-box-title {
+      font-size: 1.8rem;
+    }
+
+    .offer-box-num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--color-accent);
+      font-size: 1.3rem;
+    }
+
+    /* Section Infos Pratiques & Contact */
+    .info-section {
+      background-color: var(--color-sand);
+      padding: 6rem 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      background-color: #FFFFFF;
+      border: 1px solid var(--color-border);
+      padding: 4rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+    }
+
+    .info-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .info-block {
+      margin-bottom: 2.2rem;
+    }
+
+    .info-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .info-value {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--color-primary-dark);
+      line-height: 1.4;
+    }
+
+    .info-value a {
+      color: inherit;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.25s ease;
+    }
+
+    .info-value a:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .info-subtext {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--color-primary-dark);
+      color: #E2D7D0;
+      padding: 4.5rem 0 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.88rem;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      color: #FFFFFF;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-warning {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      color: #C5A059;
+      font-weight: 400;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-transform: uppercase;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      font-size: 0.8rem;
+      color: #A2948F;
+    }
+
+    .footer-bottom a {
+      color: #D3C7C0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-bottom a:hover {
+      color: #FFFFFF;
+    }
+
+    /* Badge fixe ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(35, 8, 16, 0.92);
+      color: var(--color-accent-soft);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      z-index: 999;
+      pointer-events: auto;
+      backdrop-filter: blur(6px);
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .orbe-badge:hover {
+      transform: translateY(-2px);
+      background-color: var(--color-primary-dark);
+      color: #FFFFFF;
+      border-color: var(--color-accent);
+    }
+
+    /* Animations d'apparition */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.8s var(--ease-out-quad), transform 0.8s var(--ease-out-quad);
+    }
+
+    .reveal.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 960px) {
+      .hero-grid, .estate-grid, .offer-band, .info-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .spirit-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .info-grid {
+        padding: 2.2rem 1.8rem;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .hero {
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .btn {
+        width: 100%;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête fixe -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-container" aria-label="Navigation principale">
+        <a href="#accueil" class="brand" aria-label="Château Brethous - Retour à l'accueil">
+          <!-- Emblème SVG monogramme CB -->
+          <svg class="brand-emblem" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.2"/>
+            <circle cx="30" cy="30" r="25" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 3"/>
+            <!-- Monogramme CB stylisé -->
+            <path d="M26 21c-4.5 0-8 3.8-8 9s3.5 9 8 9c2.8 0 5-1.4 6.2-3.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M32 21h6.5c3.2 0 5.5 1.8 5.5 4.5s-2 4-4.5 4.5c3 0.5 5.5 2 5.5 5s-2.5 5-6.5 5H32V21z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M30 14v4M30 42v4" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          <div class="brand-text">
+            <span class="brand-name">Château Brethous</span>
+            <span class="brand-sub">Camblanes-et-Meynac</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#domaine" class="nav-link">Le Domaine</a></li>
+          <li><a href="#savoir-faire" class="nav-link">Savoir-Faire</a></li>
+          <li><a href="#vins" class="nav-link">Les Vins</a></li>
+          <li><a href="#pratique" class="nav-link">Informations</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="tel:+33556207776" class="btn btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.78rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            05 56 20 77 76
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu de navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Grand bandeau d'accueil -->
+    <section id="accueil" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <span class="badge-sub">Domaine Viticole & Château Familial</span>
+            <h1 class="hero-title">L'authenticité d'un <em>château familial</em> ancré dans son terroir.</h1>
+            <p class="hero-desc">
+              Établi au 28 Chemin du Jonc à Camblanes-et-Meynac, le Château Brethous perpétue le travail de la vigne et du vin avec une exigence patiente et le sens de l'accueil.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">Prendre Contact</a>
+              <a href="#domaine" class="btn btn-outline">Découvrir le domaine</a>
+            </div>
+          </div>
+
+          <!-- Emplacement Photo 1 -->
+          <div class="reveal">
+            <div class="photo-slot">
+              <!-- Illustration fine de vigne en SVG -->
+              <svg class="photo-slot-watermark" viewBox="0 0 100 100" fill="none" stroke="currentColor" aria-hidden="true">
+                <path d="M50 15 C45 30, 20 40, 25 65 C28 78, 42 85, 50 85 C58 85, 72 78, 75 65 C80 40, 55 30, 50 15 Z" stroke-width="1.2"/>
+                <path d="M50 15 L50 85" stroke-width="0.8" stroke-dasharray="2 2"/>
+                <circle cx="38" cy="48" r="4" stroke-width="1"/>
+                <circle cx="48" cy="52" r="4" stroke-width="1"/>
+                <circle cx="58" cy="46" r="4" stroke-width="1"/>
+                <circle cx="43" cy="62" r="4" stroke-width="1"/>
+                <circle cx="55" cy="60" r="4" stroke-width="1"/>
+                <circle cx="50" cy="72" r="4" stroke-width="1"/>
+              </svg>
+              <span class="photo-slot-tag">Vos photos ici</span>
+              <span class="photo-slot-legend">Le vignoble & le domaine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section L'Esprit de la Maison -->
+    <section id="domaine" class="section section-border-top">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge-sub">L'Esprit du Lieu</span>
+          <h2 class="section-title">Une propriété familiale dédiée à l'art du vin</h2>
+          <p>
+            À quelques encablures de la Garonne, le Château Brethous cultive une vision sincère du métier de vigneron : respect de la terre, soin apporté aux grappes et transmission d'une passion partagée.
+          </p>
+        </div>
+
+        <div class="spirit-grid">
+          <article class="spirit-card reveal">
+            <!-- Icone Cep & Terroir -->
+            <svg class="spirit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22v-9"/>
+              <path d="M9 13a4.5 4.5 0 0 0-4.5-4.5C2 8.5 2 12 2 12c1.5 3 4.5 3 7 1"/>
+              <path d="M15 13a4.5 4.5 0 0 1 4.5-4.5C22 8.5 22 12 22 12c-1.5 3-4.5 3-7 1"/>
+              <path d="M12 7V3"/>
+              <path d="M8 4l4-2 4 2"/>
+            </svg>
+            <h3 class="spirit-title">L'Attachement au Terroir</h3>
+            <p>
+              Chaque parcelle à Camblanes-et-Meynac bénéficie d'une attention constante tout au long des saisons, pour révéler la typicité de notre sol.
+            </p>
+          </article>
+
+          <article class="spirit-card reveal">
+            <!-- Icone Château & Famille -->
+            <svg class="spirit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 21h18"/>
+              <path d="M5 21V9l7-5 7 5v12"/>
+              <path d="M9 21v-5a3 3 0 0 1 6 0v5"/>
+              <line x1="9" y1="10" x2="9.01" y2="10"/>
+              <line x1="15" y1="10" x2="15.01" y2="10"/>
+            </svg>
+            <h3 class="spirit-title">La Dimension Familiale</h3>
+            <p>
+              Un château à taille humaine où le travail s'exécute avec rigueur, discrétion et indépendance, au service de la régularité des millésimes.
+            </p>
+          </article>
+
+          <article class="spirit-card reveal">
+            <!-- Icone Bouteille & Dégustation -->
+            <svg class="spirit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 22h8"/>
+              <path d="M7 10h10v12H7z"/>
+              <path d="M10 10V5a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v5"/>
+              <line x1="7" y1="15" x2="17" y2="15"/>
+            </svg>
+            <h3 class="spirit-title">L'Accueil au Domaine</h3>
+            <p>
+              La découverte de nos vins se fait en toute simplicité directement à la propriété. Les visites et accueils se font sur rendez-vous.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Immersion / Terroir avec Emplacement Photo 2 -->
+    <section id="savoir-faire" class="estate-highlight">
+      <div class="container">
+        <div class="estate-grid">
+          <!-- Emplacement Photo 2 -->
+          <div class="reveal">
+            <div class="estate-photo-slot">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-accent); margin-bottom: 1rem;" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span class="photo-slot-tag">Vos photos ici</span>
+              <span class="photo-slot-legend">Les chais & la vinification</span>
+              <p style="font-size: 0.85rem; margin-top: 0.5rem; color: #B3A59E;">La capture de vos fûts et de votre cuverie</p>
+            </div>
+          </div>
+
+          <div class="estate-content reveal">
+            <span class="badge-sub" style="color: var(--color-accent-soft);">Vignoble & Chai</span>
+            <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 1.5rem;">Un travail précis, de la vigne à la bouteille.</h2>
+            <p>
+              En tant que domaine viticole établi, le Château Brethous concentre ses efforts sur l'équilibre végétal, la maturité des raisins et la précision des élevages au chai.
+            </p>
+            <ul class="estate-points">
+              <li class="estate-item">
+                <svg class="estate-item-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div>
+                  <strong style="color: #FFFFFF; font-weight: 500;">Conduite raisonnée du vignoble :</strong>
+                  <span> observation attentive de la météo et des sols de Camblanes-et-Meynac.</span>
+                </div>
+              </li>
+              <li class="estate-item">
+                <svg class="estate-item-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div>
+                  <strong style="color: #FFFFFF; font-weight: 500;">Vinification soignée :</strong>
+                  <span> respect de la matière première et recherche d'élégance aromatique.</span>
+                </div>
+              </li>
+              <li class="estate-item">
+                <svg class="estate-item-bullet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div>
+                  <strong style="color: #FFFFFF; font-weight: 500;">Échanges directs :</strong>
+                  <span> contact privilégié avec les amateurs et professionnels du vin.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section L'Offre / Les Vins -->
+    <section id="vins" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge-sub">La Production du Domaine</span>
+          <h2 class="section-title">L'Offre & Les Activités Viticoles</h2>
+          <p>
+            Une production issue directement des vignes de la propriété, façonnée au fil des millésimes.
+          </p>
+        </div>
+
+        <div class="offer-band">
+          <div class="offer-box reveal">
+            <div class="offer-box-header">
+              <h3 class="offer-box-title">Vins de la Propriété</h3>
+              <span class="offer-box-num">01</span>
+            </div>
+            <p>
+              Élaborés et élevés au domaine, nos vins reflètent l'empreinte de leur terroir girondin. La disponibilité des cuvées et millésimes évolue au rythme des mises en bouteille et des saisons.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="tel:+33556207776" class="btn btn-outline" style="width: 100%;">Se renseigner sur les cuvées</a>
+            </div>
+          </div>
+
+          <div class="offer-box reveal">
+            <div class="offer-box-header">
+              <h3 class="offer-box-title">Visites & Vente au Chai</h3>
+              <span class="offer-box-num">02</span>
+            </div>
+            <p>
+              Nous recevons les visiteurs et amateurs désireux d'acquérir les vins directement auprès du château. Afin de vous assurer la meilleure écoute, nous vous invitons à nous joindre au préalable.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="#contact" class="btn btn-primary" style="width: 100%;">Planifier une venue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Informations Pratiques & Contact -->
+    <section id="pratique" class="info-section">
+      <div class="container">
+        <div class="info-grid reveal" id="contact">
+          <div class="info-column">
+            <div>
+              <span class="badge-sub">Localisation</span>
+              <h2 style="font-size: 2.2rem; margin-bottom: 2rem;">Venir au Domaine</h2>
+              
+              <div class="info-block">
+                <div class="info-label">Adresse de la propriété</div>
+                <div class="info-value">
+                  Château Brethous<br>
+                  28 Chemin du Jonc<br>
+                  33360 Camblanes-et-Meynac
+                </div>
+                <p class="info-subtext">Gironde, Nouvelle-Aquitaine, France</p>
+              </div>
+
+              <div class="info-block" style="margin-top: 1.8rem;">
+                <a href="https://www.google.com/maps/search/?api=1&query=28+Chemin+du+Jonc%2C+33360+Camblanes-et-Meynac" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                  Itinéraire vers le domaine
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-column" style="border-top: 1px solid var(--color-border); padding-top: 2rem; margin-top: 1rem;">
+            <div>
+              <span class="badge-sub">Échanges & Disponibilités</span>
+              <h3 style="font-size: 1.8rem; margin-bottom: 1.8rem; font-family: var(--font-serif); color: var(--color-primary-dark);">Contact Téléphonique</h3>
+
+              <div class="info-block">
+                <div class="info-label">Téléphone direct</div>
+                <div class="info-value">
+                  <a href="tel:+33556207776">+33 5 56 20 77 76</a>
+                </div>
+                <p class="info-subtext">Ligne directe avec la propriété viticole.</p>
+              </div>
+
+              <div class="info-block">
+                <div class="info-label">Horaires & Visites</div>
+                <div class="info-value" style="font-size: 1.25rem;">
+                  Accueil sur rendez-vous
+                </div>
+                <p class="info-subtext">
+                  Pour vous recevoir dans les meilleures conditions au domaine, merci de nous contacter avant votre passage.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-title">Château Brethous</div>
+          <p style="color: #A2948F; font-size: 0.95rem;">
+            Domaine viticole et château familial à Camblanes-et-Meynac.
+          </p>
+        </div>
+        <div style="text-align: right;">
+          <p style="color: #FAF6F0; margin-bottom: 0.25rem;">28 Chemin du Jonc, 33360 Camblanes-et-Meynac</p>
+          <p><a href="tel:+33556207776" style="color: var(--color-accent-soft); text-decoration: none;">+33 5 56 20 77 76</a></p>
+        </div>
+      </div>
+
+      <!-- Mention sanitaire alcool obligatoire -->
+      <div class="footer-warning">
+        L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; Château Brethous. Tous droits réservés.
+        </div>
+        <div>
+          Proposition de site réalisée par ORBE, studio digital &middot; <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge discret fixe ORBE -->
+  <div class="orbe-badge" aria-label="Mention maquette">
+    Maquette proposée par ORBE
+  </div>
+
+  <!-- Script d'interaction sobre & IntersectionObserver -->
+  <script>
+    (function() {
+      // Menu mobile accessible
+      var menuToggle = document.getElementById('menu-toggle');
+      var navMenu = document.getElementById('nav-menu');
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          var isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+          navMenu.classList.toggle('is-active');
+        });
+
+        // Fermer le menu lors du clic sur un lien
+        var navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('is-active');
+          });
+        });
+      }
+
+      // Apparitions douces au défilement (si supporté et non réduit)
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var reveals = document.querySelectorAll('.reveal');
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        reveals.forEach(function(el) {
+          observer.observe(el);
+        });
+      } else {
+        // Fallback immédiat
+        var allReveals = document.querySelectorAll('.reveal');
+        allReveals.forEach(function(el) {
+          el.classList.add('is-revealed');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
