@@ -181,9 +181,33 @@ def photos_libres(secteur, combien=3):
     """
     if secteur in CACHE_PHOTOS:
         return CACHE_PHOTOS[secteur]
+    sujet = PHOTOS.get(secteur, secteur)
+    trouvees = []
+    # D'abord les « Quality images », triees par Commons : sinon la recherche
+    # remonte des scans de vieux catalogues, laids et en noir et blanc.
+    for recherche in ('%s incategory:"Quality images"' % sujet, sujet):
+        trouvees += _chercher_commons(recherche)
+        if len(trouvees) >= combien:
+            break
+    vus, propres = set(), []
+    for p in trouvees:
+        if p["url"] not in vus:
+            vus.add(p["url"])
+            propres.append(p)
+    CACHE_PHOTOS[secteur] = propres[:combien]
+    journal("    %d photos d'illustration trouvées" % len(CACHE_PHOTOS[secteur]))
+    return CACHE_PHOTOS[secteur]
+
+
+# Titres qui trahissent un document scanné plutôt qu'une photographie.
+PAS_UNE_PHOTO = re.compile(r"microform|review|magazine|journal|catalog|book|page|plate|poster|map|"
+                           r"engraving|lithograph|drawing|diagram|logo|coat of arms|\b1[5-9]\d\d\b", re.I)
+
+
+def _chercher_commons(recherche):
     params = {
         "action": "query", "format": "json", "generator": "search", "gsrnamespace": "6",
-        "gsrsearch": PHOTOS.get(secteur, secteur), "gsrlimit": "20",
+        "gsrsearch": recherche + " filetype:bitmap", "gsrlimit": "30",
         "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": "1600",
     }
     url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params)
@@ -193,21 +217,21 @@ def photos_libres(secteur, combien=3):
             pages = json.loads(r.read().decode("utf-8")).get("query", {}).get("pages", {})
     except Exception as e:
         journal("    photos indisponibles (%s)" % str(e)[:90])
-        CACHE_PHOTOS[secteur] = []
         return []
-    trouvees = []
+    gardees = []
     for p in pages.values():
         info = (p.get("imageinfo") or [{}])[0]
         meta = info.get("extmetadata") or {}
         lien = info.get("thumburl") or info.get("url") or ""
         licence = re.sub("<[^>]+>", "", str(meta.get("LicenseShortName", {}).get("value", "")))
         auteur = re.sub("<[^>]+>", "", str(meta.get("Artist", {}).get("value", "")))[:60]
-        if (lien.lower().split("?")[0].endswith((".jpg", ".jpeg", ".png")) and info.get("width", 0) >= 1200
+        large, haut = info.get("width", 0), info.get("height", 0)
+        if (lien.lower().split("?")[0].endswith((".jpg", ".jpeg", ".png"))
+                and large >= 1200 and haut >= 800 and large < haut * 2.5
+                and not PAS_UNE_PHOTO.search(p.get("title", ""))
                 and "fair use" not in licence.lower()):
-            trouvees.append({"url": lien, "auteur": auteur.strip() or "Wikimedia Commons", "licence": licence or "libre"})
-    CACHE_PHOTOS[secteur] = trouvees[:combien]
-    journal("    %d photos d'illustration trouvées" % len(CACHE_PHOTOS[secteur]))
-    return CACHE_PHOTOS[secteur]
+            gardees.append({"url": lien, "auteur": auteur.strip() or "Wikimedia Commons", "licence": licence or "libre"})
+    return gardees
 
 
 def fiche_osm(e, secteur):
@@ -389,7 +413,34 @@ BADGE = ('<a href="mailto:societe.orbe@gmail.com" style="position:fixed;right:12
          'border-radius:999px;text-decoration:none">Maquette proposée par ORBE</a>')
 
 
-def finir_site(t):
+def nettoyer_images(h, photos):
+    """Répare ou retire les images : une IA invente parfois une adresse.
+
+    Elle avait par exemple écrit thumb.wikimedia.org, un serveur qui n'existe
+    pas. On remet le bon domaine, puis on supprime toute image qui ne figure
+    pas dans la liste fournie, pour n'afficher aucun lien mort.
+    """
+    h = re.sub(r"https?://(?:thumb|commons|upload)\.wikimedia\.org", "https://upload.wikimedia.org", h, flags=re.I)
+    def fichier(adresse):  # « 800px-Vigne.jpg » et « 1600px-Vigne.jpg » sont la même photo
+        return re.sub(r"^\d+px-", "", adresse.rsplit("/", 1)[-1].lower())
+
+    permis = {p["url"] for p in photos}
+    noms = {fichier(p["url"]) for p in photos}
+
+    def garder(adresse):
+        adresse = adresse.strip()
+        if adresse in permis or adresse.startswith(("data:", "#")):
+            return True
+        return bool(noms) and fichier(adresse) in noms
+
+    h = re.sub(r"<img\b[^>]*?src=[\"']([^\"']+)[\"'][^>]*>",
+               lambda m: m.group(0) if garder(m.group(1)) else "", h, flags=re.I)
+    h = re.sub(r"url\(\s*[\"']?(https?://[^\"')]+)[\"']?\s*\)",
+               lambda m: m.group(0) if garder(m.group(1)) else "none", h, flags=re.I)
+    return h
+
+
+def finir_site(t, photos=()):
     t = str(t or "")
     m = re.search(r"<!doctype html|<html", t, re.I)
     b = t.lower().rfind("</html>")
@@ -402,6 +453,7 @@ def finir_site(t):
         h = re.sub(r"<head[^>]*>", lambda x: x.group(0) + '\n<meta name="robots" content="noindex, nofollow">', h, count=1, flags=re.I)
     if not re.search(r"Maquette propos", h, re.I):
         h = re.sub(r"</body>", BADGE + "\n</body>", h, count=1, flags=re.I)
+    h = nettoyer_images(h, photos)
     if "lorem ipsum" in h.lower() or not (4000 <= len(h) <= 240000):
         return None
     return h
@@ -514,7 +566,7 @@ def main():
         try:
             txt, _, modele = ia([("gemini", "fort", False), ("gemini", "", False), ("or", "coder", False), ("groq", "", False)],
                                 CONSIGNE_SITE, "Fiche du commerce (faits relevés sur la carte OpenStreetMap : n'utilise rien d'autre) :\n" + json.dumps(faits, ensure_ascii=False, indent=1))
-            html = finir_site(txt)
+            html = finir_site(txt, faits["photos"])
         except Exception as e:
             journal("  site impossible : %s" % e)
             html = None
