@@ -192,7 +192,7 @@ def ia(chaine, systeme, texte):
         if not CLES.get(p) or (p, but) in EPUISE:
             continue
         try:
-            liste = list(dict.fromkeys(classer(p, but)))[:4]
+            liste = list(dict.fromkeys(classer(p, but)))[:6]
         except ErreurIA as e:
             derniere = e
             journal("    %s : liste des modèles refusée (%s)" % (p, e))
