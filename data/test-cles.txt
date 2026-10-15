@@ -14,9 +14,18 @@ qwen/qwen3.8-27b           : OK : bonjour
 === OPENROUTER ===
 modèles gratuits (15) : nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, liquid/lfm-2.5-2.6b:free, nvidia/nemotron-3.5-lightning:free, thinkingmachines/inkling-small:free, poolside/laguna-s-2.1:free, thinkingmachines/inkling:free, poolside/laguna-xs-2.1:free, cohere/north-mini-code:free, nvidia/nemotron-3.5-content-safety:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free, nvidia/nemotron-3-super-120b-a12b:free
 nvidia/nemotron-3.5-super-vl:free        : OK : bonjour
-dots-studio/dots-3-note-preview:free     : OK : bonjour
-liquid/lfm-2.5-2.6b:free                 : OK : bonjour
+dots-studio/dots-3-note-preview:free     : OK : Bonjour
+liquid/lfm-2.5-2.6b:free                 : OK : Bonjour
 nvidia/nemotron-3.5-lightning:free       : OK : bonjour
 
 === OPENSTREETMAP (sans clé) ===
-Overpass : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Chrome friendly error 
+bijoutiers                             : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
+fleuristes                             : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
+décoration / antiquités                : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
+chocolat, pâtisserie, épicerie fine    : réseau : Remote end closed connection without response
+vin                                    : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
+artisans d'art                         : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
+chambres d'hôtes                       : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
+restaurants                            : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
+beauté / coiffure                      : HTTP 406 : <html> <head><title>406 Not Acceptable</title></head> <body> <center><h1>406 Not Acceptable</h1></center> <hr><center>nginx/1.22.1</center> </body> </html> <!-- a padding to disable MSIE and Ch
+TOTAL sans site et joignables : 0
