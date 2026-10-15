@@ -88,19 +88,48 @@ else:
 
 dire("")
 dire("=== OPENSTREETMAP (sans clé) ===")
-requete = ('[out:json][timeout:60];area["name"="Bordeaux"]["admin_level"="8"]->.a;'
-           'nwr["shop"="florist"](area.a);out tags 8;')
-j, err = appel("https://overpass-api.de/api/interpreter?data=" + urllib.parse.quote(requete))
-if err:
-    dire("Overpass : " + err)
-else:
+
+
+def overpass(q):
+    req = urllib.request.Request("https://overpass-api.de/api/interpreter", data=q.encode("utf-8"),
+                                 headers={"Content-Type": "text/plain; charset=utf-8", "User-Agent": NAVIGATEUR})
+    try:
+        with urllib.request.urlopen(req, timeout=240) as r:
+            return json.loads(r.read().decode("utf-8")), ""
+    except urllib.error.HTTPError as e:
+        return None, "HTTP %s : %s" % (e.code, e.read().decode("utf-8", "ignore")[:200].replace("\n", " "))
+    except Exception as e:
+        return None, "réseau : %s" % str(e)[:160]
+
+
+BBOX = "44.55,-1.35,45.15,0.05"
+CONTACT = '[~"^(phone|contact:phone|email|contact:email|contact:instagram|contact:facebook)$"~"."]'
+ESSAIS = {
+    "bijoutiers": '["shop"~"^(jewelry|watches)$"]',
+    "fleuristes": '["shop"="florist"]',
+    "décoration / antiquités": '["shop"~"^(interior_decoration|antiques|art|furniture)$"]',
+    "chocolat, pâtisserie, épicerie fine": '["shop"~"^(chocolate|confectionery|pastry|deli|cheese)$"]',
+    "vin": '["shop"="wine"]',
+    "artisans d\'art": '["craft"~"^(cabinet_maker|upholsterer|blacksmith|pottery|jeweller|photographer|carpenter)$"]',
+    "chambres d\'hôtes": '["tourism"~"^(guest_house|chalet|apartment)$"]',
+    "restaurants": '["amenity"="restaurant"]',
+    "beauté / coiffure": '["shop"~"^(beauty|hairdresser)$"]',
+}
+total = 0
+for nom, filtre in ESSAIS.items():
+    q = '[out:json][timeout:180];nwr%s["name"][!website][!"contact:website"]%s(%s);out tags center;' % (filtre, CONTACT, BBOX)
+    j, err = overpass(q)
+    if err:
+        dire("%-38s : %s" % (nom, err))
+        continue
     els = j.get("elements", [])
-    sans = [e for e in els if not e.get("tags", {}).get("website") and not e.get("tags", {}).get("contact:website")]
-    dire("fleuristes trouvés à Bordeaux : %d, dont %d sans site enregistré" % (len(els), len(sans)))
-    for e in sans[:4]:
-        t = e.get("tags", {})
-        dire("  - %s | tel %s | %s" % (t.get("name", "?"), t.get("phone") or t.get("contact:phone") or "-",
-                                       t.get("addr:street", "-")))
+    total += len(els)
+    ex = "; ".join((e.get("tags", {}).get("name") or "?") for e in els[:3])
+    dire("%-38s : %3d sans site — %s" % (nom, len(els), ex))
+dire("TOTAL sans site et joignables : %d" % total)
+j, err = overpass('[out:json][timeout:120];nwr["shop"="florist"]["name"][!website][!"contact:website"]%s(%s);out tags center;' % (CONTACT, BBOX))
+if not err and j.get("elements"):
+    dire("exemple complet de fiche : " + json.dumps(j["elements"][0], ensure_ascii=False)[:600])
 
 os.makedirs("data", exist_ok=True)
 with open("data/test-cles.txt", "w", encoding="utf-8") as f:
