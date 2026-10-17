@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ginette Laven L'Artisane | Tapisserie d'ameublement &amp; Artisanat d'art</title>
+  <meta name="description" content="Atelier de tapisserie d'ameublement d'art : réfection de sièges, travail des matières nobles et confection soignée. Ginette Laven L'Artisane, ouvert du lundi au vendredi.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ginette Laven L'Artisane | Tapisserie d'ameublement d'art">
+  <meta property="og:description" content="Artisanat d'art et tapisserie d'ameublement. Restauration de sièges, matières nobles et finitions sur mesure.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG Monogramme GL -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231f1c19'/%3E%3Cpath d='M8 16c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8h-3' fill='none' stroke='%23d3ab77' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 11v10M13 16h6' fill='none' stroke='%23f5f2eb' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (différé) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Données structurées Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeGoodsStore",
+    "name": "Ginette Laven L'Artisane",
+    "description": "Atelier artisanal d'ameublement et tapisserie d'art.",
+    "email": "lartisane.ginette@gmail.com",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-main: #0e0c0b;
+      --bg-surface: #171513;
+      --bg-card: #201c19;
+      --bg-elevated: #26221f;
+      --border-subtle: rgba(211, 171, 119, 0.18);
+      --border-light: rgba(245, 242, 235, 0.1);
+      --text-main: #f5f2eb;
+      --text-muted: #b8b2a7;
+      --text-dim: #7f786f;
+      --gold: #d3ab77;
+      --gold-dark: #9e7845;
+      --gold-soft: rgba(211, 171, 119, 0.12);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --container-max: 1180px;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Accessible Focus */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+    }
+
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease;
+      background: linear-gradient(180deg, rgba(14, 12, 11, 0.85) 0%, rgba(14, 12, 11, 0) 100%);
+    }
+
+    .header.scrolled {
+      background-color: rgba(14, 12, 11, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 0.9rem 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .header-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      background: var(--bg-surface);
+      color: var(--gold);
+      transition: var(--transition-smooth);
+    }
+
+    .brand:hover .brand-mark {
+      border-color: var(--gold);
+      transform: rotate(6deg);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* NAVIGATION */
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+    }
+
+    .nav-desktop a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-desktop a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-desktop a:hover {
+      color: var(--text-main);
+    }
+
+    .nav-desktop a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta-btn {
+      padding: 0.55rem 1.25rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold) !important;
+      background: rgba(211, 171, 119, 0.05);
+      transition: var(--transition-smooth) !important;
+    }
+
+    .nav-cta-btn:hover {
+      background: var(--gold);
+      color: var(--bg-main) !important;
+      border-color: var(--gold);
+    }
+
+    .nav-cta-btn::after {
+      display: none !important;
+    }
+
+    /* Mobile toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 101;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background-color: var(--text-main);
+      transition: var(--transition-smooth);
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    .nav-mobile {
+      position: fixed;
+      inset: 0;
+      background: rgba(14, 12, 11, 0.98);
+      backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 99;
+    }
+
+    .nav-mobile.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-mobile a {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-mobile a:hover {
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 1.5rem 4rem;
+      background: radial-gradient(circle at 50% 40%, #1f1b17 0%, #0e0c0b 80%);
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.65;
+    }
+
+    .hero-veil {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(14, 12, 11, 0.3) 0%, rgba(14, 12, 11, 0.85) 85%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 880px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-pretitle {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .hero-pretitle::before, .hero-pretitle::after {
+      content: '';
+      width: 25px;
+      height: 1px;
+      background-color: var(--border-subtle);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 6.5vw, 4.8rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .hero-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.95rem 2.2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: var(--transition-smooth);
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--bg-main);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: #e4bc88;
+      border-color: #e4bc88;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* SECTION COMMON */
+    section {
+      padding: 6.5rem 1.5rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .section-head {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-head.center {
+      text-align: center;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    /* ESPOIR & SAVOIR-FAIRE */
+    .grid-artisan {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .story-card {
+      border-left: 1px solid var(--border-subtle);
+      padding-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .story-card p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .story-quote {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--gold);
+      line-height: 1.4;
+      margin-top: 1rem;
+    }
+
+    /* Emplacement photo d'illustration ou cadre */
+    .art-visual-wrapper {
+      position: relative;
+    }
+
+    .frame-illustration {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .frame-illustration img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: grayscale(40%) contrast(1.05) brightness(0.85);
+      transition: transform 0.6s ease;
+    }
+
+    .frame-illustration:hover img {
+      transform: scale(1.03);
+    }
+
+    .img-credit-tag {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      background: rgba(14, 12, 11, 0.85);
+      color: var(--text-dim);
+      border-radius: 2px;
+      backdrop-filter: blur(4px);
+    }
+
+    .visual-subbox {
+      margin-top: 1.25rem;
+      padding: 1.25rem;
+      border: 1px dashed var(--border-subtle);
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 4px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* OFFRE & SPECIALITES */
+    .services-bg {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    .craft-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      padding: 2.5rem 2rem;
+      border-radius: 2px;
+      position: relative;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .craft-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .craft-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.8rem;
+      color: var(--gold);
+    }
+
+    .craft-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .craft-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .craft-card .craft-note {
+      margin-top: 1.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+    }
+
+    /* EMPLACEMENT PROPRIETAIRE PHOTOS */
+    .atelier-gallery-slot {
+      margin-top: 4.5rem;
+      border: 1px dashed var(--border-subtle);
+      padding: 3rem 2rem;
+      background: rgba(211, 171, 119, 0.02);
+      border-radius: 4px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .atelier-gallery-slot svg {
+      color: var(--gold);
+      opacity: 0.6;
+    }
+
+    .atelier-gallery-slot span {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+    }
+
+    .atelier-gallery-slot p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      max-width: 480px;
+    }
+
+    /* HORAIRES & ATELIER INFOS */
+    .info-section {
+      background: radial-gradient(circle at 80% 50%, rgba(211, 171, 119, 0.05) 0%, transparent 60%);
+    }
+
+    .info-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+    }
+
+    .info-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 3rem;
+      border-radius: 2px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .info-value {
+      color: var(--text-main);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .contact-card-direct {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 2px;
+    }
+
+    .contact-link-box {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 2px;
+    }
+
+    .email-link {
+      color: var(--gold);
+      font-size: 1.15rem;
+      word-break: break-all;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s ease;
+      font-weight: 500;
+    }
+
+    .email-link:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #080706;
+      border-top: 1px solid rgba(211, 171, 119, 0.15);
+      padding: 4.5rem 1.5rem 3rem;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    .footer-top {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links-col h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      font-family: var(--font-sans);
+      font-weight: 600;
+    }
+
+    .footer-links-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-links-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links-col a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    .orbe-mention {
+      color: var(--gold);
+      opacity: 0.85;
+    }
+
+    /* BADGE FIXE ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 990;
+      background: rgba(23, 21, 19, 0.92);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      transition: var(--transition-smooth);
+      text-decoration: none;
+    }
+
+    .orbe-badge:hover {
+      border-color: var(--gold);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    .orbe-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* REVEAL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      #hero-canvas {
+        display: none !important;
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .grid-artisan {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .info-layout {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 1rem 1.25rem;
+      }
+      .nav-desktop {
+        display: none;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      section {
+        padding: 4.5rem 1.25rem;
+      }
+      .hero {
+        padding-top: 6.5rem;
+      }
+      .info-panel, .contact-card-direct {
+        padding: 1.8rem 1.2rem;
+      }
+      .orbe-badge {
+        bottom: 0.85rem;
+        right: 0.85rem;
+        font-size: 0.65rem;
+        padding: 0.4rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="mainHeader">
+    <div class="header-inner">
+      <a href="#" class="brand" aria-label="Ginette Laven L'Artisane, accueil">
+        <div class="brand-mark" aria-hidden="true">
+          <!-- Monogramme artisanal SVG fil et aiguille stylisés -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C8 2 4 6 4 11c0 6 8 11 8 11s8-5 8-11c0-5-4-9-8-9z" stroke-dasharray="1 2"/>
+            <path d="M12 7v8M9 11h6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Ginette Laven</span>
+          <span class="brand-sub">L'Artisane · Tapissier</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="#esprit">L'Esprit</a>
+        <a href="#savoir-faire">Savoir-faire</a>
+        <a href="#horaires">Horaires</a>
+        <a href="#contact" class="nav-cta-btn">Prendre Contact</a>
+      </nav>
+
+      <!-- Bouton Menu Mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Mobile -->
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <a href="#esprit" class="mobile-link">L'Esprit</a>
+    <a href="#savoir-faire" class="mobile-link">Savoir-faire</a>
+    <a href="#horaires" class="mobile-link">Horaires</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- HERO SECTION AVEC BANDEAU 3D THREE.JS -->
+    <section class="hero" id="accueil">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-veil"></div>
+
+      <div class="hero-content">
+        <span class="hero-pretitle">Atelier d'Art &amp; Tapisserie d'Ameublement</span>
+        <h1 class="hero-title">L'art de sublimer la matière et d'honorer le <em>siège d'exception</em></h1>
+        <p class="hero-sub">
+          L'exigence du geste traditionnel, la précision des assemblages et la noblesse des étoffes au service d'un artisanat d'art durable.
+        </p>
+        <div class="btn-group">
+          <a href="#contact" class="btn btn-primary">Échanger sur votre projet</a>
+          <a href="#savoir-faire" class="btn btn-secondary">Découvrir l'Atelier</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION L'ESPRIT -->
+    <section id="esprit" class="reveal">
+      <div class="container">
+        <div class="grid-artisan">
+          <div class="story-card">
+            <span class="eyebrow">Artisanat d'art &amp; Précision</span>
+            <h2 class="section-title">Le respect scrupuleux du temps et des fibres</h2>
+            <p>
+              Tapissière d'ameublement, Ginette Laven met en œuvre les techniques fondamentales de l'artisanat d'art pour préserver, restaurer et réinventer les pièces qui habitent vos intérieurs.
+            </p>
+            <p>
+              Chaque intervention repose sur une compréhension intime des formes, des volumes et de la structure du mobilier. Du sanglage méticuleux à la pose minutieuse de la toile d'embourrure, la main compose avec l'histoire de chaque pièce.
+            </p>
+            <div class="story-quote">
+              « Redonner assise, équilibre et dignité aux assises d'hier comme aux créations contemporaines. »
+            </div>
+          </div>
+
+          <div class="art-visual-wrapper">
+            <div class="frame-illustration">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg/1920px-Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+                alt="Artisan au travail dans son atelier, gestuelle minutieuse" 
+                loading="lazy" 
+                width="800" 
+                height="600">
+              <div class="img-credit-tag">Image d'illustration</div>
+            </div>
+            <div class="visual-subbox">
+              Vos réalisations à l'atelier ici
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION SAVOIR-FAIRE & OFFRE -->
+    <section id="savoir-faire" class="services-bg reveal">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Domaines d'intervention</span>
+          <h2 class="section-title">L'art du garnissage &amp; de l'ameublement</h2>
+          <p class="section-intro">Une approche patiente et mesurée pour chaque meuble, en accord avec les règles strictes des métiers d'art.</p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Carte 1 -->
+          <article class="craft-card">
+            <div>
+              <svg class="craft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 18v2h16v-2M6 18V8a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v10"/>
+                <path d="M9 12h6M9 15h6"/>
+              </svg>
+              <h3>Garnissage Traditionnel</h3>
+              <p>
+                Pose de sangles en jute, mise en place des ressorts guindés et façonnage du profil au crin végétal ou animal pour une longévité sans égal.
+              </p>
+            </div>
+            <div class="craft-note">Restauration à l'identique</div>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="craft-card">
+            <div>
+              <svg class="craft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <line x1="10" y1="4" x2="10" y2="20"/>
+              </svg>
+              <h3>Couverture &amp; Finitions</h3>
+              <p>
+                Tension des soieries, velours, toiles de lin et cuirs nobles. Finitions soignées au galon, au passepoil ou clous décoratifs posés un à un.
+              </p>
+            </div>
+            <div class="craft-note">Matières d'exception</div>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="craft-card">
+            <div>
+              <svg class="craft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 3"/>
+              </svg>
+              <h3>Conseil &amp; Étude d'Assise</h3>
+              <p>
+                Accompagnement personnalisé pour déterminer le confort adéquat, le choix des harmonies textiles et la cohérence stylistique de votre mobilier.
+              </p>
+            </div>
+            <div class="craft-note">Sur rendez-vous</div>
+          </article>
+        </div>
+
+        <!-- Emplacement réservé pour les photos du commerçant -->
+        <div class="atelier-gallery-slot">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Galerie de l'atelier · Vos photos ici</span>
+          <p>Cet espace est destiné à recevoir les photographies de vos créations de fauteuils, canapés et détails de passementerie.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION HORAIRES & CONTACT -->
+    <section id="horaires" class="info-section reveal">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Informations &amp; Accueil</span>
+          <h2 class="section-title">Organiser votre visite</h2>
+          <p class="section-intro">L'atelier vous accueille du lundi au vendredi sur rendez-vous ou pour l'étude de vos projets.</p>
+        </div>
+
+        <div class="info-layout">
+          <!-- Heures d'ouverture vérifiées -->
+          <div class="info-panel">
+            <h3 style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--gold);">Horaires d'ouverture</h3>
+            
+            <div class="info-row">
+              <span class="info-label">Lundi</span>
+              <span class="info-value">09:00 – 19:00</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Mardi</span>
+              <span class="info-value">09:00 – 19:00</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Mercredi</span>
+              <span class="info-value">09:00 – 19:00</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Jeudi</span>
+              <span class="info-value">09:00 – 19:00</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Vendredi</span>
+              <span class="info-value">09:00 – 19:00</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Samedi &amp; Dimanche</span>
+              <span class="info-value" style="color: var(--text-dim);">Fermé</span>
+            </div>
+          </div>
+
+          <!-- Prise de contact -->
+          <div class="contact-card-direct" id="contact">
+            <div>
+              <span class="eyebrow">Correspondance</span>
+              <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Transmettre votre demande</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem; font-weight: 300; line-height: 1.7;">
+                Pour toute réfection de fauteuil, confection sur mesure ou demande d'évaluation textile, vous pouvez transmettre un descriptif ou des photographies directement par courriel.
+              </p>
+              
+              <div class="contact-link-box">
+                <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 0.4rem;">Courriel de l'atelier</div>
+                <a href="mailto:lartisane.ginette@gmail.com" class="email-link">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                  lartisane.ginette@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem; font-size: 0.8rem; color: var(--text-dim);">
+              <p>Visites et consultations sur rendez-vous préalable du lundi au vendredi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-title">Ginette Laven L'Artisane</div>
+        <p style="max-width: 380px; line-height: 1.6;">
+          Atelier d'artisanat d'art dédié à la tapisserie d'ameublement, au garnissage traditionnel et à la préservation du patrimoine mobilier.
+        </p>
+      </div>
+      <div class="footer-links-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#esprit">L'Esprit</a></li>
+          <li><a href="#savoir-faire">Savoir-faire</a></li>
+          <li><a href="#horaires">Horaires</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:lartisane.ginette@gmail.com">lartisane.ginette@gmail.com</a></li>
+          <li><span style="color: var(--text-dim);">Lun – Ven : 09h – 19h</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        &copy; Ginette Laven L'Artisane · Métiers d'Art
+      </div>
+      <div>
+        Photo : Shixart1985 (CC BY 2.0)
+      </div>
+      <div class="orbe-mention">
+        Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE FIXE DISCRET ORBE -->
+  <a href="mailto:societe.orbe@gmail.com" class="orbe-badge" title="Studio digital ORBE">
+    <span class="orbe-badge-dot"></span>
+    <span>Maquette proposée par ORBE</span>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Header navigation et menu mobile
+    const header = document.getElementById('mainHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const navMobile = document.getElementById('navMobile');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    function toggleMenu() {
+      const isOpen = navMobile.classList.contains('open');
+      navMobile.classList.toggle('open');
+      menuToggle.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', !isOpen);
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMobile.classList.contains('open')) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Intersection Observer pour les apparitions douces
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+    }
+
+    // BANDEAU 3D THREE.JS (Abstrait : courbes d'étoffes, trames souples et fils soyeux)
+    window.addEventListener('DOMContentLoaded', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+
+      // Attendre Three.js en différé si besoin
+      const initThree = () => {
+        try {
+          if (typeof THREE === 'undefined') return;
+
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+          camera.position.z = 24;
+
+          const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: true,
+            powerPreference: 'low-power'
+          });
+
+          const updatePixelRatio = () => {
+            const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+            renderer.setPixelRatio(pixelRatio);
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+          };
+
+          updatePixelRatio();
+
+          // Géométrie abstraite : maillage de rubans / fibres de tapisserie ondoyantes
+          const group = new THREE.Group();
+          scene.add(group);
+
+          // Couleurs de la palette : Or artisanal (#d3ab77) et terre soyeuse (#9e7845)
+          const ribbonCount = 5;
+          const ribbons = [];
+
+          for (let r = 0; r < ribbonCount; r++) {
+            const curvePoints = [];
+            const segments = 60;
+            const yOffset = (r - 2) * 2.8;
+            for (let i = 0; i <= segments; i++) {
+              const x = (i - segments / 2) * 0.9;
+              curvePoints.push(new THREE.Vector3(x, yOffset, 0));
+            }
+
+            const curve = new THREE.CatmullRomCurve3(curvePoints);
+            const tubeGeo = new THREE.TubeGeometry(curve, 70, 0.28, 12, false);
+            
+            // Matériau doux et subtil
+            const tubeMat = new THREE.MeshBasicMaterial({
+              color: r % 2 === 0 ? 0xd3ab77 : 0x8a6d47,
+              wireframe: true,
+              transparent: true,
+              opacity: 0.35 + (r * 0.05)
+            });
+
+            const mesh = new THREE.Mesh(tubeGeo, tubeMat);
+            group.add(mesh);
+            ribbons.push({ mesh, initialY: yOffset, offset: r * 1.2 });
+          }
+
+          // Particules discrètes évoquant les microfibres de lin
+          const particleCount = 45;
+          const pGeo = new THREE.BufferGeometry();
+          const pPos = new Float32Array(particleCount * 3);
+
+          for (let p = 0; p < particleCount * 3; p += 3) {
+            pPos[p] = (Math.random() - 0.5) * 35;
+            pPos[p + 1] = (Math.random() - 0.5) * 20;
+            pPos[p + 2] = (Math.random() - 0.5) * 15;
+          }
+
+          pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+          const pMat = new THREE.PointsMaterial({
+            color: 0xf5f2eb,
+            size: 0.12,
+            transparent: true,
+            opacity: 0.25
+          });
+
+          const particleSystem = new THREE.Points(pGeo, pMat);
+          group.add(particleSystem);
+
+          // Rotation lente globale
+          let animationFrameId;
+          let clock = new THREE.Clock();
+          let isRunning = true;
+
+          const animate = () => {
+            if (!isRunning) return;
+
+            const t = clock.getElapsedTime() * 0.45;
+
+            // Déformation sinueuse très lente
+            ribbons.forEach((rib, idx) => {
+              rib.mesh.rotation.x = Math.sin(t * 0.4 + rib.offset) * 0.25;
+              rib.mesh.rotation.y = Math.cos(t * 0.3 + rib.offset) * 0.3;
+              rib.mesh.position.y = rib.initialY + Math.sin(t * 0.5 + rib.offset) * 0.4;
+            });
+
+            group.rotation.z = Math.sin(t * 0.2) * 0.08;
+            particleSystem.rotation.y = t * 0.03;
+
+            renderer.render(scene, camera);
+            animationFrameId = requestAnimationFrame(animate);
+          };
+
+          animate();
+
+          // Pause lorsque la fenêtre/l'onglet est masqué
+          document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+              isRunning = false;
+            } else {
+              if (!isRunning) {
+                isRunning = true;
+                clock.start();
+                animate();
+              }
+            }
+          });
+
+          // Redimensionnement
+          window.addEventListener('resize', () => {
+            updatePixelRatio();
+          });
+
+        } catch (e) {
+          // Dégradation gracieuse : le fond CSS est déjà présent
+          console.warn('Canvas 3D ignoré:', e);
+        }
+      };
+
+      if (window.THREE) {
+        initThree();
+      } else {
+        const checkThreeInterval = setInterval(() => {
+          if (window.THREE) {
+            clearInterval(checkThreeInterval);
+            initThree();
+          }
+        }, 80);
+      }
+    });
+  </script>
+</body>
+</html>

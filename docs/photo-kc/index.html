@@ -1,0 +1,1523 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo KC | Atelier Photographique à Bordeaux</title>
+  <meta name="description" content="Photo KC, artisan photographe au 239 Rue Sainte-Catherine à Bordeaux. Prises de vue, portraits et expertise photographique en plein cœur de la ville.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Photo KC | Artisan Photographe à Bordeaux">
+  <meta property="og:description" content="Atelier photographique situé rue Sainte-Catherine à Bordeaux. Un savoir-faire dédié à la lumière et à l’image.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG Monogramme KC -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23121110'/%3E%3Ccircle cx='16' cy='16' r='10' stroke='%23C5A880' stroke-width='1.5' fill='none'/%3E%3Cpath d='M11 10v12M18 10l-5 6 5 6M22 13a3.5 3.5 0 0 0-3.5 3.5v0A3.5 3.5 0 0 0 22 20' stroke='%23F4EFEA' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" type="image/svg+xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (chargé de manière différée) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <style>
+    :root {
+      --bg-dark: #100f0e;
+      --bg-surface: #181615;
+      --bg-card: #1f1d1b;
+      --sand-gold: #c6a87d;
+      --sand-gold-light: #dfc7a4;
+      --sand-gold-glow: rgba(198, 168, 125, 0.18);
+      --text-primary: #f6f3ee;
+      --text-secondary: #beb6ac;
+      --text-muted: #847d74;
+      --border-subtle: rgba(198, 168, 125, 0.2);
+      --border-light: rgba(246, 243, 238, 0.08);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.65;
+      overflow-x: hidden;
+      background-color: var(--bg-dark);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--sand-gold);
+      outline-offset: 3px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* TYPOGRAPHIE */
+    .font-serif {
+      font-family: var(--font-serif);
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sand-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 500;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background-color: var(--sand-gold);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    /* STRUCTURE */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+    }
+
+    /* EN-TÊTE FIXE */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.25rem 0;
+      transition: background-color var(--transition), backdrop-filter var(--transition), padding var(--transition);
+      background: linear-gradient(to bottom, rgba(16, 15, 14, 0.95), rgba(16, 15, 14, 0.4) 80%, transparent);
+    }
+
+    .site-header.scrolled {
+      padding: 0.85rem 0;
+      background-color: rgba(16, 15, 14, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo-svg {
+      width: 38px;
+      height: 38px;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .brand-name span {
+      color: var(--sand-gold);
+      font-style: italic;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    @media (min-width: 860px) {
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 2.25rem;
+      }
+      .desktop-nav a {
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+        font-weight: 400;
+        position: relative;
+        padding-bottom: 0.25rem;
+      }
+      .desktop-nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--sand-gold);
+        transition: width var(--transition);
+      }
+      .desktop-nav a:hover {
+        color: var(--sand-gold);
+      }
+      .desktop-nav a:hover::after {
+        width: 100%;
+      }
+    }
+
+    .header-cta {
+      display: none;
+    }
+
+    @media (min-width: 860px) {
+      .header-cta {
+        display: inline-flex;
+      }
+    }
+
+    /* BOUTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid var(--sand-gold);
+      background-color: transparent;
+      color: var(--sand-gold-light);
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background-color: var(--sand-gold);
+      color: var(--bg-dark);
+      box-shadow: 0 4px 24px rgba(198, 168, 125, 0.25);
+    }
+
+    .btn-solid {
+      background-color: var(--sand-gold);
+      color: var(--bg-dark);
+    }
+
+    .btn-solid:hover {
+      background-color: var(--sand-gold-light);
+      border-color: var(--sand-gold-light);
+    }
+
+    .btn-subtle {
+      border-color: var(--border-light);
+      color: var(--text-secondary);
+    }
+
+    .btn-subtle:hover {
+      border-color: var(--sand-gold);
+      color: var(--sand-gold);
+      background-color: transparent;
+    }
+
+    /* BOUTON MENU MOBILE */
+    .mobile-burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 38px;
+      height: 38px;
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 9px;
+      cursor: pointer;
+      z-index: 110;
+    }
+
+    @media (min-width: 860px) {
+      .mobile-burger {
+        display: none;
+      }
+    }
+
+    .mobile-burger span {
+      width: 100%;
+      height: 1.5px;
+      background-color: var(--sand-gold);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .mobile-burger.active span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .mobile-burger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-burger.active span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* TIROIR MOBILE */
+    .mobile-nav-pane {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(16, 15, 14, 0.98);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 105;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .mobile-nav-pane.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-pane a {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+    }
+
+    .mobile-nav-pane a:hover {
+      color: var(--sand-gold);
+    }
+
+    /* HERO BANDEAU 3D */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: radial-gradient(circle at 65% 40%, #2a241c 0%, #171513 55%, #100f0e 100%);
+      padding-top: 5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: linear-gradient(to right, rgba(16, 15, 14, 0.92) 0%, rgba(16, 15, 14, 0.72) 55%, rgba(16, 15, 14, 0.45) 100%),
+                  linear-gradient(to top, rgba(16, 15, 14, 1) 0%, transparent 25%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6.5vw, 4.8rem);
+      font-weight: 300;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      line-height: 1.08;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--sand-gold-light);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.2rem;
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-meta-strip {
+      margin-top: 3.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem 3rem;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .meta-item span:first-child {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .meta-item span:last-child {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      font-weight: 400;
+    }
+
+    /* SECTIONS COMMUNES */
+    .section-pad {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-top: 0.6rem;
+      color: var(--text-primary);
+    }
+
+    /* SECTION ESPRIT DE LA MAISON */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 5rem;
+      }
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .about-quote {
+      margin-top: 2rem;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--sand-gold);
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--sand-gold-light);
+      font-style: italic;
+    }
+
+    /* Cadre visuel d'illustration */
+    .visual-frame {
+      position: relative;
+      border: 1px solid var(--border-subtle);
+      padding: 0.75rem;
+      background: var(--bg-card);
+    }
+
+    .visual-frame::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 32px;
+      height: 32px;
+      border-top: 1px solid var(--sand-gold);
+      border-right: 1px solid var(--sand-gold);
+      pointer-events: none;
+    }
+
+    .visual-frame::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: -8px;
+      width: 32px;
+      height: 32px;
+      border-bottom: 1px solid var(--sand-gold);
+      border-left: 1px solid var(--sand-gold);
+      pointer-events: none;
+    }
+
+    .visual-image-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background-color: #1a1816;
+    }
+
+    .visual-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.85) contrast(1.05) brightness(0.9);
+      transition: transform 0.8s ease;
+    }
+
+    .visual-frame:hover .visual-image-wrap img {
+      transform: scale(1.03);
+    }
+
+    .caption-pill {
+      position: absolute;
+      bottom: 0.85rem;
+      left: 0.85rem;
+      background: rgba(16, 15, 14, 0.85);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    /* SECTION OFFRE / SAVOIR-FAIRE */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 680px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .service-card:hover {
+      border-color: var(--border-subtle);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.75rem;
+      color: var(--sand-gold);
+    }
+
+    .service-number {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .service-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 0.85rem;
+      color: var(--text-primary);
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* EMPLACEMENT VOS PHOTOS ICI */
+    .placeholder-card {
+      border: 1px dashed var(--border-subtle);
+      background: rgba(24, 22, 21, 0.5);
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    .placeholder-card svg {
+      width: 36px;
+      height: 36px;
+      stroke: var(--sand-gold);
+    }
+
+    .placeholder-label {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--sand-gold-light);
+    }
+
+    .placeholder-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-preview {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* SECTION INFOS & HORAIRES */
+    .info-section {
+      background: linear-gradient(to bottom, var(--bg-dark), var(--bg-surface) 50%, var(--bg-dark));
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .info-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 880px) {
+      .info-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+
+    .info-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    .schedule-table tr {
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .schedule-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-table td {
+      padding: 0.85rem 0;
+      font-size: 0.95rem;
+    }
+
+    .schedule-day {
+      color: var(--text-secondary);
+    }
+
+    .schedule-hours {
+      text-align: right;
+      color: var(--text-primary);
+      font-weight: 400;
+    }
+
+    .schedule-closed {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .address-box {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .address-line {
+      font-size: 1.15rem;
+      font-family: var(--font-serif);
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .address-city {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.75rem;
+    }
+
+    /* CONTACT DIRECT */
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--sand-gold);
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-value {
+      font-size: 1.35rem;
+      font-family: var(--font-serif);
+      color: var(--sand-gold-light);
+    }
+
+    .contact-value:hover {
+      color: var(--text-primary);
+    }
+
+    /* PIED DE PAGE */
+    .site-footer {
+      padding: 4.5rem 0 2.5rem;
+      background-color: var(--bg-dark);
+      border-top: 1px solid var(--border-light);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .footer-brand h4 {
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand p {
+      max-width: 320px;
+      line-height: 1.6;
+    }
+
+    .footer-col-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sand-gold);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--sand-gold);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.78rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .credits-photo {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .credits-photo a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* BADGE FIXE MAQUETTE ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 999;
+      background: rgba(16, 15, 14, 0.92);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--sand-gold-light);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+      pointer-events: auto;
+      transition: border-color var(--transition), transform var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .orbe-badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--sand-gold);
+      box-shadow: 0 0 6px var(--sand-gold);
+    }
+
+    .orbe-badge:hover {
+      border-color: var(--sand-gold);
+      transform: translateY(-2px);
+    }
+
+    /* REVEAL ANIMATIONS (désactivées si prefers-reduced-motion) */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-up.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      * {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Photo KC",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Passenger_Experience_Week_2018%2C_Hamburg_%281X7A3643%29.jpg/1920px-Passenger_Experience_Week_2018%2C_Hamburg_%281X7A3643%29.jpg",
+    "telephone": "+33556319779",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "239 Rue Sainte-Catherine",
+      "addressLocality": "Bordeaux",
+      "postalCode": "33000",
+      "addressCountry": "FR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:30",
+        "closes": "18:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- EN-TÊTE -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="#accueil" class="brand-link" aria-label="Photo KC - Accueil">
+        <!-- Emblème SVG original : Diaphragme stylisé avec monogramme KC -->
+        <svg class="brand-logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" stroke="#C6A87D" stroke-width="1.2" stroke-opacity="0.8"/>
+          <circle cx="20" cy="20" r="14" stroke="#C6A87D" stroke-width="0.8" stroke-dasharray="2 3"/>
+          <!-- Lames de diaphragme minimalistes -->
+          <line x1="12" y1="9" x2="28" y2="13" stroke="#C6A87D" stroke-width="0.9"/>
+          <line x1="28" y1="13" x2="31" y2="28" stroke="#C6A87D" stroke-width="0.9"/>
+          <line x1="31" y1="28" x2="17" y2="31" stroke="#C6A87D" stroke-width="0.9"/>
+          <line x1="17" y1="31" x2="9" y2="18" stroke="#C6A87D" stroke-width="0.9"/>
+          <line x1="9" y1="18" x2="20" y2="9" stroke="#C6A87D" stroke-width="0.9"/>
+          <!-- Monogramme central KC -->
+          <path d="M16 14v12M21 14l-4 6 4 6M25 17a3 3 0 0 0-3 3v0a3 3 0 0 0 3 3" stroke="#F6F3EE" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">Photo <span>KC</span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#esprit">L’Esprit</a>
+        <a href="#savoir-faire">Savoir-faire</a>
+        <a href="#horaires">Horaires</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="tel:+33556319779" class="btn header-cta">Prendre contact</a>
+
+      <button class="mobile-burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE -->
+  <div class="mobile-nav-pane" id="mobileMenu" aria-hidden="true">
+    <a href="#esprit" class="mobile-nav-link">L’Esprit</a>
+    <a href="#savoir-faire" class="mobile-nav-link">Savoir-faire</a>
+    <a href="#horaires" class="mobile-nav-link">Horaires &amp; Accès</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="tel:+33556319779" class="btn btn-solid" style="margin-top: 1rem;">05 56 31 97 79</a>
+  </div>
+
+  <main>
+    <!-- HERO / BANDEAU D'ACCUEIL AVEC CANVAS 3D -->
+    <section class="hero" id="accueil">
+      <canvas id="threeCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-scrim"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="eyebrow fade-up">Atelier Photographique · Bordeaux</div>
+          <h1 class="hero-title fade-up">
+            L’art de la lumière, <em>au cœur de Bordeaux.</em>
+          </h1>
+          <p class="hero-desc fade-up">
+            Installé au 239 Rue Sainte-Catherine, Photo KC cultive l'exigence du regard photographique. De la capture du portrait à la mise en valeur des instants singuliers.
+          </p>
+          <div class="hero-actions fade-up">
+            <a href="tel:+33556319779" class="btn btn-solid">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              05 56 31 97 79
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=239+Rue+Sainte-Catherine%2C+33000+Bordeaux" target="_blank" rel="noopener noreferrer" class="btn btn-subtle">
+              Itinéraire atelier
+            </a>
+          </div>
+
+          <div class="hero-meta-strip fade-up">
+            <div class="meta-item">
+              <span>Localisation</span>
+              <span>239 Rue Sainte-Catherine</span>
+            </div>
+            <div class="meta-item">
+              <span>Disponibilité</span>
+              <span>Lundi au Samedi dès 10h30</span>
+            </div>
+            <div class="meta-item">
+              <span>Discipline</span>
+              <span>Photographie professionnelle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION ESPRIT DE LA MAISON -->
+    <section class="section-pad" id="esprit">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text fade-up">
+            <span class="eyebrow">La Maison</span>
+            <h2 class="section-title">Une sensibilité aiguisée pour chaque instant</h2>
+            <p>
+              Situé dans la dynamique artère de la rue Sainte-Catherine, Photo KC accueille les particuliers comme les professionnels en quête d’un travail d’image raffiné et minutieux.
+            </p>
+            <p>
+              Chaque composition repose sur l’équilibre subtil des contrastes, la précision des optiques et une écoute attentive des besoins. Nous attachons une importance primordiale au traitement fidèle des textures et des teintes.
+            </p>
+            <div class="about-quote">
+              « Révéler la vérité d’un regard et la pureté d’un relief à travers le prisme de l’objectif. »
+            </div>
+          </div>
+
+          <!-- Cadre image d'illustration fournie -->
+          <div class="fade-up">
+            <div class="visual-frame">
+              <div class="visual-image-wrap">
+                
+                <div class="caption-pill">Image d'illustration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION SAVOIR-FAIRE / OFFRE -->
+    <section class="section-pad" id="savoir-faire" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow">Expertise photographique</span>
+          <h2 class="section-title">L'art de capter l’essentiel</h2>
+        </div>
+
+        <div class="services-grid">
+          <!-- Carte 1 -->
+          <div class="service-card fade-up">
+            <span class="service-number">01</span>
+            <!-- Icone Diaphragme optique SVG -->
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="m14.31 8 5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16 3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/>
+            </svg>
+            <h3>Prises de vue &amp; Portraits</h3>
+            <p>
+              Séances de portrait soignées, captant l'expressivité et la justesse des expressions. Un accompagnement précis dans le placement et la gestion de la lumière.
+            </p>
+          </div>
+
+          <!-- Carte 2 -->
+          <div class="service-card fade-up">
+            <span class="service-number">02</span>
+            <!-- Icone Boitier photo SVG -->
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            <h3>Prestations Photographiques</h3>
+            <p>
+              Réalisation d'images techniques ou artistiques selon vos demandes spécifiques, avec tout le soin d’un artisan photographe en atelier bordelais.
+            </p>
+          </div>
+
+          <!-- Carte 3 -->
+          <div class="service-card fade-up">
+            <span class="service-number">03</span>
+            <!-- Icone Tirage / Cadre SVG -->
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <h3>Accueil &amp; Conseil en Atelier</h3>
+            <p>
+              Échange sur place rue Sainte-Catherine pour concevoir vos projets photographiques et adapter nos prises de vue à vos attentes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Emplacements dédiés pour les futures photos réelles du commerçant -->
+        <div class="gallery-preview fade-up">
+          <div class="placeholder-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <line x1="12" y1="8" x2="12" y2="16"/>
+              <line x1="8" y1="12" x2="16" y2="12"/>
+            </svg>
+            <span class="placeholder-label">Vos photos ici</span>
+            <span class="placeholder-sub">Espace réservé aux prises de vue de l'atelier Photo KC</span>
+          </div>
+
+          <div class="placeholder-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span class="placeholder-label">Vos photos ici</span>
+            <span class="placeholder-sub">Portraits, studio ou réalisations emblématiques</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION INFOS PRATIQUES & HORAIRES -->
+    <section class="section-pad info-section" id="horaires">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow">Informations pratiques</span>
+          <h2 class="section-title">Nous rendre visite à Bordeaux</h2>
+        </div>
+
+        <div class="info-layout">
+          <!-- Panneau Horaires -->
+          <div class="info-panel fade-up">
+            <div>
+              <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Horaires d'ouverture</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Accueil continu sur les créneaux suivants :</p>
+
+              <table class="schedule-table">
+                <tbody>
+                  <tr>
+                    <td class="schedule-day">Lundi</td>
+                    <td class="schedule-hours">10:30 – 18:00</td>
+                  </tr>
+                  <tr>
+                    <td class="schedule-day">Mardi</td>
+                    <td class="schedule-hours">10:30 – 18:00</td>
+                  </tr>
+                  <tr>
+                    <td class="schedule-day">Mercredi</td>
+                    <td class="schedule-hours">10:30 – 18:00</td>
+                  </tr>
+                  <tr>
+                    <td class="schedule-day">Jeudi</td>
+                    <td class="schedule-hours">10:30 – 18:00</td>
+                  </tr>
+                  <tr>
+                    <td class="schedule-day">Vendredi</td>
+                    <td class="schedule-hours">10:30 – 18:00</td>
+                  </tr>
+                  <tr>
+                    <td class="schedule-day">Samedi</td>
+                    <td class="schedule-hours">10:30 – 18:00</td>
+                  </tr>
+                  <tr>
+                    <td class="schedule-day">Dimanche &amp; Jours fériés</td>
+                    <td class="schedule-hours schedule-closed">Fermé</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="address-box">
+              <div class="address-line">239 Rue Sainte-Catherine</div>
+              <div class="address-city">33000 Bordeaux, France</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=239+Rue+Sainte-Catherine%2C+33000+Bordeaux"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="btn btn-solid"
+                 style="width: 100%;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                Ouvrir l’itinéraire Google Maps
+              </a>
+            </div>
+          </div>
+
+          <!-- Panneau Contact Direct -->
+          <div class="contact-card fade-up" id="contact">
+            <div>
+              <span class="eyebrow">Contact direct</span>
+              <h3 style="font-size: 1.6rem; margin-top: 0.5rem; margin-bottom: 1rem;">Échanger sur votre projet</h3>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                Pour préparer une séance, connaître nos disponibilités ou obtenir des renseignements sur nos prestations, contactez directement l'atelier par téléphone.
+              </p>
+            </div>
+
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <div>
+                <div class="contact-label">Ligne directe</div>
+                <a href="tel:+33556319779" class="contact-value">05 56 31 97 79</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <div class="contact-label">Localisation</div>
+                <div style="font-size: 1.05rem; color: var(--text-primary);">Rue Sainte-Catherine, 33000 Bordeaux</div>
+              </div>
+            </div>
+
+            <div style="margin-top: auto; padding: 1.25rem; background: rgba(0,0,0,0.25); border-left: 2px solid var(--sand-gold);">
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+                Accueil personnalisé en boutique du lundi au samedi. Rendez-vous et renseignements par appel téléphonique.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Photo KC</h4>
+          <p>Artisan photographe basé au 239 Rue Sainte-Catherine à Bordeaux. Une approche esthétique et exigeante de l'art photographique.</p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#esprit">L'Esprit</a></li>
+            <li><a href="#savoir-faire">Savoir-faire</a></li>
+            <li><a href="#horaires">Horaires &amp; Itinéraire</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Atelier Bordeaux</div>
+          <p style="color: var(--text-secondary); margin-bottom: 0.75rem;">
+            239 Rue Sainte-Catherine<br>
+            33000 Bordeaux
+          </p>
+          <a href="tel:+33556319779" style="color: var(--sand-gold);">+33 (0)5 56 31 97 79</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com
+        </div>
+        <div class="credits-photo">
+          Photo : Matti Blume (CC BY-SA 4.0) — Image d'illustration
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE FIXE DISCRET MAQUETTE ORBE -->
+  <aside class="orbe-badge" aria-label="Mention maquette">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- SCRIPT THREE.JS ET INTERACTIONS -->
+  <script>
+    // Navigation mobile
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (burgerBtn && mobileMenu) {
+      burgerBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        burgerBtn.classList.toggle('active', isOpen);
+        burgerBtn.setAttribute('aria-expanded', isOpen);
+        mobileMenu.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          burgerBtn.classList.remove('active');
+          burgerBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
+    // Effet d'en-tête au défilement
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Animations d'apparition douce
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('in-view'));
+    }
+
+    // BANDEAU 3D THREE.JS (Abstrait : Anneaux et lentilles de focalisation optique flottantes)
+    window.addEventListener('load', () => {
+      if (prefersReducedMotion) return;
+
+      try {
+        if (typeof window.THREE === 'undefined') return;
+
+        const canvas = document.getElementById('threeCanvas');
+        if (!canvas) return;
+
+        const heroSection = document.getElementById('accueil');
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "high-performance"
+        });
+
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, heroSection.clientWidth / heroSection.clientHeight, 0.1, 100);
+        camera.position.set(0, 0, 18);
+
+        function resizeRenderer() {
+          const width = heroSection.clientWidth;
+          const height = heroSection.clientHeight;
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+          renderer.setSize(width, height);
+        }
+        resizeRenderer();
+        window.addEventListener('resize', resizeRenderer);
+
+        // Groupe principal évoquant des lentilles optiques et réfractions
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // Matériaux sobres de la palette du site
+        const ringMaterial = new THREE.MeshBasicMaterial({
+          color: 0xc6a87d,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.22
+        });
+
+        const solidLensMaterial = new THREE.MeshStandardMaterial({
+          color: 0x1f1d1b,
+          roughness: 0.35,
+          metalness: 0.8,
+          wireframe: false
+        });
+
+        const goldAccentMaterial = new THREE.MeshStandardMaterial({
+          color: 0xc6a87d,
+          roughness: 0.4,
+          metalness: 0.9
+        });
+
+        // 1. Anneaux fins concentriques rappelant les bagues d'objectifs
+        for (let i = 0; i < 5; i++) {
+          const torusGeo = new THREE.TorusGeometry(3 + i * 1.6, 0.035, 12, 64);
+          const torusMesh = new THREE.Mesh(torusGeo, ringMaterial);
+          torusMesh.rotation.x = 0.5 + i * 0.15;
+          torusMesh.rotation.y = 0.3 * i;
+          group.add(torusMesh);
+        }
+
+        // 2. Disques concaves/convexes (formes de lentilles de verre)
+        const lensGeo1 = new THREE.CylinderGeometry(2.4, 2.4, 0.18, 36);
+        const lensMesh1 = new THREE.Mesh(lensGeo1, solidLensMaterial);
+        lensMesh1.position.set(2.5, 0.5, -2);
+        lensMesh1.rotation.set(0.8, 0.4, 0.2);
+        group.add(lensMesh1);
+
+        const lensGeo2 = new THREE.TorusGeometry(2.5, 0.08, 16, 48);
+        const lensBorder = new THREE.Mesh(lensGeo2, goldAccentMaterial);
+        lensBorder.position.copy(lensMesh1.position);
+        lensBorder.rotation.copy(lensMesh1.rotation);
+        group.add(lensBorder);
+
+        // 3. Éléments légers géométriques de réfraction (lames optiques abstraites)
+        const bladeGeo = new THREE.BufferGeometry();
+        const bladeCount = 14;
+        const bladeRadius = 6.5;
+        const bladeGroup = new THREE.Group();
+
+        for (let i = 0; i < bladeCount; i++) {
+          const angle = (i / bladeCount) * Math.PI * 2;
+          const bladeMesh = new THREE.Mesh(
+            new THREE.BoxGeometry(0.04, 2.2, 0.8),
+            ringMaterial
+          );
+          bladeMesh.position.set(
+            Math.cos(angle) * bladeRadius,
+            Math.sin(angle) * bladeRadius,
+            (i % 3) * 0.4 - 1
+          );
+          bladeMesh.rotation.z = angle + 0.4;
+          bladeGroup.add(bladeMesh);
+        }
+        group.add(bladeGroup);
+
+        // Éclairage doux et chaud
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xdfc7a4, 1.8, 40);
+        pointLight.position.set(8, 6, 10);
+        scene.add(pointLight);
+
+        const rimLight = new THREE.PointLight(0xc6a87d, 1.2, 30);
+        rimLight.position.set(-10, -5, 5);
+        scene.add(rimLight);
+
+        // Décentrage subtil pour laisser respirer le texte à gauche
+        group.position.x = window.innerWidth > 900 ? 3.2 : 0;
+        group.position.y = 0;
+
+        let animationFrameId = null;
+        let isTabActive = true;
+
+        // Arrêt lors de l'invisibilité de l'onglet
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            isTabActive = false;
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+          } else {
+            isTabActive = true;
+            tick();
+          }
+        });
+
+        // Boucle d'animation lente et continue
+        function tick() {
+          if (!isTabActive) return;
+
+          // Rotation très douce
+          group.rotation.y += 0.0016;
+          group.rotation.x += 0.0008;
+          bladeGroup.rotation.z -= 0.001;
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(tick);
+        }
+
+        tick();
+      } catch (err) {
+        // En cas d'incompatibilité, le dégradé CSS pur assure un rendu impeccable
+        console.warn('Three.js fallback visual actif', err);
+      }
+    });
+  </script>
+</body>
+</html>

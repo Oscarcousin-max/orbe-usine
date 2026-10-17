@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ébéniste &amp; associés — Ateliers &amp; Artisans d’art du bois</title>
+  <meta name="description" content="Ébéniste &amp; associés, artisans d’art du bois et ouvrages sur mesure. Devis, études d’ébénisterie et réalisations sur commande.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ébéniste &amp; associés — Artisans d’art">
+  <meta property="og:description" content="L'artisanat du bois et le geste précis au service d’ouvrages durables et sur mesure.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG en data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23191411'/%3E%3Cpath d='M32 14 L46 50 L18 50 Z' fill='none' stroke='%23C59F60' stroke-width='3' stroke-linejoin='round'/%3E%3Cline x1='24' y1='38' x2='40' y2='38' stroke='%23C59F60' stroke-width='2'/%3E%3Ccircle cx='32' cy='28' r='2' fill='%23C59F60'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js externe autorisé -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Ébéniste & associés",
+    "description": "Artisans d'art spécialisés dans le travail du bois, la menuiserie fine et l'ébénisterie.",
+    "telephone": "+33556614423",
+    "email": "ebeniste-ass@orange.fr"
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-bg: #14110F;
+      --color-surface: #1E1916;
+      --color-surface-elevated: #28211C;
+      --color-border: rgba(197, 159, 96, 0.22);
+      --color-border-subtle: rgba(245, 242, 235, 0.08);
+      --color-wood-grain: #32251D;
+      --color-accent: #C59F60;
+      --color-accent-soft: #DFC394;
+      --color-text: #F5F2EB;
+      --color-text-muted: #B8B0A2;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --site-max-w: 1200px;
+      --header-h: 76px;
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color-bg);
+      background-image: 
+        radial-gradient(ellipse at 80% 0%, rgba(197, 159, 96, 0.06), transparent 50%),
+        radial-gradient(ellipse at 10% 100%, rgba(50, 37, 29, 0.4), transparent 60%);
+      background-attachment: fixed;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+    }
+
+    /* TYPOGRAPHIE & TITRES */
+    h1, h2, h3, .serif-heading {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    /* CONTENEURS */
+    .container {
+      width: 100%;
+      max-width: var(--site-max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .container { padding: 0 3rem; }
+    }
+
+    /* BOUTONS ET LIENS SOIGNÉS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 2rem;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 0;
+      position: relative;
+      cursor: pointer;
+      border: 1px solid var(--color-accent);
+      transition: all 0.4s var(--transition-smooth);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: var(--color-bg);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-accent-soft);
+      border-color: var(--color-accent-soft);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-text);
+      border-color: var(--color-border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: rgba(197, 159, 96, 0.04);
+      transform: translateY(-2px);
+    }
+
+    /* EN-TÊTE FIXE */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-h);
+      z-index: 1000;
+      background: rgba(20, 17, 15, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border-subtle);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+      color: var(--color-text);
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      color: var(--color-accent);
+    }
+
+    .brand span {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-tag {
+      font-family: var(--font-sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-top: 3px;
+    }
+
+    .nav-menu {
+      display: none;
+    }
+
+    .nav-toggle {
+      display: block;
+      background: transparent;
+      border: none;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      position: relative;
+      z-index: 1100;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      margin: 5px auto;
+      background-color: var(--color-text);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    @media (min-width: 860px) {
+      .nav-toggle { display: none; }
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 2.2rem;
+        list-style: none;
+      }
+      .nav-menu a {
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        position: relative;
+        padding: 0.4rem 0;
+      }
+      .nav-menu a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background-color: var(--color-accent);
+        transition: width 0.3s ease;
+      }
+      .nav-menu a:hover {
+        color: var(--color-text);
+      }
+      .nav-menu a:hover::after {
+        width: 100%;
+      }
+    }
+
+    /* MENU MOBILE PLEIN ÉCRAN */
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--color-bg);
+      z-index: 950;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 2rem;
+      transform: translateY(-100%);
+      transition: transform 0.4s var(--transition-smooth);
+    }
+
+    .mobile-menu-overlay.is-open {
+      transform: translateY(0);
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .mobile-nav-list a {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--color-text);
+      display: block;
+      border-bottom: 1px solid var(--color-border-subtle);
+      padding-bottom: 0.75rem;
+    }
+
+    .mobile-nav-list a:hover {
+      color: var(--color-accent);
+    }
+
+    .mobile-contact-block {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    /* BANDEAU ACCUEIL / HERO AVEC SCÈNE THREE.JS */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--header-h);
+      padding-bottom: 4rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 60% 40%, #2a201a 0%, #171310 70%, #100d0b 100%);
+    }
+
+    .hero-canvas-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    #hero-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: 0.75;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(20, 17, 15, 0.94) 15%, rgba(20, 17, 15, 0.6) 60%, rgba(20, 17, 15, 0.4) 100%),
+                  linear-gradient(to top, rgba(20, 17, 15, 0.95) 0%, transparent 40%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 780px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+      font-weight: 300;
+      margin-top: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-text);
+      line-height: 1.08;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--color-accent-soft);
+      font-weight: 300;
+    }
+
+    .hero-description {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      line-height: 1.65;
+      color: var(--color-text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 580px;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    /* SECTION GÉNÉRIQUE */
+    .section {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    .section-border-top {
+      border-top: 1px solid var(--color-border-subtle);
+    }
+
+    .section-heading-wrapper {
+      max-width: 680px;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-top: 1rem;
+      color: var(--color-text);
+    }
+
+    .section-subtitle {
+      margin-top: 1rem;
+      color: var(--color-text-muted);
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    /* SECTION ESPRIT / SAVOIR-FAIRE */
+    .grid-esprit {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .grid-esprit {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+      }
+    }
+
+    .esprit-text p {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .wood-specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .wood-spec-item h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .wood-spec-item p {
+      font-size: 0.95rem;
+      color: var(--color-text);
+      margin-bottom: 0;
+    }
+
+    /* CADRE PHOTO D'ILLUSTRATION */
+    .artisan-frame {
+      position: relative;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 0.85rem;
+    }
+
+    .artisan-frame-inner {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background-color: #201a16;
+    }
+
+    .artisan-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) sepia(15%) contrast(108%);
+      transition: transform 0.6s ease;
+      display: block;
+    }
+
+    .artisan-frame:hover .artisan-img {
+      transform: scale(1.03);
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(20, 17, 15, 0.85);
+      backdrop-filter: blur(4px);
+      padding: 0.25rem 0.6rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent-soft);
+      border: 1px solid rgba(197, 159, 96, 0.3);
+    }
+
+    /* SECTION OFFRE / MÉTIERS */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 680px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .craft-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-subtle);
+      padding: 2.2rem 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .craft-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-border);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .craft-card-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.75rem;
+      color: var(--color-accent);
+    }
+
+    .craft-card h3 {
+      font-size: 1.5rem;
+      color: var(--color-text);
+      margin-bottom: 0.9rem;
+    }
+
+    .craft-card p {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .craft-card-meta {
+      margin-top: 1.8rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border-subtle);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent-soft);
+    }
+
+    /* SECTION ATELIER & EMPLACEMENT PHOTO COMMERÇANT */
+    .workshop-section {
+      background: var(--color-surface);
+      position: relative;
+    }
+
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .workshop-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+
+    .placeholder-photo-box {
+      border: 1px dashed var(--color-border);
+      background: rgba(32, 26, 22, 0.4);
+      aspect-ratio: 16 / 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .placeholder-photo-box svg {
+      width: 40px;
+      height: 40px;
+      stroke: var(--color-accent);
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    .placeholder-photo-box span {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    .placeholder-photo-box p {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 0.4rem;
+      max-width: 280px;
+    }
+
+    /* SECTION INFOS & CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 860px) {
+      .contact-grid {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4.5rem;
+      }
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .contact-details h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-details a, .contact-details p {
+      font-size: 1.15rem;
+      color: var(--color-text);
+      display: block;
+    }
+
+    .contact-details a:hover {
+      color: var(--color-accent-soft);
+    }
+
+    .contact-note {
+      font-size: 0.82rem !important;
+      color: var(--color-text-muted) !important;
+      margin-top: 0.35rem;
+    }
+
+    .inquiry-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .inquiry-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .inquiry-card p {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    /* PIED DE PAGE */
+    .site-footer {
+      background: #0E0C0A;
+      border-top: 1px solid var(--color-border-subtle);
+      padding: 4rem 0 2.5rem;
+      margin-top: auto;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    @media (min-width: 768px) {
+      .footer-top {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-credits {
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: #7D7569;
+    }
+
+    @media (min-width: 768px) {
+      .footer-credits {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-credits a {
+      color: var(--color-text-muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* BADGE MAQUETTE FIXE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 999;
+      background: rgba(20, 17, 15, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(197, 159, 96, 0.35);
+      color: var(--color-text-muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.9rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .orbe-badge::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
+    }
+
+    .orbe-badge:hover {
+      border-color: var(--color-accent);
+      color: var(--color-text);
+    }
+
+    /* ANIMATIONS D'APPARITION */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    }
+
+    .fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- EN-TÊTE FIXE -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#accueil" class="brand" aria-label="Ébéniste &amp; associés - Retour en haut">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- Monogramme sur mesure : Compas d'artisan & assemblage d'ébénisterie -->
+          <circle cx="32" cy="14" r="5" stroke="currentColor"/>
+          <line x1="28" y1="17" x2="16" y2="52"/>
+          <line x1="36" y1="17" x2="48" y2="52"/>
+          <path d="M22 38 Q32 32 42 38"/>
+          <line x1="32" y1="35" x2="32" y2="44"/>
+        </svg>
+        <span>
+          Ébéniste &amp; associés
+          <small class="brand-tag">Artisans d'art</small>
+        </span>
+      </a>
+
+      <!-- Navigation Ordinateur -->
+      <nav aria-label="Navigation principale">
+        <ul class="nav-menu">
+          <li><a href="#esprit">L'Esprit</a></li>
+          <li><a href="#metiers">Savoir-Faire</a></li>
+          <li><a href="#atelier">L'Atelier</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Bouton d'action Rapide -->
+      <a href="tel:+33556614423" class="btn btn-secondary" style="display: none; padding: 0.6rem 1.2rem; font-size: 0.75rem;" id="header-phone-cta">
+        05 56 61 44 23
+      </a>
+
+      <!-- Bouton Menu Mobile -->
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE INTERACTIF -->
+  <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-nav-list">
+      <li><a href="#accueil" class="mobile-link">Accueil</a></li>
+      <li><a href="#esprit" class="mobile-link">L'Esprit</a></li>
+      <li><a href="#metiers" class="mobile-link">Savoir-Faire</a></li>
+      <li><a href="#atelier" class="mobile-link">L'Atelier</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-contact-block">
+      <p style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; color: var(--color-accent); margin-bottom: 0.5rem;">Échanges &amp; Projets</p>
+      <a href="tel:+33556614423" style="font-size: 1.1rem; display: block; margin-bottom: 0.25rem;">+33 5 56 61 44 23</a>
+      <a href="mailto:ebeniste-ass@orange.fr" style="font-size: 0.95rem; color: var(--color-text-muted);">ebeniste-ass@orange.fr</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- BANDEAU ACCUEIL AVEC SCÈNE THREE.JS -->
+    <section class="hero" id="accueil">
+      <div class="hero-canvas-container" id="hero-canvas-container">
+        <canvas id="hero-canvas"></canvas>
+      </div>
+      <div class="hero-scrim"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow fade-up">Artisanat d'art &amp; Ouvrages sur mesure</span>
+          <h1 class="hero-title fade-up">La rigueur du trait, <em>la noblesse</em> de la matière.</h1>
+          <p class="hero-description fade-up">
+            Chez <strong>Ébéniste &amp; associés</strong>, chaque pièce de bois est travaillée dans le respect des règles de l’art. Conception, charpente fine et pièces d’exception créées à l'écoute de votre projet.
+          </p>
+          <div class="hero-actions fade-up">
+            <a href="#contact" class="btn btn-primary">Initier un projet</a>
+            <a href="tel:+33556614423" class="btn btn-secondary">Nous appeler</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1 : L'ESPRIT DE LA MAISON -->
+    <section class="section section-border-top" id="esprit">
+      <div class="container">
+        <div class="grid-esprit">
+          <div class="esprit-text fade-up">
+            <span class="eyebrow">Exigence &amp; Maîtrise</span>
+            <h2 class="section-title">L’intelligence de la main, la patience des essences.</h2>
+            <div style="margin-top: 1.5rem;">
+              <p>
+                L'ébénisterie et le travail du bois exigent une lecture attentive des fibres et des tensions. Qu’il s'agisse de charpente traditionnelle, d’agencements précis ou de mobilier d’art, nos réalisations allient solidité structurelle et élégance intemporelle.
+              </p>
+              <p>
+                Nous accueillons vos demandes sur mesure pour donner corps à des structures et des volumes durables, pensés pour traverser les générations.
+              </p>
+            </div>
+
+            <div class="wood-specs">
+              <div class="wood-spec-item">
+                <h4>Vocation</h4>
+                <p>Artisans d'art</p>
+              </div>
+              <div class="wood-spec-item">
+                <h4>Savoir-faire</h4>
+                <p>Ébénisterie &amp; Charpente</p>
+              </div>
+              <div class="wood-spec-item">
+                <h4>Démarche</h4>
+                <p>Étude personnalisée</p>
+              </div>
+              <div class="wood-spec-item">
+                <h4>Échanges</h4>
+                <p>Sur rendez-vous</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="esprit-visual fade-up">
+            <!-- Photo libre de droits fournie -->
+            <div class="artisan-frame">
+              <div class="artisan-frame-inner">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg/1920px-Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+                  alt="Artisan travaillant le bois avec précision dans son atelier" 
+                  class="artisan-img"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                >
+                <span class="photo-caption">Image d'illustration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 : L'OFFRE / SAVOIR-FAIRE -->
+    <section class="section section-border-top" id="metiers">
+      <div class="container">
+        <div class="section-heading-wrapper fade-up">
+          <span class="eyebrow">Domaines d’intervention</span>
+          <h2 class="section-title">Des réalisations guidées par la précision du geste.</h2>
+          <p class="section-subtitle">Chaque commande fait l’objet d'une analyse technique rigoureuse, du choix des essences aux finitions finales.</p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Carte 1 -->
+          <div class="craft-card fade-up">
+            <div>
+              <svg class="craft-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="4" y="6" width="24" height="20" rx="1"/>
+                <line x1="4" y1="12" x2="28" y2="12"/>
+                <line x1="12" y1="12" x2="12" y2="26"/>
+                <line x1="20" y1="12" x2="20" y2="26"/>
+              </svg>
+              <h3>Ébénisterie d'Art</h3>
+              <p>Création d'ouvrages sur mesure, pièces de mobilier singulières et agencements haut de gamme conçus selon vos contraintes d’espace et d'esthétique.</p>
+            </div>
+            <div class="craft-card-meta">Sur commande</div>
+          </div>
+
+          <!-- Carte 2 -->
+          <div class="craft-card fade-up">
+            <div>
+              <svg class="craft-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M16 4 L28 26 L4 26 Z"/>
+                <line x1="16" y1="4" x2="16" y2="26"/>
+                <line x1="10" y1="16" x2="22" y2="16"/>
+              </svg>
+              <h3>Charpente &amp; Assemblages</h3>
+              <p>Mise en œuvre des techniques de charpente et d’assemblages traditionnels du bois, garantissant stabilité, tenue mécanique et harmonie des volumes.</p>
+            </div>
+            <div class="craft-card-meta">Ouvrages pérennes</div>
+          </div>
+
+          <!-- Carte 3 -->
+          <div class="craft-card fade-up">
+            <div>
+              <svg class="craft-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="16" cy="16" r="11"/>
+                <path d="M16 8 C12 8 8 12 8 16 S12 24 16 24"/>
+                <path d="M16 11 C13.5 11 11 13.5 11 16 S13.5 21 16 21"/>
+              </svg>
+              <h3>Étude &amp; Restauration</h3>
+              <p>Conseil personnalisé, diagnostic des pièces existantes, reprise d'assemblages anciens et valorisation du patrimoine en bois dans les règles de l'art.</p>
+            </div>
+            <div class="craft-card-meta">Devis sur étude</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 : L'ATELIER & EMPLACEMENT PHOTO -->
+    <section class="section workshop-section section-border-top" id="atelier">
+      <div class="container">
+        <div class="workshop-grid">
+          <div class="fade-up">
+            <span class="eyebrow">Au cœur du métier</span>
+            <h2 class="section-title">L’atelier, lieu de patience et de transmission.</h2>
+            <p style="color: var(--color-text-muted); margin-top: 1.25rem; font-size: 1.05rem;">
+              Du rabotage méticuleux à l'assemblage précis, nos gestes honorent le temps long nécessaire à la transformation du bois. Nous vous accompagnons depuis l'esquisse initiale jusqu'à la pose ou la livraison de votre projet.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="#contact" class="btn btn-secondary">Prendre attache</a>
+            </div>
+          </div>
+
+          <div class="fade-up">
+            <!-- Emplacement discret prévu pour les futures vraies photos de l'artisan -->
+            <div class="placeholder-photo-box" role="region" aria-label="Emplacement pour les photos réelles de l'atelier">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Vos photos ici</span>
+              <p>Cet espace mettra en valeur les photographies authentiques de vos réalisations et de votre atelier.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 : INFORMATIONS PRATIQUES & CONTACT -->
+    <section class="section section-border-top" id="contact">
+      <div class="container">
+        <div class="section-heading-wrapper fade-up">
+          <span class="eyebrow">Contact direct</span>
+          <h2 class="section-title">Parlez-nous de votre projet.</h2>
+          <p class="section-subtitle">Chaque réalisation commence par une écoute attentive. Joignez-nous par téléphone ou par courrier électronique.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Coordonnées vérifiées -->
+          <div class="contact-list fade-up">
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <div class="contact-details">
+                <h4>Téléphone</h4>
+                <a href="tel:+33556614423">+33 5 56 61 44 23</a>
+                <p class="contact-note">Joignable pour toute étude de projet et prise de rendez-vous.</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <div class="contact-details">
+                <h4>Courriel</h4>
+                <a href="mailto:ebeniste-ass@orange.fr">ebeniste-ass@orange.fr</a>
+                <p class="contact-note">Transmettez vos demandes, plans ou descriptifs par email.</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div class="contact-details">
+                <h4>Modalités &amp; Visites</h4>
+                <p>Échanges sur rendez-vous préalable</p>
+                <p class="contact-note">Déplacements pour métrés et études d’assemblage sur demande.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte d'appel à projet -->
+          <div class="inquiry-card fade-up">
+            <div>
+              <span class="eyebrow" style="margin-bottom: 0.8rem;">Devis &amp; Conseils</span>
+              <h3>Une création en bois massif ou une charpente ?</h3>
+              <p>
+                Nous examinons la faisabilité technique de votre projet et vous guidons vers le choix des essences et des assemblages les plus appropriés.
+              </p>
+            </div>
+            <div>
+              <a href="mailto:ebeniste-ass@orange.fr?subject=Demande%20d'information%20-%20Projet%20d'%C3%A9b%C3%A9nisterie" class="btn btn-primary" style="width: 100%;">Écrire à l'atelier</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 28px; height: 28px;">
+            <circle cx="32" cy="14" r="5" stroke="currentColor"/>
+            <line x1="28" y1="17" x2="16" y2="52"/>
+            <line x1="36" y1="17" x2="48" y2="52"/>
+            <path d="M22 38 Q32 32 42 38"/>
+          </svg>
+          <span style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-text);">
+            Ébéniste &amp; associés
+          </span>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--color-text-muted);">
+          Artisans d'art · Menuiserie fine &amp; charpente du bois
+        </p>
+      </div>
+
+      <div class="footer-credits">
+        <p>Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></p>
+        <p>Photo : Shixart1985 (CC BY 2.0)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE MAQUETTE FIXE ET DISCRET -->
+  <div class="orbe-badge" aria-label="Mention maquette">
+    Maquette proposée par ORBE
+  </div>
+
+  <!-- SCRIPT THREE.JS ET INTERACTIVITÉ -->
+  <script>
+    // Navigation mobile
+    (function initMobileNav() {
+      const toggle = document.getElementById('nav-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const links = document.querySelectorAll('.mobile-link');
+
+      function closeMenu() {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('is-open');
+        menu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function openMenu() {
+        toggle.setAttribute('aria-expanded', 'true');
+        menu.classList.add('is-open');
+        menu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      links.forEach(l => l.addEventListener('click', closeMenu));
+    })();
+
+    // Apparition douce au défilement (IntersectionObserver)
+    (function initScrollAnimations() {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const elements = document.querySelectorAll('.fade-up');
+
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        elements.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      elements.forEach(el => observer.observe(el));
+    })();
+
+    // Scène Three.js dans le bandeau d'accueil
+    window.addEventListener('load', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      try {
+        if (!window.THREE) return;
+
+        const container = document.getElementById('hero-canvas-container');
+        const canvas = document.getElementById('hero-canvas');
+        if (!container || !canvas) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+        camera.position.set(0, 0, 18);
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "high-performance"
+        });
+
+        const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+        renderer.setPixelRatio(pixelRatio);
+        renderer.setSize(container.clientWidth, container.clientHeight);
+
+        // Lumières chaudes évoquant l'atmosphère d'un atelier d'ébéniste
+        const ambientLight = new THREE.AmbientLight(0xfff5ea, 0.65);
+        scene.add(ambientLight);
+
+        const warmLight = new THREE.PointLight(0xc59f60, 2.2, 50);
+        warmLight.position.set(10, 12, 10);
+        scene.add(warmLight);
+
+        const softFill = new THREE.DirectionalLight(0x8a6242, 1.2);
+        softFill.position.set(-10, -5, 8);
+        scene.add(softFill);
+
+        // Volumes géométriques abstraits évoquant les pièces de bois taillées et les cernes de croissance
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const woodMaterialDark = new THREE.MeshStandardMaterial({
+          color: 0x3d2b20,
+          roughness: 0.6,
+          metalness: 0.1,
+          flatShading: true
+        });
+
+        const woodMaterialWarm = new THREE.MeshStandardMaterial({
+          color: 0x6e472a,
+          roughness: 0.5,
+          metalness: 0.15,
+          flatShading: true
+        });
+
+        const brassAccentMaterial = new THREE.MeshStandardMaterial({
+          color: 0xc59f60,
+          roughness: 0.35,
+          metalness: 0.75,
+          wireframe: false
+        });
+
+        // 1. Anneau fin évoquant les cernes de tronc et le travail du tour à bois
+        const ringGeo = new THREE.TorusGeometry(5.2, 0.14, 16, 80);
+        const ringMesh = new THREE.Mesh(ringGeo, brassAccentMaterial);
+        ringMesh.position.set(3.5, 0.5, -2);
+        group.add(ringMesh);
+
+        // 2. Volume géométrique biseauté évoquant un assemblage en queue d'aronde taillé
+        const polyGeo = new THREE.IcosahedronGeometry(2.8, 0);
+        const polyMesh = new THREE.Mesh(polyGeo, woodMaterialDark);
+        polyMesh.position.set(4.2, 0, -1);
+        group.add(polyMesh);
+
+        // 3. Second polyèdre plus doux en retrait
+        const dodecaGeo = new THREE.DodecahedronGeometry(1.6, 0);
+        const dodecaMesh = new THREE.Mesh(dodecaGeo, woodMaterialWarm);
+        dodecaMesh.position.set(1.5, -2.8, 1);
+        group.add(dodecaMesh);
+
+        // 4. Fine lame géométrique (évoquant le rabot ou le trait de coupe)
+        const bladeGeo = new THREE.CylinderGeometry(0.04, 0.04, 9, 12);
+        const bladeMesh = new THREE.Mesh(bladeGeo, brassAccentMaterial);
+        bladeMesh.position.set(3, 1, 0);
+        bladeMesh.rotation.z = Math.PI / 3.8;
+        group.add(bladeMesh);
+
+        let animationFrameId = null;
+        let isTabVisible = true;
+
+        document.addEventListener('visibilitychange', () => {
+          isTabVisible = !document.hidden;
+          if (isTabVisible && !animationFrameId) {
+            animate();
+          }
+        });
+
+        function animate() {
+          if (!isTabVisible) {
+            animationFrameId = null;
+            return;
+          }
+
+          // Mouvement extrêmement lent et apaisant
+          polyMesh.rotation.x += 0.0018;
+          polyMesh.rotation.y += 0.0022;
+
+          dodecaMesh.rotation.x -= 0.0025;
+          dodecaMesh.rotation.y += 0.0015;
+
+          ringMesh.rotation.x += 0.001;
+          ringMesh.rotation.y += 0.0015;
+
+          bladeMesh.rotation.y += 0.0012;
+
+          group.position.y = Math.sin(Date.now() * 0.0006) * 0.25;
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        function handleResize() {
+          if (!container) return;
+          const width = container.clientWidth;
+          const height = container.clientHeight;
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+          renderer.setSize(width, height);
+        }
+
+        window.addEventListener('resize', handleResize, { passive: true });
+
+      } catch (err) {
+        // En cas d'erreur de WebGL, le dégradé CSS d'arrière-plan assure la beauté du bandeau
+      }
+    });
+  </script>
+</body>
+</html>

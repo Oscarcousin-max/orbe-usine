@@ -1,0 +1,1521 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Madonnina à la Plage · Restaurant &amp; Pizza à Lacanau</title>
+  <meta name="description" content="Madonnina à la Plage, table indépendante dédiée à la pizza artisanale et aux saveurs d'Italie au 1 Boulevard de la Plage à Lacanau.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Madonnina à la Plage · Restaurant à Lacanau">
+  <meta property="og:description" content="L'art de la pizza et la cuisine d'inspiration italienne sur le front océanique de Lacanau.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG en Data URI -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='24' fill='%23192224'/%3E%3Ccircle cx='24' cy='24' r='20' stroke='%23C56144' stroke-width='1.5' fill='none'/%3E%3Cpath d='M16 32V16L24 25L32 16V32' stroke='%23F4EFE6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='24' cy='12' r='2' fill='%23DFAB64'/%3E%3C/svg%3E" type="image/svg+xml">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (chargé de façon différée) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Madonnina à la Plage",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Boulevard de la Plage",
+      "addressLocality": "Lacanau",
+      "postalCode": "33680",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33557601443",
+    "servesCuisine": ["Pizza", "Italienne"],
+    "sameAs": [
+      "https://www.instagram.com/madonninastreetpizza"
+    ]
+  }
+  </script>
+
+  <style>
+    /* =========================================================
+       VARIABLES DE STYLE & PALETTE HAUT DE GAMME
+       ========================================================= */
+    :root {
+      --bg-cream: #F8F6F0;
+      --bg-surface: #FFFFFF;
+      --bg-dark: #141C1E;
+      --bg-dark-accent: #1B2629;
+      --text-main: #1C2324;
+      --text-muted: #596567;
+      --text-light: #F4EFE6;
+      --text-light-muted: #9DAEB0;
+      --terracotta: #C56144;
+      --terracotta-soft: #D97E63;
+      --gold-ochre: #CFA058;
+      --ocean-edge: #2E454A;
+      --border-light: rgba(28, 35, 36, 0.1);
+      --border-dark: rgba(244, 239, 230, 0.12);
+      
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 3px;
+    }
+
+    /* Mise en page globale */
+    .container {
+      width: 100%;
+      max-width: 1220px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: clamp(1.25rem, 5vw, 2.5rem);
+      padding-right: clamp(1.25rem, 5vw, 2.5rem);
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-weight: 600;
+      color: var(--terracotta);
+      margin-bottom: 1.25rem;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background-color: currentColor;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* =========================================================
+       EN-TÊTE FIXE
+       ========================================================= */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba(20, 28, 30, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dark);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .brand-emblem {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-ochre);
+      display: block;
+      font-family: var(--font-sans);
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: 2.2rem;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-light-muted);
+      font-weight: 400;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover {
+      color: var(--text-light);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--terracotta);
+      transition: width 0.3s var(--transition-smooth);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border: 1px solid rgba(207, 160, 88, 0.45);
+      border-radius: var(--radius-sm);
+      color: var(--gold-ochre);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .header-cta:hover {
+      background-color: var(--gold-ochre);
+      color: var(--bg-dark);
+      border-color: var(--gold-ochre);
+    }
+
+    .mobile-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+    }
+
+    .mobile-toggle span {
+      width: 100%;
+      height: 1.5px;
+      background-color: var(--text-light);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-mobile-panel {
+      position: fixed;
+      top: 76px;
+      left: 0;
+      width: 100%;
+      background-color: var(--bg-dark);
+      border-bottom: 1px solid var(--border-dark);
+      padding: 2rem clamp(1.25rem, 5vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.4s var(--transition-smooth), opacity 0.3s ease;
+      z-index: 99;
+    }
+
+    .nav-mobile-panel.is-active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-mobile-link {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--text-light);
+    }
+
+    /* =========================================================
+       BANDEAU 3D D'ACCUEIL (HERO)
+       ========================================================= */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      padding-bottom: 5rem;
+      background: radial-gradient(circle at 75% 25%, #253336 0%, #162022 55%, #0E1415 100%);
+      color: var(--text-light);
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(180deg, rgba(14,20,21,0.5) 0%, rgba(14,20,21,0.82) 80%, rgba(14,20,21,0.98) 100%);
+      pointer-events: none;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-ochre);
+      margin-bottom: 1.5rem;
+      padding: 0.35rem 0.85rem;
+      background-color: rgba(207, 160, 88, 0.08);
+      border: 1px solid rgba(207, 160, 88, 0.25);
+      border-radius: 40px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.015em;
+      color: #FFFFFF;
+    }
+
+    .hero-title span {
+      font-style: italic;
+      color: var(--terracotta-soft);
+      display: block;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      line-height: 1.7;
+      color: var(--text-light-muted);
+      max-width: 620px;
+      margin-bottom: 2.75rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      background-color: var(--terracotta);
+      color: #FFFFFF;
+      padding: 0.95rem 1.95rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #AB4E34;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.75rem;
+      color: var(--text-light);
+      border: 1px solid rgba(244, 239, 230, 0.25);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-light);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-location-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      color: var(--text-light-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-location-indicator svg {
+      width: 18px;
+      height: 18px;
+      color: var(--terracotta);
+    }
+
+    /* =========================================================
+       SECTION : L'ESPRIT DE LA MAISON
+       ========================================================= */
+    .section-about {
+      padding: clamp(5rem, 10vw, 8.5rem) 0;
+      background-color: var(--bg-cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .editorial-quote {
+      position: relative;
+      padding: 3rem 2.5rem;
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+
+    .quote-mark {
+      font-family: var(--font-serif);
+      font-size: 5rem;
+      line-height: 1;
+      color: rgba(197, 97, 68, 0.2);
+      position: absolute;
+      top: 1.5rem;
+      left: 2rem;
+      user-select: none;
+    }
+
+    .quote-text {
+      position: relative;
+      z-index: 2;
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.3vw, 1.85rem);
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-footer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      font-weight: 600;
+    }
+
+    .values-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .value-item {
+      border-left: 2px solid var(--terracotta);
+      padding-left: 1.5rem;
+    }
+
+    .value-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+
+    .value-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       SECTION : L'OFFRE & SAVOIR-FAIRE
+       ========================================================= */
+    .section-offer {
+      padding: clamp(5rem, 10vw, 8.5rem) 0;
+      background-color: #F1EDE4;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .offer-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .offer-header .section-eyebrow {
+      justify-content: center;
+    }
+
+    .offer-header .section-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background-color: currentColor;
+    }
+
+    .offer-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .card-craft {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: clamp(2rem, 4vw, 3rem);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-craft:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(28, 35, 36, 0.05);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--terracotta);
+      margin-bottom: 1.75rem;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .card-text {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 30px;
+      background-color: #FAF6F0;
+      color: var(--ocean-edge);
+      border: 1px solid rgba(46, 69, 74, 0.12);
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       EMPLACEMENTS PHOTOGRAPHIQUES SUR-MESURE (VOS PHOTOS ICI)
+       ========================================================= */
+    .section-gallery {
+      padding: clamp(5rem, 10vw, 8.5rem) 0;
+      background-color: var(--bg-cream);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .curated-frame {
+      position: relative;
+      background: linear-gradient(135deg, #EBE6DC 0%, #DED7C9 100%);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .curated-frame::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed rgba(28, 35, 36, 0.18);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    .frame-badge {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .frame-badge svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .frame-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .frame-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 320px;
+    }
+
+    /* =========================================================
+       SECTION INFOS PRATIQUES & PLAN
+       ========================================================= */
+    .section-info {
+      padding: clamp(5rem, 10vw, 8.5rem) 0;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .info-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+
+    .info-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info-block .section-title {
+      color: #FFFFFF;
+    }
+
+    .info-block .section-desc {
+      color: var(--text-light-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .info-items {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .info-item-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-ochre);
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    .info-item-value {
+      font-size: 1.15rem;
+      font-family: var(--font-serif);
+      color: var(--text-light);
+      line-height: 1.45;
+    }
+
+    .info-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .info-card-panel {
+      background-color: var(--bg-dark-accent);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: clamp(2rem, 4vw, 3rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .panel-header {
+      margin-bottom: 2rem;
+    }
+
+    .panel-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+
+    .panel-note {
+      font-size: 0.88rem;
+      color: var(--text-light-muted);
+      line-height: 1.6;
+    }
+
+    .panel-socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-dark);
+      margin-top: 2rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gold-ochre);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      transition: color 0.25s ease;
+    }
+
+    .social-link:hover {
+      color: #FFFFFF;
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* =========================================================
+       AVERTISSEMENT LÉGAL ALCOOL & PIED DE PAGE
+       ========================================================= */
+    .alcohol-notice {
+      background-color: #0E1415;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border-dark);
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-light-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-footer {
+      background-color: #090E0F;
+      color: var(--text-light-muted);
+      padding: 4rem 0 3rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.85rem;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      justify-content: space-between;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: #FFFFFF;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+    }
+
+    .orbe-credit {
+      color: var(--gold-ochre);
+    }
+
+    /* =========================================================
+       BADGE FIXE ORBE
+       ========================================================= */
+    .badge-orbe {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 990;
+      background-color: rgba(20, 28, 30, 0.9);
+      color: #E2DDD5;
+      border: 1px solid rgba(207, 160, 88, 0.35);
+      padding: 0.45rem 0.95rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      pointer-events: auto;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .badge-orbe:hover {
+      border-color: var(--gold-ochre);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       ANIMATIONS ET INTERSECTION OBSERVER
+       ========================================================= */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    /* =========================================================
+       MEDIA QUERIES (RESPONSIVE)
+       ========================================================= */
+    @media (min-width: 768px) {
+      .nav-desktop {
+        display: flex;
+      }
+      .mobile-toggle {
+        display: none;
+      }
+      .about-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+      .offer-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .info-layout {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+      .info-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-top {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .offer-cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       EN-TÊTE FIXE
+       ========================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#accueil" class="brand" aria-label="Madonnina à la Plage, retour à l'accueil">
+          <!-- Monogramme SVG dessiné sur-mesure -->
+          <svg class="brand-emblem" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <circle cx="22" cy="22" r="21" stroke="#C56144" stroke-width="1.2" stroke-opacity="0.6"/>
+            <path d="M12 30V15L22 25L32 15V30" stroke="#F4EFE6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 35C14 34 30 34 37 35" stroke="#DFAB64" stroke-width="1" stroke-dasharray="2 2"/>
+          </svg>
+          <div>
+            <span class="brand-name">Madonnina</span>
+            <span class="brand-subtitle">À la Plage · Lacanau</span>
+          </div>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Navigation principale">
+          <a href="#esprit" class="nav-link">L'Esprit</a>
+          <a href="#carte" class="nav-link">La Table &amp; Pizza</a>
+          <a href="#galerie" class="nav-link">Galerie</a>
+          <a href="#informations" class="nav-link">Accès &amp; Contact</a>
+          <a href="tel:+33557601443" class="header-cta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            05 57 60 14 43
+          </a>
+        </nav>
+
+        <button type="button" class="mobile-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-panel" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu dépliable mobile -->
+    <div class="nav-mobile-panel" id="mobile-panel" aria-hidden="true">
+      <a href="#esprit" class="nav-mobile-link mobile-nav-item">L'Esprit de la Maison</a>
+      <a href="#carte" class="nav-mobile-link mobile-nav-item">La Table &amp; Pizza</a>
+      <a href="#galerie" class="nav-mobile-link mobile-nav-item">Galerie</a>
+      <a href="#informations" class="nav-mobile-link mobile-nav-item">Informations &amp; Accès</a>
+      <a href="tel:+33557601443" class="btn-primary" style="text-align: center; justify-content: center; margin-top: 1rem;">
+        Appeler le restaurant
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================
+         BANDEAU 3D D'ACCUEIL (HERO)
+         ========================================================= -->
+    <section class="hero-section" id="accueil">
+      <!-- Toile Three.js -->
+      <canvas id="hero-canvas"></canvas>
+      <!-- Voile sombre assurant le contraste du texte -->
+      <div class="hero-scrim"></div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            Restaurant Indépendant · Lacanau Océan
+          </div>
+          <h1 class="hero-title">
+            Madonnina <span>à la Plage</span>
+          </h1>
+          <p class="hero-lead">
+            Au 1 Boulevard de la Plage, une signature artisanale dédiée à la pizza et aux belles assiettes, bercée par les embruns de l'Atlantique.
+          </p>
+          <div class="hero-actions">
+            <a href="tel:+33557601443" class="btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              Réserver par téléphone
+            </a>
+            <a href="#informations" class="btn-secondary">
+              Venir nous voir
+            </a>
+          </div>
+
+          <div class="hero-location-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>1 Boulevard de la Plage, 33680 Lacanau</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION : L'ESPRIT DE LA MAISON
+       ========================================================= -->
+    <section class="section-about" id="esprit">
+      <div class="container">
+        <div class="about-grid">
+          <div class="reveal-on-scroll">
+            <span class="section-eyebrow">L'Esprit de la Maison</span>
+            <h2 class="section-title">L'authenticité du geste, l'air du large.</h2>
+            <p class="section-desc">
+              Installée sur la promenade littorale de Lacanau, Madonnina à la Plage célèbre le goût du travail bien fait. La pizza et les suggestions du restaurant y sont abordées avec rigueur et simplicité, dans le respect des traditions culinaires italiennes.
+            </p>
+            <div class="values-list">
+              <div class="value-item">
+                <h3 class="value-title">L'artisanat sans concession</h3>
+                <p class="value-desc">Une attention quotidienne apportée aux farines, aux temps de repos des pâtes et à l'équilibre délicat de la cuisson.</p>
+              </div>
+              <div class="value-item">
+                <h3 class="value-title">L'ambiance du littoral</h3>
+                <p class="value-desc">Une adresse indépendante et soignée, pensée pour prolonger le bien-être des journées passées face à l'océan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-on-scroll">
+            <div class="editorial-quote">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <p class="quote-text">
+                Rapprocher l’exigence de la pizza de tradition et la douceur vivifiante de la côte canaulaise.
+              </p>
+              <div class="quote-footer">
+                <span>Madonnina à la Plage</span>
+                <span>·</span>
+                <span>Lacanau Océan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION : L'OFFRE (PIZZA & RESTAURANT)
+       ========================================================= -->
+    <section class="section-offer" id="carte">
+      <div class="container">
+        <div class="offer-header reveal-on-scroll">
+          <span class="section-eyebrow">Nos Savoir-Faire</span>
+          <h2 class="section-title">Une table dédiée au goût</h2>
+          <p class="section-desc" style="margin-left: auto; margin-right: auto;">
+            La carte suit les saisons et les arrivages pour offrir une expérience généreuse, sincère et lisible.
+          </p>
+        </div>
+
+        <div class="offer-cards">
+          <!-- Carte 1 -->
+          <div class="card-craft reveal-on-scroll">
+            <div>
+              <svg class="card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="16" cy="16" r="13"/>
+                <path d="M16 3L16 16L25 22"/>
+                <circle cx="11" cy="11" r="1.5" fill="currentColor"/>
+                <circle cx="20" cy="11" r="1.5" fill="currentColor"/>
+                <circle cx="14" cy="20" r="1.5" fill="currentColor"/>
+              </svg>
+              <h3 class="card-title">La Pizza Artisanale</h3>
+              <p class="card-text">
+                Pétrissage soigné, maturation patiente et cuisson maîtrisée : chaque pizza est conçue pour révéler des bords dorés et légers, garnis de produits rigoureusement sélectionnés.
+              </p>
+            </div>
+            <span class="card-tag">Spécialité</span>
+          </div>
+
+          <!-- Carte 2 -->
+          <div class="card-craft reveal-on-scroll">
+            <div>
+              <svg class="card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 10H26M6 16H26M6 22H26"/>
+                <rect x="4" y="5" width="24" height="22" rx="2"/>
+                <path d="M12 5V27"/>
+              </svg>
+              <h3 class="card-title">La Table &amp; Carte</h3>
+              <p class="card-text">
+                Au-delà de la pizza, le restaurant déploie des propositions savoureuses pour déjeuner ou dîner à votre rythme, en famille ou entre amis au retour de la plage.
+              </p>
+            </div>
+            <span class="card-tag">Cuisine de Saison</span>
+          </div>
+
+          <!-- Carte 3 -->
+          <div class="card-craft reveal-on-scroll">
+            <div>
+              <svg class="card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M8 26C13 24 19 24 24 26"/>
+                <path d="M6 18C12 16 20 16 26 18"/>
+                <path d="M8 10C13 8 19 8 24 10"/>
+                <circle cx="16" cy="4" r="1.5" fill="currentColor"/>
+              </svg>
+              <h3 class="card-title">Vins &amp; Rafraîchissements</h3>
+              <p class="card-text">
+                Une sélection attentive de vins et de boissons pour accompagner vos mets, harmoniser les saveurs et prolonger la convivialité des moments partagés.
+              </p>
+            </div>
+            <span class="card-tag">Accords &amp; Détente</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION : EMPLACEMENTS VOS PHOTOS ICI (MAXIMUM 2)
+       ========================================================= -->
+    <section class="section-gallery" id="galerie">
+      <div class="container">
+        <div class="reveal-on-scroll" style="max-width: 650px;">
+          <span class="section-eyebrow">Immersion Visuelle</span>
+          <h2 class="section-title">L’atmosphère en images</h2>
+          <p class="section-desc">
+            Découvrez bientôt les photographies de l’établissement, de la terrasse et de nos créations culinaires.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Emplacement 1 -->
+          <div class="curated-frame reveal-on-scroll">
+            <span class="frame-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              Vos photos ici
+            </span>
+            <p class="frame-title">La Salle &amp; La Terrasse</p>
+            <p class="frame-sub">Cadre contemporain et décontracté à deux pas du sable de Lacanau.</p>
+          </div>
+
+          <!-- Emplacement 2 -->
+          <div class="curated-frame reveal-on-scroll">
+            <span class="frame-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Vos photos ici
+            </span>
+            <p class="frame-title">Le Geste &amp; Les Pizze</p>
+            <p class="frame-sub">Le travail des pâtes fraîches, la découpe et la sortie du four.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION : INFOS PRATIQUES, CONTACT & PLAN
+       ========================================================= -->
+    <section class="section-info" id="informations">
+      <div class="container">
+        <div class="info-layout">
+          <div class="info-block reveal-on-scroll">
+            <span class="section-eyebrow" style="color: var(--gold-ochre);">Accès &amp; Réservations</span>
+            <h2 class="section-title">Nous rendre visite à Lacanau</h2>
+            <p class="section-desc">
+              Situé directement sur le front océanique, le restaurant vous accueille au 1 Boulevard de la Plage. Pour toute question ou réservation, contactez notre équipe par téléphone.
+            </p>
+
+            <div class="info-items">
+              <div>
+                <div class="info-item-label">Adresse</div>
+                <div class="info-item-value">1 Boulevard de la Plage<br>33680 Lacanau</div>
+              </div>
+
+              <div>
+                <div class="info-item-label">Téléphone</div>
+                <div class="info-item-value">
+                  <a href="tel:+33557601443" style="text-decoration: underline; text-underline-offset: 4px;">
+                    05 57 60 14 43
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <div class="info-item-label">Horaires &amp; Service</div>
+                <div class="info-item-value">
+                  Informations et réservations par téléphone
+                </div>
+              </div>
+
+              <div>
+                <div class="info-item-label">Réseaux Sociaux</div>
+                <div class="info-item-value">
+                  <a href="https://www.instagram.com/madonninastreetpizza" target="_blank" rel="noopener noreferrer" style="color: var(--gold-ochre);">
+                    @madonninastreetpizza
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-actions">
+              <a href="https://www.google.com/maps/search/?api=1&query=1+Boulevard+de+la+Plage%2C+33680+Lacanau" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                Itinéraire Google Maps
+              </a>
+              <a href="tel:+33557601443" class="btn-secondary">
+                Appeler directement
+              </a>
+            </div>
+          </div>
+
+          <!-- Panneau architectural d'information -->
+          <div class="info-card-panel reveal-on-scroll">
+            <div class="panel-header">
+              <p class="panel-tagline">Madonnina à la Plage</p>
+              <p class="panel-note">
+                Une table indépendante de qualité où le respect des ingrédients et le sens de l'accueil font écho à la splendeur de la côte girondine.
+              </p>
+            </div>
+
+            <!-- Illustration géométrique en trait fin -->
+            <div style="padding: 1.5rem 0;">
+              <svg viewBox="0 0 280 80" fill="none" style="width: 100%; height: auto; stroke: rgba(207,160,88,0.4);" aria-hidden="true">
+                <line x1="0" y1="40" x2="280" y2="40" stroke-width="1"/>
+                <circle cx="140" cy="40" r="28" stroke-width="1"/>
+                <circle cx="140" cy="40" r="14" stroke-width="1" stroke-dasharray="3 3"/>
+                <path d="M20 50C60 30 100 50 140 40C180 30 220 50 260 40" stroke-width="1"/>
+              </svg>
+            </div>
+
+            <div>
+              <div class="panel-socials">
+                <a href="https://www.instagram.com/madonninastreetpizza" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  Suivre nos actualités sur Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       AVERTISSEMENT LÉGAL OBLIGATOIRE POUR ÉTABLISSEMENT AVEC ALCOOL
+       ========================================================= -->
+  <aside class="alcohol-notice" aria-label="Mention légale santé">
+    <div class="container">
+      L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+    </div>
+  </aside>
+
+  <!-- =========================================================
+       PIED DE PAGE
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <p class="footer-brand-title">Madonnina à la Plage</p>
+          <p style="font-size: 0.9rem; color: var(--text-light-muted); max-width: 380px;">
+            Restaurant et pizza artisanale à Lacanau. L'alliance de l'esprit italien et du front de mer.
+          </p>
+        </div>
+        <div style="font-size: 0.85rem;">
+          <p style="color: #FFFFFF; margin-bottom: 0.5rem; font-weight: 500;">Adresse</p>
+          <p>1 Boulevard de la Plage<br>33680 Lacanau, France</p>
+          <p style="margin-top: 0.5rem;"><a href="tel:+33557601443" style="color: var(--gold-ochre);">+33 (0)5 57 60 14 43</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="current-year"></span> Madonnina à la Plage. Tous droits réservés.
+        </div>
+        <div class="orbe-credit">
+          Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com" style="color: inherit; text-decoration: underline;">societe.orbe@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       BADGE FIXE DISCRET ORBE
+       ========================================================= -->
+  <aside class="badge-orbe" aria-hidden="true">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- =========================================================
+       SCRIPTS JAVASCRIPT AUTONOMES
+       ========================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Année dynamique
+      const yrEl = document.getElementById('current-year');
+      if (yrEl) yrEl.textContent = new Date().getFullYear();
+
+      // 2. Gestion du menu mobile
+      const toggle = document.getElementById('menu-toggle');
+      const panel = document.getElementById('mobile-panel');
+      const navLinks = document.querySelectorAll('.mobile-nav-item');
+
+      if (toggle && panel) {
+        toggle.addEventListener('click', () => {
+          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', !isExpanded);
+          panel.classList.toggle('is-active', !isExpanded);
+          panel.setAttribute('aria-hidden', isExpanded);
+        });
+
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            toggle.setAttribute('aria-expanded', 'false');
+            panel.classList.remove('is-active');
+            panel.setAttribute('aria-hidden', 'true');
+          });
+        });
+      }
+
+      // 3. Apparitions douces au défilement (IntersectionObserver)
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+      } else {
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('is-visible'));
+      }
+    });
+
+    // 4. Initialisation de la scène Three.js sobre et abstraite
+    window.addEventListener('load', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      try {
+        if (!window.THREE) return;
+
+        const canvas = document.getElementById('hero-canvas');
+        if (!canvas) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.z = 24;
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "low-power"
+        });
+
+        const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+        renderer.setPixelRatio(pixelRatio);
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+        // Groupe d'éléments abstraits
+        const masterGroup = new THREE.Group();
+        scene.add(masterGroup);
+
+        // A. Forme torique abstraite (évocation de la rondeur de la pâte, des cercles du four et de l'horizon)
+        const torusGeo = new THREE.TorusKnotGeometry(6.8, 1.4, 120, 24, 2, 3);
+        const torusMat = new THREE.MeshStandardMaterial({
+          color: 0xC56144, // Terracotta chaleureux
+          roughness: 0.55,
+          metalness: 0.2,
+          wireframe: false
+        });
+        const knotMesh = new THREE.Mesh(torusGeo, torusMat);
+        masterGroup.add(knotMesh);
+
+        // B. Anneau flottant fin (évocation de la brise marine et du disque)
+        const ringGeo = new THREE.TorusGeometry(10.5, 0.08, 16, 100);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: 0xDFAB64, // Ocre dorée
+          transparent: true,
+          opacity: 0.4
+        });
+        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+        ringMesh.rotation.x = Math.PI / 3;
+        masterGroup.add(ringMesh);
+
+        // C. Lumières douces et chaleureuses
+        const ambientLight = new THREE.AmbientLight(0x2E454A, 1.4); // Légère tonalité océane
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xF4EFE6, 2.2, 50);
+        pointLight.position.set(12, 14, 18);
+        scene.add(pointLight);
+
+        const accentLight = new THREE.PointLight(0xDFAB64, 1.8, 40);
+        accentLight.position.set(-15, -10, 8);
+        scene.add(accentLight);
+
+        // Redimensionnement
+        function onResize() {
+          const parent = canvas.parentElement;
+          if (!parent) return;
+          const width = parent.clientWidth;
+          const height = parent.clientHeight;
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+          renderer.setSize(width, height);
+        }
+        window.addEventListener('resize', onResize, { passive: true });
+        onResize();
+
+        // Gestion de l'invisibilité (arrêt de la boucle)
+        let isTabActive = true;
+        let animationFrameId = null;
+
+        document.addEventListener('visibilitychange', () => {
+          isTabActive = !document.hidden;
+          if (isTabActive) {
+            lastTime = performance.now();
+            animate();
+          } else {
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+          }
+        });
+
+        // Animation très lente et apaisante
+        let lastTime = performance.now();
+        function animate() {
+          if (!isTabActive) return;
+
+          const now = performance.now();
+          const delta = (now - lastTime) * 0.001;
+          lastTime = now;
+
+          // Rotation douce
+          knotMesh.rotation.x += 0.06 * delta;
+          knotMesh.rotation.y += 0.09 * delta;
+
+          ringMesh.rotation.z -= 0.04 * delta;
+          masterGroup.rotation.y += 0.02 * delta;
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(animate);
+        }
+
+        animate();
+
+      } catch (err) {
+        // En cas d'erreur ou d'environnement sans WebGL, le dégradé CSS prend le relais de façon élégante
+        console.warn("Three.js n'a pas pu être initialisé :", err);
+      }
+    });
+  </script>
+</body>
+</html>

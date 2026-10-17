@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>B L'Atelier — Artisanat d’Art &amp; Tapisserie d'Ameublement</title>
+  <meta name="description" content="Atelier d’artisanat d'art et tapisserie d'ameublement situé au 23 Rue Bouquière. Restauration textile, travail des étoffes et respect des matières.">
+  <meta property="og:title" content="B L'Atelier — Artisanat d’Art &amp; Tapisserie d'Ameublement">
+  <meta property="og:description" content="L'artisanat du textile et de la tapisserie d'ameublement au 23 Rue Bouquière. Du lundi au vendredi de 10:00 à 17:00.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f1c19'/%3E%3Cpath d='M9 6h7a5 5 0 0 1 3 9 5 5 0 0 1-3 11H9V6zm3 3v5h4a2.5 2.5 0 0 0 0-5h-4zm0 8v6h4.5a3 3 0 0 0 0-6H12z' fill='%23d8c29d'/%3E%3C/svg%3E">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (chargé avec defer) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeGoodsStore",
+    "name": "B L'Atelier",
+    "description": "Atelier artisanal d'art et tapisserie d'ameublement.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "23 Rue Bouquière"
+    },
+    "email": "b.latelier.bx@gmail.com",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "10:00",
+        "closes": "17:00"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-dark: #151311;
+      --bg-surface: #1e1b18;
+      --bg-elevated: #282420;
+      --bg-light: #f7f5f0;
+      --bg-cream: #efebe4;
+      --text-main: #1c1a17;
+      --text-muted: #6b665f;
+      --text-light: #f5f2eb;
+      --text-light-muted: #a9a399;
+      --accent-gold: #c7a76c;
+      --accent-bronze: #8f7247;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-light: rgba(28, 26, 23, 0.1);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-width: 320px;
+      position: relative;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition), opacity var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* Focus accessible */
+    :focus-visible {
+      outline: 2px solid var(--accent-gold);
+      outline-offset: 3px;
+    }
+
+    /* Navigation */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color var(--transition), padding var(--transition), backdrop-filter var(--transition);
+    }
+
+    .site-header.scrolled {
+      background-color: rgba(21, 19, 17, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      z-index: 60;
+    }
+
+    .brand-emblem {
+      width: 34px;
+      height: 34px;
+      stroke: var(--accent-gold);
+      fill: none;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light-muted);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover, .nav-link:focus {
+      color: var(--text-light);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--accent-gold);
+      transition: width var(--transition);
+    }
+
+    .nav-link:hover::after, .nav-link:focus::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.55rem 1.25rem;
+      border: 1px solid rgba(199, 167, 108, 0.4);
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: all var(--transition);
+    }
+
+    .nav-cta:hover {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      border-color: var(--accent-gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 22px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 60;
+      padding: 0;
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 1px;
+      background-color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Hero section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 5rem;
+      background: radial-gradient(circle at 60% 40%, #2a241e 0%, #171513 70%, #0d0c0a 100%);
+      overflow: hidden;
+    }
+
+    .hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(21, 19, 17, 0.95) 0%, rgba(21, 19, 17, 0.45) 50%, rgba(21, 19, 17, 0.75) 100%);
+      z-index: 2;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 3;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-pretitle {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+      line-height: 1.05;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      max-width: 16ch;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: #dfd7cc;
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-light-muted);
+      max-width: 38ch;
+      margin-bottom: 2.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background-color var(--transition), transform var(--transition);
+    }
+
+    .btn-primary:hover {
+      background-color: #d6b882;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.95rem 1.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--text-light);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: all var(--transition);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    /* Section commune */
+    section {
+      padding: 6.5rem 2rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.15;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+
+    /* Esprit de la maison */
+    .section-esprit {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .grid-esprit {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .esprit-text p {
+      color: var(--text-light-muted);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .signature-divider {
+      width: 60px;
+      height: 1px;
+      background-color: var(--accent-gold);
+      margin: 2rem 0;
+    }
+
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: grayscale(25%) contrast(105%) brightness(0.85);
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.03);
+      filter: grayscale(10%) contrast(105%) brightness(0.9);
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      background: rgba(15, 13, 12, 0.75);
+      backdrop-filter: blur(4px);
+      padding: 0.25rem 0.6rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light-muted);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Offre / Savoir-faire */
+    .section-offre {
+      background-color: var(--bg-dark);
+    }
+
+    .offre-header {
+      max-width: 680px;
+      margin-bottom: 4rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .craft-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 2.75rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .craft-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(199, 167, 108, 0.3);
+    }
+
+    .craft-card-num {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--accent-gold);
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    .craft-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+
+    .craft-card-desc {
+      color: var(--text-light-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .card-footer-line {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-bronze);
+    }
+
+    /* Emplacements photos du commerçant */
+    .section-galerie {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .galerie-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .merchant-photo-slot {
+      aspect-ratio: 16 / 10;
+      background: linear-gradient(135deg, #24201c 0%, #1a1715 100%);
+      border: 1px dashed rgba(199, 167, 108, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      transition: border-color var(--transition);
+    }
+
+    .merchant-photo-slot:hover {
+      border-color: rgba(199, 167, 108, 0.5);
+    }
+
+    .slot-icon {
+      width: 44px;
+      height: 44px;
+      stroke: var(--accent-gold);
+      margin-bottom: 1rem;
+      opacity: 0.7;
+    }
+
+    .slot-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .slot-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light-muted);
+    }
+
+    /* Infos pratiques & Contact */
+    .section-pratique {
+      background-color: var(--bg-dark);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .pratique-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .pratique-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 3rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+    }
+
+    .info-value {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      font-family: var(--font-serif);
+    }
+
+    .info-value a {
+      color: var(--text-light);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 2px;
+    }
+
+    .info-value a:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+    }
+
+    .schedule-badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.35rem 0.75rem;
+      background: rgba(199, 167, 108, 0.1);
+      border: 1px solid rgba(199, 167, 108, 0.25);
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .pratique-actions {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Pied de page */
+    .site-footer {
+      background-color: #0d0c0a;
+      border-top: 1px solid var(--border-subtle);
+      padding: 4rem 2rem 5.5rem;
+      color: var(--text-light-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      max-width: 360px;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.12em;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .footer-credits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: right;
+    }
+
+    .footer-credits a {
+      color: var(--accent-gold);
+    }
+
+    .footer-credits a:hover {
+      text-decoration: underline;
+    }
+
+    .photo-credit {
+      font-size: 0.75rem;
+      color: #6b665f;
+    }
+
+    /* Badge fixe ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 99;
+      background: rgba(21, 19, 17, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(199, 167, 108, 0.35);
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      pointer-events: auto;
+    }
+
+    .orbe-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--accent-gold);
+      display: inline-block;
+    }
+
+    /* Animations au scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Accessibilité Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .grid-esprit {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .pratique-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .galerie-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-credits {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 80%;
+        max-width: 320px;
+        background-color: #171513;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 3rem 2.5rem;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        border-left: 1px solid var(--border-subtle);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav-menu.is-active {
+        transform: translateX(0);
+      }
+
+      .nav-link {
+        font-size: 1.1rem;
+      }
+
+      .site-header {
+        padding: 1.25rem 1.5rem;
+      }
+
+      section {
+        padding: 4.5rem 1.5rem;
+      }
+
+      .hero {
+        padding: 7rem 1.5rem 4rem;
+      }
+
+      .pratique-box {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête de page -->
+  <header class="site-header" id="siteHeader">
+    <a href="#" class="brand-link" aria-label="B L'Atelier - Accueil">
+      <!-- Monogramme artisanal SVG stylisé -->
+      <svg class="brand-emblem" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" stroke-width="1" opacity="0.4"/>
+        <path d="M14 11h7a5 5 0 0 1 2 9.5 5 5 0 0 1-2 8.5h-7V11zm3 3v4.5h4a2.25 2.25 0 0 0 0-4.5h-4zm0 6.5v5h4.2a2.5 2.5 0 0 0 0-5H17z" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="26" y1="13" x2="26" y2="27" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.6"/>
+      </svg>
+      <span class="brand-title">B L'Atelier</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu de navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav aria-label="Navigation principale">
+      <ul class="nav-menu" id="mainNav">
+        <li><a href="#esprit" class="nav-link">L'Esprit</a></li>
+        <li><a href="#metier" class="nav-link">Tapisserie</a></li>
+        <li><a href="#galerie" class="nav-link">L'Atelier</a></li>
+        <li><a href="#pratique" class="nav-link">Informations</a></li>
+        <li><a href="#pratique" class="nav-cta">Prendre contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- Bandeau d'accueil Hero avec Canvas 3D -->
+    <section class="hero" id="hero">
+      <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-container">
+        <span class="hero-pretitle">Artisans d'Art &middot; Upholsterer</span>
+        <h1 class="hero-title">L'art du geste, la mémoire <em>des étoffes</em>.</h1>
+        <p class="hero-desc">
+          Tapisserie d'ameublement et exigence artisanale au 23 Rue Bouquière. Façonner, tendre, restaurer avec la rigueur des métiers d'art.
+        </p>
+        <div class="hero-actions">
+          <a href="#pratique" class="btn-primary">
+            <span>Visiter l'atelier</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="mailto:b.latelier.bx@gmail.com" class="btn-outline">Nous écrire</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'esprit de la maison -->
+    <section class="section-esprit" id="esprit">
+      <div class="container">
+        <div class="grid-esprit">
+          <div class="esprit-text reveal">
+            <span class="section-eyebrow">La Maison</span>
+            <h2 class="section-heading">L'alliance de la main et de la matière</h2>
+            <p>
+              Chaque assise, chaque textile porte une histoire singulière. Au cœur de notre métier d'artisan d'art tapissier, le travail s'exerce avec patience et méthode : étude des structures, choix rigoureux des matières nobles et façonnage fidèle aux règles de l'art.
+            </p>
+            <p>
+              Situé au 23 Rue Bouquière, notre atelier accueille vos projets de tapisserie d'ameublement, dans le respect des garnitures traditionnelles comme des lignes plus contemporaines.
+            </p>
+            <div class="signature-divider"></div>
+            <p style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-light); font-style: italic;">
+              « Préserver la forme, magnifier le toucher, pérenniser l’ouvrage. »
+            </p>
+          </div>
+
+          <div class="esprit-media reveal">
+            <div class="photo-card">
+              <!-- Photo d'illustration autorisée de la fiche -->
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg/1920px-Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+                alt="Artisan façonnant la matière à l'établi"
+                loading="lazy"
+                width="800"
+                height="600"
+              >
+              <div class="photo-caption">Image d'illustration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'offre / Le savoir-faire -->
+    <section class="section-offre" id="metier">
+      <div class="container">
+        <div class="offre-header reveal">
+          <span class="section-eyebrow">Savoir-Faire</span>
+          <h2 class="section-heading">Tapisserie d'ameublement &amp; ouvrages d'art</h2>
+          <p style="color: var(--text-light-muted); font-size: 1.05rem;">
+            Un accompagnement sur mesure pour redonner vie et maintien aux sièges, banquettes et ensembles textiles.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Carte 1 -->
+          <article class="craft-card reveal">
+            <div>
+              <span class="craft-card-num">01</span>
+              <h3 class="craft-card-title">Garniture &amp; Réfection</h3>
+              <p class="craft-card-desc">
+                Travail soigné de réfection traditionnelle ou contemporaine : sanglage, guindage, piquage et remise en état pérenne des assises.
+              </p>
+            </div>
+            <div class="card-footer-line">
+              <span>Précision du geste</span>
+            </div>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="craft-card reveal">
+            <div>
+              <span class="craft-card-num">02</span>
+              <h3 class="craft-card-title">Couverture &amp; Étoffes</h3>
+              <p class="craft-card-desc">
+                Pose de textiles choisis, finitions passepoilées, cloutées ou galonnées. Ajustement millimétré des raccords et des tensions.
+              </p>
+            </div>
+            <div class="card-footer-line">
+              <span>Sens du détail</span>
+            </div>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="craft-card reveal">
+            <div>
+              <span class="craft-card-num">03</span>
+              <h3 class="craft-card-title">Conseil &amp; Sur-mesure</h3>
+              <p class="craft-card-desc">
+                Écoute attentive de vos projets décoratifs et patrimoniaux à l'atelier, pour une harmonie durable au sein de vos intérieurs.
+              </p>
+            </div>
+            <div class="card-footer-line">
+              <span>Dialogue artisanal</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galerie / Emplacements réservés aux photos de l'artisan -->
+    <section class="section-galerie" id="galerie">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-eyebrow">Portfolio de l'Atelier</span>
+          <h2 class="section-heading">Les réalisations à l’établi</h2>
+          <p style="color: var(--text-light-muted); max-width: 55ch;">
+            Galerie dédiée aux créations, métamorphoses de sièges et pièces façonnées sur place.
+          </p>
+        </div>
+
+        <div class="galerie-grid">
+          <!-- Emplacement photo 1 -->
+          <div class="merchant-photo-slot reveal">
+            <svg class="slot-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span class="slot-title">Vos photos ici</span>
+            <span class="slot-sub">Restauration &amp; Détails d'ouvrage</span>
+          </div>
+
+          <!-- Emplacement photo 2 -->
+          <div class="merchant-photo-slot reveal">
+            <svg class="slot-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span class="slot-title">Vos photos ici</span>
+            <span class="slot-sub">Sélection d'étoffes &amp; Finitions</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informations pratiques & Contact -->
+    <section class="section-pratique" id="pratique">
+      <div class="container">
+        <div class="pratique-grid">
+          
+          <div class="pratique-box reveal">
+            <span class="section-eyebrow">Coordonnées</span>
+            <h2 class="section-heading" style="font-size: 2.4rem;">Venir à l'Atelier</h2>
+            <p style="color: var(--text-light-muted); font-size: 0.95rem;">
+              Nous vous accueillons en semaine pour étudier vos pièces et dialoguer autour de vos souhaits de tapisserie.
+            </p>
+
+            <ul class="info-list">
+              <li class="info-item">
+                <span class="info-label">Adresse de l'atelier</span>
+                <span class="info-value">23 Rue Bouquière</span>
+              </li>
+
+              <li class="info-item">
+                <span class="info-label">Horaires d'ouverture</span>
+                <span class="info-value">Du lundi au vendredi</span>
+                <div>
+                  <span class="schedule-badge">10:00 – 17:00</span>
+                </div>
+              </li>
+
+              <li class="info-item">
+                <span class="info-label">Correspondance par courriel</span>
+                <span class="info-value">
+                  <a href="mailto:b.latelier.bx@gmail.com">b.latelier.bx@gmail.com</a>
+                </span>
+              </li>
+            </ul>
+
+            <div class="pratique-actions">
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=23+Rue+Bouqui%C3%A8re" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="btn-primary"
+              >
+                <span>Calculer l'itinéraire</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="pratique-box reveal" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="section-eyebrow">Demande d'information</span>
+              <h2 class="section-heading" style="font-size: 2.4rem;">Votre Projet</h2>
+              <p style="color: var(--text-light-muted); font-size: 0.95rem; margin-bottom: 2rem;">
+                Pour un devis ou une estimation de réfection, vous pouvez nous transmettre vos photographies et dimensions directement par courriel.
+              </p>
+              
+              <div style="background: rgba(0,0,0,0.25); border-left: 2px solid var(--accent-gold); padding: 1.5rem; margin-bottom: 2rem;">
+                <p style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--text-light); margin-bottom: 0.5rem;">
+                  Échanges directs avec l'artisan
+                </p>
+                <p style="font-size: 0.85rem; color: var(--text-light-muted);">
+                  Chaque pièce nécessitant une approche sur mesure, nous examinons vos besoins avec attention afin d'établir un diagnostic fidèle.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <a href="mailto:b.latelier.bx@gmail.com?subject=Demande%20d'information%20-%20B%20L'Atelier" class="btn-outline" style="width: 100%; justify-content: center;">
+                Envoyer un message à l'atelier
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-brand-title">B L'Atelier</div>
+        <p style="font-size: 0.85rem; line-height: 1.6;">
+          Artisans d'art · Tapissier d'ameublement<br>
+          23 Rue Bouquière<br>
+          Du lundi au vendredi : 10:00 — 17:00
+        </p>
+      </div>
+
+      <div class="footer-credits">
+        <div>
+          Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
+        </div>
+        <div class="photo-credit">
+          Photo : Shixart1985 (licence CC BY 2.0) — Image d'illustration
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge discret ORBE -->
+  <aside class="orbe-badge" aria-label="Mention maquette">
+    <span class="orbe-badge-dot"></span>
+    <span>Maquette proposée par ORBE</span>
+  </aside>
+
+  <!-- Script interactif & Three.js -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Gestion de l'en-tête au défilement
+      const header = document.getElementById('siteHeader');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }, { passive: true });
+
+      // 2. Menu mobile repliable
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('mainNav');
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+          navMenu.classList.toggle('is-active');
+        });
+
+        // Fermer le menu lors d'un clic sur un lien
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('is-active');
+          });
+        });
+      }
+
+      // 3. Apparitions douces avec IntersectionObserver
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reducedMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+      }
+
+      // 4. Bandeau 3D Three.js : rubans d'étoffe et courbes abstraites
+      const canvas = document.getElementById('heroCanvas');
+      if (canvas && !reducedMotion) {
+        initThreeJsHero(canvas);
+      }
+    });
+
+    function initThreeJsHero(canvas) {
+      try {
+        if (!window.THREE) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+        camera.position.z = 24;
+        camera.position.y = 1;
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "high-performance"
+        });
+
+        const pixelRatio = Math.min(window.devicePixelRatio, 2);
+        renderer.setPixelRatio(pixelRatio);
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+
+        // Formes évoquant le travail des rubans et des fils de tapisserie
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // Lumières douces et chaudes
+        const ambientLight = new THREE.AmbientLight(0xfff3e0, 0.8);
+        scene.add(ambientLight);
+
+        const spotLight = new THREE.DirectionalLight(0xc7a76c, 1.4);
+        spotLight.position.set(15, 20, 15);
+        scene.add(spotLight);
+
+        const fillLight = new THREE.DirectionalLight(0x4a3d31, 0.6);
+        fillLight.position.set(-15, -10, -10);
+        scene.add(fillLight);
+
+        // Ruban principal ondulé (Courbe de Bézier 3D tubulaire)
+        class CustomCurve extends THREE.Curve {
+          constructor(scale = 1, shift = 0) {
+            super();
+            this.scale = scale;
+            this.shift = shift;
+          }
+          getPoint(t) {
+            const angle = t * Math.PI * 2;
+            const x = Math.sin(angle * 1.5 + this.shift) * 11 * this.scale;
+            const y = Math.cos(angle * 1.2) * 5 * this.scale;
+            const z = Math.sin(angle * 2 + this.shift) * 6 * this.scale;
+            return new THREE.Vector3(x, y, z);
+          }
+        }
+
+        const materials = [
+          new THREE.MeshStandardMaterial({
+            color: 0xc7a76c, // Or vieilli / bronze
+            roughness: 0.6,
+            metalness: 0.25,
+            wireframe: false
+          }),
+          new THREE.MeshStandardMaterial({
+            color: 0x8f7247, // Laiton patiné
+            roughness: 0.7,
+            metalness: 0.15,
+            wireframe: false
+          }),
+          new THREE.MeshStandardMaterial({
+            color: 0x3d352d, // Fil d'ombre lin anthracite
+            roughness: 0.9,
+            metalness: 0.05,
+            wireframe: false
+          })
+        ];
+
+        // Création de 3 rubans entrelacés évoquant l'étoffe et la trame
+        const ribbonCount = 3;
+        for (let i = 0; i < ribbonCount; i++) {
+          const path = new CustomCurve(1 - i * 0.15, i * 1.8);
+          const geometry = new THREE.TubeGeometry(path, 120, 0.35 - i * 0.08, 12, false);
+          const mesh = new THREE.Mesh(geometry, materials[i % materials.length]);
+          mesh.rotation.x = i * 0.4;
+          mesh.rotation.y = i * 0.7;
+          group.add(mesh);
+        }
+
+        // Quelques petits disques subtils flottants (rappellent les clous de tapissier / oeillets)
+        const tokenGeom = new THREE.CylinderGeometry(0.3, 0.3, 0.08, 24);
+        const tokenMat = new THREE.MeshStandardMaterial({
+          color: 0xd8c29d,
+          metalness: 0.8,
+          roughness: 0.3
+        });
+
+        for (let j = 0; j < 8; j++) {
+          const token = new THREE.Mesh(tokenGeom, tokenMat);
+          const angle = (j / 8) * Math.PI * 2;
+          token.position.set(Math.cos(angle) * 13, (Math.sin(angle * 2) * 4), Math.sin(angle) * 7);
+          token.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+          group.add(token);
+        }
+
+        let isRunning = true;
+        let animationFrameId;
+
+        // Contrôle de visibilité d'onglet pour préserver les performances
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            isRunning = false;
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+          } else {
+            isRunning = true;
+            render();
+          }
+        });
+
+        // Redimensionnement fluide
+        function onWindowResize() {
+          if (!canvas || !renderer || !camera) return;
+          const width = canvas.clientWidth;
+          const height = canvas.clientHeight;
+          if (canvas.width !== width || canvas.height !== height) {
+            renderer.setSize(width, height, false);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+          }
+        }
+        window.addEventListener('resize', onWindowResize, { passive: true });
+
+        // Boucle de rendu ralentie et sobre
+        let clock = new THREE.Clock();
+        function render() {
+          if (!isRunning) return;
+          const elapsed = clock.getElapsedTime();
+
+          // Mouvement très lent et fluide
+          group.rotation.y = elapsed * 0.045;
+          group.rotation.x = Math.sin(elapsed * 0.03) * 0.12;
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(render);
+        }
+
+        render();
+      } catch (err) {
+        // En cas d'erreur ou d'absence de support WebGL, le dégradé CSS d'arrière-plan s'applique sans encombre.
+        console.warn('Three.js non disponible ou non supporté :', err);
+      }
+    }
+  </script>
+</body>
+</html>

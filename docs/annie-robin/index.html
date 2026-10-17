@@ -1,0 +1,1360 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Annie Robin · Artisan d'Art Potier</title>
+  <meta name="description" content="Atelier de poterie et céramique d'art Annie Robin. Pièces d'artisanat façonnées avec patience et exigence.">
+  <meta property="og:title" content="Annie Robin · Artisan d'Art Potier">
+  <meta property="og:description" content="L'expression de la matière et du geste. Céramique d'art façonnée à la main.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.poterie-annie.fr">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23221B17'/%3E%3Cpath d='M16 6c-5 0-8 4-8 10 0 6 3 10 8 10s8-4 8-10c0-6-3-10-8-10zm0 3c3.5 0 5 3.5 5 7s-1.5 7-5 7-5-3.5-5-7 1.5-7 5-7z' fill='%23C38D64'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23ECE5DC'/%3E%3C/svg%3E">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Annie Robin",
+    "description": "Artisan d'art potier, création de pièces de céramique et de poterie.",
+    "email": "contact@poterie-annie.fr",
+    "category": "Artisan d'art"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-cream: #F8F5F0;
+      --bg-warm: #EFE9E0;
+      --surface-card: #FFFFFF;
+      --ink: #1F1916;
+      --ink-soft: #5C534D;
+      --terracotta: #B66341;
+      --terracotta-dark: #8F492E;
+      --sand: #D9CBBF;
+      --clay-line: #E2D7CC;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-cream);
+      color: var(--ink);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.65;
+      overflow-x: hidden;
+      background-color: var(--bg-cream);
+    }
+
+    ::selection {
+      background-color: var(--sand);
+      color: var(--ink);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--terracotta);
+      outline-offset: 3px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* TYPOGRAPHY UTILS */
+    .title-display {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--terracotta);
+      display: block;
+      margin-bottom: 0.85rem;
+    }
+
+    /* HEADER & NAVIGATION */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      transition: background-color 0.4s ease, border-color 0.4s ease, padding 0.4s ease;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+    }
+
+    .site-header.scrolled {
+      background-color: rgba(248, 245, 240, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--clay-line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 110;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      fill: none;
+      stroke: var(--ink);
+      stroke-width: 1.5;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 110;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 1.5px;
+      background-color: var(--ink);
+      margin: 6px 0;
+      transition: var(--transition-smooth);
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav-link {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--terracotta);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-contact-btn {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.75rem 1.4rem;
+      border: 1px solid var(--ink);
+      border-radius: 40px;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-contact-btn:hover {
+      background-color: var(--ink);
+      color: var(--bg-cream);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 5rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 75% 30%, #F1E7DD 0%, #F8F5F0 60%);
+    }
+
+    #three-hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(248, 245, 240, 0.92) 0%, rgba(248, 245, 240, 0.55) 70%, rgba(248, 245, 240, 0.3) 100%);
+      z-index: 2;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 3;
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.75rem, 6.5vw, 5.25rem);
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--terracotta);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.25vw, 1.2rem);
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background-color: var(--terracotta);
+      color: #FFFFFF;
+      padding: 1.05rem 2.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      box-shadow: 0 10px 24px -6px rgba(182, 99, 65, 0.35);
+      transition: var(--transition-smooth);
+      border: 1px solid var(--terracotta);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--terracotta-dark);
+      border-color: var(--terracotta-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 1rem 1.5rem;
+      position: relative;
+    }
+
+    .btn-ghost::after {
+      content: '→';
+      margin-left: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-ghost:hover::after {
+      transform: translateX(4px);
+    }
+
+    /* SECTION ARCHITECTURE */
+    .section-wrap {
+      padding: 7rem 2rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      max-width: 600px;
+    }
+
+    /* PHILOSOPHY / ESPRIT SECTION */
+    .spirit-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .spirit-text p {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: var(--ink-soft);
+      margin-bottom: 1.8rem;
+      font-weight: 300;
+    }
+
+    .spirit-text p:first-of-type {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .craft-seal {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--clay-line);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .seal-icon {
+      width: 48px;
+      height: 48px;
+      stroke: var(--terracotta);
+      flex-shrink: 0;
+    }
+
+    .seal-desc {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    /* ARTISAN VISUAL / ILLUSTRATION ROW */
+    .spirit-media {
+      position: relative;
+    }
+
+    .photo-card {
+      position: relative;
+      background-color: var(--bg-warm);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--clay-line);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: saturate(0.85) contrast(0.95);
+      transition: transform 0.8s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .photo-caption-badge {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(248, 245, 240, 0.92);
+      backdrop-filter: blur(8px);
+      padding: 0.35rem 0.8rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      color: var(--ink-soft);
+    }
+
+    /* PLACEHOLDER CADRE ATELIER */
+    .workshop-placeholder {
+      margin-top: 1.5rem;
+      border: 1px dashed var(--sand);
+      border-radius: 4px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .workshop-placeholder svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--sand);
+    }
+
+    .workshop-placeholder span {
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    /* OFFER SECTION */
+    .section-offer {
+      background-color: #F2ECE3;
+      border-top: 1px solid var(--clay-line);
+      border-bottom: 1px solid var(--clay-line);
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .offer-card {
+      background-color: var(--bg-cream);
+      padding: 2.5rem 2rem;
+      border-radius: 4px;
+      border: 1px solid var(--clay-line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 380px;
+      transition: var(--transition-smooth);
+    }
+
+    .offer-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -12px rgba(31, 25, 22, 0.08);
+      border-color: var(--sand);
+    }
+
+    .card-num {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--terracotta);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-meta {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--clay-line);
+    }
+
+    .card-meta::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--terracotta);
+    }
+
+    /* SECOND PLACEHOLDER FOR GALLERY PIECES */
+    .second-photo-block {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .placeholder-full {
+      border: 1px dashed var(--sand);
+      border-radius: 4px;
+      min-height: 240px;
+      background: rgba(255, 255, 255, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    .placeholder-full svg {
+      width: 36px;
+      height: 36px;
+      stroke: var(--sand);
+    }
+
+    .placeholder-full span {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .placeholder-full p {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      max-width: 280px;
+    }
+
+    .curated-quote {
+      background: var(--bg-cream);
+      border: 1px solid var(--clay-line);
+      border-radius: 4px;
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .curated-quote blockquote {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 1.2rem;
+    }
+
+    .curated-quote cite {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--terracotta);
+      font-style: normal;
+    }
+
+    /* PRACTICAL DETAILS & CONTACT */
+    .practical-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+    }
+
+    .practical-box {
+      background: var(--surface-card);
+      border: 1px solid var(--clay-line);
+      border-radius: 4px;
+      padding: 3.5rem 3rem;
+    }
+
+    .info-list {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    .info-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--clay-line);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    .info-value {
+      font-size: 1.15rem;
+      color: var(--ink);
+    }
+
+    .info-link {
+      color: var(--terracotta);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.05rem;
+      word-break: break-all;
+    }
+
+    .info-link:hover {
+      color: var(--terracotta-dark);
+      text-decoration: underline;
+    }
+
+    .contact-form-notice {
+      background: var(--bg-warm);
+      border-radius: 4px;
+      padding: 2rem;
+      border-left: 3px solid var(--terracotta);
+      margin-top: 1.5rem;
+    }
+
+    .contact-form-notice p {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background-color: #171311;
+      color: #ECE5DC;
+      padding: 5rem 2rem 3rem;
+      border-top: 1px solid #2B231F;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 3rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid #2B231F;
+    }
+
+    .footer-brand .brand-name {
+      color: #ECE5DC;
+      font-size: 1.6rem;
+    }
+
+    .footer-brand p {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #9C9188;
+      max-width: 320px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-links-wrap {
+      display: flex;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col a {
+      color: #9C9188;
+      font-size: 0.88rem;
+    }
+
+    .footer-col a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      padding-top: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.78rem;
+      color: #7D736A;
+    }
+
+    .credits-author {
+      color: #9C9188;
+    }
+
+    /* FIXED STUDIO BADGE */
+    .studio-badge {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 90;
+      background: rgba(31, 25, 22, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ECE5DC;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.55rem 0.95rem;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      transition: var(--transition-smooth);
+      pointer-events: auto;
+    }
+
+    .studio-badge:hover {
+      background: var(--ink);
+      color: #FFFFFF;
+      border-color: var(--terracotta);
+    }
+
+    /* REVEAL ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      .spirit-grid, .practical-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+      .second-photo-block {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        padding: 1.25rem 1.5rem;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .site-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 360px;
+        height: 100vh;
+        background-color: var(--bg-cream);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 3rem 2rem;
+        box-shadow: -8px 0 24px rgba(0, 0, 0, 0.08);
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        z-index: 105;
+      }
+      .site-nav.is-open {
+        transform: translateX(0);
+      }
+      .nav-toggle.is-active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+      }
+      .nav-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle.is-active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+      }
+      .section-wrap {
+        padding: 4.5rem 1.25rem;
+      }
+      .practical-box {
+        padding: 2.25rem 1.5rem;
+      }
+      .hero {
+        padding: 7rem 1.25rem 4rem;
+      }
+      .footer-top {
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+      .footer-links-wrap {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- EN-TÊTE -->
+  <header class="site-header" id="siteHeader">
+    <a href="#" class="brand" aria-label="Annie Robin - Accueil">
+      <svg class="brand-mark" viewBox="0 0 32 32">
+        <path d="M16 4 C22 4, 26 8, 26 14 C26 22, 19 28, 16 28 C13 28, 6 22, 6 14 C6 8, 10 4, 16 4 Z" fill="none"/>
+        <path d="M16 8 C19 8, 22 10, 22 14 C22 19, 18 24, 16 24 C14 24, 10 19, 10 14 C10 10, 13 8, 16 8 Z" fill="none"/>
+      </svg>
+      <span class="brand-name">Annie Robin</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav" id="mainNav" aria-label="Navigation principale">
+      <a href="#esprit" class="nav-link">L'Esprit</a>
+      <a href="#creations" class="nav-link">Poterie & Céramique</a>
+      <a href="#informations" class="nav-link">L'Atelier</a>
+      <a href="#contact" class="nav-contact-btn">Prendre Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- BANDEAU HERO AVEC THREE.JS -->
+    <section class="hero" aria-label="Introduction">
+      <canvas id="three-hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="eyebrow fade-up">Atelier d'Artisanat d'Art</span>
+          <h1 class="hero-title title-display fade-up">La terre façonnée, <em>l'empreinte</em> du temps.</h1>
+          <p class="hero-sub fade-up">
+            Chaque pièce de poterie naît d'un dialogue attentif avec la matière. Une recherche d'équilibre, de texture et de sobriété dans l'art de la céramique.
+          </p>
+          <div class="hero-actions fade-up">
+            <a href="mailto:contact@poterie-annie.fr" class="btn-primary">Contacter l'atelier</a>
+            <a href="#creations" class="btn-ghost">Découvrir les pièces</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1 : L'ESPRIT DE LA MAISON -->
+    <section class="section-wrap" id="esprit">
+      <div class="container">
+        <div class="spirit-grid">
+          <div class="spirit-text">
+            <span class="eyebrow fade-up">La Philosophie</span>
+            <h2 class="section-title title-display fade-up">L'exigence du geste et la patience de la cuisson.</h2>
+            
+            <p class="fade-up" style="margin-top: 1.5rem;">
+              Dans le secret de l'atelier, la poterie s'envisage comme une pratique d'attention soutenue, où les mains accompagnent l'argile jusqu'à sa forme juste.
+            </p>
+            <p class="fade-up">
+              Ni précipitation, ni artifice : chaque création de poterie reflète le travail du tour, la précision du modelage et le jeu subtil des émaux. L'argile garde en mémoire chaque intention, pour offrir des objets vivants, authentiques et durables.
+            </p>
+
+            <div class="craft-seal fade-up">
+              <svg class="seal-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.2">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v10M7 12h10"/>
+                <circle cx="12" cy="12" r="3" fill="#B66341" stroke="none"/>
+              </svg>
+              <div class="seal-desc">
+                Artisanat d'art · Poterie & Céramique<br>
+                Pièces uniques & petites séries
+              </div>
+            </div>
+          </div>
+
+          <div class="spirit-media fade-up">
+            <div class="photo-card">
+              <!-- PHOTO FOURNIE PAR LA FICHE : Shixart1985 (CC BY 2.0) -->
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg/1920px-Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+                alt="Artisan au travail dans son atelier avec précision"
+                loading="lazy"
+                width="800"
+                height="600"
+              >
+              <span class="photo-caption-badge">Image d'illustration</span>
+            </div>
+
+            <!-- EMPLACEMENT 1 RÉSERVÉ POUR LE COMMERÇANT -->
+            <div class="workshop-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Vos photos d'atelier ici</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 : L'OFFRE / LES SPÉCIALITÉS -->
+    <section class="section-wrap section-offer" id="creations">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow">Les Spécialités</span>
+          <h2 class="section-title title-display">L'art de la poterie décliné au quotidien.</h2>
+        </div>
+
+        <div class="offer-grid">
+          <!-- CARTE 1 -->
+          <article class="offer-card fade-up">
+            <div>
+              <span class="card-num">01</span>
+              <h3 class="card-title">Poterie d'Usage</h3>
+              <p class="card-desc">
+                Des formes pensées pour accompagner les rituels du quotidien : tasses, pichets, bols et plats. L'équilibre soigné entre préhension, poids de la terre et toucher brut.
+              </p>
+            </div>
+            <div class="card-meta">Usage & Quotidien</div>
+          </article>
+
+          <!-- CARTE 2 -->
+          <article class="offer-card fade-up">
+            <div>
+              <span class="card-num">02</span>
+              <h3 class="card-title">Pièces Uniques</h3>
+              <p class="card-desc">
+                Vases de caractère, contenants décoratifs et volumes sculptés. Des pièces singulières où la terre d'artisan s'exprime dans toute sa nudité minérale ou habillée d'émaux subtils.
+              </p>
+            </div>
+            <div class="card-meta">Création Décorative</div>
+          </article>
+
+          <!-- CARTE 3 -->
+          <article class="offer-card fade-up">
+            <div>
+              <span class="card-num">03</span>
+              <h3 class="card-title">Commandes Particulières</h3>
+              <p class="card-desc">
+                Réalisation sur mesure pour particuliers ou architectes d'intérieur. Élaboration de projets d'ensemble dans le respect des contraintes de matière et d'usage.
+              </p>
+            </div>
+            <div class="card-meta">Sur Consultation</div>
+          </article>
+        </div>
+
+        <!-- ZONE DÉCORATIVE & EMPLACEMENT 2 -->
+        <div class="second-photo-block fade-up">
+          <div class="curated-quote">
+            <blockquote>
+              « Le potier ne dompte pas la terre : il écoute ses tensions et s'accorde à ses volontés. »
+            </blockquote>
+            <cite>Annie Robin · Céramiste</cite>
+          </div>
+
+          <!-- EMPLACEMENT 2 RÉSERVÉ POUR LE COMMERÇANT -->
+          <div class="placeholder-full">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Vos photos de poterie ici</span>
+            <p>Mettez en avant vos dernières séries, émaux et textures cuites au four.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 : INFOS PRATIQUES & CONTACT -->
+    <section class="section-wrap" id="informations">
+      <div class="container">
+        <div class="practical-grid">
+          
+          <!-- BLOC INFORMATIONS PRATIQUES -->
+          <div class="practical-box fade-up">
+            <span class="eyebrow">Renseignements</span>
+            <h2 class="title-display" style="font-size: 2.2rem; margin-bottom: 1.5rem;">L'Atelier</h2>
+            <p style="color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7;">
+              L'atelier Annie Robin est dédié à la poterie d'art. Les rencontres, visites et commandes s'organisent principalement sur rendez-vous pour préserver le temps de création.
+            </p>
+
+            <ul class="info-list">
+              <li class="info-item">
+                <span class="info-label">Artisan</span>
+                <span class="info-value">Annie Robin</span>
+              </li>
+              <li class="info-item">
+                <span class="info-label">Secteur</span>
+                <span class="info-value">Artisans d'art · Poterie (Pottery)</span>
+              </li>
+              <li class="info-item">
+                <span class="info-label">Visites & Accueil</span>
+                <span class="info-value">Sur rendez-vous préalable</span>
+              </li>
+            </ul>
+
+            <a href="mailto:contact@poterie-annie.fr" class="btn-primary" style="width: 100%; text-align: center;">Prendre rendez-vous</a>
+          </div>
+
+          <!-- BLOC CONTACT -->
+          <div class="practical-box fade-up" id="contact">
+            <span class="eyebrow">Lien Direct</span>
+            <h2 class="title-display" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Écrire à l'Atelier</h2>
+            <p style="color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7;">
+              Pour une question sur une pièce, une commande spécifique ou toute collaboration, vous pouvez vous adresser directement à l'artisan par courrier électronique.
+            </p>
+
+            <ul class="info-list">
+              <li class="info-item">
+                <span class="info-label">Courriel officiel</span>
+                <a href="mailto:contact@poterie-annie.fr" class="info-link">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M22 6l-10 7L2 6"/>
+                  </svg>
+                  contact@poterie-annie.fr
+                </a>
+              </li>
+            </ul>
+
+            <div class="contact-form-notice">
+              <p>
+                <strong>Échange personnalisé :</strong> Les réponses sont formulées avec soin par Annie Robin, au fil du travail à l'atelier.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Annie Robin</span>
+          <p>Artisan d'art potier. Recherche de pureté formelle, de texture et respect des matériaux nobles.</p>
+        </div>
+
+        <div class="footer-links-wrap">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#esprit">L'Esprit</a></li>
+              <li><a href="#creations">Poterie & Céramique</a></li>
+              <li><a href="#informations">L'Atelier</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Correspondance</h4>
+            <ul>
+              <li><a href="mailto:contact@poterie-annie.fr">contact@poterie-annie.fr</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © Annie Robin. Tous droits réservés.
+        </div>
+        <div class="credits-author">
+          Photo : Shixart1985 (CC BY 2.0)
+        </div>
+        <div>
+          Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE FIXE DISCRET -->
+  <aside class="studio-badge" aria-hidden="true">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- SCRIPTS : NAVIGATION & THREE.JS SILENCIEUX & OBSERVERS -->
+  <script>
+    // GESTION DU MENU MOBILE
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const siteHeader = document.getElementById('siteHeader');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('is-open');
+        navToggle.classList.toggle('is-active');
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('is-open');
+          navToggle.classList.remove('is-active');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // EFFET D'EN-TÊTE AU DÉFILEMENT
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // APPARITIONS DOUCES AU DÉFILEMENT
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('is-visible'));
+    }
+
+    // SCÈNE THREE.JS : FORMES ABSTRAITES ÉVOQUANT LE TOUR DE POTIER ET LES COURBES D'ARGILE
+    window.addEventListener('load', () => {
+      if (prefersReducedMotion) return;
+
+      try {
+        if (!window.THREE) return;
+
+        const canvas = document.getElementById('three-hero-canvas');
+        if (!canvas) return;
+
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+        camera.position.set(0, 0, 7.5);
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true
+        });
+
+        const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+        renderer.setPixelRatio(pixelRatio);
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+        // LUMIÈRES DOUCES ÉVOQUANT LA LUMIÈRE DU JOUR D'UN ATELIER
+        const ambientLight = new THREE.AmbientLight(0xfff7ed, 1.2);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xd9b38c, 1.6);
+        directionalLight.position.set(5, 8, 4);
+        scene.add(directionalLight);
+
+        const fillLight = new THREE.DirectionalLight(0xc97a56, 0.8);
+        fillLight.position.set(-5, -4, -2);
+        scene.add(fillLight);
+
+        // GROUPE DE VOLUMES ÉPURÉS (TORUS ET ELLIPSOÏDES EN TERRE CUITE / CÉRAMIQUE)
+        const group = new THREE.Group();
+        group.position.set(1.5, -0.2, 0);
+        scene.add(group);
+
+        const clayMaterial = new THREE.MeshStandardMaterial({
+          color: 0xB66341,
+          roughness: 0.65,
+          metalness: 0.05,
+          wireframe: false
+        });
+
+        const sandMaterial = new THREE.MeshStandardMaterial({
+          color: 0xDAC4B0,
+          roughness: 0.8,
+          metalness: 0.02
+        });
+
+        // Forme 1 : Torus aux courbes fluides évoquant le col d'une poterie
+        const torusGeom = new THREE.TorusGeometry(1.6, 0.45, 32, 64);
+        const torusMesh = new THREE.Mesh(torusGeom, clayMaterial);
+        torusMesh.rotation.x = Math.PI / 3;
+        group.add(torusMesh);
+
+        // Forme 2 : Un volume doux, presque ovoïde au centre
+        const sphereGeom = new THREE.SphereGeometry(1.1, 48, 48);
+        sphereGeom.scale(1, 1.35, 1);
+        const sphereMesh = new THREE.Mesh(sphereGeom, sandMaterial);
+        sphereMesh.position.set(-0.6, -0.2, -0.8);
+        group.add(sphereMesh);
+
+        // Forme 3 : Anneau fin et léger dérivant lentement
+        const ringGeom = new THREE.TorusGeometry(2.3, 0.08, 16, 80);
+        const ringMesh = new THREE.Mesh(ringGeom, clayMaterial);
+        ringMesh.rotation.x = -Math.PI / 4;
+        group.add(ringMesh);
+
+        let animationFrameId;
+        let isTabActive = true;
+
+        document.addEventListener('visibilitychange', () => {
+          isTabActive = !document.hidden;
+          if (isTabActive) {
+            lastTime = performance.now();
+            renderLoop();
+          } else {
+            cancelAnimationFrame(animationFrameId);
+          }
+        });
+
+        let lastTime = performance.now();
+
+        const renderLoop = () => {
+          if (!isTabActive) return;
+
+          const now = performance.now();
+          const delta = (now - lastTime) * 0.001;
+          lastTime = now;
+
+          // Rotation très sobre et lente
+          group.rotation.y += delta * 0.12;
+          torusMesh.rotation.z += delta * 0.08;
+          ringMesh.rotation.y -= delta * 0.09;
+          ringMesh.rotation.z += delta * 0.04;
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(renderLoop);
+        };
+
+        renderLoop();
+
+        // REDIMENSIONNEMENT DU CANVAS
+        const handleResize = () => {
+          if (!canvas) return;
+          const width = canvas.clientWidth;
+          const height = canvas.clientHeight;
+          if (width === 0 || height === 0) return;
+
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+
+          // Ajustement selon mobile ou écran large
+          if (window.innerWidth < 768) {
+            group.position.set(0, 0.6, -1);
+            group.scale.set(0.75, 0.75, 0.75);
+          } else {
+            group.position.set(1.5, -0.2, 0);
+            group.scale.set(1, 1, 1);
+          }
+
+          renderer.setSize(width, height);
+        };
+
+        window.addEventListener('resize', handleResize, { passive: true });
+        handleResize();
+
+      } catch (e) {
+        // En cas d'erreur ou d'indisponibilité de WebGL, le fond dégradé CSS prend le relais
+        console.warn('Three.js non initialisé:', e);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Papilles nomades — Traiteur & Mises en Scène Culinaires</title>
+  <meta name="description" content="Papilles nomades, traiteur d'exception. Haute gastronomie, événements sur mesure et créations culinaires d'élégance.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Papilles nomades — Traiteur Gastronomique">
+  <meta property="og:description" content="Haute gastronomie sur mesure, réceptions et événements culinaires d'exception.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon SVG Data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%1A1917'/%3E%3Cpath d='M20 18h14c6 0 10 3.5 10 9s-4 9-10 9H26v10H20V18zm6 13h8c2.5 0 4.5-1.5 4.5-4s-2-4-4.5-4H26v8z' fill='%23C59B27'/%3E%3Cpath d='M44 46L34 32h-4v14h-5V18h5v10l9.5-10H46L36 32l10 14h-2z' fill='%23E6D7B8' opacity='0.5'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (Deferred) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Papilles nomades",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4 Rue Sadi Carnot"
+    },
+    "telephone": "+33 7 84 92 98 41",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "16:00"
+      }
+    ],
+    "servesCuisine": "Traiteur, Gastronomie"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-paper: #F7F5F0;
+      --bg-surface: #EFECE6;
+      --color-dark: #1A1917;
+      --color-dark-soft: #282623;
+      --color-gold: #C59B27;
+      --color-gold-light: #E6D7B8;
+      --color-muted: #68655D;
+      --border-light: rgba(26, 25, 23, 0.12);
+      --border-gold: rgba(197, 155, 39, 0.3);
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+      --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-paper);
+      color: var(--color-dark);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    p {
+      color: var(--color-muted);
+      font-size: 1.025rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s var(--transition-smooth);
+    }
+
+    /* Header Navigation */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(247, 245, 240, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      transition: transform 0.4s var(--transition-smooth);
+    }
+
+    .header-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-monogram {
+      width: 38px;
+      height: 38px;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-dark);
+      font-weight: 400;
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-desktop a {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 400;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-desktop a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--color-gold);
+      transition: width 0.3s var(--transition-smooth);
+    }
+
+    .nav-desktop a:hover::after,
+    .nav-desktop a:focus::after {
+      width: 100%;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.85rem 1.75rem;
+      border: 1px solid var(--color-gold);
+      background-color: transparent;
+      color: var(--color-dark);
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+      transition: all 0.4s var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-gold);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s var(--transition-smooth);
+      z-index: -1;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      color: #FFF;
+      border-color: var(--color-gold);
+    }
+
+    .btn-primary:hover::before,
+    .btn-primary:focus::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .btn-dark {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #FFF;
+    }
+
+    .btn-dark:hover {
+      color: var(--color-dark);
+    }
+
+    .btn-dark::before {
+      background-color: #FFF;
+    }
+
+    /* Mobile Nav Button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background-color: var(--color-dark);
+      margin: 6px 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* Hero Section with 3D Canvas */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 2rem 4rem;
+      background: linear-gradient(135deg, #1A1917 0%, #252320 50%, #151412 100%);
+      color: #FFF;
+      overflow: hidden;
+    }
+
+    .hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(26, 25, 23, 0.4) 0%, rgba(26, 25, 23, 0.85) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--color-gold-light);
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: clamp(2.75rem, 6vw, 5rem);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      color: #FAF8F5;
+    }
+
+    .hero-title i {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-gold-light);
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 620px;
+      margin: 0 auto 3rem;
+      font-weight: 300;
+    }
+
+    /* Editorial Layout Sections */
+    .section {
+      padding: 7rem 2rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--color-gold);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.25rem, 4vw, 3.5rem);
+      color: var(--color-dark);
+      max-width: 700px;
+    }
+
+    /* Section: Esprit */
+    .grid-esprit {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .esprit-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.0625rem;
+    }
+
+    .quote-box {
+      border-left: 2px solid var(--color-gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--color-dark);
+    }
+
+    /* Photo Placeholders Custom Styling */
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background-color: var(--bg-surface);
+      border: 1px dashed var(--border-gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .photo-placeholder-icon {
+      width: 40px;
+      height: 40px;
+      stroke: var(--color-gold);
+      stroke-width: 1;
+      fill: none;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    .photo-placeholder-label {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      letter-spacing: 0.05em;
+      color: var(--color-muted);
+      text-transform: uppercase;
+    }
+
+    .photo-placeholder-sub {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Section: Prestations / Savoir-Faire */
+    .section-prestations {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .prestations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .prestation-card {
+      background-color: var(--bg-paper);
+      padding: 3rem 2rem;
+      border: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
+    }
+
+    .prestation-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+    }
+
+    .prestation-number {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-gold);
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    .prestation-title {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--color-dark);
+    }
+
+    .prestation-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* Featured Photo Banner */
+    .photo-banner-container {
+      position: relative;
+      margin-top: 5rem;
+      height: 480px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+    }
+
+    .photo-banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.85) contrast(1.05);
+      transition: transform 0.8s var(--transition-smooth);
+    }
+
+    .photo-banner-container:hover .photo-banner-img {
+      transform: scale(1.03);
+    }
+
+    .illustration-tag {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(26, 25, 23, 0.75);
+      backdrop-filter: blur(4px);
+      color: #FFF;
+      font-size: 0.7rem;
+      padding: 0.35rem 0.75rem;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* Section: Practical Info & Contact */
+    .grid-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .info-card {
+      background-color: var(--bg-paper);
+      border: 1px solid var(--border-light);
+      padding: 3.5rem 3rem;
+    }
+
+    .info-group {
+      margin-bottom: 2.5rem;
+    }
+
+    .info-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-gold);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .info-value {
+      font-size: 1.25rem;
+      color: var(--color-dark);
+      font-family: var(--font-serif);
+      line-height: 1.4;
+    }
+
+    .hours-table {
+      width: 100%;
+      margin-top: 0.5rem;
+      border-collapse: collapse;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid rgba(26, 25, 23, 0.06);
+    }
+
+    .hours-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .hours-table td {
+      padding: 0.6rem 0;
+      font-size: 0.95rem;
+      color: var(--color-dark);
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+      color: var(--color-muted);
+    }
+
+    /* Contact Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background-color: transparent;
+      border: 1px solid var(--border-light);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--color-dark);
+      transition: border-color 0.3s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-gold);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--color-dark);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 5rem 2rem 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.875rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand {
+      color: #FFF;
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-credits {
+      margin-top: 1.5rem;
+      font-size: 0.785rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.6;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer-bottom a:hover {
+      color: var(--color-gold-light);
+    }
+
+    /* Fixed Badge ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 999;
+      background: rgba(26, 25, 23, 0.9);
+      color: #FFF;
+      padding: 0.4rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(197, 155, 39, 0.4);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .orbe-badge::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-gold);
+    }
+
+    /* Focus States */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--color-gold);
+      outline-offset: 3px;
+    }
+
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Media Queries Responsive */
+    @media (max-width: 992px) {
+      .grid-esprit, .grid-info {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .prestations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 1rem 1.25rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-desktop {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-paper);
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--border-light);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s var(--transition-smooth), opacity 0.3s;
+      }
+
+      .nav-desktop.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .hero {
+        padding: 7rem 1.25rem 4rem;
+      }
+
+      .section {
+        padding: 4.5rem 1.25rem;
+      }
+
+      .info-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    /* Accessibility: Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .hero-canvas {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#" class="brand-logo" aria-label="Papilles nomades - Accueil">
+        <svg class="brand-monogram" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="30" stroke="#C59B27" stroke-width="1.5"/>
+          <path d="M22 20h12c5 0 9 3 9 7.5s-4 7.5-9 7.5H27v9h-5V20zm5 11h7c2.5 0 4-1.2 4-3.5s-1.5-3.5-4-3.5h-7v7z" fill="#1A1917"/>
+          <path d="M42 44L33 31.5h-3.5V44h-4V20h4v9l8.5-9H43L34.5 31.5 43 44h-1z" fill="#C59B27"/>
+        </svg>
+        <span class="brand-title">Papilles nomades</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" id="menuToggle">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-desktop" id="navMenu">
+          <li><a href="#esprit">L'Esprit</a></li>
+          <li><a href="#prestations">Prestations</a></li>
+          <li><a href="#informations">Informations</a></li>
+          <li><a href="#contact" class="btn-primary">Réservation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner with Three.js Abstract Background -->
+  <section class="hero">
+    <canvas id="threeCanvas" class="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-subtitle">Mises en scène culinaires & Traiteur</span>
+      <h1 class="hero-title">L'art d'éveiller vos sens, <i>partout où vous êtes.</i></h1>
+      <p class="hero-description">
+        Une haute gastronomie nomade façonnée sur mesure. Nous transformons vos Réceptions et événements privés en instants d'exception.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#contact" class="btn-primary btn-dark">Demander une proposition</a>
+        <a href="#prestations" class="btn-primary" style="border-color: rgba(255,255,255,0.2); color: #FFF;">Découvrir l'offre</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: L'Esprit de la Maison -->
+  <section class="section" id="esprit">
+    <div class="container">
+      <div class="grid-esprit">
+        <div class="esprit-text fade-in">
+          <span class="section-tag">L'Esprit de la Maison</span>
+          <h2 class="section-title" style="margin-bottom: 2rem;">L'élégance de la cuisine sur mesure</h2>
+          <p>
+            Chez <strong>Papilles nomades</strong>, chaque prestation est une toile vierge. Nous concevons une gastronomie itinérante d'excellence qui s'adapte avec précision à l'atmosphère de votre lieu et à l'exigence de vos invités.
+          </p>
+          <div class="quote-box">
+            « Marier la rigueur de la grande cuisine à la liberté de la création nomade. »
+          </div>
+          <p>
+            Créativité du geste, authenticité des produits et sens aigu de la présentation : nous accordons autant d'importance au raffinement gustatif qu'à la mise en scène esthétique de vos tables et événements.
+          </p>
+        </div>
+        
+        <!-- Emplacement Photo Réelle 1 -->
+        <div class="photo-placeholder fade-in" aria-label="Emplacement réservé aux photos du commerce">
+          <svg class="photo-placeholder-icon" viewBox="0 0 24 24">
+            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+          </svg>
+          <span class="photo-placeholder-label">Vos photos ici</span>
+          <span class="photo-placeholder-sub">Présentation de vos créations & réceptions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Prestations & Savoir-faire -->
+  <section class="section section-prestations" id="prestations">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Savoir-faire</span>
+        <h2 class="section-title">Une offre taillée pour vos réceptions</h2>
+      </div>
+
+      <div class="prestations-grid">
+        <div class="prestation-card fade-in">
+          <div>
+            <span class="prestation-number">01</span>
+            <h3 class="prestation-title">Réceptions Privées</h3>
+            <p class="prestation-desc">
+              Dîners intimes, réceptions de mariage ou réceptions de prestige. Une réponse gastronomique personnalisée élaborée pour s'harmoniser parfaitement avec votre événement.
+            </p>
+          </div>
+          <a href="#contact" class="btn-primary" style="align-self: flex-start;">Sur demande</a>
+        </div>
+
+        <div class="prestation-card fade-in">
+          <div>
+            <span class="prestation-number">02</span>
+            <h3 class="prestation-title">Cocktails Culinaires</h3>
+            <p class="prestation-desc">
+              Bouchées raffinées, animations éphémères et scénographie soignée. La carte suit le fil des saisons pour offrir à vos convives une expérience esthétique et gourmande.
+            </p>
+          </div>
+          <a href="#contact" class="btn-primary" style="align-self: flex-start;">Découvrir</a>
+        </div>
+
+        <div class="prestation-card fade-in">
+          <div>
+            <span class="prestation-number">03</span>
+            <h3 class="prestation-title">Mise en Scène & Art de la Table</h3>
+            <p class="prestation-desc">
+              Parce que l'expérience est aussi visuelle, nous accordons un soin minutieux au dressage, aux matières et au design des espaces de dégustation.
+            </p>
+          </div>
+          <a href="#contact" class="btn-primary" style="align-self: flex-start;">En savoir plus</a>
+        </div>
+      </div>
+
+      <!-- Featured Image Container (Single Allowed External Image) -->
+      <div class="photo-banner-container fade-in">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Passenger_Experience_Week_2018%2C_Hamburg_%281X7A3643%29.jpg/1920px-Passenger_Experience_Week_2018%2C_Hamburg_%281X7A3643%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+             alt="Buffet et présentation haute cuisine" 
+             class="photo-banner-img" 
+             loading="lazy">
+        <span class="illustration-tag">Image d'illustration</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Infos Pratiques & Contact -->
+  <section class="section" id="informations">
+    <div class="container">
+      <div class="grid-info">
+        
+        <!-- Address and Hours Card -->
+        <div class="info-card fade-in">
+          <span class="section-tag">Coordonnées & Horaires</span>
+          <h2 class="section-title" style="font-size: 2.25rem; margin-bottom: 2.5rem;">Nous retrouver</h2>
+
+          <div class="info-group">
+            <span class="info-label">Adresse de l'atelier</span>
+            <div class="info-value">
+              4 Rue Sadi Carnot
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=4+Rue+Sadi+Carnot" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-primary" 
+               style="margin-top: 1.25rem; padding: 0.6rem 1.2rem; font-size: 0.75rem;">
+              Itinéraire Google Maps
+            </a>
+          </div>
+
+          <div class="info-group">
+            <span class="info-label">Téléphone</span>
+            <div class="info-value">
+              <a href="tel:+33784929841" style="color: var(--color-dark); text-decoration: underline; text-underline-offset: 4px;">
+                +33 7 84 92 98 41
+              </a>
+            </div>
+          </div>
+
+          <div class="info-group">
+            <span class="info-label">Horaires d'ouverture</span>
+            <table class="hours-table">
+              <tbody>
+                <tr>
+                  <td>Mardi — Vendredi</td>
+                  <td>09:00 – 19:00</td>
+                </tr>
+                <tr>
+                  <td>Samedi</td>
+                  <td>09:00 – 16:00</td>
+                </tr>
+                <tr>
+                  <td>Dimanche & Lundi</td>
+                  <td>Fermé / Réceptions sur mesure</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="info-card fade-in" id="contact" style="background-color: var(--bg-surface);">
+          <span class="section-tag">Réservations & Devis</span>
+          <h2 class="section-title" style="font-size: 2.25rem; margin-bottom: 1.5rem;">Initier votre projet</h2>
+          <p style="margin-bottom: 2rem; font-size: 0.95rem;">
+            Pour vos projets de réceptions ou pour toute demande d'information, vous pouvez nous joindre par téléphone ou nous laisser un message ci-dessous.
+          </p>
+
+          <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Merci pour votre message. Nous vous recontacterons dans les meilleurs délais.');">
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" class="form-control" required placeholder="M. ou Mme Dupuis">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Numéro de téléphone</label>
+              <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+33 6 00 00 00 00">
+            </div>
+
+            <div class="form-group">
+              <label for="details">Nature de votre événement</label>
+              <textarea id="details" name="details" class="form-control" placeholder="Date envisagée, nombre d'invités, lieu..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="background-color: var(--color-dark); color: #FFF; width: 100%; justify-content: center; margin-top: 0.5rem;">
+              Envoyer la demande
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Emplacement Photo Réelle 2 -->
+      <div style="margin-top: 4rem;" class="fade-in">
+        <div class="photo-placeholder" style="aspect-ratio: 16/6;" aria-label="Emplacement réservé aux photos du commerce">
+          <svg class="photo-placeholder-icon" viewBox="0 0 24 24">
+            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+          </svg>
+          <span class="photo-placeholder-label">Vos photos ici</span>
+          <span class="photo-placeholder-sub">Mise en ambiance de vos événements et décors de table</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand">Papilles nomades</div>
+        <p style="color: rgba(255,255,255,0.6); max-width: 400px; font-size: 0.9rem;">
+          Haute gastronomie nomade & créations événementielles sur mesure. L'art du recevoir d'exception.
+        </p>
+        <div class="footer-credits">
+          Photo : Matti Blume (CC BY-SA 4.0)
+        </div>
+      </div>
+
+      <div>
+        <h4 style="color: #FFF; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1.25rem;">Accès Rapide</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+          <li><a href="#esprit">L'Esprit</a></li>
+          <li><a href="#prestations">Prestations</a></li>
+          <li><a href="#informations">Informations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="color: #FFF; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1.25rem;">L'Atelier</h4>
+        <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6;">
+          4 Rue Sadi Carnot<br>
+          Tél : <a href="tel:+33784929841" style="color: var(--color-gold-light);">+33 7 84 92 98 41</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        &copy; Papilles nomades. Tous droits réservés.
+      </div>
+      <div>
+        Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge Fixe ORBE -->
+  <div class="orbe-badge" aria-hidden="true">
+    Maquette proposée par ORBE
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    // Navigation Toggle Mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('active');
+      });
+
+      // Close menu on link click
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Scroll Animations Observer (Fade-in)
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach(element => {
+        observer.observe(element);
+      });
+    } else {
+      document.querySelectorAll('.fade-in').forEach(element => {
+        element.classList.add('visible');
+      });
+    }
+
+    // Three.js Background Canvas Setup
+    window.addEventListener('load', () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      try {
+        if (typeof THREE !== 'undefined') {
+          const canvas = document.getElementById('threeCanvas');
+          if (!canvas) return;
+
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+          camera.position.z = 18;
+
+          const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: true
+          });
+
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+          // Create Abstract Floating Organic Shapes (Evoking spices, golden warmth & culinary aromas)
+          const geometryGroup = new THREE.Group();
+          scene.add(geometryGroup);
+
+          const goldMaterial = new THREE.MeshStandardMaterial({
+            color: 0xC59B27,
+            roughness: 0.3,
+            metalness: 0.8,
+            transparent: true,
+            opacity: 0.65
+          });
+
+          const darkMaterial = new THREE.MeshStandardMaterial({
+            color: 0x38342D,
+            roughness: 0.6,
+            metalness: 0.2,
+            transparent: true,
+            opacity: 0.4
+          });
+
+          const meshes = [];
+          const count = 18;
+
+          for (let i = 0; i < count; i++) {
+            const geomType = i % 2 === 0 ? new THREE.IcosahedronGeometry(Math.random() * 1.5 + 0.8, 1) : new THREE.SphereGeometry(Math.random() * 1.2 + 0.5, 16, 16);
+            const mat = i % 3 === 0 ? goldMaterial : darkMaterial;
+            const mesh = new THREE.Mesh(geomType, mat);
+
+            mesh.position.set(
+              (Math.random() - 0.5) * 28,
+              (Math.random() - 0.5) * 20,
+              (Math.random() - 0.5) * 15
+            );
+
+            mesh.rotation.set(
+              Math.random() * Math.PI,
+              Math.random() * Math.PI,
+              0
+            );
+
+            const scale = Math.random() * 0.8 + 0.5;
+            mesh.scale.set(scale, scale, scale);
+
+            mesh.userData = {
+              rotSpeedX: (Math.random() - 0.5) * 0.003,
+              rotSpeedY: (Math.random() - 0.5) * 0.003,
+              floatSpeed: Math.random() * 0.005 + 0.002,
+              initialY: mesh.position.y
+            };
+
+            geometryGroup.add(mesh);
+            meshes.push(mesh);
+          }
+
+          // Lights
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+          scene.add(ambientLight);
+
+          const pointLight = new THREE.PointLight(0xE6D7B8, 2, 50);
+          pointLight.position.set(10, 10, 10);
+          scene.add(pointLight);
+
+          const warmLight = new THREE.PointLight(0xC59B27, 1.5, 40);
+          warmLight.position.set(-10, -10, 5);
+          scene.add(warmLight);
+
+          // Animation Loop
+          let animationFrameId;
+          let clock = new THREE.Clock();
+
+          const animate = () => {
+            animationFrameId = requestAnimationFrame(animate);
+
+            const elapsedTime = clock.getElapsedTime();
+
+            meshes.forEach(mesh => {
+              mesh.rotation.x += mesh.userData.rotSpeedX;
+              mesh.rotation.y += mesh.userData.rotSpeedY;
+              mesh.position.y = mesh.userData.initialY + Math.sin(elapsedTime * mesh.userData.floatSpeed * 2) * 0.8;
+            });
+
+            geometryGroup.rotation.y = elapsedTime * 0.02;
+
+            renderer.render(scene, camera);
+          };
+
+          animate();
+
+          // Handle Resize
+          window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          });
+
+          // Pause animation when tab is not visible
+          document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+              cancelAnimationFrame(animationFrameId);
+            } else {
+              clock.start();
+              animate();
+            }
+          });
+        }
+      } catch (e) {
+        console.warn("Three.js visualization non disponible:", e);
+      }
+    });
+  </script>
+</body>
+</html>

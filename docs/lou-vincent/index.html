@@ -1,0 +1,1332 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Lou Vincent — Traiteur d’Événements &amp; Art Visuel</title>
+  <meta name="description" content="Maison Lou Vincent : traiteur et capture d'instants pour réceptions privées et événements sur mesure. Conception culinaire et regard photographique.">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lou Vincent — Traiteur &amp; Photographe">
+  <meta property="og:description" content="L'alliance du goût et de l'image. Conception d'instants et scénographie gourmande sur mesure.">
+  <meta property="og:url" content="https://www.facebook.com/louvincent33">
+  
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23191b19' stroke='%23c8a97e' stroke-width='3'/%3E%3Cpath d='M35 32v36h20M48 32l16 36' stroke='%23c8a97e' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='68' cy='40' r='3' fill='%23c8a97e'/%3E%3C/svg%3E" type="image/svg+xml">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Lou Vincent",
+    "description": "Prestations de traiteur et photographie pour réceptions et événements sur mesure.",
+    "sameAs": [
+      "https://www.facebook.com/louvincent33"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-dark: #121413;
+      --bg-surface: #181b19;
+      --bg-light: #f7f6f2;
+      --text-light: #f2eee8;
+      --text-muted: #9ba19d;
+      --text-dark: #1b1e1c;
+      --text-subtle: #686e6b;
+      --gold-accent: #c8a97e;
+      --gold-hover: #dfc298;
+      --line-color: rgba(200, 169, 126, 0.22);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition-base: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      background: radial-gradient(circle at 80% 20%, #1e2220 0%, #121413 70%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold-accent);
+      outline-offset: 4px;
+    }
+
+    /* HEADER */
+    header.site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+      background: rgba(18, 20, 19, 0.65);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-color);
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-logo svg {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--text-light);
+    }
+
+    .brand-tag {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-accent);
+      font-weight: 400;
+    }
+
+    nav.nav-desktop {
+      display: none;
+    }
+
+    nav.nav-desktop ul {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    nav.nav-desktop a {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      font-weight: 500;
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    nav.nav-desktop a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background: var(--gold-accent);
+      transition: width var(--transition-base);
+    }
+
+    nav.nav-desktop a:hover {
+      color: var(--text-light);
+    }
+
+    nav.nav-desktop a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 101;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background-color: var(--text-light);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--bg-dark);
+      padding: 6rem 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 99;
+      border-left: 1px solid var(--line-color);
+    }
+
+    .mobile-drawer.is-open {
+      transform: translateX(0);
+    }
+
+    .mobile-drawer ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .mobile-drawer a {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+    }
+
+    .mobile-drawer .drawer-footer {
+      border-top: 1px solid var(--line-color);
+      padding-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* HERO BANNER */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 5rem;
+      background: radial-gradient(ellipse at 50% 60%, rgba(38, 44, 40, 0.7) 0%, #121413 85%);
+      overflow: hidden;
+    }
+
+    #webgl-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .hero-veil {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: radial-gradient(circle at center, rgba(18, 20, 19, 0.25) 0%, rgba(18, 20, 19, 0.8) 85%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-accent);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold-accent);
+      opacity: 0.6;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 7.5vw, 5.4rem);
+      line-height: 1.05;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold-accent);
+      text-transform: none;
+      font-weight: 300;
+      padding-right: 0.05em;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.95rem 2.2rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+      border-radius: 0;
+      transition: all var(--transition-base);
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      background: var(--gold-accent);
+      color: #121413;
+      border: 1px solid var(--gold-accent);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-hover);
+      border-color: var(--gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(200, 169, 126, 0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-light);
+      border: 1px solid var(--line-color);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-accent);
+      color: var(--gold-accent);
+      background: rgba(200, 169, 126, 0.05);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* SECTIONS COMMUN */
+    section {
+      padding: 5.5rem 1.5rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-accent);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      line-height: 1.15;
+    }
+
+    .section-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 1rem auto 0;
+      font-weight: 300;
+    }
+
+    /* PHILOSOPHIE / ESPRIT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .quote-lead {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      line-height: 1.35;
+      color: var(--text-light);
+      font-style: italic;
+      border-left: 2px solid var(--gold-accent);
+      padding-left: 1.5rem;
+    }
+
+    .about-paragraphs {
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Cadre photo / illustration */
+    .photo-display {
+      position: relative;
+      border: 1px solid var(--line-color);
+      padding: 0.75rem;
+      background: rgba(24, 27, 25, 0.4);
+    }
+
+    .photo-wrapper {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: #1e2220;
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(25%) contrast(105%) brightness(90%);
+      transition: transform 0.8s ease;
+    }
+
+    .photo-wrapper:hover img {
+      transform: scale(1.03);
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.6rem;
+      background: rgba(18, 20, 19, 0.85);
+      backdrop-filter: blur(4px);
+      padding: 0.25rem 0.6rem;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .placeholder-card {
+      aspect-ratio: 4 / 3;
+      border: 1px dashed var(--line-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(25, 28, 26, 0.3);
+      color: var(--text-muted);
+      gap: 0.75rem;
+    }
+
+    .placeholder-card svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--gold-accent);
+      opacity: 0.6;
+    }
+
+    .placeholder-card p {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    /* SERVICES / OFFRE */
+    .services-dual {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--line-color);
+      padding: 3rem 2.2rem;
+      position: relative;
+      transition: transform var(--transition-base), border-color var(--transition-base);
+    }
+
+    .service-card:hover {
+      border-color: rgba(200, 169, 126, 0.5);
+      transform: translateY(-4px);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--gold-accent);
+    }
+
+    .service-icon {
+      margin-bottom: 2rem;
+      width: 48px;
+      height: 48px;
+    }
+
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+
+    .service-lead {
+      color: var(--gold-accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+
+    .service-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .service-features {
+      list-style: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .service-features li svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--gold-accent);
+      flex-shrink: 0;
+    }
+
+    /* SAVOIR-FAIRE & GALERIE PROPOSITION */
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    /* SECTION INFOS & CONTACT */
+    .contact-section {
+      background: linear-gradient(180deg, var(--bg-dark) 0%, #151816 100%);
+      border-top: 1px solid var(--line-color);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+
+    .contact-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--line-color);
+      padding: 3rem 2rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-item {
+      margin-bottom: 2rem;
+    }
+
+    .contact-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold-accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .contact-value {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--text-light);
+      display: block;
+      line-height: 1.3;
+    }
+
+    .contact-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .social-link-block {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+    }
+
+    .social-link:hover {
+      color: var(--gold-hover);
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer.site-footer {
+      background: #0d0e0d;
+      border-top: 1px solid var(--line-color);
+      padding: 4rem 1.5rem 6rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-credits {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+    }
+
+    .footer-credits a {
+      color: var(--gold-accent);
+    }
+
+    /* FLOATING BADGE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background: rgba(18, 20, 19, 0.85);
+      border: 1px solid var(--line-color);
+      backdrop-filter: blur(8px);
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+    }
+
+    .orbe-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-accent);
+    }
+
+    /* ANIMATIONS ON SCROLL */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE DESKTOP */
+    @media (min-width: 768px) {
+      header.site-header {
+        padding: 1.5rem 3.5rem;
+      }
+
+      nav.nav-desktop {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .about-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .services-dual {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-preview {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .footer-credits {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- EN-TÊTE FIXE -->
+  <header class="site-header" role="banner">
+    <a href="#" class="brand-logo" aria-label="Accueil Lou Vincent">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="46" stroke="var(--gold-accent)" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <path d="M35 32v36h20" stroke="var(--gold-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M48 32l16 36" stroke="var(--gold-accent)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="68" cy="40" r="2.5" fill="var(--gold-accent)"/>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">Lou Vincent</span>
+        <span class="brand-tag">Traiteur &amp; Regard</span>
+      </div>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#maison">La Maison</a></li>
+        <li><a href="#prestations">Prestations</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact &amp; Échanges</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileDrawer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- MENU MOBILE -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <ul>
+      <li><a href="#maison" class="mobile-link">La Maison</a></li>
+      <li><a href="#prestations" class="mobile-link">Prestations</a></li>
+      <li><a href="#galerie" class="mobile-link">Galerie</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+      <li><a href="https://www.facebook.com/louvincent33" target="_blank" rel="noopener noreferrer" class="mobile-link">Facebook Officiel</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <p>Lou Vincent — Traiteur &amp; Photographe</p>
+      <p>Prestations sur mesure pour réceptions singulières.</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- BANDEAU ACCUEIL AVEC 3D THREE.JS -->
+    <section class="hero" id="accueil">
+      <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+      <div class="hero-veil"></div>
+
+      <div class="hero-content">
+        <div class="hero-eyebrow">L'Art de Recevoir &amp; la Mémoire Visuelle</div>
+        <h1 class="hero-title">Traiteur d’Instants &amp; <em>Sens</em></h1>
+        <p class="hero-subtitle">
+          Une double signature dédiée à vos réceptions : la précision du métier de traiteur et l'œil attentif du photographe, pour des moments qui se dégustent et se conservent.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-gold">Nous contacter</a>
+          <a href="#prestations" class="btn btn-outline">Découvrir l'univers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'ESPRIT DE LA MAISON -->
+    <section id="maison">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-tag">Philosophie</span>
+          <h2 class="section-heading">Une alchimie entre palais et regard</h2>
+          <p class="section-desc">Penser l'événement comme une composition totale, où chaque bouchée trouve son écho dans la mémoire de l'instant.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text fade-up">
+            <blockquote class="quote-lead">
+              « L’équilibre d’une réception réside dans ce qui nourrit les sens autant que dans ce qui traverse le temps. »
+            </blockquote>
+            <div class="about-paragraphs">
+              <p>
+                Maison Lou Vincent conjugue deux vocations complémentaires : l'artisanat exigeant du traiteur et la sensibilité esthétique de l'image. Chaque prestation est pensée avec le soin d'une scénographie attentive, privilégiant la qualité, la justesse des saveurs et le respect de vos invités.
+              </p>
+              <p>
+                Qu'il s'agisse d'un banquet intimiste ou d'une célébration d'envergure, nous concevons des propositions adaptées au rythme des saisons et à vos attentes spécifiques, toujours sur rendez-vous.
+              </p>
+            </div>
+            <div>
+              <a href="#prestations" class="btn btn-outline" style="margin-top: 1rem;">Consulter notre démarche</a>
+            </div>
+          </div>
+
+          <div class="fade-up">
+            <div class="photo-display">
+              <div class="photo-wrapper">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Passenger_Experience_Week_2018%2C_Hamburg_%281X7A3643%29.jpg/1920px-Passenger_Experience_Week_2018%2C_Hamburg_%281X7A3643%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+                     alt="Détail de buffet et présentation gastronomique" 
+                     loading="lazy"
+                     width="800" 
+                     height="600">
+                <span class="photo-caption">Image d'illustration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LES PRESTATIONS / OFFRE -->
+    <section id="prestations" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-tag">Expertises</span>
+          <h2 class="section-heading">L'Offre Lou Vincent</h2>
+          <p class="section-desc">Des prestations élaborées avec minutie pour répondre à vos exigences de réception.</p>
+        </div>
+
+        <div class="services-dual">
+          <!-- Carte 1 : Traiteur -->
+          <article class="service-card fade-up">
+            <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="var(--gold-accent)" stroke-width="1.5">
+              <path d="M10 24c0-7.732 6.268-14 14-14s14 6.268 14 14H10z"/>
+              <path d="M8 24h32v4a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-4z"/>
+              <path d="M24 6v4"/>
+              <circle cx="24" cy="5" r="1.5" fill="var(--gold-accent)"/>
+              <path d="M16 36h16"/>
+              <path d="M20 40h8"/>
+            </svg>
+            <span class="service-lead">Gastronomie &amp; Réceptions</span>
+            <h3 class="service-title">Prestations Traiteur</h3>
+            <p class="service-text">
+              Conception de buffets, dégustations et repas événementiels. Chaque composition culinaire met à l'honneur des produits sélectionnés avec soin, dans le respect du rythme des saisons et de la convivialité.
+            </p>
+            <ul class="service-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                <span>Événements privés et professionnels</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                <span>La carte suit les saisons et les arrivages</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                <span>Scénographie de table et présentations soignées</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Carte 2 : Photographie -->
+          <article class="service-card fade-up">
+            <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="var(--gold-accent)" stroke-width="1.5">
+              <rect x="6" y="14" width="36" height="26" rx="2"/>
+              <circle cx="24" cy="27" r="7"/>
+              <path d="M16 14l3-6h10l3 6"/>
+              <circle cx="35" cy="19" r="1.5" fill="var(--gold-accent)"/>
+            </svg>
+            <span class="service-lead">Lumière &amp; Mémoire</span>
+            <h3 class="service-title">Regard Photographique</h3>
+            <p class="service-text">
+              Captation discrète et authentique de vos moments précieux. Une approche esthétique qui documente les émotions, les atmosphères et la poésie de vos réceptions, pour des souvenirs intemporels.
+            </p>
+            <ul class="service-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                <span>Reportage sur le vif et portraits élégants</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                <span>Mise en valeur des détails et des convives</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+                <span>Accompagnement dédié le jour de votre événement</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIE ET ESPACES DÉDIÉS -->
+    <section id="galerie">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-tag">Portfolio</span>
+          <h2 class="section-heading">L'univers en images</h2>
+          <p class="section-desc">Aperçu visuel et espaces réservés à nos réalisations exclusives.</p>
+        </div>
+
+        <div class="gallery-preview">
+          <!-- Emplacement réservé pour les photos du commerçant 1 -->
+          <div class="placeholder-card fade-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+            <p>Vos photos de réception ici</p>
+            <span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.8;">Mise en place de buffet, détails des pièces gourmandes</span>
+          </div>
+
+          <!-- Emplacement réservé 2 -->
+          <div class="placeholder-card fade-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            <p>Vos clichés photographiques ici</p>
+            <span style="font-size: 0.75rem; color: var(--text-muted); opacity: 0.8;">Portraits d'invités, ambiances tamisées</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & INFOS PRATIQUES -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-tag">Échanges</span>
+          <h2 class="section-heading">Prendre contact</h2>
+          <p class="section-desc">Pour concevoir ensemble votre prochain projet traiteur ou planifier un reportage photographique.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card fade-up">
+            <div>
+              <div class="contact-item">
+                <span class="contact-label">Maison</span>
+                <span class="contact-value">Lou Vincent</span>
+                <p class="contact-sub">Services de traiteur &amp; photographie</p>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-label">Accueil &amp; Disponibilités</span>
+                <span class="contact-value">Sur rendez-vous</span>
+                <p class="contact-sub">Étude sur mesure de votre cahier des charges</p>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-label">Région &amp; Déplacements</span>
+                <span class="contact-value">Sur site &amp; lieux de réception</span>
+                <p class="contact-sub">Modalités définies lors de notre premier échange</p>
+              </div>
+            </div>
+
+            <div class="social-link-block">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Suivre nos actualités</span>
+              <a href="https://www.facebook.com/louvincent33" class="social-link" target="_blank" rel="noopener noreferrer">
+                <span>Page Facebook</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card fade-up" style="background: rgba(200, 169, 126, 0.04);">
+            <div>
+              <span class="service-lead">Projets sur mesure</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; margin-bottom: 1.5rem;">Une demande spécifique ?</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                Chaque réception étant unique, nous privilégions le dialogue direct pour comprendre vos envies, définir les équilibres gustatifs et convenir des modalités visuelles.
+              </p>
+            </div>
+            
+            <div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                Rejoignez-nous sur notre page Facebook officielle pour nous transmettre votre message et vos dates de réception.
+              </p>
+              <a href="https://www.facebook.com/louvincent33" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%; justify-content: center;">
+                Écrire à Lou Vincent
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div style="max-width: 400px;">
+        <span class="brand-name" style="font-size: 1.25rem;">Lou Vincent</span>
+        <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
+          Traiteur &amp; photographe. Créateur d'expériences culinaires et mémoire photographique d'événements.
+        </p>
+      </div>
+
+      <div>
+        <p style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--gold-accent); margin-bottom: 0.85rem;">Ressources &amp; Réseaux</p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+          <li><a href="https://www.facebook.com/louvincent33" target="_blank" rel="noopener noreferrer">Facebook : louvincent33</a></li>
+          <li><a href="#accueil">Retour en haut de page</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-inner" style="margin-top: 2rem;">
+      <div class="footer-credits">
+        <div>
+          Photo : Matti Blume (CC BY-SA 4.0) — Image d'illustration
+        </div>
+        <div>
+          Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE FIXE DISCRET ORBE -->
+  <aside class="orbe-badge" aria-label="Mention maquette">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- JAVASCRIPT LOCAL & THREE.JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. GESTION DU MENU MOBILE
+      var menuToggle = document.getElementById('menuToggle');
+      var mobileDrawer = document.getElementById('mobileDrawer');
+      var mobileLinks = document.querySelectorAll('.mobile-link');
+
+      function toggleMenu() {
+        var isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isOpen);
+        mobileDrawer.setAttribute('aria-hidden', isOpen);
+        mobileDrawer.classList.toggle('is-open', !isOpen);
+        document.body.style.overflow = isOpen ? '' : 'hidden';
+      }
+
+      if (menuToggle && mobileDrawer) {
+        menuToggle.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            if (mobileDrawer.classList.contains('is-open')) {
+              toggleMenu();
+            }
+          });
+        });
+      }
+
+      // 2. APPARITION DOUCE AU DÉFILEMENT (INTERSECTION OBSERVER)
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        var fadeElements = document.querySelectorAll('.fade-up');
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        fadeElements.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        document.querySelectorAll('.fade-up').forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+
+      // 3. SCÈNE 3D SOBRE ET ABSTRAITE (THREE.JS)
+      // Évoque la précision d'un objectif optique et les volumes culinaires
+      if (!prefersReducedMotion) {
+        initThreeJsScene();
+      }
+    });
+
+    function initThreeJsScene() {
+      try {
+        if (!window.THREE) return;
+
+        var canvas = document.getElementById('webgl-canvas');
+        if (!canvas) return;
+
+        var heroSection = document.getElementById('accueil');
+        var scene = new THREE.Scene();
+
+        var width = heroSection.clientWidth || window.innerWidth;
+        var height = heroSection.clientHeight || window.innerHeight;
+
+        var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+        camera.position.z = 18;
+
+        var renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "low-power"
+        });
+
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        renderer.setPixelRatio(dpr);
+        renderer.setSize(width, height);
+
+        // Groupe principal
+        var sceneGroup = new THREE.Group();
+        scene.add(sceneGroup);
+
+        // Géométrie abstraite : tore délicat rappelant la lentille d'un objectif ou un plat d'argent
+        var ringGeometry = new THREE.TorusGeometry(6, 0.08, 16, 100);
+        var ringMaterial = new THREE.MeshBasicMaterial({
+          color: 0xc8a97e,
+          transparent: true,
+          opacity: 0.35,
+          wireframe: false
+        });
+        var ring1 = new THREE.Mesh(ringGeometry, ringMaterial);
+        sceneGroup.add(ring1);
+
+        var ringGeometry2 = new THREE.TorusGeometry(8, 0.03, 16, 120);
+        var ringMaterial2 = new THREE.MeshBasicMaterial({
+          color: 0x9ba19d,
+          transparent: true,
+          opacity: 0.2
+        });
+        var ring2 = new THREE.Mesh(ringGeometry2, ringMaterial2);
+        ring2.rotation.x = Math.PI / 3;
+        sceneGroup.add(ring2);
+
+        // Particules flottantes délicates (vapeur d'arôme, paillettes d'instant)
+        var particleCount = 45;
+        var particleGeo = new THREE.BufferGeometry();
+        var particlePos = new Float32Array(particleCount * 3);
+
+        for (var i = 0; i < particleCount * 3; i += 3) {
+          particlePos[i] = (Math.random() - 0.5) * 22;
+          particlePos[i + 1] = (Math.random() - 0.5) * 14;
+          particlePos[i + 2] = (Math.random() - 0.5) * 12;
+        }
+
+        particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePos, 3));
+        var particleMat = new THREE.PointsMaterial({
+          color: 0xc8a97e,
+          size: 0.12,
+          transparent: true,
+          opacity: 0.5
+        });
+
+        var particleSystem = new THREE.Points(particleGeo, particleMat);
+        sceneGroup.add(particleSystem);
+
+        // Sphères de verre discrètes
+        var sphereGeo = new THREE.IcosahedronGeometry(1.6, 2);
+        var sphereMat = new THREE.MeshBasicMaterial({
+          color: 0xc8a97e,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.12
+        });
+        var floatingSphere = new THREE.Mesh(sphereGeo, sphereMat);
+        floatingSphere.position.set(-4.5, 1.5, 0);
+        sceneGroup.add(floatingSphere);
+
+        var animId;
+        var isVisible = true;
+
+        // Arrêter l'animation quand l'onglet est masqué
+        document.addEventListener('visibilitychange', function () {
+          isVisible = !document.hidden;
+        });
+
+        function animate() {
+          animId = requestAnimationFrame(animate);
+          if (!isVisible) return;
+
+          // Rotation très douce et lente
+          ring1.rotation.x += 0.001;
+          ring1.rotation.y += 0.0015;
+
+          ring2.rotation.x -= 0.0008;
+          ring2.rotation.y += 0.001;
+
+          floatingSphere.rotation.y += 0.002;
+          floatingSphere.rotation.x += 0.001;
+
+          particleSystem.rotation.y += 0.0005;
+
+          renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Gestion redimensionnement
+        window.addEventListener('resize', function () {
+          if (!heroSection) return;
+          var newWidth = heroSection.clientWidth || window.innerWidth;
+          var newHeight = heroSection.clientHeight || window.innerHeight;
+
+          camera.aspect = newWidth / newHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(newWidth, newHeight);
+        });
+
+      } catch (err) {
+        // En cas d'erreur de WebGL, dégradation gracieuse : le fond CSS reste présent
+        var fallbackCanvas = document.getElementById('webgl-canvas');
+        if (fallbackCanvas) {
+          fallbackCanvas.style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

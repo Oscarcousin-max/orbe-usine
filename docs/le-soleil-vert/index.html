@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Le soleil vert — Studio Photographique &amp; Création</title>
+  <meta name="description" content="Atelier photographique au 155 Cours Victor Hugo. Portraits, prises de vue soignées et photos d'identité officielles sans rendez-vous.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Le soleil vert — Photographe &amp; Studio">
+  <meta property="og:description" content="L'art de la lumière et du portrait. 155 Cours Victor Hugo. Prises de vue et photos d'identité sans rendez-vous.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG en data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2313261b'/%3E%3Ccircle cx='16' cy='16' r='7' stroke='%23d9b470' stroke-width='2' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23d9b470'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (différé) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <style>
+    :root {
+      --bg-primary: #0e1612;
+      --bg-surface: #141f1a;
+      --bg-card: #182620;
+      --text-main: #f2f4f1;
+      --text-muted: #9eaba2;
+      --accent-gold: #cfad6b;
+      --accent-gold-soft: rgba(207, 173, 107, 0.15);
+      --accent-green-deep: #1d3326;
+      --border-subtle: rgba(207, 173, 107, 0.2);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Grain délicat d'ambiance */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      z-index: 100;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent-gold);
+      outline-offset: 4px;
+    }
+
+    /* En-tête */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      background: rgba(14, 22, 18, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 90;
+      transition: background 0.3s ease;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-svg {
+      width: 38px;
+      height: 38px;
+    }
+
+    .brand-text {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--text-main);
+    }
+
+    .site-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .site-nav a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .site-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-gold);
+      transition: width 0.3s ease;
+    }
+
+    .site-nav a:hover {
+      color: var(--text-main);
+    }
+
+    .site-nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--text-main);
+      margin: 5px 0;
+      transition: 0.3s ease;
+    }
+
+    /* Hero / Accueil 3D */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem clamp(1.5rem, 6vw, 6rem) 4rem;
+      background: radial-gradient(circle at 60% 40%, #1a3024 0%, #0e1612 80%);
+      overflow: hidden;
+    }
+
+    #three-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(14,22,18,0.3) 0%, rgba(14,22,18,0.75) 85%, #0e1612 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-subtitle {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--accent-gold-soft);
+      padding-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+      line-height: 1.08;
+      font-weight: 300;
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent-gold);
+      font-weight: 300;
+    }
+
+    .hero-desc {
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.95rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.35s var(--transition-smooth);
+    }
+
+    .btn-primary {
+      background: var(--accent-gold);
+      color: #0c140f;
+      border: 1px solid var(--accent-gold);
+    }
+
+    .btn-primary:hover {
+      background: #dfbe7d;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(207, 173, 107, 0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    /* Sections Communes */
+    section {
+      padding: clamp(5rem, 9vw, 8.5rem) clamp(1.5rem, 5vw, 4rem);
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      display: block;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    /* Esprit / Maison */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .lead-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #d1ded7;
+      font-weight: 300;
+      margin-bottom: 1.6rem;
+    }
+
+    .lead-detail {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .feature-points {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.8rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .feature-item-num {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--accent-gold);
+    }
+
+    .feature-item-txt {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    /* Cadre Illustration & Emplacement commerçant */
+    .media-card-wrap {
+      position: relative;
+    }
+
+    .media-card {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 0.85rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .media-img-wrapper {
+      position: relative;
+      aspect-ratio: 4/5;
+      width: 100%;
+      overflow: hidden;
+      background: #111a15;
+    }
+
+    .media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(40%) contrast(1.1) brightness(0.85);
+      transition: transform 0.8s ease, filter 0.8s ease;
+      display: block;
+    }
+
+    .media-card:hover .media-img {
+      transform: scale(1.03);
+      filter: grayscale(20%) contrast(1.1) brightness(0.9);
+    }
+
+    .media-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(14, 22, 18, 0.85);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(8px);
+      padding: 4px 10px;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      z-index: 2;
+    }
+
+    .placeholder-stamp {
+      position: absolute;
+      top: 1.5rem;
+      right: -1.5rem;
+      background: var(--bg-card);
+      border: 1px dashed var(--accent-gold);
+      padding: 1.2rem 1.6rem;
+      max-width: 200px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      z-index: 3;
+    }
+
+    .placeholder-stamp span {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .placeholder-stamp p {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Offre / Prestations */
+    .services-section {
+      background: var(--bg-surface);
+      border-top: 1px solid rgba(207, 173, 107, 0.1);
+      border-bottom: 1px solid rgba(207, 173, 107, 0.1);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 2.8rem 2.2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-gold);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.8rem;
+      stroke: var(--accent-gold);
+      fill: none;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .service-card .service-spec {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      border-top: 1px solid var(--accent-gold-soft);
+      padding-top: 0.8rem;
+      width: 100%;
+    }
+
+    .service-photo-placeholder {
+      border: 1px dashed rgba(207, 173, 107, 0.35);
+      background: rgba(14, 22, 18, 0.4);
+      padding: 1.5rem;
+      margin-top: 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 130px;
+    }
+
+    .service-photo-placeholder svg {
+      margin-bottom: 0.5rem;
+      stroke: var(--accent-gold);
+      opacity: 0.7;
+    }
+
+    .service-photo-placeholder span {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+    }
+
+    /* Informations pratiques & Contact */
+    .practical-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .info-group {
+      margin-bottom: 2.2rem;
+    }
+
+    .info-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .info-value {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .hours-schedule {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .hours-schedule li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 0.45rem 0;
+      font-size: 0.95rem;
+      color: #d1ded7;
+    }
+
+    .hours-schedule li:last-child {
+      border-bottom: none;
+    }
+
+    .phone-link {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      color: var(--text-main);
+      display: inline-block;
+      margin-top: 0.2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .phone-link:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+    }
+
+    /* Pied de page */
+    .site-footer {
+      background: #080d0a;
+      border-top: 1px solid rgba(207, 173, 107, 0.15);
+      padding: 4rem clamp(1.5rem, 5vw, 4rem) 3.5rem;
+      font-size: 0.8rem;
+      color: #79877f;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-credits {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .footer-credits a {
+      color: var(--accent-gold);
+    }
+
+    /* Badge ORBE fixe discret */
+    .orbe-badge {
+      position: fixed;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(14, 22, 18, 0.9);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(6px);
+      padding: 6px 14px;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-radius: 40px;
+      z-index: 80;
+      pointer-events: auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .orbe-badge:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    /* Animations d'apparition */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.85s var(--transition-smooth), transform 0.85s var(--transition-smooth);
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-grid, .practical-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .placeholder-stamp {
+        position: static;
+        margin-top: 1rem;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        height: 70px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .site-nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(14, 22, 18, 0.98);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 2rem 1.5rem;
+        display: none;
+      }
+
+      .site-nav.active {
+        display: block;
+      }
+
+      .site-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.4rem;
+      }
+
+      .site-nav a {
+        font-size: 1rem;
+      }
+
+      .cta-group {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <!-- Données structurées Schema.org véridiques -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Le soleil vert",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "155 Cours Victor Hugo",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33556496521",
+    "openingHours": [
+      "Tu-Fr 09:00-12:00",
+      "Tu-Fr 14:00-18:30"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header class="site-header" role="banner">
+    <a href="#" class="brand" aria-label="Accueil Le soleil vert">
+      <!-- Monogramme SVG exclusif : Soleil et Diaphragme -->
+      <svg class="brand-svg" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" stroke="#cfad6b" stroke-width="1.2" fill="none" opacity="0.4"/>
+        <circle cx="20" cy="20" r="14" stroke="#cfad6b" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+        <polygon points="20,10 27,26 13,26" stroke="#cfad6b" stroke-width="1" fill="none"/>
+        <polygon points="20,30 13,14 27,14" stroke="#cfad6b" stroke-width="1" fill="none"/>
+        <circle cx="20" cy="20" r="3" fill="#cfad6b"/>
+      </svg>
+      <span class="brand-text">Le soleil vert</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" role="navigation" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#esprit">L'Atelier</a></li>
+        <li><a href="#prestations">Prestations</a></li>
+        <li><a href="#visite">Vos Projets</a></li>
+        <li><a href="#contact">Informations</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Bandeau Accueil avec 3D -->
+    <section class="hero" id="accueil">
+      <canvas id="three-canvas" aria-hidden="true"></canvas>
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <div class="hero-content fade-up">
+        <span class="hero-subtitle">Studio Photographique · 155 Cours Victor Hugo</span>
+        <h1 class="hero-title">La justesse du regard,<br><em>l'exigence de l'instant.</em></h1>
+        <p class="hero-desc">
+          Un travail minutieux de la lumière pour vos portraits et vos événements. Réalisation immédiate de vos photos d'identité officielles sans rendez-vous.
+        </p>
+        <div class="cta-group">
+          <a href="#contact" class="btn btn-primary">Nous contacter</a>
+          <a href="#prestations" class="btn btn-outline">Découvrir l'atelier</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'esprit de la maison -->
+    <section id="esprit">
+      <div class="container">
+        <div class="about-grid">
+          <div class="fade-up">
+            <span class="section-eyebrow">La démarche</span>
+            <h2 class="section-heading">L'art de capter une présence, sans artifice.</h2>
+            <p class="lead-text">
+              Situé au 155 Cours Victor Hugo, notre atelier cultive une approche sensible et rigoureuse du métier d'artisan de l'image.
+            </p>
+            <p class="lead-detail">
+              Qu'il s'agisse de répondre à des exigences formelles ou d'immortaliser des moments clés lors de réceptions et d'événements, chaque prise de vue repose sur une maîtrise posée du cadre, de la clarté et de la lumière.
+            </p>
+
+            <ul class="feature-points">
+              <li class="feature-item">
+                <span class="feature-item-num">I.</span>
+                <span class="feature-item-txt">Photos d'identité biométriques et officielles réalisées sur place sans rendez-vous.</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-num">II.</span>
+                <span class="feature-item-txt">Accompagnement attentif de vos projets photographiques et réceptions.</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-num">III.</span>
+                <span class="feature-item-txt">Ouverture du mardi au vendredi, aux horaires de matinée et d'après-midi.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="media-card-wrap fade-up">
+            <div class="media-card">
+              <div class="media-img-wrapper">
+                
+                <span class="media-badge">Image d'illustration</span>
+              </div>
+            </div>
+
+            <!-- Emplacement 1 pour le commerçant -->
+            <div class="placeholder-stamp" aria-label="Espace réservé">
+              <span>Vos photos ici</span>
+              <p>Mise en valeur personnalisée de votre atelier et de vos créations originales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prestations -->
+    <section class="services-section" id="prestations">
+      <div class="container">
+        <div style="text-align: center; max-width: 720px; margin: 0 auto;" class="fade-up">
+          <span class="section-eyebrow">Domaines d'intervention</span>
+          <h2 class="section-heading">Photographe d'expérience au service de vos attentes</h2>
+          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
+            De l'exercice technique de l'identité aux prestations photographiques sur mesure pour particuliers et professionnels.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Carte 1 -->
+          <article class="service-card fade-up">
+            <div>
+              <svg class="service-icon" viewBox="0 0 24 24" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="12" cy="10" r="3.2"/>
+                <path d="M7 21v-2a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v2"/>
+              </svg>
+              <h3>Photos d'identité</h3>
+              <p>
+                Service garanti conforme aux normes officielles (passeport, carte nationale d'identité, permis de conduire, visas). Prise de vue soignée et tirage direct.
+              </p>
+            </div>
+            <span class="service-spec">Sans rendez-vous</span>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="service-card fade-up">
+            <div>
+              <svg class="service-icon" viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+              </svg>
+              <h3>Prises de vue &amp; Portraits</h3>
+              <p>
+                Séances de portrait individuel, de famille ou d'équipe. Recherche d'un rendu naturel et sobre mettant en valeur le caractère de chaque personne.
+              </p>
+            </div>
+            <span class="service-spec">En atelier ou sur mesure</span>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="service-card fade-up">
+            <div>
+              <svg class="service-icon" viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              <h3>Événements &amp; Traiteur</h3>
+              <p>
+                Couverture de réceptions, rencontres et moments d'exception. Attention scrupuleuse portée aux décors, aux accords et aux convives.
+              </p>
+            </div>
+            <span class="service-spec">Sur consultation</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Espace vos photos ici (2ème emplacement) -->
+    <section id="visite">
+      <div class="container fade-up">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: clamp(2rem, 5vw, 4rem); text-align: center;">
+          <span class="section-eyebrow">Galerie de l'atelier</span>
+          <h2 class="section-heading" style="margin-bottom: 1.2rem;">L'élégance de vos réalisations</h2>
+          <p style="max-width: 600px; margin: 0 auto 2.5rem; color: var(--text-muted); font-size: 0.95rem;">
+            Cet espace accueillera les clichés de votre établissement, vos tirages d'exposition et les moments immortalisés lors de vos prestations.
+          </p>
+
+          <div class="service-photo-placeholder" style="max-width: 500px; margin: 0 auto; min-height: 180px;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span>Vos photos ici</span>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.4rem;">Portraits, tirages d'art et prestations en situation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informations Pratiques & Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="practical-grid">
+          <!-- Infos -->
+          <div class="info-card fade-up">
+            <span class="section-eyebrow">Localisation</span>
+            <h2 class="section-heading" style="font-size: 2.2rem; margin-bottom: 2rem;">Venir au studio</h2>
+
+            <div class="info-group">
+              <span class="info-label">Adresse</span>
+              <p class="info-value">155 Cours Victor Hugo</p>
+              <div style="margin-top: 1rem;">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=155+Cours+Victor+Hugo" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-outline" 
+                   style="font-size: 0.75rem; padding: 0.7rem 1.4rem;">
+                  Itinéraire Google Maps
+                </a>
+              </div>
+            </div>
+
+            <div class="info-group" style="margin-top: 2.5rem;">
+              <span class="info-label">Horaires d'ouverture</span>
+              <ul class="hours-schedule">
+                <li>
+                  <span>Lundi</span>
+                  <span style="color: var(--text-muted);">Fermé</span>
+                </li>
+                <li>
+                  <span>Mardi au Vendredi</span>
+                  <span>09:00–12:00 &nbsp;·&nbsp; 14:00–18:30</span>
+                </li>
+                <li>
+                  <span>Samedi &amp; Dimanche</span>
+                  <span style="color: var(--text-muted);">Fermé</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact direct -->
+          <div class="info-card fade-up">
+            <span class="section-eyebrow">Échange direct</span>
+            <h2 class="section-heading" style="font-size: 2.2rem; margin-bottom: 2rem;">Prendre contact</h2>
+
+            <div class="info-group">
+              <span class="info-label">Téléphone</span>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">
+                Pour toute demande d'information ou préparation de séance :
+              </p>
+              <a href="tel:+33556496521" class="phone-link">+33 5 56 49 65 21</a>
+            </div>
+
+            <div class="info-group" style="margin-top: 2.5rem;">
+              <span class="info-label">Photos d'identité</span>
+              <p class="info-value" style="font-size: 1rem; color: var(--text-muted);">
+                Disponibles directement sur place, sans rendez-vous préalable, pendant les plages d'ouverture du studio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-top">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+            <svg width="24" height="24" viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="20" r="18" stroke="#cfad6b" stroke-width="1" fill="none"/>
+              <circle cx="20" cy="20" r="4" fill="#cfad6b"/>
+            </svg>
+            <span style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-main); letter-spacing: 0.05em;">Le soleil vert</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 320px;">
+            Photographe et studio au 155 Cours Victor Hugo.
+          </p>
+        </div>
+
+        <div>
+          <span class="info-label" style="margin-bottom: 0.5rem;">Crédit photographique</span>
+          <p style="font-size: 0.76rem; color: #79877f;">
+            Image d'illustration : Matti Blume (CC BY-SA 4.0).
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        <span>© Le soleil vert · Tous droits réservés.</span>
+        <span>Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge discret ORBE -->
+  <aside class="orbe-badge" aria-label="Mention maquette">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- Script Navigation & Animation Three.js sobre -->
+  <script>
+    // Navigation mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const siteNav = document.getElementById('siteNav');
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener('click', () => {
+        const isOpened = siteNav.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', isOpened);
+      });
+
+      siteNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          siteNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Apparition progressive (IntersectionObserver)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+    }
+
+    // Three.js Bandeau d'accueil
+    window.addEventListener('load', () => {
+      if (prefersReducedMotion) return;
+
+      try {
+        if (!window.THREE) return;
+
+        const canvas = document.getElementById('three-canvas');
+        if (!canvas) return;
+
+        const container = canvas.parentElement;
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+        camera.position.set(0, 0, 16);
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "low-power"
+        });
+
+        const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+        renderer.setPixelRatio(pixelRatio);
+        renderer.setSize(container.clientWidth, container.clientHeight);
+
+        // Groupe de lentilles et diaphragmes géométriques abstraits
+        const visualGroup = new THREE.Group();
+        scene.add(visualGroup);
+
+        // Éléments géométriques évoquant l'optique et la lumière
+        const rings = [];
+        const ringGeom1 = new THREE.TorusGeometry(3.8, 0.025, 16, 100);
+        const ringGeom2 = new THREE.TorusGeometry(5.2, 0.015, 16, 120);
+        const ringGeom3 = new THREE.TorusGeometry(6.6, 0.03, 16, 140);
+
+        const goldMat = new THREE.MeshBasicMaterial({
+          color: 0xcfad6b,
+          transparent: true,
+          opacity: 0.28,
+          wireframe: false
+        });
+
+        const greenMat = new THREE.MeshBasicMaterial({
+          color: 0x487358,
+          transparent: true,
+          opacity: 0.22
+        });
+
+        const r1 = new THREE.Mesh(ringGeom1, goldMat);
+        const r2 = new THREE.Mesh(ringGeom2, greenMat);
+        const r3 = new THREE.Mesh(ringGeom3, goldMat);
+
+        visualGroup.add(r1);
+        visualGroup.add(r2);
+        visualGroup.add(r3);
+        rings.push(r1, r2, r3);
+
+        // Disques légers et réfractaires
+        const discGeom = new THREE.CircleGeometry(2.4, 48);
+        const discMat = new THREE.MeshBasicMaterial({
+          color: 0x1d3326,
+          transparent: true,
+          opacity: 0.35,
+          side: THREE.DoubleSide
+        });
+        const disc = new THREE.Mesh(discGeom, discMat);
+        disc.rotation.x = Math.PI * 0.25;
+        visualGroup.add(disc);
+
+        let animationFrameId = null;
+        let isVisible = true;
+
+        const animate = () => {
+          if (!isVisible) return;
+
+          visualGroup.rotation.y += 0.0012;
+          visualGroup.rotation.x += 0.0006;
+          
+          r1.rotation.z += 0.0008;
+          r2.rotation.x -= 0.0009;
+          r3.rotation.y += 0.0005;
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        // Gestion du redimensionnement
+        const onResize = () => {
+          if (!container) return;
+          const w = container.clientWidth;
+          const h = container.clientHeight;
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+          renderer.setSize(w, h);
+        };
+
+        window.addEventListener('resize', onResize, { passive: true });
+
+        // Mise en pause quand l'onglet n'est pas actif
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            isVisible = false;
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+          } else {
+            isVisible = true;
+            animate();
+          }
+        });
+
+      } catch (err) {
+        // En cas d'erreur ou d'absence de WebGL, le dégradé CSS d'arrière-plan demeure actif
+        console.warn('Scène 3D non initialisée:', err);
+      }
+    });
+  </script>
+</body>
+</html>

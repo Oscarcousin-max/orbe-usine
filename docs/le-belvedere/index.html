@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Le Bélvèdere — Restaurant de cuisine française à Juillac</title>
+  <meta name="description" content="Restaurant de cuisine française situé au 1 Côte de la Tourbeille à Juillac. Une table soignée dédiée à la tradition culinaire et au plaisir de recevoir.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Le Bélvèdere — Restaurant à Juillac">
+  <meta property="og:description" content="Une table de cuisine française perchée sur la Côte de la Tourbeille à Juillac.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231b1e1b'/%3E%3Cpath d='M16 6 L26 23 L6 23 Z' fill='none' stroke='%23c5a880' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='15' r='3' fill='%23c5a880'/%3E%3C/svg%3E" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (chargé en différé pour le bandeau 3D sobre) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Le Bélvèdere",
+    "servesCuisine": "French",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Côte de la Tourbeille",
+      "addressLocality": "Juillac",
+      "postalCode": "33890",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33 5 57 47 40 33",
+    "email": "le-belvedere@wanadoo.fr",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "12:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "19:00",
+        "closes": "20:45"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-deep: #121513;
+      --bg-surface: #181d19;
+      --bg-light: #f7f4ef;
+      --paper: #f0ebe2;
+      --gold: #c7a77b;
+      --gold-subtle: rgba(199, 167, 123, 0.15);
+      --green-dark: #1f2721;
+      --text-main: #f0ebe2;
+      --text-dim: #9ea59f;
+      --border: rgba(199, 167, 123, 0.22);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    /* En-tête */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(18, 21, 19, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .brand svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn-nav {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.25rem;
+      border: 1px solid var(--gold);
+      color: var(--gold) !important;
+      transition: all 0.3s ease;
+    }
+
+    .btn-nav:hover {
+      background: var(--gold);
+      color: var(--bg-deep) !important;
+    }
+
+    .burger-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .burger-btn svg {
+      width: 26px;
+      height: 26px;
+      display: block;
+    }
+
+    /* Hero / Bandeau */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 1.5rem 4rem;
+      background: radial-gradient(circle at 50% 40%, #253328 0%, #121513 70%);
+      overflow: hidden;
+    }
+
+    #three-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18,21,19,0.4) 0%, rgba(18,21,19,0.75) 80%, var(--bg-deep) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 860px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background-color: var(--gold);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero-title span {
+      display: block;
+      font-style: italic;
+      font-size: 0.85em;
+      color: var(--gold);
+      text-transform: none;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.95rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--bg-deep);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Sections générales */
+    section {
+      padding: 6.5rem 1.5rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 4.5rem;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      line-height: 1.15;
+    }
+
+    /* Esprit / Maison */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .editorial-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--text-main);
+      border-left: 2px solid var(--gold);
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-text p {
+      color: var(--text-dim);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    /* Emplacement photo sur mesure */
+    .photo-placeholder {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .photo-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed rgba(199, 167, 123, 0.3);
+      pointer-events: none;
+    }
+
+    .placeholder-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .photo-placeholder p {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--text-main);
+      max-width: 280px;
+      line-height: 1.4;
+    }
+
+    .placeholder-sub {
+      font-family: var(--font-sans) !important;
+      font-size: 0.8rem !important;
+      color: var(--text-dim) !important;
+      margin-top: 0.6rem;
+    }
+
+    /* Offre / Art de la Table */
+    .offer-section {
+      background-color: var(--bg-surface);
+      border-top: 1px solid rgba(199, 167, 123, 0.15);
+      border-bottom: 1px solid rgba(199, 167, 123, 0.15);
+    }
+
+    .offer-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .offer-card {
+      background: var(--bg-deep);
+      border: 1px solid var(--border);
+      padding: 2.8rem 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 360px;
+    }
+
+    .offer-card-top {
+      margin-bottom: 2rem;
+    }
+
+    .offer-num {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .offer-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .offer-card p {
+      font-size: 0.92rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .offer-card-footer {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      border-top: 1px solid rgba(199, 167, 123, 0.15);
+      padding-top: 1.2rem;
+    }
+
+    /* Panorama & Lieu (grille asymétrique) */
+    .venue-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    /* Infos pratiques & Horaires */
+    .practical-section {
+      background: radial-gradient(circle at 80% 20%, #1f2721 0%, #121513 70%);
+      border-top: 1px solid rgba(199, 167, 123, 0.1);
+    }
+
+    .info-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .info-card {
+      background: rgba(24, 29, 25, 0.75);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .info-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .info-card h3 svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold);
+      fill: none;
+    }
+
+    .schedule-list {
+      list-style: none;
+    }
+
+    .schedule-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.92rem;
+    }
+
+    .schedule-item:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-day {
+      color: var(--text-main);
+    }
+
+    .schedule-hours {
+      color: var(--text-dim);
+      text-align: right;
+    }
+
+    .schedule-closed {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .contact-item {
+      margin-bottom: 1.4rem;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-value {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      display: block;
+      word-break: break-word;
+    }
+
+    .contact-value:hover {
+      color: var(--gold);
+    }
+
+    /* Pied de page */
+    footer {
+      background-color: #0c0e0c;
+      border-top: 1px solid var(--border);
+      padding: 4rem 1.5rem 2.5rem;
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      border-bottom: 1px solid rgba(199, 167, 123, 0.12);
+      padding-bottom: 2.5rem;
+    }
+
+    .alcohol-warning {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-align: center;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(199, 167, 123, 0.15);
+      background: rgba(18, 21, 19, 0.4);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    .footer-credits a {
+      color: var(--gold);
+    }
+
+    /* Badge fixe discret ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 999;
+      background: rgba(18, 21, 19, 0.88);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.85rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      pointer-events: auto;
+    }
+
+    /* Animations subtiles au scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-grid, .venue-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .offer-cards {
+        grid-template-columns: 1fr;
+      }
+      .hero-section {
+        padding-top: 8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .burger-btn {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: rgba(18, 21, 19, 0.98);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 2.5rem 1.5rem;
+        gap: 1.8rem;
+        transform: translateY(-120%);
+        transition: transform 0.35s ease;
+      }
+      .nav-links.is-open {
+        transform: translateY(0);
+      }
+      .footer-top, .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation fixe -->
+  <header>
+    <div class="nav-container">
+      <a href="#accueil" class="brand" aria-label="Le Bélvèdere - Accueil">
+        <!-- Monogramme SVG exclusif -->
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="14.5" fill="none" stroke="#c7a77b" stroke-width="1"/>
+          <path d="M16 6 L24 23 L8 23 Z" fill="none" stroke="#c7a77b" stroke-width="1.2"/>
+          <circle cx="16" cy="17.5" r="2.2" fill="#c7a77b"/>
+          <line x1="16" y1="6" x2="16" y2="23" stroke="#c7a77b" stroke-dasharray="1 2" stroke-width="0.8"/>
+        </svg>
+        <span>Le Bélvèdere</span>
+      </a>
+
+      <button class="burger-btn" id="burgerToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainMenu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="mainMenu">
+        <li><a href="#esprit">L’Esprit</a></li>
+        <li><a href="#table">La Table</a></li>
+        <li><a href="#lieu">Le Lieu</a></li>
+        <li><a href="#horaires">Horaires</a></li>
+        <li><a href="#contact" class="btn-nav">Réserver</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Bandeau 3D d'accueil -->
+    <section id="accueil" class="hero-section">
+      <canvas id="three-canvas" aria-hidden="true"></canvas>
+      <div class="hero-scrim"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Restaurant français · Juillac</p>
+        <h1 class="hero-title">
+          Le Bélvèdere
+          <span>L’élégance du goût & des hauteurs</span>
+        </h1>
+        <p class="hero-desc">
+          Une halte singulière sur la Côte de la Tourbeille, dédiée à l’art culinaire français, à la convivialité et aux plaisirs de la table.
+        </p>
+        <div class="hero-actions">
+          <a href="tel:+33557474033" class="btn btn-primary">Réserver une table</a>
+          <a href="#horaires" class="btn btn-secondary">Horaires & Accès</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'esprit de la maison -->
+    <section id="esprit" class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Maison & Savoir-faire</span>
+        <h2 class="section-title">L’Esprit de la Maison</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <blockquote class="editorial-quote">
+            « Cultiver la simplicité généreuse de la gastronomie française au sommet des coteaux de Juillac. »
+          </blockquote>
+          <p>
+            Établi au numéro 1 de la Côte de la Tourbeille, Le Bélvèdere est un restaurant indépendant ancré dans son territoire girondin. Notre établissement accueille les convives en quête d'une table authentique et soignée.
+          </p>
+          <p>
+            Chaque service est pensé comme un moment suspendu où les produits sélectionnés s'associent aux traditions culinaires françaises pour célébrer la générosité et l’art du repas partagé.
+          </p>
+        </div>
+
+        <div class="photo-placeholder reveal" aria-label="Espace réservé pour une photographie de la maison">
+          <span class="placeholder-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Vos photos ici
+          </span>
+          <p>La salle de restaurant & l’ambiance de la table</p>
+          <span class="placeholder-sub">Emplacement réservé aux prises de vue du restaurant</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'Offre / La Table -->
+    <section id="table" class="offer-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Gastronomie Française</span>
+          <h2 class="section-title">L’Art de Recevoir</h2>
+        </div>
+
+        <div class="offer-cards">
+          <div class="offer-card reveal">
+            <div class="offer-card-top">
+              <span class="offer-num">01</span>
+              <h3>Le Déjeuner</h3>
+              <p>
+                Un temps privilégié au cœur de la journée pour savourer des créations françaises équilibrées. Les propositions s'accordent avec le rythme du midi de 12h00 à 14h00.
+              </p>
+            </div>
+            <div class="offer-card-footer">
+              Service du midi · 12:00 — 14:00
+            </div>
+          </div>
+
+          <div class="offer-card reveal">
+            <div class="offer-card-top">
+              <span class="offer-num">02</span>
+              <h3>Le Dîner</h3>
+              <p>
+                À la nuit tombée, l'atmosphère se tamise pour laisser place à la dégustation. Un rendez-vous nocturne pour prolonger la découverte des saveurs classiques et inventives.
+              </p>
+            </div>
+            <div class="offer-card-footer">
+              Service du soir · 19:00 — 20:45
+            </div>
+          </div>
+
+          <div class="offer-card reveal">
+            <div class="offer-card-top">
+              <span class="offer-num">03</span>
+              <h3>La Carte des Vins</h3>
+              <p>
+                Une sélection pensée pour dialoguer harmonieusement avec chaque assiette, valorisant la richesse viticole régionale et le travail méticuleux des vignerons.
+              </p>
+            </div>
+            <div class="offer-card-footer">
+              Accords & Découvertes
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le Lieu & Panorama -->
+    <section id="lieu" class="container">
+      <div class="venue-grid">
+        <div class="photo-placeholder reveal" aria-label="Espace réservé pour une photographie extérieure">
+          <span class="placeholder-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Vos photos ici
+          </span>
+          <p>Le panorama & les abords de la Tourbeille</p>
+          <span class="placeholder-sub">Photographie de la bâtisse ou du cadre naturel</span>
+        </div>
+
+        <div class="about-text reveal">
+          <span class="section-tag">Situation</span>
+          <h2 class="section-title" style="margin-bottom: 1.5rem;">Au Sommet de la Côte</h2>
+          <p>
+            Situé au 1 Côte de la Tourbeille sur la commune de Juillac (33890), Le Bélvèdere tire son nom de sa situation dégagée offrant une halte sereine et retirée.
+          </p>
+          <p>
+            Le cadre naturel des coteaux environnants prête à notre table une atmosphère d'intimité propice aux repas en famille, aux déjeuners professionnels ou aux dîners d’exception.
+          </p>
+          <div style="margin-top: 2rem;">
+            <a href="https://www.google.com/maps/search/?api=1&query=1%20C%C3%B4te%20de%20la%20Tourbeille%2C%2033890%20JUILLAC" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Ouvrir l’itinéraire
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informations pratiques & Horaires -->
+    <section id="horaires" class="practical-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Informations</span>
+          <h2 class="section-title">Horaires & Réservations</h2>
+        </div>
+
+        <div class="info-boxes">
+          <!-- Horaires -->
+          <div class="info-card reveal">
+            <h3>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Services
+            </h3>
+            <ul class="schedule-list">
+              <li class="schedule-item">
+                <span class="schedule-day">Lundi</span>
+                <span class="schedule-hours">12:00 – 14:00 &bull; 19:00 – 20:45</span>
+              </li>
+              <li class="schedule-item">
+                <span class="schedule-day">Mardi</span>
+                <span class="schedule-closed">Fermé</span>
+              </li>
+              <li class="schedule-item">
+                <span class="schedule-day">Mercredi</span>
+                <span class="schedule-closed">Fermé</span>
+              </li>
+              <li class="schedule-item">
+                <span class="schedule-day">Jeudi</span>
+                <span class="schedule-hours">12:00 – 14:00 &bull; 19:00 – 20:45</span>
+              </li>
+              <li class="schedule-item">
+                <span class="schedule-day">Vendredi</span>
+                <span class="schedule-hours">12:00 – 14:00 &bull; 19:00 – 20:45</span>
+              </li>
+              <li class="schedule-item">
+                <span class="schedule-day">Samedi</span>
+                <span class="schedule-hours">12:00 – 14:00 &bull; 19:00 – 20:45</span>
+              </li>
+              <li class="schedule-item">
+                <span class="schedule-day">Dimanche</span>
+                <span class="schedule-hours">12:00 – 14:00 &bull; 19:00 – 20:45</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact & Accès -->
+          <div class="info-card reveal" id="contact">
+            <h3>
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Nous Joindre
+            </h3>
+            <div class="contact-item">
+              <span class="contact-label">Adresse</span>
+              <p class="contact-value">1 Côte de la Tourbeille<br>33890 JUILLAC</p>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Réservations téléphoniques</span>
+              <a href="tel:+33557474033" class="contact-value">+33 5 57 47 40 33</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Courriel</span>
+              <a href="mailto:le-belvedere@wanadoo.fr" class="contact-value">le-belvedere@wanadoo.fr</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="footer-inner">
+      <div class="alcohol-warning">
+        L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+      </div>
+
+      <div class="footer-top">
+        <div class="brand">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="14.5" fill="none" stroke="#c7a77b" stroke-width="1"/>
+            <path d="M16 6 L24 23 L8 23 Z" fill="none" stroke="#c7a77b" stroke-width="1.2"/>
+            <circle cx="16" cy="17.5" r="2.2" fill="#c7a77b"/>
+          </svg>
+          <span>Le Bélvèdere</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-dim); max-width: 440px;">
+          Restaurant de cuisine française indépendant · 1 Côte de la Tourbeille, 33890 Juillac
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear"></span> Le Bélvèdere — Tous droits réservés.
+        </div>
+        <div class="footer-credits">
+          Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge fixe discret ORBE -->
+  <aside class="orbe-badge" aria-label="Mention maquette">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- Scripts -->
+  <script>
+    // Année dynamique
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Menu Mobile
+    const burgerToggle = document.getElementById('burgerToggle');
+    const mainMenu = document.getElementById('mainMenu');
+
+    if (burgerToggle && mainMenu) {
+      burgerToggle.addEventListener('click', () => {
+        const isOpen = mainMenu.classList.toggle('is-open');
+        burgerToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      mainMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainMenu.classList.remove('is-open');
+          burgerToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Apparitions douces au défilement (IntersectionObserver)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+    }
+
+    // Bandeau 3D Three.js : rubans topographiques abstraits et lents
+    window.addEventListener('DOMContentLoaded', () => {
+      if (prefersReducedMotion) return;
+
+      function initThreeScene() {
+        if (!window.THREE) return;
+
+        try {
+          const canvas = document.getElementById('three-canvas');
+          if (!canvas) return;
+
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+          camera.position.set(0, 2.2, 5.5);
+          camera.lookAt(0, 0, 0);
+
+          const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: true
+          });
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          renderer.setSize(canvas.parentElement.clientWidth, canvas.parentElement.clientHeight);
+
+          // Groupe de formes abstraites ondulantes évoquant des coteaux / rubans
+          const group = new THREE.Group();
+          scene.add(group);
+
+          const ringGeo = new THREE.TorusGeometry(2.3, 0.035, 16, 120);
+          const goldMat = new THREE.MeshBasicMaterial({
+            color: 0xc7a77b,
+            transparent: true,
+            opacity: 0.38,
+            wireframe: false
+          });
+
+          const ring1 = new THREE.Mesh(ringGeo, goldMat);
+          ring1.rotation.x = Math.PI / 2.3;
+          group.add(ring1);
+
+          const ringGeo2 = new THREE.TorusGeometry(3.1, 0.02, 16, 140);
+          const greenMat = new THREE.MeshBasicMaterial({
+            color: 0x4f6b55,
+            transparent: true,
+            opacity: 0.28
+          });
+          const ring2 = new THREE.Mesh(ringGeo2, greenMat);
+          ring2.rotation.x = Math.PI / 2.8;
+          ring2.rotation.y = Math.PI / 6;
+          group.add(ring2);
+
+          // Nappe de points discrets évoquant la brume des vallons
+          const particleCount = 140;
+          const particlesGeo = new THREE.BufferGeometry();
+          const coords = new Float32Array(particleCount * 3);
+
+          for (let i = 0; i < particleCount * 3; i += 3) {
+            coords[i] = (Math.random() - 0.5) * 8;
+            coords[i + 1] = (Math.random() - 0.5) * 3;
+            coords[i + 2] = (Math.random() - 0.5) * 6;
+          }
+
+          particlesGeo.setAttribute('position', new THREE.BufferAttribute(coords, 3));
+          const particlesMat = new THREE.PointsMaterial({
+            color: 0xc7a77b,
+            size: 0.035,
+            transparent: true,
+            opacity: 0.45
+          });
+
+          const particles = new THREE.Points(particlesGeo, particlesMat);
+          group.add(particles);
+
+          let isPageVisible = true;
+          document.addEventListener('visibilitychange', () => {
+            isPageVisible = !document.hidden;
+          });
+
+          let clock = new THREE.Clock();
+
+          function animate() {
+            requestAnimationFrame(animate);
+            if (!isPageVisible) return;
+
+            const elapsedTime = clock.getElapsedTime();
+            // Mouvement très lent et fluide
+            group.rotation.y = elapsedTime * 0.035;
+            ring1.rotation.z = Math.sin(elapsedTime * 0.15) * 0.1;
+            ring2.rotation.z = Math.cos(elapsedTime * 0.12) * 0.12;
+
+            renderer.render(scene, camera);
+          }
+
+          animate();
+
+          // Redimensionnement
+          window.addEventListener('resize', () => {
+            const parent = canvas.parentElement;
+            if (!parent) return;
+            const w = parent.clientWidth;
+            const h = parent.clientHeight;
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+          });
+        } catch (err) {
+          // Dégradation gracieuse : l'arrière-plan dégradé CSS suffit
+        }
+      }
+
+      // Vérification du script Three.js différé
+      if (window.THREE) {
+        initThreeScene();
+      } else {
+        const checkThree = setInterval(() => {
+          if (window.THREE) {
+            clearInterval(checkThree);
+            initThreeScene();
+          }
+        }, 80);
+        setTimeout(() => clearInterval(checkThree), 4000);
+      }
+    });
+  </script>
+</body>
+</html>
