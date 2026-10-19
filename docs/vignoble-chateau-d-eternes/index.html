@@ -1,0 +1,1275 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Vignoble Château d'Éternes | Domaine Viticole</title>
+  <meta name="description" content="Découvrez le Vignoble Château d'Éternes. Vins d'artisanat, respect des terroirs et accueil au domaine viticole sur rendez-vous.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vignoble Château d'Éternes | Domaine Viticole">
+  <meta property="og:description" content="L'expression authentique d'un domaine viticole. Contactez le vignoble pour vos dégustations et commandes.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230f0c0b'/%3E%3Cpath d='M16 6 C10 6 7 11 7 17 C7 23 11 26 16 26 C21 26 25 23 25 17 C25 11 22 6 16 6 Z M16 9 C19.5 9 22 13 22 17 C22 21 19.5 23.5 16 23.5 C12.5 23.5 10 21 10 17 C10 13 12.5 9 16 9 Z' fill='%23c7a063'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%238c2633'/%3E%3C/svg%3E" type="image/svg+xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (différé) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Winery",
+    "name": "Vignoble Château d'Éternes",
+    "telephone": "+33549981246",
+    "email": "chateaudeternes@orange.fr",
+    "url": "https://www.google.com/maps/search/?api=1&query=Vignoble+Ch%C3%A2teau+d%27%C3%89ternes",
+    "servesCuisine": "Vins de propriété"
+  }
+  </script>
+
+  <style>
+    :root {
+      --c-bg: #0d0a0a;
+      --c-surface: #151111;
+      --c-card: #1c1616;
+      --c-border: rgba(199, 160, 99, 0.2);
+      --c-border-subtle: rgba(255, 255, 255, 0.08);
+      --c-gold: #c7a063;
+      --c-gold-hover: #dec18c;
+      --c-garnet: #7d1f2d;
+      --c-garnet-deep: #470f17;
+      --c-text: #f3efe9;
+      --c-text-muted: #a69a91;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--c-bg);
+      color: var(--c-text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      position: relative;
+      background: radial-gradient(circle at 50% 0%, #1f1416 0%, var(--c-bg) 60%);
+    }
+
+    ::selection {
+      background: var(--c-garnet);
+      color: #ffffff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--c-gold);
+      outline-offset: 4px;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, .serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+    }
+
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+
+    /* HEADER & NAV */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      background: rgba(13, 10, 10, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border-subtle);
+      transition: padding var(--transition), background-color var(--transition);
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+
+    .brand-svg {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-text);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-text-muted);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--c-gold);
+      transition: width var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--c-text);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.4rem;
+      border: 1px solid var(--c-gold);
+      color: var(--c-gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all var(--transition);
+    }
+
+    .nav-cta:hover {
+      background: var(--c-gold);
+      color: var(--c-bg);
+    }
+
+    /* BURGER MENU */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 101;
+    }
+
+    .burger-icon {
+      width: 26px;
+      height: 16px;
+      position: relative;
+      display: block;
+    }
+
+    .burger-icon span {
+      position: absolute;
+      height: 1.5px;
+      width: 100%;
+      background: var(--c-gold);
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .burger-icon span:nth-child(1) { top: 0; }
+    .burger-icon span:nth-child(2) { top: 7px; }
+    .burger-icon span:nth-child(3) { top: 14px; }
+
+    .menu-open .burger-icon span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .menu-open .burger-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-open .burger-icon span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 2rem 5rem;
+      background: radial-gradient(ellipse at 50% 40%, rgba(92, 29, 36, 0.28) 0%, rgba(13, 10, 10, 0.95) 75%);
+      overflow: hidden;
+    }
+
+    #three-hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .hero-veil {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(13,10,10,0.3) 0%, rgba(13,10,10,0.85) 90%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6.5vw, 5.2rem);
+      margin-bottom: 1.5rem;
+      color: var(--c-text);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+      font-style: italic;
+      color: var(--c-gold-hover);
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.4;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--c-garnet);
+      color: #fff;
+      border: 1px solid var(--c-garnet);
+    }
+
+    .btn-primary:hover {
+      background: #9b2837;
+      border-color: #9b2837;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--c-border);
+      color: var(--c-text);
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--c-gold);
+      color: var(--c-gold);
+      background: rgba(199, 160, 99, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* SANITARY NOTICE BANNER */
+    .health-strip {
+      background: #090707;
+      border-top: 1px solid var(--c-border-subtle);
+      border-bottom: 1px solid var(--c-border-subtle);
+      padding: 0.6rem 1rem;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-text-muted);
+    }
+
+    /* SECTIONS COMMON */
+    section {
+      padding: 7rem 2rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+      color: var(--c-text);
+    }
+
+    .section-desc {
+      color: var(--c-text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* PHILOSOPHY GRID */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .lead-text {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      line-height: 1.5;
+      color: #ede2d3;
+      margin-bottom: 1.5rem;
+    }
+
+    .lead-text span {
+      color: var(--c-gold);
+    }
+
+    .body-copy {
+      color: var(--c-text-muted);
+      margin-bottom: 2rem;
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    .fine-line {
+      width: 48px;
+      height: 1px;
+      background: var(--c-gold);
+      margin-bottom: 2rem;
+    }
+
+    /* PHOTO HOLDERS & GALLERY */
+    .visual-frame {
+      position: relative;
+      border: 1px solid var(--c-border);
+      padding: 1rem;
+      background: var(--c-surface);
+    }
+
+    .visual-inner {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: #110e0e;
+    }
+
+    .visual-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(105%) brightness(0.85);
+      transition: transform 0.8s ease;
+      display: block;
+    }
+
+    .visual-frame:hover .visual-img {
+      transform: scale(1.03);
+    }
+
+    .visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(13,10,10,0.85) 100%);
+      pointer-events: none;
+    }
+
+    .caption-badge {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.7rem;
+      color: #e5ded6;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .photo-slot {
+      border: 1px dashed rgba(199, 160, 99, 0.35);
+      background: rgba(22, 17, 17, 0.6);
+      aspect-ratio: 4/5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      transition: border-color var(--transition);
+    }
+
+    .photo-slot:hover {
+      border-color: var(--c-gold);
+    }
+
+    .slot-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.25rem;
+      stroke: var(--c-gold);
+      opacity: 0.7;
+    }
+
+    .slot-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--c-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .slot-sub {
+      font-size: 0.75rem;
+      color: var(--c-text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* OFFERINGS */
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .offer-card {
+      background: var(--c-card);
+      border: 1px solid var(--c-border-subtle);
+      padding: 3rem 2rem;
+      position: relative;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--c-border);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-num {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--c-gold);
+      opacity: 0.5;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--c-text);
+    }
+
+    .card-text {
+      color: var(--c-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      border-top: 1px solid var(--c-border-subtle);
+      padding-top: 1.25rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* PRACTICAL DETAILS & VISITS */
+    .visit-section {
+      background: linear-gradient(180deg, var(--c-bg) 0%, #151011 50%, var(--c-bg) 100%);
+      border-top: 1px solid var(--c-border-subtle);
+      border-bottom: 1px solid var(--c-border-subtle);
+    }
+
+    .visit-card {
+      border: 1px solid var(--c-border);
+      background: rgba(18, 14, 14, 0.9);
+      padding: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      position: relative;
+    }
+
+    .info-group {
+      margin-bottom: 2rem;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .info-value {
+      font-size: 1.15rem;
+      color: var(--c-text);
+      line-height: 1.6;
+    }
+
+    .info-value a:hover {
+      color: var(--c-gold);
+    }
+
+    .info-sub {
+      color: var(--c-text-muted);
+      font-size: 0.9rem;
+      margin-top: 0.35rem;
+    }
+
+    /* CONTACT SECTION */
+    .contact-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .contact-item {
+      padding: 2.5rem 1.5rem;
+      background: var(--c-surface);
+      border: 1px solid var(--c-border-subtle);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-item:hover {
+      border-color: var(--c-gold);
+      transform: translateY(-3px);
+    }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 1.25rem;
+      stroke: var(--c-gold);
+    }
+
+    .contact-link {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--c-text);
+      word-break: break-word;
+    }
+
+    .contact-link:hover {
+      color: var(--c-gold);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #080606;
+      border-top: 1px solid var(--c-border-subtle);
+      padding: 4.5rem 2rem 2.5rem;
+      color: var(--c-text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-legal {
+      text-align: center;
+      font-size: 0.78rem;
+      line-height: 1.8;
+      color: #7b726c;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .credits-list {
+      font-size: 0.75rem;
+      color: #6a625d;
+      margin-top: 0.75rem;
+    }
+
+    /* BADGE FIXE ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 99;
+      background: rgba(13, 10, 10, 0.85);
+      border: 1px solid rgba(199, 160, 99, 0.35);
+      color: var(--c-gold);
+      padding: 0.45rem 0.9rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      pointer-events: none;
+    }
+
+    /* ANIMATIONS & INTERSECTION */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .offers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visit-card {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1.5rem;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 1rem 1.25rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--c-bg);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        transition: right 0.4s ease;
+        padding: 2rem;
+        z-index: 100;
+      }
+
+      .nav-menu.open {
+        right: 0;
+      }
+
+      .nav-link {
+        font-size: 1.15rem;
+      }
+
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 5rem 1.25rem;
+      }
+
+      .hero {
+        padding: 7rem 1.25rem 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- EN-TÊTE FIXE -->
+  <header class="header" id="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand" aria-label="Accueil Vignoble Château d'Éternes">
+        <!-- Monogramme SVG dessiné sur mesure -->
+        <svg class="brand-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="47" stroke="#c7a063" stroke-width="1.5" stroke-dasharray="4 2"/>
+          <path d="M50 15 C 32 35, 32 65, 50 85 C 68 65, 68 35, 50 15 Z" stroke="#c7a063" stroke-width="1.2"/>
+          <path d="M42 38 L58 38 M42 50 L54 50 M42 62 L58 62 M42 38 L42 62" stroke="#f3efe9" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">Château d'Éternes</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+        <span class="burger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#esprit" class="nav-link">L'Esprit</a></li>
+        <li><a href="#domaine" class="nav-link">Le Vignoble</a></li>
+        <li><a href="#visites" class="nav-link">Visites & Dégustations</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="tel:+33549981246" class="nav-cta">Appeler le domaine</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ACCUEIL AVEC BANDEAU 3D -->
+  <main>
+    <section class="hero" id="accueil">
+      <!-- Toile 3D Three.js -->
+      <canvas id="three-hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-veil"></div>
+
+      <div class="hero-content fade-up">
+        <span class="eyebrow">Domaine Viticole & Châteaux Familiaux</span>
+        <h1 class="hero-title">Vignoble Château d'Éternes</h1>
+        <p class="hero-subtitle">L'élégance du travail de la vigne, l'authenticité d'un terroir préservé.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Prendre contact</a>
+          <a href="#esprit" class="btn btn-outline">Découvrir le domaine</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDEAU SANITAIRE LÉGAL -->
+    <div class="health-strip" role="note">
+      L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+    </div>
+
+    <!-- L'ESPRIT DE LA MAISON -->
+    <section id="esprit">
+      <div class="container">
+        <div class="philosophy-grid">
+          <div class="fade-up">
+            <span class="eyebrow">L'Esprit du Vignoble</span>
+            <h2 class="section-title">Le respect patient du vivant et des saisons</h2>
+            <div class="fine-line"></div>
+            <p class="lead-text">
+              Au <span>Château d'Éternes</span>, la viticulture est une vocation attentive où chaque geste s'accorde au rythme naturel du terroir.
+            </p>
+            <p class="body-copy">
+              Enraciné dans la tradition des domaines viticoles et châteaux familiaux, le vignoble perpétue l'exigence du travail de la vigne. De la conduite des parcelles jusqu'aux soins prodigués aux vendanges, le domaine valorise l'authenticité et la précision pour exprimer toute la finesse de ses productions.
+            </p>
+            <a href="#visites" class="btn btn-outline">Organiser une visite</a>
+          </div>
+
+          <div class="visual-frame fade-up">
+            <div class="visual-inner">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/River_Douro_Valley_Portugal_-_Vall%C3%A9e_de_la_rivi%C3%A8re_Douro_Portugal_-_Wine_Vin_Porto_-_Picture_Image_Photography_%2814962280582%29.jpg/1920px-River_Douro_Valley_Portugal_-_Vall%C3%A9e_de_la_rivi%C3%A8re_Douro_Portugal_-_Wine_Vin_Porto_-_Picture_Image_Photography_%2814962280582%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+                alt="Paysage de collines viticoles et rangs de vignes sous un ciel doux" 
+                class="visual-img"
+                loading="lazy"
+                width="1200"
+                height="800">
+              <div class="visual-overlay"></div>
+              <div class="caption-badge">
+                <span>Terroirs de caractère</span>
+                <span>Image d'illustration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'OFFRE / LE VIGNOBLE -->
+    <section id="domaine" style="background-color: var(--c-surface);">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow">Les Activités du Domaine</span>
+          <h2 class="section-title">L'artisanat du vin au domaine</h2>
+          <p class="section-desc">Un attachement fidèle aux principes de vinification soignée et un accueil attentif réservé aux passionnés.</p>
+        </div>
+
+        <div class="offers-grid">
+          <!-- Carte 1 -->
+          <article class="offer-card fade-up">
+            <span class="card-num">01</span>
+            <h3 class="card-title">Viticulture & Terroir</h3>
+            <p class="card-text">
+              Un travail mené avec constance sur les parcelles de la propriété. Le sol, l'exposition et l'écoute du végétal guident chaque étape des travaux de la vigne tout au long de l'année.
+            </p>
+            <div class="card-meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Savoir-faire viticole
+            </div>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="offer-card fade-up">
+            <span class="card-num">02</span>
+            <h3 class="card-title">Élevage & Vinification</h3>
+            <p class="card-text">
+              La transformation du raisin repose sur des gestes réfléchis, alliant rigueur et préservation de la typicité aromatique pour donner naissance à des vins sincères et harmonieux.
+            </p>
+            <div class="card-meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Patience & Maturation
+            </div>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="offer-card fade-up">
+            <span class="card-num">03</span>
+            <h3 class="card-title">Accueil & Vente</h3>
+            <p class="card-text">
+              Le domaine ouvre ses portes aux amateurs de vins et curieux de terroirs. Échange direct avec la propriété, découverte des cuvées et commande sur place ou à distance.
+            </p>
+            <div class="card-meta">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Sur rendez-vous
+            </div>
+          </article>
+        </div>
+
+        <!-- Emplacement réservé pour les futures photos du domaine -->
+        <div style="margin-top: 3.5rem;" class="fade-up">
+          <div class="photo-slot">
+            <svg class="slot-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <p class="slot-title">Vos photos du Château et du Chai ici</p>
+            <p class="slot-sub">Emplacement dédié aux photographies originales du domaine</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INFOS PRATIQUES & VISITES -->
+    <section class="visit-section" id="visites">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow">Venir au Domaine</span>
+          <h2 class="section-title">Accueil & Dégustations</h2>
+          <p class="section-desc">Pour vous recevoir dans les meilleures conditions, les visites et passages au domaine s'effectuent sur prise de contact préalable.</p>
+        </div>
+
+        <div class="visit-card fade-up">
+          <div>
+            <div class="info-group">
+              <span class="info-label">Localisation</span>
+              <p class="info-value">Vignoble Château d'Éternes</p>
+              <p class="info-sub">Propriété viticole</p>
+            </div>
+
+            <div class="info-group">
+              <span class="info-label">Horaires & Disponibilités</span>
+              <p class="info-value">Sur rendez-vous</p>
+              <p class="info-sub">Accueil personnalisé selon le calendrier des travaux du vignoble</p>
+            </div>
+
+            <div style="margin-top: 2.5rem;">
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Vignoble+Ch%C3%A2teau+d%27%C3%89ternes" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-outline"
+                aria-label="Calculer l'itinéraire vers le Vignoble Château d'Éternes sur Google Maps">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                Itinéraire
+              </a>
+            </div>
+          </div>
+
+          <div style="border-left: 1px solid var(--c-border-subtle); padding-left: 2rem;">
+            <div class="info-group">
+              <span class="info-label">Échanges & Vente Directe</span>
+              <p class="body-copy" style="margin-bottom: 1.5rem;">
+                Que vous soyez amateur éclairé, professionnel ou en quête de bouteilles pour votre cave personnelle, nous nous tenons à votre disposition pour tout renseignement.
+              </p>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--c-text);">
+                  <span style="color: var(--c-gold);">—</span> Renseignements par téléphone
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--c-text);">
+                  <span style="color: var(--c-gold);">—</span> Commandes et disponibilités par email
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.5rem; color: var(--c-text);">
+                  <span style="color: var(--c-gold);">—</span> Accueil privilégié sur réservation
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-container fade-up">
+          <span class="eyebrow">Nous Joindre</span>
+          <h2 class="section-title">Contacter la Propriété</h2>
+          <p class="section-desc">
+            N'hésitez pas à contacter le Vignoble Château d'Éternes par téléphone ou par courrier électronique.
+          </p>
+
+          <div class="contact-cards">
+            <!-- Téléphone -->
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span class="info-label">Ligne directe</span>
+              <a href="tel:+33549981246" class="contact-link">+33 5 49 98 12 46</a>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <span class="info-label">Correspondance écrite</span>
+              <a href="mailto:chateaudeternes@orange.fr" class="contact-link">chateaudeternes@orange.fr</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="brand">
+          <svg class="brand-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="47" stroke="#c7a063" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <path d="M50 15 C 32 35, 32 65, 50 85 C 68 65, 68 35, 50 15 Z" stroke="#c7a063" stroke-width="1.2"/>
+          </svg>
+          <span class="brand-name">Vignoble Château d'Éternes</span>
+        </div>
+        <div style="font-size: 0.8rem; letter-spacing: 0.05em; color: var(--c-gold);">
+          Domaine Viticole & Châteaux Familiaux
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p>L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+        <p style="margin-top: 0.5rem;">Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com" style="text-decoration: underline;">societe.orbe@gmail.com</a></p>
+        <p class="credits-list">
+          Photo : Grand Parc - Bordeaux, France from France (CC BY 2.0) · Image d'illustration
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE FIXE DISCRET -->
+  <aside class="orbe-badge" aria-hidden="true">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- SCRIPT THREE.JS ET INTERACTIVITÉ -->
+  <script>
+    // Menu mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+      });
+
+      // Fermer le menu lors d'un clic sur un lien
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          document.body.classList.remove('menu-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Apparition douce au défilement (IntersectionObserver)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+    }
+
+    // Scène 3D Three.js sobre et abstraite
+    window.addEventListener('load', () => {
+      if (prefersReducedMotion) return;
+
+      try {
+        if (typeof window.THREE !== 'undefined') {
+          const canvas = document.getElementById('three-hero-canvas');
+          if (!canvas) return;
+
+          const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: true,
+            powerPreference: 'high-performance'
+          });
+
+          const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          renderer.setPixelRatio(dpr);
+
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+          camera.position.z = 8;
+
+          // Lumières douces et chaleureuses (grenat & or)
+          const ambientLight = new THREE.AmbientLight(0x2a1417, 1.2);
+          scene.add(ambientLight);
+
+          const goldLight = new THREE.PointLight(0xc7a063, 2, 20);
+          goldLight.position.set(5, 4, 3);
+          scene.add(goldLight);
+
+          const garnetLight = new THREE.PointLight(0x8a1c2b, 3, 20);
+          garnetLight.position.set(-5, -3, 2);
+          scene.add(garnetLight);
+
+          // Volume abstrait : formes toriques fluides et délicates évoquant le vin et la rondeur du fût
+          const group = new THREE.Group();
+
+          const mat1 = new THREE.MeshStandardMaterial({
+            color: 0x54121b,
+            roughness: 0.35,
+            metalness: 0.3,
+            wireframe: false,
+            transparent: true,
+            opacity: 0.75
+          });
+
+          const mat2 = new THREE.MeshStandardMaterial({
+            color: 0x241113,
+            roughness: 0.6,
+            metalness: 0.1,
+            wireframe: false,
+            transparent: true,
+            opacity: 0.65
+          });
+
+          const matGoldLine = new THREE.MeshBasicMaterial({
+            color: 0xc7a063,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.12
+          });
+
+          const geom1 = new THREE.TorusGeometry(2.6, 0.75, 32, 80);
+          const mesh1 = new THREE.Mesh(geom1, mat1);
+          group.add(mesh1);
+
+          const geom2 = new THREE.TorusGeometry(3.3, 0.25, 24, 70);
+          const mesh2 = new THREE.Mesh(geom2, mat2);
+          mesh2.rotation.x = Math.PI * 0.35;
+          group.add(mesh2);
+
+          const geom3 = new THREE.IcosahedronGeometry(1.6, 2);
+          const mesh3 = new THREE.Mesh(geom3, matGoldLine);
+          group.add(mesh3);
+
+          scene.add(group);
+
+          function resize() {
+            const width = canvas.clientWidth;
+            const height = canvas.clientHeight;
+            if (canvas.width !== width || canvas.height !== height) {
+              renderer.setSize(width, height, false);
+              camera.aspect = width / height;
+              camera.updateProjectionMatrix();
+            }
+          }
+
+          let animationFrameId;
+          let isTabActive = true;
+
+          document.addEventListener('visibilitychange', () => {
+            isTabActive = !document.hidden;
+            if (isTabActive) {
+              animate();
+            } else {
+              cancelAnimationFrame(animationFrameId);
+            }
+          });
+
+          function animate() {
+            if (!isTabActive) return;
+            resize();
+
+            // Mouvements très lents et fluides
+            group.rotation.x += 0.0012;
+            group.rotation.y += 0.0016;
+            mesh1.rotation.z += 0.0008;
+            mesh2.rotation.y -= 0.001;
+
+            renderer.render(scene, camera);
+            animationFrameId = requestAnimationFrame(animate);
+          }
+
+          resize();
+          animate();
+
+          window.addEventListener('resize', resize, { passive: true });
+        }
+      } catch (err) {
+        // En cas d'indisponibilité de WebGL ou Three.js, le dégradé CSS élégant préserve l'esthétique
+        console.warn('Three.js scene skipped:', err);
+      }
+    });
+  </script>
+</body>
+</html>

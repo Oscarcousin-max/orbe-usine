@@ -1,0 +1,1442 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Hélène Boudat | Bijouterie, Joaillerie & Horlogerie à Camblanes-et-Meynac</title>
+  <meta name="description" content="Atelier Hélène Boudat à Camblanes-et-Meynac : l'art de la bijouterie, de la joaillerie et de l'horlogerie. Création, façonnage de métaux précieux et entretien minutieux.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hélène Boudat | Joaillerie, Bijouterie & Horlogerie">
+  <meta property="og:description" content="Atelier d'exception à Camblanes-et-Meynac : création, joaillerie, bijouterie et horlogerie soignée.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG en data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,8 92,32 92,68 50,92 8,68 8,32' fill='none' stroke='%23C5A059' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='18' fill='none' stroke='%23C5A059' stroke-width='3'/%3E%3Cpath d='M50,22 L50,78 M32,50 L68,50' stroke='%23C5A059' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (chargement différé) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "Hélène Boudat",
+    "description": "Atelier de bijouterie, joaillerie et horlogerie situé à Camblanes-et-Meynac.",
+    "telephone": "+33556201718",
+    "email": "helene.boudat@orange.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Route de Morillon",
+      "addressLocality": "Camblanes-et-Meynac",
+      "postalCode": "33360",
+      "addressCountry": "FR"
+    },
+    "sameAs": [
+      "https://www.facebook.com/people/H%C3%A9l%C3%A8ne-Boudat-Joaillier-Bijoutier/100057652532625/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-dark: #0c0e12;
+      --bg-surface: #13171e;
+      --bg-card: #181d26;
+      --gold-primary: #c5a059;
+      --gold-light: #e5cb93;
+      --gold-glow: rgba(197, 160, 89, 0.15);
+      --text-main: #f5f4f0;
+      --text-subtle: #a09e97;
+      --line: rgba(197, 160, 89, 0.22);
+      --line-subtle: rgba(255, 255, 255, 0.07);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, sans-serif;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-width: 320px;
+      position: relative;
+    }
+
+    /* Focus accessible */
+    :focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 4px;
+    }
+
+    /* Utilitaires & typographie */
+    h1, h2, h3, .brand-font {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      color: var(--text-subtle);
+      font-weight: 300;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      color: var(--gold-primary);
+      margin-bottom: 0.85rem;
+      font-weight: 500;
+      position: relative;
+      padding-left: 1.8rem;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 1.1rem;
+      height: 1px;
+      background-color: var(--gold-primary);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--text-main);
+      line-height: 1.18;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.95rem 2rem;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: 1px solid var(--gold-primary);
+      background-color: transparent;
+      color: var(--gold-light);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+      opacity: 0;
+      transition: var(--transition-smooth);
+      z-index: 0;
+    }
+
+    .btn span, .btn svg {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn:hover {
+      color: var(--bg-dark);
+      border-color: var(--gold-light);
+      box-shadow: 0 0 25px var(--gold-glow);
+    }
+
+    .btn:hover::before {
+      opacity: 1;
+    }
+
+    .btn-secondary {
+      border-color: var(--line-subtle);
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      background: transparent;
+    }
+    .btn-secondary:hover::before {
+      display: none;
+    }
+
+    /* En-tête */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      background: rgba(12, 14, 18, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-subtle);
+      transition: var(--transition-smooth);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .logo-emblem {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.1em;
+      color: var(--text-main);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .logo-subtitle {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: 2.2rem;
+    }
+
+    @media (min-width: 860px) {
+      .nav-desktop {
+        display: flex;
+      }
+    }
+
+    .nav-desktop a {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-subtle);
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    .nav-desktop a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--gold-primary);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-desktop a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-desktop a:hover::after {
+      width: 100%;
+    }
+
+    .nav-contact-btn {
+      padding: 0.55rem 1.25rem;
+      font-size: 0.72rem;
+    }
+
+    /* Menu mobile */
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--text-main);
+    }
+
+    @media (min-width: 860px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    .mobile-nav-pane {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      background-color: var(--bg-dark);
+      z-index: 999;
+      padding: 6rem 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translateY(-100%);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-nav-pane.active {
+      transform: translateY(0);
+    }
+
+    .mobile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .mobile-links a {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--text-main);
+      border-bottom: 1px solid var(--line-subtle);
+      padding-bottom: 0.5rem;
+    }
+
+    .mobile-contact-info {
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+      border-top: 1px solid var(--line);
+      padding-top: 1.5rem;
+    }
+
+    /* Hero / Bandeau 3D */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 4rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 60% 40%, #1c222c 0%, #0d0f14 70%, #08090b 100%);
+    }
+
+    .hero-canvas-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Voile de lisibilité */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(90deg, rgba(12, 14, 18, 0.94) 0%, rgba(12, 14, 18, 0.72) 50%, rgba(12, 14, 18, 0.4) 100%),
+                  radial-gradient(ellipse at bottom left, rgba(197, 160, 89, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 680px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--line);
+      background: rgba(197, 160, 89, 0.05);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-badge svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--gold-primary);
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      line-height: 1.7;
+      color: #cac7be;
+      margin-bottom: 2.5rem;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Section Maison / Esprit */
+    .section-maison {
+      padding: 7rem 0;
+      position: relative;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--line-subtle);
+      border-bottom: 1px solid var(--line-subtle);
+    }
+
+    .maison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .maison-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 5rem;
+      }
+    }
+
+    .maison-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .maison-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line-subtle);
+    }
+
+    .maison-stat-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--gold-light);
+      margin-bottom: 0.25rem;
+    }
+
+    .maison-stat-desc {
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+      line-height: 1.4;
+    }
+
+    /* Cadre réservé pour photo réelle */
+    .photo-placeholder {
+      aspect-ratio: 4/5;
+      background: linear-gradient(145deg, #161b24, #0f1217);
+      border: 1px solid var(--line);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .photo-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed rgba(197, 160, 89, 0.25);
+      pointer-events: none;
+    }
+
+    .photo-placeholder-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1rem;
+      opacity: 0.65;
+    }
+
+    .photo-placeholder-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .photo-placeholder-note {
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+      max-width: 220px;
+    }
+
+    /* Section Métiers & Savoir-Faire */
+    .section-savoir-faire {
+      padding: 7rem 0;
+      background-color: var(--bg-dark);
+      position: relative;
+    }
+
+    .savoir-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 4.5rem;
+    }
+
+    .savoir-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+    }
+
+    @media (min-width: 768px) {
+      .savoir-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .savoir-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--line-subtle);
+      padding: 2.8rem 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+    }
+
+    .savoir-card:hover {
+      border-color: var(--line);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .savoir-card-icon {
+      width: 46px;
+      height: 46px;
+      margin-bottom: 2rem;
+      stroke: var(--gold-primary);
+    }
+
+    .savoir-card-num {
+      position: absolute;
+      top: 1.8rem;
+      right: 2rem;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: rgba(197, 160, 89, 0.3);
+    }
+
+    .savoir-card h3 {
+      font-size: 1.6rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+
+    .savoir-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* Deuxième cadre d'atelier */
+    .workshop-banner {
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid var(--line);
+      background: var(--bg-surface);
+    }
+
+    @media (min-width: 860px) {
+      .workshop-banner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .workshop-content {
+      padding: 3.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .workshop-content h3 {
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .workshop-content p {
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .workshop-placeholder {
+      min-height: 280px;
+      background: linear-gradient(135deg, #10141a, #1a202b);
+      border-left: 1px solid var(--line-subtle);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .workshop-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 15px;
+      border: 1px dashed rgba(197, 160, 89, 0.2);
+    }
+
+    /* Section Infos Pratiques & Accès */
+    .section-infos {
+      padding: 7rem 0;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--line-subtle);
+    }
+
+    .infos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 900px) {
+      .infos-grid {
+        grid-template-columns: 1fr 1.1fr;
+        gap: 4rem;
+      }
+    }
+
+    .info-box {
+      margin-bottom: 2.2rem;
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .info-box-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+      color: var(--gold-primary);
+    }
+
+    .info-box-content h4 {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .info-box-content p, .info-box-content a {
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+
+    .info-box-content a:hover {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+
+    .infos-card-interactive {
+      background-color: var(--bg-card);
+      border: 1px solid var(--line);
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .infos-card-interactive::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      border-top: 2px solid var(--gold-primary);
+      border-right: 2px solid var(--gold-primary);
+    }
+
+    .infos-card-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .infos-card-text {
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    /* Pied de page */
+    .site-footer {
+      background-color: #08090c;
+      padding: 5rem 0 3rem;
+      border-top: 1px solid var(--line-subtle);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--line-subtle);
+    }
+
+    @media (min-width: 768px) {
+      .footer-top {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+    }
+
+    .footer-brand p {
+      max-width: 380px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-col a {
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+    }
+
+    .footer-col a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #66645e;
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+
+    .orbe-credit {
+      color: var(--gold-primary);
+    }
+
+    /* Badge fixe discret ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      z-index: 998;
+      background: rgba(18, 22, 29, 0.9);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: var(--transition-smooth);
+    }
+
+    .orbe-badge:hover {
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .orbe-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--gold-primary);
+      box-shadow: 0 0 6px var(--gold-primary);
+    }
+
+    /* Animations d'apparition */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .btn, a, .savoir-card {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête de navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-content">
+      <a href="#" class="logo-link" aria-label="Hélène Boudat - Accueil">
+        <!-- Emblème SVG créé sur mesure (forme d'un cabochon/sceau d'orfèvre) -->
+        <svg class="logo-emblem" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="22" cy="22" r="21" stroke="var(--gold-primary)" stroke-width="1.2" stroke-dasharray="2 3"/>
+          <path d="M22 4 L22 40 M4 22 L40 22" stroke="var(--line)" stroke-width="0.8"/>
+          <rect x="13" y="13" width="18" height="18" transform="rotate(45 22 22)" stroke="var(--gold-light)" stroke-width="1.4"/>
+          <text x="22" y="26" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="12" fill="var(--gold-light)" font-weight="600">HB</text>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-title">Hélène Boudat</span>
+          <span class="logo-subtitle">Joaillerie · Horlogerie</span>
+        </div>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="#maison">La Maison</a>
+        <a href="#savoir-faire">Savoir-Faire</a>
+        <a href="#atelier">L'Atelier</a>
+        <a href="#contact">Accès & Contact</a>
+        <a href="tel:+33556201718" class="btn btn-secondary nav-contact-btn">
+          <span>05 56 20 17 18</span>
+        </a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Ouvrir le menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="7" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile repliable -->
+  <div class="mobile-nav-pane" id="mobileNav" aria-hidden="true">
+    <div class="mobile-links">
+      <a href="#maison" class="mobile-nav-item">La Maison</a>
+      <a href="#savoir-faire" class="mobile-nav-item">Savoir-Faire</a>
+      <a href="#atelier" class="mobile-nav-item">L'Atelier</a>
+      <a href="#contact" class="mobile-nav-item">Accès & Contact</a>
+    </div>
+    <div class="mobile-contact-info">
+      <p style="color: var(--gold-light); margin-bottom: 0.5rem; font-weight: 500;">Hélène Boudat</p>
+      <p>1 Route de Morillon<br>33360 Camblanes-et-Meynac</p>
+      <p style="margin-top: 1rem;"><a href="tel:+33556201718" style="color: var(--text-main); font-weight: 500;">05 56 20 17 18</a></p>
+    </div>
+  </div>
+
+  <main>
+    <!-- Bandeau 3D (Hero) -->
+    <section class="hero-section" id="hero" aria-label="Présentation">
+      <div class="hero-canvas-container" id="heroCanvasContainer">
+        <!-- Canvas Three.js inséré dynamiquement ou présent par défaut -->
+        <canvas class="hero-canvas" id="threeCanvas" aria-hidden="true"></canvas>
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge fade-up">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9"/></svg>
+            <span>Camblanes-et-Meynac</span>
+          </div>
+          
+          <h1 class="hero-title fade-up">
+            L'orfèvrerie des métaux, la passion du <em>temps suspendu</em>.
+          </h1>
+          
+          <p class="hero-lead fade-up">
+            Bijouterie de création, haute joaillerie et entretien horloger. L'artisanat d'art s'exprime dans la précision de chaque courbe et la noblesse des matières.
+          </p>
+
+          <div class="hero-actions fade-up">
+            <a href="#contact" class="btn">
+              <span>Découvrir l'Atelier</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+33556201718" class="btn btn-secondary">
+              <span>Nous joindre</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1 : L'esprit de la Maison -->
+    <section class="section-maison" id="maison">
+      <div class="container">
+        <div class="maison-grid">
+          <div class="maison-text fade-up">
+            <span class="section-eyebrow">Maison d'Artisanat</span>
+            <h2 class="section-title">La rigueur du geste, la sensibilité de la <em>matière</em>.</h2>
+            <p>
+              Installée à Camblanes-et-Meynac, l'enseigne Hélène Boudat incarne l'alliance rare entre le regard esthétique de la joaillerie et la technicité pointue de l'horlogerie. 
+            </p>
+            <p>
+              Chaque métal précieux réclame une approche mesurée, chaque mécanisme de pendule ou de montre demande une patience d'orfèvre. Dans cet espace dédié à l'exigence, la bijouterie s'exprime comme une recherche d'équilibre entre tradition manuelle et écoute attentive de vos projets.
+            </p>
+            
+            <div class="maison-details">
+              <div>
+                <div class="maison-stat-title">Sur Mesure</div>
+                <div class="maison-stat-desc">Une attention singulière portée à vos ornements précieux et pièces d'horlogerie.</div>
+              </div>
+              <div>
+                <div class="maison-stat-title">Gironde</div>
+                <div class="maison-stat-desc">Un ancrage local au cœur de Camblanes-et-Meynac, accessible en toute sérénité.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emplacement photo 1 : Cadre soigné pour l'artisan -->
+          <div class="photo-placeholder fade-up" aria-label="Espace pour photo d'art">
+            <svg class="photo-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="1.2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+            <span class="photo-placeholder-tag">Vos photos ici</span>
+            <span class="photo-placeholder-note">Cliché de l'atelier, gestes de l'artisan à l'établi ou détails d'un bijou.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 : Savoir-Faire & Métiers -->
+    <section class="section-savoir-faire" id="savoir-faire">
+      <div class="container">
+        <div class="savoir-header fade-up">
+          <span class="section-eyebrow">Domaines d'expertise</span>
+          <h2 class="section-title">L'artisanat d'art sous <em>trois regards</em></h2>
+          <p>La réunion des métiers du métal noble, de l'ornement et des mouvements horlogers sous une même signature.</p>
+        </div>
+
+        <div class="savoir-grid">
+          <!-- Carte 1 -->
+          <article class="savoir-card fade-up">
+            <span class="savoir-card-num">01</span>
+            <svg class="savoir-card-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+            </svg>
+            <h3>Bijouterie</h3>
+            <p>
+              Travail précis des métaux, façonnage d'alliances, anneaux et parures. Chaque ligne est polie avec soin pour révéler le lustre originel et sublimer le port au quotidien.
+            </p>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="savoir-card fade-up">
+            <span class="savoir-card-num">02</span>
+            <svg class="savoir-card-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="6 3 18 3 22 9 12 22 2 9"/>
+              <line x1="12" y1="22" x2="12" y2="9"/>
+              <line x1="2" y1="9" x2="22" y2="9"/>
+            </svg>
+            <h3>Joaillerie</h3>
+            <p>
+              Harmonie des volumes, montures raffinées et mise en valeur de vos ornements précieux. Une recherche constante d'équilibre pour des pièces vouées à traverser les âges.
+            </p>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="savoir-card fade-up">
+            <span class="savoir-card-num">03</span>
+            <svg class="savoir-card-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <h3>Horlogerie</h3>
+            <p>
+              L'univers minutieux de la mesure du temps. Diagnostics, révisions mécaniques et soin accordé aux rouages pour préserver la vie de vos garde-temps chéris.
+            </p>
+          </article>
+        </div>
+
+        <!-- Emplacement photo 2 dans bannière atelier -->
+        <div class="workshop-banner fade-up" id="atelier">
+          <div class="workshop-content">
+            <span class="section-eyebrow">À l'Établi</span>
+            <h3>Un espace de confiance et de minutie</h3>
+            <p>
+              Confier une bague de famille, un bijou personnel ou une horloge nécessite une écoute experte. À l'atelier de Camblanes-et-Meynac, chaque demande fait l'objet d'un examen approfondi et transparent.
+            </p>
+            <div>
+              <a href="mailto:helene.boudat@orange.fr" class="btn btn-secondary">
+                <span>Écrire à l'atelier</span>
+              </a>
+            </div>
+          </div>
+          <div class="workshop-placeholder">
+            <svg class="photo-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="1.2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span class="photo-placeholder-tag">Vos photos ici</span>
+            <span class="photo-placeholder-note">Vitrine, créations joaillières ou sélection d'horlogerie.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 : Contact & Accès -->
+    <section class="section-infos" id="contact">
+      <div class="container">
+        <div class="infos-grid">
+          
+          <div class="infos-details fade-up">
+            <span class="section-eyebrow">Localisation & Informations</span>
+            <h2 class="section-title">Prendre attache avec <em>l'atelier</em></h2>
+            <p style="margin-bottom: 2.5rem;">
+              Pour un conseil personnalisé, une réparation d'horlogerie ou une création de bijou, nous vous invitons à nous contacter directement.
+            </p>
+
+            <div class="info-box">
+              <svg class="info-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div class="info-box-content">
+                <h4>Adresse</h4>
+                <p>1 Route de Morillon<br>33360 Camblanes-et-Meynac</p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <svg class="info-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <div class="info-box-content">
+                <h4>Téléphone</h4>
+                <p><a href="tel:+33556201718">+33 5 56 20 17 18</a></p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <svg class="info-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <div class="info-box-content">
+                <h4>Courriel</h4>
+                <p><a href="mailto:helene.boudat@orange.fr">helene.boudat@orange.fr</a></p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <svg class="info-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div class="info-box-content">
+                <h4>Horaires d'ouverture</h4>
+                <p>Accueil à l'atelier aux horaires d'ouverture ou sur rendez-vous préalable. Nous vous conseillons de nous appeler avant votre venue.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="infos-card-interactive fade-up">
+            <div>
+              <span class="section-eyebrow">Itinéraire & Échanges</span>
+              <h3 class="infos-card-title">Venez nous rendre visite</h3>
+              <p class="infos-card-text">
+                Situé à Camblanes-et-Meynac, l'atelier est facilement accessible. Calculez votre route en quelques clics ou découvrez nos actualités sur les réseaux officiels.
+              </p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+              <a href="https://www.google.com/maps/search/?api=1&query=1+Route+de+Morillon,+33360+Camblanes-et-Meynac" target="_blank" rel="noopener noreferrer" class="btn">
+                <span>Ouvrir l'Itinéraire</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+
+              <a href="https://www.facebook.com/people/H%C3%A9l%C3%A8ne-Boudat-Joaillier-Bijoutier/100057652532625/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.597 1.323-1.326V1.326C24 .597 23.405 0 22.675 0z"/></svg>
+                <span>Page Facebook</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-link">
+            <svg class="logo-emblem" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="22" cy="22" r="21" stroke="var(--gold-primary)" stroke-width="1.2" stroke-dasharray="2 3"/>
+              <rect x="13" y="13" width="18" height="18" transform="rotate(45 22 22)" stroke="var(--gold-light)" stroke-width="1.4"/>
+              <text x="22" y="26" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="12" fill="var(--gold-light)" font-weight="600">HB</text>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-title">Hélène Boudat</span>
+              <span class="logo-subtitle">Joaillier · Bijoutier · Horloger</span>
+            </div>
+          </div>
+          <p>
+            Atelier d'artisanat d'art à Camblanes-et-Meynac. Création, orfèvrerie et minutie au service de vos pièces précieuses.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#maison">La Maison</a></li>
+            <li><a href="#savoir-faire">Savoir-Faire</a></li>
+            <li><a href="#atelier">L'Atelier</a></li>
+            <li><a href="#contact">Prendre Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Coordonnées</h4>
+          <ul>
+            <li>1 Route de Morillon</li>
+            <li>33360 Camblanes-et-Meynac</li>
+            <li><a href="tel:+33556201718">+33 5 56 20 17 18</a></li>
+            <li><a href="mailto:helene.boudat@orange.fr">helene.boudat@orange.fr</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="year"></span> Hélène Boudat. Tous droits réservés.
+        </div>
+        <div>
+          Proposition de site réalisée par <span class="orbe-credit">ORBE, studio digital</span> · societe.orbe@gmail.com
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge fixe discret -->
+  <aside class="orbe-badge" aria-label="Mention maquette">
+    <span class="orbe-dot"></span>
+    <span>Maquette proposée par ORBE</span>
+  </aside>
+
+  <!-- Script d'interactivité et scène 3D Three.js -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu Mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-item');
+
+    function toggleMenu() {
+      const isOpen = mobileNav.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileNav.classList.contains('active')) toggleMenu();
+      });
+    });
+
+    // Apparition douce au scroll (Intersection Observer)
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('is-visible'));
+    }
+
+    // Scène Three.js abstraite (formes géométriques minérales et anneaux d'or lents)
+    window.addEventListener('load', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      const container = document.getElementById('heroCanvasContainer');
+      const canvas = document.getElementById('threeCanvas');
+
+      if (!window.THREE || !container || !canvas) return;
+
+      try {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.z = 28;
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "high-performance"
+        });
+
+        const pixelRatio = Math.min(window.devicePixelRatio, 2);
+        renderer.setPixelRatio(pixelRatio);
+        renderer.setSize(container.clientWidth, container.clientHeight);
+
+        // Lumières douces aux teintes dorées et froides
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+        scene.add(ambientLight);
+
+        const pointLight1 = new THREE.PointLight(0xc5a059, 2.2, 50);
+        pointLight1.position.set(12, 12, 15);
+        scene.add(pointLight1);
+
+        const pointLight2 = new THREE.PointLight(0x7389a8, 1.2, 50);
+        pointLight2.position.set(-15, -10, 10);
+        scene.add(pointLight2);
+
+        // Groupe d'éléments orfèvres abstraits (icosaèdre façon pierre taillée + anneaux concentriques fins)
+        const jewelGroup = new THREE.Group();
+
+        // 1. Structure centrale taillée (polyèdre facetté)
+        const gemGeometry = new THREE.IcosahedronGeometry(7.5, 0);
+        const gemMaterial = new THREE.MeshStandardMaterial({
+          color: 0x1a212b,
+          roughness: 0.2,
+          metalness: 0.85,
+          flatShading: true
+        });
+        const gemMesh = new THREE.Mesh(gemGeometry, gemMaterial);
+        jewelGroup.add(gemMesh);
+
+        // 2. Arêtes filaires dorées soulignant les facettes
+        const wireframe = new THREE.WireframeGeometry(gemGeometry);
+        const line = new THREE.LineSegments(wireframe);
+        line.material.color.setHex(0xc5a059);
+        line.material.transparent = true;
+        line.material.opacity = 0.45;
+        jewelGroup.add(line);
+
+        // 3. Anneaux orbitaux rappelant l'horlogerie et les bagues
+        const ringGeo1 = new THREE.TorusGeometry(10.5, 0.08, 16, 100);
+        const ringMat = new THREE.MeshStandardMaterial({
+          color: 0xe5cb93,
+          metalness: 0.95,
+          roughness: 0.2
+        });
+        const ring1 = new THREE.Mesh(ringGeo1, ringMat);
+        ring1.rotation.x = Math.PI / 3;
+        jewelGroup.add(ring1);
+
+        const ringGeo2 = new THREE.TorusGeometry(12.2, 0.06, 16, 100);
+        const ring2 = new THREE.Mesh(ringGeo2, ringMat);
+        ring2.rotation.y = Math.PI / 4;
+        jewelGroup.add(ring2);
+
+        // Positionnement décentré pour harmonie éditoriale (vers la droite de l'écran)
+        const isMobile = window.innerWidth < 860;
+        jewelGroup.position.x = isMobile ? 0 : 5.5;
+        jewelGroup.position.y = isMobile ? -1 : 0.5;
+        scene.add(jewelGroup);
+
+        // Particules flottantes d'or (poussières d'atelier)
+        const particlesCount = 40;
+        const particleGeo = new THREE.BufferGeometry();
+        const positions = new Float32Array(particlesCount * 3);
+
+        for (let i = 0; i < particlesCount * 3; i += 3) {
+          positions[i] = (Math.random() - 0.5) * 35;
+          positions[i + 1] = (Math.random() - 0.5) * 25;
+          positions[i + 2] = (Math.random() - 0.5) * 20;
+        }
+
+        particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particleMat = new THREE.PointsMaterial({
+          color: 0xc5a059,
+          size: 0.18,
+          transparent: true,
+          opacity: 0.6
+        });
+        const particles = new THREE.Points(particleGeo, particleMat);
+        scene.add(particles);
+
+        let animationFrameId;
+        let isTabActive = true;
+
+        // Gestion de la visibilité de l'onglet pour couper la boucle et économiser les ressources
+        document.addEventListener('visibilitychange', () => {
+          isTabActive = !document.hidden;
+          if (isTabActive) {
+            lastTime = performance.now();
+            animate();
+          } else {
+            cancelAnimationFrame(animationFrameId);
+          }
+        });
+
+        let lastTime = performance.now();
+
+        function animate() {
+          if (!isTabActive) return;
+
+          const now = performance.now();
+          const delta = (now - lastTime) * 0.001;
+          lastTime = now;
+
+          // Mouvements très lents et contemplatifs
+          jewelGroup.rotation.y += delta * 0.12;
+          jewelGroup.rotation.x += delta * 0.06;
+          ring1.rotation.z += delta * 0.08;
+          ring2.rotation.x -= delta * 0.05;
+
+          particles.rotation.y += delta * 0.02;
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Redimensionnement fluide
+        function onWindowResize() {
+          if (!container || !renderer) return;
+          const width = container.clientWidth;
+          const height = container.clientHeight;
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+          renderer.setSize(width, height);
+
+          // Ajustement responsive de la position
+          const mob = window.innerWidth < 860;
+          jewelGroup.position.x = mob ? 0 : 5.5;
+          jewelGroup.position.y = mob ? -1 : 0.5;
+        }
+
+        window.addEventListener('resize', onWindowResize, { passive: true });
+
+      } catch (err) {
+        // En cas de problème ou absence WebGL, le fond dégradé CSS élégant prend naturellement le relais
+        if (canvas) canvas.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

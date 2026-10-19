@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Le Germini | Fleuriste Créateur, Compositions &amp; Artisanat d'Art</title>
+  <meta name="description" content="Maison Le Germini : créations florales sur mesure pour mariages, hommages et tous vos événements. Vente d'artisanat d'art et objets de décoration soignés.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Le Germini | Fleuriste Créateur &amp; Artisanat d'Art">
+  <meta property="og:description" content="Art floral haute couture, décors événementiels et sélection d'artisanat d'art.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon SVG en data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23192019' stroke='%23C5A880' stroke-width='3'/%3E%3Cpath d='M50 20 C42 35 30 45 30 58 C30 69 39 78 50 78 C61 78 70 69 70 58 C70 45 58 35 50 20 Z' fill='none' stroke='%23C5A880' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M50 32 L50 68 M42 54 C46 50 54 50 58 54' fill='none' stroke='%23C5A880' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Script Three.js defer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "Le Germini",
+    "description": "Fleuriste créateur : compositions pour mariages, hommages et événements. Vente d'artisanat d'art et décoration.",
+    "telephone": ["+33 5 53 65 49 47", "+33 6 32 42 05 72"],
+    "email": "serre-sandrine334@orange.fr"
+  }
+  </script>
+
+  <style>
+    /* VARIABLES & THEME */
+    :root {
+      --bg-dark: #121815;
+      --bg-surface: #18221E;
+      --bg-card: #202D27;
+      --bg-light: #F7F5F0;
+      --gold-primary: #C5A880;
+      --gold-light: #DFCCA8;
+      --gold-dim: rgba(197, 168, 128, 0.2);
+      --text-light: #F2EFEB;
+      --text-muted: #A8B3AA;
+      --text-dark: #1F2823;
+      --border-subtle: rgba(197, 168, 128, 0.22);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* RESET & BASE */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg-dark);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 4px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* TYPOGRAPHIE ÉDITORIALE */
+    .title-display {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .title-section {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      letter-spacing: 0.02em;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle-caps {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: var(--gold-primary);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .editorial-lead {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      color: var(--gold-light);
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    /* LAYOUT UTILS */
+    .container {
+      width: 90%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .section-py {
+      padding: clamp(5rem, 10vw, 8.5rem) 0;
+      position: relative;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background-color: var(--gold-primary);
+      margin: 2rem 0;
+      opacity: 0.6;
+    }
+
+    /* NAVIGATION */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: background-color 0.4s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
+      background: linear-gradient(180deg, rgba(18,24,21,0.92) 0%, rgba(18,24,21,0) 100%);
+    }
+
+    .site-nav.scrolled {
+      background-color: rgba(18, 24, 21, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 1002;
+    }
+
+    .brand-svg {
+      width: 42px;
+      height: 42px;
+      transition: transform 0.5s ease;
+    }
+
+    .brand-link:hover .brand-svg {
+      transform: rotate(45deg);
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--text-light);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-item a {
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 300;
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    .nav-item a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--gold-primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-item a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-item a:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1002;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 1.5px;
+      background-color: var(--gold-primary);
+      margin: 6px 0;
+      transition: var(--transition-smooth);
+    }
+
+    /* HERO & 3D CANVAS */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 40%, #1e2d26 0%, #121815 80%);
+      overflow: hidden;
+      padding-top: 5rem;
+    }
+
+    .hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(18, 24, 21, 0.4) 0%, rgba(18, 24, 21, 0.85) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      max-width: 900px;
+      padding: 2rem 1.5rem;
+    }
+
+    .hero-emblem {
+      margin: 0 auto 1.5rem auto;
+      width: 64px;
+      height: 64px;
+      opacity: 0.9;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-serif);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.9rem, 2vw, 1.15rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero-description {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    /* BOUTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 1px;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--gold-primary);
+      color: var(--bg-dark);
+      border: 1px solid var(--gold-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--gold-light);
+      border-color: var(--gold-light);
+      color: #0d1210;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-light);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+      background-color: rgba(197, 168, 128, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* SECTION ESPRIT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .about-text {
+      padding-right: 1.5rem;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .image-frame {
+      position: relative;
+      border: 1px solid var(--border-subtle);
+      padding: 1rem;
+      background-color: rgba(24, 34, 30, 0.6);
+    }
+
+    .image-inner {
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/5;
+      background-color: var(--bg-card);
+    }
+
+    .image-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(105%) brightness(90%);
+      transition: transform 0.8s ease;
+    }
+
+    .image-inner:hover img {
+      transform: scale(1.03);
+    }
+
+    .image-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(18, 24, 21, 0.85);
+      backdrop-filter: blur(6px);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* EMPLACEMENT « VOS PHOTOS ICI » */
+    .placeholder-photo-card {
+      border: 1px dashed var(--border-subtle);
+      background: rgba(24, 34, 30, 0.35);
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+
+    .placeholder-photo-card:hover {
+      border-color: var(--gold-primary);
+      background: rgba(24, 34, 30, 0.55);
+    }
+
+    .placeholder-photo-card svg {
+      width: 38px;
+      height: 38px;
+      stroke: var(--gold-primary);
+      margin-bottom: 1rem;
+      opacity: 0.75;
+    }
+
+    .placeholder-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--gold-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .placeholder-subtitle {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* SECTION SERVICES & OFFRE */
+    .section-services {
+      background-color: #151d19;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 3rem 2rem;
+      position: relative;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(197, 168, 128, 0.45);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 2rem;
+      stroke: var(--gold-primary);
+    }
+
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* BANDEAU CITATION / VISUEL AMBIANCE */
+    .visual-banner {
+      position: relative;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .banner-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(35%) contrast(110%);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .banner-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-style: italic;
+      color: var(--text-light);
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    /* SECTION INFOS PRATIQUES & CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+
+    .contact-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 3rem;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .info-item svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--gold-primary);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .info-value {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    .info-value a:hover {
+      color: var(--gold-primary);
+    }
+
+    .phone-link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background-color: #0d1210;
+      border-top: 1px solid var(--border-subtle);
+      padding: 4.5rem 0 2.5rem 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+    }
+
+    .footer-credits {
+      padding-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-credits a {
+      color: var(--gold-light);
+    }
+
+    /* BADGE MAQUETTE FIXE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(18, 24, 21, 0.9);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--border-subtle);
+      padding: 0.5rem 1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      pointer-events: auto;
+      border-radius: 2px;
+    }
+
+    /* ANIMATIONS APPARITION DOUCE */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .about-text {
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 360px;
+        height: 100vh;
+        background-color: var(--bg-surface);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem;
+        transition: right 0.4s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+      }
+
+      .nav-menu.open {
+        right: 0;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-toggle.active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+      }
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+      }
+    }
+
+    /* Accessibilité Réduction du mouvement */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION FIXE -->
+  <header class="site-nav" id="main-nav">
+    <div class="container nav-container">
+      <a href="#" class="brand-link" aria-label="Le Germini, retour accueil">
+        <!-- Monogramme SVG exclusif -->
+        <svg class="brand-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+          <circle cx="50" cy="50" r="46" stroke="#C5A880" stroke-width="2"/>
+          <path d="M50 20 C42 35 30 45 30 58 C30 69 39 78 50 78 C61 78 70 69 70 58 C70 45 58 35 50 20 Z" stroke="#C5A880" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M50 32 L50 68" stroke="#C5A880" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M42 54 C46 50 54 50 58 54" stroke="#C5A880" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-title">Le Germini</span>
+      </a>
+
+      <button class="nav-toggle" id="menu-toggle" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item"><a href="#maison">La Maison</a></li>
+          <li class="nav-item"><a href="#creations">Créations</a></li>
+          <li class="nav-item"><a href="#galerie">Galerie</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BANDEAU ACCUEIL AVEC SCÈNE 3D -->
+  <section class="hero-section">
+    <!-- Canvas Three.js injecté dynamiquement ou pré-placé -->
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+    <div class="hero-scrim"></div>
+
+    <div class="container hero-content">
+      <svg class="hero-emblem" viewBox="0 0 60 60" fill="none">
+        <path d="M30 5 C30 5 35 20 50 30 C35 40 30 55 30 55 C30 55 25 40 10 30 C25 20 30 5 30 5 Z" stroke="#C5A880" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="30" cy="30" r="4" fill="#C5A880"/>
+      </svg>
+      <span class="subtitle-caps">Fleuristes Créateurs &bull; Artisanat d'Art</span>
+      <h1 class="title-display hero-title">Le Germini</h1>
+      <p class="hero-description">L'art végétal sculpté selon vos émotions. Compositions singulières pour vos mariages, hommages, célébrations et une sélection d’artisanat d’art et de décoration.</p>
+      
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn btn-primary">Prendre Contact</a>
+        <a href="#creations" class="btn btn-outline">Découvrir les Créations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'ESPRIT DE LA MAISON -->
+  <section class="section-py" id="maison">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <span class="subtitle-caps">L'Esprit de la Maison</span>
+          <h2 class="title-section">Une sensibilité végétale &amp; le souci du détail</h2>
+          <div class="divider"></div>
+          <p class="editorial-lead">« Chaque fleur porte un rythme, chaque composition raconte une intention. »</p>
+          <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 1.05rem;">
+            Au sein de notre atelier, le métier de fleuriste s'exprime comme une recherche d'équilibre entre nature brute et raffinement intemporel. Nous composons des œuvres vivantes, pensées spécialement pour accompagner les instants majeurs de votre vie avec délicatesse et solennité.
+          </p>
+          <p style="margin-top: 1rem; color: var(--text-muted); font-size: 1.05rem;">
+            Notre démarche associe également des objets choisis pour leur âme : une sélection raffinée de pièces d’artisanat d’art et d'éléments de décoration pour magnifier vos intérieurs.
+          </p>
+        </div>
+
+        <div class="about-visual reveal">
+          <div class="image-frame">
+            <div class="image-inner">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Florist_choosing_flowers_for_a_bouquet.jpg/1920px-Florist_choosing_flowers_for_a_bouquet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+                   alt="Sélection attentive de fleurs par un artisan fleuriste" 
+                   loading="lazy">
+              <div class="image-badge">Image d'illustration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'OFFRE / CRÉATIONS -->
+  <section class="section-py section-services" id="creations">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;" class="reveal">
+        <span class="subtitle-caps">Savoir-Faire &amp; Spécialités</span>
+        <h2 class="title-section">Compositions sur Mesure</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Des arrangements floraux conçus avec exigence pour chaque étape de vie, complétés par une offre de pièces d'art.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <article class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+            <path d="M24 10 C20 18 10 22 10 32 C10 40 16 44 24 44 C32 44 38 40 38 32 C38 22 28 18 24 10 Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 18 C22 24 16 26 16 33" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <h3 class="service-title">Mariages &amp; Événements</h3>
+          <p class="service-desc">
+            Création de décors complets pour mariages et cérémonies. Bouquets de mariée, parures, décors de tables et d'espaces : un univers floral imaginé en parfaite harmonie avec l'atmosphère de votre célébration.
+          </p>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 12 L24 36 M16 20 L32 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <h3 class="service-title">Hommages &amp; Deuil</h3>
+          <p class="service-desc">
+            Accompagnement pudique et attentionné dans les moments de recueillement. Couronnes, coussins et gerbes florales réalisés avec sobriété et élégance pour honorer fidèlement la mémoire de vos proches.
+          </p>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+            <path d="M14 38 L34 38 L38 18 L10 18 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M19 18 C19 12 29 12 29 18" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 24 L24 32" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <h3 class="service-title">Artisanat d’Art &amp; Décoration</h3>
+          <p class="service-desc">
+            Vente d’objets d’artisanat d’art et éléments décoratifs soigneusement choisis. Vases, céramiques et accessoires conçus par des artisans d'exception pour sublimer les intérieurs de caractère.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANDEAU VISUEL INTERMÉDIAIRE -->
+  <section class="visual-banner">
+    <img class="banner-img" 
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg/1920px-Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+         alt="Détail botanique Chrysanthème Baltazar" 
+         loading="lazy">
+    <div class="banner-content reveal">
+      <blockquote class="banner-quote">
+        « La fleur est l'expression poétique de la nature, sublimée par le geste artisanal. »
+      </blockquote>
+      <span class="image-badge" style="position: static; display: inline-block;">Image d'illustration</span>
+    </div>
+  </section>
+
+  <!-- SECTION GALERIE & ESPACE DÉDIÉ COMMERÇANT -->
+  <section class="section-py" id="galerie">
+    <div class="container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 3.5rem auto;" class="reveal">
+        <span class="subtitle-caps">Galerie d'Atelier</span>
+        <h2 class="title-section">L'univers en images</h2>
+        <p style="color: var(--text-muted);">
+          Aperçu de notre démarche esthétique et espaces réservés aux prises de vues de nos créations quotidiennes.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        
+        <!-- Emplacement Commerçant 1 -->
+        <div class="placeholder-photo-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor"/>
+            <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+            <polyline points="21 15 16 10 5 21" stroke="currentColor"/>
+          </svg>
+          <div class="placeholder-title">Vos photos ici</div>
+          <div class="placeholder-subtitle">Compositions florales de saison</div>
+        </div>
+
+        <!-- Emplacement Commerçant 2 -->
+        <div class="placeholder-photo-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor"/>
+            <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+            <polyline points="21 15 16 10 5 21" stroke="currentColor"/>
+          </svg>
+          <div class="placeholder-title">Vos photos ici</div>
+          <div class="placeholder-subtitle">Artisanat d'Art &amp; Décoration</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INFOS PRATIQUES & CONTACT -->
+  <section class="section-py" id="contact" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal">
+          <span class="subtitle-caps">Renseignements &amp; Rendez-vous</span>
+          <h2 class="title-section">Prendre contact</h2>
+          <div class="divider"></div>
+          <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+            Pour vos projets de mariage, événements familiaux, commandes de deuil ou pour découvrir nos pièces d'artisanat d'art, nous sommes à votre entière écoute.
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">
+            Les commandes sur mesure se conçoivent selon vos souhaits et le rythme des saisons. N'hésitez pas à nous joindre directement par téléphone ou messagerie électronique.
+          </p>
+        </div>
+
+        <div class="contact-card reveal">
+          <ul class="info-list">
+            
+            <li class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <div>
+                <div class="info-label">Téléphone</div>
+                <div class="info-value phone-link-list">
+                  <a href="tel:+33553654947">+33 5 53 65 49 47</a>
+                  <a href="tel:+33632420572">+33 6 32 42 05 72</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <div>
+                <div class="info-label">Courriel direct</div>
+                <div class="info-value">
+                  <a href="mailto:serre-sandrine334@orange.fr" style="word-break: break-all;">serre-sandrine334@orange.fr</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div>
+                <div class="info-label">Accueil &amp; Commandes</div>
+                <div class="info-value" style="font-size: 1.15rem; color: var(--gold-light);">
+                  À l'atelier &bull; Sur rendez-vous
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--text-light); letter-spacing: 0.1em; text-transform: uppercase;">
+            Le Germini
+          </div>
+          <div style="font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-primary); margin-top: 0.3rem;">
+            Fleuristes Créateurs &amp; Artisanat d'Art
+          </div>
+        </div>
+
+        <div>
+          <a href="#maison" class="btn btn-outline" style="padding: 0.6rem 1.4rem; font-size: 0.7rem;">Retour en haut</a>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        <div>Proposition de site réalisée par ORBE, studio digital &middot; societe.orbe@gmail.com</div>
+        <div>
+          Crédits images : 
+          Photo : Andy Mabbett (CC BY-SA 4.0) &middot; 
+          Photo : direct2Florist (CC BY 2.0)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE MAQUETTE OBLIGATOIRE -->
+  <aside class="orbe-badge">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- CODE JAVASCRIPT : MENU, ANIMATIONS & THREE.JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Menu Mobile
+      const toggle = document.getElementById('menu-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      const nav = document.getElementById('main-nav');
+
+      if (toggle && navMenu) {
+        toggle.addEventListener('click', () => {
+          const isOpen = navMenu.classList.toggle('open');
+          toggle.classList.toggle('active');
+          toggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Fermeture au clic sur un lien
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('open');
+            toggle.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // En-tête avec fond opaque au scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      }, { passive: true });
+
+      // 2. IntersectionObserver pour les apparitions douces
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-revealed'));
+      }
+
+      // 3. Three.js - Rubans & Pétales abstraits
+      const canvas = document.getElementById('hero-canvas');
+      if (!prefersReducedMotion && canvas) {
+        // Initialisation différée si THREE est prêt
+        const initThree = () => {
+          try {
+            if (typeof THREE === 'undefined') return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+            camera.position.z = 24;
+
+            const renderer = new THREE.WebGLRenderer({
+              canvas: canvas,
+              alpha: true,
+              antialias: true,
+              powerPreference: 'high-performance'
+            });
+
+            const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+            renderer.setPixelRatio(pixelRatio);
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+            // Groupe de courbes sinueuses abstraites rappelant des rubans floraux
+            const ribbonGroup = new THREE.Group();
+            scene.add(ribbonGroup);
+
+            const colors = [0xC5A880, 0x5D7A68, 0x8DA394, 0xDFCCA8];
+            const ribbonsCount = 5;
+
+            for (let i = 0; i < ribbonsCount; i++) {
+              const points = [];
+              const segments = 60;
+              const radius = 8 + i * 2.2;
+              const freq = 1.5 + i * 0.4;
+              
+              for (let j = 0; j <= segments; j++) {
+                const theta = (j / segments) * Math.PI * 2;
+                const x = Math.cos(theta) * radius;
+                const y = Math.sin(theta * 1.5) * 3 + Math.sin(theta) * 2;
+                const z = Math.sin(theta * freq) * 4;
+                points.push(new THREE.Vector3(x, y, z));
+              }
+
+              const curve = new THREE.CatmullRomCurve3(points, true);
+              const tubeGeometry = new THREE.TubeGeometry(curve, 90, 0.22, 8, true);
+              const tubeMaterial = new THREE.MeshBasicMaterial({
+                color: colors[i % colors.length],
+                transparent: true,
+                opacity: 0.45 - i * 0.05,
+                wireframe: true
+              });
+
+              const mesh = new THREE.Mesh(tubeGeometry, tubeMaterial);
+              mesh.rotation.x = i * 0.4;
+              mesh.rotation.y = i * 0.3;
+              ribbonGroup.add(mesh);
+            }
+
+            // Particules légères / pollen flottant
+            const particleCount = 45;
+            const particleGeo = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            for (let i = 0; i < particleCount * 3; i += 3) {
+              positions[i] = (Math.random() - 0.5) * 40;
+              positions[i + 1] = (Math.random() - 0.5) * 25;
+              positions[i + 2] = (Math.random() - 0.5) * 20;
+            }
+            particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const particleMat = new THREE.PointsMaterial({
+              color: 0xC5A880,
+              size: 0.18,
+              transparent: true,
+              opacity: 0.6
+            });
+            const particles = new THREE.Points(particleGeo, particleMat);
+            scene.add(particles);
+
+            // Redimensionnement
+            const handleResize = () => {
+              if (!canvas) return;
+              const width = canvas.parentElement.clientWidth;
+              const height = canvas.parentElement.clientHeight;
+              camera.aspect = width / height;
+              camera.updateProjectionMatrix();
+              renderer.setSize(width, height);
+            };
+            window.addEventListener('resize', handleResize, { passive: true });
+
+            // Boucle de rendu avec pause onglet masqué
+            let animationFrameId;
+            let isTabActive = true;
+
+            document.addEventListener('visibilitychange', () => {
+              isTabActive = !document.hidden;
+              if (isTabActive) {
+                render();
+              }
+            });
+
+            const render = () => {
+              if (!isTabActive) return;
+
+              // Rotation très lente et majestueuse
+              ribbonGroup.rotation.y += 0.0012;
+              ribbonGroup.rotation.x += 0.0007;
+              particles.rotation.y -= 0.0004;
+
+              renderer.render(scene, camera);
+              animationFrameId = requestAnimationFrame(render);
+            };
+
+            render();
+
+          } catch (e) {
+            console.warn('Three.js initialization gracefully bypassed:', e);
+          }
+        };
+
+        // Si Three.js est déjà chargé via defer ou sinon attendre son chargement
+        if (window.THREE) {
+          initThree();
+        } else {
+          window.addEventListener('load', () => {
+            if (window.THREE) initThree();
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

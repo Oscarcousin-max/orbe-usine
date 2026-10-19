@@ -1,0 +1,1531 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Jour J · Fleuriste Créateur à Talence</title>
+  <meta name="description" content="Jour J, atelier de création florale au 237 Cours Gambetta à Talence. Compositions florales artisanales pour tous vos moments précieux.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jour J · Fleuriste Créateur à Talence">
+  <meta property="og:description" content="Compositions florales d'exception et art végétal sur mesure au cœur de Talence.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG en data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231b2820'/%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%23d3beaa' stroke-width='1.5'/%3E%3Cpath d='M50 20 C42 35 40 45 40 54 C40 64 47 70 54 70 C60 70 65 65 65 58 C65 50 56 46 50 20 Z' fill='none' stroke='%23d3beaa' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M50 24 C58 38 60 48 60 56' fill='none' stroke='%238d9a7d' stroke-width='1.2' stroke-dasharray='2,2'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (chargé de manière différée) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "Jour J",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "237 Cours Gambetta",
+      "addressLocality": "Talence",
+      "postalCode": "33400",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33556373920",
+    "email": "jourjlatelier@gmail.com",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Thursday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Wednesday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Wednesday",
+        "opens": "13:30",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:00",
+        "closes": "13:00"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Variables de design & charte chromatique */
+    :root {
+      --c-bg-dark: #141f19;
+      --c-bg-forest: #1b2820;
+      --c-bg-card: #223229;
+      --c-accent-rose: #d3beaa;
+      --c-accent-warm: #ebdacf;
+      --c-sage: #8f9f8c;
+      --c-text-light: #f7f5f0;
+      --c-text-muted: #b6c2b4;
+      --c-border: rgba(211, 190, 170, 0.18);
+      --c-border-subtle: rgba(247, 245, 240, 0.08);
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+      --trans-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--c-bg-dark);
+      color: var(--c-text-light);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: var(--c-bg-dark);
+      position: relative;
+    }
+
+    /* Accessibilité clavier */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--c-accent-rose);
+      outline-offset: 4px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Typographie */
+    h1, h2, h3, .font-editorial {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--c-accent-rose);
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    /* Conteneur */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+    }
+
+    /* En-tête de navigation */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      padding: 1.25rem 0;
+      transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+      background: linear-gradient(to bottom, rgba(20, 31, 25, 0.85) 0%, rgba(20, 31, 25, 0) 100%);
+    }
+
+    .site-header.scrolled {
+      background: rgba(20, 31, 25, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+      padding: 0.9rem 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+    }
+
+    .brand-text {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      letter-spacing: 0.06em;
+      color: var(--c-accent-warm);
+      text-transform: uppercase;
+    }
+
+    .nav-toggle {
+      background: transparent;
+      border: 1px solid var(--c-border);
+      color: var(--c-accent-rose);
+      padding: 0.6rem 0.9rem;
+      border-radius: 2px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 60;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 1.5px;
+      background-color: var(--c-accent-warm);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--c-bg-dark);
+      padding: 6rem 2rem 2rem;
+      transform: translateX(100%);
+      transition: transform 0.45s var(--trans-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px solid var(--c-border);
+    }
+
+    .site-nav.open {
+      transform: translateX(0);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--c-text-light);
+      display: inline-block;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--c-accent-rose);
+      transform: translateX(8px);
+    }
+
+    .nav-meta {
+      font-size: 0.85rem;
+      color: var(--c-text-muted);
+      border-top: 1px solid var(--c-border-subtle);
+      padding-top: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .nav-toggle {
+        display: none;
+      }
+      .site-nav {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        transform: none;
+        border-left: none;
+        flex-direction: row;
+        align-items: center;
+      }
+      .nav-links {
+        flex-direction: row;
+        gap: 2.2rem;
+      }
+      .nav-links a {
+        font-family: var(--font-sans);
+        font-size: 0.875rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--c-text-muted);
+      }
+      .nav-links a:hover {
+        color: var(--c-accent-warm);
+        transform: none;
+      }
+      .nav-meta {
+        display: none;
+      }
+    }
+
+    /* Boutons élégants */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1.8rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 1px;
+      transition: all 0.35s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--c-accent-rose);
+      color: var(--c-bg-dark);
+      border: 1px solid var(--c-accent-rose);
+    }
+
+    .btn-primary:hover {
+      background: var(--c-accent-warm);
+      border-color: var(--c-accent-warm);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(211, 190, 170, 0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--c-text-light);
+      border: 1px solid var(--c-border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--c-accent-rose);
+      color: var(--c-accent-warm);
+      background: rgba(211, 190, 170, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* Bandeau d'accueil avec Three.js */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 6rem;
+      padding-bottom: 5rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 60% 40%, #25392e 0%, #17241d 55%, #0f1813 100%);
+    }
+
+    .hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .hero-veil {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: linear-gradient(180deg, rgba(20, 31, 25, 0.3) 0%, rgba(20, 31, 25, 0.75) 85%, #141f19 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 820px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 8vw, 5.4rem);
+      font-weight: 300;
+      color: var(--c-text-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.05;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--c-accent-rose);
+      font-family: var(--font-serif);
+    }
+
+    .hero-intro {
+      font-size: 1.15rem;
+      color: var(--c-text-muted);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      color: var(--c-sage);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: var(--c-accent-rose);
+      border-radius: 50%;
+    }
+
+    /* Section globale */
+    .section {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    .section-border-top {
+      border-top: 1px solid var(--c-border-subtle);
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+      max-width: 640px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      color: var(--c-text-light);
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--c-text-muted);
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+
+    /* Section L'Esprit */
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .editorial-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 5rem;
+      }
+    }
+
+    .editorial-text {
+      font-size: 1.1rem;
+      color: var(--c-text-muted);
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .editorial-text p:first-of-type::first-letter {
+      font-family: var(--font-serif);
+      font-size: 3.8rem;
+      float: left;
+      line-height: 0.85;
+      margin-right: 0.8rem;
+      color: var(--c-accent-rose);
+    }
+
+    .editorial-signature {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--c-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sig-name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--c-accent-warm);
+    }
+
+    .sig-city {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--c-sage);
+    }
+
+    /* Cartouche Image avec voile & crédit obligatoire */
+    .image-card {
+      position: relative;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+      background-color: var(--c-bg-card);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: saturate(0.85) brightness(0.9);
+      transition: transform 0.8s ease, filter 0.8s ease;
+    }
+
+    .image-card:hover img {
+      transform: scale(1.025);
+      filter: saturate(0.95) brightness(0.95);
+    }
+
+    .illustration-badge {
+      position: absolute;
+      bottom: 0.8rem;
+      right: 0.8rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(20, 31, 25, 0.85);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 0.65rem;
+      color: var(--c-text-muted);
+      border: 1px solid var(--c-border-subtle);
+      border-radius: 2px;
+    }
+
+    /* Cadre de réservation commerçant "Vos photos ici" */
+    .placeholder-photo {
+      border: 1px dashed var(--c-border);
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 2px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      color: var(--c-sage);
+      min-height: 220px;
+    }
+
+    .placeholder-photo svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--c-accent-rose);
+      opacity: 0.8;
+    }
+
+    .placeholder-photo span {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--c-accent-rose);
+    }
+
+    .placeholder-photo p {
+      font-size: 0.8rem;
+      color: var(--c-text-muted);
+      max-width: 280px;
+      line-height: 1.4;
+    }
+
+    /* Section Offre & Savoir-Faire */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 720px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      background: var(--c-bg-card);
+      border: 1px solid var(--c-border-subtle);
+      padding: 2.2rem 1.8rem;
+      border-radius: 2px;
+      transition: border-color 0.4s ease, transform 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      border-color: var(--c-border);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      margin-bottom: 1.5rem;
+      width: 44px;
+      height: 44px;
+      stroke: var(--c-accent-rose);
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.85rem;
+      color: var(--c-accent-warm);
+    }
+
+    .service-body {
+      color: var(--c-text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* Grande bande d'illustration végétale */
+    .feature-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: var(--c-bg-forest);
+      border-top: 1px solid var(--c-border-subtle);
+      border-bottom: 1px solid var(--c-border-subtle);
+      margin-top: 4rem;
+    }
+
+    @media (min-width: 900px) {
+      .feature-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .strip-media {
+      position: relative;
+      min-height: 380px;
+    }
+
+    .strip-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.85) brightness(0.85);
+    }
+
+    .strip-text-pane {
+      padding: 3.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      .strip-text-pane {
+        padding: 4.5rem;
+      }
+    }
+
+    .strip-text-pane h3 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-bottom: 1.2rem;
+      color: var(--c-text-light);
+    }
+
+    .strip-text-pane p {
+      color: var(--c-text-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    /* Section Infos Pratiques & Horaires */
+    .practical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .practical-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+      }
+    }
+
+    .info-pane {
+      background: var(--c-bg-forest);
+      border: 1px solid var(--c-border);
+      padding: 2.5rem 2rem;
+      border-radius: 2px;
+    }
+
+    @media (min-width: 768px) {
+      .info-pane {
+        padding: 3rem 2.5rem;
+      }
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 22px;
+      height: 22px;
+      stroke: var(--c-accent-rose);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .info-content h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--c-accent-warm);
+      margin-bottom: 0.25rem;
+    }
+
+    .info-content p, .info-content a {
+      color: var(--c-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .info-content a:hover {
+      color: var(--c-accent-rose);
+    }
+
+    /* Tableau des horaires */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid var(--c-border-subtle);
+    }
+
+    .hours-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .hours-table td {
+      padding: 0.75rem 0;
+    }
+
+    .hours-table td.day {
+      color: var(--c-text-light);
+      font-weight: 400;
+      width: 40%;
+    }
+
+    .hours-table td.time {
+      color: var(--c-text-muted);
+      text-align: right;
+    }
+
+    .hours-table tr.closed td.time {
+      color: var(--c-sage);
+      font-style: italic;
+    }
+
+    /* Section Contact & Atelier */
+    .contact-cta {
+      background: radial-gradient(circle at center, #24352b 0%, #17241d 80%);
+      border: 1px solid var(--c-border);
+      border-radius: 2px;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .contact-cta h3 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .contact-cta p {
+      color: var(--c-text-muted);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    /* Pied de page */
+    .site-footer {
+      background: #0f1712;
+      border-top: 1px solid var(--c-border-subtle);
+      padding: 4.5rem 0 2.5rem;
+      color: var(--c-text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+    }
+
+    .footer-brand h4 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--c-accent-warm);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand p {
+      max-width: 320px;
+      line-height: 1.6;
+    }
+
+    .footer-col h5 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--c-text-light);
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col a:hover {
+      color: var(--c-accent-rose);
+    }
+
+    .footer-credits {
+      border-top: 1px solid var(--c-border-subtle);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: #7d8c7c;
+    }
+
+    @media (min-width: 768px) {
+      .footer-credits {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .photo-credits {
+      font-size: 0.75rem;
+      color: #697768;
+    }
+
+    /* Badge ORBE discret */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background: rgba(15, 23, 18, 0.92);
+      border: 1px solid var(--c-border);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--c-accent-rose);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.9rem;
+      border-radius: 20px;
+      z-index: 40;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      pointer-events: auto;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .orbe-badge:hover {
+      color: var(--c-accent-warm);
+      border-color: var(--c-accent-warm);
+    }
+
+    /* Animations d'apparition douces */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .image-card:hover img {
+        transform: none;
+      }
+      .btn-primary:hover, .btn-outline:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête fixe -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#accueil" class="brand" aria-label="Jour J - Accueil">
+        <!-- Monogramme SVG exclusif -->
+        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="50" cy="50" r="46" stroke="#d3beaa" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <path d="M56 26 H62 V58 C62 68 54 74 44 74 C36 74 30 68 30 62 C30 57 34 54 39 54 C44 54 47 57 47 61 C47 64 45 66 42 66 C40.5 66 39.5 65.5 39 65 C40 68 42 69 44.5 69 C49.5 69 54 65 54 58 V26 Z" fill="#ebdacf"/>
+          <path d="M60 38 C68 36 74 42 70 50 C66 46 62 44 60 45" stroke="#8f9f8c" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">Jour J</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-links">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#esprit">L’Atelier</a></li>
+          <li><a href="#creations">Créations</a></li>
+          <li><a href="#horaires">Horaires</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-meta">
+          <p>237 Cours Gambetta, Talence</p>
+          <p>05 56 37 39 20</p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Bandeau d'Accueil avec Three.js -->
+  <section class="hero-section" id="accueil">
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-veil"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Fleuriste Créateur · Talence</span>
+        <h1 class="hero-title">L’art végétal façonné pour chaque <em>instant singulier</em>.</h1>
+        <p class="hero-intro">
+          À l’atelier Jour J, nous composons des créations florales délicates et expressives, accordant fleurs fraîches et harmonie botanique au gré des arrivages et des saisons.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Prendre contact</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=237+Cours+Gambetta+33400+Talence" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Venir à l’atelier
+          </a>
+        </div>
+        <div class="hero-tag">
+          237 Cours Gambetta · Talence
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section L'Esprit de l'Atelier -->
+  <section class="section" id="esprit">
+    <div class="container">
+      <div class="editorial-grid">
+        <div class="reveal">
+          <span class="eyebrow">Maison florale</span>
+          <h2 class="section-title">La poésie du végétal au quotidien</h2>
+          <div class="editorial-text">
+            <p>
+              Jour J est un atelier d’art floral ancré sur le cours Gambetta à Talence. Nous concevons la fleur comme une matière vivante, vibrante, dont chaque nuance et texture vient raconter une histoire.
+            </p>
+            <p>
+              Que ce soit pour célébrer un moment unique, marquer une attention sincère ou simplement inviter la beauté de la nature dans vos intérieurs, chaque assemblage est pensé avec rigueur et sensibilité. Nous sélectionnons des fleurs de caractère, travaillées dans le respect des formes naturelles.
+            </p>
+          </div>
+
+          <div class="editorial-signature">
+            <div>
+              <div class="sig-name">Jour J</div>
+              <div class="sig-city">Talence · France</div>
+            </div>
+            <!-- Illustration fine au trait SVG -->
+            <svg width="60" height="32" viewBox="0 0 80 40" fill="none" stroke="#d3beaa" stroke-width="1.2" aria-hidden="true">
+              <path d="M5 20 C25 5 45 35 75 15 M45 35 C52 28 62 25 72 26" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <!-- Photo d'illustration 1 issue de la fiche -->
+          <div class="image-card">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg/1920px-Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+              alt="Détail floral d'un chrysanthème aux teintes nuancées" 
+              loading="lazy"
+              width="600"
+              height="750">
+            <span class="illustration-badge">Image d'illustration</span>
+          </div>
+
+          <!-- Emplacement réservé pour le commerçant -->
+          <div style="margin-top: 1.5rem;">
+            <div class="placeholder-photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Vos photos ici</span>
+              <p>Mettez en valeur les photographies authentiques de vos bouquets et de votre boutique talençaise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section L'Offre / Savoir-Faire -->
+  <section class="section section-border-top" id="creations">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Savoir-faire artisanal</span>
+        <h2 class="section-title">Compositions & Créations sur mesure</h2>
+        <p class="section-desc">
+          Un accompagnement attentionné et des conseils avisés pour toutes vos envies végétales.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="service-card reveal">
+          <div>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2L15 9H22L16 14L19 21L12 17L5 21L8 14L2 9H9L12 2Z"/>
+            </svg>
+            <h3 class="service-title">Bouquets de saison</h3>
+            <p class="service-body">
+              Des créations fraîches assemblées chaque jour, accordant teintes subtiles et variétés soigneusement choisies selon le calendrier floral.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            <h3 class="service-title">Moments de vie</h3>
+            <p class="service-body">
+              Pour vos événements heureux ou pour honorer la mémoire d’un proche, nous imaginons des pièces florales personnalisées en accord avec vos souhaits.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div>
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <path d="M9 3v18"/>
+              <path d="M15 3v18"/>
+            </svg>
+            <h3 class="service-title">Conseil & Végétal</h3>
+            <p class="service-body">
+              Sélection de plantes d'intérieur et suggestions d'entretien pour harmoniser vos espaces de vie ou de travail avec élégance et durabilité.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bande visuelle avec photo 2 issue de la fiche -->
+    <div class="feature-strip reveal">
+      <div class="strip-media">
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Florist_choosing_flowers_for_a_bouquet.jpg/1920px-Florist_choosing_flowers_for_a_bouquet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+          alt="Sélection et travail des fleurs en atelier" 
+          loading="lazy"
+          width="800"
+          height="500">
+        <span class="illustration-badge">Image d'illustration</span>
+      </div>
+      <div class="strip-text-pane">
+        <span class="eyebrow">Gestes d'atelier</span>
+        <h3>L’attention portée à chaque tige</h3>
+        <p>
+          Dans notre atelier de Talence, chaque commande fait l’objet d'un regard attentif. De la préparation des feuillages à la tenue des tiges, nous privilégions le travail artisanal bien fait pour garantir fraîcheur et élégance.
+        </p>
+        <div>
+          <a href="#contact" class="btn btn-outline">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Infos Pratiques & Horaires -->
+  <section class="section" id="horaires">
+    <div class="container">
+      <div class="practical-grid">
+        <div class="reveal">
+          <span class="eyebrow">Nous rendre visite</span>
+          <h2 class="section-title">L’Atelier & les Horaires</h2>
+          <p class="section-desc" style="margin-bottom: 2rem;">
+            Situé au 237 Cours Gambetta à Talence, l'atelier Jour J vous accueille du mardi au dimanche matin.
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div class="info-content">
+                <h4>Adresse</h4>
+                <p>237 Cours Gambetta<br>33400 Talence</p>
+                <p style="margin-top: 0.8rem;">
+                  <a href="https://www.google.com/maps/search/?api=1&query=237+Cours+Gambetta+33400+Talence" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem;">
+                    Itinéraire Google Maps
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <div class="info-content">
+                <h4>Téléphone</h4>
+                <p><a href="tel:+33556373920">05 56 37 39 20</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <div class="info-content">
+                <h4>Courriel</h4>
+                <p><a href="mailto:jourjlatelier@gmail.com">jourjlatelier@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="info-pane">
+            <h3 style="font-size: 1.6rem; color: var(--c-accent-warm); margin-bottom: 1.2rem;">Horaires d'ouverture</h3>
+            
+            <table class="hours-table">
+              <tbody>
+                <tr class="closed">
+                  <td class="day">Lundi</td>
+                  <td class="time">Fermé</td>
+                </tr>
+                <tr>
+                  <td class="day">Mardi</td>
+                  <td class="time">09:00 – 19:00</td>
+                </tr>
+                <tr>
+                  <td class="day">Mercredi</td>
+                  <td class="time">09:00 – 12:00<br>13:30 – 19:00</td>
+                </tr>
+                <tr>
+                  <td class="day">Jeudi</td>
+                  <td class="time">09:00 – 19:00</td>
+                </tr>
+                <tr>
+                  <td class="day">Vendredi</td>
+                  <td class="time">09:00 – 19:30</td>
+                </tr>
+                <tr>
+                  <td class="day">Samedi</td>
+                  <td class="time">09:00 – 19:30</td>
+                </tr>
+                <tr>
+                  <td class="day">Dimanche</td>
+                  <td class="time">09:00 – 13:00</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Emplacement commerçant 2 -->
+            <div style="margin-top: 2rem;">
+              <div class="placeholder-photo" style="min-height: 140px; padding: 1.5rem;">
+                <span>Vos photos ici</span>
+                <p style="font-size: 0.75rem;">Ajoutez une vue de la devanture ou de l'intérieur de l'atelier.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloc Contact CTA -->
+      <div class="contact-cta reveal" id="contact">
+        <span class="eyebrow">Échangeons</span>
+        <h3>Une commande ou un renseignement ?</h3>
+        <p>
+          Pour commander une création sur mesure ou vous assurer de la disponibilité de fleurs particulières, contactez-nous par téléphone ou écrivez-nous.
+        </p>
+        <div class="contact-methods">
+          <a href="tel:+33556373920" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            05 56 37 39 20
+          </a>
+          <a href="mailto:jourjlatelier@gmail.com" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            jourjlatelier@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Jour J</h4>
+          <p>Atelier de fleuristes créateurs à Talence. Créations végétales authentiques, bouquets composés et conseils personnalisés.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Coordonnées</h5>
+          <ul>
+            <li>237 Cours Gambetta</li>
+            <li>33400 Talence</li>
+            <li><a href="tel:+33556373920">05 56 37 39 20</a></li>
+            <li><a href="mailto:jourjlatelier@gmail.com">jourjlatelier@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#esprit">L’Atelier</a></li>
+            <li><a href="#creations">Créations</a></li>
+            <li><a href="#horaires">Horaires d’ouverture</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=237+Cours+Gambetta+33400+Talence" target="_blank" rel="noopener noreferrer">Plan d’accès</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        <div>
+          Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com" style="color: inherit; text-decoration: underline;">societe.orbe@gmail.com</a>
+        </div>
+        <div class="photo-credits">
+          Photos d'illustration : Andy Mabbett (CC BY-SA 4.0) · direct2Florist (CC BY 2.0)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge fixe discret -->
+  <aside class="orbe-badge" aria-label="Mention maquette">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- Scripts -->
+  <script>
+    // 1. Navigation mobile & scroll header
+    (function() {
+      const header = document.getElementById('siteHeader');
+      const toggle = document.getElementById('navToggle');
+      const nav = document.getElementById('siteNav');
+      const navLinks = nav.querySelectorAll('a');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }, { passive: true });
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const isOpen = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    })();
+
+    // 2. Animations d'apparition (IntersectionObserver)
+    (function() {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+      }
+    })();
+
+    // 3. Scène Three.js dans le bandeau d'accueil
+    window.addEventListener('load', function() {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+
+      try {
+        if (!window.THREE) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+        camera.position.z = 24;
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "low-power"
+        });
+
+        const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+        renderer.setPixelRatio(pixelRatio);
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+
+        // Formes abstraites évoquant des courbes de tiges et de calices floraux
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // Anneaux et rubans floraux délicats
+        const materials = [
+          new THREE.MeshBasicMaterial({ color: 0xd3beaa, wireframe: true, transparent: true, opacity: 0.14 }),
+          new THREE.MeshBasicMaterial({ color: 0x8f9f8c, wireframe: true, transparent: true, opacity: 0.16 }),
+          new THREE.MeshBasicMaterial({ color: 0xeedfd4, wireframe: true, transparent: true, opacity: 0.08 })
+        ];
+
+        // Tore ondulé évoquant une corolle
+        const torusGeom1 = new THREE.TorusGeometry(8.5, 2.4, 20, 60);
+        const mesh1 = new THREE.Mesh(torusGeom1, materials[0]);
+        mesh1.rotation.x = Math.PI / 3;
+        group.add(mesh1);
+
+        const torusGeom2 = new THREE.TorusGeometry(12, 1.2, 16, 70);
+        const mesh2 = new THREE.Mesh(torusGeom2, materials[1]);
+        mesh2.rotation.y = -Math.PI / 4;
+        group.add(mesh2);
+
+        // Anneau subtil supplémentaire
+        const torusGeom3 = new THREE.TorusGeometry(6, 1.8, 14, 50);
+        const mesh3 = new THREE.Mesh(torusGeom3, materials[2]);
+        mesh3.rotation.z = Math.PI / 6;
+        group.add(mesh3);
+
+        // Dérive de particules très légères comme du pollen dans l'air
+        const particleCount = 45;
+        const particleGeom = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+
+        for (let i = 0; i < particleCount * 3; i += 3) {
+          positions[i] = (Math.random() - 0.5) * 36;
+          positions[i + 1] = (Math.random() - 0.5) * 22;
+          positions[i + 2] = (Math.random() - 0.5) * 16;
+        }
+
+        particleGeom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particleMat = new THREE.PointsMaterial({
+          color: 0xd3beaa,
+          size: 0.18,
+          transparent: true,
+          opacity: 0.35
+        });
+        const particles = new THREE.Points(particleGeom, particleMat);
+        group.add(particles);
+
+        let animationFrameId = null;
+        let isTabActive = true;
+
+        function animate() {
+          if (!isTabActive) return;
+          
+          // Mouvement lent, noble et régulier
+          mesh1.rotation.x += 0.0012;
+          mesh1.rotation.y += 0.0008;
+
+          mesh2.rotation.y -= 0.0009;
+          mesh2.rotation.z += 0.0006;
+
+          mesh3.rotation.x -= 0.0007;
+          mesh3.rotation.z -= 0.0011;
+
+          particles.rotation.y += 0.0004;
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Gestion du redimensionnement
+        function onResize() {
+          const width = canvas.clientWidth;
+          const height = canvas.clientHeight;
+          if (canvas.width !== width || canvas.height !== height) {
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height, false);
+          }
+        }
+        window.addEventListener('resize', onResize, { passive: true });
+
+        // Mise en pause quand l'onglet est masqué
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            isTabActive = false;
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+          } else {
+            isTabActive = true;
+            animate();
+          }
+        });
+
+      } catch (err) {
+        // En cas d'erreur ou d'échec de Three.js, le fond dégradé CSS élégant reste intact.
+      }
+    });
+  </script>
+</body>
+</html>

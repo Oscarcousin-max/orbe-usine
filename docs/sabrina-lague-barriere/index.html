@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sabrina Lagüe Barrière | Joaillerie &amp; Création Horlogère</title>
+  <meta name="description" content="Maison Sabrina Lagüe Barrière : joaillerie, orfèvrerie et création de bijoux. L'art du métal précieux et de la parure singulière. Contact et rendez-vous.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sabrina Lagüe Barrière | Joaillerie &amp; Création">
+  <meta property="og:description" content="Création joaillière et savoir-faire du bijou d'exception. Découvrez l'univers de Sabrina Lagüe Barrière.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121110'/%3E%3Cpolygon points='16,4 27,16 16,28 5,16' fill='none' stroke='%23d8be8d' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23d8be8d'/%3E%3C/svg%3E">
+
+  <!-- Fonts Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Three.js (defer) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "Sabrina Lagüe Barrière",
+    "telephone": "+33556252167",
+    "description": "Atelier et joaillerie d'art, création de bijoux précieux et pièces sur mesure.",
+    "currenciesAccepted": "EUR",
+    "priceRange": "$$$"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-deep: #0e0d0c;
+      --bg-surface: #171513;
+      --bg-surface-elevated: #1f1d1a;
+      --gold-primary: #d4bc8b;
+      --gold-light: #f3e5c8;
+      --gold-dark: #8c734b;
+      --text-main: #f0ede6;
+      --text-muted: #a69f94;
+      --line-subtle: rgba(212, 188, 139, 0.18);
+      --line-bright: rgba(212, 188, 139, 0.45);
+      
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition-smooth: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* Reset et Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    ::selection {
+      background: var(--gold-dark);
+      color: var(--gold-light);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--gold-primary);
+      outline-offset: 4px;
+    }
+
+    /* Typographie */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      color: var(--text-main);
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      letter-spacing: 0.015em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Navigation Haute */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.4rem 0;
+      background: linear-gradient(180deg, rgba(14, 13, 12, 0.95) 0%, rgba(14, 13, 12, 0.7) 70%, transparent 100%);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line-subtle);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--gold-light);
+    }
+
+    .brand-mark svg {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1px;
+      background: var(--gold-primary);
+      transition: width 0.35s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-btn {
+      display: inline-block;
+      padding: 0.55rem 1.3rem;
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light) !important;
+      letter-spacing: 0.16em !important;
+      font-size: 0.75rem !important;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-btn:hover {
+      background: rgba(212, 188, 139, 0.12);
+      border-color: var(--gold-light);
+    }
+
+    /* Menu mobile */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold-primary);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Hero Section avec Three.js */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+      background: radial-gradient(circle at 50% 40%, #1e1b17 0%, var(--bg-deep) 75%);
+      overflow: hidden;
+    }
+
+    #webgl-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: radial-gradient(circle at 50% 50%, rgba(14, 13, 12, 0.3) 0%, rgba(14, 13, 12, 0.85) 85%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.32em;
+      color: var(--gold-primary);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding: 0 1.2rem;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      height: 1px;
+      background: var(--line-bright);
+    }
+
+    .hero-eyebrow::before { left: -35px; }
+    .hero-eyebrow::after { right: -35px; }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 1.6rem;
+      line-height: 1.15;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 2.2rem;
+      font-weight: 300;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-luxury-primary {
+      display: inline-block;
+      padding: 0.95rem 2.4rem;
+      background: var(--gold-primary);
+      color: #121110;
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      border: 1px solid var(--gold-primary);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-luxury-primary:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      box-shadow: 0 6px 20px rgba(212, 188, 139, 0.25);
+    }
+
+    .btn-luxury-secondary {
+      display: inline-block;
+      padding: 0.95rem 2.2rem;
+      background: transparent;
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      border: 1px solid var(--line-bright);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-luxury-secondary:hover {
+      border-color: var(--gold-primary);
+      background: rgba(212, 188, 139, 0.08);
+      color: #fff;
+    }
+
+    /* Section globale */
+    .section-wrap {
+      padding: 7rem 0;
+      position: relative;
+    }
+
+    .section-divider {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(180deg, transparent, var(--gold-primary), transparent);
+      margin: 0 auto 3rem auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 4.5rem auto;
+    }
+
+    .section-pretitle {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: var(--gold-primary);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.2rem;
+    }
+
+    /* L'Esprit de la Maison */
+    .grid-manifesto {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .manifesto-text {
+      padding-right: 1.5rem;
+    }
+
+    .manifesto-text p + p {
+      margin-top: 1.2rem;
+    }
+
+    .quote-block {
+      margin-top: 2.2rem;
+      border-left: 2px solid var(--gold-primary);
+      padding-left: 1.8rem;
+      font-family: var(--font-serif);
+      font-size: 1.28rem;
+      font-style: italic;
+      color: var(--gold-light);
+      line-height: 1.6;
+    }
+
+    /* Carte visuelle sur-mesure / Vos photos ici */
+    .artisan-frame {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid var(--line-subtle);
+      padding: 3rem 2rem;
+      text-align: center;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    .artisan-frame::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(212, 188, 139, 0.08);
+      pointer-events: none;
+    }
+
+    .photo-slot-icon {
+      width: 58px;
+      height: 58px;
+      stroke: var(--gold-primary);
+      margin-bottom: 1.4rem;
+      opacity: 0.85;
+    }
+
+    .photo-slot-label {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .photo-slot-notice {
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    /* L'Offre / Savoir-Faire */
+    .grid-crafts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .craft-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--line-subtle);
+      padding: 3rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .craft-card:hover {
+      border-color: var(--line-bright);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.45);
+    }
+
+    .craft-number {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--gold-primary);
+      margin-bottom: 1.5rem;
+      opacity: 0.6;
+    }
+
+    .craft-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: 1.1rem;
+      color: var(--gold-light);
+    }
+
+    .craft-card p {
+      font-size: 0.95rem;
+      line-height: 1.68;
+    }
+
+    /* Galerie & Emplacements réels */
+    .gallery-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .gallery-slot {
+      background: var(--bg-surface-elevated);
+      border: 1px dashed var(--line-bright);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;
+    }
+
+    .gallery-slot-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-top: 0.8rem;
+    }
+
+    .gallery-slot-sub {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* Section Pratique & Contact */
+    .contact-wrapper {
+      background: var(--bg-surface);
+      border: 1px solid var(--line-subtle);
+      padding: 4.5rem 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      border-radius: 2px;
+    }
+
+    .contact-info-col h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.4rem;
+      color: var(--gold-light);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item-icon {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold-primary);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .contact-item-body h4 {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-link-phone {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: #fff;
+      display: inline-block;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid transparent;
+    }
+
+    .contact-link-phone:hover {
+      color: var(--gold-light);
+      border-color: var(--gold-primary);
+    }
+
+    .contact-note {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .contact-map-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--bg-deep);
+      border: 1px solid var(--line-subtle);
+      padding: 2.8rem 2.2rem;
+      text-align: center;
+    }
+
+    .map-compass-icon {
+      width: 44px;
+      height: 44px;
+      stroke: var(--gold-primary);
+      margin: 0 auto 1.4rem auto;
+    }
+
+    .map-compass-text {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+
+    .map-compass-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--line-subtle);
+      padding: 4.5rem 0 2.5rem 0;
+      background: #090908;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+
+    .footer-meta {
+      max-width: 640px;
+      line-height: 1.8;
+      font-size: 0.8rem;
+      color: #797368;
+    }
+
+    .footer-orbe {
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(212, 188, 139, 0.1);
+      width: 100%;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #8c857b;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-orbe a {
+      color: var(--gold-primary);
+    }
+
+    .footer-orbe a:hover {
+      text-decoration: underline;
+    }
+
+    /* Badge fixe ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      z-index: 999;
+      background: rgba(14, 13, 12, 0.88);
+      border: 1px solid var(--gold-dark);
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      pointer-events: auto;
+      transition: var(--transition-smooth);
+    }
+
+    .orbe-badge:hover {
+      border-color: var(--gold-primary);
+      color: #fff;
+    }
+
+    /* Reveal animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Media queries pour le mobile-first et responsivité */
+    @media (max-width: 900px) {
+      .grid-manifesto {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .manifesto-text {
+        padding-right: 0;
+      }
+      .grid-crafts {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1.6rem;
+        gap: 2.5rem;
+      }
+      .gallery-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        padding: 1rem 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #11100f;
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--line-subtle);
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+      }
+      .nav-links.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .hero-eyebrow::before,
+      .hero-eyebrow::after {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Principale -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#accueil" class="brand-mark" aria-label="Accueil Sabrina Lagüe Barrière">
+        <!-- Monogramme SVG Joaillerie -->
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor">
+          <circle cx="50" cy="50" r="46" stroke-width="2" stroke="var(--gold-dark)"/>
+          <polygon points="50,15 85,50 50,85 15,50" stroke-width="2" stroke="var(--gold-primary)"/>
+          <path d="M38 42 C38 36, 62 36, 62 45 C62 55, 38 52, 38 62 C38 67, 56 67, 62 62" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <span>Sabrina Lagüe Barrière</span>
+      </a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-label="Ouvrir le menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#esprit">L'Esprit</a></li>
+          <li><a href="#savoir-faire">Savoir-Faire</a></li>
+          <li><a href="#visite">Rendez-vous</a></li>
+          <li><a href="tel:+33556252167" class="nav-btn">Nous joindre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Bandeau d'Accueil / Hero avec Three.js -->
+    <section id="accueil" class="hero-section">
+      <canvas id="webgl-canvas"></canvas>
+      <div class="hero-scrim"></div>
+
+      <div class="container hero-content">
+        <span class="hero-eyebrow fade-up">Maison de Bijouterie &amp; Joaillerie</span>
+        <h1 class="hero-title fade-up">Sabrina Lagüe Barrière</h1>
+        <p class="hero-subtitle fade-up">L'exigence du geste, l'intimité du bijou précieux et la précision des matières nobles.</p>
+        
+        <div class="hero-actions fade-up">
+          <a href="tel:+33556252167" class="btn-luxury-primary">Prendre contact</a>
+          <a href="#esprit" class="btn-luxury-secondary">Découvrir la maison</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- L'Esprit de la Maison -->
+    <section id="esprit" class="section-wrap">
+      <div class="section-divider"></div>
+      <div class="container">
+        <div class="grid-manifesto">
+          <div class="manifesto-text fade-up">
+            <span class="section-pretitle">Philosophie d'Atelier</span>
+            <h2 class="section-title">L'émotion de l'ouvrage singulier</h2>
+            <p>
+              Dans le domaine des bijoutiers, joailliers et horlogers, chaque création naît d'une recherche d'équilibre parfaite entre rigueur technique et pureté esthétique. Chez Sabrina Lagüe Barrière, le bijou n'est pas un simple ornement, mais une œuvre intime façonnée pour traverser le temps.
+            </p>
+            <p>
+              Du travail délicat des métaux nobles aux lignes franches inspirées de l'art joaillier, chaque demande fait l'objet d'un dialogue attentif. Nous vous recevons pour imaginer, restaurer ou concrétiser une parure d'exception.
+            </p>
+            <div class="quote-block">
+              « Donner une âme à la matière par la rigueur du travail orfèvre. »
+            </div>
+          </div>
+
+          <!-- Cadre orfèvre / Espace visuel dédié -->
+          <div class="artisan-frame fade-up">
+            <svg class="photo-slot-icon" viewBox="0 0 48 48" fill="none">
+              <path d="M24 4L8 16L24 44L40 16L24 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M8 16H40" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M17 16L24 4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M31 16L24 4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M17 16L24 44" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M31 16L24 44" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <div class="photo-slot-label">L'Atelier Joaillier</div>
+            <div class="photo-slot-notice">Vos photos d'atelier ici</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Savoir-Faire / Offre -->
+    <section id="savoir-faire" class="section-wrap" style="background-color: #121110; border-top: 1px solid var(--line-subtle); border-bottom: 1px solid var(--line-subtle);">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-pretitle">Domaines d'Intervention</span>
+          <h2 class="section-title">Le métier de joaillier</h2>
+          <p>Un dévouement entier aux parures d'orfèvrerie et à la pérennité de vos joyaux.</p>
+        </div>
+
+        <div class="grid-crafts">
+          <article class="craft-card fade-up">
+            <span class="craft-number">01</span>
+            <h3>Création Joaillière</h3>
+            <p>
+              Conception de bijoux uniques. Chaque dessin est pensé pour sublimer la morphologie et révéler le caractère propre des gemmes et métaux choisis.
+            </p>
+          </article>
+
+          <article class="craft-card fade-up">
+            <span class="craft-number">02</span>
+            <h3>Entretien &amp; Restauration</h3>
+            <p>
+              Prendre soin de l'héritage : vérification des sertis, polissage soigné, remise à taille et réfection des montures selon les règles de l'art traditionnel.
+            </p>
+          </article>
+
+          <article class="craft-card fade-up">
+            <span class="craft-number">03</span>
+            <h3>Conseil &amp; Sur-Mesure</h3>
+            <p>
+              Une écoute personnalisée pour donner vie à vos projets familiaux ou vos envies de métamorphose pour une pièce ancienne.
+            </p>
+          </article>
+        </div>
+
+        <!-- Emplacements dédiés aux clichés du commerçant -->
+        <div class="gallery-strip">
+          <div class="gallery-slot fade-up">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <div class="gallery-slot-title">Vos créations en vitrine</div>
+            <div class="gallery-slot-sub">Emplacement photo disponible</div>
+          </div>
+          <div class="gallery-slot fade-up">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <div class="gallery-slot-title">Détails et gemmes</div>
+            <div class="gallery-slot-sub">Emplacement photo disponible</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact & Informations Pratiques -->
+    <section id="visite" class="section-wrap">
+      <div class="container">
+        <div class="contact-wrapper fade-up">
+          <div class="contact-info-col">
+            <span class="section-pretitle">Échange &amp; Rendez-vous</span>
+            <h3>Prendre contact</h3>
+            
+            <div class="contact-item">
+              <svg class="contact-item-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <div class="contact-item-body">
+                <h4>Ligne Directe</h4>
+                <a href="tel:+33556252167" class="contact-link-phone">+33 5 56 25 21 67</a>
+                <p class="contact-note">Disponible pour toute demande d'information, d'estimation et convenance de rendez-vous d'atelier.</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <svg class="contact-item-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div class="contact-item-body">
+                <h4>Horaires d'accueil</h4>
+                <p>Accueil et consultations privilégiées sur rendez-vous téléphonique.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-map-col">
+            <svg class="map-compass-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+            </svg>
+            <div class="map-compass-text">Localisation</div>
+            <p class="map-compass-desc">
+              Accédez directement aux coordonnées géographiques et plan d'accès pour programmer votre itinéraire.
+            </p>
+            <div>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Sabrina+Lag%C3%BCe+Barri%C3%A8re" target="_blank" rel="noopener noreferrer" class="btn-luxury-secondary">
+                Ouvrir l'itinéraire
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">Sabrina Lagüe Barrière</div>
+      <p class="footer-meta">
+        Bijouterie, Joaillerie &amp; Création.<br>
+        Pour toute demande d'ouvrage spécifique ou rendez-vous, joindre le +33 5 56 25 21 67.
+      </p>
+
+      <div class="footer-orbe">
+        Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Badge Fixe discret ORBE -->
+  <aside class="orbe-badge" aria-label="Mention maquette">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- Script d'animation et Three.js -->
+  <script>
+    // Menu mobile toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.menu-toggle');
+      const links = document.querySelector('.nav-links');
+
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          const isOpen = links.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Fermer le menu au clic sur un lien
+        links.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            links.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // Apparitions douces au défilement (IntersectionObserver)
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+      } else {
+        document.querySelectorAll('.fade-up').forEach(el => el.classList.add('is-visible'));
+      }
+    });
+
+    // Scène 3D Three.js : Flottement abstrait d'octaèdres et sphères gemmologiques
+    window.addEventListener('load', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      try {
+        if (!window.THREE) return;
+
+        const canvas = document.getElementById('webgl-canvas');
+        if (!canvas) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 22;
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "high-performance"
+        });
+
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        renderer.setPixelRatio(dpr);
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+        // Lumières douces & reflets dorés
+        const ambientLight = new THREE.AmbientLight(0xf3e5c8, 0.9);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xd4bc8b, 2.5, 50);
+        pointLight.position.set(10, 15, 10);
+        scene.add(pointLight);
+
+        const secondaryLight = new THREE.PointLight(0x8c734b, 1.8, 50);
+        secondaryLight.position.set(-15, -10, -5);
+        scene.add(secondaryLight);
+
+        // Groupe d'éléments précieux abstraits (formes prismatiques et sphériques)
+        const gemGroup = new THREE.Group();
+        scene.add(gemGroup);
+
+        const items = [];
+        const goldMaterial = new THREE.MeshStandardMaterial({
+          color: 0xd4bc8b,
+          metalness: 0.88,
+          roughness: 0.22,
+          wireframe: false
+        });
+
+        const wireMaterial = new THREE.MeshBasicMaterial({
+          color: 0xf3e5c8,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.28
+        });
+
+        // 1. Un grand prisme central ajouré
+        const octaGeo = new THREE.OctahedronGeometry(6.5, 0);
+        const centralGem = new THREE.Mesh(octaGeo, wireMaterial);
+        gemGroup.add(centralGem);
+        items.push({ mesh: centralGem, rx: 0.0012, ry: 0.0018, rz: 0.0007 });
+
+        // 2. Petits polyèdres dorés dérivant avec lenteur
+        const smallOcta = new THREE.OctahedronGeometry(1.6, 0);
+        const sphereGeo = new THREE.SphereGeometry(1.1, 24, 24);
+
+        for (let i = 0; i < 9; i++) {
+          const isSphere = i % 2 === 0;
+          const geom = isSphere ? sphereGeo : smallOcta;
+          const mat = isSphere ? goldMaterial : wireMaterial;
+          const mesh = new THREE.Mesh(geom, mat);
+
+          const angle = (i / 9) * Math.PI * 2;
+          const radius = 9 + (i % 3) * 3;
+          mesh.position.set(
+            Math.cos(angle) * radius + (Math.random() - 0.5) * 3,
+            Math.sin(angle) * (radius * 0.45) + (Math.random() - 0.5) * 4,
+            (Math.random() - 0.5) * 8
+          );
+
+          gemGroup.add(mesh);
+          items.push({
+            mesh: mesh,
+            rx: (Math.random() - 0.5) * 0.003,
+            ry: (Math.random() - 0.5) * 0.003,
+            rz: (Math.random() - 0.5) * 0.002,
+            baseY: mesh.position.y,
+            speedOffset: Math.random() * 2
+          });
+        }
+
+        // Redimensionnement
+        function onResize() {
+          const hero = document.getElementById('accueil');
+          if (!hero) return;
+          const width = hero.clientWidth;
+          const height = hero.clientHeight;
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+          renderer.setSize(width, height);
+        }
+        window.addEventListener('resize', onResize);
+
+        // Boucle d'animation économe
+        let animationFrameId;
+        let isTabActive = true;
+
+        document.addEventListener('visibilitychange', () => {
+          isTabActive = !document.hidden;
+        });
+
+        let clock = 0;
+        function animate() {
+          animationFrameId = requestAnimationFrame(animate);
+          if (!isTabActive) return;
+
+          clock += 0.008;
+
+          gemGroup.rotation.y = clock * 0.08;
+          gemGroup.rotation.x = Math.sin(clock * 0.05) * 0.12;
+
+          items.forEach((item, index) => {
+            item.mesh.rotation.x += item.rx;
+            item.mesh.rotation.y += item.ry;
+            if (item.baseY !== undefined) {
+              item.mesh.position.y = item.baseY + Math.sin(clock + item.speedOffset) * 0.7;
+            }
+          });
+
+          renderer.render(scene, camera);
+        }
+
+        animate();
+
+      } catch (err) {
+        // En cas d'erreur ou d'environnement restreint, dégradé CSS élégant en place
+      }
+    });
+  </script>
+</body>
+</html>

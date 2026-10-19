@@ -1,0 +1,1357 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Domaine Johann Spelty · Viticulture &amp; Vins de Propriété</title>
+  <meta name="description" content="Découvrez le Domaine Johann Spelty. Vins de caractère, respect du végétal et expression du terroir au cœur d'un domaine viticole familial.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Domaine Johann Spelty · Viticulture &amp; Vins">
+  <meta property="og:description" content="Vins de terroir et tradition viticole au Domaine Johann Spelty.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://domaine-johann-spelty.fr">
+
+  <!-- Favicon SVG en Data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23220c13'/%3E%3Cpath d='M32 14c-5.5 0-10 4.5-10 10 0 7.5 10 18 10 18s10-10.5 10-18c0-5.5-4.5-10-10-10zm0 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z' fill='%23c9a66b'/%3E%3Cpath d='M26 44h12v3H26zM28 47h8v5h-8z' fill='%23c9a66b'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (différé) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Winery",
+    "name": "Domaine Johann Spelty",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "39"
+    },
+    "telephone": "+33 2 47 93 08 38",
+    "email": "spelty@wanadoo.fr"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-deep: #14070a;
+      --bg-surface: #1f0d13;
+      --bg-card: #271219;
+      --bg-light: #fbf9f5;
+      --cl-text-light: #f5eee8;
+      --cl-text-muted: #bda9a3;
+      --cl-gold: #cfa86e;
+      --cl-gold-bright: #e7c28c;
+      --cl-bordeaux: #581825;
+      --border-subtle: rgba(207, 168, 110, 0.2);
+      --border-focus: #cfa86e;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-deep);
+      color: var(--cl-text-light);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-width: 320px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--border-focus);
+      outline-offset: 4px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* TYPOGRAPHIE */
+    .font-serif {
+      font-family: var(--font-serif);
+      letter-spacing: -0.01em;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cl-gold);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background-color: var(--cl-gold);
+      opacity: 0.6;
+    }
+
+    /* HEADER & NAVIGATION */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+      background-color: transparent;
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.scrolled {
+      background-color: rgba(20, 7, 10, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom-color: var(--border-subtle);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      color: var(--cl-gold);
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--cl-text-light);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cl-gold);
+      display: block;
+      margin-top: 2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      color: var(--cl-text-light);
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cl-text-light);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background: var(--cl-gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn-header {
+      padding: 0.6rem 1.4rem;
+      border: 1px solid var(--cl-gold);
+      color: var(--cl-gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .btn-header:hover {
+      background-color: var(--cl-gold);
+      color: var(--bg-deep);
+    }
+
+    /* BANDEAU ACCUEIL & THREE.JS */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1.5rem 5rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 40%, #2f0e19 0%, #17070b 60%, #0d0406 100%);
+    }
+
+    #webgl-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-veil {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(20, 7, 10, 0.4) 0%, rgba(20, 7, 10, 0.75) 85%, #14070a 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 6.5vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.08;
+      margin: 1.25rem 0 1.5rem;
+      color: var(--cl-text-light);
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--cl-gold-bright);
+      font-weight: 300;
+    }
+
+    .hero-lead {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: var(--cl-text-muted);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 2.2rem;
+      background-color: var(--cl-gold);
+      color: #1a080d;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 1px solid var(--cl-gold);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: transparent;
+      color: var(--cl-gold);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 1rem 2.2rem;
+      background-color: transparent;
+      color: var(--cl-text-light);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid rgba(245, 238, 232, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--cl-gold);
+      color: var(--cl-gold);
+    }
+
+    /* SECTIONS COMMUNES */
+    section {
+      padding: 6.5rem 1.5rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-head {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-top: 0.75rem;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background-color: var(--cl-gold);
+      margin: 1.5rem auto 0;
+      opacity: 0.5;
+    }
+
+    /* SECTION ESPRIT / MAISON */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--cl-text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .about-text p.lead {
+      color: var(--cl-text-light);
+      font-size: 1.35rem;
+      font-family: var(--font-serif);
+      line-height: 1.5;
+      border-left: 2px solid var(--cl-gold);
+      padding-left: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .visual-frame {
+      position: relative;
+      border: 1px solid var(--border-subtle);
+      padding: 1.25rem;
+      background-color: var(--bg-surface);
+    }
+
+    .visual-slot {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(135deg, #1f0b12 0%, #30131d 100%);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      border: 1px dashed rgba(207, 168, 110, 0.4);
+    }
+
+    .visual-slot-icon {
+      width: 48px;
+      height: 48px;
+      stroke: var(--cl-gold);
+      stroke-width: 1.2;
+      fill: none;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    .visual-slot-label {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--cl-gold);
+      letter-spacing: 0.05em;
+    }
+
+    .visual-slot-sub {
+      font-size: 0.75rem;
+      color: var(--cl-text-muted);
+      margin-top: 0.4rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* BANDE PHOTO D'ILLUSTRATION */
+    .illustration-strip {
+      position: relative;
+      padding: 8rem 1.5rem;
+      overflow: hidden;
+      margin: 2rem 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .strip-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(0.55) brightness(0.38) contrast(1.15);
+      transform: scale(1.02);
+      transition: transform 6s ease;
+    }
+
+    .strip-veil {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(31, 13, 19, 0.65) 0%, rgba(20, 7, 10, 0.92) 100%);
+    }
+
+    .strip-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .strip-content blockquote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--cl-text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .illustration-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cl-gold);
+      padding: 0.35rem 0.85rem;
+      border: 1px solid rgba(207, 168, 110, 0.3);
+      background: rgba(20, 7, 10, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    /* SECTION OFFRE / METIER */
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .offer-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      position: relative;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--cl-gold);
+    }
+
+    .offer-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cl-gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .offer-card:hover::before {
+      opacity: 1;
+    }
+
+    .offer-num {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--cl-gold);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .offer-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .offer-card p {
+      color: var(--cl-text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 1.75rem;
+    }
+
+    .offer-foot {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cl-gold);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* SECTION INFOS & CONTACT COMBINÉES */
+    .details-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 3.5rem;
+    }
+
+    .info-col h3, .contact-col h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+
+    .info-col h3::after, .contact-col h3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 36px;
+      height: 1px;
+      background-color: var(--cl-gold);
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      stroke: var(--cl-gold);
+      fill: none;
+      stroke-width: 1.5;
+      margin-top: 3px;
+    }
+
+    .info-content dt {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--cl-gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .info-content dd {
+      font-size: 1.05rem;
+      color: var(--cl-text-light);
+      font-weight: 300;
+    }
+
+    .link-underlined {
+      display: inline-block;
+      color: var(--cl-text-light);
+      border-bottom: 1px solid rgba(207, 168, 110, 0.4);
+      padding-bottom: 2px;
+      transition: all 0.2s ease;
+    }
+
+    .link-underlined:hover {
+      color: var(--cl-gold);
+      border-bottom-color: var(--cl-gold);
+    }
+
+    .cta-map {
+      margin-top: 1rem;
+    }
+
+    /* SECOND EMPLACEMENT PHOTO */
+    .second-frame {
+      margin-top: 3.5rem;
+    }
+
+    .second-slot {
+      aspect-ratio: 21 / 9;
+      background: linear-gradient(135deg, #1b090f 0%, #260e16 100%);
+      border: 1px dashed rgba(207, 168, 110, 0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2.5rem;
+    }
+
+    /* MENTION SANITAIRE OBLIGATOIRE */
+    .health-warning {
+      background-color: #0b0305;
+      border-top: 1px solid rgba(207, 168, 110, 0.15);
+      border-bottom: 1px solid rgba(207, 168, 110, 0.15);
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9c8a83;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background-color: #0d0406;
+      padding: 4.5rem 1.5rem 6.5rem;
+      font-size: 0.82rem;
+      color: #8c7b75;
+      border-top: 1px solid rgba(207, 168, 110, 0.1);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand h4 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--cl-text-light);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-brand p {
+      max-width: 380px;
+      line-height: 1.7;
+    }
+
+    .footer-col h5 {
+      color: var(--cl-gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col a:hover {
+      color: var(--cl-gold);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-size: 0.75rem;
+    }
+
+    .footer-credits a {
+      color: var(--cl-gold);
+    }
+
+    /* BADGE FIXE ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 999;
+      background: rgba(20, 7, 10, 0.88);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(8px);
+      padding: 0.45rem 0.85rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--cl-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: all 0.25s ease;
+    }
+    .orbe-badge:hover {
+      background: rgba(31, 13, 19, 0.95);
+      border-color: var(--cl-gold);
+      color: #fff;
+    }
+    .orbe-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--cl-gold);
+    }
+
+    /* ANIMATIONS DOUCES REVEAL */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    }
+    .fade-up.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+      .details-wrap {
+        grid-template-columns: 1fr;
+        padding: 2.25rem 1.75rem;
+        gap: 2.5rem;
+      }
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        padding: 1rem 1.25rem;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 80%;
+        max-width: 320px;
+        background-color: #17070b;
+        border-left: 1px solid var(--border-subtle);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 3rem 2rem;
+        gap: 1.8rem;
+        transform: translateX(100%);
+        transition: transform 0.35s ease;
+        z-index: 101;
+      }
+      .nav-links.open {
+        transform: translateX(0);
+      }
+      .nav-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(4px);
+        z-index: 100;
+      }
+      .nav-backdrop.open {
+        display: block;
+      }
+      section {
+        padding: 4.5rem 1.25rem;
+      }
+      .illustration-strip {
+        padding: 5rem 1.25rem;
+      }
+      .second-slot {
+        aspect-ratio: 16 / 9;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .strip-bg {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION FIXE -->
+  <header class="site-header" id="siteHeader">
+    <a href="#accueil" class="brand" aria-label="Retour au début - Domaine Johann Spelty">
+      <!-- Monogramme SVG exclusif -->
+      <svg class="brand-mark" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.6"/>
+        <circle cx="30" cy="30" r="25" stroke="currentColor" stroke-width="0.6" stroke-opacity="0.3"/>
+        <path d="M22 20h16M30 20v22M25 42h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M38 27c-3-2-7-1.5-7 2 0 4.5 7 4 7 8 0 4-4.5 5-8 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <span class="brand-name">Johann Spelty</span>
+        <span class="brand-sub">Domaine Viticole</span>
+      </div>
+    </a>
+
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Ouvrir le menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <span>Menu</span>
+    </button>
+
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#domaine">Le Domaine</a></li>
+      <li><a href="#vins">Les Vins</a></li>
+      <li><a href="#visite">Venir au Domaine</a></li>
+      <li><a href="#contact" class="btn-header">Nous joindre</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- HERO AVEC FOND 3D THREE.JS -->
+    <section class="hero" id="accueil">
+      <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+      <div class="hero-veil" aria-hidden="true"></div>
+
+      <div class="hero-content fade-up">
+        <span class="eyebrow">Domaine Viticole &amp; Vins</span>
+        <h1>Domaine <em>Johann Spelty</em></h1>
+        <p class="hero-lead">
+          L'expression vivante de la vigne et du temps. Une approche attentive de la terre, des raisins conduits avec exigence et le respect d'une tradition viticole familiale.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Prendre contact</a>
+          <a href="#domaine" class="btn-secondary">Découvrir le domaine</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION L'ESPRIT DU DOMAINE -->
+    <section id="domaine">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text fade-up">
+            <span class="eyebrow">L'esprit du lieu</span>
+            <h2 class="section-title">La fidélité au végétal et au fruit</h2>
+            <div class="divider" style="margin-left: 0;"></div>
+            
+            <p class="lead" style="margin-top: 2rem;">
+              Au Domaine Johann Spelty, le vin s'élabore d'abord au cep, au gré des saisons, dans la discrétion et la patience des soins apportés à chaque rangée.
+            </p>
+            <p>
+              Chaque cuvée découle d'une observation constante de la terre. Le geste du vigneron cherche l'équilibre pur entre maturité, fraîcheur et structure, laissant s'exprimer la franchise d'un terroir singulier.
+            </p>
+            <p>
+              De la taille hivernale jusqu'à l'élevage en cave, le travail demeure guidé par l'humilité face aux éléments et par le plaisir de partager des flacons authentiques.
+            </p>
+          </div>
+
+          <!-- EMPLACEMENT PHOTO 1 (Photos du commerçant) -->
+          <div class="about-visual fade-up">
+            <div class="visual-frame">
+              <div class="visual-slot">
+                <svg class="visual-slot-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2z"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <span class="visual-slot-label">Vos photos ici</span>
+                <span class="visual-slot-sub">Vignes, chais ou bouteilles du domaine</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDE PHOTO D'ILLUSTRATION FOURNIE -->
+    <section class="illustration-strip" aria-label="Aperçu des terroirs viticoles">
+      <div class="strip-bg" style="background-image: none;" loading="lazy"></div>
+      <div class="strip-veil" aria-hidden="true"></div>
+
+      <div class="strip-content fade-up">
+        <blockquote>
+          « Le vin est le dialogue intemporel entre une terre silencieuse et la main de l'homme. »
+        </blockquote>
+        <span class="illustration-tag">Image d'illustration</span>
+      </div>
+    </section>
+
+    <!-- SECTION OFFRE / MÉTIER -->
+    <section id="vins">
+      <div class="container">
+        <div class="section-head fade-up">
+          <span class="eyebrow">Les productions du domaine</span>
+          <h2 class="section-title">L'art de la vinification</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="offer-grid">
+          <!-- Carte 1 -->
+          <article class="offer-card fade-up">
+            <div>
+              <span class="offer-num">01 / Culture</span>
+              <h3>Le Travail de la Vigne</h3>
+              <p>
+                Conduite soignée de la plante tout au long du cycle végétatif. Ébourgeonnage attentif, maîtrise des rendements et respect du sol pour préserver la vigueur des ceps.
+              </p>
+            </div>
+            <div class="offer-foot">
+              <span>Savoir-faire viticole</span>
+            </div>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="offer-card fade-up">
+            <div>
+              <span class="offer-num">02 / Vinification</span>
+              <h3>Les Vins de Propriété</h3>
+              <p>
+                Élaboration patiente au domaine. Les vinifications accompagnent naturellement l'identité de chaque récolte, pour donner naissance à des cuvées franches et équilibrées.
+              </p>
+            </div>
+            <div class="offer-foot">
+              <span>Winery &amp; Wine</span>
+            </div>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="offer-card fade-up">
+            <div>
+              <span class="offer-num">03 / Partage</span>
+              <h3>Accueil &amp; Commandes</h3>
+              <p>
+                Renseignements sur les millésimes disponibles, expéditions et accueil sur rendez-vous au domaine pour découvrir les flacons directement auprès du producteur.
+              </p>
+            </div>
+            <div class="offer-foot">
+              <span>Relation directe</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- EMPLACEMENT PHOTO 2 -->
+        <div class="second-frame fade-up">
+          <div class="second-slot">
+            <svg class="visual-slot-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2z"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span class="visual-slot-label">Vos photos ici</span>
+            <span class="visual-slot-sub">Photographie panoramique du vignoble ou vue des fûts</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION INFOS PRATIQUES & CONTACT -->
+    <section id="visite">
+      <div class="container">
+        <div class="section-head fade-up">
+          <span class="eyebrow">Repères &amp; Accueil</span>
+          <h2 class="section-title">Venir au Domaine</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="details-wrap fade-up">
+          <!-- Colonne Adresse & Visite -->
+          <div class="info-col">
+            <h3>Informations pratiques</h3>
+            <dl class="info-list">
+              <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <div class="info-content">
+                  <dt>Adresse</dt>
+                  <dd>
+                    Domaine Johann Spelty<br>
+                    39
+                  </dd>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <div class="info-content">
+                  <dt>Horaires &amp; Visites</dt>
+                  <dd>
+                    Accueil et dégustation sur rendez-vous préalable. Nous vous conseillons de nous contacter avant votre passage.
+                  </dd>
+                </div>
+              </div>
+            </dl>
+
+            <div class="cta-map">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Domaine%20Johann%20Spelty%2039" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                Obtenir l'itinéraire
+              </a>
+            </div>
+          </div>
+
+          <!-- Colonne Contact direct -->
+          <div class="contact-col" id="contact">
+            <h3>Contact direct</h3>
+            <dl class="info-list">
+              <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <div class="info-content">
+                  <dt>Téléphone</dt>
+                  <dd>
+                    <a href="tel:+33247930838" class="link-underlined">+33 2 47 93 08 38</a>
+                  </dd>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <div class="info-content">
+                  <dt>Courrier électronique</dt>
+                  <dd>
+                    <a href="mailto:spelty@wanadoo.fr" class="link-underlined">spelty@wanadoo.fr</a>
+                  </dd>
+                </div>
+              </div>
+            </dl>
+
+            <p style="color: var(--cl-text-muted); font-size: 0.9rem; line-height: 1.6; margin-top: 1.5rem;">
+              Pour toute question concernant les disponibilités des vins, vos commandes ou pour organiser votre venue au domaine, n'hésitez pas à nous téléphoner ou nous adresser un courriel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENTION SANITAIRE LÉGALE -->
+    <aside class="health-warning" aria-label="Avertissement sanitaire légal">
+      L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
+    </aside>
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h4>Domaine Johann Spelty</h4>
+        <p>
+          Domaine viticole familial dédié à l'élaboration de vins de caractère, alliant rigueur culturale et tradition.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#domaine">Le Domaine</a></li>
+          <li><a href="#vins">Les Vins</a></li>
+          <li><a href="#visite">Venir au domaine</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Coordonnées</h5>
+        <ul>
+          <li>Adresse : 39</li>
+          <li><a href="tel:+33247930838">+33 2 47 93 08 38</a></li>
+          <li><a href="mailto:spelty@wanadoo.fr">spelty@wanadoo.fr</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        Photo : Grand Parc - Bordeaux, France from France (CC BY 2.0)
+      </div>
+      <div class="footer-credits">
+        Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE FIXE DISCRET ORBE -->
+  <aside class="orbe-badge" aria-label="Notice maquette">
+    <span class="orbe-badge-dot"></span>
+    <span>Maquette proposée par ORBE</span>
+  </aside>
+
+  <!-- SCRIPTS JS -->
+  <script>
+    // GESTION DU MENU MOBILE ET DU HEADER
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('siteHeader');
+      const toggle = document.getElementById('navToggle');
+      const links = document.getElementById('navLinks');
+      const backdrop = document.getElementById('navBackdrop');
+
+      const handleScroll = () => {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      const toggleMenu = (open) => {
+        const isExpanded = open !== undefined ? open : toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', isExpanded);
+        links.classList.toggle('open', isExpanded);
+        backdrop.classList.toggle('open', isExpanded);
+        document.body.style.overflow = isExpanded ? 'hidden' : '';
+      };
+
+      toggle.addEventListener('click', () => toggleMenu());
+      backdrop.addEventListener('click', () => toggleMenu(false));
+      links.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+      });
+
+      // OBSERVER D'APPARITION DOUCE (REVEAL)
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+      } else {
+        document.querySelectorAll('.fade-up').forEach(el => el.classList.add('in-view'));
+      }
+    });
+
+    // SCÈNE 3D THREE.JS (Sobre, lente et abstraite)
+    window.addEventListener('load', () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return; // Aucun rendu animé si l'utilisateur demande moins de mouvement
+      }
+
+      try {
+        if (typeof window.THREE === 'undefined') return;
+
+        const canvas = document.getElementById('webgl-canvas');
+        if (!canvas) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.z = 24;
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "high-performance"
+        });
+
+        const updateRendererSize = () => {
+          const width = window.innerWidth;
+          const height = window.innerHeight;
+          renderer.setSize(width, height);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+        };
+        updateRendererSize();
+
+        // Lumières douces et chaleureuses (palette bordeaux / or)
+        const ambientLight = new THREE.AmbientLight(0x2d0b14, 1.8);
+        scene.add(ambientLight);
+
+        const pointLight1 = new THREE.PointLight(0xcfa86e, 2.2, 50);
+        pointLight1.position.set(12, 10, 10);
+        scene.add(pointLight1);
+
+        const pointLight2 = new THREE.PointLight(0x5a1122, 3, 40);
+        pointLight2.position.set(-14, -8, 8);
+        scene.add(pointLight2);
+
+        // Groupe de formes abstraites évoquant des ondes liquides et des volumes viticoles
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const material1 = new THREE.MeshStandardMaterial({
+          color: 0x42101b,
+          roughness: 0.35,
+          metalness: 0.15,
+          wireframe: false,
+          transparent: true,
+          opacity: 0.72
+        });
+
+        const material2 = new THREE.MeshStandardMaterial({
+          color: 0xcfa86e,
+          roughness: 0.45,
+          metalness: 0.3,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.22
+        });
+
+        // Tore ondulant principal
+        const torusGeo = new THREE.TorusKnotGeometry(7, 1.8, 110, 24, 2, 3);
+        const torusMesh = new THREE.Mesh(torusGeo, material1);
+        group.add(torusMesh);
+
+        // Forme fine entourante
+        const icosaGeo = new THREE.IcosahedronGeometry(9.5, 2);
+        const icosaMesh = new THREE.Mesh(icosaGeo, material2);
+        group.add(icosaMesh);
+
+        // Animation très lente
+        let isTabActive = true;
+        let animationFrameId = null;
+
+        const animate = () => {
+          if (!isTabActive) return;
+          torusMesh.rotation.x += 0.0012;
+          torusMesh.rotation.y += 0.0018;
+          icosaMesh.rotation.x -= 0.0007;
+          icosaMesh.rotation.y -= 0.0009;
+          group.rotation.z += 0.0004;
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        // Arrêt si onglet caché
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            isTabActive = false;
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+          } else {
+            isTabActive = true;
+            animate();
+          }
+        });
+
+        // Redimensionnement
+        window.addEventListener('resize', updateRendererSize);
+      } catch (err) {
+        // En cas d'erreur ou d'environnement sans WebGL, le dégradé CSS pur prend le relais sans casser l'interface
+      }
+    });
+  </script>
+</body>
+</html>

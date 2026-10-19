@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sadia Fleurs — Fleuriste Créateur à Bordeaux</title>
+  <meta name="description" content="Maison florale située au 26 Allées de Tourny à Bordeaux. Compositions sur mesure, fleurs de saison et créations végétales raffinées.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sadia Fleurs — Fleuriste Créateur à Bordeaux">
+  <meta property="og:description" content="Artisan fleuriste aux Allées de Tourny à Bordeaux. Compositions florales d'exception et végétal sublimé.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2319241d'/%3E%3Cpath d='M16 6 C13 11 10 15 10 19 C10 23 12.8 25 16 25 C19.2 25 22 23 22 19 C22 15 19 11 16 6 Z' fill='none' stroke='%23d0a37e' stroke-width='1.5'/%3E%3Cpath d='M16 11 L16 25 M12 17 C14 17 16 19 16 22' fill='none' stroke='%23d0a37e' stroke-width='1' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (différé) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <style>
+    :root {
+      --c-bg: #f9f8f5;
+      --c-surface: #f1ede6;
+      --c-surface-accent: #e8e1d7;
+      --c-vert-profond: #17241e;
+      --c-vert-subtil: #263830;
+      --c-texte: #222924;
+      --c-texte-muted: #5e6b63;
+      --c-or-rose: #be8e77;
+      --c-or-dore: #c5a47e;
+      --c-blanc: #ffffff;
+      --c-bordure: rgba(23, 36, 30, 0.08);
+      --c-bordure-claire: rgba(255, 255, 255, 0.15);
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--c-bg);
+      color: var(--c-texte);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition), opacity var(--transition);
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--c-or-rose);
+      outline-offset: 3px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* TYPOGRAPHIE */
+    .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .sur-titre {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-weight: 600;
+      color: var(--c-or-rose);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .titre-section {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      font-weight: 300;
+      color: var(--c-vert-profond);
+      margin-bottom: 1.5rem;
+    }
+
+    /* DISPOSITION */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-padding {
+      padding: clamp(5rem, 9vw, 9rem) 0;
+    }
+
+    /* EN-TÊTE FIXE */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(249, 248, 245, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--c-bordure);
+      transition: background-color var(--transition), padding var(--transition);
+      padding: 1.25rem 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+      color: var(--c-vert-profond);
+      text-transform: uppercase;
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    .nav-desktop a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      color: var(--c-texte-muted);
+      position: relative;
+    }
+
+    .nav-desktop a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background: var(--c-vert-profond);
+      transition: width var(--transition);
+    }
+
+    .nav-desktop a:hover {
+      color: var(--c-vert-profond);
+    }
+
+    .nav-desktop a:hover::after {
+      width: 100%;
+    }
+
+    .btn-header-tel {
+      padding: 0.55rem 1.2rem;
+      border: 1px solid var(--c-vert-profond);
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--c-vert-profond);
+      transition: all var(--transition);
+    }
+
+    .btn-header-tel:hover {
+      background: var(--c-vert-profond);
+      color: var(--c-bg);
+    }
+
+    /* BURGER MENU MOBILE */
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1002;
+    }
+
+    .menu-toggle span {
+      width: 22px;
+      height: 1.5px;
+      background-color: var(--c-vert-profond);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-mobile {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 82%;
+      max-width: 360px;
+      height: 100vh;
+      background: var(--c-bg);
+      border-left: 1px solid var(--c-bordure);
+      box-shadow: -10px 0 30px rgba(0,0,0,0.06);
+      padding: 6rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      z-index: 1001;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-mobile.active {
+      right: 0;
+    }
+
+    .nav-mobile a {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      color: var(--c-vert-profond);
+      border-bottom: 1px solid var(--c-bordure);
+      padding-bottom: 0.75rem;
+    }
+
+    .nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(23, 36, 30, 0.4);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* BANDEAU D'ACCUEIL (HERO) AVEC THREE.JS */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 60% 40%, #1e3027 0%, #111a15 100%);
+      color: #f7f6f2;
+    }
+
+    .hero-canvas-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    #hero-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17,26,21,0.65) 0%, rgba(17,26,21,0.45) 50%, rgba(17,26,21,0.85) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 3rem 0;
+      max-width: 780px;
+    }
+
+    .hero-tagline {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tagline .line {
+      width: 40px;
+      height: 1px;
+      background: var(--c-or-dore);
+    }
+
+    .hero-tagline span {
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--c-or-dore);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      line-height: 1.05;
+      font-weight: 300;
+      margin-bottom: 1.8rem;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: #e4cbb0;
+      font-weight: 300;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(247, 246, 242, 0.82);
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .btn-primaire {
+      background: var(--c-or-rose);
+      color: #ffffff;
+      padding: 0.95rem 2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 8px 24px rgba(190, 142, 119, 0.25);
+    }
+
+    .btn-primaire:hover {
+      background: #ab7a65;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(190, 142, 119, 0.35);
+    }
+
+    .btn-secondaire {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      padding: 0.95rem 2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all var(--transition);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn-secondaire:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-2px);
+    }
+
+    /* SECTION ESPRIT */
+    .section-esprit {
+      background-color: var(--c-bg);
+      position: relative;
+    }
+
+    .grid-esprit {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .esprit-texte p {
+      font-size: 1.05rem;
+      color: var(--c-texte-muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .citation-artisan {
+      border-left: 2px solid var(--c-or-rose);
+      padding-left: 1.5rem;
+      margin-top: 2rem;
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--c-vert-profond);
+      line-height: 1.5;
+    }
+
+    .esprit-media {
+      position: relative;
+    }
+
+    .cadre-photo {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--c-surface);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
+
+    .cadre-photo img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(1.02);
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cadre-photo:hover img {
+      transform: scale(1.03);
+    }
+
+    .mention-photo-flottante {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(17, 26, 21, 0.75);
+      color: #f7f6f2;
+      padding: 0.35rem 0.75rem;
+      border-radius: 2px;
+      backdrop-filter: blur(4px);
+    }
+
+    .photo-placeholder {
+      margin-top: 1.5rem;
+      border: 1px dashed rgba(23, 36, 30, 0.25);
+      padding: 1.75rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 4px;
+    }
+
+    .photo-placeholder-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--c-vert-profond);
+      margin-bottom: 0.25rem;
+    }
+
+    .photo-placeholder-sub {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--c-texte-muted);
+    }
+
+    /* SECTION BANDEAU VISUEL ÉDITORIAL */
+    .section-immersion {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--c-vert-profond);
+    }
+
+    .immersion-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      filter: grayscale(20%);
+    }
+
+    .immersion-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(23, 36, 30, 0.65) 0%, rgba(23, 36, 30, 0.9) 100%);
+    }
+
+    .immersion-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 680px;
+    }
+
+    .immersion-content h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .immersion-mention {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* SECTION OFFRE & SAVOIR-FAIRE */
+    .section-offre {
+      background-color: var(--c-surface);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .card-metier {
+      background: var(--c-blanc);
+      padding: 2.75rem 2rem;
+      border-radius: 3px;
+      border: 1px solid var(--c-bordure);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-metier:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-index {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--c-or-rose);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .card-metier h3 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      line-height: 1.2;
+      color: var(--c-vert-profond);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .card-metier p {
+      font-size: 0.95rem;
+      color: var(--c-texte-muted);
+      line-height: 1.7;
+    }
+
+    /* SECTION INFOS & HORAIRES */
+    .section-infos {
+      background: var(--c-bg);
+      border-top: 1px solid var(--c-bordure);
+    }
+
+    .infos-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+
+    .info-block {
+      margin-bottom: 2.5rem;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--c-or-rose);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .info-adresse {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      line-height: 1.3;
+      color: var(--c-vert-profond);
+      margin-bottom: 1.25rem;
+    }
+
+    .horaires-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .horaires-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(23, 36, 30, 0.06);
+      font-size: 0.95rem;
+    }
+
+    .horaires-list li span.jour {
+      color: var(--c-texte-muted);
+    }
+
+    .horaires-list li span.heures {
+      color: var(--c-vert-profond);
+      font-weight: 500;
+    }
+
+    .card-contact-highlight {
+      background: var(--c-vert-profond);
+      color: #ffffff;
+      padding: 3rem 2.5rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-contact-highlight h3 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .card-contact-highlight p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .tel-link-large {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      color: var(--c-or-dore);
+      letter-spacing: 0.03em;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      transition: opacity var(--transition);
+    }
+
+    .tel-link-large:hover {
+      opacity: 0.85;
+    }
+
+    .btn-itineraire {
+      background: transparent;
+      border: 1px solid var(--c-or-dore);
+      color: var(--c-or-dore);
+      padding: 0.85rem 1.75rem;
+      border-radius: 40px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      align-self: flex-start;
+      transition: all var(--transition);
+    }
+
+    .btn-itineraire:hover {
+      background: var(--c-or-dore);
+      color: var(--c-vert-profond);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #0f1713;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 4.5rem 0 2.5rem;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand h4 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: #ffffff;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .credits-photos {
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .credits-photos a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* BADGE MAQUETTE FIXE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background: rgba(17, 26, 21, 0.88);
+      color: #e5ded5;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      padding: 0.45rem 0.9rem;
+      border-radius: 30px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .orbe-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--c-or-rose);
+      display: inline-block;
+    }
+
+    /* ANIMATIONS D'APPARITION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE DESKTOP (>= 768px et >= 1024px) */
+    @media (min-width: 768px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .nav-desktop {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .grid-esprit {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 5rem;
+      }
+
+      .infos-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+      }
+    }
+
+    /* ACCESSIBILITÉ : REDUCED MOTION */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <!-- JSON-LD LOCAL BUSINESS SANS INVENTION -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "Sadia Fleurs",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "26 Allées de Tourny",
+      "addressLocality": "Bordeaux",
+      "postalCode": "33000",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33685559299",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "19:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "12:30"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- EN-TÊTE -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="#accueil" class="brand" aria-label="Sadia Fleurs - Accueil">
+        <!-- Monogramme SVG exclusif -->
+        <svg class="brand-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" stroke="#17241E" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <path d="M20 7 C15.5 13.5 12 18.5 12 23.5 C12 27.5 15.5 30 20 30 C24.5 30 28 27.5 28 23.5 C28 18.5 24.5 13.5 20 7 Z" stroke="#BE8E77" stroke-width="1.2" fill="none"/>
+          <path d="M20 12 L20 28" stroke="#17241E" stroke-width="1" stroke-linecap="round"/>
+          <path d="M16 19 C18 19.5 20 21.5 20 25" stroke="#17241E" stroke-width="0.9" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">Sadia Fleurs</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="#esprit">L'Esprit</a>
+        <a href="#savoir-faire">Créations</a>
+        <a href="#infos">Maison & Horaires</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+33685559299" class="btn-header-tel">Appeler l'Atelier</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- NAVIGATION MOBILE -->
+  <div class="nav-backdrop" id="navBackdrop"></div>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Navigation mobile">
+    <a href="#accueil" class="nav-mobile-link">Accueil</a>
+    <a href="#esprit" class="nav-mobile-link">L'Esprit</a>
+    <a href="#savoir-faire" class="nav-mobile-link">Créations</a>
+    <a href="#infos" class="nav-mobile-link">Maison & Horaires</a>
+    <a href="#contact" class="nav-mobile-link">Contact</a>
+    <div style="margin-top: auto; padding-top: 1rem;">
+      <a href="tel:+33685559299" class="btn-primaire" style="width: 100%; justify-content: center;">+33 6 85 55 92 99</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- BANDEAU D'ACCUEIL AVEC 3D THREE.JS -->
+    <section class="hero" id="accueil">
+      <div class="hero-canvas-wrap">
+        <canvas id="hero-canvas"></canvas>
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tagline">
+            <span class="line"></span>
+            <span>Bordeaux · Allées de Tourny</span>
+          </div>
+          <h1 class="hero-title">L'art floral pensé avec <em>sensibilité</em> & distinction.</h1>
+          <p class="hero-desc">
+            Aux Allées de Tourny, Sadia Fleurs sublime chaque végétal à travers des créations florales d'exception. Une approche artisanale guidée par le rythme des saisons et l'harmonie des matières.
+          </p>
+          <div class="hero-actions">
+            <a href="tel:+33685559299" class="btn-primaire">
+              <span>Nous joindre</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=26+All%C3%A9es+de+Tourny%2C+33000+Bordeaux" target="_blank" rel="noopener noreferrer" class="btn-secondaire">
+              Venir à la boutique
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION L'ESPRIT DE LA MAISON -->
+    <section class="section-esprit section-padding" id="esprit">
+      <div class="container">
+        <div class="grid-esprit">
+          <div class="esprit-texte reveal">
+            <span class="sur-titre">Maison Florale</span>
+            <h2 class="titre-section">Une signature botanique au cœur de Bordeaux</h2>
+            <p>
+              Installée au 26 Allées de Tourny, dans l'un des cadres les plus prestigieux de la ville, Sadia Fleurs cultive l'amour du travail bien fait et l'attention minutieuse portée aux détails.
+            </p>
+            <p>
+              Chaque composition est élaborée à partir d'une sélection soignée, où fleurs fraîches, textures végétales et feuillages délicats dialoguent avec naturel. Ici, l'art floral s'envisage comme une émotion vivante, adaptée à votre quotidien comme à vos événements marquants.
+            </p>
+            <blockquote class="citation-artisan">
+              « Travailler la fleur avec respect, révéler les nuances de chaque tige et offrir une création qui traverse l'instant avec grâce. »
+            </blockquote>
+          </div>
+
+          <div class="esprit-media reveal">
+            <div class="cadre-photo">
+              <!-- Photo 2 : Florist choosing flowers for a bouquet -->
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Florist_choosing_flowers_for_a_bouquet.jpg/1920px-Florist_choosing_flowers_for_a_bouquet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+                alt="Sélection et préparation minutieuse de fleurs en atelier" 
+                loading="lazy"
+                width="800" 
+                height="600"
+              >
+              <span class="mention-photo-flottante">Image d'illustration</span>
+            </div>
+
+            <!-- Emplacement élégant pour photo réelle -->
+            <div class="photo-placeholder" aria-label="Espace réservé">
+              <p class="photo-placeholder-title">Sadia Fleurs en images</p>
+              <p class="photo-placeholder-sub">Vos photos ici — L'Atelier des Allées de Tourny</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDEAU VISUEL INTERMÉDIAIRE -->
+    <section class="section-immersion" aria-label="Atmosphère végétale">
+      <!-- Photo 1 : Chrysanthemum 'Baltazar' -->
+      <img 
+        class="immersion-bg" 
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg/1920px-Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
+        alt="Détail floral d'exception" 
+        loading="lazy"
+      >
+      <div class="immersion-overlay"></div>
+      <div class="immersion-content reveal">
+        <span class="sur-titre" style="color: #e4cbb0;">Sens du Végétal</span>
+        <h3>L'exigence des variétés sélectionnées pour leur caractère et leur tenue.</h3>
+        <span class="immersion-mention">Image d'illustration</span>
+      </div>
+    </section>
+
+    <!-- SECTION OFFRE & CRÉATIONS -->
+    <section class="section-offre section-padding" id="savoir-faire">
+      <div class="container">
+        <div style="max-width: 640px;" class="reveal">
+          <span class="sur-titre">Savoir-Faire</span>
+          <h2 class="titre-section">L'artisanat floral sous toutes ses formes</h2>
+          <p style="color: var(--c-texte-muted); font-size: 1.05rem;">
+            Des compositions pensées selon vos envies, réalisées sur place par nos fleuristes créateurs.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card-metier reveal">
+            <span class="card-index">01</span>
+            <h3>Bouquets sur mesure</h3>
+            <p>
+              Assemblages personnalisés au gré des arrivages de saison. Des gerbes généreuses ou pièces épurées, confectionnées avec équilibre et élégance.
+            </p>
+          </article>
+
+          <article class="card-metier reveal">
+            <span class="card-index">02</span>
+            <h3>Créations d'Exception</h3>
+            <p>
+              Accompagnement floral pour réceptions privées, célébrations, hommages ou décoration d'intérieurs. Chaque décor fait l'objet d'un dialogue attentif.
+            </p>
+          </article>
+
+          <article class="card-metier reveal">
+            <span class="card-index">03</span>
+            <h3>Conseil & Sélection</h3>
+            <p>
+              Recommandations personnalisées sur l'entretien, l'association des textures et le choix des variétés adaptées à l'atmosphère de votre lieu de vie.
+            </p>
+          </article>
+        </div>
+
+        <!-- Deuxième emplacement réservé élégant -->
+        <div class="photo-placeholder reveal" style="max-width: 580px; margin: 3rem auto 0;" aria-label="Espace réservé">
+          <p class="photo-placeholder-title">Vos créations à l'honneur</p>
+          <p class="photo-placeholder-sub">Vos photos ici — Bouquets et vitrine de saison</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION INFOS PRATIQUES & CONTACT -->
+    <section class="section-infos section-padding" id="infos">
+      <div class="container">
+        <div class="infos-layout">
+          
+          <!-- Adresse & Horaires -->
+          <div class="reveal">
+            <span class="sur-titre">Informations pratiques</span>
+            <h2 class="titre-section">La Boutique</h2>
+
+            <div class="info-block">
+              <span class="info-label">Adresse</span>
+              <p class="info-adresse">26 Allées de Tourny<br>33000 Bordeaux</p>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=26+All%C3%A9es+de+Tourny%2C+33000+Bordeaux" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-primaire" 
+                style="padding: 0.75rem 1.6rem; font-size: 0.78rem;"
+              >
+                <span>Ouvrir l'itinéraire</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="info-block" style="margin-top: 2rem;">
+              <span class="info-label">Heures d'ouverture</span>
+              <ul class="horaires-list" aria-label="Horaires d'ouverture">
+                <li>
+                  <span class="jour">Lundi au Samedi</span>
+                  <span class="heures">10:00 — 19:30</span>
+                </li>
+                <li>
+                  <span class="jour">Dimanche</span>
+                  <span class="heures">10:00 — 12:30</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact direct -->
+          <div class="card-contact-highlight reveal" id="contact">
+            <div>
+              <span class="sur-titre" style="color: var(--c-or-dore);">Contact</span>
+              <h3>Commander ou échanger avec l'atelier</h3>
+              <p>
+                Pour réserver une composition, passer commande pour un événement ou vous assurer de la disponibilité d'une fleur, joignez directement l'équipe par téléphone.
+              </p>
+            </div>
+
+            <div>
+              <a href="tel:+33685559299" class="tel-link-large" aria-label="Appeler au +33 6 85 55 92 99">
+                +33 6 85 55 92 99
+              </a>
+              <div>
+                <a href="https://www.google.com/maps/search/?api=1&query=26+All%C3%A9es+de+Tourny%2C+33000+Bordeaux" target="_blank" rel="noopener noreferrer" class="btn-itineraire">
+                  <span>Voir le plan</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Sadia Fleurs</h4>
+          <p>Fleuriste créateur · 26 Allées de Tourny, 33000 Bordeaux</p>
+        </div>
+
+        <div class="credits-photos">
+          <p><strong>Crédits photographiques :</strong></p>
+          <p>Photo Chrysanthème : Andy Mabbett (CC BY-SA 4.0)</p>
+          <p>Photo Atelier fleuriste : direct2Florist (CC BY 2.0)</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; Sadia Fleurs. Tous droits réservés.</p>
+        <p>Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BADGE DISCRET ORBE -->
+  <aside class="orbe-badge" aria-hidden="true">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- JAVASCRIPT PRINCIPAL & THREE.JS -->
+  <script>
+    (function() {
+      'use strict';
+
+      // --- 1. GESTION DU MENU MOBILE ---
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const navBackdrop = document.getElementById('navBackdrop');
+      const navLinks = document.querySelectorAll('.nav-mobile-link');
+
+      function toggleMobileMenu(open) {
+        const isOpen = open !== undefined ? open : !mobileNav.classList.contains('active');
+        mobileNav.classList.toggle('active', isOpen);
+        navBackdrop.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      if (menuToggle && mobileNav && navBackdrop) {
+        menuToggle.addEventListener('click', function() {
+          toggleMobileMenu();
+        });
+
+        navBackdrop.addEventListener('click', function() {
+          toggleMobileMenu(false);
+        });
+
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            toggleMobileMenu(false);
+          });
+        });
+      }
+
+      // --- 2. INTERSECTION OBSERVER POUR APPARITIONS DOUCES ---
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(function(el) {
+          observer.observe(el);
+        });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function(el) {
+          el.classList.add('is-visible');
+        });
+      }
+
+      // --- 3. SCÈNE THREE.JS ABSTRAITE FLORALE SÉCURISÉE ---
+      window.addEventListener('load', function() {
+        if (prefersReducedMotion) return;
+
+        try {
+          if (!window.THREE) return;
+
+          const canvas = document.getElementById('hero-canvas');
+          if (!canvas) return;
+
+          const heroSection = document.getElementById('accueil');
+          const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: true,
+            powerPreference: 'high-performance'
+          });
+
+          const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          renderer.setPixelRatio(dpr);
+
+          let width = heroSection.clientWidth;
+          let height = heroSection.clientHeight;
+          renderer.setSize(width, height);
+
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+          camera.position.set(0, 0, 18);
+
+          // Éclairage doux & chaud
+          const ambientLight = new THREE.AmbientLight(0xfff5ea, 0.9);
+          scene.add(ambientLight);
+
+          const dirLight1 = new THREE.DirectionalLight(0xd9b292, 1.2);
+          dirLight1.position.set(12, 14, 10);
+          scene.add(dirLight1);
+
+          const dirLight2 = new THREE.DirectionalLight(0x4a7c63, 0.8);
+          dirLight2.position.set(-10, -10, -5);
+          scene.add(dirLight2);
+
+          // Groupe principal qui tourne lentement
+          const mainGroup = new THREE.Group();
+          scene.add(mainGroup);
+
+          // Courbe torique complexe évoquant des rubans et tiges enroulées
+          const ribbonGeo = new THREE.TorusKnotGeometry(4.8, 0.7, 120, 24, 2, 3);
+          const ribbonMat = new THREE.MeshStandardMaterial({
+            color: 0x3d5a49,
+            roughness: 0.45,
+            metalness: 0.15,
+            wireframe: false,
+            transparent: true,
+            opacity: 0.88
+          });
+          const ribbon = new THREE.Mesh(ribbonGeo, ribbonMat);
+          mainGroup.add(ribbon);
+
+          // Fil d'or enveloppant (tige stylisée)
+          const wireGeo = new THREE.TorusKnotGeometry(5.2, 0.15, 90, 16, 3, 4);
+          const wireMat = new THREE.MeshStandardMaterial({
+            color: 0xc49b78,
+            roughness: 0.3,
+            metalness: 0.6,
+            transparent: true,
+            opacity: 0.65
+          });
+          const wire = new THREE.Mesh(wireGeo, wireMat);
+          mainGroup.add(wire);
+
+          // Particules délicates en suspension (pollen / brume végétale)
+          const particlesCount = 90;
+          const particlesGeo = new THREE.BufferGeometry();
+          const posArray = new Float32Array(particlesCount * 3);
+
+          for (let i = 0; i < particlesCount * 3; i += 3) {
+            posArray[i] = (Math.random() - 0.5) * 24;
+            posArray[i + 1] = (Math.random() - 0.5) * 18;
+            posArray[i + 2] = (Math.random() - 0.5) * 14;
+          }
+
+          particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+          const particlesMat = new THREE.PointsMaterial({
+            size: 0.14,
+            color: 0xe2ba97,
+            transparent: true,
+            opacity: 0.65
+          });
+          const particleSystem = new THREE.Points(particlesGeo, particlesMat);
+          scene.add(particleSystem);
+
+          // Décalage du groupe vers la droite pour laisser le texte lisible à gauche
+          mainGroup.position.set(3.5, 0, 0);
+
+          let animationFrameId = null;
+          let isTabVisible = true;
+
+          function animate() {
+            if (!isTabVisible) return;
+
+            // Mouvements très lents et apaisants
+            ribbon.rotation.x += 0.0012;
+            ribbon.rotation.y += 0.0016;
+
+            wire.rotation.x -= 0.0008;
+            wire.rotation.y += 0.0014;
+
+            particleSystem.rotation.y += 0.0004;
+
+            renderer.render(scene, camera);
+            animationFrameId = requestAnimationFrame(animate);
+          }
+
+          animate();
+
+          // Gestion du redimensionnement
+          function onResize() {
+            if (!heroSection) return;
+            const newW = heroSection.clientWidth;
+            const newH = heroSection.clientHeight;
+            camera.aspect = newW / newH;
+            camera.updateProjectionMatrix();
+            renderer.setSize(newW, newH);
+
+            // Recentrage selon la taille d'écran
+            if (newW < 992) {
+              mainGroup.position.set(0, 0.5, -4);
+            } else {
+              mainGroup.position.set(3.5, 0, 0);
+            }
+          }
+          window.addEventListener('resize', onResize);
+          onResize();
+
+          // Pause automatique si l'onglet est masqué
+          document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+              isTabVisible = false;
+              if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            } else {
+              isTabVisible = true;
+              animate();
+            }
+          });
+
+        } catch (err) {
+          // En cas d'erreur ou d'absence de WebGL, le dégradé CSS élégant prend le relais
+          console.warn('Three.js fallback actif');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,81 +1,78 @@
-07:02:09     carte : HTTP Error 502: Bad Gateway (nouvel essai)
-07:02:24     carte : HTTP Error 502: Bad Gateway (nouvel essai)
-07:03:17 Carte : restaurants indépendants de qualité (Gironde + Charente) — 369 trouvés, 349 sans site et joignables
-07:03:17     modèles groq : whisper-large-v3, meta-llama/llama-prompt-guard-2-86m, whisper-large-v3-turbo, canopylabs/orpheus-arabic-saudi, meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-v1-english, allam-2-7b, openai/gpt-oss-safeguard-20b, openai/gpt-oss-20b, qwen/qwen3.8-27b, openai/gpt-oss-120b
-07:03:28   43 retenus comme haut de gamme
-07:03:29     carte : HTTP Error 502: Bad Gateway (nouvel essai)
-07:05:23 Carte : artisans d'art (Gironde + Charente) — 28 trouvés, 23 sans site et joignables
-07:05:31   13 retenus comme haut de gamme
-07:05:31     carte : HTTP Error 502: Bad Gateway (nouvel essai)
-07:06:28     carte : HTTP Error 502: Bad Gateway (nouvel essai)
-07:07:20 Carte : traiteurs et photographes (Gironde + Charente) — 10 trouvés, 8 sans site et joignables
-07:07:28   5 retenus comme haut de gamme
-07:07:28 61 candidats
-07:07:28 Commerce : Le Bélvèdere
-07:07:33     0 photos d'illustration trouvées
-07:07:33   fabrication du site…
-07:07:34     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
-07:07:34     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:08:53   prêt : https://oscarcousin-max.github.io/orbe-usine/le-belvedere/
-07:08:53 Commerce : Ginette Laven L'Artisane
-07:08:54     1 photos d'illustration trouvées
-07:08:54   fabrication du site…
-07:08:54     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:10:20   prêt : https://oscarcousin-max.github.io/orbe-usine/ginette-laven-l-artisane/
-07:10:20 Commerce : Papilles nomades
-07:10:21     1 photos d'illustration trouvées
-07:10:21   fabrication du site…
-07:10:21     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:10:22     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-07:15:22     gemini/gemini-3.7-flash : The read operation timed out
-07:15:38     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
-07:16:55   prêt : https://oscarcousin-max.github.io/orbe-usine/papilles-nomades/
-07:16:55 Commerce : Le Cochon Volant
-07:16:55   fabrication du site…
-07:16:55     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:19:14   prêt : https://oscarcousin-max.github.io/orbe-usine/le-cochon-volant/
-07:19:14 Commerce : Le Cabouin Bleu
-07:19:14   fabrication du site…
-07:19:14     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:20:33   prêt : https://oscarcousin-max.github.io/orbe-usine/le-cabouin-bleu/
-07:20:33 Commerce : Lou Vincent
-07:20:33   fabrication du site…
-07:20:34     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:22:04   prêt : https://oscarcousin-max.github.io/orbe-usine/lou-vincent/
-07:22:04 Commerce : L'EntrePôte
-07:22:04   fabrication du site…
-07:22:04     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:23:50   prêt : https://oscarcousin-max.github.io/orbe-usine/l-entrepote/
-07:23:50 Commerce : Annie Robin
-07:23:50   fabrication du site…
-07:23:50     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:25:22   prêt : https://oscarcousin-max.github.io/orbe-usine/annie-robin/
-07:25:22 Commerce : Photo KC
-07:25:22   fabrication du site…
-07:25:22     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:27:14   prêt : https://oscarcousin-max.github.io/orbe-usine/photo-kc/
-07:27:14 Commerce : Madonnina à la Plage
-07:27:14   fabrication du site…
-07:27:14     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:29:09   prêt : https://oscarcousin-max.github.io/orbe-usine/madonnina-a-la-plage/
-07:29:09 Commerce : Ébéniste & associés
-07:29:09   fabrication du site…
-07:29:10     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:30:54   prêt : https://oscarcousin-max.github.io/orbe-usine/ebeniste-associes/
-07:30:54 Commerce : Le soleil vert
-07:30:54   fabrication du site…
-07:30:54     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:32:24   prêt : https://oscarcousin-max.github.io/orbe-usine/le-soleil-vert/
-07:32:24 Commerce : A Noste
-07:32:24   fabrication du site…
-07:32:24     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:33:57   prêt : https://oscarcousin-max.github.io/orbe-usine/a-noste/
-07:33:57 Commerce : B L'Atelier
-07:33:57   fabrication du site…
-07:33:57     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:35:32   prêt : https://oscarcousin-max.github.io/orbe-usine/b-l-atelier/
-07:35:32 Commerce : Du pré à la fourchette
-07:35:32   fabrication du site…
-07:35:32     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
-07:37:13   prêt : https://oscarcousin-max.github.io/orbe-usine/du-pre-a-la-fourchette/
-07:37:13 Terminé : 15 site(s) prêt(s).
+07:53:23     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+07:55:58 Carte : fleuristes créateurs (Gironde + Vienne) — 36 trouvés, 33 sans site et joignables
+07:55:58     modèles groq : canopylabs/orpheus-arabic-saudi, whisper-large-v3, openai/gpt-oss-safeguard-20b, whisper-large-v3-turbo, qwen/qwen3.8-27b, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-120b, openai/gpt-oss-20b, allam-2-7b, meta-llama/llama-prompt-guard-2-86m
+07:56:06   21 retenus comme haut de gamme
+07:57:04     carte : HTTP Error 504: Gateway Timeout (nouvel essai)
+07:58:54 Carte : bijoutiers, joailliers, horlogers (Gironde + Vienne) — 20 trouvés, 19 sans site et joignables
+07:59:02   11 retenus comme haut de gamme
+08:01:33 Carte : domaines viticoles et châteaux familiaux (Gironde + Vienne) — 25 trouvés, 19 sans site et joignables
+08:01:41   19 retenus comme haut de gamme
+08:01:41 51 candidats
+08:01:41 Commerce : Le Germini
+08:01:42     2 photos d'illustration trouvées
+08:01:42   fabrication du site…
+08:01:43     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
+08:01:43     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:03:16   prêt : https://oscarcousin-max.github.io/orbe-usine/le-germini/
+08:03:16 Commerce : Hélène Boudat
+08:03:16     0 photos d'illustration trouvées
+08:03:16   fabrication du site…
+08:03:17     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:03:17     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
+08:05:20   prêt : https://oscarcousin-max.github.io/orbe-usine/helene-boudat/
+08:05:20 Commerce : Château Gaillard
+08:05:21     1 photos d'illustration trouvées
+08:05:21   fabrication du site…
+08:05:21     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:07:07   prêt : https://oscarcousin-max.github.io/orbe-usine/chateau-gaillard/
+08:07:07 Commerce : Jour J
+08:07:07   fabrication du site…
+08:07:07     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:09:06   prêt : https://oscarcousin-max.github.io/orbe-usine/jour-j/
+08:09:06 Commerce : L'Etabli Bijouterie Geoffrey Roqueflot
+08:09:06   fabrication du site…
+08:09:06     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:10:46   prêt : https://oscarcousin-max.github.io/orbe-usine/l-etabli-bijouterie-geoffrey-roqueflot/
+08:10:46 Commerce : Domaine de la Neuraye
+08:10:46   fabrication du site…
+08:10:46     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:12:15   prêt : https://oscarcousin-max.github.io/orbe-usine/domaine-de-la-neuraye/
+08:12:15 Commerce : F'Laure Ever
+08:12:15   fabrication du site…
+08:12:16     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:14:26   prêt : https://oscarcousin-max.github.io/orbe-usine/f-laure-ever/
+08:14:26 Commerce : Sabrina Lagüe Barrière
+08:14:26   fabrication du site…
+08:14:26     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:14:26     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
+08:16:18   prêt : https://oscarcousin-max.github.io/orbe-usine/sabrina-lague-barriere/
+08:16:18 Commerce : Vignoble Château d'Éternes
+08:16:18   fabrication du site…
+08:16:18     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:18:02   prêt : https://oscarcousin-max.github.io/orbe-usine/vignoble-chateau-d-eternes/
+08:18:02 Commerce : Sadia Fleurs
+08:18:02   fabrication du site…
+08:18:02     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:19:55   prêt : https://oscarcousin-max.github.io/orbe-usine/sadia-fleurs/
+08:19:55 Commerce : Bijouterie Lescat
+08:19:55   fabrication du site…
+08:19:55     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:21:58   prêt : https://oscarcousin-max.github.io/orbe-usine/bijouterie-lescat/
+08:21:58 Commerce : Domaine Johann Spelty
+08:21:58   fabrication du site…
+08:21:58     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:21:58     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later
+08:23:51   prêt : https://oscarcousin-max.github.io/orbe-usine/domaine-johann-spelty/
+08:23:51 Commerce : Mademoiselles Pivoines
+08:23:51   fabrication du site…
+08:23:51     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:25:40   prêt : https://oscarcousin-max.github.io/orbe-usine/mademoiselles-pivoines/
+08:25:40 Commerce : Laudate
+08:25:40   fabrication du site…
+08:25:40     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:27:43   prêt : https://oscarcousin-max.github.io/orbe-usine/laudate/
+08:27:43 Commerce : Domaine Philippe Alliet
+08:27:43   fabrication du site…
+08:27:44     gemini/gemini-2.5-pro : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemi
+08:29:49   prêt : https://oscarcousin-max.github.io/orbe-usine/domaine-philippe-alliet/
+08:29:49 Terminé : 15 site(s) prêt(s).

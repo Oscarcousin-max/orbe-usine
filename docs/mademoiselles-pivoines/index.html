@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Mademoiselles Pivoines · Fleuristes Créateurs à Poitiers</title>
+  <meta name="description" content="Maison florale et atelier végétal à Poitiers. Compositions de fleurs de saison, créations botaniques et arrangements soignés sur mesure par Mademoiselles Pivoines.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mademoiselles Pivoines · Fleuristes Créateurs à Poitiers">
+  <meta property="og:description" content="Atelier floral contemporain, compositions de saison et scénographies végétales à Poitiers.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Favicon SVG en Data URI -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f2421' rx='6'/%3E%3Cpath d='M16 7c2.8 0 5 2.2 5 5 0 3.3-3.6 7-5 8.2-1.4-1.2-5-4.9-5-8.2 0-2.8 2.2-5 5-5z' fill='none' stroke='%23d9b48f' stroke-width='1.5' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='12' r='2' fill='%23d9b48f'/%3E%3Cpath d='M16 20.2v5.8' stroke='%23d9b48f' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js (deferred) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "Mademoiselles Pivoines",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "407 Avenue de Nantes",
+      "addressLocality": "Poitiers",
+      "postalCode": "86000",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33619139526",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:30",
+        "closes": "12:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "14:30",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:30",
+        "closes": "12:30"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-main: #141815;
+      --bg-surface: #1b201d;
+      --bg-card: #222924;
+      --text-main: #f3efe9;
+      --text-muted: #9fa79f;
+      --accent: #d9b48f;
+      --accent-soft: rgba(217, 180, 143, 0.15);
+      --border-subtle: rgba(217, 180, 143, 0.22);
+      --border-light: rgba(255, 255, 255, 0.08);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-width: 320px;
+      position: relative;
+    }
+
+    /* Grain de texture overlay discret */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 99;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Accessibilité clavier */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Typographie */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(20, 24, 21, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--accent);
+      fill: none;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.06em;
+      color: var(--text-main);
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .nav-desktop {
+      display: none;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .nav-desktop a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      transition: color 0.25s ease;
+    }
+
+    .nav-desktop a:hover {
+      color: var(--accent);
+    }
+
+    .nav-btn {
+      padding: 0.6rem 1.25rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background: var(--accent);
+      color: var(--bg-main);
+      border-color: var(--accent);
+    }
+
+    .burger-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 38px;
+      height: 38px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 110;
+    }
+
+    .burger-btn span {
+      display: block;
+      height: 1.5px;
+      width: 100%;
+      background: var(--text-main);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .burger-btn.active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .burger-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burger-btn.active span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--bg-surface);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.45s var(--transition-smooth);
+      z-index: 105;
+      padding: 2rem;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-menu a {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--accent);
+    }
+
+    /* Bandeau d'accueil Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 40%, #252e28 0%, #171d19 55%, var(--bg-main) 100%);
+      padding: 7rem 1.5rem 4rem;
+    }
+
+    #three-hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-veil {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(20, 24, 21, 0.4) 0%, rgba(20, 24, 21, 0.85) 80%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-monogram {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.75rem;
+      stroke: var(--accent);
+      fill: none;
+      animation: gentle-pulse 6s infinite ease-in-out;
+    }
+
+    @keyframes gentle-pulse {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.04); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .hero h1 span.italic {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--accent);
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.95rem 2rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-main);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: #e6c5a3;
+      box-shadow: 0 0 25px rgba(217, 180, 143, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-main);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* Layout & Sections */
+    section {
+      padding: 6.5rem 1.5rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--border-light) 50%, transparent 100%);
+      margin: 0;
+    }
+
+    /* Section L'Esprit */
+    .section-esprit {
+      background-color: var(--bg-surface);
+    }
+
+    .grid-esprit {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .esprit-text h2 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 1.75rem;
+    }
+
+    .esprit-text p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .esprit-signature {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--accent);
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      display: block;
+    }
+
+    .esprit-media {
+      position: relative;
+    }
+
+    .image-frame {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: brightness(0.85) contrast(1.05) saturate(0.9);
+      transition: transform 0.8s ease;
+    }
+
+    .image-frame:hover img {
+      transform: scale(1.03);
+    }
+
+    .caption-tag {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(20, 24, 21, 0.8);
+      backdrop-filter: blur(8px);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      color: var(--text-muted);
+      border: 1px solid var(--border-light);
+    }
+
+    /* Section Créations / Savoir-Faire */
+    .section-creations {
+      background-color: var(--bg-main);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4.5rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      padding: 2.75rem 2.25rem;
+      border-radius: 4px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      border-color: var(--border-subtle);
+      transform: translateY(-4px);
+    }
+
+    .card-num {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      font-style: italic;
+    }
+
+    .card h3 {
+      font-size: 1.65rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .card-corner {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      opacity: 0.25;
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent);
+    }
+
+    /* Vitrine visuelle & Slot commerçant */
+    .section-gallery {
+      background-color: var(--bg-surface);
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .photo-slot-client {
+      border: 1px dashed var(--border-subtle);
+      background: rgba(217, 180, 143, 0.02);
+      border-radius: 4px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .photo-slot-client svg {
+      width: 48px;
+      height: 48px;
+      stroke: var(--accent);
+      opacity: 0.6;
+      margin-bottom: 1.25rem;
+      fill: none;
+    }
+
+    .photo-slot-client span {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .photo-slot-client p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 320px;
+      font-weight: 300;
+    }
+
+    /* Section Infos Pratiques */
+    .section-infos {
+      background-color: var(--bg-main);
+    }
+
+    .infos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 2.5rem;
+    }
+
+    .infos-col h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+
+    .horaires-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .horaires-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.95rem;
+    }
+
+    .horaires-list li:last-child {
+      border-bottom: none;
+    }
+
+    .day {
+      color: var(--text-main);
+      font-weight: 400;
+    }
+
+    .hours {
+      color: var(--accent);
+      text-align: right;
+    }
+
+    .address-box {
+      margin-top: 1.25rem;
+    }
+
+    .address-line {
+      font-size: 1.15rem;
+      font-family: var(--font-serif);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .phone-highlight {
+      font-size: 1.35rem;
+      font-family: var(--font-serif);
+      letter-spacing: 0.05em;
+      color: var(--text-main);
+      display: inline-block;
+      margin: 0.8rem 0 1.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .phone-highlight:hover {
+      color: var(--accent);
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #0f1210;
+      border-top: 1px solid var(--border-light);
+      padding: 4rem 1.5rem 6rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 2rem;
+    }
+
+    .credits-list {
+      font-size: 0.75rem;
+      color: #727a72;
+      line-height: 1.6;
+    }
+
+    .agency-mention {
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* Badge fixe maquette ORBE */
+    .orbe-badge {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background: rgba(15, 18, 16, 0.92);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      pointer-events: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .orbe-badge:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Animations d'apparition */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Media queries Desktop */
+    @media (min-width: 768px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .infos-grid {
+        grid-template-columns: 1fr 1fr;
+        padding: 3.5rem;
+      }
+      .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .grid-esprit {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 5rem;
+      }
+      .nav-desktop {
+        display: flex;
+      }
+      .burger-btn {
+        display: none;
+      }
+    }
+
+    /* Prefers reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête fixe -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="brand" aria-label="Mademoiselles Pivoines - Accueil">
+        <svg class="brand-svg" viewBox="0 0 32 32" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="16" cy="16" r="14" stroke-width="1.2" stroke-dasharray="2 3"/>
+          <path d="M16 8c2.2 0 4 1.8 4 4 0 3-4 6.5-4 6.5s-4-3.5-4-6.5c0-2.2 1.8-4 4-4z" stroke-width="1.3"/>
+          <path d="M16 18.5v5.5M13.5 21.5c1.5.5 3.5.5 5-1" stroke-width="1.2"/>
+        </svg>
+        <span class="brand-name">Mademoiselles Pivoines</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="#esprit">L'Esprit</a>
+        <a href="#creations">Créations</a>
+        <a href="#galerie">Vitrine</a>
+        <a href="#informations">Horaires &amp; Lieu</a>
+        <a href="tel:+33619139526" class="nav-btn">06 19 13 95 26</a>
+      </nav>
+
+      <button class="burger-btn" id="burgerToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu Mobile repliable -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#esprit" class="mobile-link">L'Esprit</a>
+    <a href="#creations" class="mobile-link">Créations</a>
+    <a href="#galerie" class="mobile-link">Vitrine</a>
+    <a href="#informations" class="mobile-link">Horaires &amp; Lieu</a>
+    <a href="tel:+33619139526" class="btn btn-primary" style="margin-top: 1rem;">Nous appeler</a>
+  </div>
+
+  <main>
+    <!-- Bandeau 3D Hero -->
+    <section class="hero">
+      <canvas id="three-hero-canvas"></canvas>
+      <div class="hero-veil"></div>
+
+      <div class="hero-content">
+        <!-- Monogramme SVG exclusif -->
+        <svg class="hero-monogram" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+          <path d="M24 10 C30 10 34 15 34 20 C34 27 24 34 24 34 C24 34 14 27 14 20 C14 15 18 10 24 10 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M24 20 C24 17 26 15 28 15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="24" cy="20" r="2.5" fill="currentColor"/>
+          <path d="M24 34 L24 40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+
+        <span class="eyebrow">Fleuristes Créateurs · Poitiers</span>
+        <h1>L'art du végétal &amp; <br><span class="italic">compositions singulières</span></h1>
+        <p class="hero-lead">À Poitiers, Mademoiselles Pivoines façonne chaque tige avec minutie. Une signature florale délicate qui sublime le rythme de la nature et accompagne chaque moment précieux.</p>
+        
+        <div class="hero-actions">
+          <a href="tel:+33619139526" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Prendre contact
+          </a>
+          <a href="#informations" class="btn btn-secondary">Venir à l'atelier</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Section L'Esprit -->
+    <section id="esprit" class="section-esprit">
+      <div class="container">
+        <div class="grid-esprit">
+          <div class="esprit-text reveal">
+            <span class="eyebrow">Maison de Fleurs</span>
+            <h2>Une sensibilité guidée par les saisons</h2>
+            <p>Dans notre boutique de l’Avenue de Nantes, le geste floral s’exprime avec patience et nuance. Chaque création est pensée comme une pièce d'harmonie où se marient textures aériennes, nuances chromatiques douces et feuillages choisis.</p>
+            <p>Notre atelier vous accueille tout au long de la semaine pour vous conseiller et composer des bouquets sur mesure qui racontent une histoire vraie et respectueuse des floraisons.</p>
+            <span class="esprit-signature">Mademoiselles Pivoines</span>
+          </div>
+          <div class="esprit-media reveal">
+            <div class="image-frame">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Florist_choosing_flowers_for_a_bouquet.jpg/1920px-Florist_choosing_flowers_for_a_bouquet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Sélection de fleurs délicates pour une composition florale" loading="lazy">
+              <span class="caption-tag">Image d'illustration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Section L'Offre / Créations -->
+    <section id="creations" class="section-creations">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Notre Savoir-Faire</span>
+          <h2>L'expression florale sous toutes ses formes</h2>
+        </div>
+
+        <div class="cards-grid">
+          <div class="card reveal">
+            <svg class="card-corner" viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="card-num">01</span>
+            <h3>Bouquets sur mesure</h3>
+            <p>Assemblages personnalisés au gré des arrivages, privilégiant la légèreté des formes et l'élégance naturelle des tiges fraîches.</p>
+          </div>
+
+          <div class="card reveal">
+            <svg class="card-corner" viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="card-num">02</span>
+            <h3>Événements &amp; Émotions</h3>
+            <p>Scénographies végétales et créations florales pensées pour sublimer vos réceptions, hommages ou moments de célébration intimes.</p>
+          </div>
+
+          <div class="card reveal">
+            <svg class="card-corner" viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="card-num">03</span>
+            <h3>Plantes &amp; Botanique</h3>
+            <p>Sélection de variétés ornementales et conseils avisés pour inviter la quiétude du vivant au cœur de vos intérieurs poitevins.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vitrine et emplacement commerçant -->
+    <section id="galerie" class="section-gallery">
+      <div class="container">
+        <div class="gallery-grid">
+          <!-- Illustration fournie -->
+          <div class="image-frame reveal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg/1920px-Chrysanthemum_%27Baltazar%27_-_2024-08-28_-_Andy_Mabbett.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="Détail botanique d'une fleur épanouie" loading="lazy">
+            <span class="caption-tag">Image d'illustration</span>
+          </div>
+
+          <!-- Emplacement réservé pour le commerçant -->
+          <div class="photo-slot-client reveal">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Vos photos ici</span>
+            <p>Cet espace est prêt à accueillir les photographies exclusives de vos créations et de votre atelier à Poitiers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Informations Pratiques & Horaires -->
+    <section id="informations" class="section-infos">
+      <div class="container">
+        <div class="infos-grid reveal">
+          <div class="infos-col">
+            <span class="eyebrow">Venir à la boutique</span>
+            <h3>L'Atelier Poitevin</h3>
+            
+            <div class="address-box">
+              <p class="address-line">
+                Mademoiselles Pivoines<br>
+                407 Avenue de Nantes<br>
+                86000 Poitiers
+              </p>
+
+              <a href="https://www.google.com/maps/search/?api=1&query=407%20Avenue%20de%20Nantes%2C%2086000%20Poitiers" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                Itinéraire
+              </a>
+            </div>
+
+            <div style="margin-top: 2.5rem;">
+              <span class="eyebrow" style="margin-bottom: 0.25rem;">Nous joindre</span><br>
+              <a href="tel:+33619139526" class="phone-highlight">06 19 13 95 26</a>
+            </div>
+          </div>
+
+          <div class="infos-col">
+            <span class="eyebrow">Horaires d'ouverture</span>
+            <h3>Moments d'accueil</h3>
+
+            <ul class="horaires-list">
+              <li>
+                <span class="day">Lundi</span>
+                <span class="hours" style="color: var(--text-muted);">Fermé</span>
+              </li>
+              <li>
+                <span class="day">Mardi</span>
+                <span class="hours">09:30–12:30 &middot; 14:30–19:00</span>
+              </li>
+              <li>
+                <span class="day">Mercredi</span>
+                <span class="hours">09:30–12:30 &middot; 14:30–19:00</span>
+              </li>
+              <li>
+                <span class="day">Jeudi</span>
+                <span class="hours">09:30–12:30 &middot; 14:30–19:00</span>
+              </li>
+              <li>
+                <span class="day">Vendredi</span>
+                <span class="hours">09:30–12:30 &middot; 14:30–19:00</span>
+              </li>
+              <li>
+                <span class="day">Samedi</span>
+                <span class="hours">09:30–12:30 &middot; 14:30–19:00</span>
+              </li>
+              <li>
+                <span class="day">Dimanche</span>
+                <span class="hours">09:30–12:30</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Badge fixe ORBE -->
+  <aside class="orbe-badge">
+    Maquette proposée par ORBE
+  </aside>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--text-main); letter-spacing: 0.05em; text-transform: uppercase;">Mademoiselles Pivoines</span>
+          <p style="margin-top: 0.5rem; max-width: 400px; color: var(--text-muted);">Artisan fleuriste créateur à Poitiers. Compositions de fleurs fraîches, arrangements délicats et écoute attentive de vos projets.</p>
+        </div>
+        <div>
+          <p class="agency-mention">Proposition de site réalisée par ORBE, studio digital &middot; societe.orbe@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear"></span> Mademoiselles Pivoines &middot; 407 Avenue de Nantes, 86000 Poitiers
+        </div>
+        <div class="credits-list">
+          Crédits images : Andy Mabbett (CC BY-SA 4.0) &middot; direct2Florist (CC BY 2.0)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Navigation & Animation Three.js sobre -->
+  <script>
+    // Année dynamique
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Menu Mobile toggle
+    const burgerToggle = document.getElementById('burgerToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (burgerToggle && mobileMenu) {
+      const toggleMenu = () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        burgerToggle.classList.toggle('active', isOpen);
+        burgerToggle.setAttribute('aria-expanded', isOpen);
+        mobileMenu.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      };
+
+      burgerToggle.addEventListener('click', toggleMenu);
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (mobileMenu.classList.contains('open')) toggleMenu();
+        });
+      });
+    }
+
+    // IntersectionObserver pour apparitions douces
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      reveals.forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+
+    // Animation Three.js pour le bandeau d'accueil
+    window.addEventListener('load', () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      const canvas = document.getElementById('three-hero-canvas');
+      if (!canvas || !window.THREE) return;
+
+      try {
+        const scene = new THREE.Scene();
+        
+        const camera = new THREE.PerspectiveCamera(
+          50,
+          canvas.clientWidth / canvas.clientHeight,
+          0.1,
+          100
+        );
+        camera.position.z = 18;
+
+        const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "high-performance"
+        });
+
+        const pixelRatio = Math.min(window.devicePixelRatio, 2);
+        renderer.setPixelRatio(pixelRatio);
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+        // Lumières douces aux teintes dorées et naturelles
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
+        scene.add(ambientLight);
+
+        const pointLight1 = new THREE.PointLight(0xd9b48f, 1.2, 50);
+        pointLight1.position.set(12, 12, 10);
+        scene.add(pointLight1);
+
+        const pointLight2 = new THREE.PointLight(0x738b79, 0.9, 45);
+        pointLight2.position.set(-14, -8, 6);
+        scene.add(pointLight2);
+
+        // Géométrie abstraite : rubans torsadés & sphères flottantes inspirés de tiges végétales
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // Torus knot satiné évoquant un enroulement de ruban végétal
+        const knotGeo = new THREE.TorusKnotGeometry(4.8, 1.1, 120, 24, 2, 3);
+        const knotMat = new THREE.MeshStandardMaterial({
+          color: 0x3d4a40,
+          roughness: 0.35,
+          metalness: 0.2,
+          wireframe: false,
+          transparent: true,
+          opacity: 0.55
+        });
+        const knotMesh = new THREE.Mesh(knotGeo, knotMat);
+        group.add(knotMesh);
+
+        // Particules flottantes lentes (évoquant des pistils ou pétales suspendus)
+        const particlesCount = 28;
+        const particleGeo = new THREE.SphereGeometry(0.18, 16, 16);
+        const particleMat = new THREE.MeshStandardMaterial({
+          color: 0xd9b48f,
+          emissive: 0x6e5238,
+          roughness: 0.2,
+          metalness: 0.1,
+          transparent: true,
+          opacity: 0.7
+        });
+
+        const particles = [];
+        for (let i = 0; i < particlesCount; i++) {
+          const mesh = new THREE.Mesh(particleGeo, particleMat);
+          const theta = Math.random() * Math.PI * 2;
+          const radius = 5 + Math.random() * 8;
+          mesh.position.set(
+            Math.cos(theta) * radius,
+            (Math.random() - 0.5) * 12,
+            (Math.random() - 0.5) * 6
+          );
+          mesh.userData = {
+            speedY: 0.002 + Math.random() * 0.003,
+            rotSpeed: 0.005 + Math.random() * 0.005,
+            initialY: mesh.position.y
+          };
+          group.add(mesh);
+          particles.push(mesh);
+        }
+
+        let animationFrameId = null;
+        let isTabActive = true;
+
+        const animate = () => {
+          if (!isTabActive) return;
+
+          knotMesh.rotation.x += 0.0012;
+          knotMesh.rotation.y += 0.0018;
+
+          particles.forEach(p => {
+            p.position.y += Math.sin(Date.now() * p.userData.speedY) * 0.01;
+            p.rotation.y += p.userData.rotSpeed;
+          });
+
+          renderer.render(scene, camera);
+          animationFrameId = requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        // Gestion du redimensionnement de la fenêtre
+        const onResize = () => {
+          if (!canvas) return;
+          const width = canvas.clientWidth;
+          const height = canvas.clientHeight;
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+          renderer.setSize(width, height);
+        };
+
+        window.addEventListener('resize', onResize);
+
+        // Suspension de l'animation quand l'onglet n'est plus actif
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            isTabActive = false;
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+          } else {
+            isTabActive = true;
+            animate();
+          }
+        });
+
+      } catch (err) {
+        // En cas d'erreur ou d'absence de support WebGL, le dégradé CSS s'affiche en repli harmonieux
+        if (canvas) canvas.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
