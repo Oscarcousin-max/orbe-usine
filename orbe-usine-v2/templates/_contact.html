@@ -1,0 +1,14 @@
+<section class="sec" id="contact"><div class="wrap contact-grid">
+<div class="reveal"><span class="eyebrow">Contact</span>
+<h2 class="titre-sec">{{contact_titre}}</h2>
+<p class="lead">{{contact_texte}}</p>
+<ul class="coord">{{coord_items}}</ul>
+<a class="btn ligne" href="{{maps_url}}" target="_blank" rel="noopener">Itinéraire <span class="fl">→</span></a></div>
+<form class="demo reveal" style="--d:.12s" novalidate>
+<label>Votre nom<input type="text" name="nom" autocomplete="name"></label>
+<label>Votre email<input type="email" name="email" autocomplete="email"></label>
+<label>Votre demande<select name="objet">{{objets_options}}</select></label>
+<label>Votre message<textarea name="message"></textarea></label>
+<button class="btn" type="submit">Envoyer <span class="fl">→</span></button>
+<p class="retour" aria-live="polite"></p>
+</form></div></section>

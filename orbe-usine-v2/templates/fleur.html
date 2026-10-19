@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr" class="pas-js"><head>
+{{head}}
+<style>
+{{theme_css}}
+{{css_commun}}
+/* Fleuriste */
+.hero{min-height:100svh;display:grid;align-items:center;padding:clamp(110px,16vh,170px) 0 clamp(50px,8vh,90px);position:relative;overflow:hidden;background:var(--bg)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,80px);align-items:center}
+.hero h1{font-size:clamp(2.8rem,1rem + 6.6vw,7.4rem);letter-spacing:-.025em;line-height:.92;overflow-wrap:break-word;hyphens:auto}
+.hero h1 span{display:block;font-style:italic;color:var(--accent);font-size:.4em;letter-spacing:0;margin-top:.5em;line-height:1.1}
+.hero .sous{max-width:44ch;margin:1.6em 0 2.2em;color:var(--muted);font-size:clamp(1.05rem,.95rem + .5vw,1.3rem)}
+.fleur-art{position:relative;aspect-ratio:1;width:min(100%,640px);justify-self:center}
+.fleur-art .disque{position:absolute;inset:6%;border-radius:50%;background:var(--soft);animation:flotte 12s ease-in-out infinite}
+.fleur-art svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+@keyframes flotte{50%{transform:scale(1.04) translateY(-1.5%)}}
+.petale{fill:var(--accent);transform-origin:300px 300px;opacity:.9;mix-blend-mode:multiply}
+.p2{fill:var(--accent2)}.p3{fill:var(--soft2)}
+.corolle{animation:tourne 70s linear infinite;transform-origin:300px 300px}
+@keyframes tourne{to{transform:rotate(360deg)}}
+.tige{fill:none;stroke:var(--vert);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;animation:trace 3.2s .4s ease forwards}
+@keyframes trace{to{stroke-dashoffset:0}}
+.feuille{fill:none;stroke:var(--vert);stroke-width:1.6;stroke-dasharray:400;stroke-dashoffset:400;animation:trace 2.6s 1.2s ease forwards}
+.coeur{fill:var(--bg)}
+.esprit{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,7vw,110px);align-items:center}
+.esprit p{color:var(--muted);max-width:50ch}
+.bouquet-box{background:var(--bg2);border:1px solid var(--line);padding:clamp(22px,3.4vw,44px);border-radius:var(--r);display:grid;gap:22px}
+.bouquet-box h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
+.bq-vue{aspect-ratio:5/4;background:var(--bg);border-radius:var(--r);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
+.bq-vue svg{width:80%;height:auto;max-height:100%}
+.choix{display:grid;gap:10px}
+.choix .lib{font:500 .68rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.choix .ligne-b{display:flex;flex-wrap:wrap;gap:8px}
+.choix button{font:500 .85rem/1 var(--f-texte);padding:.8em 1.2em;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer;transition:all .3s}
+.choix button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.bq-res{font:italic 400 1.1rem/1.4 var(--f-titre);color:var(--accent);margin:0;min-height:2.8em}
+.arches{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px);margin-top:clamp(36px,6vw,72px)}
+.arche{text-align:center;padding:clamp(40px,6vw,76px) clamp(22px,3vw,40px) clamp(32px,4vw,52px);border:1px solid var(--line);border-radius:999px 999px var(--r) var(--r);background:var(--bg2);display:grid;gap:14px;justify-items:center;align-content:start;transition:transform .5s,background .5s}
+.arche:hover{transform:translateY(-10px);background:var(--soft)}
+.arche svg{width:54px;color:var(--accent)}
+.arche h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
+.arche p{color:var(--muted);margin:0;max-width:30ch}
+.sec-teinte{background:var(--soft)}
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,64px);margin-top:clamp(36px,6vw,72px);counter-reset:e}
+.etape{display:grid;gap:14px;position:relative;padding-top:78px}
+.etape::before{counter-increment:e;content:counter(e);position:absolute;top:0;left:0;width:58px;height:58px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:italic 400 1.5rem/1 var(--f-titre)}
+.etape::after{content:"";position:absolute;top:29px;left:70px;right:-20px;height:1px;background:var(--line)}
+.etape:last-child::after{display:none}
+.etape h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
+.etape p{margin:0;color:var(--muted)}
+.cite{text-align:center;padding-block:clamp(72px,11vw,150px)}
+.cite blockquote{margin:0 auto;max-width:22ch;font:italic 400 clamp(2rem,1.1rem + 3.6vw,4rem)/1.12 var(--f-titre);text-wrap:balance}
+.cite svg{width:64px;color:var(--accent);margin:0 auto 24px;display:block}
+@media(max-width:900px){
+ .hero .wrap,.esprit{grid-template-columns:1fr}.fleur-art{order:-1;width:min(86%,420px)}
+ .hero{padding-top:100px}.arches,.etapes{grid-template-columns:1fr}.etape::after{display:none}
+}
+</style></head>
+<body>
+{{entete}}
+<main id="contenu">
+<section class="hero" aria-label="Accueil"><div class="wrap">
+<div><span class="eyebrow reveal">{{hero_eyebrow}}</span>
+<h1 class="reveal" style="--d:.1s">{{nom_titre}}<span>{{accroche}}</span></h1>
+<p class="sous reveal" style="--d:.2s">{{sous_titre}}</p>
+<div class="reveal" style="--d:.3s;display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#bouquet">{{cta_hero}} <span class="fl">→</span></a><a class="btn ligne" href="#contact">{{cta}}</a></div></div>
+<div class="fleur-art" role="img" aria-label="Fleur illustrée"><div class="disque"></div>
+<svg viewBox="0 0 600 600" aria-hidden="true">
+<path class="tige" d="M300 330 C 300 420 280 490 300 590"/><path class="feuille" d="M296 470 C 230 450 200 400 210 360 C 260 372 292 420 296 470Z"/><path class="feuille" d="M300 520 C 366 506 400 462 394 424 C 346 432 306 470 300 520Z"/>
+<g class="corolle" data-parallax=".04">
+<g class="petale p3" opacity=".8"><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(0 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(60 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(120 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(180 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(240 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(300 300 300)"/></g>
+<g class="petale p2"><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(30 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(90 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(150 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(210 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(270 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(330 300 300)"/></g>
+<g class="petale"><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(0 300 300)"/><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(72 300 300)"/><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(144 300 300)"/><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(216 300 300)"/><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(288 300 300)"/></g>
+<circle class="coeur" cx="300" cy="300" r="22"/><circle cx="300" cy="300" r="9" style="fill:var(--accent)"/></g>
+</svg></div>
+</div></section>
+
+<div class="marquee" aria-hidden="true"><div><span>Bouquets</span><b>✿</b><span>Mariages</span><b>✿</b><span>Plantes</span><b>✿</b><span>Ateliers</span><b>✿</b><span>Événements</span><b>✿</b><span>Bouquets</span><b>✿</b><span>Mariages</span><b>✿</b><span>Plantes</span><b>✿</b><span>Ateliers</span><b>✿</b><span>Événements</span><b>✿</b></div></div>
+
+<section class="sec" id="esprit"><div class="wrap esprit">
+<div class="reveal"><span class="eyebrow">L’esprit de l’atelier</span><h2 class="titre-sec">{{esprit_titre}}</h2><p>{{esprit_1}}</p><p>{{esprit_2}}</p></div>
+<div class="bouquet-box reveal" id="bouquet" style="--d:.15s">
+<h3>Imaginez votre bouquet</h3>
+<div class="bq-vue"><svg id="bqsvg" viewBox="0 0 300 240" aria-hidden="true"></svg></div>
+<div class="choix"><span class="lib">Pour quelle occasion ?</span><div class="ligne-b" data-g="occ"><button type="button" aria-pressed="true" data-v="0">Un cadeau</button><button type="button" aria-pressed="false" data-v="1">Une fête</button><button type="button" aria-pressed="false" data-v="2">Un mariage</button><button type="button" aria-pressed="false" data-v="3">Un hommage</button></div></div>
+<div class="choix"><span class="lib">Quelle palette ?</span><div class="ligne-b" data-g="pal"><button type="button" aria-pressed="true" data-v="0">Poudrée</button><button type="button" aria-pressed="false" data-v="1">Vive</button><button type="button" aria-pressed="false" data-v="2">Blanche et verte</button></div></div>
+<div class="choix"><span class="lib">Quelle taille ?</span><div class="ligne-b" data-g="tai"><button type="button" aria-pressed="false" data-v="0">Petit</button><button type="button" aria-pressed="true" data-v="1">Moyen</button><button type="button" aria-pressed="false" data-v="2">Généreux</button></div></div>
+<p class="bq-res" id="bqres" aria-live="polite"></p>
+</div></div></section>
+
+<section class="sec sec-teinte" id="offre"><div class="wrap">
+<div class="reveal"><span class="eyebrow">À l’atelier</span><h2 class="titre-sec">{{offre_titre}}</h2></div>
+<div class="arches">
+<article class="arche reveal"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M24 44V22M24 30c-8-1-12-6-12-13 8 0 12 5 12 13ZM24 26c6-1 10-5 10-11-7 0-10 4-10 11Z"/></svg><h3>{{o1_t}}</h3><p>{{o1_d}}</p></article>
+<article class="arche reveal" style="--d:.1s"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="24" cy="20" r="6"/><path d="M24 14c-6-8-14-2-12 4M24 14c6-8 14-2 12 4M18 22c-8 2-6 10 0 8M30 22c8 2 6 10 0 8M24 26v18"/></svg><h3>{{o2_t}}</h3><p>{{o2_d}}</p></article>
+<article class="arche reveal" style="--d:.2s"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M14 40h20l-2-14H16Z"/><path d="M24 26V14M24 20c-6-1-9-5-9-10 6 0 9 4 9 10ZM24 17c5-1 8-4 8-9-5 0-8 3-8 9Z"/></svg><h3>{{o3_t}}</h3><p>{{o3_d}}</p></article>
+</div></div></section>
+
+<section class="sec" id="atelier"><div class="wrap">
+<div class="reveal"><span class="eyebrow">Comment ça se passe</span><h2 class="titre-sec">{{exp_titre}}</h2></div>
+<div class="etapes">
+<div class="etape reveal"><h3>{{e1_t}}</h3><p>{{e1_d}}</p></div>
+<div class="etape reveal" style="--d:.1s"><h3>{{e2_t}}</h3><p>{{e2_d}}</p></div>
+<div class="etape reveal" style="--d:.2s"><h3>{{e3_t}}</h3><p>{{e3_d}}</p></div>
+</div></div></section>
+
+<section class="cite sec-teinte"><div class="wrap reveal"><svg viewBox="0 0 64 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 10h22M40 10h22"/><circle cx="32" cy="10" r="4"/><path d="M32 6V2M32 14v4M28 10h-4M36 10h4"/></svg><blockquote>{{citation}}</blockquote></div></section>
+
+{{contact}}
+</main>
+{{pied}}
+<script>
+{{js_commun}}
+(function(){
+var C=[["#e9b8c0","#f2d3d6","#c97d8c","#fbeaec"],["#e5483f","#f2a03d","#d6336c","#ffd166"],["#ffffff","#e8efe6","#9fb89a","#f4f7f1"]];
+var N=[["pour dire merci ou faire plaisir","pour une belle fête","pour la plus belle des journées","pour accompagner avec délicatesse"],["Un bouquet léger, tout en douceur","Un bouquet généreux et joyeux","Un bouquet élégant, très composé","Un bouquet sobre et recueilli"]];
+var st={occ:0,pal:0,tai:1};
+function dessine(){var p=C[st.pal],n=[5,8,12][st.tai],s='';
+ var tiges='',fleurs='',feu='';
+ for(var i=0;i<n;i++){var t=(i/(n-1||1))-.5,x=150+t*150,y=70+Math.abs(t)*52+(i%2)*14,c=p[i%4],r=22+((i*7)%3)*6;
+  tiges+='<path d="M'+x+' '+y+' Q '+(150+t*40)+' 170 150 236" fill="none" stroke="#7a9a6d" stroke-width="2.4" stroke-linecap="round"/>';
+  fleurs+='<g transform="translate('+x+' '+y+')">'+[0,72,144,216,288].map(function(a){return '<ellipse cx="0" cy="-'+(r*.62)+'" rx="'+(r*.42)+'" ry="'+(r*.7)+'" fill="'+c+'" opacity=".92" transform="rotate('+a+')"/>'}).join('')+'<circle r="'+(r*.2)+'" fill="'+p[3]+'"/></g>';}
+ for(var j=0;j<3+st.tai*2;j++){var q=(j/(2+st.tai*2))-.5;feu+='<path d="M150 200 Q '+(150+q*180)+' 150 '+(150+q*250)+' 110 Q '+(150+q*120)+' 160 150 200Z" fill="#8fae83" opacity=".75"/>';}
+ s='<defs></defs>'+feu+tiges+fleurs+'<path d="M118 200 L182 200 L172 236 L128 236Z" fill="#b08968" opacity=".9"/><path d="M118 200 L182 200" stroke="#8a6a4d" stroke-width="3"/>';
+ document.getElementById('bqsvg').innerHTML=s;
+ document.getElementById('bqres').textContent=N[1][st.occ]+', '+N[0][st.occ]+'. À titre d’illustration : la composition réelle se décide avec la fleuriste, selon la saison.';}
+document.querySelectorAll('.ligne-b').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});st[g.dataset.g]=+b.dataset.v;dessine()})});
+dessine();})();
+</script>
+</body></html>
