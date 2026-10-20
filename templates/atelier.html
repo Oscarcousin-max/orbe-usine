@@ -54,7 +54,7 @@
 <body>
 {{entete}}
 <main id="contenu">
-<section class="hero" aria-label="Accueil">
+<section class="hero" aria-label="Accueil">{{hero_fx}}
 <div class="formes" aria-hidden="true" data-parallax=".05"><svg viewBox="0 0 600 600"><circle class="s1 bouge" cx="380" cy="230" r="170"/><rect class="s2 bouge b" x="120" y="250" width="240" height="300" rx="120"/><path class="s3 bouge" d="M300 40 L560 460 L40 460Z" opacity=".85"/><circle class="s4" cx="300" cy="300" r="250"/><path class="s4" d="M50 300h500M300 50v500"/></svg></div>
 <div class="wrap">
 <span class="eyebrow reveal">{{hero_eyebrow}}</span>
@@ -86,16 +86,11 @@
 <div class="rang reveal"><span class="n">03</span><div><h3>{{o3_t}}</h3><p>{{o3_d}}</p></div></div>
 </div></div></section>
 
-<section class="sec" id="demarche"><div class="wrap">
-<div class="reveal"><span class="eyebrow">La démarche</span><h2 class="titre-sec">{{exp_titre}}</h2></div>
-<div class="proc">
-<div class="pas reveal"><span class="n">1</span><h3>{{e1_t}}</h3><p>{{e1_d}}</p></div>
-<div class="pas reveal" style="--d:.1s"><span class="n">2</span><h3>{{e2_t}}</h3><p>{{e2_d}}</p></div>
-<div class="pas reveal" style="--d:.2s"><span class="n">3</span><h3>{{e3_t}}</h3><p>{{e3_d}}</p></div>
-</div></div></section>
+{{tuiles}}
 
 <section class="cite"><div class="wrap reveal"><blockquote>{{citation}}</blockquote></div></section>
 
+{{bloc_cta}}
 {{contact}}
 </main>
 {{pied}}

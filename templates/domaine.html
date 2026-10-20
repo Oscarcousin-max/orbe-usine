@@ -71,7 +71,7 @@
 <body>
 {{entete}}
 <main id="contenu">
-<section class="hero" aria-label="Accueil">
+<section class="hero" aria-label="Accueil">{{hero_fx}}
 <div class="paysage" aria-hidden="true">
 <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
 <defs><linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--c-ciel1)"/><stop offset="1" style="stop-color:var(--c-ciel2)"/></linearGradient>
@@ -123,16 +123,11 @@
 <div class="panneau reveal" role="tabpanel" aria-live="polite"><div class="gros" id="sn">01</div><div><h3 id="st">La taille</h3><p id="sp">La vigne dort. C’est le temps de la taille : on choisit les sarments qui porteront les grappes de l’année.</p></div></div>
 </div></section>
 
-<section class="sec" id="visite"><div class="wrap">
-<div class="reveal"><span class="eyebrow">Visiter</span><h2 class="titre-sec">{{exp_titre}}</h2></div>
-<div class="exp-liste">
-<div class="exp reveal"><span class="n">01</span><h3>{{e1_t}}</h3><p>{{e1_d}}</p></div>
-<div class="exp reveal"><span class="n">02</span><h3>{{e2_t}}</h3><p>{{e2_d}}</p></div>
-<div class="exp reveal"><span class="n">03</span><h3>{{e3_t}}</h3><p>{{e3_d}}</p></div>
-</div></div></section>
+{{tuiles}}
 
 <section class="cite"><div class="wrap reveal"><svg class="ornement" viewBox="0 0 60 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 6h20M38 6h20"/><path d="M30 1l5 5-5 5-5-5Z"/></svg><blockquote>{{citation}}</blockquote></div></section>
 
+{{bloc_cta}}
 {{contact}}
 </main>
 {{pied}}

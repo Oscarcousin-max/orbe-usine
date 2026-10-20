@@ -1,12 +1,14 @@
 # Usine à sites ORBE
 
-Une nuit sur deux, vers 4 h, cette usine travaille toute seule et gratuitement :
+Chaque nuit, vers 0 h 15, cette usine travaille toute seule et gratuitement :
 
 1. elle lit la carte **OpenStreetMap** pour trouver, en Gironde et dans un département
    voisin différent à chaque passage, des commerces
    qui ont une adresse et un contact, mais **aucun site internet** ;
 2. elle demande à une IA lesquels ont l'air indépendants et haut de gamme ;
-3. elle fabrique un site sur mesure pour chacun et le met en ligne ;
+3. elle fabrique un site à partir de modèles dessinés à la main (dossier `templates/`), habillés du « kit premium » :
+   barre de menu en verre, grand bandeau animé, tuiles qui s'empilent au défilement, icônes 3D, appel à l'action, grand pied de page ;
+   l'IA n'écrit que les textes, qui sont contrôlés (aucun fait inventé) ;
 4. elle écrit le message à envoyer, avec le lien du site dedans.
 
 Vers 7 h, le robot du matin range tout dans l'onglet **Clients** du QG.
@@ -31,6 +33,7 @@ donc avec un lien de recherche Google, pour vérifier d'un coup d'œil.
 ## Lancer l'usine à la main
 
 Onglet **Actions** → « Usine à sites ORBE » → **Run workflow** → indique combien de sites.
+Toute modification des modèles (`templates/`, `rendu.py`, `usine.py`) relance aussi l'usine toute seule : 30 sites, et les sites des 4 derniers jours sont refaits avec les nouveaux modèles.
 
 ## Où sont les sites ?
 

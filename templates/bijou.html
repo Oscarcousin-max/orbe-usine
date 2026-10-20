@@ -69,7 +69,7 @@
 <body>
 {{entete}}
 <main id="contenu">
-<section class="hero" aria-label="Accueil"><div class="wrap">
+<section class="hero" aria-label="Accueil">{{hero_fx}}<div class="wrap">
 <div class="gemme-box reveal" data-parallax=".05"><div class="tour" aria-hidden="true"></div><div class="tour b" aria-hidden="true"></div>
 <svg viewBox="0 0 300 300" role="img" aria-label="Pierre précieuse illustrée">
 <polygon class="f1" points="80,110 150,60 220,110 150,120"/>
@@ -107,16 +107,11 @@
 <article class="o reveal" style="--d:.2s"><span class="n">III.</span><h3>{{o3_t}}</h3><p>{{o3_d}}</p></article>
 </div></div></section>
 
-<section class="sec" id="services" style="padding-top:0"><div class="wrap">
-<div class="reveal"><span class="eyebrow">Sur demande</span><h2 class="titre-sec">{{exp_titre}}</h2></div>
-<div class="liste">
-<a class="ligne-s reveal" href="#contact"><span class="n">01</span><h3>{{e1_t}}</h3><p>{{e1_d}}</p><span class="fl">→</span></a>
-<a class="ligne-s reveal" href="#contact"><span class="n">02</span><h3>{{e2_t}}</h3><p>{{e2_d}}</p><span class="fl">→</span></a>
-<a class="ligne-s reveal" href="#contact"><span class="n">03</span><h3>{{e3_t}}</h3><p>{{e3_d}}</p><span class="fl">→</span></a>
-</div></div></section>
+{{tuiles}}
 
 <section class="cite"><div class="wrap reveal"><blockquote>{{citation}}</blockquote></div></section>
 
+{{bloc_cta}}
 {{contact}}
 </main>
 {{pied}}

@@ -1,8 +1,9 @@
 """Usine à sites ORBE — tourne toute seule chaque nuit sur GitHub, avec des IA gratuites.
 
-1. Cherche des commerces haut de gamme sans site autour de Bordeaux (Gemini + recherche Google).
-2. Vérifie qu'ils n'ont vraiment pas de site, et relève un contact professionnel public.
-3. Fabrique un site sur mesure pour chacun (Gemini, puis OpenRouter ou Groq en relais).
+1. Lit la carte OpenStreetMap : commerces avec adresse et contact, mais sans site internet.
+2. Demande à une IA lesquels ont l'air indépendants et haut de gamme.
+3. Fabrique un site à partir d'un MODÈLE dessiné à la main (dossier templates/, voir rendu.py).
+   L'IA n'écrit plus que quelques phrases ; le code remplit le modèle. Rendu pro, sans « effet IA ».
 4. Écrit le message qu'Oscar enverra, avec le lien du site déjà dedans.
 5. Range tout dans docs/ : chaque site est en ligne sur GitHub Pages, la liste est dans docs/usine.json.
 
@@ -19,6 +20,8 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+
+import rendu
 
 ICI = Path(__file__).resolve().parent
 DOCS = ICI / "docs"
@@ -44,6 +47,7 @@ DEPOT = os.environ.get("GITHUB_REPOSITORY", "moi/orbe-usine")
 BASE_SITE = os.environ.get("USINE_BASE", "https://%s.github.io/%s/" % (DEPOT.split("/")[0].lower(), DEPOT.split("/")[-1]))
 
 # Chaque secteur : le nom lisible, puis le filtre OpenStreetMap qui va le chercher.
+# Les noms doivent rester identiques à ceux de rendu.SECTEURS (c'est eux qui choisissent le modèle de site).
 SECTEURS = [
     ("domaines viticoles et châteaux familiaux", '["craft"="winery"]'),
     ("caves à vin et bars à vin", '["shop"="wine"]'),
@@ -81,17 +85,6 @@ MIROIR_OSM = os.environ.get("USINE_MIROIR", "https://overpass.kumi.systems/api/i
 RANG_CANAL = {"Email": 0, "Instagram": 1, "SMS": 2, "Facebook": 3, "Téléphone": 4}
 # Overpass refuse les faux navigateurs : il veut qu'un outil se présente comme tel.
 UA_OSM = "OrbeUsine/1.0 (https://github.com/%s; societe.orbe@gmail.com)" % DEPOT
-
-CONSIGNE_SITE = """Tu es directeur artistique et développeur d'une très bonne agence web. Tu crées le site vitrine d'un commerce haut de gamme, pour une clientèle aisée. Il doit avoir l'air conçu sur mesure pour CE commerce, jamais générique.
-FORMAT : un seul fichier HTML autonome (tout le CSS et le JS dedans). Ressources externes permises, et elles seules : Google Fonts, Three.js (uniquement https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js) et les photos listées dans la fiche. Entre 30 et 120 Ko.
-BANDEAU 3D (en haut de page, obligatoire) : une scène Three.js sobre et lente, en fond du bandeau d'accueil, derrière le texte. Elle doit évoquer le métier par des formes abstraites, jamais figuratives : par exemple des sphères de verre qui dérivent pour un bijoutier, des rubans qui ondulent pour un fleuriste, des volumes sombres et chauds pour un domaine viticole. Règles : couleurs de la palette du site, mouvement très lent, aucune interaction obligatoire, rendu limité à devicePixelRatio 2 maximum, animation arrêtée quand l'onglet est caché et jamais lancée si prefers-reduced-motion est actif. Le bandeau doit rester beau SANS la 3D : mets d'abord un dégradé CSS en fond, la 3D par-dessus dans un <canvas> en position absolue, et entoure tout le code Three.js d'un try/catch avec un test `if (window.THREE)`. Charge le script avec l'attribut defer et dessine seulement après son chargement. Le texte du bandeau reste parfaitement lisible : prévois un voile sombre ou clair entre le canvas et le texte.
-PHOTOS : la fiche peut contenir une liste « photos ». Ce sont des images d'illustration libres de droits, PAS des photos de ce commerce. Tu peux en utiliser au maximum 3, en arrière-plan de section ou dans une bande, toujours avec un filtre ou un voile pour qu'elles restent discrètes, en loading="lazy", et toujours accompagnées de la mention visible « Image d'illustration ». Crédite chaque photo dans le pied de page sous la forme « Photo : auteur (licence) ». N'utilise aucune autre image venue d'ailleurs. Garde en plus un emplacement « Vos photos ici » pour les vraies photos du commerçant.
-DIRECTION ARTISTIQUE : une palette de 4 à 6 couleurs adaptée au métier (variables CSS), une paire de polices Google Fonts élégante (ex. une serif éditoriale + une sans-serif sobre), une mise en page éditoriale (grandes typographies, beaucoup d'espace, grille asymétrique, filets fins, détails soignés), un monogramme ou emblème en SVG dessiné par toi. Aucun logo copié, aucune banque d'images autre que les photos fournies : le reste des visuels est en CSS et SVG (dégradés subtils, grain léger, formes, illustrations au trait liées au métier). Au maximum 2 emplacements photo élégants marqués discrètement « Vos photos ici ».
-SECTIONS : en-tête fixe avec menu (repliable sur téléphone) ; grand bandeau d'accueil avec le nom, une phrase forte fondée sur ce qui est vrai et un bouton d'action ; l'esprit de la maison ; l'offre ; infos pratiques (adresse, horaires si connus, bouton « Itinéraire » vers https://www.google.com/maps/search/?api=1&query= suivi de l'adresse encodée) ; contact avec téléphone et email cliquables ; pied de page.
-HONNÊTETÉ (règle absolue) : utilise SEULEMENT les faits de la fiche. N'invente aucun avis, témoignage, note, prix, récompense, année, nom de personne, chiffre, label, plat ou produit précis. Quand une info manque, écris des phrases vraies et générales (« La carte suit les saisons », « Sur rendez-vous »).
-OBLIGATOIRE : <html lang="fr"> ; meta viewport ; <meta name="robots" content="noindex, nofollow"> ; title et meta description ; balises Open Graph ; JSON-LD LocalBusiness avec seulement des données vraies ; favicon SVG en data URI ; un petit badge fixe et discret en bas « Maquette proposée par ORBE » ; dans le pied de page « Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com ». Si le commerce vend de l'alcool : « L'abus d'alcool est dangereux pour la santé, à consommer avec modération. »
-QUALITÉ : pensé d'abord pour le téléphone, aucun défilement horizontal à 375 px, textes bien contrastés, HTML sémantique, défilement doux, apparitions douces au défilement (IntersectionObserver) désactivées si prefers-reduced-motion, focus clavier visible, aucune erreur JavaScript, aucun lorem ipsum. Français impeccable, vouvoiement, ton haut de gamme sans excès.
-RÉPONSE : uniquement le document HTML complet, de <!doctype html> à </html>, sans aucune explication ni bloc markdown."""
 
 CONSIGNE_MSG = """Tu écris pour Oscar, du studio digital ORBE à Bordeaux, le premier message à un commerçant pour qui il a préparé un site. Vouvoiement, chaleureux, pas vendeur. Email : 5 à 8 lignes ; SMS, Instagram ou Facebook : 4 lignes maximum. Contenu : un détail VRAI tiré de la fiche qui montre qu'Oscar connaît le commerce ; Oscar a pris l'initiative de lui préparer un site sur mesure, à voir ici : {LIEN} (écris exactement {LIEN}) ; il peut le mettre en ligne à son nom, avec ses propres photos, s'il lui plaît ; il peut simplement répondre « non merci » et ne sera pas relancé. Signature : « Oscar · ORBE, studio digital » (pour un email, ajoute « societe.orbe@gmail.com · 06 76 05 84 80 »). Pas de prix. Réponds uniquement en JSON : {"objet": "objet court et personnel pour un email, sinon vide", "message": "le message"}"""
 
@@ -154,84 +147,6 @@ def overpass(filtre, bbox, limite=250):
             derniere = e
             journal("    carte : %s (nouvel essai)" % str(e)[:90])
     raise derniere
-
-
-PHOTOS = {
-    "domaines viticoles et châteaux familiaux": "vineyard Bordeaux wine barrel cellar",
-    "caves à vin et bars à vin": "wine shop bottles cellar",
-    "restaurants indépendants de qualité": "restaurant table setting gastronomy plate",
-    "chambres d'hôtes et gîtes de charme": "guest house bedroom interior stone house",
-    "fleuristes créateurs": "florist bouquet flower shop",
-    "pâtissiers, chocolatiers, épiceries fines": "pastry chocolate shop display",
-    "artisans d'art": "craftsman workshop woodworking hands tools",
-    "décorateurs, antiquaires, galeries": "interior design antique furniture gallery",
-    "bijoutiers, joailliers, horlogers": "jewellery goldsmith workshop ring",
-    "instituts de beauté et coiffeurs": "hair salon interior beauty",
-    "traiteurs et photographes": "catering buffet photographer camera",
-    "boutiques de mode et maroquinerie": "boutique clothing shop leather bag",
-}
-CACHE_PHOTOS = {}
-
-
-def photos_libres(secteur, combien=3):
-    """Cherche sur Wikimedia Commons des photos d'ambiance réutilisables.
-
-    Ce ne sont pas des photos DU commerce : elles servent d'illustration, et le
-    site doit le dire. On renvoie l'auteur et la licence, à créditer.
-    """
-    if secteur in CACHE_PHOTOS:
-        return CACHE_PHOTOS[secteur]
-    sujet = PHOTOS.get(secteur, secteur)
-    trouvees = []
-    # D'abord les « Quality images », triees par Commons : sinon la recherche
-    # remonte des scans de vieux catalogues, laids et en noir et blanc.
-    for recherche in ('%s incategory:"Quality images"' % sujet, sujet):
-        trouvees += _chercher_commons(recherche)
-        if len(trouvees) >= combien:
-            break
-    vus, propres = set(), []
-    for p in trouvees:
-        if p["url"] not in vus:
-            vus.add(p["url"])
-            propres.append(p)
-    CACHE_PHOTOS[secteur] = propres[:combien]
-    journal("    %d photos d'illustration trouvées" % len(CACHE_PHOTOS[secteur]))
-    return CACHE_PHOTOS[secteur]
-
-
-# Titres qui trahissent un document scanné plutôt qu'une photographie.
-PAS_UNE_PHOTO = re.compile(r"microform|review|magazine|journal|catalog|book|page|plate|poster|map|"
-                           r"engraving|lithograph|drawing|diagram|logo|coat of arms|\b1[5-9]\d\d\b", re.I)
-
-
-def _chercher_commons(recherche):
-    params = {
-        "action": "query", "format": "json", "generator": "search", "gsrnamespace": "6",
-        "gsrsearch": recherche + " filetype:bitmap", "gsrlimit": "30",
-        "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": "1600",
-    }
-    url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params)
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": UA_OSM})
-        with urllib.request.urlopen(req, timeout=60) as r:
-            pages = json.loads(r.read().decode("utf-8")).get("query", {}).get("pages", {})
-    except Exception as e:
-        journal("    photos indisponibles (%s)" % str(e)[:90])
-        return []
-    gardees = []
-    for p in pages.values():
-        info = (p.get("imageinfo") or [{}])[0]
-        meta = info.get("extmetadata") or {}
-        lien = info.get("thumburl") or info.get("url") or ""
-        licence = re.sub("<[^>]+>", "", str(meta.get("LicenseShortName", {}).get("value", "")))
-        auteur = re.sub("<[^>]+>", "", str(meta.get("Artist", {}).get("value", "")))[:60]
-        large, haut = info.get("width", 0), info.get("height", 0)
-        if (lien.lower().split("?")[0].endswith((".jpg", ".jpeg", ".png"))
-                and large >= 1200 and haut >= 800 and large < haut * 2.5
-                and not PAS_UNE_PHOTO.search(p.get("title", ""))
-                and "fair use" not in licence.lower()):
-            gardees.append({"url": lien, "auteur": auteur.strip() or "Wikimedia Commons", "licence": licence or "libre"})
-    return gardees
 
 
 def fiche_osm(e, secteur):
@@ -408,57 +323,6 @@ def contact_de(f):
     return None
 
 
-BADGE = ('<a href="mailto:societe.orbe@gmail.com" style="position:fixed;right:12px;bottom:12px;z-index:9999;'
-         'font:500 11px/1 system-ui,sans-serif;background:rgba(0,0,0,.72);color:#fff;padding:7px 11px;'
-         'border-radius:999px;text-decoration:none">Maquette proposée par ORBE</a>')
-
-
-def nettoyer_images(h, photos):
-    """Répare ou retire les images : une IA invente parfois une adresse.
-
-    Elle avait par exemple écrit thumb.wikimedia.org, un serveur qui n'existe
-    pas. On remet le bon domaine, puis on supprime toute image qui ne figure
-    pas dans la liste fournie, pour n'afficher aucun lien mort.
-    """
-    h = re.sub(r"https?://(?:thumb|commons|upload)\.wikimedia\.org", "https://upload.wikimedia.org", h, flags=re.I)
-    def fichier(adresse):  # « 800px-Vigne.jpg » et « 1600px-Vigne.jpg » sont la même photo
-        return re.sub(r"^\d+px-", "", adresse.rsplit("/", 1)[-1].lower())
-
-    permis = {p["url"] for p in photos}
-    noms = {fichier(p["url"]) for p in photos}
-
-    def garder(adresse):
-        adresse = adresse.strip()
-        if adresse in permis or adresse.startswith(("data:", "#")):
-            return True
-        return bool(noms) and fichier(adresse) in noms
-
-    h = re.sub(r"<img\b[^>]*?src=[\"']([^\"']+)[\"'][^>]*>",
-               lambda m: m.group(0) if garder(m.group(1)) else "", h, flags=re.I)
-    h = re.sub(r"url\(\s*[\"']?(https?://[^\"')]+)[\"']?\s*\)",
-               lambda m: m.group(0) if garder(m.group(1)) else "none", h, flags=re.I)
-    return h
-
-
-def finir_site(t, photos=()):
-    t = str(t or "")
-    m = re.search(r"<!doctype html|<html", t, re.I)
-    b = t.lower().rfind("</html>")
-    if not m or b < m.start():
-        return None
-    h = t[m.start():b + 7]
-    if not h.lower().startswith("<!doctype"):
-        h = "<!doctype html>\n" + h
-    if not re.search(r"name=[\"']robots[\"']", h, re.I):
-        h = re.sub(r"<head[^>]*>", lambda x: x.group(0) + '\n<meta name="robots" content="noindex, nofollow">', h, count=1, flags=re.I)
-    if not re.search(r"Maquette propos", h, re.I):
-        h = re.sub(r"</body>", BADGE + "\n</body>", h, count=1, flags=re.I)
-    h = nettoyer_images(h, photos)
-    if "lorem ipsum" in h.lower() or not (4000 <= len(h) <= 240000):
-        return None
-    return h
-
-
 def slug_libre(nom):
     base = norm(nom).replace(" ", "-")[:40] or "site"
     s, i = base, 2
@@ -508,6 +372,58 @@ def entrelacer(fiches):
     return melange
 
 
+def fabriquer_site(fiche, faits):
+    """Remplit le modèle de site. L'IA écrit les textes ; si elle échoue, des textes sobres prennent le relais."""
+    famille = rendu.famille_de(fiche["secteur"])[0]
+    brut, auteur = None, "textes de secours"
+    try:
+        txt, _, auteur = ia([("gemini", "", False), ("groq", "", False), ("or", "deepseek", False)],
+                            rendu.consigne_textes(fiche["secteur"], faits),
+                            "Fiche du commerce (faits relevés sur la carte OpenStreetMap : n'utilise rien d'autre) :\n"
+                            + json.dumps(faits, ensure_ascii=False, indent=1))
+        brut = lire_json(txt)
+    except Exception as e:
+        journal("  textes de l'IA indisponibles (%s) : textes de secours" % str(e)[:120])
+    textes, refuses = rendu.valider_textes(brut, famille)
+    if brut is not None and refuses:
+        journal("  %d textes écartés (faits non vérifiables), remplacés par des textes sobres : %s" % (len(refuses), ", ".join(refuses[:6])))
+    html, modele_site = rendu.fabriquer(fiche["secteur"], faits, textes)
+    if not (4000 <= len(html) <= 240000) or "lorem ipsum" in html.lower():
+        raise ValueError("site hors limites")
+    return html, "modèle %s · %s" % (modele_site, auteur)
+
+
+def refaire_recents(liste, jours=4):
+    """Refait, avec les nouveaux modèles, les sites récents pas encore envoyés (même adresse, même lien)."""
+    limite = time.time() - jours * 86400
+    n = 0
+    for it in liste.get("items", []):
+        try:
+            quand = datetime.strptime(it.get("cree_le", ""), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp()
+        except ValueError:
+            continue
+        slug = str(it.get("site_url", "")).rstrip("/").rsplit("/", 1)[-1]
+        if quand < limite or not slug or not (DOCS / slug / "index.html").exists():
+            continue
+        canal, contact = it.get("canal", ""), str(it.get("contact", ""))
+        lieu = [x.strip() for x in str(it.get("quartier", "")).split(",") if x.strip()]
+        faits = {"nom": it.get("nom", ""), "secteur": it.get("type", ""), "ville": lieu[-1] if lieu else "",
+                 "quartier": lieu[0] if len(lieu) > 1 else "", "adresse": it.get("adresse", ""),
+                 "telephone": contact if canal in ("SMS", "Téléphone") else "", "email": contact if canal == "Email" else "",
+                 "instagram": contact if canal == "Instagram" else "", "facebook": contact if canal == "Facebook" else "",
+                 "horaires": "", "specialites": "", "ambiance": "", "histoire": ""}
+        try:
+            html, modele = fabriquer_site({"secteur": faits["secteur"]}, faits)
+        except Exception as e:
+            journal("  refaire %s : impossible (%s)" % (it.get("nom"), str(e)[:100]))
+            continue
+        (DOCS / slug / "index.html").write_text(html, "utf-8")
+        it["par"] = modele
+        n += 1
+        journal("  refait : %s (%s)" % (it.get("nom"), modele))
+    journal("%d site(s) récent(s) refait(s) avec les nouveaux modèles" % n)
+
+
 def main():
     if not (CLES["gemini"] or CLES["groq"]):
         sys.exit("Il manque la clé GEMINI_API_KEY (ou GROQ_API_KEY) dans les secrets du dépôt.")
@@ -517,6 +433,8 @@ def main():
     liste = json.loads(LISTE.read_text("utf-8")) if LISTE.exists() else {"items": []}
     noms = set(json.loads(NOMS.read_text("utf-8"))) if NOMS.exists() else set()
     noms |= {norm(x.get("nom")) for x in liste.get("items", [])}
+    if os.environ.get("REFAIRE", "") == "1":
+        refaire_recents(liste)
     jour = datetime.now(timezone.utc).timetuple().tm_yday
     secteurs = [SECTEURS[(jour + k) % len(SECTEURS)] for k in (0, 4, 8)]
     zones = [MAISON, VOISINS[jour % len(VOISINS)]]
@@ -561,17 +479,11 @@ def main():
         ct = contact_de(fiche)
         faits = {k: fiche.get(k, "") for k in ("nom", "secteur", "ville", "quartier", "adresse", "telephone", "email", "instagram",
                                                "facebook", "horaires", "specialites", "ambiance", "histoire")}
-        faits["photos"] = photos_libres(fiche["secteur"])
         journal("  fabrication du site…")
         try:
-            txt, _, modele = ia([("gemini", "fort", False), ("gemini", "", False), ("or", "coder", False), ("groq", "", False)],
-                                CONSIGNE_SITE, "Fiche du commerce (faits relevés sur la carte OpenStreetMap : n'utilise rien d'autre) :\n" + json.dumps(faits, ensure_ascii=False, indent=1))
-            html = finir_site(txt, faits["photos"])
+            html, modele = fabriquer_site(fiche, faits)
         except Exception as e:
             journal("  site impossible : %s" % e)
-            html = None
-        if not html:
-            journal("  site raté, on passe au suivant")
             continue
         slug = slug_libre(nom)
         (DOCS / slug).mkdir(parents=True)
@@ -580,8 +492,7 @@ def main():
         m = {}
         try:
             txt, _, _ = ia([("groq", "", False), ("gemini", "", False), ("or", "deepseek", False)], CONSIGNE_MSG,
-                           "Canal : %s\nFiche : %s" % (ct[0], json.dumps(
-                               {k: v for k, v in faits.items() if k != "photos"}, ensure_ascii=False)))
+                           "Canal : %s\nFiche : %s" % (ct[0], json.dumps(faits, ensure_ascii=False)))
             m = lire_json(txt)
         except Exception as e:
             journal("  message par défaut (%s)" % e)

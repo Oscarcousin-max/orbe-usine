@@ -14,6 +14,8 @@ import unicodedata
 import urllib.parse
 from pathlib import Path
 
+from icones3d import icones
+
 DOSSIER = Path(__file__).resolve().parent / "templates"
 
 # secteur -> (famille de modèle, étiquette de l'en-tête, type schema.org, vend de l'alcool)
@@ -160,6 +162,21 @@ FAMILLES = {
         "texte_contact": "Un projet, une pièce, une question ? Écrivez-nous, nous vous répondrons.",
         "indice": "atelier ou galerie : geste, matière, pièces uniques, travail sur mesure. Aucune réalisation précise, aucun nom de client, aucun prix.",
     },
+}
+
+
+# Kit premium : tuiles empilées, appel à l'action, puces du bandeau (textes sobres, vrais partout).
+KIT = {
+    "domaine": dict(tuiles_id="visite", tuiles_eyebrow="Visiter", tuiles_lead="Trois temps simples pour découvrir le domaine, à votre rythme.",
+                    cta_eyebrow="Au domaine", cta_titre="Venez goûter le lieu.", cta_texte="Une visite, une dégustation ou une simple question : écrivez-nous, nous vous répondrons."),
+    "fleur": dict(tuiles_id="atelier", tuiles_eyebrow="Comment ça se passe", tuiles_lead="De votre idée à la composition, tout se fait simplement, avec vous.",
+                  cta_eyebrow="Une occasion ?", cta_titre="Racontez-nous votre bouquet.", cta_texte="Quelques mots suffisent : l’occasion, les couleurs, l’envie. Nous imaginons le reste."),
+    "bijou": dict(tuiles_id="services", tuiles_eyebrow="Sur demande", tuiles_lead="Un accompagnement attentif, avant comme après le choix d’une pièce.",
+                  cta_eyebrow="Rendez-vous", cta_titre="Prenons le temps de choisir.", cta_texte="Pour un conseil, un projet ou une question, écrivez-nous ou passez en boutique."),
+    "table": dict(tuiles_id="plus", tuiles_eyebrow="À savoir", tuiles_lead="Tout ce qu’il faut pour venir l’esprit léger.",
+                  cta_eyebrow="Votre table", cta_titre="On vous garde une place ?", cta_texte="Pour réserver ou connaître les disponibilités, un message suffit."),
+    "atelier": dict(tuiles_id="demarche", tuiles_eyebrow="La démarche", tuiles_lead="Une façon de travailler claire, du premier échange à la pièce finie.",
+                    cta_eyebrow="Votre projet", cta_titre="Parlons de ce que vous imaginez.", cta_texte="Une pièce, un lieu, une envie : décrivez-nous votre projet, nous vous répondrons."),
 }
 
 # Textes de secours : sobres, vrais pour n'importe quel commerce de la famille. Aucun fait inventé.
@@ -384,11 +401,34 @@ def fabriquer(secteur, faits, textes):
         % (esc(titre_page), esc(desc), esc(titre_page), esc(desc), th["vars"]["bg"], favicon, th["gf"], _jsonld(faits, type_ld)))
 
     nav = "".join('<a href="#%s">%s</a>' % (a, esc(l)) for a, l in cfg["nav"])
+    kit = KIT[fam]
+    tel = str(faits.get("telephone") or "").strip()
+    tel_lien = re.sub(r"[^\d+]", "", tel)
+    puces = ['<span class="puce"><i></i>%s</span>' % esc(etiquette)]
+    if ville:
+        puces.append('<span class="puce">%s</span>' % esc(ville))
+    hero_fx = lire("_hero_fx.html").replace("{{puces}}", "".join(puces))
+    ico = icones(fam)
+    tuiles = lire("_tuiles.html")
+    second = ('<a class="btn ligne" href="tel:%s">Appeler</a>' % esc(tel_lien)) if len(tel_lien) >= 10 else \
+             ('<a class="btn ligne" href="%s" target="_blank" rel="noopener">Itinéraire</a>' % esc(maps))
+    bloc_cta = lire("_cta.html").replace("{{cta_second}}", second)
+    pied_nav = "".join('<li><a href="#%s">%s</a></li>' % (a, esc(l)) for a, l in cfg["nav"]) + '<li><a href="#contact">Contact</a></li>'
+    pied_adr = ("<li>%s</li>" % esc(adresse) if adresse else "<li>%s</li>" % esc(ville or "Nouvelle-Aquitaine")) + \
+               '<li><a href="%s" target="_blank" rel="noopener">Itinéraire →</a></li>' % esc(maps)
+    contacts = []
+    if tel:
+        contacts.append('<li><a href="tel:%s">%s</a></li>' % (esc(tel_lien), esc(tel)))
+    mail = str(faits.get("email") or "").strip()
+    if re.fullmatch(r"[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}", mail):
+        contacts.append('<li><a href="mailto:%s">%s</a></li>' % (esc(mail), esc(mail)))
+    contacts.append('<li><a href="#contact">Formulaire de contact</a></li>')
     entete = lire("_entete.html").replace("{{nav_liens}}", nav).replace("{{cta}}", "Nous écrire")
     contact = (lire("_contact.html").replace("{{coord_items}}", _coord(faits))
                .replace("{{objets_options}}", "".join("<option>%s</option>" % esc(o) for o in cfg["objets"]))
                .replace("{{contact_texte}}", esc(cfg["texte_contact"])).replace("{{maps_url}}", esc(maps)))
     pied = (lire("_pied.html").replace("{{adresse_mentions}}", (", " + esc(adresse)) if adresse else "")
+            .replace("{{pied_nav}}", pied_nav).replace("{{pied_adresse}}", pied_adr).replace("{{pied_contact}}", "".join(contacts))
             .replace("{{alcool}}", '<p class="alcool">L’abus d’alcool est dangereux pour la santé, à consommer avec modération.</p>' if alcool else ""))
 
     valeurs = {k: esc(v) for k, v in txt.items()}
@@ -398,10 +438,13 @@ def fabriquer(secteur, faits, textes):
         "etiq_haut": esc(etiquette), "etiq_bas": esc(ville or "Nouvelle-Aquitaine"),
         "texte_rond": esc(_texte_rond(nom, ville)), "menu_sur": esc(MENU_SUR.get(secteur, "La maison")),
         "contact_texte": esc(cfg["texte_contact"]),
+        "ico1": ico[0], "ico2": ico[1], "ico3": ico[2],
     })
+    valeurs.update({k: esc(v) for k, v in kit.items()})
     page = lire(fam + ".html")
     for jeton, bloc in (("{{head}}", head), ("{{theme_css}}", css_vars), ("{{css_commun}}", lire("_commun.css")),
-                        ("{{js_commun}}", lire("_commun.js")), ("{{entete}}", entete), ("{{contact}}", contact), ("{{pied}}", pied)):
+                        ("{{js_commun}}", lire("_commun.js")), ("{{entete}}", entete), ("{{hero_fx}}", hero_fx), ("{{tuiles}}", tuiles),
+                        ("{{bloc_cta}}", bloc_cta), ("{{contact}}", contact), ("{{pied}}", pied)):
         page = page.replace(jeton, bloc)
     # Les blocs injectés contiennent eux-mêmes des jetons : on les remplit après.
     for k in sorted(valeurs, key=len, reverse=True):

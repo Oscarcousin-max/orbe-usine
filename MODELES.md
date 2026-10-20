@@ -15,3 +15,14 @@ Garder ensemble dans le dépôt : `usine.py`, `rendu.py`, dossier `templates/`. 
 ## Ajouter un modèle
 1. Créer `templates/monmodele.html` (copier un existant).
 2. Déclarer la famille dans `rendu.py` (SECTEURS, FAMILLES, DEFAUTS) et les secteurs dans `usine.py`.
+
+## Kit premium (octobre 2026)
+Ajouté à tous les modèles, d'après 8 familles de références de design :
+- **navbar** : capsule flottante en verre liquide (`templates/_entete.html`, début de `_commun.css`) ;
+- **hero** : halos de couleur animés, grain, lumière qui suit la souris, titre qui apparaît mot par mot, puces en verre (`_hero_fx.html`) ;
+- **scroll** : tuiles qui s'empilent au défilement, avec sommaire qui suit (`_tuiles.html`) ;
+- **3D icons** : icônes en relief éclairées par un filtre SVG, couleurs du thème (`icones3d.py`) ;
+- **liquid glass** : classe `.verre` (flou, reflet qui suit la souris, liseré lumineux) ;
+- **CTA** : bande sombre avec carte en verre et bouton aimanté (`_cta.html`) ;
+- **footer** : 4 colonnes et grand nom du commerce ajusté à la largeur (`_pied.html`) ;
+- **style** : barre de progression de lecture, couleurs de sélection, tout reste lié aux variables du thème.

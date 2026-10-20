@@ -60,7 +60,7 @@
 <body>
 {{entete}}
 <main id="contenu">
-<section class="hero" aria-label="Accueil"><div class="wrap">
+<section class="hero" aria-label="Accueil">{{hero_fx}}<div class="wrap">
 <div><span class="eyebrow reveal">{{hero_eyebrow}}</span>
 <h1 class="reveal" style="--d:.1s">{{nom_titre}}<span>{{accroche}}</span></h1>
 <p class="sous reveal" style="--d:.2s">{{sous_titre}}</p>
@@ -96,16 +96,11 @@
 <a class="btn" href="#contact">Nous écrire <span class="fl">→</span></a></div>
 </div></section>
 
-<section class="sec" id="plus"><div class="wrap">
-<div class="reveal"><span class="eyebrow">À savoir</span><h2 class="titre-sec">{{exp_titre}}</h2></div>
-<div class="trois">
-<article class="v reveal" data-n="1"><h3>{{e1_t}}</h3><p>{{e1_d}}</p></article>
-<article class="v reveal" data-n="2" style="--d:.1s"><h3>{{e2_t}}</h3><p>{{e2_d}}</p></article>
-<article class="v reveal" data-n="3" style="--d:.2s"><h3>{{e3_t}}</h3><p>{{e3_d}}</p></article>
-</div></div></section>
+{{tuiles}}
 
 <section class="cite"><div class="wrap reveal"><blockquote>{{citation}}</blockquote></div></section>
 
+{{bloc_cta}}
 {{contact}}
 </main>
 {{pied}}

@@ -1,0 +1,22 @@
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="progres" aria-hidden="true"><i></i></div>
+<svg class="defs-kit" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="k3d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ic1)"/><stop offset=".55" style="stop-color:var(--ic2)"/><stop offset="1" style="stop-color:var(--ic3)"/></linearGradient>
+<linearGradient id="k3d-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--ic4)"/><stop offset="1" style="stop-color:var(--ic2)"/></linearGradient>
+<filter id="relief" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="flou"/>
+<feSpecularLighting in="flou" surfaceScale="4.5" specularConstant=".9" specularExponent="26" lighting-color="#ffffff" result="spec"><fePointLight x="14" y="-6" z="70"/></feSpecularLighting>
+<feComposite in="spec" in2="SourceAlpha" operator="in" result="specin"/>
+<feComposite in="SourceGraphic" in2="specin" operator="arithmetic" k1="0" k2="1" k3=".75" k4="0" result="lumiere"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="ombre"/>
+<feOffset in="ombre" dy="3.5" result="ombre2"/>
+<feComposite in="ombre2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="creux"/>
+<feFlood flood-color="#000" flood-opacity=".28"/><feComposite in2="creux" operator="in" result="creux2"/>
+<feComposite in="creux2" in2="lumiere" operator="atop"/>
+</filter>
+</defs></svg>
+<header class="top" id="top"><div class="wrap">
+<a class="logo" href="#top" aria-label="{{nom}}, haut de page"><i aria-hidden="true">{{initiale}}</i><span>{{nom}}</span></a>
+<nav id="menu" aria-label="Navigation principale">{{nav_liens}}<a class="nav-cta" href="#contact">{{cta}}</a></nav>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
+</div></header>
