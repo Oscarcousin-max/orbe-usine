@@ -1,1329 +1,381 @@
 <!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>B L'Atelier — Artisanat d’Art &amp; Tapisserie d'Ameublement</title>
-  <meta name="description" content="Atelier d’artisanat d'art et tapisserie d'ameublement situé au 23 Rue Bouquière. Restauration textile, travail des étoffes et respect des matières.">
-  <meta property="og:title" content="B L'Atelier — Artisanat d’Art &amp; Tapisserie d'Ameublement">
-  <meta property="og:description" content="L'artisanat du textile et de la tapisserie d'ameublement au 23 Rue Bouquière. Du lundi au vendredi de 10:00 à 17:00.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-
-  <!-- Favicon SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f1c19'/%3E%3Cpath d='M9 6h7a5 5 0 0 1 3 9 5 5 0 0 1-3 11H9V6zm3 3v5h4a2.5 2.5 0 0 0 0-5h-4zm0 8v6h4.5a3 3 0 0 0 0-6H12z' fill='%23d8c29d'/%3E%3C/svg%3E">
-
-  <!-- Polices Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Three.js (chargé avec defer) -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <!-- Données structurées JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HomeGoodsStore",
-    "name": "B L'Atelier",
-    "description": "Atelier artisanal d'art et tapisserie d'ameublement.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "23 Rue Bouquière"
-    },
-    "email": "b.latelier.bx@gmail.com",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "10:00",
-        "closes": "17:00"
-      }
-    ]
-  }
-  </script>
-
-  <style>
-    :root {
-      --bg-dark: #151311;
-      --bg-surface: #1e1b18;
-      --bg-elevated: #282420;
-      --bg-light: #f7f5f0;
-      --bg-cream: #efebe4;
-      --text-main: #1c1a17;
-      --text-muted: #6b665f;
-      --text-light: #f5f2eb;
-      --text-light-muted: #a9a399;
-      --accent-gold: #c7a76c;
-      --accent-bronze: #8f7247;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-light: rgba(28, 26, 23, 0.1);
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      font-family: var(--font-sans);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      overflow-x: hidden;
-      min-width: 320px;
-      position: relative;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color var(--transition), opacity var(--transition);
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    /* Focus accessible */
-    :focus-visible {
-      outline: 2px solid var(--accent-gold);
-      outline-offset: 3px;
-    }
-
-    /* Navigation */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color var(--transition), padding var(--transition), backdrop-filter var(--transition);
-    }
-
-    .site-header.scrolled {
-      background-color: rgba(21, 19, 17, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 1rem 2rem;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .brand-link {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      z-index: 60;
-    }
-
-    .brand-emblem {
-      width: 34px;
-      height: 34px;
-      stroke: var(--accent-gold);
-      fill: none;
-    }
-
-    .brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-link {
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-light-muted);
-      position: relative;
-      padding: 0.25rem 0;
-    }
-
-    .nav-link:hover, .nav-link:focus {
-      color: var(--text-light);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 1px;
-      background-color: var(--accent-gold);
-      transition: width var(--transition);
-    }
-
-    .nav-link:hover::after, .nav-link:focus::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      padding: 0.55rem 1.25rem;
-      border: 1px solid rgba(199, 167, 108, 0.4);
-      color: var(--accent-gold);
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: all var(--transition);
-    }
-
-    .nav-cta:hover {
-      background-color: var(--accent-gold);
-      color: var(--bg-dark);
-      border-color: var(--accent-gold);
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 22px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      z-index: 60;
-      padding: 0;
-    }
-
-    .menu-toggle span {
-      width: 100%;
-      height: 1px;
-      background-color: var(--text-light);
-      transition: all 0.3s ease;
-    }
-
-    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* Hero section */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 8rem 2rem 5rem;
-      background: radial-gradient(circle at 60% 40%, #2a241e 0%, #171513 70%, #0d0c0a 100%);
-      overflow: hidden;
-    }
-
-    .hero-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to top, rgba(21, 19, 17, 0.95) 0%, rgba(21, 19, 17, 0.45) 50%, rgba(21, 19, 17, 0.75) 100%);
-      z-index: 2;
-    }
-
-    .hero-container {
-      position: relative;
-      z-index: 3;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero-pretitle {
-      display: inline-block;
-      font-size: 0.8rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.75rem, 6.5vw, 5.5rem);
-      line-height: 1.05;
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      margin-bottom: 2rem;
-      max-width: 16ch;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: #dfd7cc;
-      font-weight: 400;
-    }
-
-    .hero-desc {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--text-light-muted);
-      max-width: 38ch;
-      margin-bottom: 2.75rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem 2rem;
-      background-color: var(--accent-gold);
-      color: var(--bg-dark);
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: background-color var(--transition), transform var(--transition);
-    }
-
-    .btn-primary:hover {
-      background-color: #d6b882;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.95rem 1.85rem;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: var(--text-light);
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: all var(--transition);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent-gold);
-      color: var(--accent-gold);
-    }
-
-    /* Section commune */
-    section {
-      padding: 6.5rem 2rem;
-      position: relative;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .section-heading {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      line-height: 1.15;
-      font-weight: 300;
-      margin-bottom: 1.5rem;
-      color: var(--text-light);
-    }
-
-    /* Esprit de la maison */
-    .section-esprit {
-      background-color: var(--bg-surface);
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .grid-esprit {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .esprit-text p {
-      color: var(--text-light-muted);
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-      line-height: 1.75;
-    }
-
-    .signature-divider {
-      width: 60px;
-      height: 1px;
-      background-color: var(--accent-gold);
-      margin: 2rem 0;
-    }
-
-    .photo-card {
-      position: relative;
-      overflow: hidden;
-      background-color: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      filter: grayscale(25%) contrast(105%) brightness(0.85);
-      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 1.2s ease;
-    }
-
-    .photo-card:hover img {
-      transform: scale(1.03);
-      filter: grayscale(10%) contrast(105%) brightness(0.9);
-    }
-
-    .photo-caption {
-      position: absolute;
-      bottom: 0.75rem;
-      right: 0.75rem;
-      background: rgba(15, 13, 12, 0.75);
-      backdrop-filter: blur(4px);
-      padding: 0.25rem 0.6rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-light-muted);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    /* Offre / Savoir-faire */
-    .section-offre {
-      background-color: var(--bg-dark);
-    }
-
-    .offre-header {
-      max-width: 680px;
-      margin-bottom: 4rem;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .craft-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      padding: 2.75rem 2.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      transition: transform var(--transition), border-color var(--transition);
-    }
-
-    .craft-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(199, 167, 108, 0.3);
-    }
-
-    .craft-card-num {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      color: var(--accent-gold);
-      margin-bottom: 2rem;
-      display: block;
-    }
-
-    .craft-card-title {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
-      color: var(--text-light);
-    }
-
-    .craft-card-desc {
-      color: var(--text-light-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    .card-footer-line {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent-bronze);
-    }
-
-    /* Emplacements photos du commerçant */
-    .section-galerie {
-      background-color: var(--bg-surface);
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .galerie-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .merchant-photo-slot {
-      aspect-ratio: 16 / 10;
-      background: linear-gradient(135deg, #24201c 0%, #1a1715 100%);
-      border: 1px dashed rgba(199, 167, 108, 0.25);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-      transition: border-color var(--transition);
-    }
-
-    .merchant-photo-slot:hover {
-      border-color: rgba(199, 167, 108, 0.5);
-    }
-
-    .slot-icon {
-      width: 44px;
-      height: 44px;
-      stroke: var(--accent-gold);
-      margin-bottom: 1rem;
-      opacity: 0.7;
-    }
-
-    .slot-title {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      letter-spacing: 0.05em;
-      color: var(--text-light);
-      margin-bottom: 0.35rem;
-    }
-
-    .slot-sub {
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-light-muted);
-    }
-
-    /* Infos pratiques & Contact */
-    .section-pratique {
-      background-color: var(--bg-dark);
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .pratique-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-    }
-
-    .pratique-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      padding: 3rem;
-    }
-
-    .info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .info-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-
-    .info-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-    }
-
-    .info-value {
-      font-size: 1.15rem;
-      color: var(--text-light);
-      font-family: var(--font-serif);
-    }
-
-    .info-value a {
-      color: var(--text-light);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      padding-bottom: 2px;
-    }
-
-    .info-value a:hover {
-      color: var(--accent-gold);
-      border-color: var(--accent-gold);
-    }
-
-    .schedule-badge {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.35rem 0.75rem;
-      background: rgba(199, 167, 108, 0.1);
-      border: 1px solid rgba(199, 167, 108, 0.25);
-      color: var(--accent-gold);
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-    }
-
-    .pratique-actions {
-      margin-top: 2.5rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* Pied de page */
-    .site-footer {
-      background-color: #0d0c0a;
-      border-top: 1px solid var(--border-subtle);
-      padding: 4rem 2rem 5.5rem;
-      color: var(--text-light-muted);
-      font-size: 0.85rem;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-brand {
-      max-width: 360px;
-    }
-
-    .footer-brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      letter-spacing: 0.12em;
-      color: var(--text-light);
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-    }
-
-    .footer-credits {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: right;
-    }
-
-    .footer-credits a {
-      color: var(--accent-gold);
-    }
-
-    .footer-credits a:hover {
-      text-decoration: underline;
-    }
-
-    .photo-credit {
-      font-size: 0.75rem;
-      color: #6b665f;
-    }
-
-    /* Badge fixe ORBE */
-    .orbe-badge {
-      position: fixed;
-      bottom: 1.25rem;
-      right: 1.25rem;
-      z-index: 99;
-      background: rgba(21, 19, 17, 0.92);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(199, 167, 108, 0.35);
-      padding: 0.5rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      pointer-events: auto;
-    }
-
-    .orbe-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: var(--accent-gold);
-      display: inline-block;
-    }
-
-    /* Animations au scroll */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Accessibilité Reduced Motion */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 960px) {
-      .grid-esprit {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-      .pratique-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-      .galerie-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-credits {
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      .nav-menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 80%;
-        max-width: 320px;
-        background-color: #171513;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 3rem 2.5rem;
-        gap: 2rem;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        border-left: 1px solid var(--border-subtle);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .nav-menu.is-active {
-        transform: translateX(0);
-      }
-
-      .nav-link {
-        font-size: 1.1rem;
-      }
-
-      .site-header {
-        padding: 1.25rem 1.5rem;
-      }
-
-      section {
-        padding: 4.5rem 1.5rem;
-      }
-
-      .hero {
-        padding: 7rem 1.5rem 4rem;
-      }
-
-      .pratique-box {
-        padding: 2rem 1.5rem;
-      }
-    }
-  </style>
-</head>
+<html lang="fr" class="pas-js"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>B L&#x27;Atelier — Artisan d’art</title><meta name="description" content="L&#x27;art de la matière et du geste. Un espace dédié à la création artisanale, où chaque pièce naît d&#x27;un savoir-faire précis et exigeant."><meta property="og:type" content="website"><meta property="og:title" content="B L&#x27;Atelier — Artisan d’art"><meta property="og:description" content="L&#x27;art de la matière et du geste. Un espace dédié à la création artisanale, où chaque pièce naît d&#x27;un savoir-faire précis et exigeant."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f1f2f0"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231f4e8c%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3EB%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "B L'Atelier", "address": {"@type": "PostalAddress", "streetAddress": "23 Rue Bouquière", "addressCountry": "FR"}, "email": "b.latelier.bx@gmail.com"}</script>
+<style>
+:root{--bg:#f1f2f0;--bg2:#e6e8e5;--ink:#101820;--muted:#56606a;--accent:#1f4e8c;--accent2:#e9b949;--soft:#dfe5ea;--soft2:#b8c7d6;--line:#cfd5da;--on-accent:#ffffff;--dark:#0e1a28;--on-dark:#eef1f4;--f-titre:'Fraunces',Georgia, 'Times New Roman', serif;--f-texte:'Space Grotesk',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--r:0px;}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-texte);font-size:clamp(16px,1.05vw + 12px,18px);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-titre);font-weight:400;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0 0 1em}
+.wrap{width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 16px;z-index:200}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.eyebrow{font:500 .72rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.9em}
+.eyebrow::before{content:"";width:2.4em;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:.7em;padding:1em 1.8em;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;font:500 .78rem/1 var(--f-texte);letter-spacing:.18em;text-transform:uppercase;transition:background .3s,color .3s,transform .3s;cursor:pointer;border-radius:var(--r,0)}
+.btn:hover{background:transparent;color:var(--accent)}
+.btn.ligne{background:transparent;color:inherit;border-color:currentColor}
+.btn.ligne:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn .fl{transition:transform .3s}.btn:hover .fl{transform:translateX(5px)}
+/* En-tête — capsule flottante en verre liquide (réf. « navbar ») */
+.top{position:fixed;inset:14px 0 auto 0;z-index:100;transition:inset .45s cubic-bezier(.2,.7,.2,1),color .35s}
+.top .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 10px 10px 22px;width:min(1180px,100% - 24px);border-radius:999px;transition:padding .45s cubic-bezier(.2,.7,.2,1)}
+.top .wrap::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;
+ background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.04));
+ -webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(255,255,255,.08),inset 0 0 0 1px rgba(255,255,255,.18),0 10px 40px -12px rgba(0,0,0,.28);transition:background .4s,box-shadow .4s}
+.top .wrap::after{content:"";position:absolute;inset:1px;border-radius:inherit;z-index:-1;pointer-events:none;background:radial-gradient(120% 140% at 20% -40%,rgba(255,255,255,.35),transparent 45%);opacity:.7}
+.top.fond{inset:8px 0 auto 0}
+.top.fond .wrap{padding-block:7px}
+.top.fond .wrap::before{background:color-mix(in srgb,var(--bg) 72%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 0 1px color-mix(in srgb,var(--ink) 9%,transparent),0 18px 50px -18px color-mix(in srgb,var(--ink) 45%,transparent)}
+.logo{font:400 clamp(1.05rem,.95rem + .5vw,1.35rem)/1 var(--f-titre);text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.7em;min-width:0}
+.logo i{font-style:normal;display:grid;place-items:center;width:2.1em;height:2.1em;border:1px solid var(--accent);color:var(--accent);border-radius:var(--rl,50%);font-size:.85em;flex:none}
+.logo span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top nav{display:flex;gap:4px;align-items:center}
+.top nav a{text-decoration:none;font:500 .72rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;position:relative;padding:.95em 1.05em;border-radius:999px;transition:background .3s,color .3s}
+.top nav a:hover{background:color-mix(in srgb,currentColor 10%,transparent)}
+.top .nav-cta{margin-left:8px;background:var(--accent);color:var(--on-accent)!important;padding:1em 1.4em;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 18px -6px color-mix(in srgb,var(--accent) 70%,transparent)}
+.top .nav-cta:hover{background:color-mix(in srgb,var(--accent) 85%,#000)}
+.menu-btn{display:none;background:color-mix(in srgb,currentColor 8%,transparent);border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;color:inherit;position:relative;flex:none}
+.menu-btn i,.menu-btn i::before{position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;content:"";transition:transform .3s,top .3s}
+.menu-btn i{top:21px}.menu-btn i::before{left:0;right:0;top:-6px}
+.menu-btn[aria-expanded=true] i{transform:rotate(45deg)}.menu-btn[aria-expanded=true] i::before{top:0;transform:rotate(-90deg)}
+@media(max-width:960px){
+ .menu-btn{display:block}
+ .top .wrap{padding:7px 7px 7px 16px}
+ .top nav{position:fixed;inset:0;background:var(--bg);color:var(--ink);flex-direction:column;justify-content:center;gap:10px;transform:translateY(-104%);transition:transform .55s cubic-bezier(.7,0,.2,1);z-index:-2}
+ .top nav.ouvert{transform:none}
+ .top nav a{font:400 clamp(1.7rem,7vw,2.4rem)/1 var(--f-titre);letter-spacing:0;text-transform:none;padding:.35em .6em}
+ .top nav .nav-cta{margin:14px 0 0;font:500 .8rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:1.2em 1.8em}
+ .top.ouvert-menu{color:var(--ink)}
+ .top.ouvert-menu .wrap::before{background:color-mix(in srgb,var(--bg) 90%,transparent)}
+}
+.progres{position:fixed;inset:0 0 auto 0;height:2px;z-index:120;pointer-events:none}
+.progres i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2,var(--accent)));transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.defs-kit{position:absolute;width:0;height:0;overflow:hidden}
+::selection{background:var(--accent);color:var(--on-accent)}
+/* Apparitions */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.reveal.vu{opacity:1;transform:none}
+.pas-js .reveal{opacity:1;transform:none}
+/* Sections */
+section{position:relative}
+.sec{padding-block:clamp(72px,11vw,160px)}
+.titre-sec{font-size:clamp(2.2rem,1.2rem + 4.4vw,4.6rem);margin:.5em 0 .4em;letter-spacing:-.01em}
+.titre-sec em{font-style:italic;color:var(--accent)}
+.lead{font-size:clamp(1.05rem,.95rem + .5vw,1.3rem);color:var(--muted);max-width:44ch}
+.num{font:400 clamp(3.4rem,8vw,7rem)/.9 var(--f-titre);color:transparent;-webkit-text-stroke:1px var(--accent);opacity:.65}
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:1.1em 0;white-space:nowrap;font:italic 400 clamp(1.3rem,3vw,2.2rem)/1 var(--f-titre);color:var(--muted)}
+.marquee div{display:inline-flex;gap:2.2em;animation:defile 38s linear infinite;padding-right:2.2em}
+.marquee b{color:var(--accent);font-weight:400}
+@keyframes defile{to{transform:translateX(-50%)}}
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,110px);align-items:start}
+.coord{display:grid;gap:22px;margin:2em 0 2.4em;padding:0;list-style:none}
+.coord li{display:grid;gap:4px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.coord small{font:500 .68rem/1 var(--f-texte);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.coord a,.coord span{font:400 clamp(1.15rem,1rem + .7vw,1.55rem)/1.35 var(--f-titre);text-decoration:none;overflow-wrap:anywhere}
+.coord a:hover{color:var(--accent)}
+form.demo{display:grid;gap:18px;background:var(--bg2);padding:clamp(24px,4vw,48px);border:1px solid var(--line);border-radius:var(--r,0)}
+form.demo label{display:grid;gap:8px;font:500 .7rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+form.demo input,form.demo select,form.demo textarea{font:400 1rem/1.4 var(--f-texte);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;border-radius:0;width:100%;min-width:0;letter-spacing:0;text-transform:none}
+form.demo input:focus,form.demo select:focus,form.demo textarea:focus{outline:none;border-color:var(--accent)}
+form.demo textarea{min-height:110px;resize:vertical}
+form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+/* Pied de page (réf. « footer ») */
+.pied{background:var(--dark);color:var(--on-dark);padding:clamp(64px,9vw,120px) 0 64px;position:relative;overflow:hidden}
+.pied .wrap{display:grid;gap:clamp(30px,5vw,56px)}
+.pied-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,4vw,60px)}
+.pied-marque p{margin:1.1em 0 0;opacity:.7;max-width:30ch;font-family:var(--f-titre);font-style:italic;font-size:1.15rem;line-height:1.4}
+.pied .logo i{border-color:color-mix(in srgb,var(--on-dark) 45%,transparent);color:var(--on-dark)}
+.pied h3{font:500 .68rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent2,var(--accent));margin:.4em 0 1.4em}
+.pied ul{list-style:none;margin:0;padding:0;display:grid;gap:.75em}
+.pied li,.pied li a{font-size:.95rem;opacity:.85;text-decoration:none;overflow-wrap:anywhere}
+.pied li a{position:relative;opacity:1;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s}
+.pied li a:hover{background-size:100% 1px}
+.pied-nom{font:400 clamp(3rem,14vw,13rem)/.85 var(--f-titre);letter-spacing:-.03em;white-space:nowrap;overflow:hidden;text-overflow:clip;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--on-dark) 28%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--on-dark) 16%,transparent),transparent 85%);-webkit-background-clip:text;background-clip:text;user-select:none;margin:0 -.04em}
+.pied-bas{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;font-size:.82rem;opacity:.78;border-top:1px solid color-mix(in srgb,var(--on-dark) 18%,transparent);padding-top:22px}
+.pied-bas a{text-decoration:none;border-bottom:1px solid currentColor}
+.pied-bas .haut{border:1px solid color-mix(in srgb,var(--on-dark) 35%,transparent);padding:.7em 1.1em;border-radius:999px}
+.mentions{font-size:.8rem;opacity:.65;max-width:80ch;line-height:1.6;margin:0}
+.alcool{font-size:.78rem;opacity:.85;margin:0}
+@media(max-width:900px){.pied-cols{grid-template-columns:1fr 1fr}.pied-marque{grid-column:1/-1}}
+@media(max-width:520px){.pied-cols{grid-template-columns:1fr}}
+.badge-orbe{box-shadow:0 6px 20px rgba(0,0,0,.25);position:fixed;right:12px;bottom:12px;z-index:150;font:500 11px/1 system-ui,sans-serif;background:rgba(0,0,0,.74);color:#fff;padding:8px 12px;border-radius:999px;text-decoration:none;letter-spacing:.02em}
+/* ===== Kit premium ORBE ===== */
+:root{--ic1:color-mix(in srgb,var(--accent2,var(--accent)) 45%,#fff);--ic2:var(--accent);--ic3:color-mix(in srgb,var(--accent) 62%,#000);--ic4:color-mix(in srgb,var(--accent2,var(--accent)) 80%,#fff)}
+/* Verre liquide (réf. « liquid glass ») */
+.verre{position:relative;isolation:isolate;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 70%,transparent),color-mix(in srgb,var(--bg) 38%,transparent));
+ -webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);
+ border-radius:clamp(18px,2.4vw,30px);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.12),inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent),0 30px 60px -30px color-mix(in srgb,var(--ink) 40%,transparent)}
+.verre::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:radial-gradient(90% 70% at var(--lx,20%) var(--ly,0%),rgba(255,255,255,.55),transparent 55%);opacity:.55;transition:opacity .4s}
+.verre::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.45));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+/* Bandeau d'accueil (réf. « hero ») */
+.hero{isolation:isolate}
+.hero>.wrap{position:relative;z-index:2}
+.fx{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aur{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(70px);opacity:.42;mix-blend-mode:var(--fx-mode,normal);will-change:transform}
+.aur.a{background:radial-gradient(circle,var(--accent),transparent 65%);left:-18vmax;top:-22vmax;animation:aur1 26s ease-in-out infinite alternate}
+.aur.b{background:radial-gradient(circle,var(--accent2,var(--accent)),transparent 65%);right:-20vmax;top:6vmax;animation:aur2 32s ease-in-out infinite alternate;opacity:.34}
+.aur.c{background:radial-gradient(circle,color-mix(in srgb,var(--accent) 40%,var(--bg)),transparent 65%);left:22%;bottom:-34vmax;animation:aur3 38s ease-in-out infinite alternate;opacity:.3}
+@keyframes aur1{to{transform:translate(14vmax,10vmax) scale(1.15)}}
+@keyframes aur2{to{transform:translate(-12vmax,8vmax) scale(.9)}}
+@keyframes aur3{to{transform:translate(8vmax,-12vmax) scale(1.2)}}
+.spot{position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx,50%) var(--my,40%),color-mix(in srgb,var(--accent2,var(--accent)) 22%,transparent),transparent 60%);opacity:0;transition:opacity .6s}
+.hero:hover .spot{opacity:1}
+.grain{position:absolute;inset:-50%;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(5) infinite}
+@keyframes grain{20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}}
+.hero-pied{position:absolute;left:0;right:0;bottom:clamp(14px,3vh,28px);z-index:3;display:flex;justify-content:space-between;align-items:end;gap:16px;width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto;pointer-events:none}
+.puces{display:flex;flex-wrap:wrap;gap:8px}
+.puce{pointer-events:auto;font:500 .68rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:.85em 1.15em;border-radius:999px;color:inherit;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.18);display:inline-flex;align-items:center;gap:.6em}
+.puce i{width:6px;height:6px;border-radius:50%;background:var(--accent2,var(--accent));box-shadow:0 0 0 3px color-mix(in srgb,var(--accent2,var(--accent)) 30%,transparent)}
+.defiler{pointer-events:auto;position:absolute;left:50%;bottom:0;transform:translateX(-50%);display:inline-flex;flex-direction:column;align-items:center;gap:.8em;text-decoration:none;font:500 .62rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;opacity:.7}
+.defiler i{width:22px;height:36px;border-radius:12px;border:1px solid currentColor;position:relative}
+.defiler i::after{content:"";position:absolute;left:50%;top:7px;width:2px;height:7px;margin-left:-1px;border-radius:2px;background:currentColor;animation:molette 2s ease-in-out infinite}
+@keyframes molette{0%{transform:translateY(0);opacity:1}70%{transform:translateY(11px);opacity:0}100%{opacity:0}}
+@media(max-width:720px){.hero-pied{display:none}}
+.hero h1 k-m{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em;margin-bottom:-.06em}
+.hero h1 k-m>k-w{display:inline-block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.8,.1,1);transition-delay:calc(.15s + var(--m,0) * .07s)}
+.hero h1.vu k-m>k-w,.pas-js .hero h1 k-m>k-w{transform:none}
+/* Tuiles qui s'empilent au défilement (réf. « scroll ») + icônes 3D (réf. « 3D icons ») */
+.tuiles-sec{background:linear-gradient(180deg,var(--bg),var(--bg2) 40%,var(--bg));overflow:clip}
+.tuiles-sec::before{content:"";position:absolute;width:60vmax;height:60vmax;right:-25vmax;top:10%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 65%);filter:blur(40px);pointer-events:none}
+.tuiles-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,100px);align-items:start;position:relative}
+.tuiles-intro{position:sticky;top:120px}
+.tuiles-intro .lead{margin-bottom:2em}
+.tuiles-index{list-style:none;margin:0;padding:0;display:grid;gap:4px;counter-reset:t}
+.tuiles-index li{counter-increment:t;display:flex;gap:1em;align-items:center;font:400 1.05rem/1.3 var(--f-titre);padding:.7em 0;border-top:1px solid var(--line);opacity:.4;transition:opacity .4s,padding .4s}
+.tuiles-index li::before{content:"0" counter(t);font:500 .7rem/1 var(--f-texte);letter-spacing:.16em;color:var(--accent)}
+.tuiles-index li.actif{opacity:1;padding-left:.6em}
+.tuiles{display:grid;gap:clamp(18px,3vh,28px);padding-bottom:6vh}
+.tuile{position:sticky;top:calc(110px + var(--i) * 26px);min-height:clamp(300px,46vh,420px);padding:clamp(26px,4vw,52px);display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,40px);align-items:center;transform-origin:50% 0;transform:scale(var(--s,1));filter:brightness(var(--b,1));transition:transform .2s linear,filter .2s linear;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 88%,transparent),color-mix(in srgb,var(--bg2) 70%,transparent))}
+.tuile .n{font:500 .7rem/1 var(--f-texte);letter-spacing:.24em;color:var(--accent)}
+.tuile h3{font-size:clamp(1.7rem,1.2rem + 1.8vw,2.8rem);margin:.45em 0 .4em;letter-spacing:-.01em}
+.tuile p{color:var(--muted);margin:0;max-width:40ch}
+.lien-fl{display:inline-flex;gap:.6em;margin-top:1.4em;text-decoration:none;font:500 .75rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.lien-fl:hover .fl{transform:translateX(5px)}.lien-fl .fl{transition:transform .3s}
+.ico3d{width:clamp(96px,11vw,150px);aspect-ratio:1;display:grid;place-items:center;border-radius:30%;perspective:600px;
+ background:radial-gradient(120% 120% at 30% 15%,color-mix(in srgb,var(--bg) 95%,#fff),color-mix(in srgb,var(--bg2) 80%,var(--accent) 6%));
+ box-shadow:inset 0 2px 0 rgba(255,255,255,.8),inset 0 -10px 24px -8px color-mix(in srgb,var(--accent) 22%,transparent),0 24px 40px -18px color-mix(in srgb,var(--accent) 55%,transparent),0 2px 6px color-mix(in srgb,var(--ink) 10%,transparent)}
+.ico3d svg{width:64%;height:64%;overflow:visible;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);transition:transform .5s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 10px 10px color-mix(in srgb,var(--ic3) 45%,transparent))}
+.ico3d .p{fill:url(#k3d);filter:url(#relief)}
+.ico3d .s{fill:url(#k3d-b);filter:url(#relief)}
+.ico3d .h{fill:#fff;opacity:.55}
+.tuile:hover .ico3d svg{animation:flotte3d 3s ease-in-out infinite}
+@keyframes flotte3d{50%{translate:0 -6px}}
+@media(max-width:900px){.tuiles-grid{grid-template-columns:1fr}.tuiles-intro{position:static}.tuiles-index{display:none}.tuile{grid-template-columns:1fr;top:calc(84px + var(--i) * 18px);min-height:0}}
+/* Appel à l'action (réf. « CTA ») */
+.cta-bande{position:relative;isolation:isolate;overflow:hidden;background:var(--dark);color:var(--on-dark);padding:clamp(90px,14vw,200px) 0}
+.cta-bande .fx .aur{opacity:.6;--fx-mode:screen}
+.cta-bande .wrap{position:relative;z-index:2}
+.cta-carte{max-width:880px;margin-inline:auto;text-align:center;padding:clamp(40px,7vw,90px) clamp(24px,6vw,80px);background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));color:var(--on-dark);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.14),0 40px 80px -30px rgba(0,0,0,.55)}
+.cta-carte .eyebrow{color:var(--accent2,var(--accent));justify-content:center}
+.cta-carte .eyebrow::after{content:"";width:2.4em;height:1px;background:currentColor}
+.cta-titre{font-size:clamp(2.4rem,1.2rem + 5vw,5.4rem);margin:.45em 0 .35em;letter-spacing:-.02em}
+.cta-carte p{opacity:.8;max-width:46ch;margin:0 auto 2.2em;font-size:1.08rem}
+.cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta-actions .btn{border-radius:999px;padding:1.15em 2em}
+.cta-actions .btn.ligne{color:var(--on-dark);border-color:color-mix(in srgb,var(--on-dark) 40%,transparent)}
+.cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
+.aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
+
+/* Atelier, galerie, décoration */
+.hero{min-height:100svh;display:grid;align-content:end;padding:clamp(110px,16vh,170px) 0 clamp(40px,7vh,80px);background:var(--bg);position:relative;overflow:hidden}
+.hero h1{font-size:clamp(3.4rem,1rem + 12vw,12.5rem);letter-spacing:-.04em;line-height:.84;max-width:12ch;overflow-wrap:anywhere}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-bas{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-top:clamp(28px,5vh,64px);padding-top:28px;border-top:1px solid var(--ink)}
+.hero .accroche{font:italic 400 clamp(1.4rem,1rem + 1.6vw,2.4rem)/1.15 var(--f-titre);max-width:20ch}
+.hero .sous{color:var(--muted);max-width:44ch;margin:0 0 1.6em}
+.formes{position:absolute;right:-4vw;top:clamp(90px,14vh,150px);width:min(54vw,620px);aspect-ratio:1;z-index:0;pointer-events:none}
+.formes svg{width:100%;height:100%;overflow:visible}
+.hero .wrap{position:relative;z-index:1}
+.s1{fill:var(--accent)}.s2{fill:var(--accent2)}.s3{fill:var(--soft2)}.s4{fill:none;stroke:var(--ink);stroke-width:1.4}
+.bouge{animation:bouge 14s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.bouge.b{animation-duration:19s;animation-direction:reverse}
+@keyframes bouge{50%{transform:translate(14px,-18px) rotate(8deg)}}
+.defile-h{display:flex;gap:clamp(14px,2vw,28px);overflow-x:auto;padding:0 clamp(20px,5vw,64px) 24px;scroll-snap-type:x mandatory;scrollbar-width:thin;margin-top:clamp(30px,5vw,60px)}
+.cadre{flex:0 0 clamp(240px,30vw,400px);scroll-snap-align:start;display:grid;gap:12px}
+.cadre .toile{aspect-ratio:4/5;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--bg2);transition:transform .6s}
+.cadre:hover .toile{transform:translateY(-8px)}
+.cadre .toile svg{width:100%;height:100%;display:block}
+.cadre .leg{display:flex;justify-content:space-between;font:500 .7rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.cadre .photo-ici{position:absolute;left:12px;bottom:12px;font:500 .62rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;background:var(--bg);color:var(--ink);padding:7px 10px}
+.esprit{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(36px,7vw,120px)}
+.esprit p{color:var(--muted);max-width:54ch}
+.esprit .grande{font:italic 400 clamp(1.5rem,1.1rem + 1.6vw,2.4rem)/1.25 var(--f-titre);color:var(--ink);margin-bottom:1em}
+.offre{background:var(--dark);color:var(--on-dark)}
+.offre .eyebrow,.offre .titre-sec em{color:var(--accent2)}
+.offre-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,100px);align-items:start}
+.offre-grid .gauche{position:sticky;top:110px}
+.rang{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:clamp(24px,3.4vw,44px) 0;border-top:1px solid color-mix(in srgb,var(--on-dark) 22%,transparent);transition:padding .4s}
+.rang:last-child{border-bottom:1px solid color-mix(in srgb,var(--on-dark) 22%,transparent)}
+.rang:hover{padding-left:14px}
+.rang .n{font:italic 400 1.2rem/1 var(--f-titre);color:var(--accent2)}
+.rang h3{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.4rem);margin-bottom:.4em}
+.rang p{margin:0;opacity:.8;max-width:48ch}
+.proc{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(36px,6vw,72px);border-top:1px solid var(--ink)}
+.pas{padding:clamp(24px,3.4vw,44px) clamp(18px,2.6vw,36px) clamp(24px,3.4vw,44px) 0;display:grid;gap:12px;align-content:start}
+.pas+.pas{padding-left:clamp(18px,2.6vw,36px);border-left:1px solid var(--line)}
+.pas .n{font:400 clamp(3rem,6vw,5rem)/.9 var(--f-titre);color:var(--accent)}
+.pas h3{font-size:clamp(1.4rem,1.1rem + 1.1vw,1.9rem)}
+.pas p{margin:0;color:var(--muted)}
+.cite{padding-block:clamp(72px,11vw,150px);background:var(--soft)}
+.cite blockquote{margin:0;max-width:20ch;font:italic 400 clamp(2rem,1.1rem + 3.8vw,4.4rem)/1.1 var(--f-titre);text-wrap:balance}
+@media(max-width:900px){
+ .hero-bas,.esprit,.offre-grid,.proc{grid-template-columns:1fr}.formes{width:80vw;opacity:.5;top:70px}
+ .offre-grid .gauche{position:static}.pas+.pas{padding-left:0;border-left:0;border-top:1px solid var(--line)}.pas{padding-right:0}
+}
+</style></head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="progres" aria-hidden="true"><i></i></div>
+<svg class="defs-kit" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="k3d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ic1)"/><stop offset=".55" style="stop-color:var(--ic2)"/><stop offset="1" style="stop-color:var(--ic3)"/></linearGradient>
+<linearGradient id="k3d-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--ic4)"/><stop offset="1" style="stop-color:var(--ic2)"/></linearGradient>
+<filter id="relief" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="flou"/>
+<feSpecularLighting in="flou" surfaceScale="4.5" specularConstant=".9" specularExponent="26" lighting-color="#ffffff" result="spec"><fePointLight x="14" y="-6" z="70"/></feSpecularLighting>
+<feComposite in="spec" in2="SourceAlpha" operator="in" result="specin"/>
+<feComposite in="SourceGraphic" in2="specin" operator="arithmetic" k1="0" k2="1" k3=".75" k4="0" result="lumiere"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="ombre"/>
+<feOffset in="ombre" dy="3.5" result="ombre2"/>
+<feComposite in="ombre2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="creux"/>
+<feFlood flood-color="#000" flood-opacity=".28"/><feComposite in2="creux" operator="in" result="creux2"/>
+<feComposite in="creux2" in2="lumiere" operator="atop"/>
+</filter>
+</defs></svg>
+<header class="top" id="top"><div class="wrap">
+<a class="logo" href="#top" aria-label="B L&#x27;Atelier, haut de page"><i aria-hidden="true">B</i><span>B L&#x27;Atelier</span></a>
+<nav id="menu" aria-label="Navigation principale"><a href="#esprit">L’esprit</a><a href="#realisations">Réalisations</a><a href="#offre">Savoir-faire</a><a href="#demarche">Démarche</a><a class="nav-cta" href="#contact">Nous écrire</a></nav>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
+</div></header>
 
-  <!-- En-tête de page -->
-  <header class="site-header" id="siteHeader">
-    <a href="#" class="brand-link" aria-label="B L'Atelier - Accueil">
-      <!-- Monogramme artisanal SVG stylisé -->
-      <svg class="brand-emblem" viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="19" stroke-width="1" opacity="0.4"/>
-        <path d="M14 11h7a5 5 0 0 1 2 9.5 5 5 0 0 1-2 8.5h-7V11zm3 3v4.5h4a2.25 2.25 0 0 0 0-4.5h-4zm0 6.5v5h4.2a2.5 2.5 0 0 0 0-5H17z" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-        <line x1="26" y1="13" x2="26" y2="27" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.6"/>
-      </svg>
-      <span class="brand-title">B L'Atelier</span>
-    </a>
+<main id="contenu">
+<section class="hero" aria-label="Accueil"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="spot"></i><i class="grain"></i></div>
+<div class="hero-pied" aria-hidden="true"><div class="puces"><span class="puce"><i></i>Artisan d’art</span></div></div>
 
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu de navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<div class="formes" aria-hidden="true" data-parallax=".05"><svg viewBox="0 0 600 600"><circle class="s1 bouge" cx="380" cy="230" r="170"/><rect class="s2 bouge b" x="120" y="250" width="240" height="300" rx="120"/><path class="s3 bouge" d="M300 40 L560 460 L40 460Z" opacity=".85"/><circle class="s4" cx="300" cy="300" r="250"/><path class="s4" d="M50 300h500M300 50v500"/></svg></div>
+<div class="wrap">
+<span class="eyebrow reveal">Artisan d’art</span>
+<h1 class="reveal" style="--d:.1s">B L&#x27;Atelier</h1>
+<div class="hero-bas reveal" style="--d:.25s"><div class="accroche">L&#x27;art de la matière et du geste.</div>
+<div><p class="sous">Un espace dédié à la création artisanale, où chaque pièce naît d&#x27;un savoir-faire précis et exigeant.</p><div style="display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#realisations">Voir l’atelier <span class="fl">→</span></a><a class="btn ligne" href="#contact">Nous écrire</a></div></div></div>
+</div></section>
 
-    <nav aria-label="Navigation principale">
-      <ul class="nav-menu" id="mainNav">
-        <li><a href="#esprit" class="nav-link">L'Esprit</a></li>
-        <li><a href="#metier" class="nav-link">Tapisserie</a></li>
-        <li><a href="#galerie" class="nav-link">L'Atelier</a></li>
-        <li><a href="#pratique" class="nav-link">Informations</a></li>
-        <li><a href="#pratique" class="nav-cta">Prendre contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<div class="marquee" aria-hidden="true"><div><span>Atelier</span><b>◆</b><span>Matière</span><b>◆</b><span>Geste</span><b>◆</b><span>Unique</span><b>◆</b><span>Sur-mesure</span><b>◆</b><span>Atelier</span><b>◆</b><span>Matière</span><b>◆</b><span>Geste</span><b>◆</b><span>Unique</span><b>◆</b><span>Sur-mesure</span><b>◆</b></div></div>
 
-  <main id="mainContent">
+<section class="sec" id="esprit"><div class="wrap esprit">
+<div class="reveal"><div class="num">01</div><span class="eyebrow">L’esprit</span><h2 class="titre-sec">Notre démarche</h2></div>
+<div class="reveal" style="--d:.12s"><p class="grande">L&#x27;atelier est un lieu de recherche et de façonnage. Ici, la matière brute est travaillée avec attention pour révéler sa structure et sa noblesse. Chaque geste répond à une exigence de justesse, dans le respect des traditions de métiers d&#x27;art.</p><p>Nous privilégions le temps long, celui de l&#x27;observation, de l&#x27;essai et de l&#x27;ajustement. Cette approche garantit la singularité de chaque réalisation.</p></div>
+</div></section>
 
-    <!-- Bandeau d'accueil Hero avec Canvas 3D -->
-    <section class="hero" id="hero">
-      <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
-      <div class="hero-overlay" aria-hidden="true"></div>
+<section id="realisations" style="padding-bottom:clamp(60px,9vw,120px)"><div class="wrap reveal"><span class="eyebrow">Réalisations</span><h2 class="titre-sec">Un espace pour <em>vos pièces</em></h2><p class="lead">Les cadres ci-dessous attendent vos photos : chaque création y trouvera sa place.</p></div>
+<div class="defile-h" tabindex="0" aria-label="Galerie, défilement horizontal">
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s3"/><circle class="s1" cx="200" cy="210" r="120"/><rect class="s2" x="90" y="300" width="220" height="130"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 01</span><span>→</span></figcaption></figure>
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s2"/><path class="s3" d="M0 500 L400 80 V500Z"/><circle class="s1" cx="130" cy="150" r="70"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 02</span><span>→</span></figcaption></figure>
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s1"/><rect class="s3" x="60" y="70" width="280" height="360" rx="140"/><circle class="s2" cx="200" cy="250" r="64"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 03</span><span>→</span></figcaption></figure>
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s3"/><path class="s2" d="M0 0H400V250Z"/><path class="s1" d="M0 500V260L400 500Z"/><circle class="s4" cx="200" cy="250" r="90"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 04</span><span>→</span></figcaption></figure>
+</div></section>
 
-      <div class="hero-container">
-        <span class="hero-pretitle">Artisans d'Art &middot; Upholsterer</span>
-        <h1 class="hero-title">L'art du geste, la mémoire <em>des étoffes</em>.</h1>
-        <p class="hero-desc">
-          Tapisserie d'ameublement et exigence artisanale au 23 Rue Bouquière. Façonner, tendre, restaurer avec la rigueur des métiers d'art.
-        </p>
-        <div class="hero-actions">
-          <a href="#pratique" class="btn-primary">
-            <span>Visiter l'atelier</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="mailto:b.latelier.bx@gmail.com" class="btn-outline">Nous écrire</a>
-        </div>
-      </div>
-    </section>
+<section class="sec offre" id="offre"><div class="wrap offre-grid">
+<div class="gauche reveal"><span class="eyebrow">Ce que nous faisons</span><h2 class="titre-sec">Ce que nous proposons</h2></div>
+<div>
+<div class="rang reveal"><span class="n">01</span><div><h3>Pièces uniques</h3><p>Des créations originales façonnées à la main, pensées pour s&#x27;inscrire dans le quotidien ou l&#x27;exception.</p></div></div>
+<div class="rang reveal"><span class="n">02</span><div><h3>Travail sur mesure</h3><p>Un accompagnement personnalisé pour concevoir des objets adaptés à vos attentes et à vos espaces.</p></div></div>
+<div class="rang reveal"><span class="n">03</span><div><h3>Conseil et expertise</h3><p>Un échange attentif sur les choix de matières, les formes et les finitions pour chaque projet.</p></div></div>
+</div></div></section>
 
-    <!-- L'esprit de la maison -->
-    <section class="section-esprit" id="esprit">
-      <div class="container">
-        <div class="grid-esprit">
-          <div class="esprit-text reveal">
-            <span class="section-eyebrow">La Maison</span>
-            <h2 class="section-heading">L'alliance de la main et de la matière</h2>
-            <p>
-              Chaque assise, chaque textile porte une histoire singulière. Au cœur de notre métier d'artisan d'art tapissier, le travail s'exerce avec patience et méthode : étude des structures, choix rigoureux des matières nobles et façonnage fidèle aux règles de l'art.
-            </p>
-            <p>
-              Situé au 23 Rue Bouquière, notre atelier accueille vos projets de tapisserie d'ameublement, dans le respect des garnitures traditionnelles comme des lignes plus contemporaines.
-            </p>
-            <div class="signature-divider"></div>
-            <p style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-light); font-style: italic;">
-              « Préserver la forme, magnifier le toucher, pérenniser l’ouvrage. »
-            </p>
-          </div>
+<section class="sec tuiles-sec" id="demarche"><div class="wrap tuiles-grid">
+<div class="tuiles-intro reveal"><span class="eyebrow">La démarche</span><h2 class="titre-sec">Notre accompagnement</h2>
+<p class="lead">Une façon de travailler claire, du premier échange à la pièce finie.</p>
+<ol class="tuiles-index" aria-hidden="true"><li>Écoute</li><li>Conception</li><li>Réalisation</li></ol></div>
+<div class="tuiles">
+<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M10 14a10 10 0 0 1 10-10h24a10 10 0 0 1 10 10v18a10 10 0 0 1-10 10H28l-12 11v-11h0a6 6 0 0 1-6-6Z"/><g class="h" opacity=".9"><circle cx="22" cy="23" r="3.6"/><circle cx="32" cy="23" r="3.6"/><circle cx="42" cy="23" r="3.6"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>Écoute</h3><p>Définition précise de vos envies et de vos besoins lors d&#x27;un premier échange.</p></div></article>
+<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M44 6l14 14-30 30-14-14Z"/><path class="s" d="M14 36l14 14-20 6Z"/><path class="s" d="M44 6l5-5 14 14-5 5Z"/><path class="h" d="M41 12l4 4-24 24-4-4Z" opacity=".35"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Conception</h3><p>Étude des formes et sélection rigoureuse des matériaux adaptés au projet.</p></div></article>
+<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="s" d="M32 4l26 14-26 14L6 18Z"/><path class="p" d="M6 18l26 14v28L6 46Z"/><path class="p" d="M58 18L32 32v28l26-14Z" style="filter:url(#relief) brightness(.78)"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Réalisation</h3><p>Façonnage minutieux dans l&#x27;atelier, dans le respect des règles de l&#x27;art.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
+</div></div></section>
 
-          <div class="esprit-media reveal">
-            <div class="photo-card">
-              <!-- Photo d'illustration autorisée de la fiche -->
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg/1920px-Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
-                alt="Artisan façonnant la matière à l'établi"
-                loading="lazy"
-                width="800"
-                height="600"
-              >
-              <div class="photo-caption">Image d'illustration</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- L'offre / Le savoir-faire -->
-    <section class="section-offre" id="metier">
-      <div class="container">
-        <div class="offre-header reveal">
-          <span class="section-eyebrow">Savoir-Faire</span>
-          <h2 class="section-heading">Tapisserie d'ameublement &amp; ouvrages d'art</h2>
-          <p style="color: var(--text-light-muted); font-size: 1.05rem;">
-            Un accompagnement sur mesure pour redonner vie et maintien aux sièges, banquettes et ensembles textiles.
-          </p>
-        </div>
+<section class="cite"><div class="wrap reveal"><blockquote>La main guide l&#x27;outil, la matière dicte sa forme.</blockquote></div></section>
 
-        <div class="cards-grid">
-          <!-- Carte 1 -->
-          <article class="craft-card reveal">
-            <div>
-              <span class="craft-card-num">01</span>
-              <h3 class="craft-card-title">Garniture &amp; Réfection</h3>
-              <p class="craft-card-desc">
-                Travail soigné de réfection traditionnelle ou contemporaine : sanglage, guindage, piquage et remise en état pérenne des assises.
-              </p>
-            </div>
-            <div class="card-footer-line">
-              <span>Précision du geste</span>
-            </div>
-          </article>
+<section class="cta-bande" aria-label="Nous contacter"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="grain"></i></div>
+<div class="wrap"><div class="cta-carte verre reveal">
+<span class="eyebrow">Votre projet</span>
+<h2 class="cta-titre">Parlons de ce que vous imaginez.</h2>
+<p>Une pièce, un lieu, une envie : décrivez-nous votre projet, nous vous répondrons.</p>
+<div class="cta-actions"><a class="btn aimant" href="#contact">Nous écrire <span class="fl">→</span></a><a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=23%20Rue%20Bouqui%C3%A8re" target="_blank" rel="noopener">Itinéraire</a></div>
+</div></div></section>
 
-          <!-- Carte 2 -->
-          <article class="craft-card reveal">
-            <div>
-              <span class="craft-card-num">02</span>
-              <h3 class="craft-card-title">Couverture &amp; Étoffes</h3>
-              <p class="craft-card-desc">
-                Pose de textiles choisis, finitions passepoilées, cloutées ou galonnées. Ajustement millimétré des raccords et des tensions.
-              </p>
-            </div>
-            <div class="card-footer-line">
-              <span>Sens du détail</span>
-            </div>
-          </article>
+<section class="sec" id="contact"><div class="wrap contact-grid">
+<div class="reveal"><span class="eyebrow">Contact</span>
+<h2 class="titre-sec">Entrer en contact avec l&#x27;atelier</h2>
+<p class="lead">Un projet, une pièce, une question ? Écrivez-nous, nous vous répondrons.</p>
+<ul class="coord"><li><small>Adresse</small><span>23 Rue Bouquière</span></li>
+<li><small>Email</small><a href="mailto:b.latelier.bx@gmail.com">b.latelier.bx@gmail.com</a></li></ul>
+<a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=23%20Rue%20Bouqui%C3%A8re" target="_blank" rel="noopener">Itinéraire <span class="fl">→</span></a></div>
+<form class="demo reveal" style="--d:.12s" novalidate>
+<label>Votre nom<input type="text" name="nom" autocomplete="name"></label>
+<label>Votre email<input type="email" name="email" autocomplete="email"></label>
+<label>Votre demande<select name="objet"><option>Un projet sur mesure</option><option>Une pièce ou un conseil</option><option>Une visite de l’atelier</option><option>Autre demande</option></select></label>
+<label>Votre message<textarea name="message"></textarea></label>
+<button class="btn" type="submit">Envoyer <span class="fl">→</span></button>
+<p class="retour" aria-live="polite"></p>
+</form></div></section>
 
-          <!-- Carte 3 -->
-          <article class="craft-card reveal">
-            <div>
-              <span class="craft-card-num">03</span>
-              <h3 class="craft-card-title">Conseil &amp; Sur-mesure</h3>
-              <p class="craft-card-desc">
-                Écoute attentive de vos projets décoratifs et patrimoniaux à l'atelier, pour une harmonie durable au sein de vos intérieurs.
-              </p>
-            </div>
-            <div class="card-footer-line">
-              <span>Dialogue artisanal</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+</main>
+<footer class="pied"><div class="wrap">
+<div class="pied-cols">
+<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">B</i><span>B L&#x27;Atelier</span></a><p>L&#x27;art de la matière et du geste.</p></div>
+<div><h3>Naviguer</h3><ul><li><a href="#esprit">L’esprit</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#offre">Savoir-faire</a></li><li><a href="#demarche">Démarche</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div><h3>Nous trouver</h3><ul><li>23 Rue Bouquière</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=23%20Rue%20Bouqui%C3%A8re" target="_blank" rel="noopener">Itinéraire →</a></li></ul></div>
+<div><h3>Nous joindre</h3><ul><li><a href="mailto:b.latelier.bx@gmail.com">b.latelier.bx@gmail.com</a></li><li><a href="#contact">Formulaire de contact</a></li></ul></div>
+</div>
+<div class="pied-nom" aria-hidden="true">B L&#x27;Atelier</div>
 
-    <!-- Galerie / Emplacements réservés aux photos de l'artisan -->
-    <section class="section-galerie" id="galerie">
-      <div class="container">
-        <div class="reveal">
-          <span class="section-eyebrow">Portfolio de l'Atelier</span>
-          <h2 class="section-heading">Les réalisations à l’établi</h2>
-          <p style="color: var(--text-light-muted); max-width: 55ch;">
-            Galerie dédiée aux créations, métamorphoses de sièges et pièces façonnées sur place.
-          </p>
-        </div>
+<p class="mentions" id="mentions">Mentions légales — Éditeur : B L&#x27;Atelier, 23 Rue Bouquière. Maquette de démonstration réalisée par ORBE : les mentions complètes (numéro d’immatriculation, hébergeur, responsable de publication) seront renseignées avec vous avant toute mise en ligne.</p>
+<div class="pied-bas"><span>© <span data-annee>2026</span> B L&#x27;Atelier</span><span>Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></span><a href="#top" class="haut">Haut de page ↑</a></div>
+</div></footer>
+<a class="badge-orbe" href="mailto:societe.orbe@gmail.com">Maquette proposée par ORBE</a>
 
-        <div class="galerie-grid">
-          <!-- Emplacement photo 1 -->
-          <div class="merchant-photo-slot reveal">
-            <svg class="slot-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span class="slot-title">Vos photos ici</span>
-            <span class="slot-sub">Restauration &amp; Détails d'ouvrage</span>
-          </div>
+<script>
+(function(){
+var d=document,r=d.documentElement;r.classList.remove('pas-js');
+var top=d.querySelector('.top'),btn=d.querySelector('.menu-btn'),nav=d.querySelector('.top nav');
+function onScroll(){if(top)top.classList.toggle('fond',window.scrollY>40);
+ var s=window.scrollY;d.querySelectorAll('[data-parallax]').forEach(function(e){e.style.transform='translate3d(0,'+(s*parseFloat(e.dataset.parallax))+'px,0)'});}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+if(btn){btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')!=='true';btn.setAttribute('aria-expanded',o);nav.classList.toggle('ouvert',o);top.classList.toggle('ouvert-menu',o);d.body.style.overflow=o?'hidden':''});
+ nav.addEventListener('click',function(e){if(e.target.tagName==='A'){btn.setAttribute('aria-expanded','false');nav.classList.remove('ouvert');top.classList.remove('ouvert-menu');d.body.style.overflow=''}});}
+var els=[].slice.call(d.querySelectorAll('.reveal'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('vu')})}
+d.querySelectorAll('form.demo').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var p=f.querySelector('.retour');if(p)p.textContent='Démonstration : ce formulaire sera relié à votre boîte mail.'})});
+var y=d.querySelector('[data-annee]');if(y)y.textContent=new Date().getFullYear();
+})();
+/* Kit premium ORBE : titre animé, lumière, barre de progression, tuiles empilées, icônes 3D, bouton aimanté */
+(function(){
+var d=document,w=window,calme=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+d.querySelectorAll('.hero h1').forEach(function(h){var n=0;[].slice.call(h.childNodes).forEach(function(t){if(t.nodeType!==3||!t.textContent.trim())return;var f=d.createDocumentFragment();t.textContent.split(/(\s+)/).forEach(function(m){if(!m)return;if(/^\s+$/.test(m)){f.appendChild(d.createTextNode(' '));return}var o=d.createElement('k-m');var b=d.createElement('k-w');b.textContent=m;b.style.setProperty('--m',n++);o.appendChild(b);f.appendChild(o)});h.replaceChild(f,t)})});
+var hero=d.querySelector('.hero');
+if(hero&&!calme){hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px')})}
+d.querySelectorAll('.verre').forEach(function(v){v.addEventListener('pointermove',function(e){var r=v.getBoundingClientRect();v.style.setProperty('--lx',((e.clientX-r.left)/r.width*100)+'%');v.style.setProperty('--ly',((e.clientY-r.top)/r.height*100)+'%')})});
+var bar=d.querySelector('.progres'),tu=[].slice.call(d.querySelectorAll('.tuile')),idx=[].slice.call(d.querySelectorAll('.tuiles-index li'));
+var att=false;function maj(){att=false;var h=d.documentElement.scrollHeight-w.innerHeight;if(bar)bar.style.setProperty('--p',h>0?Math.min(1,w.scrollY/h):0);
+ var act=0;tu.forEach(function(t,i){var r=t.getBoundingClientRect();if(r.top<w.innerHeight*.55)act=i;if(calme)return;var s=tu[i+1];if(!s){t.style.setProperty('--s',1);t.style.setProperty('--b',1);return}
+  var q=s.getBoundingClientRect(),k=Math.max(0,Math.min(1,1-(q.top-r.top)/(r.height||1)));t.style.setProperty('--s',(1-k*.06).toFixed(4));t.style.setProperty('--b',(1-k*.12).toFixed(4))});
+ idx.forEach(function(l,i){l.classList.toggle('actif',i===act)});}
+w.addEventListener('scroll',function(){if(!att){att=true;requestAnimationFrame(maj)}},{passive:true});w.addEventListener('resize',maj);maj();
+if(!calme&&w.matchMedia('(hover: hover)').matches){
+ d.querySelectorAll('.ico3d').forEach(function(c){var t=c.closest('.tuile')||c;t.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--ry',(x*28)+'deg');c.style.setProperty('--rx',(-y*28)+'deg')});t.addEventListener('pointerleave',function(){c.style.setProperty('--ry','0deg');c.style.setProperty('--rx','0deg')})});
+ d.querySelectorAll('.aimant').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.28)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});}
+})();
+(function(){var n=document.querySelector('.pied-nom');if(!n)return;function fit(){n.style.fontSize='';var t=0;while(n.scrollWidth>n.clientWidth+2&&t++<40){n.style.fontSize=(parseFloat(getComputedStyle(n).fontSize)*.94)+'px'}}
+fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 
-          <!-- Emplacement photo 2 -->
-          <div class="merchant-photo-slot reveal">
-            <svg class="slot-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span class="slot-title">Vos photos ici</span>
-            <span class="slot-sub">Sélection d'étoffes &amp; Finitions</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Informations pratiques & Contact -->
-    <section class="section-pratique" id="pratique">
-      <div class="container">
-        <div class="pratique-grid">
-          
-          <div class="pratique-box reveal">
-            <span class="section-eyebrow">Coordonnées</span>
-            <h2 class="section-heading" style="font-size: 2.4rem;">Venir à l'Atelier</h2>
-            <p style="color: var(--text-light-muted); font-size: 0.95rem;">
-              Nous vous accueillons en semaine pour étudier vos pièces et dialoguer autour de vos souhaits de tapisserie.
-            </p>
-
-            <ul class="info-list">
-              <li class="info-item">
-                <span class="info-label">Adresse de l'atelier</span>
-                <span class="info-value">23 Rue Bouquière</span>
-              </li>
-
-              <li class="info-item">
-                <span class="info-label">Horaires d'ouverture</span>
-                <span class="info-value">Du lundi au vendredi</span>
-                <div>
-                  <span class="schedule-badge">10:00 – 17:00</span>
-                </div>
-              </li>
-
-              <li class="info-item">
-                <span class="info-label">Correspondance par courriel</span>
-                <span class="info-value">
-                  <a href="mailto:b.latelier.bx@gmail.com">b.latelier.bx@gmail.com</a>
-                </span>
-              </li>
-            </ul>
-
-            <div class="pratique-actions">
-              <a 
-                href="https://www.google.com/maps/search/?api=1&query=23+Rue+Bouqui%C3%A8re" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="btn-primary"
-              >
-                <span>Calculer l'itinéraire</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="pratique-box reveal" style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <span class="section-eyebrow">Demande d'information</span>
-              <h2 class="section-heading" style="font-size: 2.4rem;">Votre Projet</h2>
-              <p style="color: var(--text-light-muted); font-size: 0.95rem; margin-bottom: 2rem;">
-                Pour un devis ou une estimation de réfection, vous pouvez nous transmettre vos photographies et dimensions directement par courriel.
-              </p>
-              
-              <div style="background: rgba(0,0,0,0.25); border-left: 2px solid var(--accent-gold); padding: 1.5rem; margin-bottom: 2rem;">
-                <p style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--text-light); margin-bottom: 0.5rem;">
-                  Échanges directs avec l'artisan
-                </p>
-                <p style="font-size: 0.85rem; color: var(--text-light-muted);">
-                  Chaque pièce nécessitant une approche sur mesure, nous examinons vos besoins avec attention afin d'établir un diagnostic fidèle.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <a href="mailto:b.latelier.bx@gmail.com?subject=Demande%20d'information%20-%20B%20L'Atelier" class="btn-outline" style="width: 100%; justify-content: center;">
-                Envoyer un message à l'atelier
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Pied de page -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <div class="footer-brand-title">B L'Atelier</div>
-        <p style="font-size: 0.85rem; line-height: 1.6;">
-          Artisans d'art · Tapissier d'ameublement<br>
-          23 Rue Bouquière<br>
-          Du lundi au vendredi : 10:00 — 17:00
-        </p>
-      </div>
-
-      <div class="footer-credits">
-        <div>
-          Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a>
-        </div>
-        <div class="photo-credit">
-          Photo : Shixart1985 (licence CC BY 2.0) — Image d'illustration
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Badge discret ORBE -->
-  <aside class="orbe-badge" aria-label="Mention maquette">
-    <span class="orbe-badge-dot"></span>
-    <span>Maquette proposée par ORBE</span>
-  </aside>
-
-  <!-- Script interactif & Three.js -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Gestion de l'en-tête au défilement
-      const header = document.getElementById('siteHeader');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      }, { passive: true });
-
-      // 2. Menu mobile repliable
-      const menuToggle = document.getElementById('menuToggle');
-      const navMenu = document.getElementById('mainNav');
-
-      if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
-          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-          menuToggle.setAttribute('aria-expanded', !isExpanded);
-          navMenu.classList.toggle('is-active');
-        });
-
-        // Fermer le menu lors d'un clic sur un lien
-        navMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            menuToggle.setAttribute('aria-expanded', 'false');
-            navMenu.classList.remove('is-active');
-          });
-        });
-      }
-
-      // 3. Apparitions douces avec IntersectionObserver
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!reducedMotion && 'IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.15,
-          rootMargin: '0px 0px -50px 0px'
-        });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-      } else {
-        document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-      }
-
-      // 4. Bandeau 3D Three.js : rubans d'étoffe et courbes abstraites
-      const canvas = document.getElementById('heroCanvas');
-      if (canvas && !reducedMotion) {
-        initThreeJsHero(canvas);
-      }
-    });
-
-    function initThreeJsHero(canvas) {
-      try {
-        if (!window.THREE) return;
-
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-        camera.position.z = 24;
-        camera.position.y = 1;
-
-        const renderer = new THREE.WebGLRenderer({
-          canvas: canvas,
-          alpha: true,
-          antialias: true,
-          powerPreference: "high-performance"
-        });
-
-        const pixelRatio = Math.min(window.devicePixelRatio, 2);
-        renderer.setPixelRatio(pixelRatio);
-        renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
-
-        // Formes évoquant le travail des rubans et des fils de tapisserie
-        const group = new THREE.Group();
-        scene.add(group);
-
-        // Lumières douces et chaudes
-        const ambientLight = new THREE.AmbientLight(0xfff3e0, 0.8);
-        scene.add(ambientLight);
-
-        const spotLight = new THREE.DirectionalLight(0xc7a76c, 1.4);
-        spotLight.position.set(15, 20, 15);
-        scene.add(spotLight);
-
-        const fillLight = new THREE.DirectionalLight(0x4a3d31, 0.6);
-        fillLight.position.set(-15, -10, -10);
-        scene.add(fillLight);
-
-        // Ruban principal ondulé (Courbe de Bézier 3D tubulaire)
-        class CustomCurve extends THREE.Curve {
-          constructor(scale = 1, shift = 0) {
-            super();
-            this.scale = scale;
-            this.shift = shift;
-          }
-          getPoint(t) {
-            const angle = t * Math.PI * 2;
-            const x = Math.sin(angle * 1.5 + this.shift) * 11 * this.scale;
-            const y = Math.cos(angle * 1.2) * 5 * this.scale;
-            const z = Math.sin(angle * 2 + this.shift) * 6 * this.scale;
-            return new THREE.Vector3(x, y, z);
-          }
-        }
-
-        const materials = [
-          new THREE.MeshStandardMaterial({
-            color: 0xc7a76c, // Or vieilli / bronze
-            roughness: 0.6,
-            metalness: 0.25,
-            wireframe: false
-          }),
-          new THREE.MeshStandardMaterial({
-            color: 0x8f7247, // Laiton patiné
-            roughness: 0.7,
-            metalness: 0.15,
-            wireframe: false
-          }),
-          new THREE.MeshStandardMaterial({
-            color: 0x3d352d, // Fil d'ombre lin anthracite
-            roughness: 0.9,
-            metalness: 0.05,
-            wireframe: false
-          })
-        ];
-
-        // Création de 3 rubans entrelacés évoquant l'étoffe et la trame
-        const ribbonCount = 3;
-        for (let i = 0; i < ribbonCount; i++) {
-          const path = new CustomCurve(1 - i * 0.15, i * 1.8);
-          const geometry = new THREE.TubeGeometry(path, 120, 0.35 - i * 0.08, 12, false);
-          const mesh = new THREE.Mesh(geometry, materials[i % materials.length]);
-          mesh.rotation.x = i * 0.4;
-          mesh.rotation.y = i * 0.7;
-          group.add(mesh);
-        }
-
-        // Quelques petits disques subtils flottants (rappellent les clous de tapissier / oeillets)
-        const tokenGeom = new THREE.CylinderGeometry(0.3, 0.3, 0.08, 24);
-        const tokenMat = new THREE.MeshStandardMaterial({
-          color: 0xd8c29d,
-          metalness: 0.8,
-          roughness: 0.3
-        });
-
-        for (let j = 0; j < 8; j++) {
-          const token = new THREE.Mesh(tokenGeom, tokenMat);
-          const angle = (j / 8) * Math.PI * 2;
-          token.position.set(Math.cos(angle) * 13, (Math.sin(angle * 2) * 4), Math.sin(angle) * 7);
-          token.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
-          group.add(token);
-        }
-
-        let isRunning = true;
-        let animationFrameId;
-
-        // Contrôle de visibilité d'onglet pour préserver les performances
-        document.addEventListener('visibilitychange', () => {
-          if (document.hidden) {
-            isRunning = false;
-            if (animationFrameId) cancelAnimationFrame(animationFrameId);
-          } else {
-            isRunning = true;
-            render();
-          }
-        });
-
-        // Redimensionnement fluide
-        function onWindowResize() {
-          if (!canvas || !renderer || !camera) return;
-          const width = canvas.clientWidth;
-          const height = canvas.clientHeight;
-          if (canvas.width !== width || canvas.height !== height) {
-            renderer.setSize(width, height, false);
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-          }
-        }
-        window.addEventListener('resize', onWindowResize, { passive: true });
-
-        // Boucle de rendu ralentie et sobre
-        let clock = new THREE.Clock();
-        function render() {
-          if (!isRunning) return;
-          const elapsed = clock.getElapsedTime();
-
-          // Mouvement très lent et fluide
-          group.rotation.y = elapsed * 0.045;
-          group.rotation.x = Math.sin(elapsed * 0.03) * 0.12;
-
-          renderer.render(scene, camera);
-          animationFrameId = requestAnimationFrame(render);
-        }
-
-        render();
-      } catch (err) {
-        // En cas d'erreur ou d'absence de support WebGL, le dégradé CSS d'arrière-plan s'applique sans encombre.
-        console.warn('Three.js non disponible ou non supporté :', err);
-      }
-    }
-  </script>
-</body>
-</html>
+</script>
+</body></html>

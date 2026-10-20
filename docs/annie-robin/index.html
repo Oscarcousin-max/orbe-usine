@@ -1,1360 +1,380 @@
 <!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Annie Robin · Artisan d'Art Potier</title>
-  <meta name="description" content="Atelier de poterie et céramique d'art Annie Robin. Pièces d'artisanat façonnées avec patience et exigence.">
-  <meta property="og:title" content="Annie Robin · Artisan d'Art Potier">
-  <meta property="og:description" content="L'expression de la matière et du geste. Céramique d'art façonnée à la main.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.poterie-annie.fr">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23221B17'/%3E%3Cpath d='M16 6c-5 0-8 4-8 10 0 6 3 10 8 10s8-4 8-10c0-6-3-10-8-10zm0 3c3.5 0 5 3.5 5 7s-1.5 7-5 7-5-3.5-5-7 1.5-7 5-7z' fill='%23C38D64'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23ECE5DC'/%3E%3C/svg%3E">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Annie Robin",
-    "description": "Artisan d'art potier, création de pièces de céramique et de poterie.",
-    "email": "contact@poterie-annie.fr",
-    "category": "Artisan d'art"
-  }
-  </script>
-
-  <style>
-    :root {
-      --bg-cream: #F8F5F0;
-      --bg-warm: #EFE9E0;
-      --surface-card: #FFFFFF;
-      --ink: #1F1916;
-      --ink-soft: #5C534D;
-      --terracotta: #B66341;
-      --terracotta-dark: #8F492E;
-      --sand: #D9CBBF;
-      --clay-line: #E2D7CC;
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg-cream);
-      color: var(--ink);
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      font-weight: 400;
-      line-height: 1.65;
-      overflow-x: hidden;
-      background-color: var(--bg-cream);
-    }
-
-    ::selection {
-      background-color: var(--sand);
-      color: var(--ink);
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--terracotta);
-      outline-offset: 3px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: var(--transition-smooth);
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* TYPOGRAPHY UTILS */
-    .title-display {
-      font-family: var(--font-serif);
-      font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-    }
-
-    .eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--terracotta);
-      display: block;
-      margin-bottom: 0.85rem;
-    }
-
-    /* HEADER & NAVIGATION */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      transition: background-color 0.4s ease, border-color 0.4s ease, padding 0.4s ease;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: transparent;
-    }
-
-    .site-header.scrolled {
-      background-color: rgba(248, 245, 240, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 1rem 2rem;
-      border-bottom: 1px solid var(--clay-line);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      z-index: 110;
-    }
-
-    .brand-mark {
-      width: 32px;
-      height: 32px;
-      fill: none;
-      stroke: var(--ink);
-      stroke-width: 1.5;
-    }
-
-    .brand-name {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      z-index: 110;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 26px;
-      height: 1.5px;
-      background-color: var(--ink);
-      margin: 6px 0;
-      transition: var(--transition-smooth);
-    }
-
-    .site-nav {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
-
-    .nav-link {
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      position: relative;
-      padding: 0.25rem 0;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background-color: var(--terracotta);
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .nav-contact-btn {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: 600;
-      padding: 0.75rem 1.4rem;
-      border: 1px solid var(--ink);
-      border-radius: 40px;
-      transition: var(--transition-smooth);
-    }
-
-    .nav-contact-btn:hover {
-      background-color: var(--ink);
-      color: var(--bg-cream);
-    }
-
-    /* HERO SECTION */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 8rem 2rem 5rem;
-      overflow: hidden;
-      background: radial-gradient(circle at 75% 30%, #F1E7DD 0%, #F8F5F0 60%);
-    }
-
-    #three-hero-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-      opacity: 0.9;
-    }
-
-    .hero-scrim {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 50%, rgba(248, 245, 240, 0.92) 0%, rgba(248, 245, 240, 0.55) 70%, rgba(248, 245, 240, 0.3) 100%);
-      z-index: 2;
-    }
-
-    .hero-container {
-      position: relative;
-      z-index: 3;
-      max-width: 1240px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero-content {
-      max-width: 680px;
-    }
-
-    .hero-title {
-      font-size: clamp(2.75rem, 6.5vw, 5.25rem);
-      margin-bottom: 1.5rem;
-      color: var(--ink);
-    }
-
-    .hero-title em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--terracotta);
-    }
-
-    .hero-sub {
-      font-size: clamp(1rem, 1.25vw, 1.2rem);
-      color: var(--ink-soft);
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-      max-width: 520px;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      background-color: var(--terracotta);
-      color: #FFFFFF;
-      padding: 1.05rem 2.2rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-weight: 600;
-      box-shadow: 0 10px 24px -6px rgba(182, 99, 65, 0.35);
-      transition: var(--transition-smooth);
-      border: 1px solid var(--terracotta);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--terracotta-dark);
-      border-color: var(--terracotta-dark);
-      transform: translateY(-2px);
-    }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 600;
-      padding: 1rem 1.5rem;
-      position: relative;
-    }
-
-    .btn-ghost::after {
-      content: '→';
-      margin-left: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-
-    .btn-ghost:hover::after {
-      transform: translateX(4px);
-    }
-
-    /* SECTION ARCHITECTURE */
-    .section-wrap {
-      padding: 7rem 2rem;
-      position: relative;
-    }
-
-    .container {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      margin-bottom: 4rem;
-    }
-
-    .section-title {
-      font-size: clamp(2.2rem, 4vw, 3.25rem);
-      max-width: 600px;
-    }
-
-    /* PHILOSOPHY / ESPRIT SECTION */
-    .spirit-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4.5rem;
-      align-items: center;
-    }
-
-    .spirit-text p {
-      font-size: 1.15rem;
-      line-height: 1.85;
-      color: var(--ink-soft);
-      margin-bottom: 1.8rem;
-      font-weight: 300;
-    }
-
-    .spirit-text p:first-of-type {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      line-height: 1.45;
-      color: var(--ink);
-    }
-
-    .craft-seal {
-      margin-top: 2.5rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--clay-line);
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .seal-icon {
-      width: 48px;
-      height: 48px;
-      stroke: var(--terracotta);
-      flex-shrink: 0;
-    }
-
-    .seal-desc {
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      line-height: 1.5;
-    }
-
-    /* ARTISAN VISUAL / ILLUSTRATION ROW */
-    .spirit-media {
-      position: relative;
-    }
-
-    .photo-card {
-      position: relative;
-      background-color: var(--bg-warm);
-      border-radius: 4px;
-      overflow: hidden;
-      border: 1px solid var(--clay-line);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      filter: saturate(0.85) contrast(0.95);
-      transition: transform 0.8s ease;
-    }
-
-    .photo-card:hover img {
-      transform: scale(1.03);
-    }
-
-    .photo-caption-badge {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      background: rgba(248, 245, 240, 0.92);
-      backdrop-filter: blur(8px);
-      padding: 0.35rem 0.8rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: 3px;
-      color: var(--ink-soft);
-    }
-
-    /* PLACEHOLDER CADRE ATELIER */
-    .workshop-placeholder {
-      margin-top: 1.5rem;
-      border: 1px dashed var(--sand);
-      border-radius: 4px;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-    }
-
-    .workshop-placeholder svg {
-      width: 32px;
-      height: 32px;
-      stroke: var(--sand);
-    }
-
-    .workshop-placeholder span {
-      font-size: 0.78rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      font-weight: 500;
-    }
-
-    /* OFFER SECTION */
-    .section-offer {
-      background-color: #F2ECE3;
-      border-top: 1px solid var(--clay-line);
-      border-bottom: 1px solid var(--clay-line);
-    }
-
-    .offer-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .offer-card {
-      background-color: var(--bg-cream);
-      padding: 2.5rem 2rem;
-      border-radius: 4px;
-      border: 1px solid var(--clay-line);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 380px;
-      transition: var(--transition-smooth);
-    }
-
-    .offer-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px -12px rgba(31, 25, 22, 0.08);
-      border-color: var(--sand);
-    }
-
-    .card-num {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--terracotta);
-      display: block;
-      margin-bottom: 1.5rem;
-    }
-
-    .card-title {
-      font-family: var(--font-serif);
-      font-size: 1.85rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .card-desc {
-      font-size: 0.95rem;
-      color: var(--ink-soft);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .card-meta {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding-top: 1.2rem;
-      border-top: 1px solid var(--clay-line);
-    }
-
-    .card-meta::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: var(--terracotta);
-    }
-
-    /* SECOND PLACEHOLDER FOR GALLERY PIECES */
-    .second-photo-block {
-      margin-top: 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .placeholder-full {
-      border: 1px dashed var(--sand);
-      border-radius: 4px;
-      min-height: 240px;
-      background: rgba(255, 255, 255, 0.4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-      gap: 0.75rem;
-    }
-
-    .placeholder-full svg {
-      width: 36px;
-      height: 36px;
-      stroke: var(--sand);
-    }
-
-    .placeholder-full span {
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      font-weight: 500;
-    }
-
-    .placeholder-full p {
-      font-size: 0.82rem;
-      color: var(--ink-soft);
-      max-width: 280px;
-    }
-
-    .curated-quote {
-      background: var(--bg-cream);
-      border: 1px solid var(--clay-line);
-      border-radius: 4px;
-      padding: 3rem 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .curated-quote blockquote {
-      font-family: var(--font-serif);
-      font-size: 1.65rem;
-      font-style: italic;
-      color: var(--ink);
-      line-height: 1.4;
-      margin-bottom: 1.2rem;
-    }
-
-    .curated-quote cite {
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--terracotta);
-      font-style: normal;
-    }
-
-    /* PRACTICAL DETAILS & CONTACT */
-    .practical-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-    }
-
-    .practical-box {
-      background: var(--surface-card);
-      border: 1px solid var(--clay-line);
-      border-radius: 4px;
-      padding: 3.5rem 3rem;
-    }
-
-    .info-list {
-      list-style: none;
-      margin: 2rem 0;
-    }
-
-    .info-item {
-      padding: 1.4rem 0;
-      border-bottom: 1px solid var(--clay-line);
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-
-    .info-item:last-child {
-      border-bottom: none;
-    }
-
-    .info-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      font-weight: 600;
-    }
-
-    .info-value {
-      font-size: 1.15rem;
-      color: var(--ink);
-    }
-
-    .info-link {
-      color: var(--terracotta);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.05rem;
-      word-break: break-all;
-    }
-
-    .info-link:hover {
-      color: var(--terracotta-dark);
-      text-decoration: underline;
-    }
-
-    .contact-form-notice {
-      background: var(--bg-warm);
-      border-radius: 4px;
-      padding: 2rem;
-      border-left: 3px solid var(--terracotta);
-      margin-top: 1.5rem;
-    }
-
-    .contact-form-notice p {
-      font-size: 0.95rem;
-      color: var(--ink-soft);
-      line-height: 1.6;
-    }
-
-    /* FOOTER */
-    .site-footer {
-      background-color: #171311;
-      color: #ECE5DC;
-      padding: 5rem 2rem 3rem;
-      border-top: 1px solid #2B231F;
-    }
-
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 3rem;
-      padding-bottom: 3.5rem;
-      border-bottom: 1px solid #2B231F;
-    }
-
-    .footer-brand .brand-name {
-      color: #ECE5DC;
-      font-size: 1.6rem;
-    }
-
-    .footer-brand p {
-      margin-top: 0.6rem;
-      font-size: 0.85rem;
-      color: #9C9188;
-      max-width: 320px;
-      letter-spacing: 0.02em;
-    }
-
-    .footer-links-wrap {
-      display: flex;
-      gap: 4rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-col h4 {
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sand);
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col li {
-      margin-bottom: 0.7rem;
-    }
-
-    .footer-col a {
-      color: #9C9188;
-      font-size: 0.88rem;
-    }
-
-    .footer-col a:hover {
-      color: #FFFFFF;
-    }
-
-    .footer-bottom {
-      padding-top: 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.78rem;
-      color: #7D736A;
-    }
-
-    .credits-author {
-      color: #9C9188;
-    }
-
-    /* FIXED STUDIO BADGE */
-    .studio-badge {
-      position: fixed;
-      bottom: 1.25rem;
-      right: 1.25rem;
-      z-index: 90;
-      background: rgba(31, 25, 22, 0.88);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      color: #ECE5DC;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.55rem 0.95rem;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      transition: var(--transition-smooth);
-      pointer-events: auto;
-    }
-
-    .studio-badge:hover {
-      background: var(--ink);
-      color: #FFFFFF;
-      border-color: var(--terracotta);
-    }
-
-    /* REVEAL ANIMATIONS */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .fade-up.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .fade-up {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 992px) {
-      .spirit-grid, .practical-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .offer-grid {
-        grid-template-columns: 1fr;
-      }
-      .second-photo-block {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .site-header {
-        padding: 1.25rem 1.5rem;
-      }
-      .nav-toggle {
-        display: block;
-      }
-      .site-nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 80%;
-        max-width: 360px;
-        height: 100vh;
-        background-color: var(--bg-cream);
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 3rem 2rem;
-        box-shadow: -8px 0 24px rgba(0, 0, 0, 0.08);
-        transform: translateX(100%);
-        transition: transform 0.4s ease;
-        z-index: 105;
-      }
-      .site-nav.is-open {
-        transform: translateX(0);
-      }
-      .nav-toggle.is-active span:nth-child(1) {
-        transform: translateY(7.5px) rotate(45deg);
-      }
-      .nav-toggle.is-active span:nth-child(2) {
-        opacity: 0;
-      }
-      .nav-toggle.is-active span:nth-child(3) {
-        transform: translateY(-7.5px) rotate(-45deg);
-      }
-      .section-wrap {
-        padding: 4.5rem 1.25rem;
-      }
-      .practical-box {
-        padding: 2.25rem 1.5rem;
-      }
-      .hero {
-        padding: 7rem 1.25rem 4rem;
-      }
-      .footer-top {
-        flex-direction: column;
-        gap: 2.5rem;
-      }
-      .footer-links-wrap {
-        flex-direction: column;
-        gap: 2rem;
-      }
-    }
-  </style>
-</head>
+<html lang="fr" class="pas-js"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Annie Robin — Artisan d’art</title><meta name="description" content="Créations céramiques et artisanat d&#x27;art. Découvrez un travail de la matière façonné à la main, entre sobriété des formes et précision du geste."><meta property="og:type" content="website"><meta property="og:title" content="Annie Robin — Artisan d’art"><meta property="og:description" content="Créations céramiques et artisanat d&#x27;art. Découvrez un travail de la matière façonné à la main, entre sobriété des formes et précision du geste."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f6f2ea"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%232f6b4f%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3EA%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Figtree:wght@300;400;500;600&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Annie Robin", "email": "contact@poterie-annie.fr"}</script>
+<style>
+:root{--bg:#f6f2ea;--bg2:#ece6da;--ink:#1a2a22;--muted:#5b6a60;--accent:#2f6b4f;--accent2:#e58f9b;--soft:#dde7d9;--soft2:#f1c9ce;--line:#d3d8cb;--on-accent:#ffffff;--dark:#16281f;--on-dark:#f1f2e8;--f-titre:'Bricolage Grotesque',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--f-texte:'Figtree',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--r:0px;}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-texte);font-size:clamp(16px,1.05vw + 12px,18px);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-titre);font-weight:400;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0 0 1em}
+.wrap{width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 16px;z-index:200}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.eyebrow{font:500 .72rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.9em}
+.eyebrow::before{content:"";width:2.4em;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:.7em;padding:1em 1.8em;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;font:500 .78rem/1 var(--f-texte);letter-spacing:.18em;text-transform:uppercase;transition:background .3s,color .3s,transform .3s;cursor:pointer;border-radius:var(--r,0)}
+.btn:hover{background:transparent;color:var(--accent)}
+.btn.ligne{background:transparent;color:inherit;border-color:currentColor}
+.btn.ligne:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn .fl{transition:transform .3s}.btn:hover .fl{transform:translateX(5px)}
+/* En-tête — capsule flottante en verre liquide (réf. « navbar ») */
+.top{position:fixed;inset:14px 0 auto 0;z-index:100;transition:inset .45s cubic-bezier(.2,.7,.2,1),color .35s}
+.top .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 10px 10px 22px;width:min(1180px,100% - 24px);border-radius:999px;transition:padding .45s cubic-bezier(.2,.7,.2,1)}
+.top .wrap::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;
+ background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.04));
+ -webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(255,255,255,.08),inset 0 0 0 1px rgba(255,255,255,.18),0 10px 40px -12px rgba(0,0,0,.28);transition:background .4s,box-shadow .4s}
+.top .wrap::after{content:"";position:absolute;inset:1px;border-radius:inherit;z-index:-1;pointer-events:none;background:radial-gradient(120% 140% at 20% -40%,rgba(255,255,255,.35),transparent 45%);opacity:.7}
+.top.fond{inset:8px 0 auto 0}
+.top.fond .wrap{padding-block:7px}
+.top.fond .wrap::before{background:color-mix(in srgb,var(--bg) 72%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 0 1px color-mix(in srgb,var(--ink) 9%,transparent),0 18px 50px -18px color-mix(in srgb,var(--ink) 45%,transparent)}
+.logo{font:400 clamp(1.05rem,.95rem + .5vw,1.35rem)/1 var(--f-titre);text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.7em;min-width:0}
+.logo i{font-style:normal;display:grid;place-items:center;width:2.1em;height:2.1em;border:1px solid var(--accent);color:var(--accent);border-radius:var(--rl,50%);font-size:.85em;flex:none}
+.logo span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top nav{display:flex;gap:4px;align-items:center}
+.top nav a{text-decoration:none;font:500 .72rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;position:relative;padding:.95em 1.05em;border-radius:999px;transition:background .3s,color .3s}
+.top nav a:hover{background:color-mix(in srgb,currentColor 10%,transparent)}
+.top .nav-cta{margin-left:8px;background:var(--accent);color:var(--on-accent)!important;padding:1em 1.4em;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 18px -6px color-mix(in srgb,var(--accent) 70%,transparent)}
+.top .nav-cta:hover{background:color-mix(in srgb,var(--accent) 85%,#000)}
+.menu-btn{display:none;background:color-mix(in srgb,currentColor 8%,transparent);border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;color:inherit;position:relative;flex:none}
+.menu-btn i,.menu-btn i::before{position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;content:"";transition:transform .3s,top .3s}
+.menu-btn i{top:21px}.menu-btn i::before{left:0;right:0;top:-6px}
+.menu-btn[aria-expanded=true] i{transform:rotate(45deg)}.menu-btn[aria-expanded=true] i::before{top:0;transform:rotate(-90deg)}
+@media(max-width:960px){
+ .menu-btn{display:block}
+ .top .wrap{padding:7px 7px 7px 16px}
+ .top nav{position:fixed;inset:0;background:var(--bg);color:var(--ink);flex-direction:column;justify-content:center;gap:10px;transform:translateY(-104%);transition:transform .55s cubic-bezier(.7,0,.2,1);z-index:-2}
+ .top nav.ouvert{transform:none}
+ .top nav a{font:400 clamp(1.7rem,7vw,2.4rem)/1 var(--f-titre);letter-spacing:0;text-transform:none;padding:.35em .6em}
+ .top nav .nav-cta{margin:14px 0 0;font:500 .8rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:1.2em 1.8em}
+ .top.ouvert-menu{color:var(--ink)}
+ .top.ouvert-menu .wrap::before{background:color-mix(in srgb,var(--bg) 90%,transparent)}
+}
+.progres{position:fixed;inset:0 0 auto 0;height:2px;z-index:120;pointer-events:none}
+.progres i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2,var(--accent)));transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.defs-kit{position:absolute;width:0;height:0;overflow:hidden}
+::selection{background:var(--accent);color:var(--on-accent)}
+/* Apparitions */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.reveal.vu{opacity:1;transform:none}
+.pas-js .reveal{opacity:1;transform:none}
+/* Sections */
+section{position:relative}
+.sec{padding-block:clamp(72px,11vw,160px)}
+.titre-sec{font-size:clamp(2.2rem,1.2rem + 4.4vw,4.6rem);margin:.5em 0 .4em;letter-spacing:-.01em}
+.titre-sec em{font-style:italic;color:var(--accent)}
+.lead{font-size:clamp(1.05rem,.95rem + .5vw,1.3rem);color:var(--muted);max-width:44ch}
+.num{font:400 clamp(3.4rem,8vw,7rem)/.9 var(--f-titre);color:transparent;-webkit-text-stroke:1px var(--accent);opacity:.65}
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:1.1em 0;white-space:nowrap;font:italic 400 clamp(1.3rem,3vw,2.2rem)/1 var(--f-titre);color:var(--muted)}
+.marquee div{display:inline-flex;gap:2.2em;animation:defile 38s linear infinite;padding-right:2.2em}
+.marquee b{color:var(--accent);font-weight:400}
+@keyframes defile{to{transform:translateX(-50%)}}
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,110px);align-items:start}
+.coord{display:grid;gap:22px;margin:2em 0 2.4em;padding:0;list-style:none}
+.coord li{display:grid;gap:4px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.coord small{font:500 .68rem/1 var(--f-texte);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.coord a,.coord span{font:400 clamp(1.15rem,1rem + .7vw,1.55rem)/1.35 var(--f-titre);text-decoration:none;overflow-wrap:anywhere}
+.coord a:hover{color:var(--accent)}
+form.demo{display:grid;gap:18px;background:var(--bg2);padding:clamp(24px,4vw,48px);border:1px solid var(--line);border-radius:var(--r,0)}
+form.demo label{display:grid;gap:8px;font:500 .7rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+form.demo input,form.demo select,form.demo textarea{font:400 1rem/1.4 var(--f-texte);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;border-radius:0;width:100%;min-width:0;letter-spacing:0;text-transform:none}
+form.demo input:focus,form.demo select:focus,form.demo textarea:focus{outline:none;border-color:var(--accent)}
+form.demo textarea{min-height:110px;resize:vertical}
+form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+/* Pied de page (réf. « footer ») */
+.pied{background:var(--dark);color:var(--on-dark);padding:clamp(64px,9vw,120px) 0 64px;position:relative;overflow:hidden}
+.pied .wrap{display:grid;gap:clamp(30px,5vw,56px)}
+.pied-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,4vw,60px)}
+.pied-marque p{margin:1.1em 0 0;opacity:.7;max-width:30ch;font-family:var(--f-titre);font-style:italic;font-size:1.15rem;line-height:1.4}
+.pied .logo i{border-color:color-mix(in srgb,var(--on-dark) 45%,transparent);color:var(--on-dark)}
+.pied h3{font:500 .68rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent2,var(--accent));margin:.4em 0 1.4em}
+.pied ul{list-style:none;margin:0;padding:0;display:grid;gap:.75em}
+.pied li,.pied li a{font-size:.95rem;opacity:.85;text-decoration:none;overflow-wrap:anywhere}
+.pied li a{position:relative;opacity:1;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s}
+.pied li a:hover{background-size:100% 1px}
+.pied-nom{font:400 clamp(3rem,14vw,13rem)/.85 var(--f-titre);letter-spacing:-.03em;white-space:nowrap;overflow:hidden;text-overflow:clip;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--on-dark) 28%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--on-dark) 16%,transparent),transparent 85%);-webkit-background-clip:text;background-clip:text;user-select:none;margin:0 -.04em}
+.pied-bas{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;font-size:.82rem;opacity:.78;border-top:1px solid color-mix(in srgb,var(--on-dark) 18%,transparent);padding-top:22px}
+.pied-bas a{text-decoration:none;border-bottom:1px solid currentColor}
+.pied-bas .haut{border:1px solid color-mix(in srgb,var(--on-dark) 35%,transparent);padding:.7em 1.1em;border-radius:999px}
+.mentions{font-size:.8rem;opacity:.65;max-width:80ch;line-height:1.6;margin:0}
+.alcool{font-size:.78rem;opacity:.85;margin:0}
+@media(max-width:900px){.pied-cols{grid-template-columns:1fr 1fr}.pied-marque{grid-column:1/-1}}
+@media(max-width:520px){.pied-cols{grid-template-columns:1fr}}
+.badge-orbe{box-shadow:0 6px 20px rgba(0,0,0,.25);position:fixed;right:12px;bottom:12px;z-index:150;font:500 11px/1 system-ui,sans-serif;background:rgba(0,0,0,.74);color:#fff;padding:8px 12px;border-radius:999px;text-decoration:none;letter-spacing:.02em}
+/* ===== Kit premium ORBE ===== */
+:root{--ic1:color-mix(in srgb,var(--accent2,var(--accent)) 45%,#fff);--ic2:var(--accent);--ic3:color-mix(in srgb,var(--accent) 62%,#000);--ic4:color-mix(in srgb,var(--accent2,var(--accent)) 80%,#fff)}
+/* Verre liquide (réf. « liquid glass ») */
+.verre{position:relative;isolation:isolate;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 70%,transparent),color-mix(in srgb,var(--bg) 38%,transparent));
+ -webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);
+ border-radius:clamp(18px,2.4vw,30px);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.12),inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent),0 30px 60px -30px color-mix(in srgb,var(--ink) 40%,transparent)}
+.verre::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:radial-gradient(90% 70% at var(--lx,20%) var(--ly,0%),rgba(255,255,255,.55),transparent 55%);opacity:.55;transition:opacity .4s}
+.verre::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.45));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+/* Bandeau d'accueil (réf. « hero ») */
+.hero{isolation:isolate}
+.hero>.wrap{position:relative;z-index:2}
+.fx{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aur{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(70px);opacity:.42;mix-blend-mode:var(--fx-mode,normal);will-change:transform}
+.aur.a{background:radial-gradient(circle,var(--accent),transparent 65%);left:-18vmax;top:-22vmax;animation:aur1 26s ease-in-out infinite alternate}
+.aur.b{background:radial-gradient(circle,var(--accent2,var(--accent)),transparent 65%);right:-20vmax;top:6vmax;animation:aur2 32s ease-in-out infinite alternate;opacity:.34}
+.aur.c{background:radial-gradient(circle,color-mix(in srgb,var(--accent) 40%,var(--bg)),transparent 65%);left:22%;bottom:-34vmax;animation:aur3 38s ease-in-out infinite alternate;opacity:.3}
+@keyframes aur1{to{transform:translate(14vmax,10vmax) scale(1.15)}}
+@keyframes aur2{to{transform:translate(-12vmax,8vmax) scale(.9)}}
+@keyframes aur3{to{transform:translate(8vmax,-12vmax) scale(1.2)}}
+.spot{position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx,50%) var(--my,40%),color-mix(in srgb,var(--accent2,var(--accent)) 22%,transparent),transparent 60%);opacity:0;transition:opacity .6s}
+.hero:hover .spot{opacity:1}
+.grain{position:absolute;inset:-50%;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(5) infinite}
+@keyframes grain{20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}}
+.hero-pied{position:absolute;left:0;right:0;bottom:clamp(14px,3vh,28px);z-index:3;display:flex;justify-content:space-between;align-items:end;gap:16px;width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto;pointer-events:none}
+.puces{display:flex;flex-wrap:wrap;gap:8px}
+.puce{pointer-events:auto;font:500 .68rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:.85em 1.15em;border-radius:999px;color:inherit;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.18);display:inline-flex;align-items:center;gap:.6em}
+.puce i{width:6px;height:6px;border-radius:50%;background:var(--accent2,var(--accent));box-shadow:0 0 0 3px color-mix(in srgb,var(--accent2,var(--accent)) 30%,transparent)}
+.defiler{pointer-events:auto;position:absolute;left:50%;bottom:0;transform:translateX(-50%);display:inline-flex;flex-direction:column;align-items:center;gap:.8em;text-decoration:none;font:500 .62rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;opacity:.7}
+.defiler i{width:22px;height:36px;border-radius:12px;border:1px solid currentColor;position:relative}
+.defiler i::after{content:"";position:absolute;left:50%;top:7px;width:2px;height:7px;margin-left:-1px;border-radius:2px;background:currentColor;animation:molette 2s ease-in-out infinite}
+@keyframes molette{0%{transform:translateY(0);opacity:1}70%{transform:translateY(11px);opacity:0}100%{opacity:0}}
+@media(max-width:720px){.hero-pied{display:none}}
+.hero h1 k-m{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em;margin-bottom:-.06em}
+.hero h1 k-m>k-w{display:inline-block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.8,.1,1);transition-delay:calc(.15s + var(--m,0) * .07s)}
+.hero h1.vu k-m>k-w,.pas-js .hero h1 k-m>k-w{transform:none}
+/* Tuiles qui s'empilent au défilement (réf. « scroll ») + icônes 3D (réf. « 3D icons ») */
+.tuiles-sec{background:linear-gradient(180deg,var(--bg),var(--bg2) 40%,var(--bg));overflow:clip}
+.tuiles-sec::before{content:"";position:absolute;width:60vmax;height:60vmax;right:-25vmax;top:10%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 65%);filter:blur(40px);pointer-events:none}
+.tuiles-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,100px);align-items:start;position:relative}
+.tuiles-intro{position:sticky;top:120px}
+.tuiles-intro .lead{margin-bottom:2em}
+.tuiles-index{list-style:none;margin:0;padding:0;display:grid;gap:4px;counter-reset:t}
+.tuiles-index li{counter-increment:t;display:flex;gap:1em;align-items:center;font:400 1.05rem/1.3 var(--f-titre);padding:.7em 0;border-top:1px solid var(--line);opacity:.4;transition:opacity .4s,padding .4s}
+.tuiles-index li::before{content:"0" counter(t);font:500 .7rem/1 var(--f-texte);letter-spacing:.16em;color:var(--accent)}
+.tuiles-index li.actif{opacity:1;padding-left:.6em}
+.tuiles{display:grid;gap:clamp(18px,3vh,28px);padding-bottom:6vh}
+.tuile{position:sticky;top:calc(110px + var(--i) * 26px);min-height:clamp(300px,46vh,420px);padding:clamp(26px,4vw,52px);display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,40px);align-items:center;transform-origin:50% 0;transform:scale(var(--s,1));filter:brightness(var(--b,1));transition:transform .2s linear,filter .2s linear;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 88%,transparent),color-mix(in srgb,var(--bg2) 70%,transparent))}
+.tuile .n{font:500 .7rem/1 var(--f-texte);letter-spacing:.24em;color:var(--accent)}
+.tuile h3{font-size:clamp(1.7rem,1.2rem + 1.8vw,2.8rem);margin:.45em 0 .4em;letter-spacing:-.01em}
+.tuile p{color:var(--muted);margin:0;max-width:40ch}
+.lien-fl{display:inline-flex;gap:.6em;margin-top:1.4em;text-decoration:none;font:500 .75rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.lien-fl:hover .fl{transform:translateX(5px)}.lien-fl .fl{transition:transform .3s}
+.ico3d{width:clamp(96px,11vw,150px);aspect-ratio:1;display:grid;place-items:center;border-radius:30%;perspective:600px;
+ background:radial-gradient(120% 120% at 30% 15%,color-mix(in srgb,var(--bg) 95%,#fff),color-mix(in srgb,var(--bg2) 80%,var(--accent) 6%));
+ box-shadow:inset 0 2px 0 rgba(255,255,255,.8),inset 0 -10px 24px -8px color-mix(in srgb,var(--accent) 22%,transparent),0 24px 40px -18px color-mix(in srgb,var(--accent) 55%,transparent),0 2px 6px color-mix(in srgb,var(--ink) 10%,transparent)}
+.ico3d svg{width:64%;height:64%;overflow:visible;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);transition:transform .5s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 10px 10px color-mix(in srgb,var(--ic3) 45%,transparent))}
+.ico3d .p{fill:url(#k3d);filter:url(#relief)}
+.ico3d .s{fill:url(#k3d-b);filter:url(#relief)}
+.ico3d .h{fill:#fff;opacity:.55}
+.tuile:hover .ico3d svg{animation:flotte3d 3s ease-in-out infinite}
+@keyframes flotte3d{50%{translate:0 -6px}}
+@media(max-width:900px){.tuiles-grid{grid-template-columns:1fr}.tuiles-intro{position:static}.tuiles-index{display:none}.tuile{grid-template-columns:1fr;top:calc(84px + var(--i) * 18px);min-height:0}}
+/* Appel à l'action (réf. « CTA ») */
+.cta-bande{position:relative;isolation:isolate;overflow:hidden;background:var(--dark);color:var(--on-dark);padding:clamp(90px,14vw,200px) 0}
+.cta-bande .fx .aur{opacity:.6;--fx-mode:screen}
+.cta-bande .wrap{position:relative;z-index:2}
+.cta-carte{max-width:880px;margin-inline:auto;text-align:center;padding:clamp(40px,7vw,90px) clamp(24px,6vw,80px);background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));color:var(--on-dark);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.14),0 40px 80px -30px rgba(0,0,0,.55)}
+.cta-carte .eyebrow{color:var(--accent2,var(--accent));justify-content:center}
+.cta-carte .eyebrow::after{content:"";width:2.4em;height:1px;background:currentColor}
+.cta-titre{font-size:clamp(2.4rem,1.2rem + 5vw,5.4rem);margin:.45em 0 .35em;letter-spacing:-.02em}
+.cta-carte p{opacity:.8;max-width:46ch;margin:0 auto 2.2em;font-size:1.08rem}
+.cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta-actions .btn{border-radius:999px;padding:1.15em 2em}
+.cta-actions .btn.ligne{color:var(--on-dark);border-color:color-mix(in srgb,var(--on-dark) 40%,transparent)}
+.cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
+.aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
+
+/* Atelier, galerie, décoration */
+.hero{min-height:100svh;display:grid;align-content:end;padding:clamp(110px,16vh,170px) 0 clamp(40px,7vh,80px);background:var(--bg);position:relative;overflow:hidden}
+.hero h1{font-size:clamp(3.4rem,1rem + 12vw,12.5rem);letter-spacing:-.04em;line-height:.84;max-width:12ch;overflow-wrap:anywhere}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-bas{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-top:clamp(28px,5vh,64px);padding-top:28px;border-top:1px solid var(--ink)}
+.hero .accroche{font:italic 400 clamp(1.4rem,1rem + 1.6vw,2.4rem)/1.15 var(--f-titre);max-width:20ch}
+.hero .sous{color:var(--muted);max-width:44ch;margin:0 0 1.6em}
+.formes{position:absolute;right:-4vw;top:clamp(90px,14vh,150px);width:min(54vw,620px);aspect-ratio:1;z-index:0;pointer-events:none}
+.formes svg{width:100%;height:100%;overflow:visible}
+.hero .wrap{position:relative;z-index:1}
+.s1{fill:var(--accent)}.s2{fill:var(--accent2)}.s3{fill:var(--soft2)}.s4{fill:none;stroke:var(--ink);stroke-width:1.4}
+.bouge{animation:bouge 14s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.bouge.b{animation-duration:19s;animation-direction:reverse}
+@keyframes bouge{50%{transform:translate(14px,-18px) rotate(8deg)}}
+.defile-h{display:flex;gap:clamp(14px,2vw,28px);overflow-x:auto;padding:0 clamp(20px,5vw,64px) 24px;scroll-snap-type:x mandatory;scrollbar-width:thin;margin-top:clamp(30px,5vw,60px)}
+.cadre{flex:0 0 clamp(240px,30vw,400px);scroll-snap-align:start;display:grid;gap:12px}
+.cadre .toile{aspect-ratio:4/5;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--bg2);transition:transform .6s}
+.cadre:hover .toile{transform:translateY(-8px)}
+.cadre .toile svg{width:100%;height:100%;display:block}
+.cadre .leg{display:flex;justify-content:space-between;font:500 .7rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.cadre .photo-ici{position:absolute;left:12px;bottom:12px;font:500 .62rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;background:var(--bg);color:var(--ink);padding:7px 10px}
+.esprit{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(36px,7vw,120px)}
+.esprit p{color:var(--muted);max-width:54ch}
+.esprit .grande{font:italic 400 clamp(1.5rem,1.1rem + 1.6vw,2.4rem)/1.25 var(--f-titre);color:var(--ink);margin-bottom:1em}
+.offre{background:var(--dark);color:var(--on-dark)}
+.offre .eyebrow,.offre .titre-sec em{color:var(--accent2)}
+.offre-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,100px);align-items:start}
+.offre-grid .gauche{position:sticky;top:110px}
+.rang{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:clamp(24px,3.4vw,44px) 0;border-top:1px solid color-mix(in srgb,var(--on-dark) 22%,transparent);transition:padding .4s}
+.rang:last-child{border-bottom:1px solid color-mix(in srgb,var(--on-dark) 22%,transparent)}
+.rang:hover{padding-left:14px}
+.rang .n{font:italic 400 1.2rem/1 var(--f-titre);color:var(--accent2)}
+.rang h3{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.4rem);margin-bottom:.4em}
+.rang p{margin:0;opacity:.8;max-width:48ch}
+.proc{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(36px,6vw,72px);border-top:1px solid var(--ink)}
+.pas{padding:clamp(24px,3.4vw,44px) clamp(18px,2.6vw,36px) clamp(24px,3.4vw,44px) 0;display:grid;gap:12px;align-content:start}
+.pas+.pas{padding-left:clamp(18px,2.6vw,36px);border-left:1px solid var(--line)}
+.pas .n{font:400 clamp(3rem,6vw,5rem)/.9 var(--f-titre);color:var(--accent)}
+.pas h3{font-size:clamp(1.4rem,1.1rem + 1.1vw,1.9rem)}
+.pas p{margin:0;color:var(--muted)}
+.cite{padding-block:clamp(72px,11vw,150px);background:var(--soft)}
+.cite blockquote{margin:0;max-width:20ch;font:italic 400 clamp(2rem,1.1rem + 3.8vw,4.4rem)/1.1 var(--f-titre);text-wrap:balance}
+@media(max-width:900px){
+ .hero-bas,.esprit,.offre-grid,.proc{grid-template-columns:1fr}.formes{width:80vw;opacity:.5;top:70px}
+ .offre-grid .gauche{position:static}.pas+.pas{padding-left:0;border-left:0;border-top:1px solid var(--line)}.pas{padding-right:0}
+}
+</style></head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="progres" aria-hidden="true"><i></i></div>
+<svg class="defs-kit" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="k3d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ic1)"/><stop offset=".55" style="stop-color:var(--ic2)"/><stop offset="1" style="stop-color:var(--ic3)"/></linearGradient>
+<linearGradient id="k3d-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--ic4)"/><stop offset="1" style="stop-color:var(--ic2)"/></linearGradient>
+<filter id="relief" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="flou"/>
+<feSpecularLighting in="flou" surfaceScale="4.5" specularConstant=".9" specularExponent="26" lighting-color="#ffffff" result="spec"><fePointLight x="14" y="-6" z="70"/></feSpecularLighting>
+<feComposite in="spec" in2="SourceAlpha" operator="in" result="specin"/>
+<feComposite in="SourceGraphic" in2="specin" operator="arithmetic" k1="0" k2="1" k3=".75" k4="0" result="lumiere"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="ombre"/>
+<feOffset in="ombre" dy="3.5" result="ombre2"/>
+<feComposite in="ombre2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="creux"/>
+<feFlood flood-color="#000" flood-opacity=".28"/><feComposite in2="creux" operator="in" result="creux2"/>
+<feComposite in="creux2" in2="lumiere" operator="atop"/>
+</filter>
+</defs></svg>
+<header class="top" id="top"><div class="wrap">
+<a class="logo" href="#top" aria-label="Annie Robin, haut de page"><i aria-hidden="true">A</i><span>Annie Robin</span></a>
+<nav id="menu" aria-label="Navigation principale"><a href="#esprit">L’esprit</a><a href="#realisations">Réalisations</a><a href="#offre">Savoir-faire</a><a href="#demarche">Démarche</a><a class="nav-cta" href="#contact">Nous écrire</a></nav>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
+</div></header>
 
-  <!-- EN-TÊTE -->
-  <header class="site-header" id="siteHeader">
-    <a href="#" class="brand" aria-label="Annie Robin - Accueil">
-      <svg class="brand-mark" viewBox="0 0 32 32">
-        <path d="M16 4 C22 4, 26 8, 26 14 C26 22, 19 28, 16 28 C13 28, 6 22, 6 14 C6 8, 10 4, 16 4 Z" fill="none"/>
-        <path d="M16 8 C19 8, 22 10, 22 14 C22 19, 18 24, 16 24 C14 24, 10 19, 10 14 C10 10, 13 8, 16 8 Z" fill="none"/>
-      </svg>
-      <span class="brand-name">Annie Robin</span>
-    </a>
+<main id="contenu">
+<section class="hero" aria-label="Accueil"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="spot"></i><i class="grain"></i></div>
+<div class="hero-pied" aria-hidden="true"><div class="puces"><span class="puce"><i></i>Artisan d’art</span></div></div>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<div class="formes" aria-hidden="true" data-parallax=".05"><svg viewBox="0 0 600 600"><circle class="s1 bouge" cx="380" cy="230" r="170"/><rect class="s2 bouge b" x="120" y="250" width="240" height="300" rx="120"/><path class="s3 bouge" d="M300 40 L560 460 L40 460Z" opacity=".85"/><circle class="s4" cx="300" cy="300" r="250"/><path class="s4" d="M50 300h500M300 50v500"/></svg></div>
+<div class="wrap">
+<span class="eyebrow reveal">Artisan d’art</span>
+<h1 class="reveal" style="--d:.1s">Annie Robin</h1>
+<div class="hero-bas reveal" style="--d:.25s"><div class="accroche">Créations céramiques et artisanat d&#x27;art.</div>
+<div><p class="sous">Découvrez un travail de la matière façonné à la main, entre sobriété des formes et précision du geste.</p><div style="display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#realisations">Voir l’atelier <span class="fl">→</span></a><a class="btn ligne" href="#contact">Nous écrire</a></div></div></div>
+</div></section>
 
-    <nav class="site-nav" id="mainNav" aria-label="Navigation principale">
-      <a href="#esprit" class="nav-link">L'Esprit</a>
-      <a href="#creations" class="nav-link">Poterie & Céramique</a>
-      <a href="#informations" class="nav-link">L'Atelier</a>
-      <a href="#contact" class="nav-contact-btn">Prendre Contact</a>
-    </nav>
-  </header>
+<div class="marquee" aria-hidden="true"><div><span>Atelier</span><b>◆</b><span>Matière</span><b>◆</b><span>Geste</span><b>◆</b><span>Unique</span><b>◆</b><span>Sur-mesure</span><b>◆</b><span>Atelier</span><b>◆</b><span>Matière</span><b>◆</b><span>Geste</span><b>◆</b><span>Unique</span><b>◆</b><span>Sur-mesure</span><b>◆</b></div></div>
 
-  <main>
-    <!-- BANDEAU HERO AVEC THREE.JS -->
-    <section class="hero" aria-label="Introduction">
-      <canvas id="three-hero-canvas" aria-hidden="true"></canvas>
-      <div class="hero-scrim" aria-hidden="true"></div>
-      
-      <div class="hero-container">
-        <div class="hero-content">
-          <span class="eyebrow fade-up">Atelier d'Artisanat d'Art</span>
-          <h1 class="hero-title title-display fade-up">La terre façonnée, <em>l'empreinte</em> du temps.</h1>
-          <p class="hero-sub fade-up">
-            Chaque pièce de poterie naît d'un dialogue attentif avec la matière. Une recherche d'équilibre, de texture et de sobriété dans l'art de la céramique.
-          </p>
-          <div class="hero-actions fade-up">
-            <a href="mailto:contact@poterie-annie.fr" class="btn-primary">Contacter l'atelier</a>
-            <a href="#creations" class="btn-ghost">Découvrir les pièces</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="sec" id="esprit"><div class="wrap esprit">
+<div class="reveal"><div class="num">01</div><span class="eyebrow">L’esprit</span><h2 class="titre-sec">L&#x27;art de la terre et du geste</h2></div>
+<div class="reveal" style="--d:.12s"><p class="grande">L&#x27;atelier met à l&#x27;honneur le travail de la céramique. Chaque pièce est façonnée avec soin, dans le respect de la matière et des savoir-faire artisanaux. L&#x27;exigence du geste guide la création d&#x27;objets aux lignes épurées.</p><p>Dans cet espace dédié au fait main, la terre prend forme au fil des collections. L&#x27;attention portée aux textures et aux nuances offre des œuvres durables et singulières.</p></div>
+</div></section>
 
-    <!-- SECTION 1 : L'ESPRIT DE LA MAISON -->
-    <section class="section-wrap" id="esprit">
-      <div class="container">
-        <div class="spirit-grid">
-          <div class="spirit-text">
-            <span class="eyebrow fade-up">La Philosophie</span>
-            <h2 class="section-title title-display fade-up">L'exigence du geste et la patience de la cuisson.</h2>
-            
-            <p class="fade-up" style="margin-top: 1.5rem;">
-              Dans le secret de l'atelier, la poterie s'envisage comme une pratique d'attention soutenue, où les mains accompagnent l'argile jusqu'à sa forme juste.
-            </p>
-            <p class="fade-up">
-              Ni précipitation, ni artifice : chaque création de poterie reflète le travail du tour, la précision du modelage et le jeu subtil des émaux. L'argile garde en mémoire chaque intention, pour offrir des objets vivants, authentiques et durables.
-            </p>
+<section id="realisations" style="padding-bottom:clamp(60px,9vw,120px)"><div class="wrap reveal"><span class="eyebrow">Réalisations</span><h2 class="titre-sec">Un espace pour <em>vos pièces</em></h2><p class="lead">Les cadres ci-dessous attendent vos photos : chaque création y trouvera sa place.</p></div>
+<div class="defile-h" tabindex="0" aria-label="Galerie, défilement horizontal">
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s3"/><circle class="s1" cx="200" cy="210" r="120"/><rect class="s2" x="90" y="300" width="220" height="130"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 01</span><span>→</span></figcaption></figure>
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s2"/><path class="s3" d="M0 500 L400 80 V500Z"/><circle class="s1" cx="130" cy="150" r="70"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 02</span><span>→</span></figcaption></figure>
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s1"/><rect class="s3" x="60" y="70" width="280" height="360" rx="140"/><circle class="s2" cx="200" cy="250" r="64"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 03</span><span>→</span></figcaption></figure>
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s3"/><path class="s2" d="M0 0H400V250Z"/><path class="s1" d="M0 500V260L400 500Z"/><circle class="s4" cx="200" cy="250" r="90"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 04</span><span>→</span></figcaption></figure>
+</div></section>
 
-            <div class="craft-seal fade-up">
-              <svg class="seal-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.2">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M12 7v10M7 12h10"/>
-                <circle cx="12" cy="12" r="3" fill="#B66341" stroke="none"/>
-              </svg>
-              <div class="seal-desc">
-                Artisanat d'art · Poterie & Céramique<br>
-                Pièces uniques & petites séries
-              </div>
-            </div>
-          </div>
+<section class="sec offre" id="offre"><div class="wrap offre-grid">
+<div class="gauche reveal"><span class="eyebrow">Ce que nous faisons</span><h2 class="titre-sec">Les créations de l&#x27;atelier</h2></div>
+<div>
+<div class="rang reveal"><span class="n">01</span><div><h3>Pièces d&#x27;art</h3><p>Des objets façonnés à la main, pensés pour sublimer votre intérieur au quotidien.</p></div></div>
+<div class="rang reveal"><span class="n">02</span><div><h3>Réalisations sur mesure</h3><p>Un accompagnement dédié pour concevoir des pièces adaptées à vos envies et à votre espace.</p></div></div>
+<div class="rang reveal"><span class="n">03</span><div><h3>Séries limitées</h3><p>Des ensembles de céramiques travaillés en petites quantités, aux finitions soignées.</p></div></div>
+</div></div></section>
 
-          <div class="spirit-media fade-up">
-            <div class="photo-card">
-              <!-- PHOTO FOURNIE PAR LA FICHE : Shixart1985 (CC BY 2.0) -->
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg/1920px-Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
-                alt="Artisan au travail dans son atelier avec précision"
-                loading="lazy"
-                width="800"
-                height="600"
-              >
-              <span class="photo-caption-badge">Image d'illustration</span>
-            </div>
+<section class="sec tuiles-sec" id="demarche"><div class="wrap tuiles-grid">
+<div class="tuiles-intro reveal"><span class="eyebrow">La démarche</span><h2 class="titre-sec">La démarche de création</h2>
+<p class="lead">Une façon de travailler claire, du premier échange à la pièce finie.</p>
+<ol class="tuiles-index" aria-hidden="true"><li>L&#x27;échange</li><li>Le façonnage</li><li>La finition</li></ol></div>
+<div class="tuiles">
+<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M10 14a10 10 0 0 1 10-10h24a10 10 0 0 1 10 10v18a10 10 0 0 1-10 10H28l-12 11v-11h0a6 6 0 0 1-6-6Z"/><g class="h" opacity=".9"><circle cx="22" cy="23" r="3.6"/><circle cx="32" cy="23" r="3.6"/><circle cx="42" cy="23" r="3.6"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>L&#x27;échange</h3><p>Nous définissons ensemble votre projet, de l&#x27;usage aux formes souhaitées.</p></div></article>
+<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M44 6l14 14-30 30-14-14Z"/><path class="s" d="M14 36l14 14-20 6Z"/><path class="s" d="M44 6l5-5 14 14-5 5Z"/><path class="h" d="M41 12l4 4-24 24-4-4Z" opacity=".35"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Le façonnage</h3><p>La matière est travaillée patiemment à l&#x27;atelier selon des techniques artisanales.</p></div></article>
+<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="s" d="M32 4l26 14-26 14L6 18Z"/><path class="p" d="M6 18l26 14v28L6 46Z"/><path class="p" d="M58 18L32 32v28l26-14Z" style="filter:url(#relief) brightness(.78)"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>La finition</h3><p>Les pièces sont cuites et émaillées pour vous garantir un résultat élégant et durable.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
+</div></div></section>
 
-            <!-- EMPLACEMENT 1 RÉSERVÉ POUR LE COMMERÇANT -->
-            <div class="workshop-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span>Vos photos d'atelier ici</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- SECTION 2 : L'OFFRE / LES SPÉCIALITÉS -->
-    <section class="section-wrap section-offer" id="creations">
-      <div class="container">
-        <div class="section-header fade-up">
-          <span class="eyebrow">Les Spécialités</span>
-          <h2 class="section-title title-display">L'art de la poterie décliné au quotidien.</h2>
-        </div>
+<section class="cite"><div class="wrap reveal"><blockquote>La forme naît du dialogue entre la main et la matière.</blockquote></div></section>
 
-        <div class="offer-grid">
-          <!-- CARTE 1 -->
-          <article class="offer-card fade-up">
-            <div>
-              <span class="card-num">01</span>
-              <h3 class="card-title">Poterie d'Usage</h3>
-              <p class="card-desc">
-                Des formes pensées pour accompagner les rituels du quotidien : tasses, pichets, bols et plats. L'équilibre soigné entre préhension, poids de la terre et toucher brut.
-              </p>
-            </div>
-            <div class="card-meta">Usage & Quotidien</div>
-          </article>
+<section class="cta-bande" aria-label="Nous contacter"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="grain"></i></div>
+<div class="wrap"><div class="cta-carte verre reveal">
+<span class="eyebrow">Votre projet</span>
+<h2 class="cta-titre">Parlons de ce que vous imaginez.</h2>
+<p>Une pièce, un lieu, une envie : décrivez-nous votre projet, nous vous répondrons.</p>
+<div class="cta-actions"><a class="btn aimant" href="#contact">Nous écrire <span class="fl">→</span></a><a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=Annie%20Robin" target="_blank" rel="noopener">Itinéraire</a></div>
+</div></div></section>
 
-          <!-- CARTE 2 -->
-          <article class="offer-card fade-up">
-            <div>
-              <span class="card-num">02</span>
-              <h3 class="card-title">Pièces Uniques</h3>
-              <p class="card-desc">
-                Vases de caractère, contenants décoratifs et volumes sculptés. Des pièces singulières où la terre d'artisan s'exprime dans toute sa nudité minérale ou habillée d'émaux subtils.
-              </p>
-            </div>
-            <div class="card-meta">Création Décorative</div>
-          </article>
+<section class="sec" id="contact"><div class="wrap contact-grid">
+<div class="reveal"><span class="eyebrow">Contact</span>
+<h2 class="titre-sec">Prendre contact</h2>
+<p class="lead">Un projet, une pièce, une question ? Écrivez-nous, nous vous répondrons.</p>
+<ul class="coord"><li><small>Email</small><a href="mailto:contact@poterie-annie.fr">contact@poterie-annie.fr</a></li></ul>
+<a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=Annie%20Robin" target="_blank" rel="noopener">Itinéraire <span class="fl">→</span></a></div>
+<form class="demo reveal" style="--d:.12s" novalidate>
+<label>Votre nom<input type="text" name="nom" autocomplete="name"></label>
+<label>Votre email<input type="email" name="email" autocomplete="email"></label>
+<label>Votre demande<select name="objet"><option>Un projet sur mesure</option><option>Une pièce ou un conseil</option><option>Une visite de l’atelier</option><option>Autre demande</option></select></label>
+<label>Votre message<textarea name="message"></textarea></label>
+<button class="btn" type="submit">Envoyer <span class="fl">→</span></button>
+<p class="retour" aria-live="polite"></p>
+</form></div></section>
 
-          <!-- CARTE 3 -->
-          <article class="offer-card fade-up">
-            <div>
-              <span class="card-num">03</span>
-              <h3 class="card-title">Commandes Particulières</h3>
-              <p class="card-desc">
-                Réalisation sur mesure pour particuliers ou architectes d'intérieur. Élaboration de projets d'ensemble dans le respect des contraintes de matière et d'usage.
-              </p>
-            </div>
-            <div class="card-meta">Sur Consultation</div>
-          </article>
-        </div>
+</main>
+<footer class="pied"><div class="wrap">
+<div class="pied-cols">
+<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">A</i><span>Annie Robin</span></a><p>Créations céramiques et artisanat d&#x27;art.</p></div>
+<div><h3>Naviguer</h3><ul><li><a href="#esprit">L’esprit</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#offre">Savoir-faire</a></li><li><a href="#demarche">Démarche</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div><h3>Nous trouver</h3><ul><li>Nouvelle-Aquitaine</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Annie%20Robin" target="_blank" rel="noopener">Itinéraire →</a></li></ul></div>
+<div><h3>Nous joindre</h3><ul><li><a href="mailto:contact@poterie-annie.fr">contact@poterie-annie.fr</a></li><li><a href="#contact">Formulaire de contact</a></li></ul></div>
+</div>
+<div class="pied-nom" aria-hidden="true">Annie Robin</div>
 
-        <!-- ZONE DÉCORATIVE & EMPLACEMENT 2 -->
-        <div class="second-photo-block fade-up">
-          <div class="curated-quote">
-            <blockquote>
-              « Le potier ne dompte pas la terre : il écoute ses tensions et s'accorde à ses volontés. »
-            </blockquote>
-            <cite>Annie Robin · Céramiste</cite>
-          </div>
+<p class="mentions" id="mentions">Mentions légales — Éditeur : Annie Robin. Maquette de démonstration réalisée par ORBE : les mentions complètes (numéro d’immatriculation, hébergeur, responsable de publication) seront renseignées avec vous avant toute mise en ligne.</p>
+<div class="pied-bas"><span>© <span data-annee>2026</span> Annie Robin</span><span>Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></span><a href="#top" class="haut">Haut de page ↑</a></div>
+</div></footer>
+<a class="badge-orbe" href="mailto:societe.orbe@gmail.com">Maquette proposée par ORBE</a>
 
-          <!-- EMPLACEMENT 2 RÉSERVÉ POUR LE COMMERÇANT -->
-          <div class="placeholder-full">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
-              <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-            <span>Vos photos de poterie ici</span>
-            <p>Mettez en avant vos dernières séries, émaux et textures cuites au four.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<script>
+(function(){
+var d=document,r=d.documentElement;r.classList.remove('pas-js');
+var top=d.querySelector('.top'),btn=d.querySelector('.menu-btn'),nav=d.querySelector('.top nav');
+function onScroll(){if(top)top.classList.toggle('fond',window.scrollY>40);
+ var s=window.scrollY;d.querySelectorAll('[data-parallax]').forEach(function(e){e.style.transform='translate3d(0,'+(s*parseFloat(e.dataset.parallax))+'px,0)'});}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+if(btn){btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')!=='true';btn.setAttribute('aria-expanded',o);nav.classList.toggle('ouvert',o);top.classList.toggle('ouvert-menu',o);d.body.style.overflow=o?'hidden':''});
+ nav.addEventListener('click',function(e){if(e.target.tagName==='A'){btn.setAttribute('aria-expanded','false');nav.classList.remove('ouvert');top.classList.remove('ouvert-menu');d.body.style.overflow=''}});}
+var els=[].slice.call(d.querySelectorAll('.reveal'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('vu')})}
+d.querySelectorAll('form.demo').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var p=f.querySelector('.retour');if(p)p.textContent='Démonstration : ce formulaire sera relié à votre boîte mail.'})});
+var y=d.querySelector('[data-annee]');if(y)y.textContent=new Date().getFullYear();
+})();
+/* Kit premium ORBE : titre animé, lumière, barre de progression, tuiles empilées, icônes 3D, bouton aimanté */
+(function(){
+var d=document,w=window,calme=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+d.querySelectorAll('.hero h1').forEach(function(h){var n=0;[].slice.call(h.childNodes).forEach(function(t){if(t.nodeType!==3||!t.textContent.trim())return;var f=d.createDocumentFragment();t.textContent.split(/(\s+)/).forEach(function(m){if(!m)return;if(/^\s+$/.test(m)){f.appendChild(d.createTextNode(' '));return}var o=d.createElement('k-m');var b=d.createElement('k-w');b.textContent=m;b.style.setProperty('--m',n++);o.appendChild(b);f.appendChild(o)});h.replaceChild(f,t)})});
+var hero=d.querySelector('.hero');
+if(hero&&!calme){hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px')})}
+d.querySelectorAll('.verre').forEach(function(v){v.addEventListener('pointermove',function(e){var r=v.getBoundingClientRect();v.style.setProperty('--lx',((e.clientX-r.left)/r.width*100)+'%');v.style.setProperty('--ly',((e.clientY-r.top)/r.height*100)+'%')})});
+var bar=d.querySelector('.progres'),tu=[].slice.call(d.querySelectorAll('.tuile')),idx=[].slice.call(d.querySelectorAll('.tuiles-index li'));
+var att=false;function maj(){att=false;var h=d.documentElement.scrollHeight-w.innerHeight;if(bar)bar.style.setProperty('--p',h>0?Math.min(1,w.scrollY/h):0);
+ var act=0;tu.forEach(function(t,i){var r=t.getBoundingClientRect();if(r.top<w.innerHeight*.55)act=i;if(calme)return;var s=tu[i+1];if(!s){t.style.setProperty('--s',1);t.style.setProperty('--b',1);return}
+  var q=s.getBoundingClientRect(),k=Math.max(0,Math.min(1,1-(q.top-r.top)/(r.height||1)));t.style.setProperty('--s',(1-k*.06).toFixed(4));t.style.setProperty('--b',(1-k*.12).toFixed(4))});
+ idx.forEach(function(l,i){l.classList.toggle('actif',i===act)});}
+w.addEventListener('scroll',function(){if(!att){att=true;requestAnimationFrame(maj)}},{passive:true});w.addEventListener('resize',maj);maj();
+if(!calme&&w.matchMedia('(hover: hover)').matches){
+ d.querySelectorAll('.ico3d').forEach(function(c){var t=c.closest('.tuile')||c;t.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--ry',(x*28)+'deg');c.style.setProperty('--rx',(-y*28)+'deg')});t.addEventListener('pointerleave',function(){c.style.setProperty('--ry','0deg');c.style.setProperty('--rx','0deg')})});
+ d.querySelectorAll('.aimant').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.28)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});}
+})();
+(function(){var n=document.querySelector('.pied-nom');if(!n)return;function fit(){n.style.fontSize='';var t=0;while(n.scrollWidth>n.clientWidth+2&&t++<40){n.style.fontSize=(parseFloat(getComputedStyle(n).fontSize)*.94)+'px'}}
+fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 
-    <!-- SECTION 3 : INFOS PRATIQUES & CONTACT -->
-    <section class="section-wrap" id="informations">
-      <div class="container">
-        <div class="practical-grid">
-          
-          <!-- BLOC INFORMATIONS PRATIQUES -->
-          <div class="practical-box fade-up">
-            <span class="eyebrow">Renseignements</span>
-            <h2 class="title-display" style="font-size: 2.2rem; margin-bottom: 1.5rem;">L'Atelier</h2>
-            <p style="color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7;">
-              L'atelier Annie Robin est dédié à la poterie d'art. Les rencontres, visites et commandes s'organisent principalement sur rendez-vous pour préserver le temps de création.
-            </p>
-
-            <ul class="info-list">
-              <li class="info-item">
-                <span class="info-label">Artisan</span>
-                <span class="info-value">Annie Robin</span>
-              </li>
-              <li class="info-item">
-                <span class="info-label">Secteur</span>
-                <span class="info-value">Artisans d'art · Poterie (Pottery)</span>
-              </li>
-              <li class="info-item">
-                <span class="info-label">Visites & Accueil</span>
-                <span class="info-value">Sur rendez-vous préalable</span>
-              </li>
-            </ul>
-
-            <a href="mailto:contact@poterie-annie.fr" class="btn-primary" style="width: 100%; text-align: center;">Prendre rendez-vous</a>
-          </div>
-
-          <!-- BLOC CONTACT -->
-          <div class="practical-box fade-up" id="contact">
-            <span class="eyebrow">Lien Direct</span>
-            <h2 class="title-display" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Écrire à l'Atelier</h2>
-            <p style="color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7;">
-              Pour une question sur une pièce, une commande spécifique ou toute collaboration, vous pouvez vous adresser directement à l'artisan par courrier électronique.
-            </p>
-
-            <ul class="info-list">
-              <li class="info-item">
-                <span class="info-label">Courriel officiel</span>
-                <a href="mailto:contact@poterie-annie.fr" class="info-link">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                    <path d="M22 6l-10 7L2 6"/>
-                  </svg>
-                  contact@poterie-annie.fr
-                </a>
-              </li>
-            </ul>
-
-            <div class="contact-form-notice">
-              <p>
-                <strong>Échange personnalisé :</strong> Les réponses sont formulées avec soin par Annie Robin, au fil du travail à l'atelier.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- PIED DE PAGE -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="brand-name">Annie Robin</span>
-          <p>Artisan d'art potier. Recherche de pureté formelle, de texture et respect des matériaux nobles.</p>
-        </div>
-
-        <div class="footer-links-wrap">
-          <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-              <li><a href="#esprit">L'Esprit</a></li>
-              <li><a href="#creations">Poterie & Céramique</a></li>
-              <li><a href="#informations">L'Atelier</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Correspondance</h4>
-            <ul>
-              <li><a href="mailto:contact@poterie-annie.fr">contact@poterie-annie.fr</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>
-          © Annie Robin. Tous droits réservés.
-        </div>
-        <div class="credits-author">
-          Photo : Shixart1985 (CC BY 2.0)
-        </div>
-        <div>
-          Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- BADGE FIXE DISCRET -->
-  <aside class="studio-badge" aria-hidden="true">
-    Maquette proposée par ORBE
-  </aside>
-
-  <!-- SCRIPTS : NAVIGATION & THREE.JS SILENCIEUX & OBSERVERS -->
-  <script>
-    // GESTION DU MENU MOBILE
-    const navToggle = document.getElementById('navToggle');
-    const mainNav = document.getElementById('mainNav');
-    const siteHeader = document.getElementById('siteHeader');
-
-    if (navToggle && mainNav) {
-      navToggle.addEventListener('click', () => {
-        const isOpen = mainNav.classList.toggle('is-open');
-        navToggle.classList.toggle('is-active');
-        navToggle.setAttribute('aria-expanded', isOpen);
-      });
-
-      mainNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mainNav.classList.remove('is-open');
-          navToggle.classList.remove('is-active');
-          navToggle.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-
-    // EFFET D'EN-TÊTE AU DÉFILEMENT
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        siteHeader.classList.add('scrolled');
-      } else {
-        siteHeader.classList.remove('scrolled');
-      }
-    }, { passive: true });
-
-    // APPARITIONS DOUCES AU DÉFILEMENT
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
-      });
-
-      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    } else {
-      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('is-visible'));
-    }
-
-    // SCÈNE THREE.JS : FORMES ABSTRAITES ÉVOQUANT LE TOUR DE POTIER ET LES COURBES D'ARGILE
-    window.addEventListener('load', () => {
-      if (prefersReducedMotion) return;
-
-      try {
-        if (!window.THREE) return;
-
-        const canvas = document.getElementById('three-hero-canvas');
-        if (!canvas) return;
-
-        const scene = new THREE.Scene();
-
-        const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-        camera.position.set(0, 0, 7.5);
-
-        const renderer = new THREE.WebGLRenderer({
-          canvas: canvas,
-          alpha: true,
-          antialias: true
-        });
-
-        const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-        renderer.setPixelRatio(pixelRatio);
-        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-
-        // LUMIÈRES DOUCES ÉVOQUANT LA LUMIÈRE DU JOUR D'UN ATELIER
-        const ambientLight = new THREE.AmbientLight(0xfff7ed, 1.2);
-        scene.add(ambientLight);
-
-        const directionalLight = new THREE.DirectionalLight(0xd9b38c, 1.6);
-        directionalLight.position.set(5, 8, 4);
-        scene.add(directionalLight);
-
-        const fillLight = new THREE.DirectionalLight(0xc97a56, 0.8);
-        fillLight.position.set(-5, -4, -2);
-        scene.add(fillLight);
-
-        // GROUPE DE VOLUMES ÉPURÉS (TORUS ET ELLIPSOÏDES EN TERRE CUITE / CÉRAMIQUE)
-        const group = new THREE.Group();
-        group.position.set(1.5, -0.2, 0);
-        scene.add(group);
-
-        const clayMaterial = new THREE.MeshStandardMaterial({
-          color: 0xB66341,
-          roughness: 0.65,
-          metalness: 0.05,
-          wireframe: false
-        });
-
-        const sandMaterial = new THREE.MeshStandardMaterial({
-          color: 0xDAC4B0,
-          roughness: 0.8,
-          metalness: 0.02
-        });
-
-        // Forme 1 : Torus aux courbes fluides évoquant le col d'une poterie
-        const torusGeom = new THREE.TorusGeometry(1.6, 0.45, 32, 64);
-        const torusMesh = new THREE.Mesh(torusGeom, clayMaterial);
-        torusMesh.rotation.x = Math.PI / 3;
-        group.add(torusMesh);
-
-        // Forme 2 : Un volume doux, presque ovoïde au centre
-        const sphereGeom = new THREE.SphereGeometry(1.1, 48, 48);
-        sphereGeom.scale(1, 1.35, 1);
-        const sphereMesh = new THREE.Mesh(sphereGeom, sandMaterial);
-        sphereMesh.position.set(-0.6, -0.2, -0.8);
-        group.add(sphereMesh);
-
-        // Forme 3 : Anneau fin et léger dérivant lentement
-        const ringGeom = new THREE.TorusGeometry(2.3, 0.08, 16, 80);
-        const ringMesh = new THREE.Mesh(ringGeom, clayMaterial);
-        ringMesh.rotation.x = -Math.PI / 4;
-        group.add(ringMesh);
-
-        let animationFrameId;
-        let isTabActive = true;
-
-        document.addEventListener('visibilitychange', () => {
-          isTabActive = !document.hidden;
-          if (isTabActive) {
-            lastTime = performance.now();
-            renderLoop();
-          } else {
-            cancelAnimationFrame(animationFrameId);
-          }
-        });
-
-        let lastTime = performance.now();
-
-        const renderLoop = () => {
-          if (!isTabActive) return;
-
-          const now = performance.now();
-          const delta = (now - lastTime) * 0.001;
-          lastTime = now;
-
-          // Rotation très sobre et lente
-          group.rotation.y += delta * 0.12;
-          torusMesh.rotation.z += delta * 0.08;
-          ringMesh.rotation.y -= delta * 0.09;
-          ringMesh.rotation.z += delta * 0.04;
-
-          renderer.render(scene, camera);
-          animationFrameId = requestAnimationFrame(renderLoop);
-        };
-
-        renderLoop();
-
-        // REDIMENSIONNEMENT DU CANVAS
-        const handleResize = () => {
-          if (!canvas) return;
-          const width = canvas.clientWidth;
-          const height = canvas.clientHeight;
-          if (width === 0 || height === 0) return;
-
-          camera.aspect = width / height;
-          camera.updateProjectionMatrix();
-
-          // Ajustement selon mobile ou écran large
-          if (window.innerWidth < 768) {
-            group.position.set(0, 0.6, -1);
-            group.scale.set(0.75, 0.75, 0.75);
-          } else {
-            group.position.set(1.5, -0.2, 0);
-            group.scale.set(1, 1, 1);
-          }
-
-          renderer.setSize(width, height);
-        };
-
-        window.addEventListener('resize', handleResize, { passive: true });
-        handleResize();
-
-      } catch (e) {
-        // En cas d'erreur ou d'indisponibilité de WebGL, le fond dégradé CSS prend le relais
-        console.warn('Three.js non initialisé:', e);
-      }
-    });
-  </script>
-</body>
-</html>
+</script>
+</body></html>

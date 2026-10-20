@@ -1,6 +1,486 @@
 {
  "items": [
   {
+   "id": "agent-20261020-laurent-barraud",
+   "nom": "Laurent Barraud",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "Villenave-d'Ornon",
+   "adresse": "75 Route de Léognan, 33140 Villenave-d'Ornon",
+   "canal": "Email",
+   "contact": "quante.isa@hotmail.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Laurent%20Barraud%20Villenave-d%27Ornon",
+   "objet": "Un site web à votre image, Laurent",
+   "message": "Bonjour Monsieur Barraud,\nJ’ai remarqué que votre épicerie fine de Villenave‑d’Ornon propose une belle sélection de fruits et légumes frais.\nJ’ai donc pris l’initiative de vous préparer un site web sur mesure, que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/laurent-barraud/\nVous pourrez le mettre en ligne à votre nom et y ajouter vos propres photos dès que vous le souhaiterez.\nSi vous préférez ne pas le retenir, il suffit de répondre « non merci » et vous ne serez plus relancé.\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/laurent-barraud/",
+   "par": "modèle table/cacao · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:43:04Z"
+  },
+  {
+   "id": "agent-20261020-l-atelier-de-soane",
+   "nom": "L'Atelier de Soane",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "",
+   "adresse": "",
+   "canal": "SMS",
+   "contact": "+33633761228",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=L%27Atelier%20de%20Soane%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, j’ai remarqué que L'Atelier de Soane ouvre ses portes dès 9h30 et propose des coupes coiffure.\nJ’ai donc créé un site sur mesure pour vous, que vous pouvez voir ici : https://oscarcousin-max.github.io/orbe-usine/l-atelier-de-soane/\nVous pouvez le mettre en ligne à votre nom avec vos propres photos, si cela vous convient.\nRépondez simplement « non merci » et vous ne serez plus relancé. – Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/l-atelier-de-soane/",
+   "par": "modèle bijou/rose_ivoire · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:43:19Z"
+  },
+  {
+   "id": "agent-20261020-raisin-bulles",
+   "nom": "Raisin & Bulles",
+   "type": "caves à vin et bars à vin",
+   "quartier": "",
+   "adresse": "236 Rue d'Ornano",
+   "canal": "Email",
+   "contact": "bordeaux@raisinetbulles.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Raisin%20%26%20Bulles%20Bordeaux",
+   "objet": "Un petit site sur mesure pour Raisin & Bulles",
+   "message": "Bonjour,\nJ’ai remarqué que votre cave à vin, située au 236 Rue d'Ornano, accueille les amateurs de vin du mardi au samedi avec des horaires généreux.\nJ’ai donc préparé un site web spécialement pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/raisin-bulles/\nJe peux le mettre en ligne à votre nom, avec vos propres photos, si cela vous convient.\nVous pouvez simplement répondre « non merci » et vous ne serez pas recontacté.\nOscar · ORBE, studio digital – societe.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/raisin-bulles/",
+   "par": "modèle domaine/sauge · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:43:35Z"
+  },
+  {
+   "id": "agent-20261020-maison-lichette",
+   "nom": "Maison Lichette",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "",
+   "adresse": "257 Rue Judaïque",
+   "canal": "Email",
+   "contact": "maisonlichette@hotmail.com",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Maison%20Lichette%20Bordeaux",
+   "objet": "Un site web dédié à Maison Lichette",
+   "message": "Bonjour,\nJ’ai remarqué que la Maison Lichette, située au 257 Rue Judaïque, propose une belle sélection de fromages.\nPour mettre en valeur votre savoir‑faire, j’ai préparé un site web sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/maison-lichette/\nVous pourrez le publier à votre nom et y ajouter vos propres photos quand vous le souhaitez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et vous ne serez pas relancé.\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/maison-lichette/",
+   "par": "modèle table/cacao · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:43:52Z"
+  },
+  {
+   "id": "agent-20261020-hush",
+   "nom": "hush",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "",
+   "adresse": "87 Rue du Loup",
+   "canal": "SMS",
+   "contact": "+33 7 44 99 45 64",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=hush%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, j’ai vu que votre salon « hush » à 87 Rue du Loup ouvre du mardi au vendredi de 10 h à 19 h.\nJ’ai préparé un site sur mesure pour vous, à voir ici : https://oscarcousin-max.github.io/orbe-usine/hush/\nVous pouvez le mettre en ligne à votre nom avec vos photos, ou répondre « non merci » pour ne plus être relancé.\nOscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/hush/",
+   "par": "modèle bijou/nuit_argent · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:44:08Z"
+  },
+  {
+   "id": "agent-20261020-chai-mica",
+   "nom": "Chai Mica",
+   "type": "caves à vin et bars à vin",
+   "quartier": "",
+   "adresse": "",
+   "canal": "Email",
+   "contact": "contact@chai-mica.com",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Chai%20Mica%20Bordeaux",
+   "objet": "Votre nouveau site pour Chai Mica",
+   "message": "Bonjour,\nJ’ai remarqué que votre spécialité est le wine, au cœur des caves à vin et bars à vin, et j’ai pensé à vous.\nJ’ai donc préparé un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/chai-mica/.\nVous pouvez le mettre en ligne à votre nom, avec vos propres photos, si cela vous convient.\nSi vous préférez ne pas le poursuivre, répondez simplement « non merci » et vous ne serez pas relancé.\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/chai-mica/",
+   "par": "modèle domaine/cuivre · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:44:24Z"
+  },
+  {
+   "id": "agent-20261020-les-gourmandises-du-chateau",
+   "nom": "Les Gourmandises du Château",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "",
+   "adresse": "15 Place du Château",
+   "canal": "Email",
+   "contact": "les_gourmandises_du_chateau@yahoo.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Les%20Gourmandises%20du%20Ch%C3%A2teau%20Bordeaux",
+   "objet": "Un site web dédié à vos pâtisseries",
+   "message": "Bonjour,\nJ’ai remarqué que votre boutique, située au 15 Place du Château, est réputée pour ses pâtisseries fines et vos chocolats artisanaux.\nJ’ai donc préparé un site web sur mesure pour vous, que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/les-gourmandises-du-chateau/\nVous pourrez le mettre en ligne à votre nom, en y ajoutant vos propres photos et textes quand vous le souhaiterez.\nSi cela ne vous intéresse pas, il suffit de répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/les-gourmandises-du-chateau/",
+   "par": "modèle table/cacao · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:44:41Z"
+  },
+  {
+   "id": "agent-20261020-nicol-esthetique",
+   "nom": "Nicol'Esthétique",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "Andernos-les-Bains",
+   "adresse": "102bis, 33510 Andernos-les-Bains",
+   "canal": "SMS",
+   "contact": "+33 6 21 04 28 33",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Nicol%27Esth%C3%A9tique%20Andernos-les-Bains",
+   "objet": "",
+   "message": "Bonjour Nicol'Esthétique,\nJ’ai remarqué votre institut de beauté à Andernos‑les‑Bains, ouvert de 9h à 18h en semaine.\nJ’ai préparé un site sur mesure pour vous, à voir ici : https://oscarcousin-max.github.io/orbe-usine/nicol-esthetique/\nJe peux le mettre en ligne à votre nom avec vos photos, ou répondre « non merci » – sans relance. Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/nicol-esthetique/",
+   "par": "modèle bijou/nuit_argent · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:44:57Z"
+  },
+  {
+   "id": "agent-20261020-wine-more-time",
+   "nom": "Wine More Time",
+   "type": "caves à vin et bars à vin",
+   "quartier": "",
+   "adresse": "8 Rue Saint-James, 33000",
+   "canal": "Email",
+   "contact": "wine-more-time@orange.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Wine%20More%20Time%20Bordeaux",
+   "objet": "Un site web dédié à Wine More Time",
+   "message": "Bonjour,\nJ’ai remarqué que votre cave à vin, Wine More Time, accueille les amateurs dès 16 h du lundi au jeudi au 8 Rue Saint‑James.\nJ’ai donc pris l’initiative de créer un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/wine-more-time/\nVous pourrez le mettre en ligne à votre nom, en y ajoutant vos propres photos et vos événements.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et vous ne serez plus sollicité.\nOscar · ORBE, studio digital – societe.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/wine-more-time/",
+   "par": "modèle domaine/cuivre · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:45:14Z"
+  },
+  {
+   "id": "agent-20261020-sweet-valentine",
+   "nom": "Sweet Valentine",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "",
+   "adresse": "116 Cours des Fossés, 33210",
+   "canal": "Email",
+   "contact": "contact@sweetvalentine.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Sweet%20Valentine%20Bordeaux",
+   "objet": "Votre nouveau site Sweet Valentine",
+   "message": "Bonjour,\nJ’ai remarqué que Sweet Valentine, votre pâtisserie située au 116 Cours des Fossés, propose chaque jour des délices sucrés jusqu’à 19h30.\nPour vous aider à mettre en valeur vos créations, j’ai préparé un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/sweet-valentine/\nVous pourrez le publier à votre nom, y ajouter vos propres photos et le gérer comme bon vous semble.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et je ne vous relancerai pas.\nAu plaisir de vous lire,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/sweet-valentine/",
+   "par": "modèle table/cacao · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:45:31Z"
+  },
+  {
+   "id": "agent-20261020-micky-bliss",
+   "nom": "Micky Bliss",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "",
+   "adresse": "5 Rue François Mitterrand",
+   "canal": "SMS",
+   "contact": "+33 6 44 00 06 47",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Micky%20Bliss%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour Micky Bliss,\nJ’ai créé un site sur mesure pour votre salon de coiffure à 5 Rue François Mitterrand : https://oscarcousin-max.github.io/orbe-usine/micky-bliss/\nVous pouvez le mettre en ligne avec vos propres photos quand vous le souhaitez, ou répondre « non merci ».\nOscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/micky-bliss/",
+   "par": "modèle bijou/rose_ivoire · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:45:47Z"
+  },
+  {
+   "id": "agent-20261020-sobre",
+   "nom": "Sobre",
+   "type": "caves à vin et bars à vin",
+   "quartier": "",
+   "adresse": "",
+   "canal": "Instagram",
+   "contact": "@sobre_niort",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Sobre%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, j’ai remarqué que votre cave à vin « Sobre » ouvre jusqu’à 01 h du matin du jeudi au samedi.\nJ’ai créé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/sobre/\nJe peux le mettre en ligne à votre nom avec vos propres photos, quand vous le souhaitez.\nRépondez simplement « non merci » si vous ne voulez pas poursuivre. – Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/sobre/",
+   "par": "modèle domaine/cuivre · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:46:02Z"
+  },
+  {
+   "id": "agent-20261020-oriental-gato",
+   "nom": "Oriental Gâto",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "",
+   "adresse": "20 Cours de la Somme",
+   "canal": "Email",
+   "contact": "helal.gato@outlook.fr",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Oriental%20G%C3%A2to%20Bordeaux",
+   "objet": "Un site web dédié à Oriental Gâto",
+   "message": "Bonjour,\nJ’ai remarqué que votre boutique Oriental Gâto accueille les clients du lundi au samedi de 9 h à 21 h, avec une ouverture le dimanche après‑midi, ce qui montre votre engagement à satisfaire les gourmands toute la semaine.\nPour mettre en valeur vos pâtisseries, j’ai préparé un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/oriental-gato/\nVous pourrez le publier à votre nom, y ajouter vos propres photos et le gérer comme bon vous semble.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et nous ne vous recontacterons plus.\nOscar · ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/oriental-gato/",
+   "par": "modèle table/cacao · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:46:19Z"
+  },
+  {
+   "id": "agent-20261020-institut-mirabilis",
+   "nom": "Institut Mirabilis",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "",
+   "adresse": "",
+   "canal": "Téléphone",
+   "contact": "+33557599631",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Institut%20Mirabilis%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, c’est Oscar du studio digital ORBE. J’ai remarqué que l’Institut Mirabilis se distingue par son expertise beauté, et j’ai créé un site sur‑mesure pour vous : https://oscarcousin-max.github.io/orbe-usine/institut-mirabilis/. Je peux le mettre en ligne à votre nom avec vos photos, il suffit de me dire oui ou simplement dire « non merci ». Au plaisir, Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/institut-mirabilis/",
+   "par": "modèle bijou/rose_ivoire · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:46:36Z"
+  },
+  {
+   "id": "agent-20261020-couleurs-de-vin",
+   "nom": "Couleurs de vin",
+   "type": "caves à vin et bars à vin",
+   "quartier": "",
+   "adresse": "",
+   "canal": "SMS",
+   "contact": "+33 7 58 52 32 93",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Couleurs%20de%20vin%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, j’ai remarqué que Couleurs de vin se spécialise dans le wine.\nJ’ai préparé un site sur mesure pour vous : https://oscarcousin-max.github.io/orbe-usine/couleurs-de-vin/.\nVous pouvez le mettre en ligne avec vos propres photos, ou répondre « non merci » pour ne pas être relancé.\nOscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/couleurs-de-vin/",
+   "par": "modèle domaine/bordeaux · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:46:51Z"
+  },
+  {
+   "id": "agent-20261020-madame-fromage",
+   "nom": "Madame Fromage",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "Bordeaux",
+   "adresse": "3 Quai Deschamps, 33100 Bordeaux",
+   "canal": "Instagram",
+   "contact": "@madamefromage.bordeaux",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Madame%20Fromage%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour Madame Fromage, j’ai remarqué votre boutique spécialisée dans le cheese au 3 Quai Deschamps à Bordeaux.\nJ’ai préparé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/madame-fromage/\nJe peux le mettre en ligne à votre nom avec vos propres photos, il suffit de me le dire.\nRépondez simplement « non merci » si cela ne vous intéresse pas. Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/madame-fromage/",
+   "par": "modèle table/olive · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:47:08Z"
+  },
+  {
+   "id": "agent-20261020-l-atelier-chiara",
+   "nom": "L'Atelier Chiara",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "Bordeaux",
+   "adresse": "35 Rue des Azalées, 33320 Bordeaux",
+   "canal": "Téléphone",
+   "contact": "+33 5 56 28 14 33",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=L%27Atelier%20Chiara%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, je suis Oscar du studio digital ORBE à Bordeaux. J’ai remarqué que votre salon L'Atelier Chiara, situé au 35 Rue des Azalées, propose des services de coiffure, et j’ai préparé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/l-atelier-chiara/. Vous pouvez le mettre en ligne à votre nom, avec vos propres photos, ou simplement me dire « non merci » et je ne vous relancerai pas. Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/l-atelier-chiara/",
+   "par": "modèle bijou/rose_ivoire · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:47:25Z"
+  },
+  {
+   "id": "agent-20261020-la-cachette",
+   "nom": "La Cachette",
+   "type": "caves à vin et bars à vin",
+   "quartier": "",
+   "adresse": "",
+   "canal": "SMS",
+   "contact": "+33683643165",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=La%20Cachette%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, j’ai remarqué que La Cachette propose une belle sélection de vins et ouvre jusqu’à 20h30 le vendredi.\nJ’ai préparé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/la-cachette/\nVous pouvez le mettre en ligne à votre nom, avec vos propres photos, si cela vous convient.\nRépondez « non merci » si vous ne souhaitez pas poursuivre. Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/la-cachette/",
+   "par": "modèle domaine/cuivre · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:47:40Z"
+  },
+  {
+   "id": "agent-20261020-fromagerie-des-flots",
+   "nom": "Fromagerie des Flots",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "",
+   "adresse": "",
+   "canal": "SMS",
+   "contact": "+33 6 71610153",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Fromagerie%20des%20Flots%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, j’ai remarqué que la Fromagerie des Flots propose une belle sélection de fromages et ouvre jusqu’à 20 h le samedi.\nJ’ai préparé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/fromagerie-des-flots/\nJe peux le mettre en ligne à votre nom avec vos propres photos, si cela vous convient.\nRépondez simplement « non merci » et je ne vous relancerai pas. – Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/fromagerie-des-flots/",
+   "par": "modèle table/brasserie · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:47:57Z"
+  },
+  {
+   "id": "agent-20261020-la-barbiere-de-saint-paul",
+   "nom": "La Barbière de Saint Paul",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "",
+   "adresse": "9 Rue Buhan, 33000",
+   "canal": "Téléphone",
+   "contact": "+33 5 47 74 08 58",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=La%20Barbi%C3%A8re%20de%20Saint%20Paul%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, je suis Oscar du studio digital ORBE à Bordeaux. J’ai remarqué que votre salon, La Barbière de Saint Paul, ouvre de 10 h à 19 h les mardis, jeudis, vendredis et samedis, et je vous ai préparé un site sur mesure que vous pouvez voir ici : https://oscarcousin-max.github.io/orbe-usine/la-barbiere-de-saint-paul/. Vous pouvez le mettre en ligne à votre nom, avec vos propres photos, quand vous le souhaitez. Si vous ne souhaitez pas le garder, il suffit de répondre « non merci » et nous ne vous relancerons pas. Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/la-barbiere-de-saint-paul/",
+   "par": "modèle bijou/rose_ivoire · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:48:16Z"
+  },
+  {
+   "id": "agent-20261020-chateau-bellevue",
+   "nom": "Château Bellevue",
+   "type": "caves à vin et bars à vin",
+   "quartier": "",
+   "adresse": "",
+   "canal": "Téléphone",
+   "contact": "+33 5 56 20 81 52",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Ch%C3%A2teau%20Bellevue%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, c’est Oscar du studio digital ORBE à Bordeaux.\nJ’ai remarqué que Château Bellevue se distingue par sa spécialité : le vin, et j’ai pensé à vous.\nJ’ai préparé un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/chateau-bellevue/.\nVous pouvez le mettre en ligne à votre nom, avec vos propres photos, si cela vous convient. Vous pouvez simplement dire « non merci » et nous ne vous relancerons pas.\n\nOscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/chateau-bellevue/",
+   "par": "modèle domaine/cuivre · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:48:36Z"
+  },
+  {
+   "id": "agent-20261020-signature-chocolat",
+   "nom": "Signature Chocolat",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "Marcheprime",
+   "adresse": "11 Avenue de la Côte d'Argent, 33380 Marcheprime",
+   "canal": "SMS",
+   "contact": "+33 6 47 05 84 58",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Signature%20Chocolat%20Marcheprime",
+   "objet": "",
+   "message": "Bonjour, j’ai remarqué votre boutique \"Signature Chocolat\" à l’Avenue de la Côte d’Argent, spécialisée en chocolat.\nJ’ai créé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/signature-chocolat/\nVous pouvez le mettre en ligne à votre nom avec vos photos quand vous le souhaitez.\nRépondez simplement « non merci » si cela ne vous intéresse pas. — Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/signature-chocolat/",
+   "par": "modèle table/cacao · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:48:52Z"
+  },
+  {
+   "id": "agent-20261020-salon-delphine-delaurent",
+   "nom": "Salon Delphine Delaurent",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "Mérignac",
+   "adresse": "32 Rue de la Branche, 33700 Mérignac",
+   "canal": "Téléphone",
+   "contact": "+33 5 56 47 23 93",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Salon%20Delphine%20Delaurent%20M%C3%A9rignac",
+   "objet": "",
+   "message": "Bonjour Delphine, j’ai remarqué que votre salon à Mérignac ouvre jusqu’à 18 h en semaine.\nJ’ai créé un site sur mesure pour vous, vous pouvez le voir ici : https://oscarcousin-max.github.io/orbe-usine/salon-delphine-delaurent/\nVous pouvez le publier avec vos photos et votre nom quand vous le souhaitez.\nUn simple « non merci » suffit, je ne vous relancerai pas. – Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/salon-delphine-delaurent/",
+   "par": "modèle bijou/nuit_argent · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:49:09Z"
+  },
+  {
+   "id": "agent-20261020-l-echoppe-des-sens-cave-a-vin-epicerie-f",
+   "nom": "L'échoppe des Sens - Cave à vin - Epicerie Fine",
+   "type": "caves à vin et bars à vin",
+   "quartier": "Eysines",
+   "adresse": "133B Avenue de l'Hippodrome, 33320 Eysines",
+   "canal": "Téléphone",
+   "contact": "+335 56 93 81 56",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=L%27%C3%A9choppe%20des%20Sens%20-%20Cave%20%C3%A0%20vin%20-%20Epicerie%20Fine%20Eysines",
+   "objet": "",
+   "message": "Bonjour, c’est Oscar du studio digital ORBE. J’ai remarqué que votre « L’échoppe des Sens » à Eysines est une vraie référence en cave à vin et épicerie fine. J’ai préparé un site sur mesure pour vous, à voir ici : https://oscarcousin-max.github.io/orbe-usine/l-echoppe-des-sens-cave-a-vin-epicerie-f/. Vous pouvez le mettre en ligne avec vos propres photos, ou simplement répondre « non merci » et je ne vous recontacterai plus.\n\nOscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/l-echoppe-des-sens-cave-a-vin-epicerie-f/",
+   "par": "modèle domaine/cuivre · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:49:27Z"
+  },
+  {
+   "id": "agent-20261020-gargantoine",
+   "nom": "Garg’Antoine",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "",
+   "adresse": "",
+   "canal": "SMS",
+   "contact": "+33 7 69177496",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Garg%E2%80%99Antoine%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, j’ai remarqué que Garg’Antoine ouvre dès 8 h le samedi pour vos délicieuses créations.\nJ’ai préparé un site sur mesure pour vous, à voir ici : https://oscarcousin-max.github.io/orbe-usine/gargantoine/\nVous pouvez le mettre en ligne à votre nom avec vos propres photos, si cela vous convient.\nRépondez simplement « non merci » et je ne vous relancerai pas. – Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/gargantoine/",
+   "par": "modèle table/olive · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:49:43Z"
+  },
+  {
+   "id": "agent-20261020-salon-christine-pedrosa",
+   "nom": "Salon Christine Pedrosa",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "Eysines",
+   "adresse": "65 Avenue de l'Hippodrome, 33320 Eysines",
+   "canal": "Téléphone",
+   "contact": "+33 5 56 28 53 32",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Salon%20Christine%20Pedrosa%20Eysines",
+   "objet": "",
+   "message": "Bonjour, je suis Oscar du studio digital ORBE à Bordeaux. J’ai remarqué que votre salon, le Salon Christine Pedrosa, se situe au 65 Avenue de l’Hippodrome à Eysines et que vous êtes spécialisé en coiffure. J’ai donc préparé un site web sur mesure pour vous, que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/salon-christine-pedrosa/. Je peux le mettre en ligne à votre nom avec vos propres photos, si cela vous convient. Vous pouvez simplement me dire « non merci » et je ne vous relancerai pas. Bien à vous, Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/salon-christine-pedrosa/",
+   "par": "modèle bijou/rose_ivoire · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:49:59Z"
+  },
+  {
+   "id": "agent-20261020-la-cave-cheval-quancard",
+   "nom": "La cave Cheval Quancard",
+   "type": "caves à vin et bars à vin",
+   "quartier": "Saint-Vincent-de-Paul",
+   "adresse": "87 Avenue Gustave Eiffel, 33440 Saint-Vincent-de-Paul",
+   "canal": "Téléphone",
+   "contact": "+33 5 56 77 58 11",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=La%20cave%20Cheval%20Quancard%20Saint-Vincent-de-Paul",
+   "objet": "",
+   "message": "Bonjour, c’est Oscar du studio ORBE à Bordeaux. J’ai remarqué que votre cave Cheval Quancard propose une belle sélection de vins à Saint‑Vincent‑de‑Paul. J’ai préparé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/la-cave-cheval-quancard/. Vous pouvez le mettre en ligne avec vos propres photos, ou simplement répondre « non merci » et je ne vous relancerai pas. Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/la-cave-cheval-quancard/",
+   "par": "modèle domaine/cuivre · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:50:18Z"
+  },
+  {
+   "id": "agent-20261020-biomajolan",
+   "nom": "Biomajolan",
+   "type": "pâtissiers, chocolatiers, épiceries fines",
+   "quartier": "Le Taillan-Médoc",
+   "adresse": "37 Chemin de Ransinangue, 33320 Le Taillan-Médoc",
+   "canal": "SMS",
+   "contact": "+33 6 01 75 43 93",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Biomajolan%20Le%20Taillan-M%C3%A9doc",
+   "objet": "",
+   "message": "Bonjour, j’ai remarqué votre boutique Biomajolan au 37 Chemin de Ransinangue à Le Taillan‑Médoc.\nJ’ai préparé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/biomajolan/\nVous pourrez le mettre en ligne à votre nom avec vos propres photos, ou simplement répondre « non merci ».\nOscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/biomajolan/",
+   "par": "modèle table/olive · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:50:34Z"
+  },
+  {
+   "id": "agent-20261020-salon-marine-ruggiero",
+   "nom": "Salon Marine Ruggiero",
+   "type": "instituts de beauté et coiffeurs",
+   "quartier": "",
+   "adresse": "64 Rue Lucien Faure",
+   "canal": "Téléphone",
+   "contact": "+33556378524",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=Salon%20Marine%20Ruggiero%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, je suis Oscar du studio digital ORBE.\nJ’ai remarqué votre salon « Salon Marine Ruggiero » au 64 Rue Lucien Faure, spécialisé en coiffure.\nJ’ai préparé un site sur mesure que vous pouvez voir ici : https://oscarcousin-max.github.io/orbe-usine/salon-marine-ruggiero/\nVous pouvez le mettre en ligne à votre nom avec vos photos, ou répondre simplement « non merci » – Oscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/salon-marine-ruggiero/",
+   "par": "modèle bijou/noir_or · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:50:51Z"
+  },
+  {
+   "id": "agent-20261020-la-cave-de-l-alouette",
+   "nom": "La Cave de l'Alouette",
+   "type": "caves à vin et bars à vin",
+   "quartier": "",
+   "adresse": "12 Rue Léon Morin",
+   "canal": "Téléphone",
+   "contact": "+33 5 57 89 29 23",
+   "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+   "preuve_url": "https://www.google.com/search?q=La%20Cave%20de%20l%27Alouette%20Bordeaux",
+   "objet": "",
+   "message": "Bonjour, je suis Oscar du studio digital ORBE à Bordeaux.\nJ’ai remarqué que La Cave de l’Alouette se spécialise dans le vin, et j’ai préparé un site sur mesure pour vous : https://oscarcousin-max.github.io/orbe-usine/la-cave-de-l-alouette/\nVous pouvez le mettre en ligne à votre nom, avec vos propres photos, si cela vous convient.\nSi vous ne souhaitez pas, répondez simplement « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/la-cave-de-l-alouette/",
+   "par": "modèle domaine/bordeaux · gemini-3.5-flash-lite",
+   "cree_le": "2026-10-20T23:51:07Z"
+  },
+  {
    "id": "agent-20261019-le-germini",
    "nom": "Le Germini",
    "type": "fleuristes créateurs",
@@ -13,7 +493,7 @@
    "objet": "Un site pour Le Germini",
    "message": "Bonjour,\nJ’ai remarqué que Le Germini crée des compositions florales pour mariages et événements, un vrai savoir‑faire qui mérite d’être vu en ligne.\nJ’ai donc pris l’initiative de vous préparer un site sur mesure, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/le-germini/\nVous pourrez le mettre en ligne à votre nom, en y intégrant vos propres photos et textes.\nSi cela ne vous convient pas, répondez simplement « non merci » et je ne vous relancerai pas.\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/le-germini/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle fleur/botanique · gemini-3.8-flash",
    "cree_le": "2026-10-19T08:03:16Z"
   },
   {
@@ -29,7 +509,7 @@
    "objet": "Un site sur mesure pour votre bijouterie",
    "message": "Bonjour Madame Boudat,\nJ’ai remarqué que votre bijouterie à Camblanes‑et‑Meynac propose des pièces uniques en joaillerie.\nPour vous aider à les mettre en valeur en ligne, j’ai préparé un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/helene-boudat/\nVous pourrez le publier à votre nom et y ajouter vos propres photos dès que vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et je ne vous recontacterai plus.\nAu plaisir d’échanger si vous le désirez,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/helene-boudat/",
-   "par": "gemini-3.7-flash",
+   "par": "modèle bijou/rose_ivoire · gemini-3.7-flash",
    "cree_le": "2026-10-19T08:05:20Z"
   },
   {
@@ -45,7 +525,7 @@
    "objet": "Un petit aperçu pour Château Gaillard",
    "message": "Bonjour Emmanuel,\nJ’ai découvert avec plaisir que Château Gaillard perpétue la tradition des domaines viticoles familiaux.\nJ’ai donc pris l’initiative de vous préparer un site sur mesure, à voir ici : https://oscarcousin-max.github.io/orbe-usine/chateau-gaillard/\nVous pouvez le mettre en ligne à votre nom, en y intégrant vos propres photos, si cela vous convient.\nSi vous ne souhaitez pas le retenir, il suffit de répondre « non merci » et je ne vous relancerai pas.\nAu plaisir de vous lire,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/chateau-gaillard/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle domaine/sauge · gemini-3.8-flash",
    "cree_le": "2026-10-19T08:07:07Z"
   },
   {
@@ -61,7 +541,7 @@
    "objet": "Un petit site pour Jour J",
    "message": "Bonjour,\nJ’ai remarqué que votre boutique « Jour J », fleuriste créateur à Talence, ouvre ses portes du mardi au dimanche avec des horaires généreux.\nJ’ai pris l’initiative de concevoir un site sur mesure pour vous, que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/jour-j/\nJe peux le mettre en ligne à votre nom et y intégrer vos propres photos dès que vous le souhaitez.\nSi vous ne souhaitez pas poursuivre, il suffit de répondre « non merci » et vous ne serez plus relancé.\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/jour-j/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle fleur/poudre · gemini-3.7-flash",
    "cree_le": "2026-10-19T08:09:06Z"
   },
   {
@@ -77,7 +557,7 @@
    "objet": "",
    "message": "Bonjour Monsieur Roqueflot, c’est Oscar du studio digital ORBE à Bordeaux. J’ai remarqué que votre bijouterie L’Etabli, située au 32 Rue de la Poste, propose de magnifiques bijoux. J’ai pris l’initiative de créer un site sur mesure pour vous, à voir ici : https://oscarcousin-max.github.io/orbe-usine/l-etabli-bijouterie-geoffrey-roqueflot/. Vous pourrez le mettre en ligne à votre nom et y ajouter vos propres photos quand vous le souhaiterez. Si cela ne vous intéresse pas, il suffit de répondre « non merci » et je ne vous relancerai pas. Oscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/l-etabli-bijouterie-geoffrey-roqueflot/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle bijou/nuit_argent · gemini-3.8-flash",
    "cree_le": "2026-10-19T08:10:46Z"
   },
   {
@@ -93,7 +573,7 @@
    "objet": "Un site dédié au Domaine de la Neuraye",
    "message": "Bonjour,\nJ’ai découvert que le Domaine de la Neuraye est un domaine viticole familial, ce qui donne à votre histoire une authenticité précieuse.\nJ’ai donc pris l’initiative de vous préparer un site sur mesure, que vous pouvez consulter ici : https://oscarcousin-max.github.io/orbe-usine/domaine-de-la-neuraye/\nVous pourrez le mettre en ligne à votre nom, avec vos propres photos, dès que vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et vous ne serez plus relancé.\nOscar · ORBE, studio digital – societe.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/domaine-de-la-neuraye/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle domaine/cuivre · gemini-3.6-flash",
    "cree_le": "2026-10-19T08:12:15Z"
   },
   {
@@ -109,7 +589,7 @@
    "objet": "",
    "message": "Bonjour, j’ai découvert votre boutique F'Laure Ever, fleuriste créateur au cœur de Créon, 45 Avenue de l'Entre Deux Mers.\nJ’ai pris l’initiative de vous préparer un site sur mesure, à voir ici : https://oscarcousin-max.github.io/orbe-usine/f-laure-ever/.\nVous pourrez le mettre en ligne à votre nom, avec vos propres photos, si cela vous convient.\nUn simple « non merci » suffit, et je ne vous relancerai pas. Au plaisir, Oscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/f-laure-ever/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle fleur/vif · gemini-3.7-flash",
    "cree_le": "2026-10-19T08:14:26Z"
   },
   {
@@ -125,7 +605,7 @@
    "objet": "",
    "message": "Bonjour Madame Lagüe Barrière,\nJe connais votre expertise en bijoux et j’ai préparé un site sur mesure pour votre boutique : https://oscarcousin-max.github.io/orbe-usine/sabrina-lague-barriere/. Vous pourrez le mettre en ligne à votre nom, avec vos propres photos, quand vous le souhaitez. Si cela ne vous intéresse pas, répondez simplement « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/sabrina-lague-barriere/",
-   "par": "gemini-3.7-flash",
+   "par": "modèle bijou/rose_ivoire · gemini-3.8-flash",
    "cree_le": "2026-10-19T08:16:18Z"
   },
   {
@@ -141,7 +621,7 @@
    "objet": "Votre nouveau site pour le Château d'Éternes",
    "message": "Bonjour,\nJ’ai découvert que le Vignoble Château d'Éternes est un domaine viticole familial au riche patrimoine.\nJ’ai donc pris l’initiative de créer un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/vignoble-chateau-d-eternes/\nVous pourrez le mettre en ligne à votre nom, en y intégrant vos propres photos et textes.\nSi cela vous convient, faites‑le moi savoir ; sinon, un simple « non merci » suffit et vous ne serez plus relancé.\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/vignoble-chateau-d-eternes/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle domaine/cuivre · gemini-3.5-flash",
    "cree_le": "2026-10-19T08:18:02Z"
   },
   {
@@ -157,7 +637,7 @@
    "objet": "",
    "message": "Bonjour, j’ai remarqué que Sadia Fleurs embellit les Allées de Tourny avec vos créations florales.\nJ’ai préparé un site sur mesure pour vous, à voir ici : https://oscarcousin-max.github.io/orbe-usine/sadia-fleurs/\nVous pouvez le mettre en ligne à votre nom, avec vos propres photos, si vous le souhaitez.\nRépondez simplement « non merci » et vous ne serez plus relancé. – Oscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/sadia-fleurs/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle fleur/botanique · gemini-3.7-flash",
    "cree_le": "2026-10-19T08:19:55Z"
   },
   {
@@ -173,7 +653,7 @@
    "objet": "",
    "message": "Bonjour, je suis Oscar du studio digital ORBE à Bordeaux. J’ai remarqué votre Bijouterie Lescat au 135 Rue de la Poste, spécialisée dans les bijoux. J’ai préparé un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/bijouterie-lescat/. Vous pouvez le mettre en ligne à votre nom avec vos propres photos, ou simplement répondre « non merci » et je ne vous relancerai pas. Oscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/bijouterie-lescat/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle bijou/rose_ivoire · gemini-3.5-flash-lite",
    "cree_le": "2026-10-19T08:21:58Z"
   },
   {
@@ -189,7 +669,7 @@
    "objet": "Un site dédié à votre domaine viticole",
    "message": "Bonjour,\nJ’ai découvert que le Domaine Johann Spelty se distingue par son vignoble familial et ses vins d’exception.\nJ’ai donc pris l’initiative de créer un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/domaine-johann-spelty/\nJe peux le mettre en ligne à votre nom, avec vos propres photos, dès que vous le souhaitez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et vous ne serez plus relancé.\nOscar · ORBE, studio digital – societe.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/domaine-johann-spelty/",
-   "par": "gemini-3.7-flash",
+   "par": "modèle domaine/sauge · gemini-3.8-flash",
    "cree_le": "2026-10-19T08:23:51Z"
   },
   {
@@ -205,7 +685,7 @@
    "objet": "",
    "message": "Bonjour Mademoiselles Pivoines,\nJ’ai remarqué que vous êtes ouvertes du mardi au samedi 09:30‑12:30/14:30‑19:00 et le dimanche 09:30‑12:30, et j’ai préparé un site sur mesure pour vous à voir ici : https://oscarcousin-max.github.io/orbe-usine/mademoiselles-pivoines/\nVous pouvez le mettre en ligne à votre nom avec vos propres photos, ou simplement répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/mademoiselles-pivoines/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle fleur/poudre · gemini-3.7-flash",
    "cree_le": "2026-10-19T08:25:40Z"
   },
   {
@@ -221,7 +701,7 @@
    "objet": "",
    "message": "Bonjour, c’est Oscar du studio digital ORBE à Bordeaux.\nJ’ai remarqué que votre boutique Laudate, reconnue pour ses bijoux raffinés au 60 Cours Georges Clemenceau, mérite une vitrine en ligne à votre image.\nJ’ai donc préparé un site sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/laudate/\nVous pouvez le mettre en ligne à votre nom, avec vos propres photos, ou simplement répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/laudate/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle bijou/noir_or · gemini-3.5-flash",
    "cree_le": "2026-10-19T08:27:43Z"
   },
   {
@@ -237,7 +717,7 @@
    "objet": "Un site web dédié à votre domaine",
    "message": "Bonjour Monsieur Alliet,\nJ’ai découvert avec plaisir que le Domaine Philippe Alliet perpétue une tradition familiale d’excellence viticole.\nJ’ai donc pris l’initiative de créer un site web sur mesure pour vous, que vous pouvez consulter ici : https://oscarcousin-max.github.io/orbe-usine/domaine-philippe-alliet/\nVous pouvez le mettre en ligne à votre nom, en y ajoutant vos propres photos et textes, si cela vous convient.\nSi vous préférez ne pas poursuivre, il suffit de répondre « non merci » et vous ne serez plus relancé.\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/domaine-philippe-alliet/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle domaine/bordeaux · gemini-3.6-flash",
    "cree_le": "2026-10-19T08:29:49Z"
   },
   {
@@ -253,7 +733,7 @@
    "objet": "Un petit site pour Le Bélvèdere",
    "message": "Bonjour,\nJ’ai découvert Le Bélvèdere, votre restaurant français à Juillac, apprécié pour son service de midi et soir.\nEn pensant à votre belle adresse au 1 Côte de la Tourbeille, j’ai créé un site sur mesure que vous pouvez consulter ici : https://oscarcousin-max.github.io/orbe-usine/le-belvedere/\nVous pourrez le mettre en ligne à votre nom et y ajouter vos propres photos dès que vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et nous ne vous relancerons pas.\nAu plaisir d’échanger,\nOscar · ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/le-belvedere/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle table/cacao · gemini-3.5-flash-lite",
    "cree_le": "2026-10-17T07:08:53Z"
   },
   {
@@ -269,7 +749,7 @@
    "objet": "Votre nouveau site, Ginette",
    "message": "Bonjour Ginette,\nJ’ai remarqué que vous proposez des services d’upholsterer et que vous êtes ouverte du lundi au vendredi, 9 h–19 h.\nJ’ai donc préparé un site sur mesure pour mettre en valeur votre savoir‑faire, à voir ici : https://oscarcousin-max.github.io/orbe-usine/ginette-laven-l-artisane/\nJe peux le publier à votre nom, avec vos propres photos, dès que vous le souhaitez.\nSi vous ne souhaitez pas le garder, il suffit de répondre « non merci » et je ne vous relancerai plus.\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/ginette-laven-l-artisane/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle atelier/vert_rose · gemini-3.5-flash",
    "cree_le": "2026-10-17T07:10:20Z"
   },
   {
@@ -285,7 +765,7 @@
    "objet": "",
    "message": "Bonjour, j’ai remarqué que Papilles nomades, votre service de traiteur situé au 4 Rue Sadi Carnot, ouvre du mardi au samedi.\nJ’ai préparé un site sur mesure pour vous, à voir ici : https://oscarcousin-max.github.io/orbe-usine/papilles-nomades/\nVous pouvez le mettre en ligne à votre nom avec vos propres photos, ou simplement répondre « non merci ».\nOscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/papilles-nomades/",
-   "par": "gemini-3.5-flash",
+   "par": "modèle table/brasserie · gemini-3.5-flash",
    "cree_le": "2026-10-17T07:16:55Z"
   },
   {
@@ -301,7 +781,7 @@
    "objet": "Un petit site pour Le Cochon Volant",
    "message": "Bonjour,\nJ’ai remarqué que votre restaurant Le Cochon Volant, situé au 22 Place des Capucins, propose une cuisine régionale de qualité.\nJ’ai donc pris l’initiative de créer un site web sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/le-cochon-volant/\nVous pourrez le mettre en ligne à votre nom et y ajouter vos propres photos quand vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/le-cochon-volant/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle table/cacao · gemini-3.6-flash",
    "cree_le": "2026-10-17T07:19:14Z"
   },
   {
@@ -317,7 +797,7 @@
    "objet": "Votre nouveau site pour Le Cabouin Bleu",
    "message": "Bonjour,\nJ’ai découvert votre atelier d’artisans d’art spécialisé en tapisserie d’ameublement au 67 Rue de la Pierre Folle, et j’ai pensé à vous.\nJ’ai donc réalisé un site sur mesure que vous pouvez consulter ici : https://oscarcousin-max.github.io/orbe-usine/le-cabouin-bleu/\nVous pouvez le mettre en ligne à votre nom, en y ajoutant vos propres photos, si cela vous convient.\nSi vous ne souhaitez pas poursuivre, il suffit de répondre « non merci » et nous ne vous recontacterons plus.\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/le-cabouin-bleu/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle atelier/vert_rose · gemini-3.5-flash",
    "cree_le": "2026-10-17T07:20:33Z"
   },
   {
@@ -333,7 +813,7 @@
    "objet": "",
    "message": "Bonjour Lou Vincent, j’ai remarqué que vous êtes à la fois traiteur et photographe, un beau double talent.\nJ’ai pris l’initiative de créer un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/lou-vincent/\nVous pouvez le mettre en ligne à votre nom avec vos propres photos, ou simplement me dire « non merci ».\nOscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/lou-vincent/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle table/olive · gemini-3.6-flash",
    "cree_le": "2026-10-17T07:22:04Z"
   },
   {
@@ -349,7 +829,7 @@
    "objet": "Votre nouveau site pour L'EntrePôte",
    "message": "Bonjour L'EntrePôte,\nJ’ai remarqué que vous proposez de savoureux ribs à la française, un vrai atout pour les amateurs de cuisine de qualité.\nJ’ai donc pris l’initiative de créer un site sur mesure pour vous, que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/l-entrepote/\nVous pourrez le mettre en ligne à votre nom et y intégrer vos propres photos quand vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et vous ne serez plus relancé.\nOscar · ORBE, studio digital – societe.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/l-entrepote/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle table/cacao · gemini-3.5-flash",
    "cree_le": "2026-10-17T07:23:50Z"
   },
   {
@@ -365,7 +845,7 @@
    "objet": "Un site dédié à votre poterie",
    "message": "Bonjour Mme Robin,\nJ’ai remarqué que votre atelier se spécialise dans la poterie, une vraie passion qui mérite d’être mise en valeur en ligne.\nJ’ai donc pris l’initiative de créer un site sur mesure pour vous, que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/annie-robin/\nVous pourrez le mettre en ligne à votre nom et y ajouter vos propres photos dès que vous le souhaitez.\nSi cela ne vous convient pas, répondez simplement « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/annie-robin/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle atelier/vert_rose · gemini-3.5-flash",
    "cree_le": "2026-10-17T07:25:22Z"
   },
   {
@@ -381,7 +861,7 @@
    "objet": "",
    "message": "Bonjour, je suis Oscar du studio digital ORBE à Bordeaux.\nJ’ai remarqué que Photo KC, votre studio de photographie situé au 239 Rue Sainte‑Catherine, propose des services de photographie et de traiteur.\nJ’ai préparé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/photo-kc/.\nVous pourrez le mettre en ligne à votre nom, avec vos propres photos, ou simplement répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/photo-kc/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle table/olive · gemini-3.5-flash-lite",
    "cree_le": "2026-10-17T07:27:14Z"
   },
   {
@@ -397,7 +877,7 @@
    "objet": "",
    "message": "Bonjour, j’ai remarqué que Madonnina à la Plage propose de délicieuses pizzas au 1 Boulevard de la Plage à Lacanau.\nJ’ai donc imaginé un site web sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/madonnina-a-la-plage/\nVous pourrez le mettre en ligne à votre nom, avec vos propres photos, quand vous le souhaiterez.\nSi cela ne vous intéresse pas, répondez simplement « non merci » – je ne vous relancerai pas. Oscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/madonnina-a-la-plage/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle table/cacao · gemini-3.7-flash",
    "cree_le": "2026-10-17T07:29:09Z"
   },
   {
@@ -413,7 +893,7 @@
    "objet": "Un site sur mesure pour Ébéniste & associés",
    "message": "Bonjour,\nJ’ai remarqué que votre atelier se distingue par son savoir‑faire d’artisan d’art spécialisé en menuiserie.\nJ’ai donc pris l’initiative de créer un site web qui reflète votre identité : https://oscarcousin-max.github.io/orbe-usine/ebeniste-associes/\nVous pourrez le mettre en ligne à votre nom, en y ajoutant vos propres photos quand vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et nous ne vous recontacterons pas.\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/ebeniste-associes/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle atelier/encre · gemini-3.5-flash-lite",
    "cree_le": "2026-10-17T07:30:54Z"
   },
   {
@@ -429,7 +909,7 @@
    "objet": "",
    "message": "Bonjour, c’est Oscar du studio digital ORBE. J’ai remarqué que vous proposez des photos d’identité sans rendez‑vous au 155 Cours Victor Hugo, et j’ai créé un site sur mesure pour « Le soleil vert » : https://oscarcousin-max.github.io/orbe-usine/le-soleil-vert/. Vous pouvez le mettre en ligne à votre nom avec vos propres photos quand vous le souhaitez. Si cela ne vous intéresse pas, il suffit de répondre « non merci » et je ne vous relancerai pas.\n\nOscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/le-soleil-vert/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle table/cacao · gemini-3.5-flash",
    "cree_le": "2026-10-17T07:32:24Z"
   },
   {
@@ -445,7 +925,7 @@
    "objet": "",
    "message": "Bonjour A Noste, j’ai remarqué que votre restaurant propose une cuisine française de qualité, notamment des fruits de mer.\nJ’ai préparé un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/a-noste/\nVous pouvez le mettre en ligne à votre nom avec vos propres photos, ou simplement répondre « non merci ».\nOscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/a-noste/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle table/olive · gemini-3.5-flash-lite",
    "cree_le": "2026-10-17T07:33:57Z"
   },
   {
@@ -461,7 +941,7 @@
    "objet": "Votre nouveau site pour B L'Atelier",
    "message": "Bonjour,\nJ’ai remarqué que B L'Atelier, spécialisé en tapisserie d’ameublement, accueille ses clients du lundi au vendredi de 10h à 17h au 23 Rue Bouquière.\nJ’ai pris l’initiative de créer un site sur mesure pour vous, que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/b-l-atelier/.\nSi vous le souhaitez, je peux le mettre en ligne à votre nom, avec vos propres photos.\nVous pouvez simplement répondre « non merci » et je ne vous recontacterai plus.\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/b-l-atelier/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle atelier/encre · gemini-3.5-flash-lite",
    "cree_le": "2026-10-17T07:35:32Z"
   },
   {
@@ -477,7 +957,7 @@
    "objet": "",
    "message": "Bonjour, c’est Oscar du studio digital ORBE à Bordeaux. J’ai remarqué que votre établissement « Du pré à la fourchette » propose à la fois du catering et de la boucherie, ce qui est assez rare. J’ai donc préparé un site sur mesure pour vous, vous pouvez le consulter ici : https://oscarcousin-max.github.io/orbe-usine/du-pre-a-la-fourchette/. Vous pouvez le mettre en ligne à votre nom avec vos propres photos, ou simplement me dire « non merci » et je ne vous relancerai pas. Oscar · ORBE, studio digital",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/du-pre-a-la-fourchette/",
-   "par": "gemini-3.8-flash",
+   "par": "modèle table/brasserie · gemini-3.6-flash",
    "cree_le": "2026-10-17T07:37:13Z"
   },
   {
@@ -673,5 +1153,5 @@
    "cree_le": "2026-10-15T18:37:57Z"
   }
  ],
- "maj": "2026-10-19T08:29:49Z"
+ "maj": "2026-10-20T23:51:07Z"
 }

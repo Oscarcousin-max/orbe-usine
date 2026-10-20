@@ -1,1045 +1,419 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Domaine de la Neuraye — Vignoble &amp; Traditions Viticoles</title>
-  <meta name="description" content="Découvrez le Domaine de la Neuraye. Vignoble d’exception, culture de la vigne et élaboration attentive de cuvées de caractère. Visite et dégustation sur rendez-vous.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Domaine de la Neuraye — Vignoble &amp; Traditions Viticoles">
-  <meta property="og:description" content="Vignoble d’exception, savoir-faire attentif et authenticité du terroir.">
-  <meta property="og:type" content="website">
-
-  <!-- Favicon SVG en Data URI -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23181214'/%3E%3Cpath d='M32 10 C20 10 16 26 16 38 C16 48 23 54 32 54 C41 54 48 48 48 38 C48 26 44 10 32 10 Z' fill='none' stroke='%23C5A880' stroke-width='2'/%3E%3Cpath d='M32 18 L32 46 M24 32 Q32 26 40 32' fill='none' stroke='%23C5A880' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E" type="image/svg+xml">
-
-  <!-- Polices Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Three.js pour le bandeau abstrait (chargement différé) -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <!-- Données structurées JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Winery",
-    "name": "Domaine de la Neuraye",
-    "telephone": "+33549226398",
-    "email": "laneuraye@orange.fr",
-    "description": "Domaine viticole familial dédié au travail de la vigne et à l’élaboration de vins de caractère."
-  }
-  </script>
-
-  <style>
-    :root {
-      --bg-dark: #120e10;
-      --bg-deep: #1a1417;
-      --bg-card: #221a1e;
-      --color-gold: #c8a87c;
-      --color-gold-hover: #e0c299;
-      --color-wine: #561a25;
-      --color-text: #f0e9e1;
-      --color-text-muted: #a69892;
-      --border-subtle: rgba(200, 168, 124, 0.2);
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg-dark);
-      color: var(--color-text);
-      font-family: var(--font-sans);
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body {
-      overflow-x: hidden;
-      min-width: 320px;
-      position: relative;
-    }
-
-    /* Accessibilité focus */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--color-gold);
-      outline-offset: 4px;
-    }
-
-    /* Grille et typographie éditoriale */
-    .container {
-      width: 100%;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .editorial-label {
-      font-family: var(--font-sans);
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--color-gold);
-      display: inline-block;
-      margin-bottom: 1.25rem;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: var(--font-serif);
-      font-weight: 400;
-      letter-spacing: -0.01em;
-      line-height: 1.15;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      color: var(--color-text);
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      color: var(--color-text-muted);
-      font-size: 1rem;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    .lead-text {
-      font-size: 1.15rem;
-      line-height: 1.85;
-      color: #dfd5cc;
-    }
-
-    /* En-tête fixe */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      background: rgba(18, 14, 16, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-subtle);
-      transition: var(--transition);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-    }
-
-    .brand-mark {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-decoration: none;
-      color: var(--color-text);
-    }
-
-    .brand-mark svg {
-      width: 38px;
-      height: 38px;
-      flex-shrink: 0;
-    }
-
-    .brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--color-text);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      list-style: none;
-      gap: 2.25rem;
-    }
-
-    .nav-links a {
-      color: var(--color-text);
-      text-decoration: none;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-weight: 400;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--color-gold);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--color-gold);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* Menu mobile */
-    .nav-toggle {
-      display: none;
-      background: transparent;
-      border: 1px solid var(--border-subtle);
-      color: var(--color-gold);
-      padding: 0.5rem 0.75rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 820px) {
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--bg-dark);
-        flex-direction: column;
-        padding: 2.5rem 1.5rem;
-        gap: 1.75rem;
-        border-bottom: 1px solid var(--border-subtle);
-        transform: translateY(-150%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-      }
-
-      .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
-    /* Boutons de style haute facture */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.95rem 2rem;
-      font-family: var(--font-sans);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      text-decoration: none;
-      transition: var(--transition);
-      cursor: pointer;
-      border-radius: 2px;
-      font-weight: 500;
-    }
-
-    .btn-gold {
-      background: var(--color-gold);
-      color: #161113;
-      border: 1px solid var(--color-gold);
-    }
-
-    .btn-gold:hover {
-      background: var(--color-gold-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(200, 168, 124, 0.15);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--color-text);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--color-gold);
-      color: var(--color-gold);
-      background: rgba(200, 168, 124, 0.05);
-    }
-
-    /* Hero Section avec Three.js */
-    .hero-section {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 0 80px;
-      background: radial-gradient(circle at 50% 40%, #30141a 0%, #171012 65%, #0e0a0c 100%);
-      overflow: hidden;
-    }
-
-    #webgl-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      background: linear-gradient(180deg, rgba(18, 14, 16, 0.4) 0%, rgba(18, 14, 16, 0.8) 85%, var(--bg-dark) 100%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 820px;
-    }
-
-    .hero-title {
-      font-size: clamp(2.75rem, 7vw, 5.25rem);
-      margin-bottom: 1.5rem;
-      color: #ffffff;
-      line-height: 1.05;
-      font-weight: 300;
-    }
-
-    .hero-title em {
-      font-family: var(--font-serif);
-      font-style: italic;
-      color: var(--color-gold);
-      font-weight: 400;
-    }
-
-    .hero-lead {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-bottom: 2.5rem;
-      color: #d6cac2;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-    }
-
-    /* Sections générales */
-    .section-spacing {
-      padding: 6.5rem 0;
-      position: relative;
-    }
-
-    .section-bordered {
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    /* Section L'Esprit */
-    .grid-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .grid-split {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-    }
-
-    .quote-box {
-      border-left: 2px solid var(--color-gold);
-      padding: 1.5rem 0 1.5rem 2rem;
-      margin: 2rem 0;
-    }
-
-    .quote-text {
-      font-family: var(--font-serif);
-      font-size: 1.45rem;
-      font-style: italic;
-      color: var(--color-gold);
-      line-height: 1.45;
-    }
-
-    .cadre-visuel {
-      position: relative;
-      border: 1px solid var(--border-subtle);
-      padding: 1rem;
-      background: var(--bg-deep);
-    }
-
-    .img-wrapper {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      background-color: #1e171b;
-    }
-
-    .img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.85) contrast(1.05) brightness(0.85);
-      transition: transform 0.8s ease;
-      display: block;
-    }
-
-    .img-wrapper:hover img {
-      transform: scale(1.03);
-    }
-
-    .caption-tag {
-      position: absolute;
-      bottom: 12px;
-      right: 12px;
-      background: rgba(18, 14, 16, 0.85);
-      border: 1px solid var(--border-subtle);
-      padding: 4px 10px;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--color-gold);
-      pointer-events: none;
-    }
-
-    /* Emplacement photo dédié au commerçant */
-    .emplacement-propre {
-      border: 1px dashed var(--color-gold);
-      background: rgba(34, 26, 30, 0.6);
-      aspect-ratio: 16 / 9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    .emplacement-propre svg {
-      width: 44px;
-      height: 44px;
-      stroke: var(--color-gold);
-      margin-bottom: 1rem;
-      opacity: 0.85;
-    }
-
-    .emplacement-propre span {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      color: var(--color-gold);
-      letter-spacing: 0.05em;
-      margin-bottom: 0.25rem;
-    }
-
-    .emplacement-propre p {
-      font-size: 0.85rem;
-      max-width: 420px;
-      color: var(--color-text-muted);
-    }
-
-    /* Section L'Offre / Savoir-faire */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3.5rem;
-    }
-
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      padding: 2.5rem 2rem;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .card:hover {
-      border-color: var(--color-gold);
-      transform: translateY(-5px);
-    }
-
-    .card-num {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      color: var(--color-gold);
-      margin-bottom: 1.5rem;
-      display: block;
-      opacity: 0.7;
-    }
-
-    .card h3 {
-      font-size: 1.55rem;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
-
-    /* Section Infos & Contact */
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3.5rem;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 860px) {
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .info-tile {
-      background: var(--bg-deep);
-      border: 1px solid var(--border-subtle);
-      padding: 2.25rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .info-tile h4 {
-      font-size: 1.35rem;
-      color: var(--color-gold);
-      margin-bottom: 0.75rem;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-
-    .contact-entry {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-decoration: none;
-      color: var(--color-text);
-      font-size: 1.05rem;
-      transition: color 0.3s ease;
-    }
-
-    .contact-entry:hover {
-      color: var(--color-gold);
-    }
-
-    .contact-entry svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--color-gold);
-      flex-shrink: 0;
-    }
-
-    /* Avertissement sanitaire obligatoire */
-    .legal-warning {
-      background: #090708;
-      border-top: 1px solid #231b1e;
-      border-bottom: 1px solid #231b1e;
-      padding: 1.25rem 0;
-      text-align: center;
-    }
-
-    .legal-warning p {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: #8c7e77;
-    }
-
-    /* Pied de page */
-    .site-footer {
-      background: #0e0a0c;
-      padding: 4.5rem 0 3rem;
-      border-top: 1px solid var(--border-subtle);
-      font-size: 0.88rem;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2.5rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(200, 168, 124, 0.12);
-    }
-
-    .footer-brand {
-      max-width: 360px;
-    }
-
-    .footer-brand h3 {
-      font-size: 1.75rem;
-      color: var(--color-gold);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-credits {
-      padding-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      color: #7d726c;
-      font-size: 0.78rem;
-    }
-
-    .footer-credits a {
-      color: #a69892;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-credits a:hover {
-      color: var(--color-gold);
-    }
-
-    /* Badge fixe maquette ORBE */
-    .orbe-badge {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-      background: rgba(18, 14, 16, 0.94);
-      border: 1px solid var(--color-gold);
-      padding: 8px 14px;
-      border-radius: 50px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--color-gold);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      pointer-events: auto;
-      backdrop-filter: blur(8px);
-    }
-
-    .orbe-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--color-gold);
-      display: inline-block;
-      box-shadow: 0 0 8px var(--color-gold);
-    }
-
-    /* Animations d'apparition */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .fade-up {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      .btn, .card {
-        transition: none !important;
-      }
-    }
-  </style>
-</head>
+<!doctype html>
+<html lang="fr" class="pas-js"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Domaine de la Neuraye — Domaine viticole</title><meta name="description" content="Domaine de la Neuraye, l&#x27;art du vin et de la terre. Le Domaine de la Neuraye vous accueille pour découvrir le travail de la vigne et la passion de nos vins."><meta property="og:type" content="website"><meta property="og:title" content="Domaine de la Neuraye — Domaine viticole"><meta property="og:description" content="Domaine de la Neuraye, l&#x27;art du vin et de la terre. Le Domaine de la Neuraye vous accueille pour découvrir le travail de la vigne et la passion de nos vins."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f2efea"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23a85a30%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3ED%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Winery", "name": "Domaine de la Neuraye", "email": "laneuraye@orange.fr"}</script>
+<style>
+:root{--bg:#f2efea;--bg2:#e8e3db;--ink:#14120f;--muted:#5c564e;--accent:#a85a30;--accent2:#dc9a64;--line:#d6cfc3;--on-accent:#ffffff;--dark:#0e0d0c;--on-dark:#f3eee6;--c-ciel1:#0e0d0c;--c-ciel2:#6a3c22;--c-col1:#26211c;--c-col2:#1a1612;--c-col3:#0e0d0c;--f-titre:'Instrument Serif',Georgia, 'Times New Roman', serif;--f-texte:'Hanken Grotesk',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--r:0px;}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-texte);font-size:clamp(16px,1.05vw + 12px,18px);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-titre);font-weight:400;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0 0 1em}
+.wrap{width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 16px;z-index:200}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.eyebrow{font:500 .72rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.9em}
+.eyebrow::before{content:"";width:2.4em;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:.7em;padding:1em 1.8em;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;font:500 .78rem/1 var(--f-texte);letter-spacing:.18em;text-transform:uppercase;transition:background .3s,color .3s,transform .3s;cursor:pointer;border-radius:var(--r,0)}
+.btn:hover{background:transparent;color:var(--accent)}
+.btn.ligne{background:transparent;color:inherit;border-color:currentColor}
+.btn.ligne:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn .fl{transition:transform .3s}.btn:hover .fl{transform:translateX(5px)}
+/* En-tête — capsule flottante en verre liquide (réf. « navbar ») */
+.top{position:fixed;inset:14px 0 auto 0;z-index:100;transition:inset .45s cubic-bezier(.2,.7,.2,1),color .35s}
+.top .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 10px 10px 22px;width:min(1180px,100% - 24px);border-radius:999px;transition:padding .45s cubic-bezier(.2,.7,.2,1)}
+.top .wrap::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;
+ background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.04));
+ -webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(255,255,255,.08),inset 0 0 0 1px rgba(255,255,255,.18),0 10px 40px -12px rgba(0,0,0,.28);transition:background .4s,box-shadow .4s}
+.top .wrap::after{content:"";position:absolute;inset:1px;border-radius:inherit;z-index:-1;pointer-events:none;background:radial-gradient(120% 140% at 20% -40%,rgba(255,255,255,.35),transparent 45%);opacity:.7}
+.top.fond{inset:8px 0 auto 0}
+.top.fond .wrap{padding-block:7px}
+.top.fond .wrap::before{background:color-mix(in srgb,var(--bg) 72%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 0 1px color-mix(in srgb,var(--ink) 9%,transparent),0 18px 50px -18px color-mix(in srgb,var(--ink) 45%,transparent)}
+.logo{font:400 clamp(1.05rem,.95rem + .5vw,1.35rem)/1 var(--f-titre);text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.7em;min-width:0}
+.logo i{font-style:normal;display:grid;place-items:center;width:2.1em;height:2.1em;border:1px solid var(--accent);color:var(--accent);border-radius:var(--rl,50%);font-size:.85em;flex:none}
+.logo span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top nav{display:flex;gap:4px;align-items:center}
+.top nav a{text-decoration:none;font:500 .72rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;position:relative;padding:.95em 1.05em;border-radius:999px;transition:background .3s,color .3s}
+.top nav a:hover{background:color-mix(in srgb,currentColor 10%,transparent)}
+.top .nav-cta{margin-left:8px;background:var(--accent);color:var(--on-accent)!important;padding:1em 1.4em;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 18px -6px color-mix(in srgb,var(--accent) 70%,transparent)}
+.top .nav-cta:hover{background:color-mix(in srgb,var(--accent) 85%,#000)}
+.menu-btn{display:none;background:color-mix(in srgb,currentColor 8%,transparent);border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;color:inherit;position:relative;flex:none}
+.menu-btn i,.menu-btn i::before{position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;content:"";transition:transform .3s,top .3s}
+.menu-btn i{top:21px}.menu-btn i::before{left:0;right:0;top:-6px}
+.menu-btn[aria-expanded=true] i{transform:rotate(45deg)}.menu-btn[aria-expanded=true] i::before{top:0;transform:rotate(-90deg)}
+@media(max-width:960px){
+ .menu-btn{display:block}
+ .top .wrap{padding:7px 7px 7px 16px}
+ .top nav{position:fixed;inset:0;background:var(--bg);color:var(--ink);flex-direction:column;justify-content:center;gap:10px;transform:translateY(-104%);transition:transform .55s cubic-bezier(.7,0,.2,1);z-index:-2}
+ .top nav.ouvert{transform:none}
+ .top nav a{font:400 clamp(1.7rem,7vw,2.4rem)/1 var(--f-titre);letter-spacing:0;text-transform:none;padding:.35em .6em}
+ .top nav .nav-cta{margin:14px 0 0;font:500 .8rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:1.2em 1.8em}
+ .top.ouvert-menu{color:var(--ink)}
+ .top.ouvert-menu .wrap::before{background:color-mix(in srgb,var(--bg) 90%,transparent)}
+}
+.progres{position:fixed;inset:0 0 auto 0;height:2px;z-index:120;pointer-events:none}
+.progres i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2,var(--accent)));transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.defs-kit{position:absolute;width:0;height:0;overflow:hidden}
+::selection{background:var(--accent);color:var(--on-accent)}
+/* Apparitions */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.reveal.vu{opacity:1;transform:none}
+.pas-js .reveal{opacity:1;transform:none}
+/* Sections */
+section{position:relative}
+.sec{padding-block:clamp(72px,11vw,160px)}
+.titre-sec{font-size:clamp(2.2rem,1.2rem + 4.4vw,4.6rem);margin:.5em 0 .4em;letter-spacing:-.01em}
+.titre-sec em{font-style:italic;color:var(--accent)}
+.lead{font-size:clamp(1.05rem,.95rem + .5vw,1.3rem);color:var(--muted);max-width:44ch}
+.num{font:400 clamp(3.4rem,8vw,7rem)/.9 var(--f-titre);color:transparent;-webkit-text-stroke:1px var(--accent);opacity:.65}
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:1.1em 0;white-space:nowrap;font:italic 400 clamp(1.3rem,3vw,2.2rem)/1 var(--f-titre);color:var(--muted)}
+.marquee div{display:inline-flex;gap:2.2em;animation:defile 38s linear infinite;padding-right:2.2em}
+.marquee b{color:var(--accent);font-weight:400}
+@keyframes defile{to{transform:translateX(-50%)}}
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,110px);align-items:start}
+.coord{display:grid;gap:22px;margin:2em 0 2.4em;padding:0;list-style:none}
+.coord li{display:grid;gap:4px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.coord small{font:500 .68rem/1 var(--f-texte);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.coord a,.coord span{font:400 clamp(1.15rem,1rem + .7vw,1.55rem)/1.35 var(--f-titre);text-decoration:none;overflow-wrap:anywhere}
+.coord a:hover{color:var(--accent)}
+form.demo{display:grid;gap:18px;background:var(--bg2);padding:clamp(24px,4vw,48px);border:1px solid var(--line);border-radius:var(--r,0)}
+form.demo label{display:grid;gap:8px;font:500 .7rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+form.demo input,form.demo select,form.demo textarea{font:400 1rem/1.4 var(--f-texte);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;border-radius:0;width:100%;min-width:0;letter-spacing:0;text-transform:none}
+form.demo input:focus,form.demo select:focus,form.demo textarea:focus{outline:none;border-color:var(--accent)}
+form.demo textarea{min-height:110px;resize:vertical}
+form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+/* Pied de page (réf. « footer ») */
+.pied{background:var(--dark);color:var(--on-dark);padding:clamp(64px,9vw,120px) 0 64px;position:relative;overflow:hidden}
+.pied .wrap{display:grid;gap:clamp(30px,5vw,56px)}
+.pied-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,4vw,60px)}
+.pied-marque p{margin:1.1em 0 0;opacity:.7;max-width:30ch;font-family:var(--f-titre);font-style:italic;font-size:1.15rem;line-height:1.4}
+.pied .logo i{border-color:color-mix(in srgb,var(--on-dark) 45%,transparent);color:var(--on-dark)}
+.pied h3{font:500 .68rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent2,var(--accent));margin:.4em 0 1.4em}
+.pied ul{list-style:none;margin:0;padding:0;display:grid;gap:.75em}
+.pied li,.pied li a{font-size:.95rem;opacity:.85;text-decoration:none;overflow-wrap:anywhere}
+.pied li a{position:relative;opacity:1;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s}
+.pied li a:hover{background-size:100% 1px}
+.pied-nom{font:400 clamp(3rem,14vw,13rem)/.85 var(--f-titre);letter-spacing:-.03em;white-space:nowrap;overflow:hidden;text-overflow:clip;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--on-dark) 28%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--on-dark) 16%,transparent),transparent 85%);-webkit-background-clip:text;background-clip:text;user-select:none;margin:0 -.04em}
+.pied-bas{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;font-size:.82rem;opacity:.78;border-top:1px solid color-mix(in srgb,var(--on-dark) 18%,transparent);padding-top:22px}
+.pied-bas a{text-decoration:none;border-bottom:1px solid currentColor}
+.pied-bas .haut{border:1px solid color-mix(in srgb,var(--on-dark) 35%,transparent);padding:.7em 1.1em;border-radius:999px}
+.mentions{font-size:.8rem;opacity:.65;max-width:80ch;line-height:1.6;margin:0}
+.alcool{font-size:.78rem;opacity:.85;margin:0}
+@media(max-width:900px){.pied-cols{grid-template-columns:1fr 1fr}.pied-marque{grid-column:1/-1}}
+@media(max-width:520px){.pied-cols{grid-template-columns:1fr}}
+.badge-orbe{box-shadow:0 6px 20px rgba(0,0,0,.25);position:fixed;right:12px;bottom:12px;z-index:150;font:500 11px/1 system-ui,sans-serif;background:rgba(0,0,0,.74);color:#fff;padding:8px 12px;border-radius:999px;text-decoration:none;letter-spacing:.02em}
+/* ===== Kit premium ORBE ===== */
+:root{--ic1:color-mix(in srgb,var(--accent2,var(--accent)) 45%,#fff);--ic2:var(--accent);--ic3:color-mix(in srgb,var(--accent) 62%,#000);--ic4:color-mix(in srgb,var(--accent2,var(--accent)) 80%,#fff)}
+/* Verre liquide (réf. « liquid glass ») */
+.verre{position:relative;isolation:isolate;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 70%,transparent),color-mix(in srgb,var(--bg) 38%,transparent));
+ -webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);
+ border-radius:clamp(18px,2.4vw,30px);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.12),inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent),0 30px 60px -30px color-mix(in srgb,var(--ink) 40%,transparent)}
+.verre::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:radial-gradient(90% 70% at var(--lx,20%) var(--ly,0%),rgba(255,255,255,.55),transparent 55%);opacity:.55;transition:opacity .4s}
+.verre::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.45));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+/* Bandeau d'accueil (réf. « hero ») */
+.hero{isolation:isolate}
+.hero>.wrap{position:relative;z-index:2}
+.fx{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aur{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(70px);opacity:.42;mix-blend-mode:var(--fx-mode,normal);will-change:transform}
+.aur.a{background:radial-gradient(circle,var(--accent),transparent 65%);left:-18vmax;top:-22vmax;animation:aur1 26s ease-in-out infinite alternate}
+.aur.b{background:radial-gradient(circle,var(--accent2,var(--accent)),transparent 65%);right:-20vmax;top:6vmax;animation:aur2 32s ease-in-out infinite alternate;opacity:.34}
+.aur.c{background:radial-gradient(circle,color-mix(in srgb,var(--accent) 40%,var(--bg)),transparent 65%);left:22%;bottom:-34vmax;animation:aur3 38s ease-in-out infinite alternate;opacity:.3}
+@keyframes aur1{to{transform:translate(14vmax,10vmax) scale(1.15)}}
+@keyframes aur2{to{transform:translate(-12vmax,8vmax) scale(.9)}}
+@keyframes aur3{to{transform:translate(8vmax,-12vmax) scale(1.2)}}
+.spot{position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx,50%) var(--my,40%),color-mix(in srgb,var(--accent2,var(--accent)) 22%,transparent),transparent 60%);opacity:0;transition:opacity .6s}
+.hero:hover .spot{opacity:1}
+.grain{position:absolute;inset:-50%;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(5) infinite}
+@keyframes grain{20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}}
+.hero-pied{position:absolute;left:0;right:0;bottom:clamp(14px,3vh,28px);z-index:3;display:flex;justify-content:space-between;align-items:end;gap:16px;width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto;pointer-events:none}
+.puces{display:flex;flex-wrap:wrap;gap:8px}
+.puce{pointer-events:auto;font:500 .68rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:.85em 1.15em;border-radius:999px;color:inherit;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.18);display:inline-flex;align-items:center;gap:.6em}
+.puce i{width:6px;height:6px;border-radius:50%;background:var(--accent2,var(--accent));box-shadow:0 0 0 3px color-mix(in srgb,var(--accent2,var(--accent)) 30%,transparent)}
+.defiler{pointer-events:auto;position:absolute;left:50%;bottom:0;transform:translateX(-50%);display:inline-flex;flex-direction:column;align-items:center;gap:.8em;text-decoration:none;font:500 .62rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;opacity:.7}
+.defiler i{width:22px;height:36px;border-radius:12px;border:1px solid currentColor;position:relative}
+.defiler i::after{content:"";position:absolute;left:50%;top:7px;width:2px;height:7px;margin-left:-1px;border-radius:2px;background:currentColor;animation:molette 2s ease-in-out infinite}
+@keyframes molette{0%{transform:translateY(0);opacity:1}70%{transform:translateY(11px);opacity:0}100%{opacity:0}}
+@media(max-width:720px){.hero-pied{display:none}}
+.hero h1 k-m{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em;margin-bottom:-.06em}
+.hero h1 k-m>k-w{display:inline-block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.8,.1,1);transition-delay:calc(.15s + var(--m,0) * .07s)}
+.hero h1.vu k-m>k-w,.pas-js .hero h1 k-m>k-w{transform:none}
+/* Tuiles qui s'empilent au défilement (réf. « scroll ») + icônes 3D (réf. « 3D icons ») */
+.tuiles-sec{background:linear-gradient(180deg,var(--bg),var(--bg2) 40%,var(--bg));overflow:clip}
+.tuiles-sec::before{content:"";position:absolute;width:60vmax;height:60vmax;right:-25vmax;top:10%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 65%);filter:blur(40px);pointer-events:none}
+.tuiles-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,100px);align-items:start;position:relative}
+.tuiles-intro{position:sticky;top:120px}
+.tuiles-intro .lead{margin-bottom:2em}
+.tuiles-index{list-style:none;margin:0;padding:0;display:grid;gap:4px;counter-reset:t}
+.tuiles-index li{counter-increment:t;display:flex;gap:1em;align-items:center;font:400 1.05rem/1.3 var(--f-titre);padding:.7em 0;border-top:1px solid var(--line);opacity:.4;transition:opacity .4s,padding .4s}
+.tuiles-index li::before{content:"0" counter(t);font:500 .7rem/1 var(--f-texte);letter-spacing:.16em;color:var(--accent)}
+.tuiles-index li.actif{opacity:1;padding-left:.6em}
+.tuiles{display:grid;gap:clamp(18px,3vh,28px);padding-bottom:6vh}
+.tuile{position:sticky;top:calc(110px + var(--i) * 26px);min-height:clamp(300px,46vh,420px);padding:clamp(26px,4vw,52px);display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,40px);align-items:center;transform-origin:50% 0;transform:scale(var(--s,1));filter:brightness(var(--b,1));transition:transform .2s linear,filter .2s linear;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 88%,transparent),color-mix(in srgb,var(--bg2) 70%,transparent))}
+.tuile .n{font:500 .7rem/1 var(--f-texte);letter-spacing:.24em;color:var(--accent)}
+.tuile h3{font-size:clamp(1.7rem,1.2rem + 1.8vw,2.8rem);margin:.45em 0 .4em;letter-spacing:-.01em}
+.tuile p{color:var(--muted);margin:0;max-width:40ch}
+.lien-fl{display:inline-flex;gap:.6em;margin-top:1.4em;text-decoration:none;font:500 .75rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.lien-fl:hover .fl{transform:translateX(5px)}.lien-fl .fl{transition:transform .3s}
+.ico3d{width:clamp(96px,11vw,150px);aspect-ratio:1;display:grid;place-items:center;border-radius:30%;perspective:600px;
+ background:radial-gradient(120% 120% at 30% 15%,color-mix(in srgb,var(--bg) 95%,#fff),color-mix(in srgb,var(--bg2) 80%,var(--accent) 6%));
+ box-shadow:inset 0 2px 0 rgba(255,255,255,.8),inset 0 -10px 24px -8px color-mix(in srgb,var(--accent) 22%,transparent),0 24px 40px -18px color-mix(in srgb,var(--accent) 55%,transparent),0 2px 6px color-mix(in srgb,var(--ink) 10%,transparent)}
+.ico3d svg{width:64%;height:64%;overflow:visible;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);transition:transform .5s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 10px 10px color-mix(in srgb,var(--ic3) 45%,transparent))}
+.ico3d .p{fill:url(#k3d);filter:url(#relief)}
+.ico3d .s{fill:url(#k3d-b);filter:url(#relief)}
+.ico3d .h{fill:#fff;opacity:.55}
+.tuile:hover .ico3d svg{animation:flotte3d 3s ease-in-out infinite}
+@keyframes flotte3d{50%{translate:0 -6px}}
+@media(max-width:900px){.tuiles-grid{grid-template-columns:1fr}.tuiles-intro{position:static}.tuiles-index{display:none}.tuile{grid-template-columns:1fr;top:calc(84px + var(--i) * 18px);min-height:0}}
+/* Appel à l'action (réf. « CTA ») */
+.cta-bande{position:relative;isolation:isolate;overflow:hidden;background:var(--dark);color:var(--on-dark);padding:clamp(90px,14vw,200px) 0}
+.cta-bande .fx .aur{opacity:.6;--fx-mode:screen}
+.cta-bande .wrap{position:relative;z-index:2}
+.cta-carte{max-width:880px;margin-inline:auto;text-align:center;padding:clamp(40px,7vw,90px) clamp(24px,6vw,80px);background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));color:var(--on-dark);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.14),0 40px 80px -30px rgba(0,0,0,.55)}
+.cta-carte .eyebrow{color:var(--accent2,var(--accent));justify-content:center}
+.cta-carte .eyebrow::after{content:"";width:2.4em;height:1px;background:currentColor}
+.cta-titre{font-size:clamp(2.4rem,1.2rem + 5vw,5.4rem);margin:.45em 0 .35em;letter-spacing:-.02em}
+.cta-carte p{opacity:.8;max-width:46ch;margin:0 auto 2.2em;font-size:1.08rem}
+.cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta-actions .btn{border-radius:999px;padding:1.15em 2em}
+.cta-actions .btn.ligne{color:var(--on-dark);border-color:color-mix(in srgb,var(--on-dark) 40%,transparent)}
+.cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
+.aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
+
+/* Domaine viticole */
+.hero{position:relative;min-height:100svh;background:var(--dark);color:var(--on-dark);overflow:hidden;display:grid;align-items:end;isolation:isolate}
+.hero .paysage{position:absolute;inset:0;z-index:-1}
+.hero .paysage svg{position:absolute;left:0;bottom:0;width:100%;height:100%}
+.ciel{fill:url(#ciel)}
+.soleil{fill:var(--accent2);opacity:.92;animation:respire 9s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes respire{50%{transform:scale(1.04);opacity:1}}
+.col1{fill:var(--c-col1)}.col2{fill:var(--c-col2)}.col3{fill:var(--c-col3)}
+.rang{stroke:var(--accent2);stroke-opacity:.34;fill:none;stroke-width:1.4}
+.hero-in{padding:clamp(110px,18vh,200px) 0 clamp(64px,10vh,120px)}
+.hero h1{font-size:clamp(3rem,1rem + 9.5vw,9.4rem);letter-spacing:-.02em;line-height:.92;max-width:14ch;overflow-wrap:anywhere}
+.hero h1 span{display:block;font-style:italic;color:var(--accent2);font-size:.46em;letter-spacing:0;margin-top:.35em}
+.hero .sous{max-width:48ch;margin:1.8em 0 2.4em;font-size:clamp(1.05rem,.95rem + .5vw,1.3rem);opacity:.9}
+.hero .btn{background:var(--accent2);border-color:var(--accent2);color:var(--dark)}
+.hero .btn:hover{background:transparent;color:var(--accent2)}
+.hero .btn.ligne{background:transparent;color:var(--on-dark);border-color:color-mix(in srgb,var(--on-dark) 45%,transparent)}
+.hero .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
+.defile{position:absolute;right:clamp(20px,5vw,64px);bottom:36px;font:500 .68rem/1 var(--f-texte);letter-spacing:.3em;text-transform:uppercase;writing-mode:vertical-rl;display:flex;align-items:center;gap:14px;opacity:.7}
+.defile::after{content:"";width:1px;height:70px;background:currentColor;animation:descend 2.4s ease-in-out infinite;transform-origin:top}
+@keyframes descend{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.esprit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,8vw,130px);align-items:center}
+.esprit-grid p{max-width:52ch;color:var(--muted)}
+.etiquette{position:relative;justify-self:center;width:min(100%,380px);aspect-ratio:3/4.3;background:var(--bg2);border:1px solid var(--accent);padding:14px;box-shadow:0 40px 80px -40px color-mix(in srgb,var(--ink) 55%,transparent);transform:rotate(1.6deg);transition:transform .6s}
+.etiquette:hover{transform:rotate(0)}
+.etiquette .in{height:100%;border:1px solid var(--accent);display:grid;grid-template-rows:auto 1fr auto;justify-items:center;text-align:center;padding:clamp(22px,4vw,38px) 18px;gap:12px}
+.etiquette .petit{font:500 .62rem/1.6 var(--f-texte);letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
+.etiquette .grand{font:400 clamp(1.7rem,1.1rem + 2vw,2.5rem)/1.05 var(--f-titre);align-self:center;overflow-wrap:anywhere}
+.etiquette svg{width:62px;color:var(--accent)}
+.offre{background:var(--bg2)}
+.cartes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);margin-top:clamp(36px,6vw,72px);background:var(--bg)}
+.carte{padding:clamp(28px,4vw,56px) clamp(24px,3vw,44px);border-right:1px solid var(--line);display:grid;gap:16px;align-content:start;transition:background .4s}
+.carte:last-child{border-right:0}
+.carte:hover{background:var(--bg2)}
+.carte h3{font-size:clamp(1.6rem,1.2rem + 1.3vw,2.2rem)}
+.carte p{color:var(--muted);margin:0}
+.saisons{background:var(--dark);color:var(--on-dark)}
+.saisons .eyebrow{color:var(--accent2)}
+.saisons .titre-sec em{color:var(--accent2)}
+.onglets{display:flex;flex-wrap:wrap;gap:10px;margin:clamp(28px,5vw,56px) 0 36px}
+.onglets button{font:500 .74rem/1 var(--f-texte);letter-spacing:.18em;text-transform:uppercase;padding:1em 1.5em;background:transparent;color:var(--on-dark);border:1px solid color-mix(in srgb,var(--on-dark) 30%,transparent);cursor:pointer;transition:all .3s}
+.onglets button[aria-selected=true]{background:var(--accent2);color:var(--dark);border-color:var(--accent2)}
+.panneau{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,72px);align-items:center;min-height:200px}
+.panneau .gros{font:400 clamp(5rem,14vw,12rem)/.8 var(--f-titre);color:transparent;-webkit-text-stroke:1px var(--accent2)}
+.panneau h3{font-size:clamp(1.8rem,1.3rem + 1.8vw,2.8rem);margin-bottom:.4em}
+.panneau p{max-width:56ch;opacity:.82;margin:0}
+.exp-liste{margin-top:clamp(36px,6vw,72px);border-top:1px solid var(--line)}
+.exp{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:clamp(16px,4vw,56px);padding:clamp(24px,3.4vw,44px) 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding .4s,background .4s}
+.exp:hover{padding-left:18px;background:linear-gradient(90deg,var(--bg2),transparent)}
+.exp .n{font:400 1.1rem/1 var(--f-titre);color:var(--accent)}
+.exp h3{font-size:clamp(1.5rem,1.1rem + 1.3vw,2.1rem)}
+.exp p{margin:0;color:var(--muted)}
+.cite{text-align:center;padding-block:clamp(72px,11vw,150px);background:var(--bg2)}
+.cite blockquote{margin:0 auto;max-width:24ch;font:italic 400 clamp(1.9rem,1.1rem + 3.4vw,3.8rem)/1.15 var(--f-titre);text-wrap:balance}
+.cite .ornement{display:block;margin:0 auto 28px;width:54px;color:var(--accent)}
+@media(max-width:900px){
+ .esprit-grid{grid-template-columns:1fr}.etiquette{max-width:300px}
+ .cartes{grid-template-columns:1fr}.carte{border-right:0;border-bottom:1px solid var(--line)}.carte:last-child{border-bottom:0}
+ .panneau{grid-template-columns:1fr}.exp{grid-template-columns:1fr;gap:8px}.defile{display:none}
+}
+.top:not(.fond):not(.ouvert-menu){color:var(--on-dark)}
+.top:not(.fond):not(.ouvert-menu) .logo i{border-color:currentColor;color:currentColor}
+.top:not(.fond):not(.ouvert-menu) .nav-cta{color:var(--accent2);border-color:var(--accent2)}
+.top:not(.fond):not(.ouvert-menu) .menu-btn{border-color:color-mix(in srgb,var(--on-dark) 40%,transparent)}
+</style></head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="progres" aria-hidden="true"><i></i></div>
+<svg class="defs-kit" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="k3d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ic1)"/><stop offset=".55" style="stop-color:var(--ic2)"/><stop offset="1" style="stop-color:var(--ic3)"/></linearGradient>
+<linearGradient id="k3d-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--ic4)"/><stop offset="1" style="stop-color:var(--ic2)"/></linearGradient>
+<filter id="relief" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="flou"/>
+<feSpecularLighting in="flou" surfaceScale="4.5" specularConstant=".9" specularExponent="26" lighting-color="#ffffff" result="spec"><fePointLight x="14" y="-6" z="70"/></feSpecularLighting>
+<feComposite in="spec" in2="SourceAlpha" operator="in" result="specin"/>
+<feComposite in="SourceGraphic" in2="specin" operator="arithmetic" k1="0" k2="1" k3=".75" k4="0" result="lumiere"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="ombre"/>
+<feOffset in="ombre" dy="3.5" result="ombre2"/>
+<feComposite in="ombre2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="creux"/>
+<feFlood flood-color="#000" flood-opacity=".28"/><feComposite in2="creux" operator="in" result="creux2"/>
+<feComposite in="creux2" in2="lumiere" operator="atop"/>
+</filter>
+</defs></svg>
+<header class="top" id="top"><div class="wrap">
+<a class="logo" href="#top" aria-label="Domaine de la Neuraye, haut de page"><i aria-hidden="true">D</i><span>Domaine de la Neuraye</span></a>
+<nav id="menu" aria-label="Navigation principale"><a href="#esprit">Le domaine</a><a href="#offre">Au domaine</a><a href="#saisons">La vigne</a><a href="#visite">Visiter</a><a class="nav-cta" href="#contact">Nous écrire</a></nav>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
+</div></header>
 
-  <!-- En-tête de navigation -->
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="#accueil" class="brand-mark" aria-label="Domaine de la Neuraye - Retour haut de page">
-          <!-- Monogramme SVG exclusif -->
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="24" cy="24" r="22" stroke="#C8A87C" stroke-width="1.2"/>
-            <path d="M17 33V15L31 33V15" stroke="#EDE4D8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M24 10C24 10 27 13 25 16C23 19 25 21 25 21" stroke="#C8A87C" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-          <span class="brand-title">Domaine de la Neuraye</span>
-        </a>
+<main id="contenu">
+<section class="hero" aria-label="Accueil"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="spot"></i><i class="grain"></i></div>
+<div class="hero-pied" aria-hidden="true"><div class="puces"><span class="puce"><i></i>Domaine viticole</span></div></div>
 
-        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Ouvrir le menu">Menu</button>
+<div class="paysage" aria-hidden="true">
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+<defs><linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--c-ciel1)"/><stop offset="1" style="stop-color:var(--c-ciel2)"/></linearGradient>
+<clipPath id="k1"><path d="M0 600 C 260 540 480 590 760 560 S 1240 520 1600 585 V900 H0Z"/></clipPath>
+<clipPath id="k2"><path d="M0 700 C 300 640 560 700 880 668 S 1360 630 1600 690 V900 H0Z"/></clipPath>
+<clipPath id="k3"><path d="M0 790 C 340 740 620 800 960 770 S 1420 740 1600 790 V900 H0Z"/></clipPath></defs>
+<rect class="ciel" width="1600" height="900"/>
+<g data-parallax="-.06"><circle class="soleil" cx="1180" cy="400" r="120"/></g>
+<g data-parallax="-.03"><path class="col1" d="M0 600 C 260 540 480 590 760 560 S 1240 520 1600 585 V900 H0Z"/>
+<g clip-path="url(#k1)"><path class="rang" d="M-200 900 L 700 560M-100 900 L 760 560M0 900 L 820 560M120 900 L 880 560M240 900 L 940 560M380 900 L 1000 560M520 900 L 1060 560M680 900 L 1120 560M840 900 L 1180 560M1020 900 L 1240 560M1220 900 L 1300 560M1420 900 L 1360 560M1640 900 L 1430 560"/></g></g>
+<g data-parallax="-.015"><path class="col2" d="M0 700 C 300 640 560 700 880 668 S 1360 630 1600 690 V900 H0Z"/>
+<g clip-path="url(#k2)"><path class="rang" d="M-300 900 L 760 668M-120 900 L 820 668M60 900 L 880 668M240 900 L 940 668M440 900 L 1000 668M660 900 L 1060 668M900 900 L 1120 668M1160 900 L 1180 668M1440 900 L 1240 668M1740 900 L 1300 668"/></g></g>
+<path class="col3" d="M0 790 C 340 740 620 800 960 770 S 1420 740 1600 790 V900 H0Z"/>
+</svg></div>
+<div class="wrap hero-in">
+<span class="eyebrow reveal" style="color:var(--accent2)">Domaine viticole</span>
+<h1 class="reveal" style="--d:.1s">Domaine de la Neuraye<span>Domaine de la Neuraye, l&#x27;art du vin et de la terre.</span></h1>
+<p class="sous reveal" style="--d:.2s">Le Domaine de la Neuraye vous accueille pour découvrir le travail de la vigne et la passion de nos vins.</p>
+<div class="reveal" style="--d:.3s;display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#offre">Découvrir le domaine <span class="fl">→</span></a><a class="btn ligne" href="#contact">Nous écrire</a></div>
+</div>
+<div class="defile" aria-hidden="true">Défiler</div>
+</section>
 
-        <nav>
-          <ul class="nav-links" id="navLinks">
-            <li><a href="#domaine" class="nav-item">Le Domaine</a></li>
-            <li><a href="#vignoble" class="nav-item">L'Esprit du Vin</a></li>
-            <li><a href="#decouverte" class="nav-item">Visites &amp; Contact</a></li>
-            <li><a href="tel:+33549226398" class="btn btn-outline" style="padding: 0.55rem 1.25rem; font-size: 0.75rem;">Nous contacter</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+<div class="marquee" aria-hidden="true"><div><span>Terroir</span><b>✦</b><span>Savoir-faire</span><b>✦</b><span>Vendanges</span><b>✦</b><span>Chai</span><b>✦</b><span>Hospitalité</span><b>✦</b><span>Terroir</span><b>✦</b><span>Savoir-faire</span><b>✦</b><span>Vendanges</span><b>✦</b><span>Chai</span><b>✦</b><span>Hospitalité</span><b>✦</b></div></div>
 
-  <main>
-    <!-- Bandeau 3D d'accueil -->
-    <section id="accueil" class="hero-section">
-      <canvas id="webgl-canvas" aria-hidden="true"></canvas>
-      <div class="hero-overlay"></div>
+<section class="sec" id="esprit"><div class="wrap esprit-grid">
+<div class="reveal"><div class="num">01</div><span class="eyebrow">L’esprit du domaine</span>
+<h2 class="titre-sec">L&#x27;esprit du Domaine de la Neuraye</h2>
+<p>Au Domaine de la Neuraye, la culture de la vigne s&#x27;effectue dans le respect du terroir. De la taille des ceps aux vendanges, chaque geste est réalisé avec précision. Nos cuvées expriment la richesse de notre sol et le soin apporté à l&#x27;élaboration de nos vins.</p><p>Dans la fraîcheur du chai, le travail du vin demande de la patience. Nous laissons le temps accomplir son œuvre pour vous proposer des vins équilibrés, taillés pour la dégustation et le partage.</p></div>
+<div class="reveal" style="--d:.15s"><div class="etiquette" role="img" aria-label="Étiquette illustrée au nom de Domaine de la Neuraye"><div class="in">
+<span class="petit">Domaine viticole</span>
+<span class="grand">Domaine de la Neuraye</span>
+<div><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M30 6c0 14-14 14-14 28s14 20 14 20 14-6 14-20S30 20 30 6Z"/><path d="M30 20v34M30 32c-6-2-9-6-9-11M30 40c6-2 9-6 9-11"/></svg><span class="petit" style="display:block;margin-top:10px">Nouvelle-Aquitaine</span></div>
+</div></div></div>
+</div></section>
 
-      <div class="container hero-content">
-        <span class="editorial-label">Domaine Viticole &amp; Châteaux Familiaux</span>
-        <h1 class="hero-title">L'expression sincère <em>du terroir</em> et de la vigne.</h1>
-        <p class="hero-lead">Au Domaine de la Neuraye, la passion du métier de vigneron s’incarne dans chaque geste, préservant avec rigueur l'équilibre naturel de nos terres viticoles.</p>
-        <div class="hero-actions">
-          <a href="#decouverte" class="btn btn-gold">Venir au domaine</a>
-          <a href="tel:+33549226398" class="btn btn-outline">Échanger par téléphone</a>
-        </div>
-      </div>
-    </section>
+<section class="sec offre" id="offre"><div class="wrap">
+<div class="reveal"><span class="eyebrow">Au domaine</span><h2 class="titre-sec">Nos propositions</h2></div>
+<div class="cartes">
+<article class="carte reveal"><span class="num" style="font-size:3.4rem">I</span><h3>Les vins du domaine</h3><p>Une sélection de vins élevés avec rigueur, reflétant le travail accompli au chai et dans les vignes.</p></article>
+<article class="carte reveal" style="--d:.1s"><span class="num" style="font-size:3.4rem">II</span><h3>La dégustation</h3><p>Un moment privilégié pour découvrir nos cuvées et échanger autour de notre savoir-faire.</p></article>
+<article class="carte reveal" style="--d:.2s"><span class="num" style="font-size:3.4rem">III</span><h3>L&#x27;accueil au chai</h3><p>Un espace dédié pour vous recevoir, échanger et choisir vos bouteilles directement au domaine.</p></article>
+</div></div></section>
 
-    <!-- L'Esprit du Domaine -->
-    <section id="domaine" class="section-spacing">
-      <div class="container">
-        <div class="grid-split">
-          <div class="fade-up">
-            <span class="editorial-label">Héritage &amp; Terroir</span>
-            <h2>L'art de laisser le temps façonner le vin.</h2>
-            <p class="lead-text">Chaque cuvée est le fruit d’une écoute attentive des saisons. Notre domaine s’attache à sublimer la typicité de la vigne par un travail méthodique et respectueux de la terre.</p>
-            
-            <div class="quote-box">
-              <p class="quote-text">« La patience est le premier outil du vigneron : observer le cep, accompagner la maturation et honorer ce que la nature accorde. »</p>
-            </div>
+<section class="sec saisons" id="saisons"><div class="wrap">
+<div class="reveal"><span class="eyebrow">Au fil de l’année</span><h2 class="titre-sec">La vigne, <em>saison après saison</em></h2></div>
+<div class="onglets reveal" role="tablist" aria-label="Les saisons de la vigne">
+<button role="tab" aria-selected="true" data-s="0">Hiver</button><button role="tab" aria-selected="false" data-s="1">Printemps</button><button role="tab" aria-selected="false" data-s="2">Été</button><button role="tab" aria-selected="false" data-s="3">Automne</button></div>
+<div class="panneau reveal" role="tabpanel" aria-live="polite"><div class="gros" id="sn">01</div><div><h3 id="st">La taille</h3><p id="sp">La vigne dort. C’est le temps de la taille : on choisit les sarments qui porteront les grappes de l’année.</p></div></div>
+</div></section>
 
-            <p>De la taille hivernale jusqu'aux vendanges, l'exigence guide chaque étape viticole. Nous privilégions une approche mesurée pour faire émerger des vins équilibrés, élégants et fidèles à leur berceau d'origine.</p>
-          </div>
+<section class="sec tuiles-sec" id="visite"><div class="wrap tuiles-grid">
+<div class="tuiles-intro reveal"><span class="eyebrow">Visiter</span><h2 class="titre-sec">Votre visite au domaine</h2>
+<p class="lead">Trois temps simples pour découvrir le domaine, à votre rythme.</p>
+<ol class="tuiles-index" aria-hidden="true"><li>Découverte des vignes</li><li>Visite du chai</li><li>Dégustation commentée</li></ol></div>
+<div class="tuiles">
+<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="p" x="8" y="12" width="48" height="44" rx="10"/><path class="s" d="M8 22a10 10 0 0 1 10-10h28a10 10 0 0 1 10 10v4H8z"/><rect class="s" x="18" y="6" width="6" height="14" rx="3"/><rect class="s" x="40" y="6" width="6" height="14" rx="3"/><g class="h"><rect x="17" y="34" width="7" height="7" rx="2"/><rect x="28.5" y="34" width="7" height="7" rx="2"/><rect x="40" y="34" width="7" height="7" rx="2"/><rect x="17" y="45" width="7" height="5" rx="2"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>Découverte des vignes</h3><p>Observation du terroir et compréhension du travail de la vigne au fil des saisons.</p></div></article>
+<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M16 6h32c1 12-2 26-16 28C18 32 15 18 16 6Z"/><rect class="s" x="29.5" y="32" width="5" height="18" rx="2.5"/><ellipse class="s" cx="32" cy="54" rx="14" ry="4.5"/><path class="h" d="M21 11c0 7 1 13 5 17-6-2-8-9-7-17z" opacity=".5"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Visite du chai</h3><p>Présentation des étapes de vinification et du travail d&#x27;élevage du vin.</p></div></article>
+<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M27 4h10v12c0 3 9 6 9 16v22a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V32c0-10 9-13 9-16Z"/><rect class="s" x="26" y="2" width="12" height="7" rx="2.5"/><rect class="s" x="18" y="36" width="28" height="14"/><path class="h" d="M23 30c0-4 2-7 5-9-1 4-1 20-1 26h-4z" opacity=".45"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Dégustation commentée</h3><p>Appréciation des nuances de nos vins guidée par les conseils de notre équipe.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
+</div></div></section>
 
-          <div class="fade-up">
-            <div class="cadre-visuel">
-              <div class="img-wrapper">
-                <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/River_Douro_Valley_Portugal_-_Vall%C3%A9e_de_la_rivi%C3%A8re_Douro_Portugal_-_Wine_Vin_Porto_-_Picture_Image_Photography_%2814962280582%29.jpg/1920px-River_Douro_Valley_Portugal_-_Vall%C3%A9e_de_la_rivi%C3%A8re_Douro_Portugal_-_Wine_Vin_Porto_-_Picture_Image_Photography_%2814962280582%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
-                  alt="Vue poétique sur un paysage de vignobles en coteaux" 
-                  loading="lazy"
-                  width="1200"
-                  height="800">
-                <span class="caption-tag">Image d'illustration</span>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Emplacement réservé pour les photos réelles du commerçant -->
-        <div class="emplacement-propre fade-up">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <span>Vos photos ici</span>
-          <p>Cet espace est destiné à valoriser vos propres clichés : les parcelles du domaine, le chai, vos fûts et la robe de vos bouteilles.</p>
-        </div>
-      </div>
-    </section>
+<section class="cite"><div class="wrap reveal"><svg class="ornement" viewBox="0 0 60 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 6h20M38 6h20"/><path d="M30 1l5 5-5 5-5-5Z"/></svg><blockquote>La terre donne la vigne, le temps fait le vin.</blockquote></div></section>
 
-    <!-- Savoir-Faire / Activité -->
-    <section id="vignoble" class="section-spacing section-bordered" style="background-color: var(--bg-deep);">
-      <div class="container">
-        <div style="max-width: 680px;" class="fade-up">
-          <span class="editorial-label">Vocation Viticole</span>
-          <h2>L'attention aux détails, de la vigne au chai.</h2>
-          <p>Le métier de viticulteur requiert une rigueur quotidienne. Au Domaine de la Neuraye, nous mettons notre engagement au service d'un vin qui accompagne les plus belles tables.</p>
-        </div>
+<section class="cta-bande" aria-label="Nous contacter"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="grain"></i></div>
+<div class="wrap"><div class="cta-carte verre reveal">
+<span class="eyebrow">Au domaine</span>
+<h2 class="cta-titre">Venez goûter le lieu.</h2>
+<p>Une visite, une dégustation ou une simple question : écrivez-nous, nous vous répondrons.</p>
+<div class="cta-actions"><a class="btn aimant" href="#contact">Nous écrire <span class="fl">→</span></a><a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=Domaine%20de%20la%20Neuraye" target="_blank" rel="noopener">Itinéraire</a></div>
+</div></div></section>
 
-        <div class="services-grid">
-          <article class="card fade-up">
-            <span class="card-num">01 / VIGNE</span>
-            <h3>Culture &amp; Cep</h3>
-            <p>Un soin scrupuleux apporté à la santé de la vigne, limitant les interventions superflues pour laisser s'exprimer la minéralité et la richesse organique du sol.</p>
-          </article>
+<section class="sec" id="contact"><div class="wrap contact-grid">
+<div class="reveal"><span class="eyebrow">Contact</span>
+<h2 class="titre-sec">Nous contacter</h2>
+<p class="lead">Pour une visite, une dégustation ou une question, écrivez-nous ou passez nous voir.</p>
+<ul class="coord"><li><small>Email</small><a href="mailto:laneuraye@orange.fr">laneuraye@orange.fr</a></li></ul>
+<a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=Domaine%20de%20la%20Neuraye" target="_blank" rel="noopener">Itinéraire <span class="fl">→</span></a></div>
+<form class="demo reveal" style="--d:.12s" novalidate>
+<label>Votre nom<input type="text" name="nom" autocomplete="name"></label>
+<label>Votre email<input type="email" name="email" autocomplete="email"></label>
+<label>Votre demande<select name="objet"><option>Une visite ou une dégustation</option><option>Acheter des bouteilles</option><option>Un événement privé</option><option>Autre demande</option></select></label>
+<label>Votre message<textarea name="message"></textarea></label>
+<button class="btn" type="submit">Envoyer <span class="fl">→</span></button>
+<p class="retour" aria-live="polite"></p>
+</form></div></section>
 
-          <article class="card fade-up">
-            <span class="card-num">02 / CHAI</span>
-            <h3>Vinification &amp; Élevage</h3>
-            <p>Une maîtrise attentive des fermentations et un repos respectueux en cave, accordant au vin le temps nécessaire pour parfaire ses arômes et sa structure.</p>
-          </article>
+</main>
+<footer class="pied"><div class="wrap">
+<div class="pied-cols">
+<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">D</i><span>Domaine de la Neuraye</span></a><p>Domaine de la Neuraye, l&#x27;art du vin et de la terre.</p></div>
+<div><h3>Naviguer</h3><ul><li><a href="#esprit">Le domaine</a></li><li><a href="#offre">Au domaine</a></li><li><a href="#saisons">La vigne</a></li><li><a href="#visite">Visiter</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div><h3>Nous trouver</h3><ul><li>Nouvelle-Aquitaine</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Domaine%20de%20la%20Neuraye" target="_blank" rel="noopener">Itinéraire →</a></li></ul></div>
+<div><h3>Nous joindre</h3><ul><li><a href="mailto:laneuraye@orange.fr">laneuraye@orange.fr</a></li><li><a href="#contact">Formulaire de contact</a></li></ul></div>
+</div>
+<div class="pied-nom" aria-hidden="true">Domaine de la Neuraye</div>
+<p class="alcool">L’abus d’alcool est dangereux pour la santé, à consommer avec modération.</p>
+<p class="mentions" id="mentions">Mentions légales — Éditeur : Domaine de la Neuraye. Maquette de démonstration réalisée par ORBE : les mentions complètes (numéro d’immatriculation, hébergeur, responsable de publication) seront renseignées avec vous avant toute mise en ligne.</p>
+<div class="pied-bas"><span>© <span data-annee>2026</span> Domaine de la Neuraye</span><span>Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></span><a href="#top" class="haut">Haut de page ↑</a></div>
+</div></footer>
+<a class="badge-orbe" href="mailto:societe.orbe@gmail.com">Maquette proposée par ORBE</a>
 
-          <article class="card fade-up">
-            <span class="card-num">03 / PARTAGE</span>
-            <h3>Accueil &amp; Dégustation</h3>
-            <p>L'accueil des passionnés et des curieux pour partager notre travail, répondre à vos questions et vous faire découvrir l'univers de notre exploitation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<script>
+(function(){
+var d=document,r=d.documentElement;r.classList.remove('pas-js');
+var top=d.querySelector('.top'),btn=d.querySelector('.menu-btn'),nav=d.querySelector('.top nav');
+function onScroll(){if(top)top.classList.toggle('fond',window.scrollY>40);
+ var s=window.scrollY;d.querySelectorAll('[data-parallax]').forEach(function(e){e.style.transform='translate3d(0,'+(s*parseFloat(e.dataset.parallax))+'px,0)'});}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+if(btn){btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')!=='true';btn.setAttribute('aria-expanded',o);nav.classList.toggle('ouvert',o);top.classList.toggle('ouvert-menu',o);d.body.style.overflow=o?'hidden':''});
+ nav.addEventListener('click',function(e){if(e.target.tagName==='A'){btn.setAttribute('aria-expanded','false');nav.classList.remove('ouvert');top.classList.remove('ouvert-menu');d.body.style.overflow=''}});}
+var els=[].slice.call(d.querySelectorAll('.reveal'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('vu')})}
+d.querySelectorAll('form.demo').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var p=f.querySelector('.retour');if(p)p.textContent='Démonstration : ce formulaire sera relié à votre boîte mail.'})});
+var y=d.querySelector('[data-annee]');if(y)y.textContent=new Date().getFullYear();
+})();
+/* Kit premium ORBE : titre animé, lumière, barre de progression, tuiles empilées, icônes 3D, bouton aimanté */
+(function(){
+var d=document,w=window,calme=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+d.querySelectorAll('.hero h1').forEach(function(h){var n=0;[].slice.call(h.childNodes).forEach(function(t){if(t.nodeType!==3||!t.textContent.trim())return;var f=d.createDocumentFragment();t.textContent.split(/(\s+)/).forEach(function(m){if(!m)return;if(/^\s+$/.test(m)){f.appendChild(d.createTextNode(' '));return}var o=d.createElement('k-m');var b=d.createElement('k-w');b.textContent=m;b.style.setProperty('--m',n++);o.appendChild(b);f.appendChild(o)});h.replaceChild(f,t)})});
+var hero=d.querySelector('.hero');
+if(hero&&!calme){hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px')})}
+d.querySelectorAll('.verre').forEach(function(v){v.addEventListener('pointermove',function(e){var r=v.getBoundingClientRect();v.style.setProperty('--lx',((e.clientX-r.left)/r.width*100)+'%');v.style.setProperty('--ly',((e.clientY-r.top)/r.height*100)+'%')})});
+var bar=d.querySelector('.progres'),tu=[].slice.call(d.querySelectorAll('.tuile')),idx=[].slice.call(d.querySelectorAll('.tuiles-index li'));
+var att=false;function maj(){att=false;var h=d.documentElement.scrollHeight-w.innerHeight;if(bar)bar.style.setProperty('--p',h>0?Math.min(1,w.scrollY/h):0);
+ var act=0;tu.forEach(function(t,i){var r=t.getBoundingClientRect();if(r.top<w.innerHeight*.55)act=i;if(calme)return;var s=tu[i+1];if(!s){t.style.setProperty('--s',1);t.style.setProperty('--b',1);return}
+  var q=s.getBoundingClientRect(),k=Math.max(0,Math.min(1,1-(q.top-r.top)/(r.height||1)));t.style.setProperty('--s',(1-k*.06).toFixed(4));t.style.setProperty('--b',(1-k*.12).toFixed(4))});
+ idx.forEach(function(l,i){l.classList.toggle('actif',i===act)});}
+w.addEventListener('scroll',function(){if(!att){att=true;requestAnimationFrame(maj)}},{passive:true});w.addEventListener('resize',maj);maj();
+if(!calme&&w.matchMedia('(hover: hover)').matches){
+ d.querySelectorAll('.ico3d').forEach(function(c){var t=c.closest('.tuile')||c;t.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--ry',(x*28)+'deg');c.style.setProperty('--rx',(-y*28)+'deg')});t.addEventListener('pointerleave',function(){c.style.setProperty('--ry','0deg');c.style.setProperty('--rx','0deg')})});
+ d.querySelectorAll('.aimant').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.28)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});}
+})();
+(function(){var n=document.querySelector('.pied-nom');if(!n)return;function fit(){n.style.fontSize='';var t=0;while(n.scrollWidth>n.clientWidth+2&&t++<40){n.style.fontSize=(parseFloat(getComputedStyle(n).fontSize)*.94)+'px'}}
+fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 
-    <!-- Infos Pratiques & Contact -->
-    <section id="decouverte" class="section-spacing section-bordered">
-      <div class="container">
-        <span class="editorial-label">Nous rencontrer</span>
-        <h2>Organisation de votre visite.</h2>
-
-        <div class="contact-layout">
-          <div class="fade-up">
-            <p class="lead-text" style="margin-bottom: 2rem;">Afin de vous recevoir dans les meilleures conditions au cœur de notre domaine, les visites et dégustations s'organisent principalement sur rendez-vous préalable.</p>
-            
-            <div class="info-tile">
-              <h4>Horaires d'accueil</h4>
-              <p>Accueil et dégustations sur rendez-vous. Nous vous invitons à nous contacter par téléphone ou email afin de convenir du moment idéal pour votre venue.</p>
-            </div>
-
-            <div class="info-tile">
-              <h4>Accès &amp; Localisation</h4>
-              <p>Pour obtenir l'itinéraire précis vers le domaine et vous assurer de notre présence lors de votre passage, un appel préalable est recommandé.</p>
-              <div style="margin-top: 1.25rem;">
-                <a href="https://www.google.com/maps/search/?api=1&query=Domaine+de+la+Neuraye" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.75rem 1.4rem;">
-                  Ouvrir l'itinéraire Google Maps
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="fade-up">
-            <div class="card" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
-              <span class="editorial-label">Liaison Directe</span>
-              <h3 style="margin-bottom: 1.5rem;">Prendre attache avec le Domaine</h3>
-              <p>N'hésitez pas à nous joindre directement pour toute demande de renseignement, commande ou organisation de visite.</p>
-
-              <div class="contact-links">
-                <a href="tel:+33549226398" class="contact-entry" aria-label="Téléphoner au 05 49 22 63 98">
-                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span>05 49 22 63 98</span>
-                </a>
-
-                <a href="mailto:laneuraye@orange.fr" class="contact-entry" aria-label="Envoyer un email à laneuraye@orange.fr">
-                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span>laneuraye@orange.fr</span>
-                </a>
-              </div>
-
-              <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
-                <p style="font-size: 0.85rem; color: var(--color-gold);">Réception des commandes et expéditions possibles selon disponibilités.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Avertissement légal alcool -->
-    <div class="legal-warning" role="note">
-      <div class="container">
-        <p>L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
-      </div>
-    </div>
-  </main>
-
-  <!-- Pied de page -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3>Domaine de la Neuraye</h3>
-          <p>Domaines viticoles et châteaux familiaux. Travail de la terre, soin du végétal et élevage de vins fins.</p>
-        </div>
-
-        <div>
-          <span class="editorial-label">Contact</span>
-          <p style="margin-bottom: 0.5rem;"><a href="tel:+33549226398" style="color: inherit; text-decoration: none;">+33 5 49 22 63 98</a></p>
-          <p><a href="mailto:laneuraye@orange.fr" style="color: inherit; text-decoration: none;">laneuraye@orange.fr</a></p>
-        </div>
-
-        <div>
-          <span class="editorial-label">Visite</span>
-          <p>Sur rendez-vous</p>
-          <p>Accueil direct à la propriété</p>
-        </div>
-      </div>
-
-      <div class="footer-credits">
-        <p>Photo : Grand Parc - Bordeaux, France from France (CC BY 2.0) — Image d'illustration.</p>
-        <p>Proposition de site réalisée par ORBE, studio digital &middot; <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Badge discret ORBE -->
-  <aside class="orbe-badge" aria-label="Signature de conception">
-    <span class="orbe-dot" aria-hidden="true"></span>
-    <span>Maquette proposée par ORBE</span>
-  </aside>
-
-  <!-- Scripts : Navigation, Animation au scroll et Three.js sobre -->
-  <script>
-    // Navigation mobile
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (navToggle && navLinks) {
-      navToggle.addEventListener('click', () => {
-        const isActive = navLinks.classList.toggle('active');
-        navToggle.setAttribute('aria-expanded', isActive);
-      });
-      document.querySelectorAll('.nav-item').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          navToggle.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-
-    // Apparition douce au défilement (IntersectionObserver)
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    } else {
-      document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-    }
-
-    // Bandeau 3D Three.js : Volumes sombres, lents et chaleureux (évocation du vin et des fûts)
-    window.addEventListener('DOMContentLoaded', () => {
-      if (prefersReducedMotion) return;
-
-      try {
-        if (typeof THREE === 'undefined') return;
-
-        const canvas = document.getElementById('webgl-canvas');
-        if (!canvas) return;
-
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
-        camera.position.set(0, 0, 7.5);
-
-        const renderer = new THREE.WebGLRenderer({
-          canvas: canvas,
-          alpha: true,
-          antialias: true,
-          powerPreference: "low-power"
-        });
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-        // Formes géométriques douces et abstraites : courbes de coteaux & galbe d'amphores/barriques
-        const group = new THREE.Group();
-        scene.add(group);
-
-        const materialDarkWine = new THREE.MeshStandardMaterial({
-          color: 0x48141d,
-          roughness: 0.45,
-          metalness: 0.2,
-          wireframe: false
-        });
-
-        const materialGold = new THREE.MeshStandardMaterial({
-          color: 0xc8a87c,
-          roughness: 0.35,
-          metalness: 0.65
-        });
-
-        // Tore ample et doux
-        const torusGeo = new THREE.TorusGeometry(3.2, 0.9, 32, 80);
-        const torusMesh = new THREE.Mesh(torusGeo, materialDarkWine);
-        torusMesh.rotation.x = Math.PI * 0.35;
-        group.add(torusMesh);
-
-        // Sphère centrale tamisée
-        const sphereGeo = new THREE.SphereGeometry(1.6, 40, 40);
-        const sphereMesh = new THREE.Mesh(sphereGeo, materialGold);
-        sphereMesh.position.set(0.6, -0.4, -0.8);
-        group.add(sphereMesh);
-
-        // Lumières chaudes et soignées
-        const ambientLight = new THREE.AmbientLight(0x2a171c, 2.0);
-        scene.add(ambientLight);
-
-        const mainLight = new THREE.DirectionalLight(0xf2dfc6, 2.2);
-        mainLight.position.set(4, 6, 5);
-        scene.add(mainLight);
-
-        const warmBacklight = new THREE.PointLight(0xa33244, 3.5, 15);
-        warmBacklight.position.set(-5, -3, -2);
-        scene.add(warmBacklight);
-
-        let animationFrameId = null;
-        let isTabActive = true;
-
-        document.addEventListener('visibilitychange', () => {
-          isTabActive = !document.hidden;
-          if (isTabActive && !animationFrameId) {
-            renderLoop();
-          }
-        });
-
-        function renderLoop() {
-          if (!isTabActive) {
-            animationFrameId = null;
-            return;
-          }
-
-          // Mouvement contemplatif, imperceptible et apaisant
-          group.rotation.y += 0.0012;
-          group.rotation.x += 0.0006;
-          sphereMesh.position.y = -0.4 + Math.sin(Date.now() * 0.0008) * 0.15;
-
-          renderer.render(scene, camera);
-          animationFrameId = requestAnimationFrame(renderLoop);
-        }
-
-        renderLoop();
-
-        // Redimensionnement propre
-        window.addEventListener('resize', () => {
-          const w = window.innerWidth;
-          const h = window.innerHeight;
-          camera.aspect = w / h;
-          camera.updateProjectionMatrix();
-          renderer.setSize(w, h);
-          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        });
-
-      } catch (err) {
-        // En cas d'erreur ou d'absence de support WebGL, le dégradé CSS prend le relais sans casser l'interface
-      }
-    });
-  </script>
-</body>
-</html>
+(function(){var S=[["La taille","La vigne dort. C’est le temps de la taille : on choisit les sarments qui porteront les grappes de l’année."],["Le réveil","Les bourgeons s’ouvrent, les premières feuilles apparaissent. On surveille la météo et on travaille le sol."],["La maturation","Les grappes grossissent et mûrissent au soleil. On aère la vigne et on attend le bon moment."],["Les vendanges","Les raisins sont cueillis à maturité, puis portés au chai. La cuvée de l’année commence."]];
+var b=document.querySelectorAll('.onglets button');b.forEach(function(x){x.addEventListener('click',function(){var i=+x.dataset.s;b.forEach(function(y){y.setAttribute('aria-selected',y===x)});document.getElementById('sn').textContent='0'+(i+1);document.getElementById('st').textContent=S[i][0];document.getElementById('sp').textContent=S[i][1]})});})();
+</script>
+</body></html>

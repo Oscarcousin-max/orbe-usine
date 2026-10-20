@@ -1,1387 +1,380 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Ginette Laven L'Artisane | Tapisserie d'ameublement &amp; Artisanat d'art</title>
-  <meta name="description" content="Atelier de tapisserie d'ameublement d'art : réfection de sièges, travail des matières nobles et confection soignée. Ginette Laven L'Artisane, ouvert du lundi au vendredi.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ginette Laven L'Artisane | Tapisserie d'ameublement d'art">
-  <meta property="og:description" content="Artisanat d'art et tapisserie d'ameublement. Restauration de sièges, matières nobles et finitions sur mesure.">
-  <meta property="og:type" content="website">
-
-  <!-- Favicon SVG Monogramme GL -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231f1c19'/%3E%3Cpath d='M8 16c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8h-3' fill='none' stroke='%23d3ab77' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 11v10M13 16h6' fill='none' stroke='%23f5f2eb' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Three.js (différé) -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <!-- Données structurées Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HomeGoodsStore",
-    "name": "Ginette Laven L'Artisane",
-    "description": "Atelier artisanal d'ameublement et tapisserie d'art.",
-    "email": "lartisane.ginette@gmail.com",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "19:00"
-      }
-    ]
-  }
-  </script>
-
-  <style>
-    :root {
-      --bg-main: #0e0c0b;
-      --bg-surface: #171513;
-      --bg-card: #201c19;
-      --bg-elevated: #26221f;
-      --border-subtle: rgba(211, 171, 119, 0.18);
-      --border-light: rgba(245, 242, 235, 0.1);
-      --text-main: #f5f2eb;
-      --text-muted: #b8b2a7;
-      --text-dim: #7f786f;
-      --gold: #d3ab77;
-      --gold-dark: #9e7845;
-      --gold-soft: rgba(211, 171, 119, 0.12);
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --container-max: 1180px;
-      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body {
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    /* Accessible Focus */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* TYPOGRAPHY */
-    h1, h2, h3, h4 {
-      font-family: var(--font-serif);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      line-height: 1.15;
-    }
-
-    .eyebrow {
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--gold);
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-
-    /* HEADER */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      padding: 1.25rem 2rem;
-      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease;
-      background: linear-gradient(180deg, rgba(14, 12, 11, 0.85) 0%, rgba(14, 12, 11, 0) 100%);
-    }
-
-    .header.scrolled {
-      background-color: rgba(14, 12, 11, 0.95);
-      backdrop-filter: blur(12px);
-      padding: 0.9rem 2rem;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .header-inner {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      text-decoration: none;
-      color: var(--text-main);
-    }
-
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--border-subtle);
-      border-radius: 50%;
-      background: var(--bg-surface);
-      color: var(--gold);
-      transition: var(--transition-smooth);
-    }
-
-    .brand:hover .brand-mark {
-      border-color: var(--gold);
-      transform: rotate(6deg);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-name {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      letter-spacing: 0.04em;
-      font-weight: 600;
-      line-height: 1.1;
-    }
-
-    .brand-sub {
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 500;
-    }
-
-    /* NAVIGATION */
-    .nav-desktop {
-      display: flex;
-      align-items: center;
-      gap: 2.2rem;
-    }
-
-    .nav-desktop a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-desktop a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0%;
-      height: 1px;
-      background-color: var(--gold);
-      transition: width 0.3s ease;
-    }
-
-    .nav-desktop a:hover {
-      color: var(--text-main);
-    }
-
-    .nav-desktop a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta-btn {
-      padding: 0.55rem 1.25rem;
-      border: 1px solid var(--border-subtle);
-      border-radius: 999px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--gold) !important;
-      background: rgba(211, 171, 119, 0.05);
-      transition: var(--transition-smooth) !important;
-    }
-
-    .nav-cta-btn:hover {
-      background: var(--gold);
-      color: var(--bg-main) !important;
-      border-color: var(--gold);
-    }
-
-    .nav-cta-btn::after {
-      display: none !important;
-    }
-
-    /* Mobile toggle */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      flex-direction: column;
-      gap: 5px;
-      z-index: 101;
-    }
-
-    .menu-toggle span {
-      display: block;
-      width: 24px;
-      height: 1.5px;
-      background-color: var(--text-main);
-      transition: var(--transition-smooth);
-    }
-
-    .menu-toggle.active span:nth-child(1) {
-      transform: translateY(6.5px) rotate(45deg);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-      transform: translateY(-6.5px) rotate(-45deg);
-    }
-
-    .nav-mobile {
-      position: fixed;
-      inset: 0;
-      background: rgba(14, 12, 11, 0.98);
-      backdrop-filter: blur(20px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 99;
-    }
-
-    .nav-mobile.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .nav-mobile a {
-      font-family: var(--font-serif);
-      font-size: 1.8rem;
-      color: var(--text-main);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .nav-mobile a:hover {
-      color: var(--gold);
-    }
-
-    /* HERO */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 7rem 1.5rem 4rem;
-      background: radial-gradient(circle at 50% 40%, #1f1b17 0%, #0e0c0b 80%);
-      overflow: hidden;
-    }
-
-    #hero-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.65;
-    }
-
-    .hero-veil {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(14, 12, 11, 0.3) 0%, rgba(14, 12, 11, 0.85) 85%);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 880px;
-      text-align: center;
-      margin: 0 auto;
-    }
-
-    .hero-pretitle {
-      font-size: 0.75rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .hero-pretitle::before, .hero-pretitle::after {
-      content: '';
-      width: 25px;
-      height: 1px;
-      background-color: var(--border-subtle);
-    }
-
-    .hero-title {
-      font-size: clamp(2.4rem, 6.5vw, 4.8rem);
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      color: #fff;
-    }
-
-    .hero-title em {
-      font-family: var(--font-serif);
-      font-style: italic;
-      color: var(--gold);
-      font-weight: 400;
-    }
-
-    .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      color: var(--text-muted);
-      max-width: 640px;
-      margin: 0 auto 2.5rem;
-      font-weight: 300;
-    }
-
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      padding: 0.95rem 2.2rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 999px;
-      transition: var(--transition-smooth);
-      font-weight: 500;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--bg-main);
-      border: 1px solid var(--gold);
-    }
-
-    .btn-primary:hover {
-      background: #e4bc88;
-      border-color: #e4bc88;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--text-main);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    /* SECTION COMMON */
-    section {
-      padding: 6.5rem 1.5rem;
-      position: relative;
-    }
-
-    .container {
-      max-width: var(--container-max);
-      margin: 0 auto;
-    }
-
-    .section-head {
-      margin-bottom: 3.5rem;
-    }
-
-    .section-head.center {
-      text-align: center;
-      max-width: 680px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--text-main);
-      margin-bottom: 1rem;
-    }
-
-    .section-intro {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      font-weight: 300;
-    }
-
-    /* ESPOIR & SAVOIR-FAIRE */
-    .grid-artisan {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .story-card {
-      border-left: 1px solid var(--border-subtle);
-      padding-left: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .story-card p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    .story-quote {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      font-style: italic;
-      color: var(--gold);
-      line-height: 1.4;
-      margin-top: 1rem;
-    }
-
-    /* Emplacement photo d'illustration ou cadre */
-    .art-visual-wrapper {
-      position: relative;
-    }
-
-    .frame-illustration {
-      position: relative;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    .frame-illustration img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      filter: grayscale(40%) contrast(1.05) brightness(0.85);
-      transition: transform 0.6s ease;
-    }
-
-    .frame-illustration:hover img {
-      transform: scale(1.03);
-    }
-
-    .img-credit-tag {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: 0.65rem;
-      letter-spacing: 0.05em;
-      padding: 3px 8px;
-      background: rgba(14, 12, 11, 0.85);
-      color: var(--text-dim);
-      border-radius: 2px;
-      backdrop-filter: blur(4px);
-    }
-
-    .visual-subbox {
-      margin-top: 1.25rem;
-      padding: 1.25rem;
-      border: 1px dashed var(--border-subtle);
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 4px;
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* OFFRE & SPECIALITES */
-    .services-bg {
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.8rem;
-    }
-
-    .craft-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      padding: 2.5rem 2rem;
-      border-radius: 2px;
-      position: relative;
-      transition: var(--transition-smooth);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .craft-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-4px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-    }
-
-    .craft-icon {
-      width: 44px;
-      height: 44px;
-      margin-bottom: 1.8rem;
-      color: var(--gold);
-    }
-
-    .craft-card h3 {
-      font-size: 1.45rem;
-      margin-bottom: 1rem;
-      color: var(--text-main);
-    }
-
-    .craft-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    .craft-card .craft-note {
-      margin-top: 1.5rem;
-      padding-top: 1.2rem;
-      border-top: 1px solid var(--border-light);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-    }
-
-    /* EMPLACEMENT PROPRIETAIRE PHOTOS */
-    .atelier-gallery-slot {
-      margin-top: 4.5rem;
-      border: 1px dashed var(--border-subtle);
-      padding: 3rem 2rem;
-      background: rgba(211, 171, 119, 0.02);
-      border-radius: 4px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .atelier-gallery-slot svg {
-      color: var(--gold);
-      opacity: 0.6;
-    }
-
-    .atelier-gallery-slot span {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold);
-    }
-
-    .atelier-gallery-slot p {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      max-width: 480px;
-    }
-
-    /* HORAIRES & ATELIER INFOS */
-    .info-section {
-      background: radial-gradient(circle at 80% 50%, rgba(211, 171, 119, 0.05) 0%, transparent 60%);
-    }
-
-    .info-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-    }
-
-    .info-panel {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      padding: 3rem;
-      border-radius: 2px;
-    }
-
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .info-row:last-child {
-      border-bottom: none;
-    }
-
-    .info-label {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .info-value {
-      color: var(--text-main);
-      font-weight: 500;
-      text-align: right;
-    }
-
-    .contact-card-direct {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-radius: 2px;
-    }
-
-    .contact-link-box {
-      margin-top: 1.5rem;
-      padding: 1.5rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-light);
-      border-radius: 2px;
-    }
-
-    .email-link {
-      color: var(--gold);
-      font-size: 1.15rem;
-      word-break: break-all;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.2s ease;
-      font-weight: 500;
-    }
-
-    .email-link:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    /* FOOTER */
-    footer {
-      background-color: #080706;
-      border-top: 1px solid rgba(211, 171, 119, 0.15);
-      padding: 4.5rem 1.5rem 3rem;
-      color: var(--text-dim);
-      font-size: 0.85rem;
-    }
-
-    .footer-top {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .footer-brand-title {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      color: var(--text-main);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links-col h4 {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-      font-family: var(--font-sans);
-      font-weight: 600;
-    }
-
-    .footer-links-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .footer-links-col a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links-col a:hover {
-      color: var(--gold);
-    }
-
-    .footer-bottom {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      font-size: 0.8rem;
-    }
-
-    .orbe-mention {
-      color: var(--gold);
-      opacity: 0.85;
-    }
-
-    /* BADGE FIXE ORBE */
-    .orbe-badge {
-      position: fixed;
-      bottom: 1.25rem;
-      right: 1.25rem;
-      z-index: 990;
-      background: rgba(23, 21, 19, 0.92);
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(8px);
-      padding: 0.5rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      letter-spacing: 0.06em;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-      transition: var(--transition-smooth);
-      text-decoration: none;
-    }
-
-    .orbe-badge:hover {
-      border-color: var(--gold);
-      color: var(--text-main);
-      transform: translateY(-2px);
-    }
-
-    .orbe-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-    }
-
-    /* REVEAL ANIMATIONS */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      #hero-canvas {
-        display: none !important;
-      }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 960px) {
-      .grid-artisan {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
-      .info-layout {
-        grid-template-columns: 1fr;
-      }
-      .footer-top {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .header {
-        padding: 1rem 1.25rem;
-      }
-      .nav-desktop {
-        display: none;
-      }
-      .menu-toggle {
-        display: flex;
-      }
-      section {
-        padding: 4.5rem 1.25rem;
-      }
-      .hero {
-        padding-top: 6.5rem;
-      }
-      .info-panel, .contact-card-direct {
-        padding: 1.8rem 1.2rem;
-      }
-      .orbe-badge {
-        bottom: 0.85rem;
-        right: 0.85rem;
-        font-size: 0.65rem;
-        padding: 0.4rem 0.75rem;
-      }
-    }
-  </style>
-</head>
+<!doctype html>
+<html lang="fr" class="pas-js"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Ginette Laven L&#x27;Artisane — Artisan d’art</title><meta name="description" content="L&#x27;art du geste et le travail de la matière. Un atelier consacré à l&#x27;artisanat d&#x27;art, où chaque création façonnée à la main révèle la noblesse des matières."><meta property="og:type" content="website"><meta property="og:title" content="Ginette Laven L&#x27;Artisane — Artisan d’art"><meta property="og:description" content="L&#x27;art du geste et le travail de la matière. Un atelier consacré à l&#x27;artisanat d&#x27;art, où chaque création façonnée à la main révèle la noblesse des matières."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f6f2ea"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%232f6b4f%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3EG%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Figtree:wght@300;400;500;600&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Ginette Laven L'Artisane", "email": "lartisane.ginette@gmail.com"}</script>
+<style>
+:root{--bg:#f6f2ea;--bg2:#ece6da;--ink:#1a2a22;--muted:#5b6a60;--accent:#2f6b4f;--accent2:#e58f9b;--soft:#dde7d9;--soft2:#f1c9ce;--line:#d3d8cb;--on-accent:#ffffff;--dark:#16281f;--on-dark:#f1f2e8;--f-titre:'Bricolage Grotesque',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--f-texte:'Figtree',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--r:0px;}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-texte);font-size:clamp(16px,1.05vw + 12px,18px);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-titre);font-weight:400;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0 0 1em}
+.wrap{width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 16px;z-index:200}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.eyebrow{font:500 .72rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.9em}
+.eyebrow::before{content:"";width:2.4em;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:.7em;padding:1em 1.8em;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;font:500 .78rem/1 var(--f-texte);letter-spacing:.18em;text-transform:uppercase;transition:background .3s,color .3s,transform .3s;cursor:pointer;border-radius:var(--r,0)}
+.btn:hover{background:transparent;color:var(--accent)}
+.btn.ligne{background:transparent;color:inherit;border-color:currentColor}
+.btn.ligne:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn .fl{transition:transform .3s}.btn:hover .fl{transform:translateX(5px)}
+/* En-tête — capsule flottante en verre liquide (réf. « navbar ») */
+.top{position:fixed;inset:14px 0 auto 0;z-index:100;transition:inset .45s cubic-bezier(.2,.7,.2,1),color .35s}
+.top .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 10px 10px 22px;width:min(1180px,100% - 24px);border-radius:999px;transition:padding .45s cubic-bezier(.2,.7,.2,1)}
+.top .wrap::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;
+ background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.04));
+ -webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(255,255,255,.08),inset 0 0 0 1px rgba(255,255,255,.18),0 10px 40px -12px rgba(0,0,0,.28);transition:background .4s,box-shadow .4s}
+.top .wrap::after{content:"";position:absolute;inset:1px;border-radius:inherit;z-index:-1;pointer-events:none;background:radial-gradient(120% 140% at 20% -40%,rgba(255,255,255,.35),transparent 45%);opacity:.7}
+.top.fond{inset:8px 0 auto 0}
+.top.fond .wrap{padding-block:7px}
+.top.fond .wrap::before{background:color-mix(in srgb,var(--bg) 72%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 0 1px color-mix(in srgb,var(--ink) 9%,transparent),0 18px 50px -18px color-mix(in srgb,var(--ink) 45%,transparent)}
+.logo{font:400 clamp(1.05rem,.95rem + .5vw,1.35rem)/1 var(--f-titre);text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.7em;min-width:0}
+.logo i{font-style:normal;display:grid;place-items:center;width:2.1em;height:2.1em;border:1px solid var(--accent);color:var(--accent);border-radius:var(--rl,50%);font-size:.85em;flex:none}
+.logo span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top nav{display:flex;gap:4px;align-items:center}
+.top nav a{text-decoration:none;font:500 .72rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;position:relative;padding:.95em 1.05em;border-radius:999px;transition:background .3s,color .3s}
+.top nav a:hover{background:color-mix(in srgb,currentColor 10%,transparent)}
+.top .nav-cta{margin-left:8px;background:var(--accent);color:var(--on-accent)!important;padding:1em 1.4em;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 18px -6px color-mix(in srgb,var(--accent) 70%,transparent)}
+.top .nav-cta:hover{background:color-mix(in srgb,var(--accent) 85%,#000)}
+.menu-btn{display:none;background:color-mix(in srgb,currentColor 8%,transparent);border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;color:inherit;position:relative;flex:none}
+.menu-btn i,.menu-btn i::before{position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;content:"";transition:transform .3s,top .3s}
+.menu-btn i{top:21px}.menu-btn i::before{left:0;right:0;top:-6px}
+.menu-btn[aria-expanded=true] i{transform:rotate(45deg)}.menu-btn[aria-expanded=true] i::before{top:0;transform:rotate(-90deg)}
+@media(max-width:960px){
+ .menu-btn{display:block}
+ .top .wrap{padding:7px 7px 7px 16px}
+ .top nav{position:fixed;inset:0;background:var(--bg);color:var(--ink);flex-direction:column;justify-content:center;gap:10px;transform:translateY(-104%);transition:transform .55s cubic-bezier(.7,0,.2,1);z-index:-2}
+ .top nav.ouvert{transform:none}
+ .top nav a{font:400 clamp(1.7rem,7vw,2.4rem)/1 var(--f-titre);letter-spacing:0;text-transform:none;padding:.35em .6em}
+ .top nav .nav-cta{margin:14px 0 0;font:500 .8rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:1.2em 1.8em}
+ .top.ouvert-menu{color:var(--ink)}
+ .top.ouvert-menu .wrap::before{background:color-mix(in srgb,var(--bg) 90%,transparent)}
+}
+.progres{position:fixed;inset:0 0 auto 0;height:2px;z-index:120;pointer-events:none}
+.progres i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2,var(--accent)));transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.defs-kit{position:absolute;width:0;height:0;overflow:hidden}
+::selection{background:var(--accent);color:var(--on-accent)}
+/* Apparitions */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.reveal.vu{opacity:1;transform:none}
+.pas-js .reveal{opacity:1;transform:none}
+/* Sections */
+section{position:relative}
+.sec{padding-block:clamp(72px,11vw,160px)}
+.titre-sec{font-size:clamp(2.2rem,1.2rem + 4.4vw,4.6rem);margin:.5em 0 .4em;letter-spacing:-.01em}
+.titre-sec em{font-style:italic;color:var(--accent)}
+.lead{font-size:clamp(1.05rem,.95rem + .5vw,1.3rem);color:var(--muted);max-width:44ch}
+.num{font:400 clamp(3.4rem,8vw,7rem)/.9 var(--f-titre);color:transparent;-webkit-text-stroke:1px var(--accent);opacity:.65}
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:1.1em 0;white-space:nowrap;font:italic 400 clamp(1.3rem,3vw,2.2rem)/1 var(--f-titre);color:var(--muted)}
+.marquee div{display:inline-flex;gap:2.2em;animation:defile 38s linear infinite;padding-right:2.2em}
+.marquee b{color:var(--accent);font-weight:400}
+@keyframes defile{to{transform:translateX(-50%)}}
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,110px);align-items:start}
+.coord{display:grid;gap:22px;margin:2em 0 2.4em;padding:0;list-style:none}
+.coord li{display:grid;gap:4px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.coord small{font:500 .68rem/1 var(--f-texte);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.coord a,.coord span{font:400 clamp(1.15rem,1rem + .7vw,1.55rem)/1.35 var(--f-titre);text-decoration:none;overflow-wrap:anywhere}
+.coord a:hover{color:var(--accent)}
+form.demo{display:grid;gap:18px;background:var(--bg2);padding:clamp(24px,4vw,48px);border:1px solid var(--line);border-radius:var(--r,0)}
+form.demo label{display:grid;gap:8px;font:500 .7rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+form.demo input,form.demo select,form.demo textarea{font:400 1rem/1.4 var(--f-texte);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;border-radius:0;width:100%;min-width:0;letter-spacing:0;text-transform:none}
+form.demo input:focus,form.demo select:focus,form.demo textarea:focus{outline:none;border-color:var(--accent)}
+form.demo textarea{min-height:110px;resize:vertical}
+form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+/* Pied de page (réf. « footer ») */
+.pied{background:var(--dark);color:var(--on-dark);padding:clamp(64px,9vw,120px) 0 64px;position:relative;overflow:hidden}
+.pied .wrap{display:grid;gap:clamp(30px,5vw,56px)}
+.pied-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,4vw,60px)}
+.pied-marque p{margin:1.1em 0 0;opacity:.7;max-width:30ch;font-family:var(--f-titre);font-style:italic;font-size:1.15rem;line-height:1.4}
+.pied .logo i{border-color:color-mix(in srgb,var(--on-dark) 45%,transparent);color:var(--on-dark)}
+.pied h3{font:500 .68rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent2,var(--accent));margin:.4em 0 1.4em}
+.pied ul{list-style:none;margin:0;padding:0;display:grid;gap:.75em}
+.pied li,.pied li a{font-size:.95rem;opacity:.85;text-decoration:none;overflow-wrap:anywhere}
+.pied li a{position:relative;opacity:1;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s}
+.pied li a:hover{background-size:100% 1px}
+.pied-nom{font:400 clamp(3rem,14vw,13rem)/.85 var(--f-titre);letter-spacing:-.03em;white-space:nowrap;overflow:hidden;text-overflow:clip;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--on-dark) 28%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--on-dark) 16%,transparent),transparent 85%);-webkit-background-clip:text;background-clip:text;user-select:none;margin:0 -.04em}
+.pied-bas{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;font-size:.82rem;opacity:.78;border-top:1px solid color-mix(in srgb,var(--on-dark) 18%,transparent);padding-top:22px}
+.pied-bas a{text-decoration:none;border-bottom:1px solid currentColor}
+.pied-bas .haut{border:1px solid color-mix(in srgb,var(--on-dark) 35%,transparent);padding:.7em 1.1em;border-radius:999px}
+.mentions{font-size:.8rem;opacity:.65;max-width:80ch;line-height:1.6;margin:0}
+.alcool{font-size:.78rem;opacity:.85;margin:0}
+@media(max-width:900px){.pied-cols{grid-template-columns:1fr 1fr}.pied-marque{grid-column:1/-1}}
+@media(max-width:520px){.pied-cols{grid-template-columns:1fr}}
+.badge-orbe{box-shadow:0 6px 20px rgba(0,0,0,.25);position:fixed;right:12px;bottom:12px;z-index:150;font:500 11px/1 system-ui,sans-serif;background:rgba(0,0,0,.74);color:#fff;padding:8px 12px;border-radius:999px;text-decoration:none;letter-spacing:.02em}
+/* ===== Kit premium ORBE ===== */
+:root{--ic1:color-mix(in srgb,var(--accent2,var(--accent)) 45%,#fff);--ic2:var(--accent);--ic3:color-mix(in srgb,var(--accent) 62%,#000);--ic4:color-mix(in srgb,var(--accent2,var(--accent)) 80%,#fff)}
+/* Verre liquide (réf. « liquid glass ») */
+.verre{position:relative;isolation:isolate;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 70%,transparent),color-mix(in srgb,var(--bg) 38%,transparent));
+ -webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);
+ border-radius:clamp(18px,2.4vw,30px);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.12),inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent),0 30px 60px -30px color-mix(in srgb,var(--ink) 40%,transparent)}
+.verre::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:radial-gradient(90% 70% at var(--lx,20%) var(--ly,0%),rgba(255,255,255,.55),transparent 55%);opacity:.55;transition:opacity .4s}
+.verre::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.45));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+/* Bandeau d'accueil (réf. « hero ») */
+.hero{isolation:isolate}
+.hero>.wrap{position:relative;z-index:2}
+.fx{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aur{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(70px);opacity:.42;mix-blend-mode:var(--fx-mode,normal);will-change:transform}
+.aur.a{background:radial-gradient(circle,var(--accent),transparent 65%);left:-18vmax;top:-22vmax;animation:aur1 26s ease-in-out infinite alternate}
+.aur.b{background:radial-gradient(circle,var(--accent2,var(--accent)),transparent 65%);right:-20vmax;top:6vmax;animation:aur2 32s ease-in-out infinite alternate;opacity:.34}
+.aur.c{background:radial-gradient(circle,color-mix(in srgb,var(--accent) 40%,var(--bg)),transparent 65%);left:22%;bottom:-34vmax;animation:aur3 38s ease-in-out infinite alternate;opacity:.3}
+@keyframes aur1{to{transform:translate(14vmax,10vmax) scale(1.15)}}
+@keyframes aur2{to{transform:translate(-12vmax,8vmax) scale(.9)}}
+@keyframes aur3{to{transform:translate(8vmax,-12vmax) scale(1.2)}}
+.spot{position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx,50%) var(--my,40%),color-mix(in srgb,var(--accent2,var(--accent)) 22%,transparent),transparent 60%);opacity:0;transition:opacity .6s}
+.hero:hover .spot{opacity:1}
+.grain{position:absolute;inset:-50%;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(5) infinite}
+@keyframes grain{20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}}
+.hero-pied{position:absolute;left:0;right:0;bottom:clamp(14px,3vh,28px);z-index:3;display:flex;justify-content:space-between;align-items:end;gap:16px;width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto;pointer-events:none}
+.puces{display:flex;flex-wrap:wrap;gap:8px}
+.puce{pointer-events:auto;font:500 .68rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:.85em 1.15em;border-radius:999px;color:inherit;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.18);display:inline-flex;align-items:center;gap:.6em}
+.puce i{width:6px;height:6px;border-radius:50%;background:var(--accent2,var(--accent));box-shadow:0 0 0 3px color-mix(in srgb,var(--accent2,var(--accent)) 30%,transparent)}
+.defiler{pointer-events:auto;position:absolute;left:50%;bottom:0;transform:translateX(-50%);display:inline-flex;flex-direction:column;align-items:center;gap:.8em;text-decoration:none;font:500 .62rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;opacity:.7}
+.defiler i{width:22px;height:36px;border-radius:12px;border:1px solid currentColor;position:relative}
+.defiler i::after{content:"";position:absolute;left:50%;top:7px;width:2px;height:7px;margin-left:-1px;border-radius:2px;background:currentColor;animation:molette 2s ease-in-out infinite}
+@keyframes molette{0%{transform:translateY(0);opacity:1}70%{transform:translateY(11px);opacity:0}100%{opacity:0}}
+@media(max-width:720px){.hero-pied{display:none}}
+.hero h1 k-m{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em;margin-bottom:-.06em}
+.hero h1 k-m>k-w{display:inline-block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.8,.1,1);transition-delay:calc(.15s + var(--m,0) * .07s)}
+.hero h1.vu k-m>k-w,.pas-js .hero h1 k-m>k-w{transform:none}
+/* Tuiles qui s'empilent au défilement (réf. « scroll ») + icônes 3D (réf. « 3D icons ») */
+.tuiles-sec{background:linear-gradient(180deg,var(--bg),var(--bg2) 40%,var(--bg));overflow:clip}
+.tuiles-sec::before{content:"";position:absolute;width:60vmax;height:60vmax;right:-25vmax;top:10%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 65%);filter:blur(40px);pointer-events:none}
+.tuiles-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,100px);align-items:start;position:relative}
+.tuiles-intro{position:sticky;top:120px}
+.tuiles-intro .lead{margin-bottom:2em}
+.tuiles-index{list-style:none;margin:0;padding:0;display:grid;gap:4px;counter-reset:t}
+.tuiles-index li{counter-increment:t;display:flex;gap:1em;align-items:center;font:400 1.05rem/1.3 var(--f-titre);padding:.7em 0;border-top:1px solid var(--line);opacity:.4;transition:opacity .4s,padding .4s}
+.tuiles-index li::before{content:"0" counter(t);font:500 .7rem/1 var(--f-texte);letter-spacing:.16em;color:var(--accent)}
+.tuiles-index li.actif{opacity:1;padding-left:.6em}
+.tuiles{display:grid;gap:clamp(18px,3vh,28px);padding-bottom:6vh}
+.tuile{position:sticky;top:calc(110px + var(--i) * 26px);min-height:clamp(300px,46vh,420px);padding:clamp(26px,4vw,52px);display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,40px);align-items:center;transform-origin:50% 0;transform:scale(var(--s,1));filter:brightness(var(--b,1));transition:transform .2s linear,filter .2s linear;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 88%,transparent),color-mix(in srgb,var(--bg2) 70%,transparent))}
+.tuile .n{font:500 .7rem/1 var(--f-texte);letter-spacing:.24em;color:var(--accent)}
+.tuile h3{font-size:clamp(1.7rem,1.2rem + 1.8vw,2.8rem);margin:.45em 0 .4em;letter-spacing:-.01em}
+.tuile p{color:var(--muted);margin:0;max-width:40ch}
+.lien-fl{display:inline-flex;gap:.6em;margin-top:1.4em;text-decoration:none;font:500 .75rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.lien-fl:hover .fl{transform:translateX(5px)}.lien-fl .fl{transition:transform .3s}
+.ico3d{width:clamp(96px,11vw,150px);aspect-ratio:1;display:grid;place-items:center;border-radius:30%;perspective:600px;
+ background:radial-gradient(120% 120% at 30% 15%,color-mix(in srgb,var(--bg) 95%,#fff),color-mix(in srgb,var(--bg2) 80%,var(--accent) 6%));
+ box-shadow:inset 0 2px 0 rgba(255,255,255,.8),inset 0 -10px 24px -8px color-mix(in srgb,var(--accent) 22%,transparent),0 24px 40px -18px color-mix(in srgb,var(--accent) 55%,transparent),0 2px 6px color-mix(in srgb,var(--ink) 10%,transparent)}
+.ico3d svg{width:64%;height:64%;overflow:visible;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);transition:transform .5s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 10px 10px color-mix(in srgb,var(--ic3) 45%,transparent))}
+.ico3d .p{fill:url(#k3d);filter:url(#relief)}
+.ico3d .s{fill:url(#k3d-b);filter:url(#relief)}
+.ico3d .h{fill:#fff;opacity:.55}
+.tuile:hover .ico3d svg{animation:flotte3d 3s ease-in-out infinite}
+@keyframes flotte3d{50%{translate:0 -6px}}
+@media(max-width:900px){.tuiles-grid{grid-template-columns:1fr}.tuiles-intro{position:static}.tuiles-index{display:none}.tuile{grid-template-columns:1fr;top:calc(84px + var(--i) * 18px);min-height:0}}
+/* Appel à l'action (réf. « CTA ») */
+.cta-bande{position:relative;isolation:isolate;overflow:hidden;background:var(--dark);color:var(--on-dark);padding:clamp(90px,14vw,200px) 0}
+.cta-bande .fx .aur{opacity:.6;--fx-mode:screen}
+.cta-bande .wrap{position:relative;z-index:2}
+.cta-carte{max-width:880px;margin-inline:auto;text-align:center;padding:clamp(40px,7vw,90px) clamp(24px,6vw,80px);background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));color:var(--on-dark);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.14),0 40px 80px -30px rgba(0,0,0,.55)}
+.cta-carte .eyebrow{color:var(--accent2,var(--accent));justify-content:center}
+.cta-carte .eyebrow::after{content:"";width:2.4em;height:1px;background:currentColor}
+.cta-titre{font-size:clamp(2.4rem,1.2rem + 5vw,5.4rem);margin:.45em 0 .35em;letter-spacing:-.02em}
+.cta-carte p{opacity:.8;max-width:46ch;margin:0 auto 2.2em;font-size:1.08rem}
+.cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta-actions .btn{border-radius:999px;padding:1.15em 2em}
+.cta-actions .btn.ligne{color:var(--on-dark);border-color:color-mix(in srgb,var(--on-dark) 40%,transparent)}
+.cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
+.aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
+
+/* Atelier, galerie, décoration */
+.hero{min-height:100svh;display:grid;align-content:end;padding:clamp(110px,16vh,170px) 0 clamp(40px,7vh,80px);background:var(--bg);position:relative;overflow:hidden}
+.hero h1{font-size:clamp(3.4rem,1rem + 12vw,12.5rem);letter-spacing:-.04em;line-height:.84;max-width:12ch;overflow-wrap:anywhere}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-bas{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-top:clamp(28px,5vh,64px);padding-top:28px;border-top:1px solid var(--ink)}
+.hero .accroche{font:italic 400 clamp(1.4rem,1rem + 1.6vw,2.4rem)/1.15 var(--f-titre);max-width:20ch}
+.hero .sous{color:var(--muted);max-width:44ch;margin:0 0 1.6em}
+.formes{position:absolute;right:-4vw;top:clamp(90px,14vh,150px);width:min(54vw,620px);aspect-ratio:1;z-index:0;pointer-events:none}
+.formes svg{width:100%;height:100%;overflow:visible}
+.hero .wrap{position:relative;z-index:1}
+.s1{fill:var(--accent)}.s2{fill:var(--accent2)}.s3{fill:var(--soft2)}.s4{fill:none;stroke:var(--ink);stroke-width:1.4}
+.bouge{animation:bouge 14s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.bouge.b{animation-duration:19s;animation-direction:reverse}
+@keyframes bouge{50%{transform:translate(14px,-18px) rotate(8deg)}}
+.defile-h{display:flex;gap:clamp(14px,2vw,28px);overflow-x:auto;padding:0 clamp(20px,5vw,64px) 24px;scroll-snap-type:x mandatory;scrollbar-width:thin;margin-top:clamp(30px,5vw,60px)}
+.cadre{flex:0 0 clamp(240px,30vw,400px);scroll-snap-align:start;display:grid;gap:12px}
+.cadre .toile{aspect-ratio:4/5;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--bg2);transition:transform .6s}
+.cadre:hover .toile{transform:translateY(-8px)}
+.cadre .toile svg{width:100%;height:100%;display:block}
+.cadre .leg{display:flex;justify-content:space-between;font:500 .7rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.cadre .photo-ici{position:absolute;left:12px;bottom:12px;font:500 .62rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;background:var(--bg);color:var(--ink);padding:7px 10px}
+.esprit{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(36px,7vw,120px)}
+.esprit p{color:var(--muted);max-width:54ch}
+.esprit .grande{font:italic 400 clamp(1.5rem,1.1rem + 1.6vw,2.4rem)/1.25 var(--f-titre);color:var(--ink);margin-bottom:1em}
+.offre{background:var(--dark);color:var(--on-dark)}
+.offre .eyebrow,.offre .titre-sec em{color:var(--accent2)}
+.offre-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,100px);align-items:start}
+.offre-grid .gauche{position:sticky;top:110px}
+.rang{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:clamp(24px,3.4vw,44px) 0;border-top:1px solid color-mix(in srgb,var(--on-dark) 22%,transparent);transition:padding .4s}
+.rang:last-child{border-bottom:1px solid color-mix(in srgb,var(--on-dark) 22%,transparent)}
+.rang:hover{padding-left:14px}
+.rang .n{font:italic 400 1.2rem/1 var(--f-titre);color:var(--accent2)}
+.rang h3{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.4rem);margin-bottom:.4em}
+.rang p{margin:0;opacity:.8;max-width:48ch}
+.proc{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(36px,6vw,72px);border-top:1px solid var(--ink)}
+.pas{padding:clamp(24px,3.4vw,44px) clamp(18px,2.6vw,36px) clamp(24px,3.4vw,44px) 0;display:grid;gap:12px;align-content:start}
+.pas+.pas{padding-left:clamp(18px,2.6vw,36px);border-left:1px solid var(--line)}
+.pas .n{font:400 clamp(3rem,6vw,5rem)/.9 var(--f-titre);color:var(--accent)}
+.pas h3{font-size:clamp(1.4rem,1.1rem + 1.1vw,1.9rem)}
+.pas p{margin:0;color:var(--muted)}
+.cite{padding-block:clamp(72px,11vw,150px);background:var(--soft)}
+.cite blockquote{margin:0;max-width:20ch;font:italic 400 clamp(2rem,1.1rem + 3.8vw,4.4rem)/1.1 var(--f-titre);text-wrap:balance}
+@media(max-width:900px){
+ .hero-bas,.esprit,.offre-grid,.proc{grid-template-columns:1fr}.formes{width:80vw;opacity:.5;top:70px}
+ .offre-grid .gauche{position:static}.pas+.pas{padding-left:0;border-left:0;border-top:1px solid var(--line)}.pas{padding-right:0}
+}
+</style></head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="progres" aria-hidden="true"><i></i></div>
+<svg class="defs-kit" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="k3d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ic1)"/><stop offset=".55" style="stop-color:var(--ic2)"/><stop offset="1" style="stop-color:var(--ic3)"/></linearGradient>
+<linearGradient id="k3d-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--ic4)"/><stop offset="1" style="stop-color:var(--ic2)"/></linearGradient>
+<filter id="relief" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="flou"/>
+<feSpecularLighting in="flou" surfaceScale="4.5" specularConstant=".9" specularExponent="26" lighting-color="#ffffff" result="spec"><fePointLight x="14" y="-6" z="70"/></feSpecularLighting>
+<feComposite in="spec" in2="SourceAlpha" operator="in" result="specin"/>
+<feComposite in="SourceGraphic" in2="specin" operator="arithmetic" k1="0" k2="1" k3=".75" k4="0" result="lumiere"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="ombre"/>
+<feOffset in="ombre" dy="3.5" result="ombre2"/>
+<feComposite in="ombre2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="creux"/>
+<feFlood flood-color="#000" flood-opacity=".28"/><feComposite in2="creux" operator="in" result="creux2"/>
+<feComposite in="creux2" in2="lumiere" operator="atop"/>
+</filter>
+</defs></svg>
+<header class="top" id="top"><div class="wrap">
+<a class="logo" href="#top" aria-label="Ginette Laven L&#x27;Artisane, haut de page"><i aria-hidden="true">G</i><span>Ginette Laven L&#x27;Artisane</span></a>
+<nav id="menu" aria-label="Navigation principale"><a href="#esprit">L’esprit</a><a href="#realisations">Réalisations</a><a href="#offre">Savoir-faire</a><a href="#demarche">Démarche</a><a class="nav-cta" href="#contact">Nous écrire</a></nav>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
+</div></header>
 
-  <!-- HEADER -->
-  <header class="header" id="mainHeader">
-    <div class="header-inner">
-      <a href="#" class="brand" aria-label="Ginette Laven L'Artisane, accueil">
-        <div class="brand-mark" aria-hidden="true">
-          <!-- Monogramme artisanal SVG fil et aiguille stylisés -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2C8 2 4 6 4 11c0 6 8 11 8 11s8-5 8-11c0-5-4-9-8-9z" stroke-dasharray="1 2"/>
-            <path d="M12 7v8M9 11h6"/>
-          </svg>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">Ginette Laven</span>
-          <span class="brand-sub">L'Artisane · Tapissier</span>
-        </div>
-      </a>
+<main id="contenu">
+<section class="hero" aria-label="Accueil"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="spot"></i><i class="grain"></i></div>
+<div class="hero-pied" aria-hidden="true"><div class="puces"><span class="puce"><i></i>Artisan d’art</span></div></div>
 
-      <!-- Desktop Nav -->
-      <nav class="nav-desktop" aria-label="Navigation principale">
-        <a href="#esprit">L'Esprit</a>
-        <a href="#savoir-faire">Savoir-faire</a>
-        <a href="#horaires">Horaires</a>
-        <a href="#contact" class="nav-cta-btn">Prendre Contact</a>
-      </nav>
+<div class="formes" aria-hidden="true" data-parallax=".05"><svg viewBox="0 0 600 600"><circle class="s1 bouge" cx="380" cy="230" r="170"/><rect class="s2 bouge b" x="120" y="250" width="240" height="300" rx="120"/><path class="s3 bouge" d="M300 40 L560 460 L40 460Z" opacity=".85"/><circle class="s4" cx="300" cy="300" r="250"/><path class="s4" d="M50 300h500M300 50v500"/></svg></div>
+<div class="wrap">
+<span class="eyebrow reveal">Artisan d’art</span>
+<h1 class="reveal" style="--d:.1s">Ginette Laven L&#x27;Artisane</h1>
+<div class="hero-bas reveal" style="--d:.25s"><div class="accroche">L&#x27;art du geste et le travail de la matière.</div>
+<div><p class="sous">Un atelier consacré à l&#x27;artisanat d&#x27;art, où chaque création façonnée à la main révèle la noblesse des matières.</p><div style="display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#realisations">Voir l’atelier <span class="fl">→</span></a><a class="btn ligne" href="#contact">Nous écrire</a></div></div></div>
+</div></section>
 
-      <!-- Bouton Menu Mobile -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
+<div class="marquee" aria-hidden="true"><div><span>Atelier</span><b>◆</b><span>Matière</span><b>◆</b><span>Geste</span><b>◆</b><span>Unique</span><b>◆</b><span>Sur-mesure</span><b>◆</b><span>Atelier</span><b>◆</b><span>Matière</span><b>◆</b><span>Geste</span><b>◆</b><span>Unique</span><b>◆</b><span>Sur-mesure</span><b>◆</b></div></div>
 
-  <!-- Navigation Mobile -->
-  <div class="nav-mobile" id="navMobile" aria-hidden="true">
-    <a href="#esprit" class="mobile-link">L'Esprit</a>
-    <a href="#savoir-faire" class="mobile-link">Savoir-faire</a>
-    <a href="#horaires" class="mobile-link">Horaires</a>
-    <a href="#contact" class="mobile-link">Contact</a>
-  </div>
+<section class="sec" id="esprit"><div class="wrap esprit">
+<div class="reveal"><div class="num">01</div><span class="eyebrow">L’esprit</span><h2 class="titre-sec">L&#x27;exigence du travail manuel</h2></div>
+<div class="reveal" style="--d:.12s"><p class="grande">Dans l&#x27;atelier, la matière se transforme sous le geste précis de l&#x27;artisan. Chaque pièce naît d&#x27;une attention constante portée aux détails, à la forme et à l&#x27;équilibre. Nous privilégions une approche sur mesure pour répondre aux demandes les plus exigeantes.</p><p>Le savoir-faire s&#x27;exprime dans la recherche de la perfection et l&#x27;amour du bel ouvrage. Les créations s&#x27;inscrivent dans une démarche de pérennité, associant technicité et sensibilité esthétique.</p></div>
+</div></section>
 
-  <main>
-    <!-- HERO SECTION AVEC BANDEAU 3D THREE.JS -->
-    <section class="hero" id="accueil">
-      <canvas id="hero-canvas" aria-hidden="true"></canvas>
-      <div class="hero-veil"></div>
+<section id="realisations" style="padding-bottom:clamp(60px,9vw,120px)"><div class="wrap reveal"><span class="eyebrow">Réalisations</span><h2 class="titre-sec">Un espace pour <em>vos pièces</em></h2><p class="lead">Les cadres ci-dessous attendent vos photos : chaque création y trouvera sa place.</p></div>
+<div class="defile-h" tabindex="0" aria-label="Galerie, défilement horizontal">
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s3"/><circle class="s1" cx="200" cy="210" r="120"/><rect class="s2" x="90" y="300" width="220" height="130"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 01</span><span>→</span></figcaption></figure>
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s2"/><path class="s3" d="M0 500 L400 80 V500Z"/><circle class="s1" cx="130" cy="150" r="70"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 02</span><span>→</span></figcaption></figure>
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s1"/><rect class="s3" x="60" y="70" width="280" height="360" rx="140"/><circle class="s2" cx="200" cy="250" r="64"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 03</span><span>→</span></figcaption></figure>
+<figure class="cadre" style="margin:0"><div class="toile"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="500" class="s3"/><path class="s2" d="M0 0H400V250Z"/><path class="s1" d="M0 500V260L400 500Z"/><circle class="s4" cx="200" cy="250" r="90"/></svg><span class="photo-ici">Votre photo ici</span></div><figcaption class="leg"><span>Pièce 04</span><span>→</span></figcaption></figure>
+</div></section>
 
-      <div class="hero-content">
-        <span class="hero-pretitle">Atelier d'Art &amp; Tapisserie d'Ameublement</span>
-        <h1 class="hero-title">L'art de sublimer la matière et d'honorer le <em>siège d'exception</em></h1>
-        <p class="hero-sub">
-          L'exigence du geste traditionnel, la précision des assemblages et la noblesse des étoffes au service d'un artisanat d'art durable.
-        </p>
-        <div class="btn-group">
-          <a href="#contact" class="btn btn-primary">Échanger sur votre projet</a>
-          <a href="#savoir-faire" class="btn btn-secondary">Découvrir l'Atelier</a>
-        </div>
-      </div>
-    </section>
+<section class="sec offre" id="offre"><div class="wrap offre-grid">
+<div class="gauche reveal"><span class="eyebrow">Ce que nous faisons</span><h2 class="titre-sec">Nos prestations</h2></div>
+<div>
+<div class="rang reveal"><span class="n">01</span><div><h3>Créations sur mesure</h3><p>Conception et réalisation d&#x27;objets singuliers selon vos besoins et vos envies.</p></div></div>
+<div class="rang reveal"><span class="n">02</span><div><h3>Pièces d&#x27;exception</h3><p>Travail minutieux des matières pour donner vie à des œuvres durables.</p></div></div>
+<div class="rang reveal"><span class="n">03</span><div><h3>Restauration et soin</h3><p>Entretien et conservation de vos pièces rares dans le respect des gestes traditionnels.</p></div></div>
+</div></div></section>
 
-    <!-- SECTION L'ESPRIT -->
-    <section id="esprit" class="reveal">
-      <div class="container">
-        <div class="grid-artisan">
-          <div class="story-card">
-            <span class="eyebrow">Artisanat d'art &amp; Précision</span>
-            <h2 class="section-title">Le respect scrupuleux du temps et des fibres</h2>
-            <p>
-              Tapissière d'ameublement, Ginette Laven met en œuvre les techniques fondamentales de l'artisanat d'art pour préserver, restaurer et réinventer les pièces qui habitent vos intérieurs.
-            </p>
-            <p>
-              Chaque intervention repose sur une compréhension intime des formes, des volumes et de la structure du mobilier. Du sanglage méticuleux à la pose minutieuse de la toile d'embourrure, la main compose avec l'histoire de chaque pièce.
-            </p>
-            <div class="story-quote">
-              « Redonner assise, équilibre et dignité aux assises d'hier comme aux créations contemporaines. »
-            </div>
-          </div>
+<section class="sec tuiles-sec" id="demarche"><div class="wrap tuiles-grid">
+<div class="tuiles-intro reveal"><span class="eyebrow">La démarche</span><h2 class="titre-sec">Le déroulement de votre projet</h2>
+<p class="lead">Une façon de travailler claire, du premier échange à la pièce finie.</p>
+<ol class="tuiles-index" aria-hidden="true"><li>Premier échange</li><li>Façonnage à l&#x27;atelier</li><li>Livrables et finitions</li></ol></div>
+<div class="tuiles">
+<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M10 14a10 10 0 0 1 10-10h24a10 10 0 0 1 10 10v18a10 10 0 0 1-10 10H28l-12 11v-11h0a6 6 0 0 1-6-6Z"/><g class="h" opacity=".9"><circle cx="22" cy="23" r="3.6"/><circle cx="32" cy="23" r="3.6"/><circle cx="42" cy="23" r="3.6"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>Premier échange</h3><p>Nous étudions votre projet pour comprendre vos attentes et définir les orientations.</p></div></article>
+<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M44 6l14 14-30 30-14-14Z"/><path class="s" d="M14 36l14 14-20 6Z"/><path class="s" d="M44 6l5-5 14 14-5 5Z"/><path class="h" d="M41 12l4 4-24 24-4-4Z" opacity=".35"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Façonnage à l&#x27;atelier</h3><p>Chaque élément est travaillé à la main avec une exigence constante de qualité.</p></div></article>
+<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="s" d="M32 4l26 14-26 14L6 18Z"/><path class="p" d="M6 18l26 14v28L6 46Z"/><path class="p" d="M58 18L32 32v28l26-14Z" style="filter:url(#relief) brightness(.78)"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Livrables et finitions</h3><p>Nous vous présentons la pièce achevée, prête à traverser le temps.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
+</div></div></section>
 
-          <div class="art-visual-wrapper">
-            <div class="frame-illustration">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg/1920px-Craftsman_shaping_wood_at_a_workshop_with_precision_and_skill_during_the_daytime.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
-                alt="Artisan au travail dans son atelier, gestuelle minutieuse" 
-                loading="lazy" 
-                width="800" 
-                height="600">
-              <div class="img-credit-tag">Image d'illustration</div>
-            </div>
-            <div class="visual-subbox">
-              Vos réalisations à l'atelier ici
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- SECTION SAVOIR-FAIRE & OFFRE -->
-    <section id="savoir-faire" class="services-bg reveal">
-      <div class="container">
-        <div class="section-head center">
-          <span class="eyebrow">Domaines d'intervention</span>
-          <h2 class="section-title">L'art du garnissage &amp; de l'ameublement</h2>
-          <p class="section-intro">Une approche patiente et mesurée pour chaque meuble, en accord avec les règles strictes des métiers d'art.</p>
-        </div>
+<section class="cite"><div class="wrap reveal"><blockquote>La beauté d&#x27;un objet réside dans la précision du geste qui l&#x27;a façonné.</blockquote></div></section>
 
-        <div class="cards-grid">
-          <!-- Carte 1 -->
-          <article class="craft-card">
-            <div>
-              <svg class="craft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 18v2h16v-2M6 18V8a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v10"/>
-                <path d="M9 12h6M9 15h6"/>
-              </svg>
-              <h3>Garnissage Traditionnel</h3>
-              <p>
-                Pose de sangles en jute, mise en place des ressorts guindés et façonnage du profil au crin végétal ou animal pour une longévité sans égal.
-              </p>
-            </div>
-            <div class="craft-note">Restauration à l'identique</div>
-          </article>
+<section class="cta-bande" aria-label="Nous contacter"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="grain"></i></div>
+<div class="wrap"><div class="cta-carte verre reveal">
+<span class="eyebrow">Votre projet</span>
+<h2 class="cta-titre">Parlons de ce que vous imaginez.</h2>
+<p>Une pièce, un lieu, une envie : décrivez-nous votre projet, nous vous répondrons.</p>
+<div class="cta-actions"><a class="btn aimant" href="#contact">Nous écrire <span class="fl">→</span></a><a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=Ginette%20Laven%20L%27Artisane" target="_blank" rel="noopener">Itinéraire</a></div>
+</div></div></section>
 
-          <!-- Carte 2 -->
-          <article class="craft-card">
-            <div>
-              <svg class="craft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="4" width="18" height="16" rx="2"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-                <line x1="10" y1="4" x2="10" y2="20"/>
-              </svg>
-              <h3>Couverture &amp; Finitions</h3>
-              <p>
-                Tension des soieries, velours, toiles de lin et cuirs nobles. Finitions soignées au galon, au passepoil ou clous décoratifs posés un à un.
-              </p>
-            </div>
-            <div class="craft-note">Matières d'exception</div>
-          </article>
+<section class="sec" id="contact"><div class="wrap contact-grid">
+<div class="reveal"><span class="eyebrow">Contact</span>
+<h2 class="titre-sec">Prendre contact</h2>
+<p class="lead">Un projet, une pièce, une question ? Écrivez-nous, nous vous répondrons.</p>
+<ul class="coord"><li><small>Email</small><a href="mailto:lartisane.ginette@gmail.com">lartisane.ginette@gmail.com</a></li></ul>
+<a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=Ginette%20Laven%20L%27Artisane" target="_blank" rel="noopener">Itinéraire <span class="fl">→</span></a></div>
+<form class="demo reveal" style="--d:.12s" novalidate>
+<label>Votre nom<input type="text" name="nom" autocomplete="name"></label>
+<label>Votre email<input type="email" name="email" autocomplete="email"></label>
+<label>Votre demande<select name="objet"><option>Un projet sur mesure</option><option>Une pièce ou un conseil</option><option>Une visite de l’atelier</option><option>Autre demande</option></select></label>
+<label>Votre message<textarea name="message"></textarea></label>
+<button class="btn" type="submit">Envoyer <span class="fl">→</span></button>
+<p class="retour" aria-live="polite"></p>
+</form></div></section>
 
-          <!-- Carte 3 -->
-          <article class="craft-card">
-            <div>
-              <svg class="craft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M12 7v5l3 3"/>
-              </svg>
-              <h3>Conseil &amp; Étude d'Assise</h3>
-              <p>
-                Accompagnement personnalisé pour déterminer le confort adéquat, le choix des harmonies textiles et la cohérence stylistique de votre mobilier.
-              </p>
-            </div>
-            <div class="craft-note">Sur rendez-vous</div>
-          </article>
-        </div>
+</main>
+<footer class="pied"><div class="wrap">
+<div class="pied-cols">
+<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">G</i><span>Ginette Laven L&#x27;Artisane</span></a><p>L&#x27;art du geste et le travail de la matière.</p></div>
+<div><h3>Naviguer</h3><ul><li><a href="#esprit">L’esprit</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#offre">Savoir-faire</a></li><li><a href="#demarche">Démarche</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div><h3>Nous trouver</h3><ul><li>Nouvelle-Aquitaine</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Ginette%20Laven%20L%27Artisane" target="_blank" rel="noopener">Itinéraire →</a></li></ul></div>
+<div><h3>Nous joindre</h3><ul><li><a href="mailto:lartisane.ginette@gmail.com">lartisane.ginette@gmail.com</a></li><li><a href="#contact">Formulaire de contact</a></li></ul></div>
+</div>
+<div class="pied-nom" aria-hidden="true">Ginette Laven L&#x27;Artisane</div>
 
-        <!-- Emplacement réservé pour les photos du commerçant -->
-        <div class="atelier-gallery-slot">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-          <span>Galerie de l'atelier · Vos photos ici</span>
-          <p>Cet espace est destiné à recevoir les photographies de vos créations de fauteuils, canapés et détails de passementerie.</p>
-        </div>
-      </div>
-    </section>
+<p class="mentions" id="mentions">Mentions légales — Éditeur : Ginette Laven L&#x27;Artisane. Maquette de démonstration réalisée par ORBE : les mentions complètes (numéro d’immatriculation, hébergeur, responsable de publication) seront renseignées avec vous avant toute mise en ligne.</p>
+<div class="pied-bas"><span>© <span data-annee>2026</span> Ginette Laven L&#x27;Artisane</span><span>Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></span><a href="#top" class="haut">Haut de page ↑</a></div>
+</div></footer>
+<a class="badge-orbe" href="mailto:societe.orbe@gmail.com">Maquette proposée par ORBE</a>
 
-    <!-- SECTION HORAIRES & CONTACT -->
-    <section id="horaires" class="info-section reveal">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Informations &amp; Accueil</span>
-          <h2 class="section-title">Organiser votre visite</h2>
-          <p class="section-intro">L'atelier vous accueille du lundi au vendredi sur rendez-vous ou pour l'étude de vos projets.</p>
-        </div>
+<script>
+(function(){
+var d=document,r=d.documentElement;r.classList.remove('pas-js');
+var top=d.querySelector('.top'),btn=d.querySelector('.menu-btn'),nav=d.querySelector('.top nav');
+function onScroll(){if(top)top.classList.toggle('fond',window.scrollY>40);
+ var s=window.scrollY;d.querySelectorAll('[data-parallax]').forEach(function(e){e.style.transform='translate3d(0,'+(s*parseFloat(e.dataset.parallax))+'px,0)'});}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+if(btn){btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')!=='true';btn.setAttribute('aria-expanded',o);nav.classList.toggle('ouvert',o);top.classList.toggle('ouvert-menu',o);d.body.style.overflow=o?'hidden':''});
+ nav.addEventListener('click',function(e){if(e.target.tagName==='A'){btn.setAttribute('aria-expanded','false');nav.classList.remove('ouvert');top.classList.remove('ouvert-menu');d.body.style.overflow=''}});}
+var els=[].slice.call(d.querySelectorAll('.reveal'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('vu')})}
+d.querySelectorAll('form.demo').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var p=f.querySelector('.retour');if(p)p.textContent='Démonstration : ce formulaire sera relié à votre boîte mail.'})});
+var y=d.querySelector('[data-annee]');if(y)y.textContent=new Date().getFullYear();
+})();
+/* Kit premium ORBE : titre animé, lumière, barre de progression, tuiles empilées, icônes 3D, bouton aimanté */
+(function(){
+var d=document,w=window,calme=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+d.querySelectorAll('.hero h1').forEach(function(h){var n=0;[].slice.call(h.childNodes).forEach(function(t){if(t.nodeType!==3||!t.textContent.trim())return;var f=d.createDocumentFragment();t.textContent.split(/(\s+)/).forEach(function(m){if(!m)return;if(/^\s+$/.test(m)){f.appendChild(d.createTextNode(' '));return}var o=d.createElement('k-m');var b=d.createElement('k-w');b.textContent=m;b.style.setProperty('--m',n++);o.appendChild(b);f.appendChild(o)});h.replaceChild(f,t)})});
+var hero=d.querySelector('.hero');
+if(hero&&!calme){hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px')})}
+d.querySelectorAll('.verre').forEach(function(v){v.addEventListener('pointermove',function(e){var r=v.getBoundingClientRect();v.style.setProperty('--lx',((e.clientX-r.left)/r.width*100)+'%');v.style.setProperty('--ly',((e.clientY-r.top)/r.height*100)+'%')})});
+var bar=d.querySelector('.progres'),tu=[].slice.call(d.querySelectorAll('.tuile')),idx=[].slice.call(d.querySelectorAll('.tuiles-index li'));
+var att=false;function maj(){att=false;var h=d.documentElement.scrollHeight-w.innerHeight;if(bar)bar.style.setProperty('--p',h>0?Math.min(1,w.scrollY/h):0);
+ var act=0;tu.forEach(function(t,i){var r=t.getBoundingClientRect();if(r.top<w.innerHeight*.55)act=i;if(calme)return;var s=tu[i+1];if(!s){t.style.setProperty('--s',1);t.style.setProperty('--b',1);return}
+  var q=s.getBoundingClientRect(),k=Math.max(0,Math.min(1,1-(q.top-r.top)/(r.height||1)));t.style.setProperty('--s',(1-k*.06).toFixed(4));t.style.setProperty('--b',(1-k*.12).toFixed(4))});
+ idx.forEach(function(l,i){l.classList.toggle('actif',i===act)});}
+w.addEventListener('scroll',function(){if(!att){att=true;requestAnimationFrame(maj)}},{passive:true});w.addEventListener('resize',maj);maj();
+if(!calme&&w.matchMedia('(hover: hover)').matches){
+ d.querySelectorAll('.ico3d').forEach(function(c){var t=c.closest('.tuile')||c;t.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--ry',(x*28)+'deg');c.style.setProperty('--rx',(-y*28)+'deg')});t.addEventListener('pointerleave',function(){c.style.setProperty('--ry','0deg');c.style.setProperty('--rx','0deg')})});
+ d.querySelectorAll('.aimant').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.28)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});}
+})();
+(function(){var n=document.querySelector('.pied-nom');if(!n)return;function fit(){n.style.fontSize='';var t=0;while(n.scrollWidth>n.clientWidth+2&&t++<40){n.style.fontSize=(parseFloat(getComputedStyle(n).fontSize)*.94)+'px'}}
+fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 
-        <div class="info-layout">
-          <!-- Heures d'ouverture vérifiées -->
-          <div class="info-panel">
-            <h3 style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--gold);">Horaires d'ouverture</h3>
-            
-            <div class="info-row">
-              <span class="info-label">Lundi</span>
-              <span class="info-value">09:00 – 19:00</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Mardi</span>
-              <span class="info-value">09:00 – 19:00</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Mercredi</span>
-              <span class="info-value">09:00 – 19:00</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Jeudi</span>
-              <span class="info-value">09:00 – 19:00</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Vendredi</span>
-              <span class="info-value">09:00 – 19:00</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Samedi &amp; Dimanche</span>
-              <span class="info-value" style="color: var(--text-dim);">Fermé</span>
-            </div>
-          </div>
-
-          <!-- Prise de contact -->
-          <div class="contact-card-direct" id="contact">
-            <div>
-              <span class="eyebrow">Correspondance</span>
-              <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Transmettre votre demande</h3>
-              <p style="color: var(--text-muted); font-size: 0.95rem; font-weight: 300; line-height: 1.7;">
-                Pour toute réfection de fauteuil, confection sur mesure ou demande d'évaluation textile, vous pouvez transmettre un descriptif ou des photographies directement par courriel.
-              </p>
-              
-              <div class="contact-link-box">
-                <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-bottom: 0.4rem;">Courriel de l'atelier</div>
-                <a href="mailto:lartisane.ginette@gmail.com" class="email-link">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2"/>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                  </svg>
-                  lartisane.ginette@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div style="margin-top: 2rem; font-size: 0.8rem; color: var(--text-dim);">
-              <p>Visites et consultations sur rendez-vous préalable du lundi au vendredi.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand-title">Ginette Laven L'Artisane</div>
-        <p style="max-width: 380px; line-height: 1.6;">
-          Atelier d'artisanat d'art dédié à la tapisserie d'ameublement, au garnissage traditionnel et à la préservation du patrimoine mobilier.
-        </p>
-      </div>
-      <div class="footer-links-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#esprit">L'Esprit</a></li>
-          <li><a href="#savoir-faire">Savoir-faire</a></li>
-          <li><a href="#horaires">Horaires</a></li>
-        </ul>
-      </div>
-      <div class="footer-links-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:lartisane.ginette@gmail.com">lartisane.ginette@gmail.com</a></li>
-          <li><span style="color: var(--text-dim);">Lun – Ven : 09h – 19h</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div>
-        &copy; Ginette Laven L'Artisane · Métiers d'Art
-      </div>
-      <div>
-        Photo : Shixart1985 (CC BY 2.0)
-      </div>
-      <div class="orbe-mention">
-        Proposition de site réalisée par ORBE, studio digital · societe.orbe@gmail.com
-      </div>
-    </div>
-  </footer>
-
-  <!-- BADGE FIXE DISCRET ORBE -->
-  <a href="mailto:societe.orbe@gmail.com" class="orbe-badge" title="Studio digital ORBE">
-    <span class="orbe-badge-dot"></span>
-    <span>Maquette proposée par ORBE</span>
-  </a>
-
-  <!-- SCRIPTS -->
-  <script>
-    // Header navigation et menu mobile
-    const header = document.getElementById('mainHeader');
-    const menuToggle = document.getElementById('menuToggle');
-    const navMobile = document.getElementById('navMobile');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }, { passive: true });
-
-    function toggleMenu() {
-      const isOpen = navMobile.classList.contains('open');
-      navMobile.classList.toggle('open');
-      menuToggle.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', !isOpen);
-      document.body.style.overflow = isOpen ? '' : 'hidden';
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (navMobile.classList.contains('open')) {
-          toggleMenu();
-        }
-      });
-    });
-
-    // Intersection Observer pour les apparitions douces
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, { threshold: 0.15 });
-
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    } else {
-      document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-    }
-
-    // BANDEAU 3D THREE.JS (Abstrait : courbes d'étoffes, trames souples et fils soyeux)
-    window.addEventListener('DOMContentLoaded', () => {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReducedMotion) return;
-
-      const canvas = document.getElementById('hero-canvas');
-      if (!canvas) return;
-
-      // Attendre Three.js en différé si besoin
-      const initThree = () => {
-        try {
-          if (typeof THREE === 'undefined') return;
-
-          const scene = new THREE.Scene();
-          const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-          camera.position.z = 24;
-
-          const renderer = new THREE.WebGLRenderer({
-            canvas: canvas,
-            alpha: true,
-            antialias: true,
-            powerPreference: 'low-power'
-          });
-
-          const updatePixelRatio = () => {
-            const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-            renderer.setPixelRatio(pixelRatio);
-            renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
-            camera.aspect = canvas.clientWidth / canvas.clientHeight;
-            camera.updateProjectionMatrix();
-          };
-
-          updatePixelRatio();
-
-          // Géométrie abstraite : maillage de rubans / fibres de tapisserie ondoyantes
-          const group = new THREE.Group();
-          scene.add(group);
-
-          // Couleurs de la palette : Or artisanal (#d3ab77) et terre soyeuse (#9e7845)
-          const ribbonCount = 5;
-          const ribbons = [];
-
-          for (let r = 0; r < ribbonCount; r++) {
-            const curvePoints = [];
-            const segments = 60;
-            const yOffset = (r - 2) * 2.8;
-            for (let i = 0; i <= segments; i++) {
-              const x = (i - segments / 2) * 0.9;
-              curvePoints.push(new THREE.Vector3(x, yOffset, 0));
-            }
-
-            const curve = new THREE.CatmullRomCurve3(curvePoints);
-            const tubeGeo = new THREE.TubeGeometry(curve, 70, 0.28, 12, false);
-            
-            // Matériau doux et subtil
-            const tubeMat = new THREE.MeshBasicMaterial({
-              color: r % 2 === 0 ? 0xd3ab77 : 0x8a6d47,
-              wireframe: true,
-              transparent: true,
-              opacity: 0.35 + (r * 0.05)
-            });
-
-            const mesh = new THREE.Mesh(tubeGeo, tubeMat);
-            group.add(mesh);
-            ribbons.push({ mesh, initialY: yOffset, offset: r * 1.2 });
-          }
-
-          // Particules discrètes évoquant les microfibres de lin
-          const particleCount = 45;
-          const pGeo = new THREE.BufferGeometry();
-          const pPos = new Float32Array(particleCount * 3);
-
-          for (let p = 0; p < particleCount * 3; p += 3) {
-            pPos[p] = (Math.random() - 0.5) * 35;
-            pPos[p + 1] = (Math.random() - 0.5) * 20;
-            pPos[p + 2] = (Math.random() - 0.5) * 15;
-          }
-
-          pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-          const pMat = new THREE.PointsMaterial({
-            color: 0xf5f2eb,
-            size: 0.12,
-            transparent: true,
-            opacity: 0.25
-          });
-
-          const particleSystem = new THREE.Points(pGeo, pMat);
-          group.add(particleSystem);
-
-          // Rotation lente globale
-          let animationFrameId;
-          let clock = new THREE.Clock();
-          let isRunning = true;
-
-          const animate = () => {
-            if (!isRunning) return;
-
-            const t = clock.getElapsedTime() * 0.45;
-
-            // Déformation sinueuse très lente
-            ribbons.forEach((rib, idx) => {
-              rib.mesh.rotation.x = Math.sin(t * 0.4 + rib.offset) * 0.25;
-              rib.mesh.rotation.y = Math.cos(t * 0.3 + rib.offset) * 0.3;
-              rib.mesh.position.y = rib.initialY + Math.sin(t * 0.5 + rib.offset) * 0.4;
-            });
-
-            group.rotation.z = Math.sin(t * 0.2) * 0.08;
-            particleSystem.rotation.y = t * 0.03;
-
-            renderer.render(scene, camera);
-            animationFrameId = requestAnimationFrame(animate);
-          };
-
-          animate();
-
-          // Pause lorsque la fenêtre/l'onglet est masqué
-          document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-              isRunning = false;
-            } else {
-              if (!isRunning) {
-                isRunning = true;
-                clock.start();
-                animate();
-              }
-            }
-          });
-
-          // Redimensionnement
-          window.addEventListener('resize', () => {
-            updatePixelRatio();
-          });
-
-        } catch (e) {
-          // Dégradation gracieuse : le fond CSS est déjà présent
-          console.warn('Canvas 3D ignoré:', e);
-        }
-      };
-
-      if (window.THREE) {
-        initThree();
-      } else {
-        const checkThreeInterval = setInterval(() => {
-          if (window.THREE) {
-            clearInterval(checkThreeInterval);
-            initThree();
-          }
-        }, 80);
-      }
-    });
-  </script>
-</body>
-</html>
+</script>
+</body></html>
