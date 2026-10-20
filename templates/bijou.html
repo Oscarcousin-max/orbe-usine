@@ -128,7 +128,7 @@ function dessine(){var m=M[st.m],p=P[st.p];
  +'<polygon points="104,96 196,96 214,60 186,38 114,38 86,60" fill="url(#gp)" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/>'
  +'<polygon points="114,38 186,38 150,96" fill="#fff" opacity=".22"/><polygon points="86,60 104,96 150,96" fill="#000" opacity=".12"/><polygon points="214,60 196,96 150,96" fill="#000" opacity=".2"/><polygon points="86,60 114,38 150,96" fill="#fff" opacity=".1"/>'
  +'<polygon points="128,50 148,44 140,64" fill="#fff" opacity=".7"><animate attributeName="opacity" values=".15;.9;.15" dur="3.4s" repeatCount="indefinite"/></polygon>';
- document.getElementById('bague').innerHTML=s;}
+ var g=document.getElementById('bague');if(g)g.innerHTML=s;}
 document.querySelectorAll('.opt .ligne-b').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});st[g.dataset.g]=+b.dataset.v;dessine()})});
 dessine();})();
 </script>

@@ -33,7 +33,7 @@ donc avec un lien de recherche Google, pour vérifier d'un coup d'œil.
 ## Lancer l'usine à la main
 
 Onglet **Actions** → « Usine à sites ORBE » → **Run workflow** → indique combien de sites.
-Toute modification des modèles (`templates/`, `rendu.py`, `usine.py`) relance aussi l'usine toute seule : 30 sites, et les sites des 4 derniers jours sont refaits avec les nouveaux modèles.
+Toute modification des modèles (`templates/`, `rendu.py`, `usine.py`) relance aussi l'usine toute seule : les sites des 4 derniers jours sont refaits avec les nouveaux modèles (même lien).
 
 ## Où sont les sites ?
 

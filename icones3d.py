@@ -47,6 +47,6 @@ PAR_FAMILLE = {
 }
 
 
-def icones(famille):
-    noms = PAR_FAMILLE.get(famille, ("bulle", "etoile", "coeur"))
+def icones(famille, noms=None):
+    noms = noms or PAR_FAMILLE.get(famille, ("bulle", "etoile", "coeur"))
     return ['<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">%s</svg>' % _I[n] for n in noms]

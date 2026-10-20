@@ -38,7 +38,7 @@ URL = {  # modifiables seulement pour les tests
     "groq": os.environ.get("USINE_GROQ_URL", "https://api.groq.com/openai/v1"),
     "or": os.environ.get("USINE_OR_URL", "https://openrouter.ai/api/v1"),
 }
-NOMBRE = max(1, min(30, int(os.environ.get("NOMBRE", "15") or 15)))
+NOMBRE = max(0, min(30, int(os.environ.get("NOMBRE", "15") or 0)))
 PAUSE = float(os.environ.get("USINE_PAUSE", "6"))
 # Sans cette carte de visite, Cloudflare bloque Python à l'entrée (erreur 403 / code 1010).
 NAVIGATEUR = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
@@ -384,7 +384,7 @@ def fabriquer_site(fiche, faits):
         brut = lire_json(txt)
     except Exception as e:
         journal("  textes de l'IA indisponibles (%s) : textes de secours" % str(e)[:120])
-    textes, refuses = rendu.valider_textes(brut, famille)
+    textes, refuses = rendu.valider_textes(brut, famille, fiche["secteur"])
     if brut is not None and refuses:
         journal("  %d textes écartés (faits non vérifiables), remplacés par des textes sobres : %s" % (len(refuses), ", ".join(refuses[:6])))
     html, modele_site = rendu.fabriquer(fiche["secteur"], faits, textes)
@@ -435,6 +435,10 @@ def main():
     noms |= {norm(x.get("nom")) for x in liste.get("items", [])}
     if os.environ.get("REFAIRE", "") == "1":
         refaire_recents(liste)
+    if NOMBRE == 0:  # simple mise à jour du design des sites récents
+        LISTE.write_text(json.dumps(liste, ensure_ascii=False, indent=1), "utf-8")
+        journal("Aucun nouveau site demandé : seulement les sites récents refaits.")
+        return
     jour = datetime.now(timezone.utc).timetuple().tm_yday
     secteurs = [SECTEURS[(jour + k) % len(SECTEURS)] for k in (0, 4, 8)]
     zones = [MAISON, VOISINS[jour % len(VOISINS)]]

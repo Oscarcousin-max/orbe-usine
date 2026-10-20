@@ -41,8 +41,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          # Une mise à jour des modèles (push) lance une grosse fournée et refait les sites récents.
-          NOMBRE: ${{ github.event.inputs.nombre || (github.event_name == 'push' && '30') || '15' }}
+          # Une mise à jour des modèles (push) refait seulement les sites récents avec le nouveau design.
+          NOMBRE: ${{ github.event.inputs.nombre || (github.event_name == 'push' && '0') || '15' }}
           REFAIRE: ${{ github.event.inputs.refaire || (github.event_name == 'push' && '1') || '0' }}
         run: |
           mkdir -p data

@@ -262,6 +262,80 @@ def esc(s):
     return _html.escape(str(s or ""), quote=True)
 
 
+# Variantes par secteur : certains secteurs partagent un modèle mais ne doivent pas en garder
+# les éléments propres à un autre métier (pas de configurateur de bague pour un coiffeur,
+# pas de « domaine » ni de saisons de la vigne pour une cave en ville).
+VARIANTES = {
+    "caves à vin et bars à vin": dict(
+        nav=[("esprit", "La cave"), ("offre", "La sélection"), ("visite", "Venir")], cta_hero="Découvrir la cave",
+        retirer=["saisons"], marquee=["Sélection", "Conseil", "Dégustation", "Terroirs", "Partage"],
+        remplacer=[("L’esprit du domaine", "L’esprit de la cave"), ("Au domaine", "À la cave")],
+        indice="cave à vins ou bar à vins en ville : sélection de bouteilles, conseil, dégustation, convivialité. Ce n'est PAS un domaine viticole : pas de vignes, pas de chai, pas de vendanges. Pas de nom de vin, de cépage, d'appellation ni de prix.",
+        kit=dict(tuiles_eyebrow="Venir", tuiles_lead="Trois temps simples pour trouver la bouteille qui vous ressemble.",
+                 cta_eyebrow="À la cave", cta_titre="Passez nous voir.", cta_texte="Une bouteille à offrir, un conseil, une envie de découvrir : écrivez-nous ou poussez la porte."),
+        defauts=dict(accroche="Des bouteilles choisies, des conseils sincères", sous_titre="Une cave où l’on prend le temps de choisir, de goûter et d’échanger.",
+                     esprit_titre="Une cave, un regard", esprit_1="Chaque bouteille a été choisie pour une raison : un goût, une histoire, une rencontre. Ici, on aime en parler simplement, sans jargon.",
+                     esprit_2="Que vous cherchiez un vin pour ce soir ou un cadeau qui marque, nous vous aidons à trouver la bonne bouteille.",
+                     offre_titre="Ce que vous trouverez ici", o1_t="La sélection", o1_d="Des vins choisis avec soin, à découvrir au fil des visites.",
+                     o2_t="Le conseil", o2_d="Un échange pour trouver la bouteille qui correspond à l’occasion.",
+                     o3_t="Les moments", o3_d="Un lieu où l’on se retrouve, simplement, autour d’un verre.",
+                     exp_titre="Venir à la cave", e1_t="Nous parler", e1_d="Une occasion, un plat, un budget : quelques mots suffisent pour commencer.",
+                     e2_t="Goûter", e2_d="Découvrir, comparer, se laisser surprendre, à votre rythme.",
+                     e3_t="Repartir avec", e3_d="La bonne bouteille, et l’envie de revenir.", citation="Un bon vin se partage.", contact_titre="Venir nous voir")),
+    "instituts de beauté et coiffeurs": dict(
+        visuel="orbe", icones=("bulle", "etoile", "coeur"),
+        nav=[("esprit", "La maison"), ("offre", "Les soins"), ("services", "Votre visite")], cta_hero="Prendre rendez-vous", cta_cible="contact",
+        retirer=["sur-mesure"], marquee=["Écoute", "Soin", "Précision", "Bien-être", "Élégance"],
+        remplacer=[(">En boutique<", ">Au salon<"), (">Sur demande<", ">Votre visite<")],
+        objets=["Un rendez-vous", "Une question sur une prestation", "Un conseil", "Autre demande"],
+        texte_contact="Pour un rendez-vous, un conseil ou une question, écrivez-nous ou passez nous voir.",
+        indice="salon de coiffure, barbier ou institut de beauté : accueil, écoute, soins, gestes précis, conseil, moment pour soi. Pas de marque de produit, de prix ni de nom de soin précis.",
+        kit=dict(tuiles_eyebrow="Votre visite", tuiles_lead="Un moment pour vous, du premier mot à la touche finale.",
+                 cta_eyebrow="Rendez-vous", cta_titre="Prenez un moment pour vous.", cta_texte="Pour réserver ou poser une question, un simple message suffit."),
+        defauts=dict(accroche="Un moment pour soi, entre de bonnes mains", sous_titre="Un lieu où l’on prend le temps de vous écouter avant de prendre soin de vous.",
+                     esprit_titre="L’écoute avant le geste", esprit_1="Chaque visite commence par un échange : vos envies, vos habitudes, ce qui vous ressemble. Le geste vient ensuite, précis et attentif.",
+                     esprit_2="Ici, on aime que vous repartiez en vous sentant bien, simplement.", offre_titre="Nos prestations",
+                     o1_t="Le soin", o1_d="Des prestations réalisées avec attention et précision.", o2_t="Le conseil", o2_d="Un regard professionnel pour trouver ce qui vous va.",
+                     o3_t="Le moment", o3_d="Un temps calme, rien que pour vous.", exp_titre="Votre visite", e1_t="L’accueil", e1_d="Un échange pour comprendre vos attentes.",
+                     e2_t="Le soin", e2_d="Des gestes sûrs, à votre rythme.", e3_t="La touche finale", e3_d="Des conseils pour prolonger l’effet chez vous.",
+                     citation="Prendre soin de soi n’est jamais du temps perdu.", contact_titre="Prendre rendez-vous")),
+    "boutiques de mode et maroquinerie": dict(
+        visuel="orbe", icones=("bulle", "etoile", "coeur"),
+        nav=[("esprit", "La boutique"), ("offre", "Les pièces"), ("services", "Le conseil")], cta_hero="Découvrir la boutique", cta_cible="offre",
+        retirer=["sur-mesure"], marquee=["Style", "Matières", "Conseil", "Allure", "Élégance"],
+        remplacer=[(">Sur demande<", ">Le conseil<")],
+        indice="boutique de mode ou de maroquinerie indépendante : pièces choisies, matières, conseil, style. Pas de marque, de prix ni de produit précis.",
+        kit=dict(tuiles_eyebrow="Le conseil", tuiles_lead="Un accompagnement attentif pour trouver la pièce qui vous ressemble.",
+                 cta_eyebrow="En boutique", cta_titre="Venez essayer.", cta_texte="Pour une question, un conseil ou une pièce à mettre de côté, écrivez-nous."),
+        defauts=dict(o1_t="Les pièces", o1_d="Une sélection choisie pour son style et sa qualité.", o2_t="Les matières", o2_d="Des matières que l’on aime toucher et porter.",
+                     o3_t="Les idées cadeaux", o3_d="De quoi faire plaisir, avec un conseil personnalisé.")),
+    "traiteurs et photographes": dict(
+        nav=[("esprit", "La maison"), ("carte", "Prestations"), ("plus", "À savoir")], retirer=["moment"],
+        indice="traiteur événementiel ou photographe : événements, réceptions, mariages, sur mesure, écoute, organisation. Pas de nom de client, de plat précis ni de prix.",
+        kit=dict(cta_eyebrow="Votre événement", cta_titre="Parlons de votre événement.", cta_texte="Une date, un lieu, une envie : écrivez-nous, nous vous répondrons.")),
+    "pâtissiers, chocolatiers, épiceries fines": dict(
+        nav=[("esprit", "La maison"), ("carte", "À découvrir"), ("plus", "À savoir")], retirer=["moment"],
+        marquee=["Gourmandise", "Saisons", "Savoir-faire", "Partage", "Douceur"],
+        kit=dict(cta_eyebrow="La boutique", cta_titre="Une envie gourmande ?", cta_texte="Une commande, une occasion, une question : écrivez-nous ou passez nous voir.")),
+}
+
+
+# Visuel du bandeau pour les secteurs du modèle « bijou » qui ne vendent pas de bijoux : une perle de verre.
+ORBE_SVG = ('<svg viewBox="0 0 300 300" role="img" aria-label="Sphère de verre illustrée"><defs>'
+            '<radialGradient id="ob1" cx=".35" cy=".3" r=".75"><stop offset="0" style="stop-color:var(--g1)"/>'
+            '<stop offset=".45" style="stop-color:var(--g2)"/><stop offset=".8" style="stop-color:var(--g4)"/><stop offset="1" style="stop-color:var(--g5)"/></radialGradient>'
+            '<radialGradient id="ob2" cx=".5" cy=".5" r=".5"><stop offset=".7" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".35"/></radialGradient>'
+            '<linearGradient id="ob3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>'
+            '<ellipse cx="150" cy="268" rx="70" ry="10" fill="#000" opacity=".25"/>'
+            '<circle cx="150" cy="140" r="104" fill="url(#ob1)"/><circle cx="150" cy="140" r="104" fill="url(#ob2)"/>'
+            '<ellipse cx="118" cy="92" rx="46" ry="28" fill="url(#ob3)" transform="rotate(-28 118 92)"/>'
+            '<circle class="reflet" cx="196" cy="186" r="7"/><circle class="reflet r2" cx="88" cy="160" r="4"/></svg>')
+
+
+def variante(secteur):
+    return VARIANTES.get(secteur, {})
+
+
 def famille_de(secteur):
     return SECTEURS.get(secteur, ("atelier", "Commerce", "LocalBusiness", False))
 
@@ -278,7 +352,7 @@ def consigne_textes(secteur, faits):
     return (
         "Tu écris les textes du site vitrine d'un commerce, pour une clientèle exigeante. Style : sobre, élégant, précis, jamais pompeux. "
         "Vouvoiement ou formulation neutre. Français impeccable. Phrases courtes.\n"
-        "Contexte du métier : " + FAMILLES[fam]["indice"] + "\n"
+        "Contexte du métier : " + variante(secteur).get("indice", FAMILLES[fam]["indice"]) + "\n"
         "RÈGLE ABSOLUE : tu ne connais que la fiche fournie. N'invente RIEN : aucun chiffre, aucune date, aucune année, aucun prix, "
         "aucun nom de personne, de plat, de vin, de produit, aucune récompense, aucun avis, aucune ancienneté, aucune affirmation sur "
         "la famille ou l'histoire du lieu, aucun superlatif (« meilleur », « unique »). Écris seulement des phrases vraies pour n'importe quel "
@@ -291,9 +365,10 @@ def consigne_textes(secteur, faits):
     )
 
 
-def valider_textes(brut, famille):
+def valider_textes(brut, famille, secteur=None):
     """Garde seulement les textes propres et prudents ; sinon le texte de secours."""
     sortie = dict(DEFAUTS[famille])
+    sortie.update(variante(secteur).get("defauts", {}))
     refuses = []
     if not isinstance(brut, dict):
         return sortie, list(LIMITES)
@@ -371,9 +446,12 @@ def fabriquer(secteur, faits, textes):
     th = THEMES[fam][theme_nom]
     nom = str(faits.get("nom", "")).strip()
     ville = _ville_courte(faits)
+    var = variante(secteur)
     txt = dict(DEFAUTS[fam])
+    txt.update(var.get("defauts", {}))
     txt.update({k: v for k, v in (textes or {}).items() if k in LIMITES})
-    cfg = FAMILLES[fam]
+    cfg = dict(FAMILLES[fam])
+    cfg.update({k: var[k] for k in ("nav", "cta_hero", "objets", "texte_contact") if k in var})
     base = DOSSIER
     lire = lambda n: (base / n).read_text("utf-8")
 
@@ -401,14 +479,15 @@ def fabriquer(secteur, faits, textes):
         % (esc(titre_page), esc(desc), esc(titre_page), esc(desc), th["vars"]["bg"], favicon, th["gf"], _jsonld(faits, type_ld)))
 
     nav = "".join('<a href="#%s">%s</a>' % (a, esc(l)) for a, l in cfg["nav"])
-    kit = KIT[fam]
+    kit = dict(KIT[fam])
+    kit.update(var.get("kit", {}))
     tel = str(faits.get("telephone") or "").strip()
     tel_lien = re.sub(r"[^\d+]", "", tel)
     puces = ['<span class="puce"><i></i>%s</span>' % esc(etiquette)]
     if ville:
         puces.append('<span class="puce">%s</span>' % esc(ville))
     hero_fx = lire("_hero_fx.html").replace("{{puces}}", "".join(puces))
-    ico = icones(fam)
+    ico = icones(fam, var.get("icones"))
     tuiles = lire("_tuiles.html")
     second = ('<a class="btn ligne" href="tel:%s">Appeler</a>' % esc(tel_lien)) if len(tel_lien) >= 10 else \
              ('<a class="btn ligne" href="%s" target="_blank" rel="noopener">Itinéraire</a>' % esc(maps))
@@ -446,6 +525,20 @@ def fabriquer(secteur, faits, textes):
                         ("{{js_commun}}", lire("_commun.js")), ("{{entete}}", entete), ("{{hero_fx}}", hero_fx), ("{{tuiles}}", tuiles),
                         ("{{bloc_cta}}", bloc_cta), ("{{contact}}", contact), ("{{pied}}", pied)):
         page = page.replace(jeton, bloc)
+    # Variante du secteur : retirer les sections d'un autre métier, adapter les mots du modèle.
+    for sid in var.get("retirer", []):
+        page = re.sub(r'<section[^>]*\bid="%s"[^>]*>.*?</section>' % re.escape(sid), "", page, count=1, flags=re.S)
+        page = page.replace('href="#%s"' % sid, 'href="#%s"' % var.get("cta_cible", "offre"))
+    if var.get("cta_cible"):
+        page = re.sub(r'(<section class="hero".*?<a class="btn" href=")#[\w-]+', lambda m: m.group(1) + "#" + var["cta_cible"], page, count=1, flags=re.S)
+    if var.get("visuel") == "orbe":
+        page = re.sub(r'(<div class="gemme-box[^"]*"[^>]*>(?:\s*<div[^>]*></div>)*\s*)<svg.*?</svg>', lambda m: m.group(1) + ORBE_SVG, page, count=1, flags=re.S)
+    for a, b in var.get("remplacer", []):
+        page = page.replace(a, b)
+    if var.get("marquee"):
+        mots, sep = var["marquee"], (re.search(r'class="marquee"[^>]*><div><span>[^<]*</span><b>([^<]*)</b>', page) or [None, "✦"])[1]
+        bande = "".join("<span>%s</span><b>%s</b>" % (esc(m), sep) for m in mots * 2)
+        page = re.sub(r'(<div class="marquee"[^>]*><div>).*?(</div></div>)', lambda m: m.group(1) + bande + m.group(2), page, count=1, flags=re.S)
     # Les blocs injectés contiennent eux-mêmes des jetons : on les remplit après.
     for k in sorted(valeurs, key=len, reverse=True):
         page = page.replace("{{%s}}" % k, valeurs[k])
