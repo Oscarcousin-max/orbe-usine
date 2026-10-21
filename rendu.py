@@ -32,6 +32,16 @@ SECTEURS = {
     "instituts de beauté et coiffeurs": ("bijou", "Institut de beauté", "HealthAndBeautyBusiness", False),
     "traiteurs et photographes": ("table", "Traiteur", "FoodEstablishment", True),
     "boutiques de mode et maroquinerie": ("bijou", "Boutique", "ClothingStore", False),
+    "boulangeries et artisans du pain": ("table", "Boulangerie", "Bakery", False),
+    "boucheries, poissonneries, produits du terroir": ("table", "Artisan du goût", "FoodEstablishment", False),
+    "cafés et salons de thé": ("table", "Café · Salon de thé", "CafeOrCoffeeShop", False),
+    "hôtels de charme": ("table", "Hôtel de charme", "Hotel", False),
+    "spas, massages et bien-être": ("bijou", "Bien-être", "HealthAndBeautyBusiness", False),
+    "opticiens et créateurs de lunettes": ("bijou", "Opticien", "Optician", False),
+    "librairies, boutiques cadeaux, créateurs": ("atelier", "Boutique créateurs", "Store", False),
+    "architectes, paysagistes, designers": ("atelier", "Atelier de création", "LocalBusiness", False),
+    "studios de yoga, pilates et coachs sportifs": ("bijou", "Studio", "SportsActivityLocation", False),
+    "tatoueurs et barbiers": ("atelier", "Atelier", "HealthAndBeautyBusiness", False),
 }
 MENU_SUR = {
     "restaurants indépendants de qualité": "La table",

@@ -3,6 +3,7 @@ name: Usine à sites ORBE
 on:
   schedule:
     - cron: "17 22 * * *"   # chaque nuit vers 0 h 15 (heure de Paris) : prêt bien avant le robot du matin
+    - cron: "43 9 * * *"    # et un second passage vers 11 h 45 : d'autres secteurs, d'autres départements
   push:
     branches: [main]
     paths:
@@ -15,7 +16,7 @@ on:
     inputs:
       nombre:
         description: "Combien de sites ?"
-        default: "15"
+        default: "20"
       refaire:
         description: "Refaire les sites récents avec les nouveaux modèles ? (1 = oui)"
         default: "0"
@@ -42,8 +43,8 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           # Une mise à jour des modèles (push) refait seulement les sites récents avec le nouveau design.
-          NOMBRE: ${{ github.event.inputs.nombre || (github.event_name == 'push' && '0') || '15' }}
-          REFAIRE: ${{ github.event.inputs.refaire || (github.event_name == 'push' && '1') || '0' }}
+          NOMBRE: ${{ github.event.inputs.nombre || '20' }}
+          REFAIRE: ${{ github.event.inputs.refaire || '0' }}
         run: |
           mkdir -p data
           set -o pipefail

@@ -38,7 +38,7 @@ URL = {  # modifiables seulement pour les tests
     "groq": os.environ.get("USINE_GROQ_URL", "https://api.groq.com/openai/v1"),
     "or": os.environ.get("USINE_OR_URL", "https://openrouter.ai/api/v1"),
 }
-NOMBRE = max(0, min(30, int(os.environ.get("NOMBRE", "15") or 0)))
+NOMBRE = max(0, min(60, int(os.environ.get("NOMBRE", "20") or 0)))
 PAUSE = float(os.environ.get("USINE_PAUSE", "6"))
 # Sans cette carte de visite, Cloudflare bloque Python à l'entrée (erreur 403 / code 1010).
 NAVIGATEUR = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
@@ -61,11 +61,24 @@ SECTEURS = [
     ("instituts de beauté et coiffeurs", '["shop"~"^(beauty|hairdresser)$"]'),
     ("traiteurs et photographes", '["craft"~"^(caterer|photographer)$"]'),
     ("boutiques de mode et maroquinerie", '["shop"~"^(boutique|clothes|bag|shoes|leather)$"]'),
+    ("boulangeries et artisans du pain", '["shop"="bakery"]'),
+    ("boucheries, poissonneries, produits du terroir", '["shop"~"^(butcher|seafood|farm|beverages|coffee|tea|spices)$"]'),
+    ("cafés et salons de thé", '["amenity"~"^(cafe|ice_cream)$"]'),
+    ("hôtels de charme", '["tourism"~"^(hotel|hostel|camp_site)$"]'),
+    ("spas, massages et bien-être", '["leisure"="spa"]|["shop"="massage"]|["amenity"="spa"]|["healthcare"~"^(alternative|physiotherapist|osteopath)$"]'),
+    ("opticiens et créateurs de lunettes", '["shop"~"^(optician|hearing_aids)$"]'),
+    ("librairies, boutiques cadeaux, créateurs", '["shop"~"^(books|gift|stationery|craft|art_supplies|music|toys)$"]'),
+    ("architectes, paysagistes, designers", '["office"~"^(architect|interior_designer|designer)$"]|["craft"~"^(gardener|landscaper|plumber|electrician|painter|plasterer|tiler)$"]'),
+    ("studios de yoga, pilates et coachs sportifs", '["leisure"~"^(fitness_centre|sports_centre|dance)$"]|["sport"~"^(yoga|pilates|dance)$"]'),
+    ("tatoueurs et barbiers", '["shop"~"^(tattoo|barber)$"]|["craft"="tattoo"]'),
 ]
 # La Gironde à chaque passage (c'est chez Oscar), plus un département voisin qui tourne.
 # Interroger toute la Nouvelle-Aquitaine d'un coup ramènerait toujours les mêmes
 # commerces, les premiers de la liste : en découpant, chaque nuit explore ailleurs.
 MAISON = ("Gironde", "44.19,-1.30,45.58,0.32")
+# Bordeaux et sa couronne, fouillés en plus à chaque passage (là où il y a le plus de commerces).
+BORDEAUX = ("Bordeaux Métropole", "44.74,-0.74,44.96,-0.42")
+BASSIN = ("Bassin d'Arcachon et Médoc", "44.45,-1.35,45.35,-0.85")
 VOISINS = [
     ("Dordogne", "44.57,0.03,45.72,1.45"),
     ("Charente-Maritime", "45.09,-1.56,46.38,-0.03"),
@@ -120,7 +133,7 @@ def appel_http(url, data=None, headers=None, timeout=300):
         raise ErreurIA("reseau", str(e)[:200])
 
 
-def overpass(filtre, bbox, limite=250):
+def overpass(filtre, bbox, limite=500):
     """Demande à OpenStreetMap les commerces d'un secteur qui n'ont pas de site.
 
     OpenStreetMap note pour chaque commerce son adresse, son téléphone et,
@@ -129,7 +142,8 @@ def overpass(filtre, bbox, limite=250):
     """
     contact = '[~"^(phone|contact:phone|email|contact:email|contact:instagram|contact:facebook)$"~"."]'
     sans_site = '["name"][!"website"][!"contact:website"][!"brand"][!"brand:website"]'
-    q = "[out:json][timeout:180];nwr%s%s%s(%s);out tags center %d;" % (filtre, sans_site, contact, bbox, limite)
+    parts = "".join("nwr%s%s%s(%s);" % (f, sans_site, contact, bbox) for f in filtre.split("|"))
+    q = "[out:json][timeout:180];(%s);out tags center %d;" % (parts, limite)
     # Le serveur principal est souvent saturé (502) : on réessaie, puis on change de serveur.
     derniere = None
     for essai, serveur in enumerate((OVERPASS, OVERPASS, OVERPASS, MIROIR_OSM)):
@@ -259,6 +273,8 @@ def appeler(p, modele, systeme, texte, web=False):
 
 
 EPUISE = set()  # fournisseurs à leur limite du jour
+BLOQUES = set()  # modèles sans quota ou disparus : inutile de les réessayer à chaque site
+BONS = set()  # modèles qui ont déjà répondu pendant ce passage
 
 
 def ia(chaine, systeme, texte):
@@ -277,14 +293,18 @@ def ia(chaine, systeme, texte):
             journal("    %s : aucun modèle qui convient" % p)
             continue
         satures = 0
+        liste = [m for m in liste if (p, m) not in BLOQUES] or liste[-2:]
         for modele in liste:
             try:
                 txt, src = appeler(p, modele, systeme, texte, web)
+                BONS.add((p, modele))
                 time.sleep(PAUSE)
                 return txt, src, modele
             except ErreurIA as e:
                 derniere = e
-                journal("    %s/%s : %s" % (p, modele, e))
+                journal("    %s/%s : %s" % (p, modele, str(e)[:90]))
+                if e.code in ("limite", "modele") and (p, modele) not in BONS:
+                    BLOQUES.add((p, modele))  # jamais répondu et refusé : on ne le redemande plus
                 if e.code == "limite":
                     satures += 1  # pas de quota gratuit : on redescend d'un modèle
                     continue
@@ -439,9 +459,10 @@ def main():
         LISTE.write_text(json.dumps(liste, ensure_ascii=False, indent=1), "utf-8")
         journal("Aucun nouveau site demandé : seulement les sites récents refaits.")
         return
-    jour = datetime.now(timezone.utc).timetuple().tm_yday
-    secteurs = [SECTEURS[(jour + k) % len(SECTEURS)] for k in (0, 4, 8)]
-    zones = [MAISON, VOISINS[jour % len(VOISINS)]]
+    # Un « tour » toutes les 12 h : chaque passage prend d'autres secteurs et d'autres départements.
+    tour = int(time.time() // 43200)
+    secteurs = [SECTEURS[(tour * 5 + k) % len(SECTEURS)] for k in range(6)]
+    zones = [BORDEAUX, BASSIN, MAISON, VOISINS[tour % len(VOISINS)], VOISINS[(tour + 5) % len(VOISINS)]]
     nouveaux = []
 
     # 1. Candidats : de vrais commerces lus sur la carte OpenStreetMap.
