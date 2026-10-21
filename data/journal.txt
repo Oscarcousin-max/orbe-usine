@@ -1,499 +1,158 @@
-23:55:32     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
-23:55:32     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:32     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:32     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:32     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:32     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:55:33     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:33     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:40   refait : Laurent Barraud (modèle table/cacao · gemini-3.5-flash-lite)
-23:55:40     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:41     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:41     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:41     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:41     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:55:41     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:41     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:49   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_d
-23:55:49   refait : L'Atelier de Soane (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-23:55:50     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:50     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:50     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:50     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:50     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:55:50     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:55:50     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:02   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_t
-23:56:02   refait : Raisin & Bulles (modèle domaine/sauge · gemini-3.5-flash-lite)
-23:56:02     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:02     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:02     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:03     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:03     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:56:03     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:03     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:11   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
-23:56:11   refait : Maison Lichette (modèle table/cacao · gemini-3.5-flash-lite)
-23:56:11     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:11     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:11     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:11     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:12     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:56:12     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:12     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:22   refait : hush (modèle bijou/nuit_argent · gemini-3.5-flash-lite)
-23:56:22     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:22     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:23     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:23     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:23     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:56:23     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:23     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:34   refait : Chai Mica (modèle domaine/cuivre · gemini-3.5-flash-lite)
-23:56:34     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:34     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:34     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:34     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:34     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:56:34     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:35     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:43   refait : Les Gourmandises du Château (modèle table/cacao · gemini-3.5-flash-lite)
-23:56:43     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:43     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:43     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:43     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:43     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:56:43     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:44     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:51   refait : Nicol'Esthétique (modèle bijou/nuit_argent · gemini-3.5-flash-lite)
-23:56:51     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:52     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:52     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:52     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:52     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:56:52     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:56:52     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:00   refait : Wine More Time (modèle domaine/cuivre · gemini-3.5-flash-lite)
-23:57:00     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:00     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:00     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:00     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:01     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:57:01     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:01     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:09   refait : Sweet Valentine (modèle table/cacao · gemini-3.5-flash-lite)
-23:57:09     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:09     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:09     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:09     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:09     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:57:09     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:09     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:17   refait : Micky Bliss (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-23:57:17     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:17     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:18     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:18     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:18     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:57:18     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:18     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:26   refait : Sobre (modèle domaine/cuivre · gemini-3.5-flash-lite)
-23:57:26     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:26     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:26     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:27     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:27     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:57:27     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:27     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:35   refait : Oriental Gâto (modèle table/cacao · gemini-3.5-flash-lite)
-23:57:35     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:35     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:35     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:35     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:35     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:57:36     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:36     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:43   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t
-23:57:43   refait : Institut Mirabilis (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-23:57:43     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:44     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:44     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:44     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:44     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:57:44     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:44     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:52   refait : Couleurs de vin (modèle domaine/bordeaux · gemini-3.5-flash-lite)
-23:57:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:53     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:53     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:53     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:53     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:57:53     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:57:53     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:01   refait : Madame Fromage (modèle table/olive · gemini-3.5-flash-lite)
-23:58:01     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:01     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:01     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:01     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:01     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:58:02     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:02     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:10   refait : L'Atelier Chiara (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-23:58:10     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:10     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:10     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:10     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:10     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:58:10     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:10     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:18   refait : La Cachette (modèle domaine/cuivre · gemini-3.5-flash-lite)
-23:58:18     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:19     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:19     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:19     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:19     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:58:19     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:19     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:28   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
-23:58:28   refait : Fromagerie des Flots (modèle table/brasserie · gemini-3.5-flash-lite)
-23:58:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:28     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:28     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:28     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:29     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:58:29     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:29     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:36   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_d
-23:58:36   refait : La Barbière de Saint Paul (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-23:58:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:37     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:37     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:37     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:37     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:58:37     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:37     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:45   refait : Château Bellevue (modèle domaine/cuivre · gemini-3.5-flash-lite)
-23:58:45     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:45     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:45     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:45     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:45     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:58:46     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:46     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:54   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_d
-23:58:54   refait : Signature Chocolat (modèle table/cacao · gemini-3.5-flash-lite)
-23:58:54     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:54     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:54     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:54     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:54     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:58:54     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:58:54     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:03   refait : Salon Delphine Delaurent (modèle bijou/nuit_argent · gemini-3.5-flash-lite)
-23:59:03     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:03     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:03     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:03     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:03     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:59:03     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:03     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:11   refait : L'échoppe des Sens - Cave à vin - Epicerie Fine (modèle domaine/cuivre · gemini-3.5-flash-lite)
-23:59:11     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:12     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:12     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:12     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:12     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:59:12     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:12     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:20   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e1_d
-23:59:20   refait : Garg’Antoine (modèle table/olive · gemini-3.5-flash-lite)
-23:59:20     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:20     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:20     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:20     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:21     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:59:21     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:21     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:29   refait : Salon Christine Pedrosa (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-23:59:29     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:29     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:29     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:29     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:29     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:59:29     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:30     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:37   refait : La cave Cheval Quancard (modèle domaine/cuivre · gemini-3.5-flash-lite)
-23:59:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:38     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:38     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:38     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:38     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:59:38     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:38     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:46   refait : Biomajolan (modèle table/olive · gemini-3.5-flash-lite)
-23:59:46     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:46     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:46     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:46     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:47     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:59:47     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:47     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:55   refait : Salon Marine Ruggiero (modèle bijou/noir_or · gemini-3.5-flash-lite)
-23:59:55     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:55     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:55     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:55     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:55     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-23:59:55     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-23:59:56     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:03   refait : La Cave de l'Alouette (modèle domaine/bordeaux · gemini-3.5-flash-lite)
-00:00:03     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:04     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:04     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:04     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:04     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:00:04     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:04     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:12   refait : Le Germini (modèle fleur/botanique · gemini-3.5-flash-lite)
-00:00:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:13     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:13     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:13     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:13     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:00:13     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:13     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:24   refait : Hélène Boudat (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-00:00:24     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:24     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:24     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:24     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:24     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:00:24     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:24     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:37   refait : Château Gaillard (modèle domaine/sauge · gemini-3.5-flash-lite)
-00:00:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:37     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:37     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:37     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:38     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:00:38     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:38     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:46   refait : Jour J (modèle fleur/poudre · gemini-3.5-flash-lite)
-00:00:46     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:46     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:46     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:46     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:46     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:00:47     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:47     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:55   refait : L'Etabli Bijouterie Geoffrey Roqueflot (modèle bijou/nuit_argent · gemini-3.5-flash-lite)
-00:00:55     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:55     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:55     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:55     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:55     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:00:55     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:00:55     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:03   refait : Domaine de la Neuraye (modèle domaine/cuivre · gemini-3.5-flash-lite)
-00:01:03     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:03     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:03     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:04     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:04     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:01:04     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:04     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:12   refait : F'Laure Ever (modèle fleur/vif · gemini-3.5-flash-lite)
-00:01:13     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:13     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:13     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:13     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:13     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:01:13     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:13     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:21   refait : Sabrina Lagüe Barrière (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-00:01:21     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:21     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:21     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:22     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:22     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:01:22     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:22     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:34   refait : Vignoble Château d'Éternes (modèle domaine/cuivre · gemini-3.5-flash-lite)
-00:01:34     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:34     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:34     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:35     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:35     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:01:35     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:35     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:43   refait : Sadia Fleurs (modèle fleur/botanique · gemini-3.5-flash-lite)
-00:01:43     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:43     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:43     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:43     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:43     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:01:43     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:43     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:52   refait : Bijouterie Lescat (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-00:01:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:52     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:52     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:52     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:52     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:01:52     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:01:52     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:00   refait : Domaine Johann Spelty (modèle domaine/sauge · gemini-3.5-flash-lite)
-00:02:00     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:00     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:00     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:01     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:01     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:02:01     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:01     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:09   refait : Mademoiselles Pivoines (modèle fleur/poudre · gemini-3.5-flash-lite)
-00:02:09     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:09     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:09     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:09     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:09     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:02:10     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:10     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:18   refait : Laudate (modèle bijou/noir_or · gemini-3.5-flash-lite)
-00:02:18     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:18     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:18     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:18     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:18     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:02:18     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:19     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:26   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_d
-00:02:26   refait : Domaine Philippe Alliet (modèle domaine/bordeaux · gemini-3.5-flash-lite)
-00:02:27     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:27     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:27     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:27     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:27     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:02:27     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:27     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:35   refait : Le Bélvèdere (modèle table/cacao · gemini-3.5-flash-lite)
-00:02:36     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:36     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:36     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:36     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:36     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:02:36     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:36     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:45   refait : Ginette Laven L'Artisane (modèle atelier/vert_rose · gemini-3.5-flash-lite)
-00:02:45     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:45     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:45     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:45     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:45     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:02:45     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:46     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:53   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d
-00:02:53   refait : Papilles nomades (modèle table/brasserie · gemini-3.5-flash-lite)
-00:02:53     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:53     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:53     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:54     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:54     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:02:54     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:02:54     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:02   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : citation
-00:03:02   refait : Le Cochon Volant (modèle table/cacao · gemini-3.5-flash-lite)
-00:03:02     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:02     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:02     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:02     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:03     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:03:03     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:03     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:11   refait : Le Cabouin Bleu (modèle atelier/vert_rose · gemini-3.5-flash-lite)
-00:03:11     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:11     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:11     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:11     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:11     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:03:12     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:12     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:19   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d
-00:03:19   refait : Lou Vincent (modèle table/olive · gemini-3.5-flash-lite)
-00:03:20     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:20     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:20     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:20     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:20     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:03:20     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:20     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:28   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : citation
-00:03:28   refait : L'EntrePôte (modèle table/cacao · gemini-3.5-flash-lite)
-00:03:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:28     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:29     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:29     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:29     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:03:29     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:29     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:37   refait : Annie Robin (modèle atelier/vert_rose · gemini-3.5-flash-lite)
-00:03:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:37     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:37     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:37     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:38     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:03:38     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:38     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:47   refait : Photo KC (modèle table/olive · gemini-3.5-flash-lite)
-00:03:47     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:47     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:47     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:47     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:48     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:03:48     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:48     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:55   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d, citation
-00:03:55   refait : Madonnina à la Plage (modèle table/cacao · gemini-3.5-flash-lite)
-00:03:56     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:56     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:56     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:56     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:56     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:03:56     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:03:56     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:04   refait : Ébéniste & associés (modèle atelier/encre · gemini-3.5-flash-lite)
-00:04:04     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:04     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:04     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:04     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:05     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:04:05     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:05     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:13   refait : Le soleil vert (modèle table/cacao · gemini-3.5-flash-lite)
-00:04:13     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:13     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:13     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:13     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:13     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:04:13     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:14     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:21   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : citation
-00:04:21   refait : A Noste (modèle table/olive · gemini-3.5-flash-lite)
-00:04:21     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:22     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:22     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:22     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:22     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:04:22     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:22     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:30   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
-00:04:30   refait : B L'Atelier (modèle atelier/encre · gemini-3.5-flash-lite)
-00:04:30     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:30     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:31     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:31     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:31     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/ge
-00:04:31     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:31     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error,
-00:04:39   refait : Du pré à la fourchette (modèle table/brasserie · gemini-3.5-flash-lite)
-00:04:39 60 site(s) récent(s) refait(s) avec les nouveaux modèles
-00:04:39 Aucun nouveau site demandé : seulement les sites récents refaits.
+15:47:18     carte : HTTP Error 400: Bad Request (nouvel essai)
+15:48:06     carte : HTTP Error 400: Bad Request (nouvel essai)
+15:48:49     carte : HTTP Error 400: Bad Request (nouvel essai)
+15:53:11     carte : The read operation timed out (nouvel essai)
+15:53:11   hôtels de charme / Bordeaux Métropole : carte illisible (The read operation timed out)
+15:53:11     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+15:53:26     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+15:54:19     carte : HTTP Error 400: Bad Request (nouvel essai)
+15:55:41     carte : HTTP Error 400: Bad Request (nouvel essai)
+15:55:41   hôtels de charme / Bassin d'Arcachon et Médoc : carte illisible (HTTP Error 400: Bad Request)
+15:56:19     carte : HTTP Error 400: Bad Request (nouvel essai)
+15:57:11     carte : HTTP Error 400: Bad Request (nouvel essai)
+15:57:58     carte : HTTP Error 400: Bad Request (nouvel essai)
+15:59:16     carte : HTTP Error 400: Bad Request (nouvel essai)
+15:59:16   hôtels de charme / Gironde : carte illisible (HTTP Error 400: Bad Request)
+15:59:56     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:00:49     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:01:04     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:05:20     carte : The read operation timed out (nouvel essai)
+16:05:20   hôtels de charme / Lot-et-Garonne : carte illisible (The read operation timed out)
+16:05:20     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:06:16     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:06:31     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:10:47     carte : The read operation timed out (nouvel essai)
+16:10:47   hôtels de charme / Haute-Vienne : carte illisible (The read operation timed out)
+16:10:47 Carte : hôtels de charme (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 0 trouvés, 0 sans site et joignables
+16:11:27     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:12:23     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:12:38     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:16:54     carte : The read operation timed out (nouvel essai)
+16:16:54   spas, massages et bien-être / Bordeaux Métropole : carte illisible (The read operation timed out)
+16:16:54     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:17:42     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:17:57     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:22:12     carte : The read operation timed out (nouvel essai)
+16:22:12   spas, massages et bien-être / Bassin d'Arcachon et Médoc : carte illisible (The read operation timed out)
+16:22:45     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:23:01     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:23:16     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:25:01     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:25:01   spas, massages et bien-être / Gironde : carte illisible (HTTP Error 400: Bad Request)
+16:25:02     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:25:56     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:26:45     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:28:32     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:28:32   spas, massages et bien-être / Lot-et-Garonne : carte illisible (HTTP Error 400: Bad Request)
+16:29:00     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:29:58     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:30:14     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:31:38     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:31:38   spas, massages et bien-être / Haute-Vienne : carte illisible (HTTP Error 400: Bad Request)
+16:31:38 Carte : spas, massages et bien-être (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 0 trouvés, 0 sans site et joignables
+16:32:11     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:32:56     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:33:42     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:37:24     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:37:24   opticiens et créateurs de lunettes / Bordeaux Métropole : carte illisible (HTTP Error 400: Bad Request)
+16:37:25     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:37:40     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:38:33     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:42:20     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:42:20   opticiens et créateurs de lunettes / Bassin d'Arcachon et Médoc : carte illisible (HTTP Error 400: Bad Request)
+16:42:53     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:43:50     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:44:06     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:48:21     carte : The read operation timed out (nouvel essai)
+16:48:21   opticiens et créateurs de lunettes / Gironde : carte illisible (The read operation timed out)
+16:48:52     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:49:42     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:49:58     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:53:38     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:53:38   opticiens et créateurs de lunettes / Lot-et-Garonne : carte illisible (HTTP Error 400: Bad Request)
+16:53:38     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:54:29     carte : HTTP Error 400: Bad Request (nouvel essai)
+16:54:45     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:59:10     carte : The read operation timed out (nouvel essai)
+16:59:10   opticiens et créateurs de lunettes / Haute-Vienne : carte illisible (The read operation timed out)
+16:59:10 Carte : opticiens et créateurs de lunettes (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 0 trouvés, 0 sans site et joignables
+16:59:10     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:59:26     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+16:59:41     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:03:56     carte : The read operation timed out (nouvel essai)
+17:03:56   librairies, boutiques cadeaux, créateurs / Bordeaux Métropole : carte illisible (The read operation timed out)
+17:04:30     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:05:27     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:06:19     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:10:34     carte : The read operation timed out (nouvel essai)
+17:10:34   librairies, boutiques cadeaux, créateurs / Bassin d'Arcachon et Médoc : carte illisible (The read operation timed out)
+17:11:04     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:11:46     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:12:32     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:16:18     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:16:18   librairies, boutiques cadeaux, créateurs / Gironde : carte illisible (HTTP Error 400: Bad Request)
+17:16:19     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:16:34     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:17:23     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:21:39     carte : The read operation timed out (nouvel essai)
+17:21:39   librairies, boutiques cadeaux, créateurs / Lot-et-Garonne : carte illisible (The read operation timed out)
+17:21:39     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:22:30     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:23:17     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:27:32     carte : The read operation timed out (nouvel essai)
+17:27:32   librairies, boutiques cadeaux, créateurs / Haute-Vienne : carte illisible (The read operation timed out)
+17:27:32 Carte : librairies, boutiques cadeaux, créateurs (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 0 trouvés, 0 sans site et joignables
+17:27:55     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:28:45     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:29:27     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:31:04     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:31:04   architectes, paysagistes, designers / Bordeaux Métropole : carte illisible (HTTP Error 400: Bad Request)
+17:31:05     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:31:56     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:32:11     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:36:26     carte : The read operation timed out (nouvel essai)
+17:36:26   architectes, paysagistes, designers / Bassin d'Arcachon et Médoc : carte illisible (The read operation timed out)
+17:36:56     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:37:12     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:37:27     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:41:05     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:41:05   architectes, paysagistes, designers / Gironde : carte illisible (HTTP Error 400: Bad Request)
+17:41:06     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:42:02     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:43:02     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:44:19     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:44:19   architectes, paysagistes, designers / Lot-et-Garonne : carte illisible (HTTP Error 400: Bad Request)
+17:44:19     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:45:10     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:45:26     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:46:47     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:46:47   architectes, paysagistes, designers / Haute-Vienne : carte illisible (HTTP Error 400: Bad Request)
+17:46:47 Carte : architectes, paysagistes, designers (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 0 trouvés, 0 sans site et joignables
+17:46:47     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:47:37     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:48:31     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:50:31     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:50:31   studios de yoga, pilates et coachs sportifs / Bordeaux Métropole : carte illisible (HTTP Error 400: Bad Request)
+17:50:31     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:51:21     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:51:37     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:53:11     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:53:11   studios de yoga, pilates et coachs sportifs / Bassin d'Arcachon et Médoc : carte illisible (HTTP Error 400: Bad Request)
+17:53:12     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:53:59     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:54:15     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:56:02     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:56:02   studios de yoga, pilates et coachs sportifs / Gironde : carte illisible (HTTP Error 400: Bad Request)
+17:56:02     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+17:56:59     carte : HTTP Error 400: Bad Request (nouvel essai)
+17:57:51     carte : HTTP Error 400: Bad Request (nouvel essai)
+18:01:50     carte : HTTP Error 400: Bad Request (nouvel essai)
+18:01:50   studios de yoga, pilates et coachs sportifs / Lot-et-Garonne : carte illisible (HTTP Error 400: Bad Request)
+18:01:51     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+18:02:37     carte : HTTP Error 400: Bad Request (nouvel essai)
+18:02:53     carte : HTTP Error 502: Bad Gateway (nouvel essai)
+18:04:30     carte : HTTP Error 400: Bad Request (nouvel essai)
+18:04:30   studios de yoga, pilates et coachs sportifs / Haute-Vienne : carte illisible (HTTP Error 400: Bad Request)
+18:04:30 Carte : studios de yoga, pilates et coachs sportifs (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 0 trouvés, 0 sans site et joignables
+18:04:30 0 candidats
+18:04:30 Terminé : 0 site(s) prêt(s).
