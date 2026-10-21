@@ -113,7 +113,7 @@ def _unsplash(requete):
 
 # Titres qui trahissent un document scanné, un plan ou un dessin plutôt qu'une photographie.
 PAS_UNE_PHOTO = re.compile(r"microform|review|magazine|journal|catalog|book|page|plate|poster|map|scan|"
-                           r"engraving|lithograph|drawing|diagram|logo|coat of arms|\b1[5-9]\d\d\b", re.I)
+                           r"engraving|lithograph|drawing|diagram|logo|coat of arms|navy|army|military|urine|toilet|panoramio|\b1[5-9]\d\d\b", re.I)
 
 
 def _mots(requete):
@@ -146,7 +146,7 @@ def _commons(requete):
                     and not PAS_UNE_PHOTO.search(pg.get("title", "")) and "fair use" not in licence.lower()
                     and any(m in pg.get("title", "").lower().replace("_", " ") for m in mots)
                     and not re.search(r"\bNC\b|noncommercial", licence, re.I)):
-                out.append({"src": src, "src_petit": src.replace("/1600px-", "/900px-"), "auteur": auteur or "Wikimedia Commons",
+                out.append({"src": src, "src_petit": re.sub(r"/\d+px-", "/960px-", src), "auteur": auteur or "Wikimedia Commons",
                             "lien": str(info.get("descriptionurl") or "https://commons.wikimedia.org"),
                             "source": "Wikimedia Commons, %s" % (licence or "licence libre")})
         if len(out) >= 6:
