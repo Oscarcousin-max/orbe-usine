@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr" class="pas-js"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>La Cave de l&#x27;Alouette — Cave à vins</title><meta name="description" content="Le goût du partage et des belles bouteilles. Une sélection soignée de vins et de conseils sur mesure au cœur de la ville, pour les amateurs de belles découvertes et de moments conviviaux."><meta property="og:type" content="website"><meta property="og:title" content="La Cave de l&#x27;Alouette — Cave à vins"><meta property="og:description" content="Le goût du partage et des belles bouteilles. Une sélection soignée de vins et de conseils sur mesure au cœur de la ville, pour les amateurs de belles découvertes et de moments conviviaux."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f6f0e6"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%237b1e2b%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3EC%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LiquorStore", "name": "La Cave de l'Alouette", "address": {"@type": "PostalAddress", "streetAddress": "12 Rue Léon Morin", "addressCountry": "FR"}, "telephone": "+33 5 57 89 29 23"}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>La Cave de l&#x27;Alouette — Cave à vins</title><meta name="description" content="Une sélection exigeante de flacons et un conseil sur mesure. Bienvenue à La Cave de l&#x27;Alouette, un lieu dédié à la découverte de cuvées singulières et au plaisir du partage."><meta property="og:type" content="website"><meta property="og:title" content="La Cave de l&#x27;Alouette — Cave à vins"><meta property="og:description" content="Une sélection exigeante de flacons et un conseil sur mesure. Bienvenue à La Cave de l&#x27;Alouette, un lieu dédié à la découverte de cuvées singulières et au plaisir du partage."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f6f0e6"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%237b1e2b%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3EC%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "LiquorStore", "name": "La Cave de l'Alouette", "address": {"@type": "PostalAddress", "streetAddress": "12 Rue Léon Morin", "addressCountry": "FR"}, "telephone": "+33 5 57 89 29 23"}</script>
 <style>
 :root{--bg:#f6f0e6;--bg2:#efe6d6;--ink:#2a1418;--muted:#6b5a58;--accent:#7b1e2b;--accent2:#d9b36c;--line:#d9ccb8;--on-accent:#ffffff;--dark:#1d0d11;--on-dark:#f6ede0;--c-ciel1:#3b1520;--c-ciel2:#c9744a;--c-col1:#4a1a26;--c-col2:#35121c;--c-col3:#1d0d11;--f-titre:'Cormorant Garamond',Georgia, 'Times New Roman', serif;--f-texte:'Jost',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--r:0px;}
 *,*::before,*::after{box-sizing:border-box}
@@ -184,6 +184,22 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 .cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
 .aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
+/* Galerie de photos d'illustration (photos libres, remplacées ensuite par celles du commerce) */
+.galerie-sec{padding-block:clamp(56px,8vw,110px)}
+.galerie-tete{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(24px,4vw,44px);max-width:46rem}
+.galerie{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(10px,1.4vw,18px)}
+.galerie figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r,0);background:var(--bg2)}
+.galerie img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.galerie figure:hover img{transform:scale(1.07)}
+.galerie figure::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent);border-radius:inherit}
+.galerie .g1{grid-column:span 7;grid-row:span 2}
+.galerie .g2{grid-column:span 5}
+.galerie .g3{grid-column:span 5}
+.galerie .g4{grid-column:span 12;grid-row:span 1}
+.galerie-note{margin:16px 0 0;font-size:.78rem;color:var(--muted)}
+.galerie-note a{color:inherit}
+@media (max-width:720px){.galerie{grid-template-columns:1fr;grid-auto-rows:220px}.galerie .g1,.galerie .g2,.galerie .g3,.galerie .g4{grid-column:auto;grid-row:auto}.galerie .g1{grid-row:span 1;min-height:280px}}
+@media (prefers-reduced-motion:reduce){.galerie img{transition:none}}
 
 /* Domaine viticole */
 .hero{position:relative;min-height:100svh;background:var(--dark);color:var(--on-dark);overflow:hidden;display:grid;align-items:end;isolation:isolate}
@@ -293,8 +309,8 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 </svg></div>
 <div class="wrap hero-in">
 <span class="eyebrow reveal" style="color:var(--accent2)">Cave à vins</span>
-<h1 class="reveal" style="--d:.1s">La Cave de l&#x27;Alouette<span>Le goût du partage et des belles bouteilles.</span></h1>
-<p class="sous reveal" style="--d:.2s">Une sélection soignée de vins et de conseils sur mesure au cœur de la ville, pour les amateurs de belles découvertes et de moments conviviaux.</p>
+<h1 class="reveal" style="--d:.1s">La Cave de l&#x27;Alouette<span>Une sélection exigeante de flacons et un conseil sur mesure.</span></h1>
+<p class="sous reveal" style="--d:.2s">Bienvenue à La Cave de l&#x27;Alouette, un lieu dédié à la découverte de cuvées singulières et au plaisir du partage.</p>
 <div class="reveal" style="--d:.3s;display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#offre">Découvrir la cave <span class="fl">→</span></a><a class="btn ligne" href="#contact">Nous écrire</a></div>
 </div>
 <div class="defile" aria-hidden="true">Défiler</div>
@@ -304,8 +320,8 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 
 <section class="sec" id="esprit"><div class="wrap esprit-grid">
 <div class="reveal"><div class="num">01</div><span class="eyebrow">L’esprit de la cave</span>
-<h2 class="titre-sec">Notre approche</h2>
-<p>La cave se lit comme une bibliothèque ouverte sur le monde du vin. Chaque référence est choisie avec attention, guidée par la curiosité et le respect du travail de celles et ceux qui élaborent les cuvées.</p><p>Ici, le conseil prime. On prend le temps d&#x27;échanger pour trouver la bouteille juste, celle qui correspond à votre goût et à votre moment.</p></div>
+<h2 class="titre-sec">L&#x27;art du flacon et du conseil</h2>
+<p>Notre maison rassemble des vins retenus pour leur sincérité et le savoir-faire de leurs producteurs. Nous privilégions des cuvées authentiques qui expriment pleinement leur origine. Chaque flacon fait l&#x27;objet d&#x27;une dégustation attentive avant d&#x27;intégrer notre sélection.</p><p>Que vous cherchiez une bouteille pour une grande occasion ou un vin de partage, nous vous accompagnons dans votre choix. Notre espace vous accueille dans une atmosphère chaleureuse et sobre, propice aux échanges et à la dégustation.</p></div>
 <div class="reveal" style="--d:.15s"><div class="etiquette" role="img" aria-label="Étiquette illustrée au nom de La Cave de l&#x27;Alouette"><div class="in">
 <span class="petit">Cave à vins</span>
 <span class="grand">La Cave de l&#x27;Alouette</span>
@@ -314,27 +330,27 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 </div></section>
 
 <section class="sec offre" id="offre"><div class="wrap">
-<div class="reveal"><span class="eyebrow">À la cave</span><h2 class="titre-sec">Ce que nous proposons</h2></div>
+<div class="reveal"><span class="eyebrow">À la cave</span><h2 class="titre-sec">Nos prestations</h2></div>
 <div class="cartes">
-<article class="carte reveal"><span class="num" style="font-size:3.4rem">I</span><h3>La sélection</h3><p>Une carte de bouteilles choisies avec soin, prêtes à être découvertes.</p></article>
-<article class="carte reveal" style="--d:.1s"><span class="num" style="font-size:3.4rem">II</span><h3>Le conseil</h3><p>Un accompagnement attentif pour orienter votre choix selon vos envies.</p></article>
-<article class="carte reveal" style="--d:.2s"><span class="num" style="font-size:3.4rem">III</span><h3>La dégustation</h3><p>Un lieu pensé pour partager un verre et savourer l&#x27;instant présent.</p></article>
+<article class="carte reveal"><span class="num" style="font-size:3.4rem">I</span><h3>Une sélection rigoureuse</h3><p>Des bouteilles choisies avec soin pour leur précision, adaptées à tous les moments de dégustation.</p></article>
+<article class="carte reveal" style="--d:.1s"><span class="num" style="font-size:3.4rem">II</span><h3>Le conseil sur mesure</h3><p>Des recommandations avisées selon vos goûts, vos mets et vos envies, en toute simplicité.</p></article>
+<article class="carte reveal" style="--d:.2s"><span class="num" style="font-size:3.4rem">III</span><h3>L&#x27;espace dégustation</h3><p>Un lieu convivial pour découvrir des cuvées au verre et partager un moment privilégié.</p></article>
 </div></div></section>
 
 
 
 <section class="sec tuiles-sec" id="visite"><div class="wrap tuiles-grid">
-<div class="tuiles-intro reveal"><span class="eyebrow">Venir</span><h2 class="titre-sec">L&#x27;expérience</h2>
+<div class="tuiles-intro reveal"><span class="eyebrow">Venir</span><h2 class="titre-sec">Votre expérience à la cave</h2>
 <p class="lead">Trois temps simples pour trouver la bouteille qui vous ressemble.</p>
-<ol class="tuiles-index" aria-hidden="true"><li>L&#x27;accueil</li><li>L&#x27;échange</li><li>Le choix</li></ol></div>
+<ol class="tuiles-index" aria-hidden="true"><li>L&#x27;écoute</li><li>La découverte</li><li>Le partage</li></ol></div>
 <div class="tuiles">
-<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="p" x="8" y="12" width="48" height="44" rx="10"/><path class="s" d="M8 22a10 10 0 0 1 10-10h28a10 10 0 0 1 10 10v4H8z"/><rect class="s" x="18" y="6" width="6" height="14" rx="3"/><rect class="s" x="40" y="6" width="6" height="14" rx="3"/><g class="h"><rect x="17" y="34" width="7" height="7" rx="2"/><rect x="28.5" y="34" width="7" height="7" rx="2"/><rect x="40" y="34" width="7" height="7" rx="2"/><rect x="17" y="45" width="7" height="5" rx="2"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>L&#x27;accueil</h3><p>Poussez la porte d&#x27;un espace chaleureux dédié au plaisir du vin.</p></div></article>
-<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M16 6h32c1 12-2 26-16 28C18 32 15 18 16 6Z"/><rect class="s" x="29.5" y="32" width="5" height="18" rx="2.5"/><ellipse class="s" cx="32" cy="54" rx="14" ry="4.5"/><path class="h" d="M21 11c0 7 1 13 5 17-6-2-8-9-7-17z" opacity=".5"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>L&#x27;échange</h3><p>Exprimez vos goûts et laissez-vous guider par nos suggestions.</p></div></article>
-<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M27 4h10v12c0 3 9 6 9 16v22a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V32c0-10 9-13 9-16Z"/><rect class="s" x="26" y="2" width="12" height="7" rx="2.5"/><rect class="s" x="18" y="36" width="28" height="14"/><path class="h" d="M23 30c0-4 2-7 5-9-1 4-1 20-1 26h-4z" opacity=".45"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Le choix</h3><p>Repartez avec la bouteille idéale pour votre table ou votre soirée.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
+<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="p" x="8" y="12" width="48" height="44" rx="10"/><path class="s" d="M8 22a10 10 0 0 1 10-10h28a10 10 0 0 1 10 10v4H8z"/><rect class="s" x="18" y="6" width="6" height="14" rx="3"/><rect class="s" x="40" y="6" width="6" height="14" rx="3"/><g class="h"><rect x="17" y="34" width="7" height="7" rx="2"/><rect x="28.5" y="34" width="7" height="7" rx="2"/><rect x="40" y="34" width="7" height="7" rx="2"/><rect x="17" y="45" width="7" height="5" rx="2"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>L&#x27;écoute</h3><p>Nous prenons le temps de comprendre vos attentes et d&#x27;échanger sur vos préférences.</p></div></article>
+<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M16 6h32c1 12-2 26-16 28C18 32 15 18 16 6Z"/><rect class="s" x="29.5" y="32" width="5" height="18" rx="2.5"/><ellipse class="s" cx="32" cy="54" rx="14" ry="4.5"/><path class="h" d="M21 11c0 7 1 13 5 17-6-2-8-9-7-17z" opacity=".5"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>La découverte</h3><p>Nous vous présentons des flacons correspondant à vos critères et à vos accords.</p></div></article>
+<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M27 4h10v12c0 3 9 6 9 16v22a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V32c0-10 9-13 9-16Z"/><rect class="s" x="26" y="2" width="12" height="7" rx="2.5"/><rect class="s" x="18" y="36" width="28" height="14"/><path class="h" d="M23 30c0-4 2-7 5-9-1 4-1 20-1 26h-4z" opacity=".45"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Le partage</h3><p>Vous repartez avec la bouteille idéale, prête à être appréciée en bonne compagnie.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
 </div></div></section>
 
 
-<section class="cite"><div class="wrap reveal"><svg class="ornement" viewBox="0 0 60 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 6h20M38 6h20"/><path d="M30 1l5 5-5 5-5-5Z"/></svg><blockquote>Le vin est une histoire qui se raconte à chaque verre.</blockquote></div></section>
+<section class="cite"><div class="wrap reveal"><svg class="ornement" viewBox="0 0 60 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 6h20M38 6h20"/><path d="M30 1l5 5-5 5-5-5Z"/></svg><blockquote>Le grand vin se reconnaît à la mémoire qu&#x27;il laisse et aux échanges qu&#x27;il suscite.</blockquote></div></section>
 
 <section class="cta-bande" aria-label="Nous contacter"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="grain"></i></div>
 <div class="wrap"><div class="cta-carte verre reveal">
@@ -346,7 +362,7 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 
 <section class="sec" id="contact"><div class="wrap contact-grid">
 <div class="reveal"><span class="eyebrow">Contact</span>
-<h2 class="titre-sec">Nous trouver</h2>
+<h2 class="titre-sec">Rendez-nous visite à la cave</h2>
 <p class="lead">Pour une visite, une dégustation ou une question, écrivez-nous ou passez nous voir.</p>
 <ul class="coord"><li><small>Adresse</small><span>12 Rue Léon Morin</span></li>
 <li><small>Téléphone</small><a href="tel:+33557892923">+33 5 57 89 29 23</a></li></ul>
@@ -363,7 +379,7 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 </main>
 <footer class="pied"><div class="wrap">
 <div class="pied-cols">
-<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">C</i><span>La Cave de l&#x27;Alouette</span></a><p>Le goût du partage et des belles bouteilles.</p></div>
+<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">C</i><span>La Cave de l&#x27;Alouette</span></a><p>Une sélection exigeante de flacons et un conseil sur mesure.</p></div>
 <div><h3>Naviguer</h3><ul><li><a href="#esprit">La cave</a></li><li><a href="#offre">La sélection</a></li><li><a href="#visite">Venir</a></li><li><a href="#contact">Contact</a></li></ul></div>
 <div><h3>Nous trouver</h3><ul><li>12 Rue Léon Morin</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=12%20Rue%20L%C3%A9on%20Morin" target="_blank" rel="noopener">Itinéraire →</a></li></ul></div>
 <div><h3>Nous joindre</h3><ul><li><a href="tel:+33557892923">+33 5 57 89 29 23</a></li><li><a href="#contact">Formulaire de contact</a></li></ul></div>

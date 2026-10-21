@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr" class="pas-js"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Laudate — Bijouterie · Joaillerie · Bordeaux</title><meta name="description" content="La joaillerie de précision à Bordeaux. Découvrez une sélection exigeante de pièces d&#x27;exception au cœur de Bordeaux, pensée pour une clientèle attentive au détail et au savoir-faire."><meta property="og:type" content="website"><meta property="og:title" content="Laudate — Bijouterie · Joaillerie · Bordeaux"><meta property="og:description" content="La joaillerie de précision à Bordeaux. Découvrez une sélection exigeante de pièces d&#x27;exception au cœur de Bordeaux, pensée pour une clientèle attentive au détail et au savoir-faire."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f7f4ee"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23b8923f%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%2315120e%22%3EU%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "JewelryStore", "name": "Laudate", "address": {"@type": "PostalAddress", "streetAddress": "60 Cours Georges Clemenceau, 33000 Bordeaux", "addressCountry": "FR"}, "telephone": "+33 5 56 81 82 04"}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Laudate — Bijouterie · Joaillerie · Bordeaux</title><meta name="description" content="La joaillerie de précision à Bordeaux. Découvrez une sélection rigoureuse de pièces d&#x27;horlogerie et de joaillerie au cœur de Bordeaux, pensée pour une clientèle exigeante."><meta property="og:type" content="website"><meta property="og:title" content="Laudate — Bijouterie · Joaillerie · Bordeaux"><meta property="og:description" content="La joaillerie de précision à Bordeaux. Découvrez une sélection rigoureuse de pièces d&#x27;horlogerie et de joaillerie au cœur de Bordeaux, pensée pour une clientèle exigeante."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f7f4ee"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23b8923f%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%2315120e%22%3EU%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "JewelryStore", "name": "Laudate", "address": {"@type": "PostalAddress", "streetAddress": "60 Cours Georges Clemenceau, 33000 Bordeaux", "addressCountry": "FR"}, "telephone": "+33 5 56 81 82 04"}</script>
 <style>
 :root{--bg:#f7f4ee;--bg2:#efe9dd;--ink:#15120e;--muted:#6a6154;--accent:#b8923f;--line:#ddd3c0;--on-accent:#15120e;--dark:#0b0a09;--on-dark:#f4eee2;--c-lueur:#2a2214;--g1:#fff5d6;--g2:#e2c27a;--g3:#b8923f;--g4:#8a6a2a;--g5:#6b4f1c;--f-titre:'Bodoni Moda',Georgia, 'Times New Roman', serif;--f-texte:'Jost',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--r:0px;}
 *,*::before,*::after{box-sizing:border-box}
@@ -184,6 +184,22 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 .cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
 .aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
+/* Galerie de photos d'illustration (photos libres, remplacées ensuite par celles du commerce) */
+.galerie-sec{padding-block:clamp(56px,8vw,110px)}
+.galerie-tete{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(24px,4vw,44px);max-width:46rem}
+.galerie{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(10px,1.4vw,18px)}
+.galerie figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r,0);background:var(--bg2)}
+.galerie img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.galerie figure:hover img{transform:scale(1.07)}
+.galerie figure::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent);border-radius:inherit}
+.galerie .g1{grid-column:span 7;grid-row:span 2}
+.galerie .g2{grid-column:span 5}
+.galerie .g3{grid-column:span 5}
+.galerie .g4{grid-column:span 12;grid-row:span 1}
+.galerie-note{margin:16px 0 0;font-size:.78rem;color:var(--muted)}
+.galerie-note a{color:inherit}
+@media (max-width:720px){.galerie{grid-template-columns:1fr;grid-auto-rows:220px}.galerie .g1,.galerie .g2,.galerie .g3,.galerie .g4{grid-column:auto;grid-row:auto}.galerie .g1{grid-row:span 1;min-height:280px}}
+@media (prefers-reduced-motion:reduce){.galerie img{transition:none}}
 
 /* Joaillerie / luxe */
 .hero{min-height:100svh;background:radial-gradient(120% 90% at 50% 38%,var(--c-lueur),var(--dark) 62%);color:var(--on-dark);display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:120px 0 90px}
@@ -285,14 +301,14 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 <polygon class="reflet" points="120,84 150,66 164,96 140,108"/><polygon class="reflet r2" points="186,100 212,108 176,130"/><polygon class="reflet r3" points="70,112 94,112 120,170"/>
 </svg></div>
 <h1 class="reveal" style="--d:.1s">Laudate<span>La joaillerie de précision à Bordeaux.</span></h1>
-<p class="sous reveal" style="--d:.2s">Découvrez une sélection exigeante de pièces d&#x27;exception au cœur de Bordeaux, pensée pour une clientèle attentive au détail et au savoir-faire.</p>
+<p class="sous reveal" style="--d:.2s">Découvrez une sélection rigoureuse de pièces d&#x27;horlogerie et de joaillerie au cœur de Bordeaux, pensée pour une clientèle exigeante.</p>
 <div class="reveal" style="--d:.3s;display:flex;gap:14px;flex-wrap:wrap;justify-content:center"><a class="btn" href="#sur-mesure">Imaginer une pièce <span class="fl">→</span></a><a class="btn ligne" href="#contact">Nous écrire</a></div>
 </div></section>
 
 <div class="marquee" aria-hidden="true"><div><span>Élégance</span><b>✦</b><span>Précision</span><b>✦</b><span>Sur-mesure</span><b>✦</b><span>Savoir-faire</span><b>✦</b><span>Écrin</span><b>✦</b><span>Élégance</span><b>✦</b><span>Précision</span><b>✦</b><span>Sur-mesure</span><b>✦</b><span>Savoir-faire</span><b>✦</b><span>Écrin</span><b>✦</b></div></div>
 
 <section class="sec" id="esprit"><div class="wrap esprit reveal">
-<span class="eyebrow">La maison</span><h2 class="titre-sec">L&#x27;art de la précision</h2><p>Située à Bordeaux, notre boutique incarne une certaine idée de l&#x27;élégance et de la mesure. Chaque pièce présentée résulte d&#x27;une sélection rigoureuse, guidée par le respect des traditions joaillières et horlogères.</p><p>Nous privilégions la discryption, l&#x27;écoute et la justesse du conseil pour vous accompagner dans vos choix.</p></div></section>
+<span class="eyebrow">La maison</span><h2 class="titre-sec">Notre vision du métier</h2><p>Située cours Georges Clemenceau à Bordeaux, la boutique privilégie les créations d&#x27;exception et la haute précision horlogère. Chaque objet est choisi selon des critères stricts de qualité, de design et de maîtrise technique.</p><p>L&#x27;attention portée aux détails guide chaque visite, dans un cadre discret et raffiné.</p></div></section>
 
 <section class="sec config" id="sur-mesure"><div class="wrap">
 <div class="reveal"><span class="eyebrow">Imaginer</span><h2 class="titre-sec">Une pièce, <em>à votre main</em></h2></div>
@@ -305,25 +321,25 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 </div></div></section>
 
 <section class="sec" id="offre"><div class="wrap">
-<div class="reveal"><span class="eyebrow">En boutique</span><h2 class="titre-sec">Nos sélections et services</h2></div>
+<div class="reveal"><span class="eyebrow">En boutique</span><h2 class="titre-sec">Nos sélections</h2></div>
 <div class="offre-grid">
-<article class="o reveal"><span class="n">I.</span><h3>Haute horlogerie</h3><p>Une sélection de garde-temps précis, choisis pour leur mécanisme et leur esthétique.</p></article>
-<article class="o reveal" style="--d:.1s"><span class="n">II.</span><h3>Joaillerie d&#x27;exception</h3><p>Des créations et des pièces choisies avec soin pour leur éclat et leur facture.</p></article>
-<article class="o reveal" style="--d:.2s"><span class="n">III.</span><h3>Conseil personnalisé</h3><p>Un accompagnement sur mesure pour répondre à vos attentes les plus exigeantes.</p></article>
+<article class="o reveal"><span class="n">I.</span><h3>Joaillerie</h3><p>Une collection de bagues, colliers et parures façonnés dans les règles de l&#x27;art.</p></article>
+<article class="o reveal" style="--d:.1s"><span class="n">II.</span><h3>Horlogerie</h3><p>Des garde-temps précis alliant tradition mécanique et esthétique intemporelle.</p></article>
+<article class="o reveal" style="--d:.2s"><span class="n">III.</span><h3>Créations</h3><p>Des pièces choisies pour leur rareté et la pureté de leur facture.</p></article>
 </div></div></section>
 
 <section class="sec tuiles-sec" id="services"><div class="wrap tuiles-grid">
-<div class="tuiles-intro reveal"><span class="eyebrow">Sur demande</span><h2 class="titre-sec">Notre accompagnement</h2>
+<div class="tuiles-intro reveal"><span class="eyebrow">Sur demande</span><h2 class="titre-sec">L&#x27;accompagnement</h2>
 <p class="lead">Un accompagnement attentif, avant comme après le choix d’une pièce.</p>
-<ol class="tuiles-index" aria-hidden="true"><li>Accueil attentif</li><li>Expertise mesurée</li><li>Services sur demande</li></ol></div>
+<ol class="tuiles-index" aria-hidden="true"><li>Conseil</li><li>Expertise</li><li>Sur mesure</li></ol></div>
 <div class="tuiles">
-<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M10 14a10 10 0 0 1 10-10h24a10 10 0 0 1 10 10v18a10 10 0 0 1-10 10H28l-12 11v-11h0a6 6 0 0 1-6-6Z"/><g class="h" opacity=".9"><circle cx="22" cy="23" r="3.6"/><circle cx="32" cy="23" r="3.6"/><circle cx="42" cy="23" r="3.6"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>Accueil attentif</h3><p>Un temps privilégié pour découvrir nos collections en toute sérénité.</p></div></article>
-<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle class="s" cx="27" cy="27" r="19"/><circle cx="27" cy="27" r="12" style="fill:var(--bg)"/><path class="h" d="M18 22a10 10 0 0 1 9-7" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/><rect class="p" x="38" y="40" width="10" height="22" rx="5" transform="rotate(-45 43 51)"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Expertise mesurée</h3><p>Une analyse rigoureuse de vos besoins pour chaque projet d&#x27;acquisition.</p></div></article>
-<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="s" d="M20 8h24l12 14H8Z"/><path class="p" d="M8 22h48L32 58Z"/><path class="h" d="M20 8l6 14h12l6-14Z" opacity=".35"/><path class="h" d="M26 22h12L32 52Z" opacity=".25"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Services sur demande</h3><p>Un suivi attentif et des prestations adaptées à vos pièces précieuses.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
+<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M10 14a10 10 0 0 1 10-10h24a10 10 0 0 1 10 10v18a10 10 0 0 1-10 10H28l-12 11v-11h0a6 6 0 0 1-6-6Z"/><g class="h" opacity=".9"><circle cx="22" cy="23" r="3.6"/><circle cx="32" cy="23" r="3.6"/><circle cx="42" cy="23" r="3.6"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>Conseil</h3><p>Un échange privilégié pour vous orienter vers la pièce idéale.</p></div></article>
+<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle class="s" cx="27" cy="27" r="19"/><circle cx="27" cy="27" r="12" style="fill:var(--bg)"/><path class="h" d="M18 22a10 10 0 0 1 9-7" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/><rect class="p" x="38" y="40" width="10" height="22" rx="5" transform="rotate(-45 43 51)"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Expertise</h3><p>Une analyse rigoureuse de vos attentes et de vos projets.</p></div></article>
+<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="s" d="M20 8h24l12 14H8Z"/><path class="p" d="M8 22h48L32 58Z"/><path class="h" d="M20 8l6 14h12l6-14Z" opacity=".35"/><path class="h" d="M26 22h12L32 52Z" opacity=".25"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Sur mesure</h3><p>Des services personnalisés élaborés à votre demande.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
 </div></div></section>
 
 
-<section class="cite"><div class="wrap reveal"><blockquote>Le luxe véritable réside dans le soin porté au détail.</blockquote></div></section>
+<section class="cite"><div class="wrap reveal"><blockquote>La précision est la politesse de l&#x27;exigence.</blockquote></div></section>
 
 <section class="cta-bande" aria-label="Nous contacter"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="grain"></i></div>
 <div class="wrap"><div class="cta-carte verre reveal">

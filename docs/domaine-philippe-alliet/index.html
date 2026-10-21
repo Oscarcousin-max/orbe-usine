@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr" class="pas-js"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Domaine Philippe Alliet — Domaine viticole</title><meta name="description" content="Le travail de la vigne et du vin. Découvrez notre domaine viticole et partagez notre passion pour le vin, de la terre jusqu&#x27;au verre."><meta property="og:type" content="website"><meta property="og:title" content="Domaine Philippe Alliet — Domaine viticole"><meta property="og:description" content="Le travail de la vigne et du vin. Découvrez notre domaine viticole et partagez notre passion pour le vin, de la terre jusqu&#x27;au verre."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f6f0e6"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%237b1e2b%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3ED%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Winery", "name": "Domaine Philippe Alliet", "email": "philippe.alliet@wanadoo.fr"}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Domaine Philippe Alliet — Domaine viticole</title><meta name="description" content="La rigueur de la vigne et la vérité du vin. Le domaine vous accueille pour partager le travail de la vigne et la dégustation au chai."><meta property="og:type" content="website"><meta property="og:title" content="Domaine Philippe Alliet — Domaine viticole"><meta property="og:description" content="La rigueur de la vigne et la vérité du vin. Le domaine vous accueille pour partager le travail de la vigne et la dégustation au chai."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#f6f0e6"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%237b1e2b%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3ED%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Winery", "name": "Domaine Philippe Alliet", "email": "philippe.alliet@wanadoo.fr"}</script>
 <style>
 :root{--bg:#f6f0e6;--bg2:#efe6d6;--ink:#2a1418;--muted:#6b5a58;--accent:#7b1e2b;--accent2:#d9b36c;--line:#d9ccb8;--on-accent:#ffffff;--dark:#1d0d11;--on-dark:#f6ede0;--c-ciel1:#3b1520;--c-ciel2:#c9744a;--c-col1:#4a1a26;--c-col2:#35121c;--c-col3:#1d0d11;--f-titre:'Cormorant Garamond',Georgia, 'Times New Roman', serif;--f-texte:'Jost',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--r:0px;}
 *,*::before,*::after{box-sizing:border-box}
@@ -184,6 +184,22 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 .cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
 .aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
+/* Galerie de photos d'illustration (photos libres, remplacées ensuite par celles du commerce) */
+.galerie-sec{padding-block:clamp(56px,8vw,110px)}
+.galerie-tete{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(24px,4vw,44px);max-width:46rem}
+.galerie{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(10px,1.4vw,18px)}
+.galerie figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r,0);background:var(--bg2)}
+.galerie img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.galerie figure:hover img{transform:scale(1.07)}
+.galerie figure::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent);border-radius:inherit}
+.galerie .g1{grid-column:span 7;grid-row:span 2}
+.galerie .g2{grid-column:span 5}
+.galerie .g3{grid-column:span 5}
+.galerie .g4{grid-column:span 12;grid-row:span 1}
+.galerie-note{margin:16px 0 0;font-size:.78rem;color:var(--muted)}
+.galerie-note a{color:inherit}
+@media (max-width:720px){.galerie{grid-template-columns:1fr;grid-auto-rows:220px}.galerie .g1,.galerie .g2,.galerie .g3,.galerie .g4{grid-column:auto;grid-row:auto}.galerie .g1{grid-row:span 1;min-height:280px}}
+@media (prefers-reduced-motion:reduce){.galerie img{transition:none}}
 
 /* Domaine viticole */
 .hero{position:relative;min-height:100svh;background:var(--dark);color:var(--on-dark);overflow:hidden;display:grid;align-items:end;isolation:isolate}
@@ -293,8 +309,8 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 </svg></div>
 <div class="wrap hero-in">
 <span class="eyebrow reveal" style="color:var(--accent2)">Domaine viticole</span>
-<h1 class="reveal" style="--d:.1s">Domaine Philippe Alliet<span>Le travail de la vigne et du vin.</span></h1>
-<p class="sous reveal" style="--d:.2s">Découvrez notre domaine viticole et partagez notre passion pour le vin, de la terre jusqu&#x27;au verre.</p>
+<h1 class="reveal" style="--d:.1s">Domaine Philippe Alliet<span>La rigueur de la vigne et la vérité du vin.</span></h1>
+<p class="sous reveal" style="--d:.2s">Le domaine vous accueille pour partager le travail de la vigne et la dégustation au chai.</p>
 <div class="reveal" style="--d:.3s;display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#offre">Découvrir le domaine <span class="fl">→</span></a><a class="btn ligne" href="#contact">Nous écrire</a></div>
 </div>
 <div class="defile" aria-hidden="true">Défiler</div>
@@ -304,8 +320,8 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 
 <section class="sec" id="esprit"><div class="wrap esprit-grid">
 <div class="reveal"><div class="num">01</div><span class="eyebrow">L’esprit du domaine</span>
-<h2 class="titre-sec">L&#x27;esprit du domaine</h2>
-<p>Chaque parcelle reçoit une attention constante. Le soin attentif porté aux vignes guide notre travail au fil des saisons, dans le respect de la terre et du végétal.</p><p>Au chai, les gestes précis accompagnent la transformation naturelle du raisin. Le temps fait son œuvre pour révéler la typicité de chaque récolte.</p></div>
+<h2 class="titre-sec">La patience du geste et le respect du sol</h2>
+<p>Dans le respect des saisons, la vigne fait l&#x27;objet d&#x27;un soin attentif tout au long de l&#x27;année. De la taille hivernale jusqu&#x27;aux vendanges manuelles, chaque geste préserve l&#x27;équilibre végétal pour offrir des raisins sains et précis.</p><p>Au chai, le travail se poursuit avec calme et mesure. Les vinifications accompagnent la vendange sans artifice, pour révéler la franchise du fruit et la singularité de chaque parcelle.</p></div>
 <div class="reveal" style="--d:.15s"><div class="etiquette" role="img" aria-label="Étiquette illustrée au nom de Domaine Philippe Alliet"><div class="in">
 <span class="petit">Domaine viticole</span>
 <span class="grand">Domaine Philippe Alliet</span>
@@ -314,11 +330,11 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 </div></section>
 
 <section class="sec offre" id="offre"><div class="wrap">
-<div class="reveal"><span class="eyebrow">Au domaine</span><h2 class="titre-sec">Nos propositions</h2></div>
+<div class="reveal"><span class="eyebrow">Au domaine</span><h2 class="titre-sec">Notre domaine viticole</h2></div>
 <div class="cartes">
-<article class="carte reveal"><span class="num" style="font-size:3.4rem">I</span><h3>Visite des vignes</h3><p>Parcourez les rangées de vignes et découvrez notre travail de la terre au fil des saisons.</p></article>
-<article class="carte reveal" style="--d:.1s"><span class="num" style="font-size:3.4rem">II</span><h3>Découverte du chai</h3><p>Entrez dans les espaces de vinification pour comprendre les étapes de l&#x27;élaboration de nos vins.</p></article>
-<article class="carte reveal" style="--d:.2s"><span class="num" style="font-size:3.4rem">III</span><h3>Dégustation</h3><p>Prenez le temps d&#x27;apprécier nos vins lors d&#x27;un moment d&#x27;échange privilégié au domaine.</p></article>
+<article class="carte reveal"><span class="num" style="font-size:3.4rem">I</span><h3>Accueil au domaine</h3><p>Vous êtes reçus sur place pour découvrir les lieux et échanger autour de nos pratiques de culture.</p></article>
+<article class="carte reveal" style="--d:.1s"><span class="num" style="font-size:3.4rem">II</span><h3>Dégustation au chai</h3><p>Un moment privilégié pour apprécier le travail accompli au fil des saisons et des élevages.</p></article>
+<article class="carte reveal" style="--d:.2s"><span class="num" style="font-size:3.4rem">III</span><h3>Vente à la propriété</h3><p>Les bouteilles issues du domaine sont disponibles directement lors de votre passage.</p></article>
 </div></div></section>
 
 <section class="sec saisons" id="saisons"><div class="wrap">
@@ -329,17 +345,17 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 </div></section>
 
 <section class="sec tuiles-sec" id="visite"><div class="wrap tuiles-grid">
-<div class="tuiles-intro reveal"><span class="eyebrow">Visiter</span><h2 class="titre-sec">L&#x27;expérience au domaine</h2>
+<div class="tuiles-intro reveal"><span class="eyebrow">Visiter</span><h2 class="titre-sec">De la vigne à la bouteille</h2>
 <p class="lead">Trois temps simples pour découvrir le domaine, à votre rythme.</p>
-<ol class="tuiles-index" aria-hidden="true"><li>La vigne</li><li>Le chai</li><li>Le partage</li></ol></div>
+<ol class="tuiles-index" aria-hidden="true"><li>La vigne et les sols</li><li>Les vendanges</li><li>L&#x27;élevage au chai</li></ol></div>
 <div class="tuiles">
-<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="p" x="8" y="12" width="48" height="44" rx="10"/><path class="s" d="M8 22a10 10 0 0 1 10-10h28a10 10 0 0 1 10 10v4H8z"/><rect class="s" x="18" y="6" width="6" height="14" rx="3"/><rect class="s" x="40" y="6" width="6" height="14" rx="3"/><g class="h"><rect x="17" y="34" width="7" height="7" rx="2"/><rect x="28.5" y="34" width="7" height="7" rx="2"/><rect x="40" y="34" width="7" height="7" rx="2"/><rect x="17" y="45" width="7" height="5" rx="2"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>La vigne</h3><p>Observer le cycle de la nature et le travail quotidien des parcelles.</p></div></article>
-<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M16 6h32c1 12-2 26-16 28C18 32 15 18 16 6Z"/><rect class="s" x="29.5" y="32" width="5" height="18" rx="2.5"/><ellipse class="s" cx="32" cy="54" rx="14" ry="4.5"/><path class="h" d="M21 11c0 7 1 13 5 17-6-2-8-9-7-17z" opacity=".5"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Le chai</h3><p>Un temps de dégustation, à votre rythme, pour trouver ce qui vous plaît.</p></div></article>
-<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M27 4h10v12c0 3 9 6 9 16v22a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V32c0-10 9-13 9-16Z"/><rect class="s" x="26" y="2" width="12" height="7" rx="2.5"/><rect class="s" x="18" y="36" width="28" height="14"/><path class="h" d="M23 30c0-4 2-7 5-9-1 4-1 20-1 26h-4z" opacity=".45"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Le partage</h3><p>Goûter le fruit de notre travail et échanger autour de nos vins.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
+<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="p" x="8" y="12" width="48" height="44" rx="10"/><path class="s" d="M8 22a10 10 0 0 1 10-10h28a10 10 0 0 1 10 10v4H8z"/><rect class="s" x="18" y="6" width="6" height="14" rx="3"/><rect class="s" x="40" y="6" width="6" height="14" rx="3"/><g class="h"><rect x="17" y="34" width="7" height="7" rx="2"/><rect x="28.5" y="34" width="7" height="7" rx="2"/><rect x="40" y="34" width="7" height="7" rx="2"/><rect x="17" y="45" width="7" height="5" rx="2"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>La vigne et les sols</h3><p>Un travail constant au grand air pour préserver la vitalité des terroirs et des ceps.</p></div></article>
+<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M16 6h32c1 12-2 26-16 28C18 32 15 18 16 6Z"/><rect class="s" x="29.5" y="32" width="5" height="18" rx="2.5"/><ellipse class="s" cx="32" cy="54" rx="14" ry="4.5"/><path class="h" d="M21 11c0 7 1 13 5 17-6-2-8-9-7-17z" opacity=".5"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Les vendanges</h3><p>La récolte est effectuée à maturité pour préserver la fraîcheur et la finesse du raisin.</p></div></article>
+<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M27 4h10v12c0 3 9 6 9 16v22a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V32c0-10 9-13 9-16Z"/><rect class="s" x="26" y="2" width="12" height="7" rx="2.5"/><rect class="s" x="18" y="36" width="28" height="14"/><path class="h" d="M23 30c0-4 2-7 5-9-1 4-1 20-1 26h-4z" opacity=".45"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>L&#x27;élevage au chai</h3><p>Le vin prend son temps dans la pénombre du chai avant sa mise en bouteille soignée.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
 </div></div></section>
 
 
-<section class="cite"><div class="wrap reveal"><svg class="ornement" viewBox="0 0 60 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 6h20M38 6h20"/><path d="M30 1l5 5-5 5-5-5Z"/></svg><blockquote>Le vin est une histoire de patience, de temps et de liens avec la terre.</blockquote></div></section>
+<section class="cite"><div class="wrap reveal"><svg class="ornement" viewBox="0 0 60 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 6h20M38 6h20"/><path d="M30 1l5 5-5 5-5-5Z"/></svg><blockquote>Le vin naît du silence de la terre et de l&#x27;attention de la main.</blockquote></div></section>
 
 <section class="cta-bande" aria-label="Nous contacter"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="grain"></i></div>
 <div class="wrap"><div class="cta-carte verre reveal">
@@ -367,7 +383,7 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 </main>
 <footer class="pied"><div class="wrap">
 <div class="pied-cols">
-<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">D</i><span>Domaine Philippe Alliet</span></a><p>Le travail de la vigne et du vin.</p></div>
+<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">D</i><span>Domaine Philippe Alliet</span></a><p>La rigueur de la vigne et la vérité du vin.</p></div>
 <div><h3>Naviguer</h3><ul><li><a href="#esprit">Le domaine</a></li><li><a href="#offre">Au domaine</a></li><li><a href="#saisons">La vigne</a></li><li><a href="#visite">Visiter</a></li><li><a href="#contact">Contact</a></li></ul></div>
 <div><h3>Nous trouver</h3><ul><li>Nouvelle-Aquitaine</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Domaine%20Philippe%20Alliet" target="_blank" rel="noopener">Itinéraire →</a></li></ul></div>
 <div><h3>Nous joindre</h3><ul><li><a href="mailto:philippe.alliet@wanadoo.fr">philippe.alliet@wanadoo.fr</a></li><li><a href="#contact">Formulaire de contact</a></li></ul></div>

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr" class="pas-js"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Oriental Gâto — Maison gourmande</title><meta name="description" content="L&#x27;art de la gourmandise au quotidien. Un lieu d&#x27;accueil et de partage dédié aux saveurs authentiques, conçu pour satisfaire les amateurs de douceurs les plus exigeants."><meta property="og:type" content="website"><meta property="og:title" content="Oriental Gâto — Maison gourmande"><meta property="og:description" content="L&#x27;art de la gourmandise au quotidien. Un lieu d&#x27;accueil et de partage dédié aux saveurs authentiques, conçu pour satisfaire les amateurs de douceurs les plus exigeants."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#fbf3ee"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23b3476a%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3EO%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FoodEstablishment", "name": "Oriental Gâto", "address": {"@type": "PostalAddress", "streetAddress": "20 Cours de la Somme", "addressCountry": "FR"}, "email": "helal.gato@outlook.fr"}</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Oriental Gâto — Maison gourmande</title><meta name="description" content="L&#x27;art de la gourmandise et du partage. Une adresse dédiée aux douceurs artisanales, où la tradition rencontre le plaisir des sens."><meta property="og:type" content="website"><meta property="og:title" content="Oriental Gâto — Maison gourmande"><meta property="og:description" content="L&#x27;art de la gourmandise et du partage. Une adresse dédiée aux douceurs artisanales, où la tradition rencontre le plaisir des sens."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#fbf3ee"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23b3476a%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3EO%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FoodEstablishment", "name": "Oriental Gâto", "address": {"@type": "PostalAddress", "streetAddress": "20 Cours de la Somme", "addressCountry": "FR"}, "email": "helal.gato@outlook.fr"}</script>
 <style>
 :root{--bg:#fbf3ee;--bg2:#f4e6de;--ink:#3a2418;--muted:#7e6556;--accent:#b3476a;--accent2:#e8a87c;--soft:#f4d9d2;--line:#e8d2c7;--r:18px;--on-accent:#ffffff;--dark:#3a2418;--on-dark:#fbeee4;--f-titre:'DM Serif Display',Georgia, 'Times New Roman', serif;--f-texte:'DM Sans',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;}
 *,*::before,*::after{box-sizing:border-box}
@@ -184,6 +184,22 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 .cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
 .aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
+/* Galerie de photos d'illustration (photos libres, remplacées ensuite par celles du commerce) */
+.galerie-sec{padding-block:clamp(56px,8vw,110px)}
+.galerie-tete{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(24px,4vw,44px);max-width:46rem}
+.galerie{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(10px,1.4vw,18px)}
+.galerie figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r,0);background:var(--bg2)}
+.galerie img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.galerie figure:hover img{transform:scale(1.07)}
+.galerie figure::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent);border-radius:inherit}
+.galerie .g1{grid-column:span 7;grid-row:span 2}
+.galerie .g2{grid-column:span 5}
+.galerie .g3{grid-column:span 5}
+.galerie .g4{grid-column:span 12;grid-row:span 1}
+.galerie-note{margin:16px 0 0;font-size:.78rem;color:var(--muted)}
+.galerie-note a{color:inherit}
+@media (max-width:720px){.galerie{grid-template-columns:1fr;grid-auto-rows:220px}.galerie .g1,.galerie .g2,.galerie .g3,.galerie .g4{grid-column:auto;grid-row:auto}.galerie .g1{grid-row:span 1;min-height:280px}}
+@media (prefers-reduced-motion:reduce){.galerie img{transition:none}}
 
 /* Table, maison d'hôtes, gourmandise */
 .hero{min-height:100svh;display:grid;align-items:center;padding:clamp(110px,16vh,170px) 0 clamp(50px,8vh,90px);background:var(--bg);position:relative;overflow:hidden}
@@ -267,8 +283,8 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 <div class="hero-pied" aria-hidden="true"><div class="puces"><span class="puce"><i></i>Maison gourmande</span></div></div>
 <div class="wrap">
 <div><span class="eyebrow reveal">Maison gourmande</span>
-<h1 class="reveal" style="--d:.1s">Oriental Gâto<span>L&#x27;art de la gourmandise au quotidien.</span></h1>
-<p class="sous reveal" style="--d:.2s">Un lieu d&#x27;accueil et de partage dédié aux saveurs authentiques, conçu pour satisfaire les amateurs de douceurs les plus exigeants.</p>
+<h1 class="reveal" style="--d:.1s">Oriental Gâto<span>L&#x27;art de la gourmandise et du partage.</span></h1>
+<p class="sous reveal" style="--d:.2s">Une adresse dédiée aux douceurs artisanales, où la tradition rencontre le plaisir des sens.</p>
 <div class="reveal" style="--d:.3s;display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#carte">Découvrir la maison <span class="fl">→</span></a><a class="btn ligne" href="#contact">Nous écrire</a></div></div>
 <div class="assiette reveal" style="--d:.15s" role="img" aria-label="Assiette illustrée"><svg viewBox="0 0 600 600" aria-hidden="true">
 <defs><path id="rond" d="M300 300 m-262 0 a262 262 0 1 1 524 0 a262 262 0 1 1 -524 0"/></defs>
@@ -284,27 +300,27 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 <div class="marquee" aria-hidden="true"><div><span>Gourmandise</span><b>❦</b><span>Saisons</span><b>❦</b><span>Savoir-faire</span><b>❦</b><span>Partage</span><b>❦</b><span>Douceur</span><b>❦</b><span>Gourmandise</span><b>❦</b><span>Saisons</span><b>❦</b><span>Savoir-faire</span><b>❦</b><span>Partage</span><b>❦</b><span>Douceur</span><b>❦</b></div></div>
 
 <section class="sec" id="esprit"><div class="wrap esprit">
-<div class="gauche reveal"><div class="num">01</div><span class="eyebrow">La maison</span><h2 class="titre-sec">Notre esprit</h2><p>Dans un cadre soigné, chaque visite est une parenthèse dédiée au plaisir des sens. L&#x27;accueil attentif et la rigueur du travail guident chaque instant passé parmi nous, pour offrir une expérience toujours mémorable.</p><p>La simplicité se joint à l&#x27;exigence pour cultiver le goût des belles choses et le sens de la convivialité.</p></div>
-<div class="carte-menu reveal" id="carte" style="--d:.12s"><span class="sous-t">La boutique</span><h3>Notre sélection</h3>
-<div class="plat"><div class="t"><h4>Créations chocolatées</h4><i></i><span>I</span></div><p>Des alliances de saveurs subtiles pour accompagner les instants de dégustation.</p></div>
-<div class="plat"><div class="t"><h4>Pâtisseries fines</h4><i></i><span>II</span></div><p>Des compositions délicates façonnées avec soin selon les saisons.</p></div>
-<div class="plat"><div class="t"><h4>Épicerie fine</h4><i></i><span>III</span></div><p>Une sélection de produits choisis pour leur qualité et leur authenticité.</p></div>
+<div class="gauche reveal"><div class="num">01</div><span class="eyebrow">La maison</span><h2 class="titre-sec">Une passion pour les belles saveurs</h2><p>Notre maison privilégie la finesse et la qualité des préparations. Chaque création est pensée pour offrir un moment de plaisir authentique. Nous vous accueillons dans un cadre chaleureux et attentionné.</p><p>Les recettes évoluent au fil des saisons pour préserver la fraîcheur des goûts. L&#x27;exigence du geste et le choix rigoureux des ingrédients guident notre travail au quotidien.</p></div>
+<div class="carte-menu reveal" id="carte" style="--d:.12s"><span class="sous-t">La boutique</span><h3>Nos propositions gourmandes</h3>
+<div class="plat"><div class="t"><h4>Pâtisserie fine</h4><i></i><span>I</span></div><p>Des douceurs délicates élaborées avec soin pour accompagner vos moments de convivialité.</p></div>
+<div class="plat"><div class="t"><h4>Chocolaterie</h4><i></i><span>II</span></div><p>Une sélection de créations intenses et fondantes, parfaites pour les amateurs de cacao.</p></div>
+<div class="plat"><div class="t"><h4>Épicerie fine</h4><i></i><span>III</span></div><p>Un choix de produits d&#x27;exception retenus pour leur qualité et leur authenticité.</p></div>
 </div></div></section>
 
 
 
 <section class="sec tuiles-sec" id="plus"><div class="wrap tuiles-grid">
-<div class="tuiles-intro reveal"><span class="eyebrow">À savoir</span><h2 class="titre-sec">L&#x27;expérience</h2>
+<div class="tuiles-intro reveal"><span class="eyebrow">À savoir</span><h2 class="titre-sec">Votre expérience parmi nous</h2>
 <p class="lead">Tout ce qu’il faut pour venir l’esprit léger.</p>
-<ol class="tuiles-index" aria-hidden="true"><li>Accueil</li><li>Conseil</li><li>Partage</li></ol></div>
+<ol class="tuiles-index" aria-hidden="true"><li>Accueil attentionné</li><li>Savoir-faire artisanal</li><li>Conseil sur mesure</li></ol></div>
 <div class="tuiles">
-<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="p" x="6" y="14" width="52" height="38" rx="8"/><path class="s" d="M8 18l24 18 24-18v-1a8 8 0 0 0-3-3H11a8 8 0 0 0-3 3Z"/><path class="h" d="M12 18l20 15 20-15" fill="none" stroke="#fff" stroke-width="2" opacity=".6"/></svg></div><div class="tuile-txt"><span class="n">01</span><h3>Accueil</h3><p>Une attention particulière portée à chaque visiteur pour un moment privilégié.</p></div></article>
-<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M32 4c12 0 21 9 21 21 0 15-21 35-21 35S11 40 11 25C11 13 20 4 32 4Z"/><circle cx="32" cy="25" r="8" style="fill:var(--bg)"/><ellipse class="s" cx="32" cy="60" rx="12" ry="3" opacity=".5"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Conseil</h3><p>Un accompagnement sur mesure pour guider vos choix selon vos envies.</p></div></article>
-<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M32 56S6 41 6 22C6 13 13 7 21 7c5 0 9 3 11 7 2-4 6-7 11-7 8 0 15 6 15 15 0 19-26 34-26 34Z"/><path class="h" d="M14 20c0-5 4-8 8-8-3 2-5 5-5 9z" opacity=".6"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Partage</h3><p>Le plaisir de transmettre le goût des bonnes choses dans les règles de l&#x27;art.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
+<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="p" x="6" y="14" width="52" height="38" rx="8"/><path class="s" d="M8 18l24 18 24-18v-1a8 8 0 0 0-3-3H11a8 8 0 0 0-3 3Z"/><path class="h" d="M12 18l20 15 20-15" fill="none" stroke="#fff" stroke-width="2" opacity=".6"/></svg></div><div class="tuile-txt"><span class="n">01</span><h3>Accueil attentionné</h3><p>Nous vous conseillons avec sobriété pour répondre à toutes vos envies gourmandes.</p></div></article>
+<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M32 4c12 0 21 9 21 21 0 15-21 35-21 35S11 40 11 25C11 13 20 4 32 4Z"/><circle cx="32" cy="25" r="8" style="fill:var(--bg)"/><ellipse class="s" cx="32" cy="60" rx="12" ry="3" opacity=".5"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Savoir-faire artisanal</h3><p>Des fabrications soignées qui mettent en valeur le travail fait main et la précision.</p></div></article>
+<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M32 56S6 41 6 22C6 13 13 7 21 7c5 0 9 3 11 7 2-4 6-7 11-7 8 0 15 6 15 15 0 19-26 34-26 34Z"/><path class="h" d="M14 20c0-5 4-8 8-8-3 2-5 5-5 9z" opacity=".6"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Conseil sur mesure</h3><p>Nous vous guidons dans le choix de vos coffrets et de vos douceurs à offrir.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
 </div></div></section>
 
 
-<section class="cite"><div class="wrap reveal"><blockquote>La gourmandise est un art qui se partage avec exigence et simplicité.</blockquote></div></section>
+<section class="cite"><div class="wrap reveal"><blockquote>La gourmandise est l&#x27;art de sublimer les instants simples.</blockquote></div></section>
 
 <section class="cta-bande" aria-label="Nous contacter"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="grain"></i></div>
 <div class="wrap"><div class="cta-carte verre reveal">
@@ -316,7 +332,7 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 
 <section class="sec" id="contact"><div class="wrap contact-grid">
 <div class="reveal"><span class="eyebrow">Contact</span>
-<h2 class="titre-sec">Nous trouver et nous contacter</h2>
+<h2 class="titre-sec">Nous contacter</h2>
 <p class="lead">Pour réserver, connaître les disponibilités ou poser une question, écrivez-nous.</p>
 <ul class="coord"><li><small>Adresse</small><span>20 Cours de la Somme</span></li>
 <li><small>Email</small><a href="mailto:helal.gato@outlook.fr">helal.gato@outlook.fr</a></li></ul>
@@ -333,7 +349,7 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 </main>
 <footer class="pied"><div class="wrap">
 <div class="pied-cols">
-<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">O</i><span>Oriental Gâto</span></a><p>L&#x27;art de la gourmandise au quotidien.</p></div>
+<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">O</i><span>Oriental Gâto</span></a><p>L&#x27;art de la gourmandise et du partage.</p></div>
 <div><h3>Naviguer</h3><ul><li><a href="#esprit">La maison</a></li><li><a href="#carte">À découvrir</a></li><li><a href="#plus">À savoir</a></li><li><a href="#contact">Contact</a></li></ul></div>
 <div><h3>Nous trouver</h3><ul><li>20 Cours de la Somme</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=20%20Cours%20de%20la%20Somme" target="_blank" rel="noopener">Itinéraire →</a></li></ul></div>
 <div><h3>Nous joindre</h3><ul><li><a href="mailto:helal.gato@outlook.fr">helal.gato@outlook.fr</a></li><li><a href="#contact">Formulaire de contact</a></li></ul></div>
