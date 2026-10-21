@@ -3,8 +3,9 @@
 Un site sans aucune photo fait « maquette ». Ici, on va chercher de vraies photos
 professionnelles, libres de droits, qui collent au métier du commerce :
 
-1. Unsplash (photos de qualité studio, licence Unsplash : usage commercial libre, sans clé) ;
-2. sinon Openverse (photos Creative Commons, sans clé) ;
+1. Pexels ou Unsplash si une clé gratuite est enregistrée dans les secrets du dépôt
+   (PEXELS_API_KEY, UNSPLASH_ACCESS_KEY) : photos de qualité studio, usage commercial libre ;
+2. sinon Wikimedia Commons, sans clé : d'abord les « Quality images », photographes crédités ;
 3. sinon rien : le site sort quand même, sans galerie.
 
 Ce ne sont PAS les photos du commerce : le site l'écrit clairement (« Photos d'illustration »)
@@ -12,7 +13,9 @@ et cite les photographes. Le commerçant mettra les siennes à la place.
 """
 import hashlib
 import json
+import os
 import random
+import re
 import time
 import urllib.parse
 import urllib.request
@@ -57,45 +60,87 @@ def _get(url, timeout=25):
         return json.loads(r.read().decode("utf-8"))
 
 
-def _unsplash(requete):
-    """Recherche publique d'Unsplash (celle du site), sans clé. Garde les photos gratuites, en paysage."""
-    url = ("https://unsplash.com/napi/search/photos?per_page=30&orientation=landscape&query="
-           + urllib.parse.quote(requete))
+CLE_PEXELS = os.environ.get("PEXELS_API_KEY", "").strip()
+CLE_UNSPLASH = os.environ.get("UNSPLASH_ACCESS_KEY", "").strip()
+UA_OUTIL = "OrbeUsine/1.0 (https://github.com/%s; societe.orbe@gmail.com)" % os.environ.get("GITHUB_REPOSITORY", "orbe-usine")
+
+
+def _bon_format(w, h):
+    return bool(w and h and 1.2 <= w / h <= 2.3 and w >= 1200)
+
+
+def _pexels(requete):
+    if not CLE_PEXELS:
+        return []
+    url = "https://api.pexels.com/v1/search?per_page=40&orientation=landscape&size=large&query=" + urllib.parse.quote(requete)
+    req = urllib.request.Request(url, headers={"Authorization": CLE_PEXELS, "User-Agent": UA_OUTIL})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        res = json.loads(r.read().decode("utf-8")).get("photos") or []
     out = []
-    for p in (_get(url).get("results") or []):
-        raw = str((p.get("urls") or {}).get("raw") or "")
-        if p.get("premium") or p.get("plus") or not raw.startswith("https://images.unsplash.com/"):
-            continue  # Unsplash+ est payant : on n'en veut pas
-        w, h = p.get("width") or 0, p.get("height") or 0
-        if w and h and not (1.2 <= w / h <= 2.2):
+    for p in res:
+        base = str((p.get("src") or {}).get("original") or "")
+        if not base.startswith("https://images.pexels.com/") or not _bon_format(p.get("width"), p.get("height")):
             continue
-        user = p.get("user") or {}
-        sep = "&" if "?" in raw else "?"
-        out.append({
-            "src": raw + sep + "w=1600&q=80&auto=format&fit=crop",
-            "src_petit": raw + sep + "w=900&q=78&auto=format&fit=crop",
-            "auteur": str(user.get("name") or "Unsplash")[:60],
-            "lien": str((p.get("links") or {}).get("html") or "https://unsplash.com"),
-            "source": "Unsplash",
-        })
+        out.append({"src": base + "?auto=compress&cs=tinysrgb&w=1600", "src_petit": base + "?auto=compress&cs=tinysrgb&w=900",
+                    "auteur": str(p.get("photographer") or "Pexels")[:60], "lien": str(p.get("url") or "https://www.pexels.com"),
+                    "source": "Pexels"})
     return out
 
 
-def _openverse(requete):
-    """Openverse (Creative Commons), sans clé : photos en paysage, réutilisation commerciale autorisée."""
-    url = ("https://api.openverse.org/v1/images/?page_size=30&license_type=commercial,modification"
-           "&category=photograph&aspect_ratio=wide&size=large&mature=false&q=" + urllib.parse.quote(requete))
+def _unsplash(requete):
+    if not CLE_UNSPLASH:
+        return []
+    url = ("https://api.unsplash.com/search/photos?per_page=30&orientation=landscape&content_filter=high&query="
+           + urllib.parse.quote(requete))
+    req = urllib.request.Request(url, headers={"Authorization": "Client-ID " + CLE_UNSPLASH, "Accept-Version": "v1", "User-Agent": UA_OUTIL})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        res = json.loads(r.read().decode("utf-8")).get("results") or []
     out = []
-    for p in (_get(url).get("results") or []):
-        src = str(p.get("url") or "")
-        if not src.startswith("https://") or src.lower().endswith((".svg", ".gif", ".tif", ".tiff")):
+    for p in res:
+        raw = str((p.get("urls") or {}).get("raw") or "")
+        if p.get("premium") or p.get("plus") or not raw.startswith("https://images.unsplash.com/"):
+            continue  # Unsplash+ est payant : on n'en veut pas
+        if not _bon_format(p.get("width"), p.get("height")):
             continue
-        out.append({
-            "src": src, "src_petit": src,
-            "auteur": str(p.get("creator") or "Openverse")[:60],
-            "lien": str(p.get("foreign_landing_url") or "https://openverse.org"),
-            "source": "Openverse, licence %s" % str(p.get("license") or "CC").upper(),
-        })
+        user = p.get("user") or {}
+        sep = "&" if "?" in raw else "?"
+        out.append({"src": raw + sep + "w=1600&q=80&auto=format&fit=crop", "src_petit": raw + sep + "w=900&q=78&auto=format&fit=crop",
+                    "auteur": str(user.get("name") or "Unsplash")[:60],
+                    "lien": str((user.get("links") or {}).get("html") or "https://unsplash.com") + "?utm_source=orbe&utm_medium=referral",
+                    "source": "Unsplash"})
+    return out
+
+
+# Titres qui trahissent un document scanné, un plan ou un dessin plutôt qu'une photographie.
+PAS_UNE_PHOTO = re.compile(r"microform|review|magazine|journal|catalog|book|page|plate|poster|map|scan|"
+                           r"engraving|lithograph|drawing|diagram|logo|coat of arms|\b1[5-9]\d\d\b", re.I)
+
+
+def _commons(requete):
+    """Wikimedia Commons, sans clé. D'abord les « Quality images », sinon des scans en noir et blanc remontent."""
+    out = []
+    for rech in ('%s incategory:"Quality images"' % requete, '%s incategory:"Valued images"' % requete):
+        params = {"action": "query", "format": "json", "generator": "search", "gsrnamespace": "6",
+                  "gsrsearch": rech + " filetype:bitmap", "gsrlimit": "40",
+                  "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": "1600"}
+        req = urllib.request.Request("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(params),
+                                     headers={"User-Agent": UA_OUTIL})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            pages = (json.loads(r.read().decode("utf-8")).get("query") or {}).get("pages") or {}
+        for pg in sorted(pages.values(), key=lambda x: x.get("index", 0)):
+            info = (pg.get("imageinfo") or [{}])[0]
+            meta = info.get("extmetadata") or {}
+            src = str(info.get("thumburl") or info.get("url") or "")
+            licence = re.sub("<[^>]+>", "", str((meta.get("LicenseShortName") or {}).get("value", ""))).strip()
+            auteur = " ".join(re.sub("<[^>]+>", " ", str((meta.get("Artist") or {}).get("value", ""))).split())[:60]
+            if (src.lower().split("?")[0].endswith((".jpg", ".jpeg")) and _bon_format(info.get("width"), info.get("height"))
+                    and not PAS_UNE_PHOTO.search(pg.get("title", "")) and "fair use" not in licence.lower()
+                    and not re.search(r"\bNC\b|noncommercial", licence, re.I)):
+                out.append({"src": src, "src_petit": src.replace("/1600px-", "/900px-"), "auteur": auteur or "Wikimedia Commons",
+                            "lien": str(info.get("descriptionurl") or "https://commons.wikimedia.org"),
+                            "source": "Wikimedia Commons, %s" % (licence or "licence libre")})
+        if len(out) >= 6:
+            break
     return out
 
 
@@ -103,7 +148,7 @@ def _reserve(requete):
     if requete in _CACHE:
         return _CACHE[requete]
     res = []
-    for f in (_unsplash, _openverse):
+    for f in (_pexels, _unsplash, _commons):
         try:
             res = f(requete)
         except Exception:

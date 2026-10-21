@@ -20,6 +20,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Tester
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
         run: python test_photos.py
       - name: Garder le rapport
         if: always()
