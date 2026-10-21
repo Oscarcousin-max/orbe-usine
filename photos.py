@@ -116,10 +116,19 @@ PAS_UNE_PHOTO = re.compile(r"microform|review|magazine|journal|catalog|book|page
                            r"engraving|lithograph|drawing|diagram|logo|coat of arms|\b1[5-9]\d\d\b", re.I)
 
 
+def _mots(requete):
+    """Mots qui doivent figurer dans le titre de la photo (au singulier), pour écarter les photos hors sujet."""
+    vides = {"shop", "store", "interior", "table", "work", "working", "modern", "fresh", "class", "room", "house", "at", "and"}
+    m = [w.rstrip("s") for w in re.findall(r"[a-z]+", requete.lower()) if len(w) >= 4 and w not in vides]
+    return m or [w.rstrip("s") for w in re.findall(r"[a-z]+", requete.lower()) if len(w) >= 4]
+
+
 def _commons(requete):
-    """Wikimedia Commons, sans clé. D'abord les « Quality images », sinon des scans en noir et blanc remontent."""
+    """Wikimedia Commons, sans clé. D'abord les « Quality images », sinon des scans en noir et blanc remontent.
+    La recherche de Commons est très large : on garde seulement les photos dont le titre parle du sujet."""
     out = []
-    for rech in ('%s incategory:"Quality images"' % requete, '%s incategory:"Valued images"' % requete):
+    mots = _mots(requete)
+    for rech in ('%s incategory:"Quality images"' % requete, '%s incategory:"Valued images"' % requete, "intitle:" + " ".join(mots[:1]) + " " + requete):
         params = {"action": "query", "format": "json", "generator": "search", "gsrnamespace": "6",
                   "gsrsearch": rech + " filetype:bitmap", "gsrlimit": "40",
                   "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": "1600"}
@@ -135,6 +144,7 @@ def _commons(requete):
             auteur = " ".join(re.sub("<[^>]+>", " ", str((meta.get("Artist") or {}).get("value", ""))).split())[:60]
             if (src.lower().split("?")[0].endswith((".jpg", ".jpeg")) and _bon_format(info.get("width"), info.get("height"))
                     and not PAS_UNE_PHOTO.search(pg.get("title", "")) and "fair use" not in licence.lower()
+                    and any(m in pg.get("title", "").lower().replace("_", " ") for m in mots)
                     and not re.search(r"\bNC\b|noncommercial", licence, re.I)):
                 out.append({"src": src, "src_petit": src.replace("/1600px-", "/900px-"), "auteur": auteur or "Wikimedia Commons",
                             "lien": str(info.get("descriptionurl") or "https://commons.wikimedia.org"),
