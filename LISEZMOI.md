@@ -6,7 +6,8 @@ Chaque nuit, vers 0 h 15, cette usine travaille toute seule et gratuitement :
    voisin différent à chaque passage, des commerces
    qui ont une adresse et un contact, mais **aucun site internet** ;
 2. elle demande à une IA lesquels ont l'air indépendants et haut de gamme ;
-3. elle fabrique un site à partir de modèles dessinés à la main (dossier `templates/`), habillés du « kit premium » :
+3. elle fabrique un site à partir de modèles dessinés à la main (dossier `templates/`), avec une galerie de vraies photos
+   d'illustration du métier (Unsplash, sinon Openverse, photographes crédités — `photos.py`), habillés du « kit premium » :
    barre de menu en verre, grand bandeau animé, tuiles qui s'empilent au défilement, icônes 3D, appel à l'action, grand pied de page ;
    l'IA n'écrit que les textes, qui sont contrôlés (aucun fait inventé) ;
 4. elle écrit le message à envoyer, avec le lien du site dedans.
@@ -45,4 +46,5 @@ La liste complète est dans `docs/usine.json`, et le journal du dernier passage 
 - Le rythme est la ligne `cron` de `.github/workflows/usine.yml`.
 - La zone est `MAISON` (la Gironde, prise à chaque fois) et `VOISINS`
   (les 11 autres départements, pris à tour de rôle), en haut de `usine.py`.
-- Les 12 secteurs cherchés sont la liste `SECTEURS`, juste en dessous.
+- Les 23 secteurs cherchés (dont plombiers, électriciens et artisans du bâtiment) sont la liste `SECTEURS`, juste en dessous.
+- Les photos cherchées pour chaque secteur sont la liste `RECHERCHES` de `photos.py`.

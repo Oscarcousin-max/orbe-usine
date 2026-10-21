@@ -10,6 +10,7 @@ on:
       - "usine.py"
       - "rendu.py"
       - "icones3d.py"
+      - "photos.py"
       - "templates/**"
       - ".github/workflows/usine.yml"
   workflow_dispatch:
@@ -44,7 +45,7 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           # Une mise à jour des modèles (push) refait seulement les sites récents avec le nouveau design.
           NOMBRE: ${{ github.event.inputs.nombre || '20' }}
-          REFAIRE: ${{ github.event.inputs.refaire || '0' }}
+          REFAIRE: ${{ github.event_name == 'push' && '1' || github.event.inputs.refaire || '0' }}
         run: |
           mkdir -p data
           set -o pipefail

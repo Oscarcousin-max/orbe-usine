@@ -21,6 +21,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import photos
 import rendu
 
 ICI = Path(__file__).resolve().parent
@@ -68,9 +69,10 @@ SECTEURS = [
     ("spas, massages et bien-être", '["leisure"="spa"]|["shop"="massage"]|["amenity"="spa"]|["healthcare"~"^(alternative|physiotherapist|osteopath)$"]'),
     ("opticiens et créateurs de lunettes", '["shop"~"^(optician|hearing_aids)$"]'),
     ("librairies, boutiques cadeaux, créateurs", '["shop"~"^(books|gift|stationery|craft|art_supplies|music|toys)$"]'),
-    ("architectes, paysagistes, designers", '["office"~"^(architect|interior_designer|designer)$"]|["craft"~"^(gardener|landscaper|plumber|electrician|painter|plasterer|tiler)$"]'),
+    ("architectes, paysagistes, designers", '["office"~"^(architect|interior_designer|designer)$"]|["craft"~"^(gardener|landscaper)$"]'),
     ("studios de yoga, pilates et coachs sportifs", '["leisure"~"^(fitness_centre|sports_centre|dance)$"]|["sport"~"^(yoga|pilates|dance)$"]'),
     ("tatoueurs et barbiers", '["shop"~"^(tattoo|barber)$"]|["craft"="tattoo"]'),
+    ("plombiers, électriciens et artisans du bâtiment", '["craft"~"^(plumber|electrician|hvac|heating_engineer|roofer|painter|plasterer|tiler|carpenter|window_construction|insulation)$"]'),
 ]
 # La Gironde à chaque passage (c'est chez Oscar), plus un département voisin qui tourne.
 # Interroger toute la Nouvelle-Aquitaine d'un coup ramènerait toujours les mêmes
@@ -94,6 +96,8 @@ VOISINS = [
 ]
 OVERPASS = os.environ.get("USINE_OVERPASS", "https://overpass-api.de/api/interpreter")
 MIROIR_OSM = os.environ.get("USINE_MIROIR", "https://overpass.kumi.systems/api/interpreter")
+# Deux autres serveurs publics de la même carte, quand les deux premiers sont saturés.
+AUTRES_OSM = ["https://overpass.private.coffee/api/interpreter", "https://maps.mail.ru/osm/tools/overpass/api/interpreter"]
 # Un email ou un message vaut mieux qu'un coup de téléphone à passer.
 RANG_CANAL = {"Email": 0, "Instagram": 1, "SMS": 2, "Facebook": 3, "Téléphone": 4}
 # Overpass refuse les faux navigateurs : il veut qu'un outil se présente comme tel.
@@ -142,24 +146,31 @@ def overpass(filtre, bbox, limite=500):
     """
     contact = '[~"^(phone|contact:phone|email|contact:email|contact:instagram|contact:facebook)$"~"."]'
     sans_site = '["name"][!"website"][!"contact:website"][!"brand"][!"brand:website"]'
-    parts = "".join("nwr%s%s%s(%s);" % (f, sans_site, contact, bbox) for f in filtre.split("|"))
+    # Un secteur peut réunir plusieurs filtres, séparés par « ]|[ ». Attention : le « | » sert AUSSI
+    # à l'intérieur des filtres (« beauty|hairdresser ») : couper partout cassait toutes les recherches (erreur 400).
+    morceaux = re.split(r"(?<=\])\|(?=\[)", filtre)
+    parts = "".join("nwr%s%s%s(%s);" % (f, sans_site, contact, bbox) for f in morceaux)
     q = "[out:json][timeout:180];(%s);out tags center %d;" % (parts, limite)
     # Le serveur principal est souvent saturé (502) : on réessaie, puis on change de serveur.
     derniere = None
-    for essai, serveur in enumerate((OVERPASS, OVERPASS, OVERPASS, MIROIR_OSM)):
+    for essai, serveur in enumerate([OVERPASS, MIROIR_OSM] + AUTRES_OSM + [OVERPASS]):
         if essai:
-            time.sleep(15)
+            time.sleep(8)
         try:
-            if serveur is MIROIR_OSM:
+            if serveur == MIROIR_OSM:
                 req = urllib.request.Request(serveur + "?data=" + urllib.parse.quote(q), headers={"User-Agent": UA_OSM})
             else:
                 req = urllib.request.Request(serveur, data=urllib.parse.urlencode({"data": q}).encode(),
                                              headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": UA_OSM})
-            with urllib.request.urlopen(req, timeout=240) as r:
+            with urllib.request.urlopen(req, timeout=200) as r:
                 return json.loads(r.read().decode("utf-8")).get("elements", [])
+        except urllib.error.HTTPError as e:
+            derniere = e
+            detail = " ".join(e.read().decode("utf-8", "ignore").split())[:160] if e.code == 400 else ""
+            journal("    carte %s : %s %s (nouvel essai)" % (urllib.parse.urlsplit(serveur).netloc, e, detail))
         except Exception as e:
             derniere = e
-            journal("    carte : %s (nouvel essai)" % str(e)[:90])
+            journal("    carte %s : %s (nouvel essai)" % (urllib.parse.urlsplit(serveur).netloc, str(e)[:90]))
     raise derniere
 
 
@@ -407,7 +418,12 @@ def fabriquer_site(fiche, faits):
     textes, refuses = rendu.valider_textes(brut, famille, fiche["secteur"])
     if brut is not None and refuses:
         journal("  %d textes écartés (faits non vérifiables), remplacés par des textes sobres : %s" % (len(refuses), ", ".join(refuses[:6])))
-    html, modele_site = rendu.fabriquer(fiche["secteur"], faits, textes)
+    try:
+        images = photos.photos_pour(fiche["secteur"], faits.get("nom", ""), journal=journal)
+    except Exception as e:
+        images = []
+        journal("  photos indisponibles (%s)" % str(e)[:100])
+    html, modele_site = rendu.fabriquer(fiche["secteur"], faits, textes, images)
     if not (4000 <= len(html) <= 240000) or "lorem ipsum" in html.lower():
         raise ValueError("site hors limites")
     return html, "modèle %s · %s" % (modele_site, auteur)

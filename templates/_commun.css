@@ -179,3 +179,19 @@ form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0
 .cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
 .aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
+/* Galerie de photos d'illustration (photos libres, remplacées ensuite par celles du commerce) */
+.galerie-sec{padding-block:clamp(56px,8vw,110px)}
+.galerie-tete{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(24px,4vw,44px);max-width:46rem}
+.galerie{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(10px,1.4vw,18px)}
+.galerie figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r,0);background:var(--bg2)}
+.galerie img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.galerie figure:hover img{transform:scale(1.07)}
+.galerie figure::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent);border-radius:inherit}
+.galerie .g1{grid-column:span 7;grid-row:span 2}
+.galerie .g2{grid-column:span 5}
+.galerie .g3{grid-column:span 5}
+.galerie .g4{grid-column:span 12;grid-row:span 1}
+.galerie-note{margin:16px 0 0;font-size:.78rem;color:var(--muted)}
+.galerie-note a{color:inherit}
+@media (max-width:720px){.galerie{grid-template-columns:1fr;grid-auto-rows:220px}.galerie .g1,.galerie .g2,.galerie .g3,.galerie .g4{grid-column:auto;grid-row:auto}.galerie .g1{grid-row:span 1;min-height:280px}}
+@media (prefers-reduced-motion:reduce){.galerie img{transition:none}}

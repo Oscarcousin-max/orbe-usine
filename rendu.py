@@ -42,6 +42,7 @@ SECTEURS = {
     "architectes, paysagistes, designers": ("atelier", "Atelier de création", "LocalBusiness", False),
     "studios de yoga, pilates et coachs sportifs": ("bijou", "Studio", "SportsActivityLocation", False),
     "tatoueurs et barbiers": ("atelier", "Atelier", "HealthAndBeautyBusiness", False),
+    "plombiers, électriciens et artisans du bâtiment": ("atelier", "Artisan du bâtiment", "HomeAndConstructionBusiness", False),
 }
 MENU_SUR = {
     "restaurants indépendants de qualité": "La table",
@@ -327,6 +328,28 @@ VARIANTES = {
         nav=[("esprit", "La maison"), ("carte", "À découvrir"), ("plus", "À savoir")], retirer=["moment"],
         marquee=["Gourmandise", "Saisons", "Savoir-faire", "Partage", "Douceur"],
         kit=dict(cta_eyebrow="La boutique", cta_titre="Une envie gourmande ?", cta_texte="Une commande, une occasion, une question : écrivez-nous ou passez nous voir.")),
+    "plombiers, électriciens et artisans du bâtiment": dict(
+        icones=("repere", "calendrier", "bulle"),
+        nav=[("esprit", "L’entreprise"), ("realisations", "Chantiers"), ("offre", "Services"), ("demarche", "Intervention")],
+        cta_hero="Demander un devis", cta_cible="contact",
+        marquee=["Dépannage", "Installation", "Rénovation", "Devis", "Proximité"],
+        remplacer=[("Un espace pour <em>vos pièces</em>", "Vos <em>chantiers</em>"),
+                   ("Les cadres ci-dessous attendent vos photos : chaque création y trouvera sa place.", "Les cadres ci-dessous attendent les photos de vos chantiers.")],
+        objets=["Un devis", "Un dépannage", "Une rénovation", "Autre demande"],
+        texte_contact="Une panne, un projet, une question ? Décrivez-nous votre besoin, nous vous rappelons.",
+        indice="artisan du bâtiment (plombier, électricien, chauffagiste, couvreur, peintre, carreleur) : dépannage, installation, rénovation, devis clair, travail propre, proximité. Pas de prix, pas de délai chiffré, pas de marque, pas de certification ni de label.",
+        kit=dict(tuiles_eyebrow="Votre intervention", tuiles_lead="Une intervention simple et claire, de l’appel au travail terminé.",
+                 cta_eyebrow="Votre projet", cta_titre="Un devis, une panne ?", cta_texte="Décrivez-nous votre besoin en quelques mots : nous vous rappelons pour en parler."),
+        defauts=dict(accroche="Un travail propre, un devis clair", sous_titre="Dépannage, installation et rénovation, avec un interlocuteur qui vous explique tout.",
+                     esprit_titre="Un artisan près de chez vous", esprit_1="Chaque intervention commence par écouter et regarder. Vous savez ce qui sera fait, pourquoi, et comment, avant que le travail commence.",
+                     esprit_2="Nous laissons les lieux propres et nous restons joignables après le chantier.",
+                     offre_titre="Nos services", o1_t="Dépannage", o1_d="Une panne, une fuite, un souci : nous intervenons et nous expliquons.",
+                     o2_t="Installation", o2_d="Des équipements neufs, posés avec soin et dans les règles.",
+                     o3_t="Rénovation", o3_d="Votre projet de rénovation, étudié avec vous du début à la fin.",
+                     exp_titre="Comment se passe une intervention", e1_t="Vous nous contactez", e1_d="Quelques mots sur votre besoin, une photo si vous le pouvez.",
+                     e2_t="Nous vous proposons", e2_d="Un diagnostic et un devis clair, sans surprise.",
+                     e3_t="Nous intervenons", e3_d="Un travail soigné, un chantier laissé propre.",
+                     citation="Un travail bien fait se voit longtemps.", contact_titre="Parlons de votre besoin")),
 }
 
 
@@ -449,8 +472,28 @@ def _texte_rond(nom, ville):
     return s[:90]
 
 
-def fabriquer(secteur, faits, textes):
-    """Renvoie le HTML complet du site : modèle de la famille + thème + textes."""
+def _galerie(lire, photos, etiquette, section_id, eyebrow, titre):
+    """Section de photos d'illustration (4 au maximum), avec le nom des photographes."""
+    figs, credits, vus = [], [], []
+    for i, ph in enumerate(photos[:4]):
+        src = ph["src"] if i == 0 else ph.get("src_petit") or ph["src"]
+        figs.append('<figure class="g g%d reveal"%s><img src="%s" alt="%s" loading="%s" decoding="async" referrerpolicy="no-referrer"></figure>'
+                    % (i + 1, (' style="--d:%.2fs"' % (i * .08)) if i else "", esc(src),
+                       esc("Photo d’illustration · " + etiquette), "eager" if i == 0 else "lazy"))
+        if ph.get("auteur") not in vus:
+            vus.append(ph.get("auteur"))
+            credits.append('<a href="%s" target="_blank" rel="noopener nofollow">%s</a>'
+                           % (esc(ph.get("lien") or "#"), esc(ph.get("auteur") or "photographe")))
+    sources = sorted({str(ph.get("source") or "").split(",")[0] for ph in photos[:4]} - {""})
+    if len(figs) < 3:
+        return ""
+    return (lire("_galerie.html").replace("{{galerie_id}}", section_id).replace("{{galerie_eyebrow}}", esc(eyebrow))
+            .replace("{{galerie_titre}}", titre).replace("{{galerie_photos}}", "".join(figs))
+            .replace("{{galerie_credits}}", ", ".join(credits) + ((" sur " + esc(" et ".join(sources))) if sources else "")))
+
+
+def fabriquer(secteur, faits, textes, photos=None):
+    """Renvoie le HTML complet du site : modèle de la famille + thème + textes (+ photos d'illustration)."""
     fam, etiquette, type_ld, alcool = famille_de(secteur)
     theme_nom = choisir_theme(faits.get("nom", ""), fam)
     th = THEMES[fam][theme_nom]
@@ -549,6 +592,17 @@ def fabriquer(secteur, faits, textes):
         mots, sep = var["marquee"], (re.search(r'class="marquee"[^>]*><div><span>[^<]*</span><b>([^<]*)</b>', page) or [None, "✦"])[1]
         bande = "".join("<span>%s</span><b>%s</b>" % (esc(m), sep) for m in mots * 2)
         page = re.sub(r'(<div class="marquee"[^>]*><div>).*?(</div></div>)', lambda m: m.group(1) + bande + m.group(2), page, count=1, flags=re.S)
+    # Photos d'illustration : une vraie galerie, au lieu de cadres vides.
+    if photos:
+        if 'id="realisations"' in page:
+            lab = dict(cfg["nav"]).get("realisations", "Réalisations")
+            bloc = _galerie(lire, photos, etiquette, "realisations", lab, "Un aperçu <em>en images</em>")
+            if bloc:
+                page = re.sub(r'<section id="realisations".*?</section>', lambda m: bloc, page, count=1, flags=re.S)
+        else:
+            bloc = _galerie(lire, photos, etiquette, "galerie", "En images", "L’univers <em>en images</em>")
+            if bloc:
+                page = re.sub(r'(<section[^>]*\bid="esprit"[^>]*>.*?</section>)', lambda m: m.group(1) + "\n" + bloc, page, count=1, flags=re.S)
     # Les blocs injectés contiennent eux-mêmes des jetons : on les remplit après.
     for k in sorted(valeurs, key=len, reverse=True):
         page = page.replace("{{%s}}" % k, valeurs[k])
