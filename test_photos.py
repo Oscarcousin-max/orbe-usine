@@ -2,27 +2,27 @@
 
 Lancé depuis l'onglet Actions (« Tester les photos »). Rapport : data/test-photos.txt.
 """
-import time
-import photos
-import usine
-
+import json, urllib.parse, urllib.request
 L = []
 def dire(t):
     print(t, flush=True); L.append(t)
-
-for f in (photos._unsplash, photos._openverse):
-    try:
-        r = f("florist shop")
-        dire("%-12s %2d photos  ex. %s" % (f.__name__[1:], len(r), r[0]["src"][:90] if r else "-"))
-    except Exception as e:
-        dire("%-12s ERREUR %s" % (f.__name__[1:], str(e)[:120]))
-for s in ("plombiers, électriciens et artisans du bâtiment", "restaurants indépendants de qualité"):
-    p = photos.photos_pour(s, "Test", journal=dire)
-    dire("  %s : %s" % (s, [x["auteur"] for x in p]))
-t = time.time()
-try:
-    els = usine.overpass('["shop"~"^(beauty|hairdresser)$"]', usine.BORDEAUX[1], 20)
-    dire("carte : OK, %d instituts sans site à Bordeaux (%.0f s)" % (len(els), time.time() - t))
-except Exception as e:
-    dire("carte : ERREUR %s" % str(e)[:150])
+UAS = {"outil": "OrbeUsine/1.0 (https://github.com/Oscarcousin-max/orbe-usine; societe.orbe@gmail.com)",
+       "nav": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"}
+TESTS = {
+ "openverse": "https://api.openverse.org/v1/images/?q=florist&page_size=5",
+ "openverse-filtre": "https://api.openverse.org/v1/images/?q=florist&page_size=5&license_type=commercial&category=photograph",
+ "unsplash-napi": "https://unsplash.com/napi/search/photos?query=florist&per_page=5",
+ "commons": "https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=5&gsrsearch=" + urllib.parse.quote("florist incategory:Quality_images") + "&prop=imageinfo&iiprop=url|size&iiurlwidth=1600",
+ "pexels-sans-cle": "https://api.pexels.com/v1/search?query=florist&per_page=5",
+ "flickr-feed": "https://www.flickr.com/services/feeds/photos_public.gne?tags=florist&format=json&nojsoncallback=1",
+}
+for n, u in TESTS.items():
+    for e, ua in UAS.items():
+        try:
+            req = urllib.request.Request(u, headers={"User-Agent": ua, "Accept": "application/json"})
+            with urllib.request.urlopen(req, timeout=25) as r:
+                b = r.read().decode("utf-8", "ignore")
+            dire("%-18s UA %-6s OK %s" % (n, e, " ".join(b.split())[:110]))
+        except Exception as x:
+            dire("%-18s UA %-6s %s" % (n, e, str(x)[:80]))
 open("data/test-photos.txt", "w", encoding="utf-8").write("\n".join(L) + "\n")
