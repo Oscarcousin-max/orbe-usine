@@ -1,7 +1,12 @@
-unsplash     ERREUR HTTP Error 401: Unauthorized
-openverse    ERREUR HTTP Error 401: Unauthorized
-  photos : 0 (aucune source)
-  plombiers, électriciens et artisans du bâtiment : []
-  photos : 0 (aucune source)
-  restaurants indépendants de qualité : []
-carte : OK, 20 instituts sans site à Bordeaux (43 s)
+openverse          UA outil  The read operation timed out
+openverse          UA nav    The read operation timed out
+openverse-filtre   UA outil  The read operation timed out
+openverse-filtre   UA nav    The read operation timed out
+unsplash-napi      UA outil  HTTP Error 401: Unauthorized
+unsplash-napi      UA nav    HTTP Error 401: Unauthorized
+commons            UA outil  OK {"batchcomplete":"","continue":{"gsroffset":5,"continue":"gsroffset||"},"query":{"pages":{"25167204":{"pageid"
+commons            UA nav    OK {"batchcomplete":"","continue":{"gsroffset":5,"continue":"gsroffset||"},"query":{"pages":{"25167204":{"pageid"
+pexels-sans-cle    UA outil  HTTP Error 401: Unauthorized
+pexels-sans-cle    UA nav    HTTP Error 401: Unauthorized
+flickr-feed        UA outil  OK { "title": "Recent Uploads tagged florist", "link": "https:\/\/www.flickr.com\/photos\/tags\/florist\/", "desc
+flickr-feed        UA nav    OK { "title": "Recent Uploads tagged florist", "link": "https:\/\/www.flickr.com\/photos\/tags\/florist\/", "desc
