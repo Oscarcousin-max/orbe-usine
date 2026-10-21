@@ -1,0 +1,32 @@
+name: Tester les photos
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "test_photos.py"
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tester
+        run: python test_photos.py
+      - name: Garder le rapport
+        if: always()
+        run: |
+          git config user.name "Usine ORBE"
+          git config user.email "usine-orbe@users.noreply.github.com"
+          git add data/test-photos.txt
+          git commit -m "Test des photos" || exit 0
+          git pull --rebase -X theirs origin main || true
+          git push
