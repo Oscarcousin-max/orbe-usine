@@ -1,6 +1,45 @@
 {
  "items": [
   {
+   "id": "agent-20261022-artbois-2",
+   "source": "commande",
+   "nom": "Artbois",
+   "type": "poseurs de sols, parqueteurs et menuisiers",
+   "quartier": "Bègles, Bègles",
+   "adresse": "85 bis chemin de Mussonville, 33130 Bègles",
+   "canal": "SMS",
+   "contact": "06 29 85 75 97",
+   "telephone": "06 29 85 75 97",
+   "verif": "commande",
+   "preuve": "Tél. 06 29 85 75 97 · Choisi par Oscar (Pappers). Fixe : 05 56 21 18 93. Aucun site trouvé. Attention : PagesJaunes le dit « probablement fermé », mais la société est toujours active au registre.",
+   "preuve_url": "https://www.pappers.fr/entreprise/artbois-839489341",
+   "objet": "",
+   "message": "Bonjour, ici Oscar, du studio ORBE à Bordeaux. Artbois n'a pas encore de site : je vous en ai préparé 3 versions au choix pour vos sols et menuiseries : https://oscarcousin-max.github.io/orbe-usine/artbois-2/\nSi l'une vous plaît, je la mets en ligne à votre nom, avec vos photos de chantiers. Sinon, un simple « non merci » suffit, je ne vous relancerai pas.\nOscar · ORBE, studio digital",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/artbois-2/",
+   "maquettes": [
+    {
+     "url": "https://oscarcousin-max.github.io/orbe-usine/artbois-2/1/",
+     "theme": "encre",
+     "mise": "cadre",
+     "par": "modèle v2-atelier/encre/cadre · gemini-3.8-flash"
+    },
+    {
+     "url": "https://oscarcousin-max.github.io/orbe-usine/artbois-2/2/",
+     "theme": "terracotta",
+     "mise": "split",
+     "par": "modèle v2-atelier/terracotta/split · gemini-3.8-flash"
+    },
+    {
+     "url": "https://oscarcousin-max.github.io/orbe-usine/artbois-2/3/",
+     "theme": "vert_rose",
+     "mise": "plein",
+     "par": "modèle v2-atelier/vert_rose/plein · gemini-3.6-flash"
+    }
+   ],
+   "par": "commande client · 3 maquettes",
+   "cree_le": "2026-10-22T21:17:27Z"
+  },
+  {
    "id": "agent-20261022-alain-lader",
    "nom": "Alain Lader",
    "type": "artisans d'art",
@@ -33,7 +72,7 @@
    "objet": "Un site sur mesure pour KM 42",
    "message": "Bonjour,\nJ’ai découvert que KM 42 propose une belle sélection d’objets déco, de vaisselle et d’expositions d’artistes à la Rue de la Madeleine.\nEn pensant à votre univers, j’ai préparé un site web sur mesure que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/km-42/\nVous pourrez le mettre en ligne à votre nom, en y ajoutant vos propres photos quand vous le souhaiterez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital  societe.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/km-42/",
-   "par": "modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite",
+   "par": "modèle v2-atelier/terracotta/split · gemini-3.8-flash",
    "cree_le": "2026-10-22T19:33:58Z"
   },
   {
@@ -105,7 +144,7 @@
    "objet": "Votre vitrine digitale pour Les Hangars Saint-Michel",
    "message": "Bonjour,\n\nJ'ai découvert votre boutique de décorateurs et antiquaires au 22 rue des Allamandiers et j'admire la qualité de vos antiques.\n\nJ'ai pris l'initiative de préparer un site sur mesure pour vous, que vous pouvez voir ici : https://oscarcousin-max.github.io/orbe-usine/les-hangars-saint-michel/.\n\nVous êtes libre de le mettre en ligne à votre nom, avec vos propres photos, si cela vous plaît.\n\nSinon, il suffit de répondre « non merci » et je ne vous relancerai pas.\n\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/les-hangars-saint-michel/",
-   "par": "modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite",
+   "par": "modèle v2-atelier/vert_rose/plein · gemini-3.6-flash",
    "cree_le": "2026-10-22T19:36:02Z"
   },
   {
@@ -630,7 +669,7 @@
    "objet": "Votre nouveau site pour Ehia Mobilier & Design",
    "message": "Bonjour,\n\nJ’ai remarqué que votre boutique, spécialisée dans le mobilier et le design à Bidart, accueille les amateurs de pièces uniques depuis le 15 Avenue Cumba.\nJ’ai donc pris l’initiative de créer un site web sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/ehia-mobilier-design/\nVous pourrez le mettre en ligne à votre nom, en y ajoutant vos propres photos, si cela vous convient.\nSi vous préférez ne pas poursuivre, il suffit de répondre « non merci » et nous ne vous recontacterons pas.\n\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/ehia-mobilier-design/",
-   "par": "modèle v2-atelier/terracotta/split · gemini-3.6-flash",
+   "par": "modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite",
    "cree_le": "2026-10-22T13:57:27Z"
   },
   {
@@ -684,7 +723,7 @@
    "objet": "Votre nouveau site pour Les Pièces du Moulin",
    "message": "Bonjour,\nJ’ai découvert que Les Pièces du Moulin propose des chambres d’hôtes et gîtes de charme, un vrai havre de paix.\nJ’ai donc pris l’initiative de vous préparer un site sur mesure, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/les-pieces-du-moulin/\nSi cela vous convient, je peux le mettre en ligne à votre nom avec vos propres photos.\nVous pouvez simplement répondre « non merci » si vous ne souhaitez pas poursuivre, aucune relance ne sera faite.\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/les-pieces-du-moulin/",
-   "par": "modèle v2-table/brasserie/plein · gemini-3.6-flash",
+   "par": "modèle v2-table/brasserie/plein · gemini-3.5-flash-lite",
    "cree_le": "2026-10-22T14:02:04Z"
   },
   {
@@ -774,7 +813,7 @@
    "objet": "Un petit site pour votre atelier de peinture",
    "message": "Bonjour Monsieur Cursan,\nJ’ai remarqué que votre atelier de peinture à La Flotte embellit tant de façades locales.\nJ’ai donc pris l’initiative de créer un site sur mesure pour vous, à découvrir ici : https://oscarcousin-max.github.io/orbe-usine/cursan-nicolas-peinture/\nVous pourrez le mettre en ligne à votre nom, en y ajoutant vos propres photos quand vous le souhaitez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et vous ne serez plus relancé.\nOscar · ORBE, studio digital – societe.orbe@gmail.com · 06 76 05 84 80",
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/cursan-nicolas-peinture/",
-   "par": "modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite",
+   "par": "modèle v2-atelier/encre/cadre · gemini-3.6-flash",
    "cree_le": "2026-10-22T14:07:54Z"
   },
   {
