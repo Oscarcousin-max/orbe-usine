@@ -49,6 +49,10 @@ ANNUAIRES = (
     "kelest.", "trustpilot.", "avis-verifies.", "pagespro.", "europages.", "dnb.com", "bizdb.", "lagazettefrance.",
     "lesechos.fr", "bfmtv.com", "tf1info.fr", "francetvinfo.fr", "aquitaineonline.", "nouvelle-aquitaine.fr", "gouv.fr",
     "annonces-legales", "bodacc.", "legalstart.", "e-pro.fr", "proxi-", "mon-artisan", "artisans-du-batiment", "capeb.",
+    "autour-de-moi.", "piercly.", "monartisan.", "chambredhotes.", "villepratique.", "aiva-riva.", "shoogle.", "sallesdesport.",
+    "restaurants-de-france.", "parlons-sport.", "monopticien.", "le-site-de.", "fairemescourses.", "blooms.fr", "wordreference.",
+    "vivredansles", "vignis.", "tatscout.", "guide-du-paysbasque.", "wanderlog.", "trustup.", "ou-plombier.", "les-meilleurs-",
+    "registreartisans.", "meilleur-artisan.", "bime-electricite.", "qualitelec.", "obat.fr", "artizo.fr", "zeguide.", "infobel.",
     "staffme.", "malt.fr", "fiverr.", "gens-de-confiance", "pole-emploi", "francetravail", "lebonartisan",
 )
 # Créateurs de sites gratuits : un site là-dessus À SON NOM compte comme un vrai site.
@@ -384,8 +388,8 @@ def verifier(fiche, journal=None):
         ok, final, titre = page_parle_de(url, nom, ville, tel)
         coeur = _coeur(_hote(final))
         a_son_nom = any(len(j) >= 4 and j in coeur for j in js)
-        titre_commence = bool(nn) and norm(titre).startswith(nn) and not re.search(r"avis|horaire|guide|annu|resto|annonce|carte|menu|top|liste", coeur)
-        if ok and (a_son_nom or titre_commence):
+        # (un titre qui commence par son nom ne suffit plus : les annuaires font pareil)
+        if ok and a_son_nom:
             res.update(statut="a_un_site", site=final, preuve="Site trouvé : " + final)
             return res
     vus_txt = ", ".join(sorted(set(fiches_vues))[:4])

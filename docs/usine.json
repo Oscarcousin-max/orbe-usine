@@ -1,24 +1,6 @@
 {
  "items": [
   {
-   "id": "agent-20261022-le-1928-restaurant",
-   "nom": "Le 1928 Restaurant",
-   "type": "restaurants indépendants de qualité",
-   "quartier": "Saint-Jean-de-Luz",
-   "adresse": "Route d'Ascain, 64500 Saint-Jean-de-Luz",
-   "canal": "Email",
-   "contact": "restaurant@chantaco.com",
-   "telephone": "05 59 26 28 39",
-   "verif": "sans_site",
-   "preuve": "Tél. 05 59 26 28 39 · Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook, petitfute, thefork, tripadvisor).",
-   "preuve_url": "https://www.google.com/search?q=Le%201928%20Restaurant%20Saint-Jean-de-Luz",
-   "objet": "Un petit site pour Le 1928 Restaurant",
-   "message": "Bonjour,\nJ’ai remarqué que votre restaurant Le 1928, situé sur la Route d'Ascain, accueille ses clients de 8h à 20h tous les jours.\nJ’ai donc pris l’initiative de créer un site sur mesure pour vous, que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/le-1928-restaurant/.\nJe peux le mettre en ligne à votre nom, avec vos propres photos, si cela vous convient.\nSi vous préférez ne pas le retenir, il suffit de répondre « non merci » et je ne vous relancerai pas.\nOscar · ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80",
-   "site_url": "https://oscarcousin-max.github.io/orbe-usine/le-1928-restaurant/",
-   "par": "modèle v2-table/brasserie/plein · gemini-3.6-flash",
-   "cree_le": "2026-10-22T13:53:05Z"
-  },
-  {
    "id": "agent-20261022-l-ecrin-d-argent",
    "nom": "L'Ecrin d'Argent",
    "type": "bijoutiers, joailliers, horlogers",
