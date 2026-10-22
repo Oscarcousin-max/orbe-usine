@@ -1,225 +1,147 @@
-21:50:39     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
-21:50:39     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:50:40     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:50:40     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:50:40     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:50:40     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
-21:50:40     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:50:40     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:50:50   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_d
-21:51:08   photos : 4 (Wikimedia Commons)
-21:51:08   refait : Laurent Barraud (modèle table/cacao · gemini-3.5-flash-lite)
-21:51:33   photos : 4 (Wikimedia Commons)
-21:51:33   refait : L'Atelier de Soane (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-21:51:56   photos : 4 (Wikimedia Commons)
-21:51:56   refait : Raisin & Bulles (modèle domaine/sauge · gemini-3.5-flash-lite)
-21:52:04   photos : 4 (Wikimedia Commons)
-21:52:04   refait : Maison Lichette (modèle table/cacao · gemini-3.5-flash-lite)
-21:52:12   photos : 4 (Wikimedia Commons)
-21:52:12   refait : hush (modèle bijou/nuit_argent · gemini-3.5-flash-lite)
-21:52:20   photos : 4 (Wikimedia Commons)
-21:52:20   refait : Chai Mica (modèle domaine/cuivre · gemini-3.5-flash-lite)
-21:52:28   photos : 4 (Wikimedia Commons)
-21:52:28   refait : Les Gourmandises du Château (modèle table/cacao · gemini-3.5-flash-lite)
-21:52:36   photos : 4 (Wikimedia Commons)
-21:52:36   refait : Nicol'Esthétique (modèle bijou/nuit_argent · gemini-3.5-flash-lite)
-21:52:43   photos : 4 (Wikimedia Commons)
-21:52:43   refait : Wine More Time (modèle domaine/cuivre · gemini-3.5-flash-lite)
-21:52:51   photos : 4 (Wikimedia Commons)
-21:52:51   refait : Sweet Valentine (modèle table/cacao · gemini-3.5-flash-lite)
-21:52:59   photos : 4 (Wikimedia Commons)
-21:52:59   refait : Micky Bliss (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-21:53:07   photos : 4 (Wikimedia Commons)
-21:53:07   refait : Sobre (modèle domaine/cuivre · gemini-3.5-flash-lite)
-21:53:15   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_d
-21:53:15   photos : 4 (Wikimedia Commons)
-21:53:15   refait : Oriental Gâto (modèle table/cacao · gemini-3.5-flash-lite)
-21:53:23   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t, o2_d
-21:53:23   photos : 4 (Wikimedia Commons)
-21:53:23   refait : Institut Mirabilis (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-21:53:31   photos : 4 (Wikimedia Commons)
-21:53:31   refait : Couleurs de vin (modèle domaine/bordeaux · gemini-3.5-flash-lite)
-21:53:39   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d
-21:53:39   photos : 4 (Wikimedia Commons)
-21:53:39   refait : Madame Fromage (modèle table/olive · gemini-3.5-flash-lite)
-21:53:47   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t
-21:53:47   photos : 4 (Wikimedia Commons)
-21:53:47   refait : L'Atelier Chiara (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-21:53:54   photos : 4 (Wikimedia Commons)
-21:53:54   refait : La Cachette (modèle domaine/cuivre · gemini-3.5-flash-lite)
-21:54:02   photos : 4 (Wikimedia Commons)
-21:54:02   refait : Fromagerie des Flots (modèle table/brasserie · gemini-3.5-flash-lite)
-21:54:10   photos : 4 (Wikimedia Commons)
-21:54:10   refait : La Barbière de Saint Paul (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-21:54:18   photos : 4 (Wikimedia Commons)
-21:54:18   refait : Château Bellevue (modèle domaine/cuivre · gemini-3.5-flash-lite)
-21:54:26   photos : 4 (Wikimedia Commons)
-21:54:26   refait : Signature Chocolat (modèle table/cacao · gemini-3.5-flash-lite)
-21:54:34   photos : 4 (Wikimedia Commons)
-21:54:34   refait : Salon Delphine Delaurent (modèle bijou/nuit_argent · gemini-3.5-flash-lite)
-21:54:42   photos : 4 (Wikimedia Commons)
-21:54:42   refait : L'échoppe des Sens - Cave à vin - Epicerie Fine (modèle domaine/cuivre · gemini-3.5-flash-lite)
-21:54:50   photos : 4 (Wikimedia Commons)
-21:54:50   refait : Garg’Antoine (modèle table/olive · gemini-3.5-flash-lite)
-21:54:58   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t
-21:54:58   photos : 4 (Wikimedia Commons)
-21:54:58   refait : Salon Christine Pedrosa (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-21:55:06   photos : 4 (Wikimedia Commons)
-21:55:06   refait : La cave Cheval Quancard (modèle domaine/cuivre · gemini-3.5-flash-lite)
-21:55:14   photos : 4 (Wikimedia Commons)
-21:55:14   refait : Biomajolan (modèle table/olive · gemini-3.5-flash-lite)
-21:55:22   photos : 4 (Wikimedia Commons)
-21:55:22   refait : Salon Marine Ruggiero (modèle bijou/noir_or · gemini-3.5-flash-lite)
-21:55:30   photos : 4 (Wikimedia Commons)
-21:55:30   refait : La Cave de l'Alouette (modèle domaine/bordeaux · gemini-3.5-flash-lite)
-21:55:54   photos : 4 (Wikimedia Commons)
-21:55:54   refait : Le Germini (modèle fleur/botanique · gemini-3.5-flash-lite)
-21:56:02   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_t
-21:56:19   photos : 4 (Wikimedia Commons)
-21:56:19   refait : Hélène Boudat (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-21:56:40   photos : 4 (Wikimedia Commons)
-21:56:40   refait : Château Gaillard (modèle domaine/sauge · gemini-3.5-flash-lite)
-21:56:48   photos : 4 (Wikimedia Commons)
-21:56:48   refait : Jour J (modèle fleur/poudre · gemini-3.5-flash-lite)
-21:56:56   photos : 4 (Wikimedia Commons)
-21:56:56   refait : L'Etabli Bijouterie Geoffrey Roqueflot (modèle bijou/nuit_argent · gemini-3.5-flash-lite)
-21:57:04   photos : 4 (Wikimedia Commons)
-21:57:04   refait : Domaine de la Neuraye (modèle domaine/cuivre · gemini-3.5-flash-lite)
-21:57:12   photos : 4 (Wikimedia Commons)
-21:57:12   refait : F'Laure Ever (modèle fleur/vif · gemini-3.5-flash-lite)
-21:57:20   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_t
-21:57:20   photos : 4 (Wikimedia Commons)
-21:57:20   refait : Sabrina Lagüe Barrière (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-21:57:28   photos : 4 (Wikimedia Commons)
-21:57:28   refait : Vignoble Château d'Éternes (modèle domaine/cuivre · gemini-3.5-flash-lite)
-21:57:36   photos : 4 (Wikimedia Commons)
-21:57:36   refait : Sadia Fleurs (modèle fleur/botanique · gemini-3.5-flash-lite)
-21:57:44   photos : 4 (Wikimedia Commons)
-21:57:44   refait : Bijouterie Lescat (modèle bijou/rose_ivoire · gemini-3.5-flash-lite)
-21:57:52   photos : 4 (Wikimedia Commons)
-21:57:52   refait : Domaine Johann Spelty (modèle domaine/sauge · gemini-3.5-flash-lite)
-21:58:00   photos : 4 (Wikimedia Commons)
-21:58:00   refait : Mademoiselles Pivoines (modèle fleur/poudre · gemini-3.5-flash-lite)
-21:58:08   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : citation
-21:58:08   photos : 4 (Wikimedia Commons)
-21:58:08   refait : Laudate (modèle bijou/noir_or · gemini-3.5-flash-lite)
-21:58:16   photos : 4 (Wikimedia Commons)
-21:58:16   refait : Domaine Philippe Alliet (modèle domaine/bordeaux · gemini-3.5-flash-lite)
-21:58:16 45 site(s) récent(s) refait(s) avec les nouveaux modèles
-22:01:47 Carte : hôtels de charme (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 81 trouvés, 64 sans site et joignables
-22:01:47     modèles groq : meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-safeguard-20b, whisper-large-v3-turbo, openai/gpt-oss-120b, allam-2-7b, whisper-large-v3, openai/gpt-oss-20b, canopylabs/orpheus-arabic-saudi, meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-v1-english, qwen/qwen3.8-27b
-22:01:58   29 retenus comme haut de gamme
-22:06:06     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
-22:09:37     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-22:11:25     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-22:14:39 Carte : spas, massages et bien-être (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 151 trouvés, 106 sans site et joignables
-22:14:48   51 retenus comme haut de gamme
-22:14:49     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-22:15:58     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
-22:19:27     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-22:19:53     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-22:23:21     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-22:26:49     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-22:27:16     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-22:29:05     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
-22:32:34     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-22:33:34     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
-22:35:38 Carte : opticiens et créateurs de lunettes (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 29 trouvés, 21 sans site et joignables
-22:35:46   13 retenus comme haut de gamme
-22:38:42 Carte : librairies, boutiques cadeaux, créateurs (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 69 trouvés, 42 sans site et joignables
-22:38:51   23 retenus comme haut de gamme
-22:42:22 Carte : architectes, paysagistes, designers (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 12 trouvés, 8 sans site et joignables
-22:42:29   6 retenus comme haut de gamme
-22:45:28 Carte : studios de yoga, pilates et coachs sportifs (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Lot-et-Garonne + Haute-Vienne) — 50 trouvés, 31 sans site et joignables
-22:45:36   5 retenus comme haut de gamme
-22:45:36 127 candidats
-22:45:36 Commerce : Château de l'Hoste
-22:45:36   fabrication du site…
-22:45:56   photos : 4 (Wikimedia Commons)
-22:46:04   prêt : https://oscarcousin-max.github.io/orbe-usine/chateau-de-l-hoste/
-22:46:04 Commerce : Cabinet Kinemanuel
-22:46:04   fabrication du site…
-22:46:12   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d, o3_t
-22:46:29   photos : 4 (Wikimedia Commons)
-22:46:37   prêt : https://oscarcousin-max.github.io/orbe-usine/cabinet-kinemanuel/
-22:46:37 Commerce : Pierre Dal Zovo
-22:46:37   fabrication du site…
-22:47:02   photos : 4 (Wikimedia Commons)
-22:47:10   prêt : https://oscarcousin-max.github.io/orbe-usine/pierre-dal-zovo/
-22:47:10 Commerce : Librairie Bloom Book
-22:47:10   fabrication du site…
-22:47:36   photos : 4 (Wikimedia Commons)
-22:47:44   prêt : https://oscarcousin-max.github.io/orbe-usine/librairie-bloom-book/
-22:47:44 Commerce : Atelier 2ML
-22:47:44   fabrication du site…
-22:48:08   photos : 4 (Wikimedia Commons)
-22:48:16   prêt : https://oscarcousin-max.github.io/orbe-usine/atelier-2ml/
-22:48:16 Commerce : Optimum Energy
-22:48:16   fabrication du site…
-22:48:40   photos : 4 (Wikimedia Commons)
-22:48:47   prêt : https://oscarcousin-max.github.io/orbe-usine/optimum-energy/
-22:48:47 Commerce : Villa Lamartine
-22:48:47   fabrication du site…
-22:48:55   photos : 4 (Wikimedia Commons)
-22:49:03   prêt : https://oscarcousin-max.github.io/orbe-usine/villa-lamartine/
-22:49:03 Commerce : Sakura
-22:49:03   fabrication du site…
-22:49:11   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d, o2_t
-22:49:11   photos : 4 (Wikimedia Commons)
-22:49:17   prêt : https://oscarcousin-max.github.io/orbe-usine/sakura/
-22:49:17 Commerce : Au Comptoir des Binocles
-22:49:17   fabrication du site…
-22:49:25   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : citation
-22:49:25   photos : 4 (Wikimedia Commons)
-22:49:33   prêt : https://oscarcousin-max.github.io/orbe-usine/au-comptoir-des-binocles/
-22:49:33 Commerce : Le Goût du Papier
-22:49:33   fabrication du site…
-22:49:41   photos : 4 (Wikimedia Commons)
-22:49:49   prêt : https://oscarcousin-max.github.io/orbe-usine/le-gout-du-papier/
-22:49:49 Commerce : Jean Claude Bendrell
-22:49:49   fabrication du site…
-22:49:57   photos : 4 (Wikimedia Commons)
-22:50:04   prêt : https://oscarcousin-max.github.io/orbe-usine/jean-claude-bendrell/
-22:50:04 Commerce : StimWave
-22:50:04   fabrication du site…
-22:50:12   3 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t, e1_t, e3_t
-22:50:12   photos : 4 (Wikimedia Commons)
-22:50:19   prêt : https://oscarcousin-max.github.io/orbe-usine/stimwave/
-22:50:19 Commerce : Les Petits Pellegrins
-22:50:19   fabrication du site…
-22:50:27   photos : 4 (Wikimedia Commons)
-22:50:35   prêt : https://oscarcousin-max.github.io/orbe-usine/les-petits-pellegrins/
-22:50:35 Commerce : John Kelway
-22:50:35   fabrication du site…
-22:50:43   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1, e3_t
-22:50:43   photos : 4 (Wikimedia Commons)
-22:50:50   prêt : https://oscarcousin-max.github.io/orbe-usine/john-kelway/
-22:50:50 Commerce : A chacun son regard
-22:50:50   fabrication du site…
-22:50:58   photos : 4 (Wikimedia Commons)
-22:51:05   prêt : https://oscarcousin-max.github.io/orbe-usine/a-chacun-son-regard/
-22:51:05 Commerce : Les 400 coups
-22:51:05   fabrication du site…
-22:51:13   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
-22:51:13   photos : 4 (Wikimedia Commons)
-22:51:21   prêt : https://oscarcousin-max.github.io/orbe-usine/les-400-coups/
-22:51:21 Commerce : Le Bac à Sable
-22:51:21   fabrication du site…
-22:51:29   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t, e3_t
-22:51:29   photos : 4 (Wikimedia Commons)
-22:51:36   prêt : https://oscarcousin-max.github.io/orbe-usine/le-bac-a-sable/
-22:51:36 Commerce : So Pep's Mios
-22:51:36   fabrication du site…
-22:51:44   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_t, e3_t
-22:51:44   photos : 4 (Wikimedia Commons)
-22:51:51   prêt : https://oscarcousin-max.github.io/orbe-usine/so-pep-s-mios/
-22:51:51 Commerce : Hôtel Restaurant Chez Prisce
-22:51:51   fabrication du site…
-22:51:59   photos : 4 (Wikimedia Commons)
-22:52:07   prêt : https://oscarcousin-max.github.io/orbe-usine/hotel-restaurant-chez-prisce/
-22:52:07 Commerce : Séverine POLY
-22:52:07   fabrication du site…
-22:52:15   3 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t, e2_d, e3_t
-22:52:15   photos : 4 (Wikimedia Commons)
-22:52:22   prêt : https://oscarcousin-max.github.io/orbe-usine/severine-poly/
-22:52:22 Terminé : 20 site(s) prêt(s).
+00:43:59 Carte : studios de yoga, pilates et coachs sportifs (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Charente + Corrèze) — 47 trouvés, 27 sans site et joignables
+00:43:59     modèles groq : qwen/qwen3.8-27b, whisper-large-v3-turbo, canopylabs/orpheus-arabic-saudi, openai/gpt-oss-120b, whisper-large-v3, openai/gpt-oss-20b, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-22m, meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-safeguard-20b, allam-2-7b
+00:44:07   3 retenus comme haut de gamme
+00:48:24 Carte : tatoueurs et barbiers (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Charente + Corrèze) — 23 trouvés, 15 sans site et joignables
+00:48:31   10 retenus comme haut de gamme
+00:48:32     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+00:52:01     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+00:55:30     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+00:56:28     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
+00:59:41 Carte : plombiers, électriciens et artisans du bâtiment (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Charente + Corrèze) — 50 trouvés, 35 sans site et joignables
+00:59:49   17 retenus comme haut de gamme
+01:04:47 Carte : domaines viticoles et châteaux familiaux (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Charente + Corrèze) — 22 trouvés, 11 sans site et joignables
+01:04:54   10 retenus comme haut de gamme
+01:06:11     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
+01:10:47 Carte : caves à vin et bars à vin (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Charente + Corrèze) — 38 trouvés, 11 sans site et joignables
+01:10:54   6 retenus comme haut de gamme
+01:14:13 Carte : restaurants indépendants de qualité (Bordeaux Métropole + Bassin d'Arcachon et Médoc + Gironde + Charente + Corrèze) — 836 trouvés, 578 sans site et joignables
+01:14:23   32 retenus comme haut de gamme
+01:14:23 78 candidats
+01:14:23 Commerce : L'hippocampe
+01:14:23   fabrication du site…
+01:14:23     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
+01:14:45   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
+01:14:58   photos : 4 (Wikimedia Commons)
+01:15:05   prêt : https://oscarcousin-max.github.io/orbe-usine/l-hippocampe/
+01:15:05 Commerce : L'Imaginarium de Sian Art
+01:15:05   fabrication du site…
+01:15:06     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+01:15:06     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:15:38   photos : 4 (Wikimedia Commons)
+01:15:46   prêt : https://oscarcousin-max.github.io/orbe-usine/l-imaginarium-de-sian-art/
+01:15:46 Commerce : Sébastien Duffau
+01:15:46   fabrication du site…
+01:16:23   photos : 4 (Wikimedia Commons)
+01:16:31   prêt : https://oscarcousin-max.github.io/orbe-usine/sebastien-duffau/
+01:16:31 Commerce : Vignobles Gaec Dupouy
+01:16:31   fabrication du site…
+01:16:31     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+01:17:04   photos : 4 (Wikimedia Commons)
+01:17:12   prêt : https://oscarcousin-max.github.io/orbe-usine/vignobles-gaec-dupouy/
+01:17:12 Commerce : Chez Tonino
+01:17:12   fabrication du site…
+01:17:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:17:44   photos : 4 (Wikimedia Commons)
+01:17:52   prêt : https://oscarcousin-max.github.io/orbe-usine/chez-tonino/
+01:17:52 Commerce : La Cabane du Parc
+01:17:52   fabrication du site…
+01:18:30   photos : 4 (Wikimedia Commons)
+01:18:37   prêt : https://oscarcousin-max.github.io/orbe-usine/la-cabane-du-parc/
+01:18:37 Commerce : Over Cross
+01:18:37   fabrication du site…
+01:18:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:18:37     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:18:57   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d
+01:18:57   photos : 4 (Wikimedia Commons)
+01:19:06   prêt : https://oscarcousin-max.github.io/orbe-usine/over-cross/
+01:19:06 Commerce : Calao Studio
+01:19:06   fabrication du site…
+01:19:07     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:07     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:07     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:07     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+01:19:07     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:07     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:15   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_t
+01:19:15   photos : 4 (Wikimedia Commons)
+01:19:23   prêt : https://oscarcousin-max.github.io/orbe-usine/calao-studio/
+01:19:23 Commerce : Stéphane Rafin
+01:19:23   fabrication du site…
+01:19:23     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:23     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:23     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:31   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t, citation
+01:19:31   photos : 4 (Wikimedia Commons)
+01:19:38   prêt : https://oscarcousin-max.github.io/orbe-usine/stephane-rafin/
+01:19:38 Commerce : Château Larrieu-Terrefort
+01:19:38   fabrication du site…
+01:19:38     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:39     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:39     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:46   photos : 4 (Wikimedia Commons)
+01:19:54   prêt : https://oscarcousin-max.github.io/orbe-usine/chateau-larrieu-terrefort/
+01:19:54 Commerce : Fleur de Vigne
+01:19:54   fabrication du site…
+01:19:54     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:19:54     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:20:16   photos : 4 (Wikimedia Commons)
+01:20:23   prêt : https://oscarcousin-max.github.io/orbe-usine/fleur-de-vigne/
+01:20:23 Commerce : La Cabane Cent Un
+01:20:23   fabrication du site…
+01:20:23     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:20:45   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o3_d
+01:20:45   photos : 4 (Wikimedia Commons)
+01:20:52   prêt : https://oscarcousin-max.github.io/orbe-usine/la-cabane-cent-un/
+01:20:52 Commerce : Training Academy
+01:20:52   fabrication du site…
+01:20:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:21:11   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_d
+01:21:11   photos : 4 (Wikimedia Commons)
+01:21:18   prêt : https://oscarcousin-max.github.io/orbe-usine/training-academy-2/
+01:21:18 Commerce : Blue Horse
+01:21:18   fabrication du site…
+01:21:18     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:21:19     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:21:19     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:21:27   photos : 4 (Wikimedia Commons)
+01:21:34   prêt : https://oscarcousin-max.github.io/orbe-usine/blue-horse/
+01:21:34 Commerce : M&C Confort
+01:21:34   fabrication du site…
+01:21:35     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:21:57   photos : 4 (Wikimedia Commons)
+01:22:04   prêt : https://oscarcousin-max.github.io/orbe-usine/m-c-confort/
+01:22:04 Commerce : Château bois de la Gravette
+01:22:04   fabrication du site…
+01:22:05     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+01:22:05     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:05     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:13   photos : 4 (Wikimedia Commons)
+01:22:20   prêt : https://oscarcousin-max.github.io/orbe-usine/chateau-bois-de-la-gravette/
+01:22:20 Commerce : Brazza vino
+01:22:20   fabrication du site…
+01:22:20     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:20     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:20     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:29   photos : 4 (Wikimedia Commons)
+01:22:36   prêt : https://oscarcousin-max.github.io/orbe-usine/brazza-vino/
+01:22:36 Commerce : L'Échoppe des Halles
+01:22:36   fabrication du site…
+01:22:36     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:36     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:36     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:44   photos : 4 (Wikimedia Commons)
+01:22:51   prêt : https://oscarcousin-max.github.io/orbe-usine/l-echoppe-des-halles/
+01:22:51 Commerce : Tetrodon Tattoo
+01:22:51   fabrication du site…
+01:22:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:52     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:22:52     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:23:00   photos : 4 (Wikimedia Commons)
+01:23:07   prêt : https://oscarcousin-max.github.io/orbe-usine/tetrodon-tattoo/
+01:23:07 Commerce : Salmi Peinture
+01:23:07   fabrication du site…
+01:23:07     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:23:07     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:23:27   photos : 4 (Wikimedia Commons)
+01:23:34   prêt : https://oscarcousin-max.github.io/orbe-usine/salmi-peinture/
+01:23:34 Terminé : 20 site(s) prêt(s).
