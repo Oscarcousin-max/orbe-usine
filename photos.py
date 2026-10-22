@@ -49,7 +49,10 @@ RECHERCHES = {
     "studios de yoga, pilates et coachs sportifs": ["yoga studio", "pilates", "fitness coach", "yoga class"],
     "tatoueurs et barbiers": ["barber shop", "barber haircut", "tattoo artist", "barbershop interior"],
     "plombiers, électriciens et artisans du bâtiment": ["plumber at work", "electrician working", "bathroom renovation", "modern bathroom"],
-    "poseurs de sols, parqueteurs et menuisiers": ["hardwood floor installation", "parquet floor", "wooden floor living room", "wooden window frame", "carpenter wood"],
+    # Des gens qui travaillent (pose de terrasses, de parquet, menuiserie) : pas des salons, pas des paysages.
+    "poseurs de sols, parqueteurs et menuisiers": ["installing wooden decking", "carpenter building wooden terrace", "deck builders working",
+                                                   "laying parquet floor", "floor installer working", "carpenter at work wood",
+                                                   "wooden terrace decking", "hardwood floor installation"],
 }
 
 _CACHE = {}
@@ -114,12 +117,13 @@ def _unsplash(requete):
 
 # Titres qui trahissent un document scanné, un plan ou un dessin plutôt qu'une photographie.
 PAS_UNE_PHOTO = re.compile(r"microform|review|magazine|journal|catalog|book|page|plate|poster|map|scan|"
-                           r"engraving|lithograph|drawing|diagram|logo|coat of arms|navy|army|military|urine|toilet|panoramio|\b1[5-9]\d\d\b", re.I)
+                           r"engraving|lithograph|drawing|diagram|logo|coat of arms|navy|army|military|urine|toilet|panoramio|\btrail\b|\bwoods\b|\b1[5-9]\d\d\b", re.I)
 
 
 def _mots(requete):
     """Mots qui doivent figurer dans le titre de la photo (au singulier), pour écarter les photos hors sujet."""
-    vides = {"shop", "store", "interior", "table", "work", "working", "modern", "fresh", "class", "room", "house", "at", "and"}
+    vides = {"shop", "store", "interior", "table", "work", "working", "modern", "fresh", "class", "room", "house", "at", "and",
+             "wooden", "installing", "installation", "builders", "building", "laying", "worker"}
     m = [w.rstrip("s") for w in re.findall(r"[a-z]+", requete.lower()) if len(w) >= 4 and w not in vides]
     return m or [w.rstrip("s") for w in re.findall(r"[a-z]+", requete.lower()) if len(w) >= 4]
 

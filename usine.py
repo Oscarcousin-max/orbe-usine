@@ -634,7 +634,8 @@ def main():
         if it:
             commandes.append(it)
     if commandes:
-        liste["items"] = (commandes + liste.get("items", []))[:400]
+        ids = {x["id"] for x in commandes}  # une commande refaite remplace l'ancienne fiche du même client
+        liste["items"] = (commandes + [x for x in liste.get("items", []) if x.get("id") not in ids])[:400]
         LISTE.write_text(json.dumps(liste, ensure_ascii=False, indent=1), "utf-8")
     if os.environ.get("REFAIRE", "") == "1":
         refaire_recents(liste)
@@ -642,8 +643,8 @@ def main():
         LISTE.write_text(json.dumps(liste, ensure_ascii=False, indent=1), "utf-8")
         journal("Aucun nouveau site demandé : seulement les sites récents refaits.")
         return
-    # Un « tour » toutes les 12 h : chaque passage prend d'autres secteurs et d'autres départements.
-    tour = int(time.time() // 43200)
+    # Un « tour » toutes les 2 h : chaque passage (il y en a plusieurs la nuit) prend d'autres secteurs et d'autres départements.
+    tour = int(time.time() // 7200)
     n_sect = max(6, min(len(SECTEURS), -(-NOMBRE * 2 // 9)))  # ~11 secteurs pour 50 sites
     secteurs = [SECTEURS[(tour * 5 + k) % len(SECTEURS)] for k in range(n_sect)]
     n_voisins = 3 if NOMBRE <= 30 else 6

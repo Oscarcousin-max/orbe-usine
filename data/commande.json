@@ -1,0 +1,26 @@
+{
+ "nombre": 0,
+ "clients": [
+  {
+   "nom": "Artbois",
+   "secteur": "poseurs de sols, parqueteurs et menuisiers",
+   "ville": "Bègles",
+   "quartier": "Bègles",
+   "adresse": "85 bis chemin de Mussonville, 33130 Bègles",
+   "telephone": "06 29 85 75 97",
+   "maquettes": 3,
+   "photos": [
+    "installing wooden decking",
+    "carpenter building wooden terrace",
+    "deck builders working",
+    "laying parquet floor",
+    "floor installer working",
+    "carpenter at work wood",
+    "wooden terrace decking"
+   ],
+   "note": "Choisi par Oscar (Pappers). Fixe : 05 56 21 18 93. Aucun site trouvé. Attention : PagesJaunes le dit « probablement fermé », mais la société est toujours active au registre.",
+   "source": "https://www.pappers.fr/entreprise/artbois-839489341",
+   "message": "Bonjour, ici Oscar, du studio ORBE à Bordeaux. Artbois n'a pas encore de site : je vous en ai préparé 3 versions au choix pour vos sols et menuiseries : {LIEN}\nSi l'une vous plaît, je la mets en ligne à votre nom, avec vos photos de chantiers. Sinon, un simple « non merci » suffit, je ne vous relancerai pas.\nOscar · ORBE, studio digital"
+  }
+ ]
+}
