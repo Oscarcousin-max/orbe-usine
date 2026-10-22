@@ -1,428 +1,277 @@
 <!doctype html>
-<html lang="fr" class="pas-js"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Jour J — Fleuriste · Talence</title><meta name="description" content="L&#x27;art floral à Talence. Votre artisan fleuriste créateur à Talence vous accueille pour sublimer chaque instant avec des compositions élégantes et des fleurs de saison."><meta property="og:type" content="website"><meta property="og:title" content="Jour J — Fleuriste · Talence"><meta property="og:description" content="L&#x27;art floral à Talence. Votre artisan fleuriste créateur à Talence vous accueille pour sublimer chaque instant avec des compositions élégantes et des fleurs de saison."><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#fbf5f1"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23bf4d67%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2238%22%20fill%3D%22%23ffffff%22%3EJ%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Florist", "name": "Jour J", "address": {"@type": "PostalAddress", "streetAddress": "237 Cours Gambetta, 33400 Talence", "addressCountry": "FR"}, "email": "jourjlatelier@gmail.com"}</script>
-<style>
-:root{--bg:#fbf5f1;--bg2:#f5e9e3;--ink:#2d1e22;--muted:#766369;--accent:#bf4d67;--accent2:#e8a0ae;--soft:#f6dfe0;--soft2:#f3c6cc;--vert:#6f8f66;--line:#e6d3cf;--r:6px;--on-accent:#ffffff;--dark:#2d1e22;--on-dark:#fbf0ec;--f-titre:'DM Serif Display',Georgia, 'Times New Roman', serif;--f-texte:'DM Sans',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;}
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Jour J — Fleuriste · Talence</title><meta name="description" content="Artisan fleuriste créateur à Talence. Nous composons des créations florales sur mesure pour tous vos moments de vie, dans un esprit sobre et raffiné."><meta property="og:type" content="website"><meta property="og:title" content="Jour J — Fleuriste · Talence"><meta property="og:description" content="Artisan fleuriste créateur à Talence. Nous composons des créations florales sur mesure pour tous vos moments de vie, dans un esprit sobre et raffiné."><meta property="og:image" content="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Bouquet_jonquilles_FR_2013.jpg/1920px-Bouquet_jonquilles_FR_2013.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail"><meta property="og:locale" content="fr_FR"><meta name="theme-color" content="#fbf5f1"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%232d1e22%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2245%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2240%22%20fill%3D%22%23fbf0ec%22%3EJ%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Florist", "name": "Jour J", "address": {"@type": "PostalAddress", "streetAddress": "237 Cours Gambetta, 33400 Talence", "addressCountry": "FR"}, "email": "jourjlatelier@gmail.com"}</script><link rel="preload" as="image" href="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Bouquet_jonquilles_FR_2013.jpg/1920px-Bouquet_jonquilles_FR_2013.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail">
+<style>:root{--bg:#fbf5f1;--bg2:#f5e9e3;--ink:#2d1e22;--muted:#766369;--accent:#bf4d67;--accent2:#e8a0ae;--soft:#f6dfe0;--soft2:#f3c6cc;--vert:#6f8f66;--line:#e6d3cf;--r:6px;--on-accent:#ffffff;--dark:#2d1e22;--on-dark:#fbf0ec;--f-titre:'DM Serif Display',Georgia, 'Times New Roman', serif;--f-texte:'DM Sans',system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--r:6px;}
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-texte);font-size:clamp(16px,1.05vw + 12px,18px);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img,svg{max-width:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--f-texte);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-h1,h2,h3{font-family:var(--f-titre);font-weight:400;line-height:1.05;margin:0;text-wrap:balance}
-p{margin:0 0 1em}
-.wrap{width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto}
-.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 16px;z-index:200}
-.skip:focus{left:8px}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.eyebrow{font:500 .72rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.9em}
-.eyebrow::before{content:"";width:2.4em;height:1px;background:currentColor}
-.btn{display:inline-flex;align-items:center;gap:.7em;padding:1em 1.8em;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;font:500 .78rem/1 var(--f-texte);letter-spacing:.18em;text-transform:uppercase;transition:background .3s,color .3s,transform .3s;cursor:pointer;border-radius:var(--r,0)}
-.btn:hover{background:transparent;color:var(--accent)}
-.btn.ligne{background:transparent;color:inherit;border-color:currentColor}
-.btn.ligne:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.btn .fl{transition:transform .3s}.btn:hover .fl{transform:translateX(5px)}
-/* En-tête — capsule flottante en verre liquide (réf. « navbar ») */
-.top{position:fixed;inset:14px 0 auto 0;z-index:100;transition:inset .45s cubic-bezier(.2,.7,.2,1),color .35s}
-.top .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 10px 10px 22px;width:min(1180px,100% - 24px);border-radius:999px;transition:padding .45s cubic-bezier(.2,.7,.2,1)}
-.top .wrap::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;
- background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.04));
- -webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);
- box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(255,255,255,.08),inset 0 0 0 1px rgba(255,255,255,.18),0 10px 40px -12px rgba(0,0,0,.28);transition:background .4s,box-shadow .4s}
-.top .wrap::after{content:"";position:absolute;inset:1px;border-radius:inherit;z-index:-1;pointer-events:none;background:radial-gradient(120% 140% at 20% -40%,rgba(255,255,255,.35),transparent 45%);opacity:.7}
-.top.fond{inset:8px 0 auto 0}
-.top.fond .wrap{padding-block:7px}
-.top.fond .wrap::before{background:color-mix(in srgb,var(--bg) 72%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 0 0 1px color-mix(in srgb,var(--ink) 9%,transparent),0 18px 50px -18px color-mix(in srgb,var(--ink) 45%,transparent)}
-.logo{font:400 clamp(1.05rem,.95rem + .5vw,1.35rem)/1 var(--f-titre);text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.7em;min-width:0}
-.logo i{font-style:normal;display:grid;place-items:center;width:2.1em;height:2.1em;border:1px solid var(--accent);color:var(--accent);border-radius:var(--rl,50%);font-size:.85em;flex:none}
-.logo span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.top nav{display:flex;gap:4px;align-items:center}
-.top nav a{text-decoration:none;font:500 .72rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;position:relative;padding:.95em 1.05em;border-radius:999px;transition:background .3s,color .3s}
-.top nav a:hover{background:color-mix(in srgb,currentColor 10%,transparent)}
-.top .nav-cta{margin-left:8px;background:var(--accent);color:var(--on-accent)!important;padding:1em 1.4em;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 18px -6px color-mix(in srgb,var(--accent) 70%,transparent)}
-.top .nav-cta:hover{background:color-mix(in srgb,var(--accent) 85%,#000)}
-.menu-btn{display:none;background:color-mix(in srgb,currentColor 8%,transparent);border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;color:inherit;position:relative;flex:none}
-.menu-btn i,.menu-btn i::before{position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;content:"";transition:transform .3s,top .3s}
-.menu-btn i{top:21px}.menu-btn i::before{left:0;right:0;top:-6px}
-.menu-btn[aria-expanded=true] i{transform:rotate(45deg)}.menu-btn[aria-expanded=true] i::before{top:0;transform:rotate(-90deg)}
-@media(max-width:960px){
- .menu-btn{display:block}
- .top .wrap{padding:7px 7px 7px 16px}
- .top nav{position:fixed;inset:0;background:var(--bg);color:var(--ink);flex-direction:column;justify-content:center;gap:10px;transform:translateY(-104%);transition:transform .55s cubic-bezier(.7,0,.2,1);z-index:-2}
- .top nav.ouvert{transform:none}
- .top nav a{font:400 clamp(1.7rem,7vw,2.4rem)/1 var(--f-titre);letter-spacing:0;text-transform:none;padding:.35em .6em}
- .top nav .nav-cta{margin:14px 0 0;font:500 .8rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:1.2em 1.8em}
- .top.ouvert-menu{color:var(--ink)}
- .top.ouvert-menu .wrap::before{background:color-mix(in srgb,var(--bg) 90%,transparent)}
-}
-.progres{position:fixed;inset:0 0 auto 0;height:2px;z-index:120;pointer-events:none}
-.progres i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2,var(--accent)));transform-origin:0 50%;transform:scaleX(var(--p,0))}
-.defs-kit{position:absolute;width:0;height:0;overflow:hidden}
 ::selection{background:var(--accent);color:var(--on-accent)}
-/* Apparitions */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
-.reveal.vu{opacity:1;transform:none}
-.pas-js .reveal{opacity:1;transform:none}
-/* Sections */
-section{position:relative}
-.sec{padding-block:clamp(72px,11vw,160px)}
-.titre-sec{font-size:clamp(2.2rem,1.2rem + 4.4vw,4.6rem);margin:.5em 0 .4em;letter-spacing:-.01em}
-.titre-sec em{font-style:italic;color:var(--accent)}
-.lead{font-size:clamp(1.05rem,.95rem + .5vw,1.3rem);color:var(--muted);max-width:44ch}
-.num{font:400 clamp(3.4rem,8vw,7rem)/.9 var(--f-titre);color:transparent;-webkit-text-stroke:1px var(--accent);opacity:.65}
-.marquee{overflow:hidden;border-block:1px solid var(--line);padding:1.1em 0;white-space:nowrap;font:italic 400 clamp(1.3rem,3vw,2.2rem)/1 var(--f-titre);color:var(--muted)}
-.marquee div{display:inline-flex;gap:2.2em;animation:defile 38s linear infinite;padding-right:2.2em}
-.marquee b{color:var(--accent);font-weight:400}
-@keyframes defile{to{transform:translateX(-50%)}}
-/* Contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,7vw,110px);align-items:start}
-.coord{display:grid;gap:22px;margin:2em 0 2.4em;padding:0;list-style:none}
-.coord li{display:grid;gap:4px;padding-bottom:18px;border-bottom:1px solid var(--line)}
-.coord small{font:500 .68rem/1 var(--f-texte);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
-.coord a,.coord span{font:400 clamp(1.15rem,1rem + .7vw,1.55rem)/1.35 var(--f-titre);text-decoration:none;overflow-wrap:anywhere}
-.coord a:hover{color:var(--accent)}
-form.demo{display:grid;gap:18px;background:var(--bg2);padding:clamp(24px,4vw,48px);border:1px solid var(--line);border-radius:var(--r,0)}
-form.demo label{display:grid;gap:8px;font:500 .7rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-form.demo input,form.demo select,form.demo textarea{font:400 1rem/1.4 var(--f-texte);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;border-radius:0;width:100%;min-width:0;letter-spacing:0;text-transform:none}
-form.demo input:focus,form.demo select:focus,form.demo textarea:focus{outline:none;border-color:var(--accent)}
-form.demo textarea{min-height:110px;resize:vertical}
-form.demo .retour{font-size:.92rem;color:var(--accent);min-height:1.4em;margin:0}
-@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
-/* Pied de page (réf. « footer ») */
-.pied{background:var(--dark);color:var(--on-dark);padding:clamp(64px,9vw,120px) 0 64px;position:relative;overflow:hidden}
-.pied .wrap{display:grid;gap:clamp(30px,5vw,56px)}
-.pied-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,4vw,60px)}
-.pied-marque p{margin:1.1em 0 0;opacity:.7;max-width:30ch;font-family:var(--f-titre);font-style:italic;font-size:1.15rem;line-height:1.4}
-.pied .logo i{border-color:color-mix(in srgb,var(--on-dark) 45%,transparent);color:var(--on-dark)}
-.pied h3{font:500 .68rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;color:var(--accent2,var(--accent));margin:.4em 0 1.4em}
-.pied ul{list-style:none;margin:0;padding:0;display:grid;gap:.75em}
-.pied li,.pied li a{font-size:.95rem;opacity:.85;text-decoration:none;overflow-wrap:anywhere}
-.pied li a{position:relative;opacity:1;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s}
-.pied li a:hover{background-size:100% 1px}
-.pied-nom{font:400 clamp(3rem,14vw,13rem)/.85 var(--f-titre);letter-spacing:-.03em;white-space:nowrap;overflow:hidden;text-overflow:clip;color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--on-dark) 28%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--on-dark) 16%,transparent),transparent 85%);-webkit-background-clip:text;background-clip:text;user-select:none;margin:0 -.04em}
-.pied-bas{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;font-size:.82rem;opacity:.78;border-top:1px solid color-mix(in srgb,var(--on-dark) 18%,transparent);padding-top:22px}
-.pied-bas a{text-decoration:none;border-bottom:1px solid currentColor}
-.pied-bas .haut{border:1px solid color-mix(in srgb,var(--on-dark) 35%,transparent);padding:.7em 1.1em;border-radius:999px}
-.mentions{font-size:.8rem;opacity:.65;max-width:80ch;line-height:1.6;margin:0}
-.alcool{font-size:.78rem;opacity:.85;margin:0}
-@media(max-width:900px){.pied-cols{grid-template-columns:1fr 1fr}.pied-marque{grid-column:1/-1}}
-@media(max-width:520px){.pied-cols{grid-template-columns:1fr}}
-.badge-orbe{box-shadow:0 6px 20px rgba(0,0,0,.25);position:fixed;right:12px;bottom:12px;z-index:150;font:500 11px/1 system-ui,sans-serif;background:rgba(0,0,0,.74);color:#fff;padding:8px 12px;border-radius:999px;text-decoration:none;letter-spacing:.02em}
-/* ===== Kit premium ORBE ===== */
-:root{--ic1:color-mix(in srgb,var(--accent2,var(--accent)) 45%,#fff);--ic2:var(--accent);--ic3:color-mix(in srgb,var(--accent) 62%,#000);--ic4:color-mix(in srgb,var(--accent2,var(--accent)) 80%,#fff)}
-/* Verre liquide (réf. « liquid glass ») */
-.verre{position:relative;isolation:isolate;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 70%,transparent),color-mix(in srgb,var(--bg) 38%,transparent));
- -webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);
- border-radius:clamp(18px,2.4vw,30px);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(255,255,255,.12),inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent),0 30px 60px -30px color-mix(in srgb,var(--ink) 40%,transparent)}
-.verre::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:radial-gradient(90% 70% at var(--lx,20%) var(--ly,0%),rgba(255,255,255,.55),transparent 55%);opacity:.55;transition:opacity .4s}
-.verre::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,0) 40%,rgba(255,255,255,0) 60%,rgba(255,255,255,.45));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
-/* Bandeau d'accueil (réf. « hero ») */
-.hero{isolation:isolate}
-.hero>.wrap{position:relative;z-index:2}
-.fx{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.aur{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(70px);opacity:.42;mix-blend-mode:var(--fx-mode,normal);will-change:transform}
-.aur.a{background:radial-gradient(circle,var(--accent),transparent 65%);left:-18vmax;top:-22vmax;animation:aur1 26s ease-in-out infinite alternate}
-.aur.b{background:radial-gradient(circle,var(--accent2,var(--accent)),transparent 65%);right:-20vmax;top:6vmax;animation:aur2 32s ease-in-out infinite alternate;opacity:.34}
-.aur.c{background:radial-gradient(circle,color-mix(in srgb,var(--accent) 40%,var(--bg)),transparent 65%);left:22%;bottom:-34vmax;animation:aur3 38s ease-in-out infinite alternate;opacity:.3}
-@keyframes aur1{to{transform:translate(14vmax,10vmax) scale(1.15)}}
-@keyframes aur2{to{transform:translate(-12vmax,8vmax) scale(.9)}}
-@keyframes aur3{to{transform:translate(8vmax,-12vmax) scale(1.2)}}
-.spot{position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx,50%) var(--my,40%),color-mix(in srgb,var(--accent2,var(--accent)) 22%,transparent),transparent 60%);opacity:0;transition:opacity .6s}
-.hero:hover .spot{opacity:1}
-.grain{position:absolute;inset:-50%;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(5) infinite}
-@keyframes grain{20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}}
-.hero-pied{position:absolute;left:0;right:0;bottom:clamp(14px,3vh,28px);z-index:3;display:flex;justify-content:space-between;align-items:end;gap:16px;width:min(1240px,100% - 2*clamp(20px,5vw,64px));margin-inline:auto;pointer-events:none}
-.puces{display:flex;flex-wrap:wrap;gap:8px}
-.puce{pointer-events:auto;font:500 .68rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;padding:.85em 1.15em;border-radius:999px;color:inherit;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.18);display:inline-flex;align-items:center;gap:.6em}
-.puce i{width:6px;height:6px;border-radius:50%;background:var(--accent2,var(--accent));box-shadow:0 0 0 3px color-mix(in srgb,var(--accent2,var(--accent)) 30%,transparent)}
-.defiler{pointer-events:auto;position:absolute;left:50%;bottom:0;transform:translateX(-50%);display:inline-flex;flex-direction:column;align-items:center;gap:.8em;text-decoration:none;font:500 .62rem/1 var(--f-texte);letter-spacing:.24em;text-transform:uppercase;opacity:.7}
-.defiler i{width:22px;height:36px;border-radius:12px;border:1px solid currentColor;position:relative}
-.defiler i::after{content:"";position:absolute;left:50%;top:7px;width:2px;height:7px;margin-left:-1px;border-radius:2px;background:currentColor;animation:molette 2s ease-in-out infinite}
-@keyframes molette{0%{transform:translateY(0);opacity:1}70%{transform:translateY(11px);opacity:0}100%{opacity:0}}
-@media(max-width:720px){.hero-pied{display:none}}
-.hero h1 k-m{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em;margin-bottom:-.06em}
-.hero h1 k-m>k-w{display:inline-block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.8,.1,1);transition-delay:calc(.15s + var(--m,0) * .07s)}
-.hero h1.vu k-m>k-w,.pas-js .hero h1 k-m>k-w{transform:none}
-/* Tuiles qui s'empilent au défilement (réf. « scroll ») + icônes 3D (réf. « 3D icons ») */
-.tuiles-sec{background:linear-gradient(180deg,var(--bg),var(--bg2) 40%,var(--bg));overflow:clip}
-.tuiles-sec::before{content:"";position:absolute;width:60vmax;height:60vmax;right:-25vmax;top:10%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 65%);filter:blur(40px);pointer-events:none}
-.tuiles-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,100px);align-items:start;position:relative}
-.tuiles-intro{position:sticky;top:120px}
-.tuiles-intro .lead{margin-bottom:2em}
-.tuiles-index{list-style:none;margin:0;padding:0;display:grid;gap:4px;counter-reset:t}
-.tuiles-index li{counter-increment:t;display:flex;gap:1em;align-items:center;font:400 1.05rem/1.3 var(--f-titre);padding:.7em 0;border-top:1px solid var(--line);opacity:.4;transition:opacity .4s,padding .4s}
-.tuiles-index li::before{content:"0" counter(t);font:500 .7rem/1 var(--f-texte);letter-spacing:.16em;color:var(--accent)}
-.tuiles-index li.actif{opacity:1;padding-left:.6em}
-.tuiles{display:grid;gap:clamp(18px,3vh,28px);padding-bottom:6vh}
-.tuile{position:sticky;top:calc(110px + var(--i) * 26px);min-height:clamp(300px,46vh,420px);padding:clamp(26px,4vw,52px);display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,40px);align-items:center;transform-origin:50% 0;transform:scale(var(--s,1));filter:brightness(var(--b,1));transition:transform .2s linear,filter .2s linear;background:linear-gradient(160deg,color-mix(in srgb,var(--bg) 88%,transparent),color-mix(in srgb,var(--bg2) 70%,transparent))}
-.tuile .n{font:500 .7rem/1 var(--f-texte);letter-spacing:.24em;color:var(--accent)}
-.tuile h3{font-size:clamp(1.7rem,1.2rem + 1.8vw,2.8rem);margin:.45em 0 .4em;letter-spacing:-.01em}
-.tuile p{color:var(--muted);margin:0;max-width:40ch}
-.lien-fl{display:inline-flex;gap:.6em;margin-top:1.4em;text-decoration:none;font:500 .75rem/1 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-.lien-fl:hover .fl{transform:translateX(5px)}.lien-fl .fl{transition:transform .3s}
-.ico3d{width:clamp(96px,11vw,150px);aspect-ratio:1;display:grid;place-items:center;border-radius:30%;perspective:600px;
- background:radial-gradient(120% 120% at 30% 15%,color-mix(in srgb,var(--bg) 95%,#fff),color-mix(in srgb,var(--bg2) 80%,var(--accent) 6%));
- box-shadow:inset 0 2px 0 rgba(255,255,255,.8),inset 0 -10px 24px -8px color-mix(in srgb,var(--accent) 22%,transparent),0 24px 40px -18px color-mix(in srgb,var(--accent) 55%,transparent),0 2px 6px color-mix(in srgb,var(--ink) 10%,transparent)}
-.ico3d svg{width:64%;height:64%;overflow:visible;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);transition:transform .5s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 10px 10px color-mix(in srgb,var(--ic3) 45%,transparent))}
-.ico3d .p{fill:url(#k3d);filter:url(#relief)}
-.ico3d .s{fill:url(#k3d-b);filter:url(#relief)}
-.ico3d .h{fill:#fff;opacity:.55}
-.tuile:hover .ico3d svg{animation:flotte3d 3s ease-in-out infinite}
-@keyframes flotte3d{50%{translate:0 -6px}}
-@media(max-width:900px){.tuiles-grid{grid-template-columns:1fr}.tuiles-intro{position:static}.tuiles-index{display:none}.tuile{grid-template-columns:1fr;top:calc(84px + var(--i) * 18px);min-height:0}}
-/* Appel à l'action (réf. « CTA ») */
-.cta-bande{position:relative;isolation:isolate;overflow:hidden;background:var(--dark);color:var(--on-dark);padding:clamp(90px,14vw,200px) 0}
-.cta-bande .fx .aur{opacity:.6;--fx-mode:screen}
-.cta-bande .wrap{position:relative;z-index:2}
-.cta-carte{max-width:880px;margin-inline:auto;text-align:center;padding:clamp(40px,7vw,90px) clamp(24px,6vw,80px);background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));color:var(--on-dark);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.14),0 40px 80px -30px rgba(0,0,0,.55)}
-.cta-carte .eyebrow{color:var(--accent2,var(--accent));justify-content:center}
-.cta-carte .eyebrow::after{content:"";width:2.4em;height:1px;background:currentColor}
-.cta-titre{font-size:clamp(2.4rem,1.2rem + 5vw,5.4rem);margin:.45em 0 .35em;letter-spacing:-.02em}
-.cta-carte p{opacity:.8;max-width:46ch;margin:0 auto 2.2em;font-size:1.08rem}
-.cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.cta-actions .btn{border-radius:999px;padding:1.15em 2em}
-.cta-actions .btn.ligne{color:var(--on-dark);border-color:color-mix(in srgb,var(--on-dark) 40%,transparent)}
-.cta-actions .btn.ligne:hover{background:var(--on-dark);color:var(--dark)}
-.aimant{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 k-m>k-w{transform:none}.tuile{transform:none;filter:none}.grain,.aur{animation:none}}
-/* Galerie de photos d'illustration (photos libres, remplacées ensuite par celles du commerce) */
-.galerie-sec{padding-block:clamp(56px,8vw,110px)}
-.galerie-tete{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(24px,4vw,44px);max-width:46rem}
-.galerie{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(10px,1.4vw,18px)}
-.galerie figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r,0);background:var(--bg2)}
-.galerie img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
-.galerie figure:hover img{transform:scale(1.07)}
-.galerie figure::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 8%,transparent);border-radius:inherit}
-.galerie .g1{grid-column:span 7;grid-row:span 2}
-.galerie .g2{grid-column:span 5}
-.galerie .g3{grid-column:span 5}
-.galerie .g4{grid-column:span 12;grid-row:span 1}
-.galerie-note{margin:16px 0 0;font-size:.78rem;color:var(--muted)}
-.galerie-note a{color:inherit}
-@media (max-width:720px){.galerie{grid-template-columns:1fr;grid-auto-rows:220px}.galerie .g1,.galerie .g2,.galerie .g3,.galerie .g4{grid-column:auto;grid-row:auto}.galerie .g1{grid-row:span 1;min-height:280px}}
-@media (prefers-reduced-motion:reduce){.galerie img{transition:none}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-titre);font-weight:400;line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0 0 1em;text-wrap:pretty}
+.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+@media (max-width:600px){.wrap{width:calc(100% - 32px)}}
+.sur{font:500 12px/1.2 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* Fleuriste */
-.hero{min-height:100svh;display:grid;align-items:center;padding:clamp(110px,16vh,170px) 0 clamp(50px,8vh,90px);position:relative;overflow:hidden;background:var(--bg)}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,80px);align-items:center}
-.hero h1{font-size:clamp(2.8rem,1rem + 6.6vw,7.4rem);letter-spacing:-.025em;line-height:.92;overflow-wrap:break-word;hyphens:auto}
-.hero h1 span{display:block;font-style:italic;color:var(--accent);font-size:.4em;letter-spacing:0;margin-top:.5em;line-height:1.1}
-.hero .sous{max-width:44ch;margin:1.6em 0 2.2em;color:var(--muted);font-size:clamp(1.05rem,.95rem + .5vw,1.3rem)}
-.fleur-art{position:relative;aspect-ratio:1;width:min(100%,640px);justify-self:center}
-.fleur-art .disque{position:absolute;inset:6%;border-radius:50%;background:var(--soft);animation:flotte 12s ease-in-out infinite}
-.fleur-art svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-@keyframes flotte{50%{transform:scale(1.04) translateY(-1.5%)}}
-.petale{fill:var(--accent);transform-origin:300px 300px;opacity:.9;mix-blend-mode:multiply}
-.p2{fill:var(--accent2)}.p3{fill:var(--soft2)}
-.corolle{animation:tourne 70s linear infinite;transform-origin:300px 300px}
-@keyframes tourne{to{transform:rotate(360deg)}}
-.tige{fill:none;stroke:var(--vert);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;animation:trace 3.2s .4s ease forwards}
-@keyframes trace{to{stroke-dashoffset:0}}
-.feuille{fill:none;stroke:var(--vert);stroke-width:1.6;stroke-dasharray:400;stroke-dashoffset:400;animation:trace 2.6s 1.2s ease forwards}
-.coeur{fill:var(--bg)}
-.esprit{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,7vw,110px);align-items:center}
-.esprit p{color:var(--muted);max-width:50ch}
-.bouquet-box{background:var(--bg2);border:1px solid var(--line);padding:clamp(22px,3.4vw,44px);border-radius:var(--r);display:grid;gap:22px}
-.bouquet-box h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
-.bq-vue{aspect-ratio:5/4;background:var(--bg);border-radius:var(--r);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
-.bq-vue svg{width:80%;height:auto;max-height:100%}
-.choix{display:grid;gap:10px}
-.choix .lib{font:500 .68rem/1 var(--f-texte);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.choix .ligne-b{display:flex;flex-wrap:wrap;gap:8px}
-.choix button{font:500 .85rem/1 var(--f-texte);padding:.8em 1.2em;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer;transition:all .3s}
-.choix button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.bq-res{font:italic 400 1.1rem/1.4 var(--f-titre);color:var(--accent);margin:0;min-height:2.8em}
-.arches{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px);margin-top:clamp(36px,6vw,72px)}
-.arche{text-align:center;padding:clamp(40px,6vw,76px) clamp(22px,3vw,40px) clamp(32px,4vw,52px);border:1px solid var(--line);border-radius:999px 999px var(--r) var(--r);background:var(--bg2);display:grid;gap:14px;justify-items:center;align-content:start;transition:transform .5s,background .5s}
-.arche:hover{transform:translateY(-10px);background:var(--soft)}
-.arche svg{width:54px;color:var(--accent)}
-.arche h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
-.arche p{color:var(--muted);margin:0;max-width:30ch}
-.sec-teinte{background:var(--soft)}
-.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,64px);margin-top:clamp(36px,6vw,72px);counter-reset:e}
-.etape{display:grid;gap:14px;position:relative;padding-top:78px}
-.etape::before{counter-increment:e;content:counter(e);position:absolute;top:0;left:0;width:58px;height:58px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:italic 400 1.5rem/1 var(--f-titre)}
-.etape::after{content:"";position:absolute;top:29px;left:70px;right:-20px;height:1px;background:var(--line)}
-.etape:last-child::after{display:none}
-.etape h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
-.etape p{margin:0;color:var(--muted)}
-.cite{text-align:center;padding-block:clamp(72px,11vw,150px)}
-.cite blockquote{margin:0 auto;max-width:22ch;font:italic 400 clamp(2rem,1.1rem + 3.6vw,4rem)/1.12 var(--f-titre);text-wrap:balance}
-.cite svg{width:64px;color:var(--accent);margin:0 auto 24px;display:block}
-@media(max-width:900px){
- .hero .wrap,.esprit{grid-template-columns:1fr}.fleur-art{order:-1;width:min(86%,420px)}
- .hero{padding-top:100px}.arches,.etapes{grid-template-columns:1fr}.etape::after{display:none}
+/* Barre du haut : simple, lisible, le numéro bien visible */
+.bar{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,box-shadow .3s,color .3s;color:var(--ink);background:color-mix(in srgb,var(--bg) 96%,transparent)}
+.bar .wrap{display:flex;align-items:center;gap:28px;height:72px}
+.bar .marque{font:400 23px/1 var(--f-titre);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw}
+.bar nav{display:flex;gap:26px;margin-left:auto;font-size:14.5px}
+.bar nav a{text-decoration:none;opacity:.82}
+.bar nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.bar .tel{font-size:14.5px;text-decoration:none;border:1px solid currentColor;padding:9px 16px;white-space:nowrap;border-radius:var(--r)}
+.bar .tel:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.bar.sombre{box-shadow:0 1px 0 var(--line)}
+.plein .bar:not(.sombre){background:transparent;color:#fff}
+.plein .bar:not(.sombre) .tel:hover{background:#fff;color:#111;border-color:#fff}
+.menu-btn{display:none;margin-left:auto;background:none;border:0;color:inherit;font:500 14px var(--f-texte);letter-spacing:.08em;text-transform:uppercase;padding:10px 0;cursor:pointer}
+@media (max-width:860px){
+  .bar nav{position:fixed;inset:72px 0 auto;flex-direction:column;gap:0;background:var(--bg);color:var(--ink);padding:8px 24px 24px;border-bottom:1px solid var(--line);display:none;font-size:18px}
+  .bar nav a{padding:14px 0;border-bottom:1px solid var(--line);opacity:1}
+  .bar.ouvert nav{display:flex}
+  .bar.ouvert{background:var(--bg)!important;color:var(--ink)!important}
+  .menu-btn{display:block}
+  .bar .tel{display:none}
+  .bar .marque{max-width:72vw;font-size:21px}
 }
-</style></head>
-<body>
-<a class="skip" href="#contenu">Aller au contenu</a>
-<div class="progres" aria-hidden="true"><i></i></div>
-<svg class="defs-kit" width="0" height="0" aria-hidden="true" focusable="false"><defs>
-<linearGradient id="k3d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ic1)"/><stop offset=".55" style="stop-color:var(--ic2)"/><stop offset="1" style="stop-color:var(--ic3)"/></linearGradient>
-<linearGradient id="k3d-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--ic4)"/><stop offset="1" style="stop-color:var(--ic2)"/></linearGradient>
-<filter id="relief" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
-<feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="flou"/>
-<feSpecularLighting in="flou" surfaceScale="4.5" specularConstant=".9" specularExponent="26" lighting-color="#ffffff" result="spec"><fePointLight x="14" y="-6" z="70"/></feSpecularLighting>
-<feComposite in="spec" in2="SourceAlpha" operator="in" result="specin"/>
-<feComposite in="SourceGraphic" in2="specin" operator="arithmetic" k1="0" k2="1" k3=".75" k4="0" result="lumiere"/>
-<feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="ombre"/>
-<feOffset in="ombre" dy="3.5" result="ombre2"/>
-<feComposite in="ombre2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="creux"/>
-<feFlood flood-color="#000" flood-opacity=".28"/><feComposite in2="creux" operator="in" result="creux2"/>
-<feComposite in="creux2" in2="lumiere" operator="atop"/>
-</filter>
-</defs></svg>
-<header class="top" id="top"><div class="wrap">
-<a class="logo" href="#top" aria-label="Jour J, haut de page"><i aria-hidden="true">J</i><span>Jour J</span></a>
-<nav id="menu" aria-label="Navigation principale"><a href="#esprit">L’atelier</a><a href="#bouquet">Bouquets</a><a href="#offre">Créations</a><a href="#atelier">Sur mesure</a><a class="nav-cta" href="#contact">Nous écrire</a></nav>
-<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
-</div></header>
 
-<main id="contenu">
-<section class="hero" aria-label="Accueil"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="spot"></i><i class="grain"></i></div>
-<div class="hero-pied" aria-hidden="true"><div class="puces"><span class="puce"><i></i>Fleuriste</span><span class="puce">Talence</span></div></div>
-<div class="wrap">
-<div><span class="eyebrow reveal">Fleuriste · Talence</span>
-<h1 class="reveal" style="--d:.1s">Jour J<span>L&#x27;art floral à Talence.</span></h1>
-<p class="sous reveal" style="--d:.2s">Votre artisan fleuriste créateur à Talence vous accueille pour sublimer chaque instant avec des compositions élégantes et des fleurs de saison.</p>
-<div class="reveal" style="--d:.3s;display:flex;gap:14px;flex-wrap:wrap"><a class="btn" href="#bouquet">Imaginer un bouquet <span class="fl">→</span></a><a class="btn ligne" href="#contact">Nous écrire</a></div></div>
-<div class="fleur-art" role="img" aria-label="Fleur illustrée"><div class="disque"></div>
-<svg viewBox="0 0 600 600" aria-hidden="true">
-<path class="tige" d="M300 330 C 300 420 280 490 300 590"/><path class="feuille" d="M296 470 C 230 450 200 400 210 360 C 260 372 292 420 296 470Z"/><path class="feuille" d="M300 520 C 366 506 400 462 394 424 C 346 432 306 470 300 520Z"/>
-<g class="corolle" data-parallax=".04">
-<g class="petale p3" opacity=".8"><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(0 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(60 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(120 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(180 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(240 300 300)"/><ellipse cx="300" cy="150" rx="46" ry="110" transform="rotate(300 300 300)"/></g>
-<g class="petale p2"><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(30 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(90 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(150 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(210 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(270 300 300)"/><ellipse cx="300" cy="170" rx="38" ry="92" transform="rotate(330 300 300)"/></g>
-<g class="petale"><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(0 300 300)"/><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(72 300 300)"/><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(144 300 300)"/><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(216 300 300)"/><ellipse cx="300" cy="200" rx="28" ry="64" transform="rotate(288 300 300)"/></g>
-<circle class="coeur" cx="300" cy="300" r="22"/><circle cx="300" cy="300" r="9" style="fill:var(--accent)"/></g>
-</svg></div>
-</div></section>
+/* Accueil */
+.hero{position:relative}
+.plein .hero{min-height:min(92vh,860px);display:flex;align-items:flex-end;color:#fff;background:var(--dark)}
+.plein .hero .fond{position:absolute;inset:0;overflow:hidden}
+.plein .hero .fond img{width:100%;height:100%;object-fit:cover}
+.plein .hero .fond::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.38) 0,rgba(0,0,0,0) 28%,rgba(0,0,0,.08) 50%,rgba(0,0,0,.62) 100%)}
+.plein .hero .wrap{position:relative;padding:150px 0 72px}
+.hero h1{font-size:clamp(46px,8.4vw,112px);max-width:14ch}
+.hero .accroche{font:italic 400 clamp(20px,2.4vw,28px)/1.3 var(--f-titre);margin:18px 0 0;max-width:34ch;opacity:.95}
+.hero .lieu{font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 22px;opacity:.85}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;font:500 15px/1 var(--f-texte);text-decoration:none;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);border-radius:var(--r);transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.clair{background:transparent;color:inherit;border-color:currentColor}
+.btn.clair:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.plein .hero .btn:hover{background:#fff;color:#111;border-color:#fff}
 
-<div class="marquee" aria-hidden="true"><div><span>Bouquets</span><b>✿</b><span>Mariages</span><b>✿</b><span>Plantes</span><b>✿</b><span>Ateliers</span><b>✿</b><span>Événements</span><b>✿</b><span>Bouquets</span><b>✿</b><span>Mariages</span><b>✿</b><span>Plantes</span><b>✿</b><span>Ateliers</span><b>✿</b><span>Événements</span><b>✿</b></div></div>
+.split .hero{padding-top:72px}
+.split .hero .grille{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:min(88vh,820px)}
+.split .hero .texte{display:flex;flex-direction:column;justify-content:center;padding:64px 64px 64px 0}
+.split .hero .photo{position:relative;overflow:hidden;background:var(--bg2)}
+.split .hero .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split .hero h1{font-size:clamp(44px,6.4vw,92px)}
+.split .hero .lieu{color:var(--muted);opacity:1}
+@media (max-width:860px){.split .hero .grille{grid-template-columns:1fr}.split .hero .texte{padding:48px 0 40px}.split .hero .photo{aspect-ratio:4/3;width:calc(100% + 32px);margin-left:-16px}}
 
-<section class="sec" id="esprit"><div class="wrap esprit">
-<div class="reveal"><span class="eyebrow">L’esprit de l’atelier</span><h2 class="titre-sec">L&#x27;esprit de l&#x27;atelier</h2><p>Situé à Talence, votre artisan fleuriste imagine des créations florales sur mesure, guidé par le rythme des saisons et l&#x27;amour du détail. Chaque bouquet est pensé avec soin pour offrir une émotion pure, dans le respect de la matière.</p><p>Notre travail floral s&#x27;inscrit dans une recherche constante d&#x27;harmonie et d&#x27;élégance sobre, pour accompagner tous les moments de la vie.</p></div>
-<div class="bouquet-box reveal" id="bouquet" style="--d:.15s">
-<h3>Imaginez votre bouquet</h3>
-<div class="bq-vue"><svg id="bqsvg" viewBox="0 0 300 240" aria-hidden="true"></svg></div>
-<div class="choix"><span class="lib">Pour quelle occasion ?</span><div class="ligne-b" data-g="occ"><button type="button" aria-pressed="true" data-v="0">Un cadeau</button><button type="button" aria-pressed="false" data-v="1">Une fête</button><button type="button" aria-pressed="false" data-v="2">Un mariage</button><button type="button" aria-pressed="false" data-v="3">Un hommage</button></div></div>
-<div class="choix"><span class="lib">Quelle palette ?</span><div class="ligne-b" data-g="pal"><button type="button" aria-pressed="true" data-v="0">Poudrée</button><button type="button" aria-pressed="false" data-v="1">Vive</button><button type="button" aria-pressed="false" data-v="2">Blanche et verte</button></div></div>
-<div class="choix"><span class="lib">Quelle taille ?</span><div class="ligne-b" data-g="tai"><button type="button" aria-pressed="false" data-v="0">Petit</button><button type="button" aria-pressed="true" data-v="1">Moyen</button><button type="button" aria-pressed="false" data-v="2">Généreux</button></div></div>
-<p class="bq-res" id="bqres" aria-live="polite"></p>
-</div></div></section>
-<section class="sec galerie-sec" id="galerie"><div class="wrap">
-<div class="galerie-tete reveal"><span class="eyebrow">En images</span><h2 class="titre-sec">L’univers <em>en images</em></h2></div>
-<div class="galerie"><figure class="g g1 reveal"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Bouquet_jonquilles_FR_2013.jpg/1920px-Bouquet_jonquilles_FR_2013.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Photo d’illustration · Fleuriste" loading="eager" decoding="async" referrerpolicy="no-referrer"></figure><figure class="g g2 reveal" style="--d:0.08s"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Flowers_ready_to_be_prepared_by_florist.jpg/960px-Flowers_ready_to_be_prepared_by_florist.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Photo d’illustration · Fleuriste" loading="lazy" decoding="async" referrerpolicy="no-referrer"></figure><figure class="g g3 reveal" style="--d:0.16s"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/%28Zazu%2C_Quito%29_interior%2C_at_the_bar%2C_Ecuatorian_Flowers%2C_Fresh_cut_flowers.JPG/960px-%28Zazu%2C_Quito%29_interior%2C_at_the_bar%2C_Ecuatorian_Flowers%2C_Fresh_cut_flowers.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Photo d’illustration · Fleuriste" loading="lazy" decoding="async" referrerpolicy="no-referrer"></figure><figure class="g g4 reveal" style="--d:0.24s"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Florist_shop_in_Paris_%2852245374115%29.jpg/960px-Florist_shop_in_Paris_%2852245374115%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Photo d’illustration · Fleuriste" loading="lazy" decoding="async" referrerpolicy="no-referrer"></figure></div>
-<p class="galerie-note">Photos d’illustration : <a href="https://commons.wikimedia.org/wiki/File:Bouquet_jonquilles_FR_2013.jpg" target="_blank" rel="noopener nofollow">JLPC</a>, <a href="https://commons.wikimedia.org/wiki/File:Flowers_ready_to_be_prepared_by_florist.jpg" target="_blank" rel="noopener nofollow">direct2Florist</a>, <a href="https://commons.wikimedia.org/wiki/File:(Zazu,_Quito)_interior,_at_the_bar,_Ecuatorian_Flowers,_Fresh_cut_flowers.JPG" target="_blank" rel="noopener nofollow">David Adam Kess</a>, <a href="https://commons.wikimedia.org/wiki/File:Florist_shop_in_Paris_(52245374115).jpg" target="_blank" rel="noopener nofollow">Adrian Scottow from London, England</a> sur Wikimedia Commons. Vos propres photos prendront leur place.</p>
-</div></section>
+.cadre .hero{padding:140px 0 0}
+.cadre .hero .entete{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:end;padding-bottom:48px}
+.cadre .hero .lieu{color:var(--muted);opacity:1}
+.cadre .hero .entete p.intro{color:var(--muted);margin:0;max-width:40ch}
+.cadre .hero .photo{aspect-ratio:21/9;overflow:hidden;background:var(--bg2)}
+.cadre .hero .photo img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.cadre .hero{padding-top:110px}.cadre .hero .entete{grid-template-columns:1fr;gap:20px}.cadre .hero .photo{aspect-ratio:4/3}}
+.sans-photo .hero .photo{display:none}
+.sans-photo.split .hero .grille{grid-template-columns:1fr}
+.sans-photo.split .hero .texte{padding-right:0}
 
+/* Infos pratiques, juste sous l'accueil : ce qu'un client cherche en premier */
+.infos{border-bottom:1px solid var(--line)}
+.infos .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.infos .case{padding:30px 32px 30px 0;font-size:15.5px}
+.infos .case+.case{padding-left:32px;border-left:1px solid var(--line)}
+.infos h2{font:500 12px/1.2 var(--f-texte);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.infos p{margin:0}
+.infos a{text-underline-offset:4px;text-decoration-thickness:1px}
+@media (max-width:760px){.infos .wrap{grid-template-columns:1fr}.infos .case,.infos .case+.case{padding:22px 0;border-left:0}.infos .case+.case{border-top:1px solid var(--line)}}
 
-<section class="sec sec-teinte" id="offre"><div class="wrap">
-<div class="reveal"><span class="eyebrow">À l’atelier</span><h2 class="titre-sec">Nos créations</h2></div>
-<div class="arches">
-<article class="arche reveal"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M24 44V22M24 30c-8-1-12-6-12-13 8 0 12 5 12 13ZM24 26c6-1 10-5 10-11-7 0-10 4-10 11Z"/></svg><h3>Bouquets de saison</h3><p>Des compositions assemblées à partir de végétaux sélectionnés pour leur fraîcheur et leur beauté naturelle.</p></article>
-<article class="arche reveal" style="--d:.1s"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="24" cy="20" r="6"/><path d="M24 14c-6-8-14-2-12 4M24 14c6-8 14-2 12 4M18 22c-8 2-6 10 0 8M30 22c8 2 6 10 0 8M24 26v18"/></svg><h3>Mariages et événements</h3><p>Un accompagnement floral sur mesure pour habiller vos réceptions et célébrer vos moments d&#x27;exception.</p></article>
-<article class="arche reveal" style="--d:.2s"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M14 40h20l-2-14H16Z"/><path d="M24 26V14M24 20c-6-1-9-5-9-10 6 0 9 4 9 10ZM24 17c5-1 8-4 8-9-5 0-8 3-8 9Z"/></svg><h3>Hommages</h3><p>Des ouvrages délicats et discrets pour exprimer vos sentiments avec dignité et retenue.</p></article>
-</div></div></section>
+section{padding:120px 0}
+@media (max-width:760px){section{padding:76px 0}}
+.titre-s{font-size:clamp(34px,4.6vw,58px)}
 
-<section class="sec tuiles-sec" id="atelier"><div class="wrap tuiles-grid">
-<div class="tuiles-intro reveal"><span class="eyebrow">Comment ça se passe</span><h2 class="titre-sec">Notre accompagnement</h2>
-<p class="lead">De votre idée à la composition, tout se fait simplement, avec vous.</p>
-<ol class="tuiles-index" aria-hidden="true"><li>Écoute</li><li>Création</li><li>Conseil</li></ol></div>
-<div class="tuiles">
-<article class="tuile verre" style="--i:0"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="p" d="M10 14a10 10 0 0 1 10-10h24a10 10 0 0 1 10 10v18a10 10 0 0 1-10 10H28l-12 11v-11h0a6 6 0 0 1-6-6Z"/><g class="h" opacity=".9"><circle cx="22" cy="23" r="3.6"/><circle cx="32" cy="23" r="3.6"/><circle cx="42" cy="23" r="3.6"/></g></svg></div><div class="tuile-txt"><span class="n">01</span><h3>Écoute</h3><p>Nous prenons le temps de comprendre vos envies pour donner vie à vos projets.</p></div></article>
-<article class="tuile verre" style="--i:1"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g class="s"><ellipse cx="32" cy="15" rx="9" ry="12"/><ellipse cx="32" cy="15" rx="9" ry="12" transform="rotate(72 32 30)"/><ellipse cx="32" cy="15" rx="9" ry="12" transform="rotate(144 32 30)"/><ellipse cx="32" cy="15" rx="9" ry="12" transform="rotate(216 32 30)"/><ellipse cx="32" cy="15" rx="9" ry="12" transform="rotate(288 32 30)"/></g><circle class="p" cx="32" cy="30" r="9"/><path class="p" d="M30.5 40h3v20h-3z"/><circle class="h" cx="29" cy="27" r="2.6" opacity=".6"/></svg></div><div class="tuile-txt"><span class="n">02</span><h3>Création</h3><p>Chaque pièce est façonnée à la main dans notre atelier de Talence.</p></div></article>
-<article class="tuile verre" style="--i:2"><div class="ico3d"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect class="p" x="9" y="26" width="46" height="32" rx="6"/><rect class="s" x="6" y="18" width="52" height="12" rx="5"/><rect class="h" x="28.5" y="18" width="7" height="40" opacity=".75"/><path class="s" d="M32 18c-4-10-16-12-16-4 0 4 8 4 16 4Zm0 0c4-10 16-12 16-4 0 4-8 4-16 4Z"/></svg></div><div class="tuile-txt"><span class="n">03</span><h3>Conseil</h3><p>Nous vous guidons dans l&#x27;entretien de vos fleurs pour prolonger leur éclat.</p><a class="lien-fl" href="#contact">Nous écrire <span class="fl">→</span></a></div></article>
-</div></div></section>
+/* L'esprit */
+.esprit .grille{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:8%}
+.esprit .corps p{font-size:clamp(17px,1.5vw,19px);color:color-mix(in srgb,var(--ink) 86%,var(--bg))}
+.esprit .corps p:first-child::first-letter{font-family:var(--f-titre);float:left;font-size:4.1em;line-height:.82;padding:.06em .1em 0 0;color:var(--accent)}
+.esprit figure{margin:96px 0 0;display:grid;grid-template-columns:minmax(0,8fr) minmax(0,3fr);gap:28px;align-items:end}
+.esprit figure .img{aspect-ratio:16/9;overflow:hidden;background:var(--bg2)}
+.esprit figure img{width:100%;height:100%;object-fit:cover}
+.esprit figcaption{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:860px){.esprit .grille{grid-template-columns:1fr;gap:28px}.esprit figure{grid-template-columns:1fr;margin-top:56px}}
 
+/* L'offre : trois colonnes, des filets, pas de cartes */
+.offre{background:var(--bg2)}
+.offre .tete{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:64px}
+.offre ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.offre li{border-top:1px solid var(--ink);padding-top:22px}
+.offre li .n{font:400 14px var(--f-texte);color:var(--muted);display:block;margin-bottom:34px;font-variant-numeric:tabular-nums}
+.offre h3{font-size:clamp(25px,2.4vw,32px);margin-bottom:12px}
+.offre li p{color:var(--muted);margin:0;max-width:34ch}
+@media (max-width:860px){.offre ol{grid-template-columns:1fr;gap:34px}.offre .tete{display:block;margin-bottom:40px}.offre li .n{margin-bottom:14px}}
 
-<section class="cite sec-teinte"><div class="wrap reveal"><svg viewBox="0 0 64 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M2 10h22M40 10h22"/><circle cx="32" cy="10" r="4"/><path d="M32 6V2M32 14v4M28 10h-4M36 10h4"/></svg><blockquote>La beauté des fleurs est un langage simple qui s&#x27;adresse au cœur.</blockquote></div></section>
+/* Images + citation */
+.duo .grille{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;align-items:start}
+.duo .a{aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
+.duo .b{aspect-ratio:1/1;overflow:hidden;background:var(--bg2);margin-top:30%}
+.duo img{width:100%;height:100%;object-fit:cover}
+.duo blockquote{margin:40px 0 0;font:italic 400 clamp(24px,2.6vw,34px)/1.3 var(--f-titre);color:var(--ink);max-width:20ch}
+.duo blockquote::before{content:"";display:block;width:44px;height:1px;background:var(--accent);margin-bottom:22px}
+.duo.une .grille{grid-template-columns:1fr}
+.duo.une .b{display:none}
+@media (max-width:760px){.duo .grille{grid-template-columns:1fr}.duo .b{margin-top:0;aspect-ratio:4/3}}
 
-<section class="cta-bande" aria-label="Nous contacter"><div class="fx" aria-hidden="true"><i class="aur a"></i><i class="aur b"></i><i class="aur c"></i><i class="grain"></i></div>
-<div class="wrap"><div class="cta-carte verre reveal">
-<span class="eyebrow">Une occasion ?</span>
-<h2 class="cta-titre">Racontez-nous votre bouquet.</h2>
-<p>Quelques mots suffisent : l’occasion, les couleurs, l’envie. Nous imaginons le reste.</p>
-<div class="cta-actions"><a class="btn aimant" href="#contact">Nous écrire <span class="fl">→</span></a><a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=237%20Cours%20Gambetta%2C%2033400%20Talence" target="_blank" rel="noopener">Itinéraire</a></div>
-</div></div></section>
+/* Étapes */
+.etapes .grille{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:8%}
+.etapes ol{list-style:none;margin:0;padding:0}
+.etapes li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:28px 0;border-top:1px solid var(--line)}
+.etapes li:last-child{border-bottom:1px solid var(--line)}
+.etapes li .n{font:400 30px/1 var(--f-titre);color:var(--accent)}
+.etapes h3{font-size:24px;margin-bottom:6px}
+.etapes li p{margin:0;color:var(--muted)}
+@media (max-width:860px){.etapes .grille{grid-template-columns:1fr;gap:24px}}
 
-<section class="sec" id="contact"><div class="wrap contact-grid">
-<div class="reveal"><span class="eyebrow">Contact</span>
-<h2 class="titre-sec">Contactez l&#x27;atelier</h2>
-<p class="lead">Un bouquet, une occasion, une idée ? Parlez-nous de votre projet.</p>
-<ul class="coord"><li><small>Adresse</small><span>237 Cours Gambetta, 33400 Talence</span></li>
-<li><small>Email</small><a href="mailto:jourjlatelier@gmail.com">jourjlatelier@gmail.com</a></li></ul>
-<a class="btn ligne" href="https://www.google.com/maps/search/?api=1&amp;query=237%20Cours%20Gambetta%2C%2033400%20Talence" target="_blank" rel="noopener">Itinéraire <span class="fl">→</span></a></div>
-<form class="demo reveal" style="--d:.12s" novalidate>
-<label>Votre nom<input type="text" name="nom" autocomplete="name"></label>
-<label>Votre email<input type="email" name="email" autocomplete="email"></label>
-<label>Votre demande<select name="objet"><option>Un bouquet</option><option>Un mariage ou un événement</option><option>Un hommage</option><option>Autre demande</option></select></label>
-<label>Votre message<textarea name="message"></textarea></label>
-<button class="btn" type="submit">Envoyer <span class="fl">→</span></button>
-<p class="retour" aria-live="polite"></p>
-</form></div></section>
+/* Contact */
+.contact{background:var(--dark);color:var(--on-dark)}
+.contact .grille{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:7%;align-items:stretch}
+.contact .sur{color:color-mix(in srgb,var(--on-dark) 62%,var(--dark))}
+.contact .intro{color:color-mix(in srgb,var(--on-dark) 78%,var(--dark));margin:22px 0 36px;max-width:38ch}
+.contact dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 28px;font-size:15.5px}
+.contact dt{color:color-mix(in srgb,var(--on-dark) 58%,var(--dark));font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding-top:4px}
+.contact dd{margin:0;overflow-wrap:anywhere}
+.contact dd a{text-underline-offset:4px;text-decoration-thickness:1px}
+.contact table{border-collapse:collapse;font-size:15px}
+.contact td{padding:2px 18px 2px 0;vertical-align:top}
+.contact .actions .btn{background:var(--on-dark);color:var(--dark);border-color:var(--on-dark)}
+.contact .actions .btn.clair{background:transparent;color:var(--on-dark)}
+.contact .actions .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.carte{min-height:420px;background:color-mix(in srgb,var(--on-dark) 8%,var(--dark));overflow:hidden;position:relative}
+.carte iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.85) contrast(1.05)}
+.carte img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.contact .grille{grid-template-columns:1fr;gap:48px}.carte{min-height:320px}}
 
-</main>
-<footer class="pied"><div class="wrap">
-<div class="pied-cols">
-<div class="pied-marque"><a class="logo" href="#top"><i aria-hidden="true">J</i><span>Jour J</span></a><p>L&#x27;art floral à Talence.</p></div>
-<div><h3>Naviguer</h3><ul><li><a href="#esprit">L’atelier</a></li><li><a href="#bouquet">Bouquets</a></li><li><a href="#offre">Créations</a></li><li><a href="#atelier">Sur mesure</a></li><li><a href="#contact">Contact</a></li></ul></div>
-<div><h3>Nous trouver</h3><ul><li>237 Cours Gambetta, 33400 Talence</li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=237%20Cours%20Gambetta%2C%2033400%20Talence" target="_blank" rel="noopener">Itinéraire →</a></li></ul></div>
-<div><h3>Nous joindre</h3><ul><li><a href="mailto:jourjlatelier@gmail.com">jourjlatelier@gmail.com</a></li><li><a href="#contact">Formulaire de contact</a></li></ul></div>
+/* Pied */
+footer{padding:56px 0 90px;font-size:13.5px;color:var(--muted)}
+footer .haut{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:22px}
+footer .nom{font:400 28px/1 var(--f-titre);color:var(--ink)}
+footer p{margin:0 0 6px}
+footer a{color:inherit}
+.badge{position:fixed;right:14px;bottom:14px;z-index:30;font:500 11.5px/1 var(--f-texte);letter-spacing:.04em;background:var(--ink);color:var(--bg);padding:9px 12px;border-radius:999px;text-decoration:none;opacity:.88}
+
+/* Apparition douce, seulement si le JavaScript tourne et que la personne accepte les animations */
+@media (prefers-reduced-motion:no-preference){
+  .js .apparait{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .js .apparait.vu{opacity:1;transform:none}
+  .plein .hero .fond img{animation:zoom 14s ease-out both}
+  @keyframes zoom{from{transform:scale(1.07)}to{transform:none}}
+}
+</style>
+</head>
+<body class="split">
+<header class="bar">
+  <div class="wrap">
+    <a class="marque" href="#haut">Jour J</a>
+    <nav aria-label="Menu principal"><a href="#esprit">L’atelier</a><a href="#offre">Créations</a><a href="#experience">Comment ça se passe</a><a href="#contact">Contact</a></nav>
+    <a class="tel" href="mailto:jourjlatelier@gmail.com">Nous écrire</a>
+    <button class="menu-btn" type="button" aria-expanded="false">Menu</button>
+  </div>
+</header>
+<main id="haut">
+<section class="hero" aria-label="Accueil"><div class="wrap grille"><div class="texte"><p class="lieu">Fleuriste · Talence</p><h1>Jour J</h1><p class="accroche">Artisan fleuriste créateur à Talence.</p><div class="actions"><a class="btn" href="mailto:jourjlatelier@gmail.com">Nous écrire</a><a class="btn clair" href="#esprit">Imaginer un bouquet</a></div></div><div class="photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Bouquet_jonquilles_FR_2013.jpg/1920px-Bouquet_jonquilles_FR_2013.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Photo d’illustration · Fleuriste" loading="eager" decoding="async" referrerpolicy="no-referrer"></div></div></section>
+<div class="infos">
+  <div class="wrap"><div class="case"><h2>Adresse</h2><p>237 Cours Gambetta, 33400 Talence</p><p><a href="https://www.google.com/maps/search/?api=1&amp;query=237%20Cours%20Gambetta%2C%2033400%20Talence" target="_blank" rel="noopener">Itinéraire</a></p></div><div class="case"><h2>Horaires</h2><p>Contactez-nous pour connaître nos horaires.</p></div><div class="case"><h2>Nous joindre</h2><p><a href="mailto:jourjlatelier@gmail.com">jourjlatelier@gmail.com</a></p></div></div>
 </div>
-<div class="pied-nom" aria-hidden="true">Jour J</div>
 
-<p class="mentions" id="mentions">Mentions légales — Éditeur : Jour J, 237 Cours Gambetta, 33400 Talence. Maquette de démonstration réalisée par ORBE : les mentions complètes (numéro d’immatriculation, hébergeur, responsable de publication) seront renseignées avec vous avant toute mise en ligne.</p>
-<div class="pied-bas"><span>© <span data-annee>2026</span> Jour J</span><span>Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></span><a href="#top" class="haut">Haut de page ↑</a></div>
-</div></footer>
-<a class="badge-orbe" href="mailto:societe.orbe@gmail.com">Maquette proposée par ORBE</a>
+<section id="esprit" class="esprit">
+  <div class="wrap">
+    <div class="grille">
+      <div class="apparait">
+        <p class="sur">L’atelier</p>
+        <h2 class="titre-s">L&#x27;art floral à Talence</h2>
+      </div>
+      <div class="corps apparait">
+        <p>Situé à Talence, Jour J vous accueille dans un univers dédié à la création végétale. Nous sélectionnons des fleurs de saison pour élaborer des bouquets sensibles et élégants. Chaque composition est pensée avec soin pour sublimer votre quotidien ou marquer un événement particulier.</p>
+        <p>Notre démarche privilégie l&#x27;harmonie des couleurs, le travail des textures et le respect de la nature. Nous mettons notre savoir-faire au service de vos attentes pour concevoir des arrangements floraux sur mesure.</p>
+      </div>
+    </div>
+    <figure class="apparait"><div class="img"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Flowers_ready_to_be_prepared_by_florist.jpg/960px-Flowers_ready_to_be_prepared_by_florist.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Photo d’illustration" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div><figcaption>Nous composons des créations florales sur mesure pour tous vos moments de vie, dans un esprit sobre et raffiné.</figcaption></figure>
+  </div>
+</section>
 
-<script>
-(function(){
-var d=document,r=d.documentElement;r.classList.remove('pas-js');
-var top=d.querySelector('.top'),btn=d.querySelector('.menu-btn'),nav=d.querySelector('.top nav');
-function onScroll(){if(top)top.classList.toggle('fond',window.scrollY>40);
- var s=window.scrollY;d.querySelectorAll('[data-parallax]').forEach(function(e){e.style.transform='translate3d(0,'+(s*parseFloat(e.dataset.parallax))+'px,0)'});}
-window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-if(btn){btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')!=='true';btn.setAttribute('aria-expanded',o);nav.classList.toggle('ouvert',o);top.classList.toggle('ouvert-menu',o);d.body.style.overflow=o?'hidden':''});
- nav.addEventListener('click',function(e){if(e.target.tagName==='A'){btn.setAttribute('aria-expanded','false');nav.classList.remove('ouvert');top.classList.remove('ouvert-menu');d.body.style.overflow=''}});}
-var els=[].slice.call(d.querySelectorAll('.reveal'));
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('vu')})}
-d.querySelectorAll('form.demo').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var p=f.querySelector('.retour');if(p)p.textContent='Démonstration : ce formulaire sera relié à votre boîte mail.'})});
-var y=d.querySelector('[data-annee]');if(y)y.textContent=new Date().getFullYear();
+<section id="offre" class="offre">
+  <div class="wrap">
+    <div class="tete apparait">
+      <div>
+        <p class="sur">Créations</p>
+        <h2 class="titre-s">Nos créations florales</h2>
+      </div>
+    </div>
+    <ol>
+      <li class="apparait"><span class="n">01</span><h3>Bouquets de saison</h3><p>Des assemblages harmonieux confectionnés chaque jour avec des fleurs fraîches et sélectionnées.</p></li>
+      <li class="apparait"><span class="n">02</span><h3>Mariages et événements</h3><p>Une scénographie florale élégante et personnalisée pour accompagner vos célébrations.</p></li>
+      <li class="apparait"><span class="n">03</span><h3>Compositions d&#x27;hommage</h3><p>Des créations empreintes de sobriété pour exprimer vos sentiments avec délicatesse.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="duo" aria-label="En images"><div class="wrap grille"><div class="a apparait"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/%28Zazu%2C_Quito%29_interior%2C_at_the_bar%2C_Ecuatorian_Flowers%2C_Fresh_cut_flowers.JPG/960px-%28Zazu%2C_Quito%29_interior%2C_at_the_bar%2C_Ecuatorian_Flowers%2C_Fresh_cut_flowers.JPG?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Photo d’illustration" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div><div><div class="b apparait"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Florist_shop_in_Paris_%2852245374115%29.jpg/960px-Florist_shop_in_Paris_%2852245374115%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Photo d’illustration" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div><blockquote class="apparait">La fleur exprime avec délicatesse ce que les mots ne peuvent traduire.</blockquote></div></div></section>
+
+<section id="experience" class="etapes">
+  <div class="wrap grille">
+    <div class="apparait">
+      <p class="sur">Comment ça se passe</p>
+      <h2 class="titre-s">Notre accompagnement</h2>
+    </div>
+    <ol>
+      <li class="apparait"><span class="n">i.</span><div><h3>Écoute et conseil</h3><p>Nous prenons le temps de comprendre vos envies pour vous guider vers le choix adapté.</p></div></li>
+      <li class="apparait"><span class="n">ii.</span><div><h3>Conception sur mesure</h3><p>Chaque arrangement est réalisé à la main dans notre atelier de Talence.</p></div></li>
+      <li class="apparait"><span class="n">iii.</span><div><h3>Soin des détails</h3><p>Une attention constante portée aux finitions, à la fraîcheur et à la tenue des fleurs.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap grille">
+    <div class="apparait">
+      <p class="sur">Contact</p>
+      <h2 class="titre-s">Nous contacter à Talence</h2>
+      <p class="intro">Un bouquet, une occasion, une idée ? Parlez-nous de votre projet.</p>
+      <dl><dt>Adresse</dt><dd>237 Cours Gambetta, 33400 Talence</dd><dt>Email</dt><dd><a href="mailto:jourjlatelier@gmail.com">jourjlatelier@gmail.com</a></dd></dl>
+      <div class="actions"><a class="btn" href="mailto:jourjlatelier@gmail.com">Écrire un email</a><a class="btn clair" href="https://www.google.com/maps/search/?api=1&amp;query=237%20Cours%20Gambetta%2C%2033400%20Talence" target="_blank" rel="noopener">Itinéraire</a></div>
+    </div>
+    <div class="carte apparait"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Florist_shop_in_Paris_%2852245374115%29.jpg/960px-Florist_shop_in_Paris_%2852245374115%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Photo d’illustration" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="haut"><span class="nom">Jour J</span><span>237 Cours Gambetta, 33400 Talence</span></div>
+    
+    <p>Photos d’illustration : <a href="https://commons.wikimedia.org/wiki/File:Bouquet_jonquilles_FR_2013.jpg" target="_blank" rel="noopener nofollow">JLPC</a>, <a href="https://commons.wikimedia.org/wiki/File:Flowers_ready_to_be_prepared_by_florist.jpg" target="_blank" rel="noopener nofollow">direct2Florist</a>, <a href="https://commons.wikimedia.org/wiki/File:(Zazu,_Quito)_interior,_at_the_bar,_Ecuatorian_Flowers,_Fresh_cut_flowers.JPG" target="_blank" rel="noopener nofollow">David Adam Kess</a>, <a href="https://commons.wikimedia.org/wiki/File:Florist_shop_in_Paris_(52245374115).jpg" target="_blank" rel="noopener nofollow">Adrian Scottow from London, England</a> (Wikimedia Commons). Elles seront remplacées par les vôtres.</p>
+    <p>© <span id="annee"></span> Jour J · Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></p>
+  </div>
+</footer>
+<a class="badge" href="mailto:societe.orbe@gmail.com">Maquette proposée par ORBE</a>
+<script>(function () {
+  var d = document, b = d.body, bar = d.querySelector('.bar'), btn = d.querySelector('.menu-btn');
+  d.documentElement.classList.add('js');
+  function haut() { bar.classList.toggle('sombre', window.scrollY > 40 || !b.classList.contains('plein')); }
+  haut(); window.addEventListener('scroll', haut, { passive: true });
+  if (btn) btn.addEventListener('click', function () {
+    var o = bar.classList.toggle('ouvert'); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); btn.textContent = o ? 'Fermer' : 'Menu';
+  });
+  d.querySelectorAll('.bar nav a').forEach(function (a) { a.addEventListener('click', function () { bar.classList.remove('ouvert'); if (btn) { btn.textContent = 'Menu'; btn.setAttribute('aria-expanded', 'false'); } }); });
+  var els = d.querySelectorAll('.apparait');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (e) { io.observe(e); });
+  } else { els.forEach(function (e) { e.classList.add('vu'); }); }
+  d.querySelectorAll('img').forEach(function (i) { i.addEventListener('error', function () { var f = i.closest('figure, .photo, .a, .b, .fond, .img'); if (f) f.style.display = 'none'; }); });
+  var an = d.getElementById('annee'); if (an) an.textContent = new Date().getFullYear();
 })();
-/* Kit premium ORBE : titre animé, lumière, barre de progression, tuiles empilées, icônes 3D, bouton aimanté */
-(function(){
-var d=document,w=window,calme=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches;
-d.querySelectorAll('.hero h1').forEach(function(h){var n=0;[].slice.call(h.childNodes).forEach(function(t){if(t.nodeType!==3||!t.textContent.trim())return;var f=d.createDocumentFragment();t.textContent.split(/(\s+)/).forEach(function(m){if(!m)return;if(/^\s+$/.test(m)){f.appendChild(d.createTextNode(' '));return}var o=d.createElement('k-m');var b=d.createElement('k-w');b.textContent=m;b.style.setProperty('--m',n++);o.appendChild(b);f.appendChild(o)});h.replaceChild(f,t)})});
-var hero=d.querySelector('.hero');
-if(hero&&!calme){hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px')})}
-d.querySelectorAll('.verre').forEach(function(v){v.addEventListener('pointermove',function(e){var r=v.getBoundingClientRect();v.style.setProperty('--lx',((e.clientX-r.left)/r.width*100)+'%');v.style.setProperty('--ly',((e.clientY-r.top)/r.height*100)+'%')})});
-var bar=d.querySelector('.progres'),tu=[].slice.call(d.querySelectorAll('.tuile')),idx=[].slice.call(d.querySelectorAll('.tuiles-index li'));
-var att=false;function maj(){att=false;var h=d.documentElement.scrollHeight-w.innerHeight;if(bar)bar.style.setProperty('--p',h>0?Math.min(1,w.scrollY/h):0);
- var act=0;tu.forEach(function(t,i){var r=t.getBoundingClientRect();if(r.top<w.innerHeight*.55)act=i;if(calme)return;var s=tu[i+1];if(!s){t.style.setProperty('--s',1);t.style.setProperty('--b',1);return}
-  var q=s.getBoundingClientRect(),k=Math.max(0,Math.min(1,1-(q.top-r.top)/(r.height||1)));t.style.setProperty('--s',(1-k*.06).toFixed(4));t.style.setProperty('--b',(1-k*.12).toFixed(4))});
- idx.forEach(function(l,i){l.classList.toggle('actif',i===act)});}
-w.addEventListener('scroll',function(){if(!att){att=true;requestAnimationFrame(maj)}},{passive:true});w.addEventListener('resize',maj);maj();
-if(!calme&&w.matchMedia('(hover: hover)').matches){
- d.querySelectorAll('.ico3d').forEach(function(c){var t=c.closest('.tuile')||c;t.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--ry',(x*28)+'deg');c.style.setProperty('--rx',(-y*28)+'deg')});t.addEventListener('pointerleave',function(){c.style.setProperty('--ry','0deg');c.style.setProperty('--rx','0deg')})});
- d.querySelectorAll('.aimant').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.28)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});}
-})();
-(function(){var n=document.querySelector('.pied-nom');if(!n)return;function fit(){n.style.fontSize='';var t=0;while(n.scrollWidth>n.clientWidth+2&&t++<40){n.style.fontSize=(parseFloat(getComputedStyle(n).fontSize)*.94)+'px'}}
-fit();window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
-
-(function(){
-var C=[["#e9b8c0","#f2d3d6","#c97d8c","#fbeaec"],["#e5483f","#f2a03d","#d6336c","#ffd166"],["#ffffff","#e8efe6","#9fb89a","#f4f7f1"]];
-var N=[["pour dire merci ou faire plaisir","pour une belle fête","pour la plus belle des journées","pour accompagner avec délicatesse"],["Un bouquet léger, tout en douceur","Un bouquet généreux et joyeux","Un bouquet élégant, très composé","Un bouquet sobre et recueilli"]];
-var st={occ:0,pal:0,tai:1};
-function dessine(){var p=C[st.pal],n=[5,8,12][st.tai],s='';
- var tiges='',fleurs='',feu='';
- for(var i=0;i<n;i++){var t=(i/(n-1||1))-.5,x=150+t*150,y=70+Math.abs(t)*52+(i%2)*14,c=p[i%4],r=22+((i*7)%3)*6;
-  tiges+='<path d="M'+x+' '+y+' Q '+(150+t*40)+' 170 150 236" fill="none" stroke="#7a9a6d" stroke-width="2.4" stroke-linecap="round"/>';
-  fleurs+='<g transform="translate('+x+' '+y+')">'+[0,72,144,216,288].map(function(a){return '<ellipse cx="0" cy="-'+(r*.62)+'" rx="'+(r*.42)+'" ry="'+(r*.7)+'" fill="'+c+'" opacity=".92" transform="rotate('+a+')"/>'}).join('')+'<circle r="'+(r*.2)+'" fill="'+p[3]+'"/></g>';}
- for(var j=0;j<3+st.tai*2;j++){var q=(j/(2+st.tai*2))-.5;feu+='<path d="M150 200 Q '+(150+q*180)+' 150 '+(150+q*250)+' 110 Q '+(150+q*120)+' 160 150 200Z" fill="#8fae83" opacity=".75"/>';}
- s='<defs></defs>'+feu+tiges+fleurs+'<path d="M118 200 L182 200 L172 236 L128 236Z" fill="#b08968" opacity=".9"/><path d="M118 200 L182 200" stroke="#8a6a4d" stroke-width="3"/>';
- document.getElementById('bqsvg').innerHTML=s;
- document.getElementById('bqres').textContent=N[1][st.occ]+', '+N[0][st.occ]+'. À titre d’illustration : la composition réelle se décide avec la fleuriste, selon la saison.';}
-document.querySelectorAll('.ligne-b').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});st[g.dataset.g]=+b.dataset.v;dessine()})});
-dessine();})();
 </script>
-</body></html>
+</body>
+</html>
