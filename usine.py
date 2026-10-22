@@ -23,6 +23,7 @@ from pathlib import Path
 
 import photos
 import rendu
+import verif
 
 ICI = Path(__file__).resolve().parent
 DOCS = ICI / "docs"
@@ -39,7 +40,13 @@ URL = {  # modifiables seulement pour les tests
     "groq": os.environ.get("USINE_GROQ_URL", "https://api.groq.com/openai/v1"),
     "or": os.environ.get("USINE_OR_URL", "https://openrouter.ai/api/v1"),
 }
-NOMBRE = max(0, min(60, int(os.environ.get("NOMBRE", "20") or 0)))
+COMMANDE = ICI / "data" / "commande.json"  # « lance N sites maintenant » : déposé par Claude ou par toi, lu puis effacé
+NOMBRE = max(0, min(80, int(os.environ.get("NOMBRE", "20") or 0)))
+if COMMANDE.exists():
+    try:
+        NOMBRE = max(0, min(80, int(json.loads(COMMANDE.read_text("utf-8")).get("nombre", NOMBRE))))
+    except Exception:
+        pass
 PAUSE = float(os.environ.get("USINE_PAUSE", "6"))
 # Sans cette carte de visite, Cloudflare bloque Python à l'entrée (erreur 403 / code 1010).
 NAVIGATEUR = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
@@ -137,7 +144,7 @@ def appel_http(url, data=None, headers=None, timeout=300):
         raise ErreurIA("reseau", str(e)[:200])
 
 
-def overpass(filtre, bbox, limite=500):
+def overpass(filtre, bboxes, limite=2500):
     """Demande à OpenStreetMap les commerces d'un secteur qui n'ont pas de site.
 
     OpenStreetMap note pour chaque commerce son adresse, son téléphone et,
@@ -145,12 +152,14 @@ def overpass(filtre, bbox, limite=500):
     contact mais aucun site : ce sont de vrais commerces, pas des inventions.
     """
     contact = '[~"^(phone|contact:phone|email|contact:email|contact:instagram|contact:facebook)$"~"."]'
-    sans_site = '["name"][!"website"][!"contact:website"][!"brand"][!"brand:website"]'
+    sans_site = '["name"][!"website"][!"contact:website"][!"url"][!"contact:url"][!"brand"][!"brand:website"][!"operator:website"]'
+    ferme = '[!"disused"][!"end_date"]'
     # Un secteur peut réunir plusieurs filtres, séparés par « ]|[ ». Attention : le « | » sert AUSSI
     # à l'intérieur des filtres (« beauty|hairdresser ») : couper partout cassait toutes les recherches (erreur 400).
     morceaux = re.split(r"(?<=\])\|(?=\[)", filtre)
-    parts = "".join("nwr%s%s%s(%s);" % (f, sans_site, contact, bbox) for f in morceaux)
-    q = "[out:json][timeout:180];(%s);out tags center %d;" % (parts, limite)
+    bboxes = [bboxes] if isinstance(bboxes, str) else bboxes
+    parts = "".join("nwr%s%s%s%s(%s);" % (f, sans_site, ferme, contact, b) for f in morceaux for b in bboxes)
+    q = "[out:json][timeout:240];(%s);out tags center %d;" % (parts, limite)
     # Le serveur principal est souvent saturé (502) : on réessaie, puis on change de serveur.
     derniere = None
     for essai, serveur in enumerate([OVERPASS, MIROIR_OSM] + AUTRES_OSM + [OVERPASS]):
@@ -162,7 +171,7 @@ def overpass(filtre, bbox, limite=500):
             else:
                 req = urllib.request.Request(serveur, data=urllib.parse.urlencode({"data": q}).encode(),
                                              headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": UA_OSM})
-            with urllib.request.urlopen(req, timeout=200) as r:
+            with urllib.request.urlopen(req, timeout=260) as r:
                 return json.loads(r.read().decode("utf-8")).get("elements", [])
         except urllib.error.HTTPError as e:
             derniere = e
@@ -196,6 +205,7 @@ def fiche_osm(e, secteur):
         "ambiance": "",
         "histoire": "",
         "osm_url": "https://www.openstreetmap.org/%s/%s" % (e.get("type", "node"), e.get("id", "")),
+        "lat": (e.get("center") or e).get("lat"), "lon": (e.get("center") or e).get("lon"),
     }
 
 
@@ -374,6 +384,11 @@ def trier_haut_de_gamme(fiches, secteur):
     """Demande à une IA lesquels ont l'air haut de gamme. En cas d'échec, on garde tout."""
     if len(fiches) <= 3:
         return fiches
+    if len(fiches) > 60:  # par paquets de 60 : l'IA ne voit pas tout d'un coup
+        out = []
+        for i in range(0, min(len(fiches), 240), 60):
+            out += trier_haut_de_gamme(fiches[i:i + 60], secteur)
+        return out
     apercu = "\n".join("%d. %s — %s" % (i + 1, f["nom"], ", ".join(x for x in (f["quartier"], f["ville"]) if x) or "?")
                        for i, f in enumerate(fiches[:60]))
     try:
@@ -460,15 +475,55 @@ def refaire_recents(liste, jours=4):
     journal("%d site(s) récent(s) refait(s) avec les nouveaux modèles" % n)
 
 
+def nettoyer_recents(liste, jours=3):
+    """Revérifie les sites des derniers jours : ceux dont le commerce a en fait déjà un site sont retirés."""
+    limite = time.time() - jours * 86400
+    garde, retires = [], 0
+    for it in liste.get("items", []):
+        try:
+            quand = datetime.strptime(it.get("cree_le", ""), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp()
+        except ValueError:
+            quand = 0
+        if quand < limite or it.get("verif") == "sans_site":
+            garde.append(it)
+            continue
+        lieu = [x.strip() for x in str(it.get("quartier", "")).split(",") if x.strip()]
+        v = verif.verifier({"nom": it.get("nom"), "ville": lieu[-1] if lieu else "", "adresse": it.get("adresse", ""),
+                            "telephone": it.get("contact") if it.get("canal") in ("SMS", "Téléphone") else ""}, journal)
+        if v["statut"] in ("a_un_site", "ferme"):
+            retires += 1
+            journal("  retiré : %s — %s" % (it.get("nom"), v["preuve"]))
+            slug = str(it.get("site_url", "")).rstrip("/").rsplit("/", 1)[-1]
+            if slug and (DOCS / slug / "index.html").exists():
+                (DOCS / slug / "index.html").unlink()
+                try:
+                    (DOCS / slug).rmdir()
+                except OSError:
+                    pass
+            continue
+        if v["statut"] == "sans_site":
+            it["verif"] = "sans_site"
+            if v["telephone"] and not it.get("telephone"):
+                it["telephone"] = v["telephone"]
+            it["preuve"] = (("Tél. " + it["telephone"] + " · ") if it.get("telephone") else "") + v["preuve"]
+        garde.append(it)
+    liste["items"] = garde
+    journal("Revérification des sites récents : %d retiré(s) car le commerce a déjà un site" % retires)
+
+
 def main():
     if not (CLES["gemini"] or CLES["groq"]):
         sys.exit("Il manque la clé GEMINI_API_KEY (ou GROQ_API_KEY) dans les secrets du dépôt.")
     DOCS.mkdir(parents=True, exist_ok=True)
     NOMS.parent.mkdir(parents=True, exist_ok=True)
     (DOCS / ".nojekyll").touch()
+    if COMMANDE.exists():
+        COMMANDE.unlink()  # la commande est lue (voir NOMBRE) : on l'efface pour ne pas la rejouer
     liste = json.loads(LISTE.read_text("utf-8")) if LISTE.exists() else {"items": []}
     noms = set(json.loads(NOMS.read_text("utf-8"))) if NOMS.exists() else set()
     noms |= {norm(x.get("nom")) for x in liste.get("items", [])}
+    journal("Demande : %d site(s)" % NOMBRE)
+    nettoyer_recents(liste)
     if os.environ.get("REFAIRE", "") == "1":
         refaire_recents(liste)
     if NOMBRE == 0:  # simple mise à jour du design des sites récents
@@ -477,38 +532,44 @@ def main():
         return
     # Un « tour » toutes les 12 h : chaque passage prend d'autres secteurs et d'autres départements.
     tour = int(time.time() // 43200)
-    secteurs = [SECTEURS[(tour * 5 + k) % len(SECTEURS)] for k in range(6)]
-    zones = [BORDEAUX, BASSIN, MAISON, VOISINS[tour % len(VOISINS)], VOISINS[(tour + 5) % len(VOISINS)]]
+    n_sect = max(6, min(len(SECTEURS), -(-NOMBRE * 2 // 9)))  # ~11 secteurs pour 50 sites
+    secteurs = [SECTEURS[(tour * 5 + k) % len(SECTEURS)] for k in range(n_sect)]
+    n_voisins = 3 if NOMBRE <= 30 else 6
+    voisins = [VOISINS[(tour * 3 + k) % len(VOISINS)] for k in range(n_voisins)]
+    zones = [MAISON] + voisins
+    journal("Zones : " + ", ".join(z for z, _ in zones))
     nouveaux = []
 
     # 1. Candidats : de vrais commerces lus sur la carte OpenStreetMap.
     candidats = []
     for sect, filtre in secteurs:
-        trouves, neufs = [], []
-        for zone, bbox in zones:
+        bruts = []
+        for i in range(0, len(zones), 3):  # 3 départements par requête : assez gros pour aller vite, assez petit pour ne pas saturer
+            paquet = zones[i:i + 3]
             try:
-                bruts = overpass(filtre, bbox)
+                bruts += overpass(filtre, [b for _, b in paquet])
             except Exception as e:
-                journal("  %s / %s : carte illisible (%s)" % (sect, zone, str(e)[:120]))
-                continue
-            trouves += bruts
-            neufs += [fiche_osm(e, sect) for e in bruts]
+                journal("  %s / %s : carte illisible (%s)" % (sect, " + ".join(z for z, _ in paquet), str(e)[:120]))
+        neufs = [fiche_osm(e, sect) for e in bruts]
         neufs = [f for f in neufs if f["nom"] and norm(f["nom"]) not in noms and contact_de(f)]
         vus = set()
         neufs = [f for f in neufs if not (norm(f["nom"]) in vus or vus.add(norm(f["nom"])))]
-        journal("Carte : %s (%s) — %d trouvés, %d sans site et joignables"
-                % (sect, " + ".join(z for z, _ in zones), len(trouves), len(neufs)))
+        import random as _r
+        _r.Random(tour).shuffle(neufs)  # sinon la carte rend toujours les mêmes en premier
+        journal("Carte : %s — %d trouvés, %d sans site noté et joignables" % (sect, len(bruts), len(neufs)))
         if not neufs:
             continue
-        retenus = trier_haut_de_gamme(neufs, sect)
-        retenus.sort(key=lambda f: RANG_CANAL.get(contact_de(f)[0], 9))  # tri stable : l'ordre de l'IA est gardé
+        retenus = trier_haut_de_gamme(neufs[:240], sect)
+        # Ceux qui ont un téléphone d'abord (Oscar veut le numéro), puis par moyen de contact préféré.
+        retenus.sort(key=lambda f: (0 if f.get("telephone") else 1, RANG_CANAL.get(contact_de(f)[0], 9)))
         candidats += retenus
 
     # 2. Un commerce par secteur à tour de rôle, pour ne pas faire 15 fleuristes.
     candidats = entrelacer(candidats)
     journal("%d candidats" % len(candidats))
 
-    # 3 et 4. Fabriquer le site, écrire le message
+    # 3 et 4. Vérifier qu'il n'a VRAIMENT pas de site, fabriquer le site, écrire le message
+    ecartes = {"a_un_site": 0, "ferme": 0, "inconnu": 0}
     for fiche in candidats:
         if len(nouveaux) >= NOMBRE:
             break
@@ -516,11 +577,22 @@ def main():
         if norm(nom) in noms:
             continue
         noms.add(norm(nom))
-        journal("Commerce : " + nom)
+        journal("Commerce : %s (%s)" % (nom, fiche.get("ville") or "?"))
+        v = verif.verifier(fiche, journal)
+        moteurs_morts = all(verif.ETAT["moteurs_ko"].get(m, 0) >= 3 for m, _ in verif.MOTEURS)
+        if v["statut"] != "sans_site":
+            if v["statut"] == "inconnu" and moteurs_morts and not sum(verif.ETAT["moteurs_ok"].values()):
+                v["preuve"] = "Aucun site à son nom (adresses testées) ; moteurs de recherche indisponibles cette nuit : jette un œil à Google."
+            else:
+                ecartes[v["statut"]] = ecartes.get(v["statut"], 0) + 1
+                journal("  écarté : " + v["preuve"])
+                continue
+        if v["telephone"] and not fiche.get("telephone"):
+            fiche["telephone"] = v["telephone"]
         ct = contact_de(fiche)
         faits = {k: fiche.get(k, "") for k in ("nom", "secteur", "ville", "quartier", "adresse", "telephone", "email", "instagram",
-                                               "facebook", "horaires", "specialites", "ambiance", "histoire")}
-        journal("  fabrication du site…")
+                                               "facebook", "horaires", "specialites", "ambiance", "histoire", "lat", "lon")}
+        journal("  vérifié : %s — fabrication du site…" % v["preuve"])
         try:
             html, modele = fabriquer_site(fiche, faits)
         except Exception as e:
@@ -533,7 +605,7 @@ def main():
         m = {}
         try:
             txt, _, _ = ia([("groq", "", False), ("gemini", "", False), ("or", "deepseek", False)], CONSIGNE_MSG,
-                           "Canal : %s\nFiche : %s" % (ct[0], json.dumps(faits, ensure_ascii=False)))
+                           "Canal : %s\nFiche : %s" % (ct[0], json.dumps({k: x for k, x in faits.items() if k not in ("lat", "lon")}, ensure_ascii=False)))
             m = lire_json(txt)
         except Exception as e:
             journal("  message par défaut (%s)" % e)
@@ -544,23 +616,29 @@ def main():
         if "{LIEN}" not in msg:
             msg += "\n\nLe site : {LIEN}"
         maintenant = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        tel = verif.format_tel(fiche.get("telephone") or "") or str(fiche.get("telephone") or "")
         nouveaux.append({
             "id": "agent-" + maintenant[:10].replace("-", "") + "-" + slug[:40],
             "nom": nom, "type": fiche.get("secteur", ""), "quartier": ", ".join(x for x in (fiche.get("quartier"), fiche.get("ville")) if x),
-            "adresse": fiche.get("adresse", ""), "canal": ct[0], "contact": ct[1],
-            "preuve": "Fiche OpenStreetMap complète (adresse, contact) mais aucun site internet renseigné. "
-                      "Jette un œil à Google avant d'envoyer, au cas où il en aurait ouvert un récemment.",
+            "adresse": fiche.get("adresse", ""), "canal": ct[0], "contact": ct[1], "telephone": tel,
+            "verif": v["statut"],
+            "preuve": (("Tél. " + tel + " · ") if tel else "") + v["preuve"],
             "preuve_url": "https://www.google.com/search?q=" + urllib.parse.quote(
-                " ".join(x for x in (nom, fiche.get("ville") or "Bordeaux") if x)),
+                " ".join(x for x in (nom, fiche.get("ville") or "") if x)),
             "objet": str(m.get("objet") or ("Un site pour " + nom)) if ct[0] == "Email" else "",
             "message": msg.replace("{LIEN}", lien), "site_url": lien, "par": modele, "cree_le": maintenant,
         })
         journal("  prêt : " + lien)
+        # On enregistre au fur et à mesure : si le passage est coupé, rien n'est perdu.
+        if len(nouveaux) % 5 == 0:
+            LISTE.write_text(json.dumps(dict(liste, items=(nouveaux + liste.get("items", []))[:400]), ensure_ascii=False, indent=1), "utf-8")
 
-    liste["items"] = (nouveaux + liste.get("items", []))[:300]
+    liste["items"] = (nouveaux + liste.get("items", []))[:400]
     liste["maj"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     LISTE.write_text(json.dumps(liste, ensure_ascii=False, indent=1), "utf-8")
     NOMS.write_text(json.dumps(sorted(noms), ensure_ascii=False), "utf-8")
+    journal("Moteurs de recherche : %s" % ", ".join("%s %d ok / %d bloqué" % (m, verif.ETAT["moteurs_ok"].get(m, 0), verif.ETAT["moteurs_ko"].get(m, 0)) for m, _ in verif.MOTEURS))
+    journal("Écartés car déjà un site : %d · fermés : %d · non vérifiables : %d" % (ecartes.get("a_un_site", 0), ecartes.get("ferme", 0), ecartes.get("inconnu", 0)))
     journal("Terminé : %d site(s) prêt(s)." % len(nouveaux))
 
 

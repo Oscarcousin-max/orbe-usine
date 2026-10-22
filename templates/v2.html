@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+<head>
+{{head}}
+<style>{{theme_css}}
+{{css}}</style>
+</head>
+<body class="{{classes}}">
+<header class="bar">
+  <div class="wrap">
+    <a class="marque" href="#haut">{{nom}}</a>
+    <nav aria-label="Menu principal">{{nav}}</nav>
+    {{bar_tel}}
+    <button class="menu-btn" type="button" aria-expanded="false">Menu</button>
+  </div>
+</header>
+<main id="haut">
+{{hero}}
+<div class="infos">
+  <div class="wrap">{{infos}}</div>
+</div>
+
+<section id="esprit" class="esprit">
+  <div class="wrap">
+    <div class="grille">
+      <div class="apparait">
+        <p class="sur">{{lab_esprit}}</p>
+        <h2 class="titre-s">{{esprit_titre}}</h2>
+      </div>
+      <div class="corps apparait">
+        <p>{{esprit_1}}</p>
+        <p>{{esprit_2}}</p>
+      </div>
+    </div>
+    {{figure_esprit}}
+  </div>
+</section>
+
+<section id="offre" class="offre">
+  <div class="wrap">
+    <div class="tete apparait">
+      <div>
+        <p class="sur">{{lab_offre}}</p>
+        <h2 class="titre-s">{{offre_titre}}</h2>
+      </div>
+    </div>
+    <ol>
+      <li class="apparait"><span class="n">01</span><h3>{{o1_t}}</h3><p>{{o1_d}}</p></li>
+      <li class="apparait"><span class="n">02</span><h3>{{o2_t}}</h3><p>{{o2_d}}</p></li>
+      <li class="apparait"><span class="n">03</span><h3>{{o3_t}}</h3><p>{{o3_d}}</p></li>
+    </ol>
+  </div>
+</section>
+
+{{duo}}
+
+<section id="experience" class="etapes">
+  <div class="wrap grille">
+    <div class="apparait">
+      <p class="sur">{{lab_exp}}</p>
+      <h2 class="titre-s">{{exp_titre}}</h2>
+    </div>
+    <ol>
+      <li class="apparait"><span class="n">i.</span><div><h3>{{e1_t}}</h3><p>{{e1_d}}</p></div></li>
+      <li class="apparait"><span class="n">ii.</span><div><h3>{{e2_t}}</h3><p>{{e2_d}}</p></div></li>
+      <li class="apparait"><span class="n">iii.</span><div><h3>{{e3_t}}</h3><p>{{e3_d}}</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap grille">
+    <div class="apparait">
+      <p class="sur">Contact</p>
+      <h2 class="titre-s">{{contact_titre}}</h2>
+      <p class="intro">{{contact_texte}}</p>
+      <dl>{{coordonnees}}</dl>
+      <div class="actions">{{contact_actions}}</div>
+    </div>
+    <div class="carte apparait">{{carte}}</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="haut"><span class="nom">{{nom}}</span><span>{{pied_lieu}}</span></div>
+    {{alcool}}
+    <p>{{credits}}</p>
+    <p>© <span id="annee"></span> {{nom}} · Proposition de site réalisée par ORBE, studio digital · <a href="mailto:societe.orbe@gmail.com">societe.orbe@gmail.com</a></p>
+  </div>
+</footer>
+<a class="badge" href="mailto:societe.orbe@gmail.com">Maquette proposée par ORBE</a>
+<script>{{js}}</script>
+</body>
+</html>

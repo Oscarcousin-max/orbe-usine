@@ -154,11 +154,34 @@ def _commons(requete):
     return out
 
 
+def _openverse(requete):
+    """Openverse (Flickr et autres), sans clé : photos libres pour un usage commercial, photographes crédités."""
+    params = {"q": requete, "license_type": "commercial", "aspect_ratio": "wide", "size": "large", "mature": "false",
+              "page_size": "30", "category": "photograph"}
+    req = urllib.request.Request("https://api.openverse.org/v1/images/?" + urllib.parse.urlencode(params),
+                                 headers={"User-Agent": UA_OUTIL, "Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        res = json.loads(r.read().decode("utf-8")).get("results") or []
+    out = []
+    for p in res:
+        src = str(p.get("url") or "")
+        if not src.startswith("https://") or not src.lower().split("?")[0].endswith((".jpg", ".jpeg")):
+            continue
+        if not _bon_format(p.get("width"), p.get("height")) or PAS_UNE_PHOTO.search(str(p.get("title") or "")):
+            continue
+        if re.search(r"\bnc\b|nd", str(p.get("license") or ""), re.I):
+            continue
+        out.append({"src": src, "src_petit": src, "auteur": str(p.get("creator") or "photographe")[:60],
+                    "lien": str(p.get("foreign_landing_url") or "https://openverse.org"),
+                    "source": "Openverse, CC %s" % str(p.get("license") or "").upper()})
+    return out
+
+
 def _reserve(requete):
     if requete in _CACHE:
         return _CACHE[requete]
     res = []
-    for f in (_pexels, _unsplash, _commons):
+    for f in (_pexels, _unsplash, _openverse, _commons):
         try:
             res = f(requete)
         except Exception:

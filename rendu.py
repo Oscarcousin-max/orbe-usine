@@ -610,3 +610,290 @@ def fabriquer(secteur, faits, textes, photos=None):
     if restes:
         raise ValueError("jetons non remplis : %s" % sorted(set(restes)))
     return page, "%s/%s" % (fam, theme_nom)
+
+
+# =====================================================================================
+# Modèle v2 (octobre 2026) : une mise en page éditoriale sobre, comme celle d'une bonne agence.
+# Fini le verre, les halos, les icônes 3D et le bandeau qui défile : une grande photo, de la
+# typographie, des filets fins, les infos pratiques en évidence, une vraie carte.
+# =====================================================================================
+
+JOURS = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
+NOMS_JOURS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+
+
+def _heure(h):
+    m = re.fullmatch(r"(\d{1,2}):(\d{2})", h.strip())
+    if not m:
+        raise ValueError(h)
+    hh, mm = int(m.group(1)), m.group(2)
+    return "%d h" % hh if mm == "00" else "%d h %s" % (hh, mm)
+
+
+def horaires_fr(oh):
+    """« Mo-Fr 09:00-12:00,14:00-19:00; Sa 09:00-12:30 » -> [("Lundi – vendredi", "9 h – 12 h, 14 h – 19 h"), …].
+    Si la ligne est trop compliquée, on renvoie [] (mieux vaut rien qu'une erreur)."""
+    oh = str(oh or "").strip()
+    if not oh:
+        return []
+    if oh == "24/7":
+        return [("Tous les jours", "24 h/24")]
+    semaine = {}
+    try:
+        for regle in [r.strip() for r in oh.split(";") if r.strip()]:
+            if regle.startswith(("PH", "SH")):
+                continue  # jours fériés et vacances : on n'en parle pas
+            if re.search(r"PH|SH|week|[A-Z][a-z]{2}\b|\[|\"|sunrise|sunset|\+", regle) and not re.match(r"^(?:Mo|Tu|We|Th|Fr|Sa|Su)", regle):
+                return []
+            m = re.match(r"^((?:(?:Mo|Tu|We|Th|Fr|Sa|Su)(?:-(?:Mo|Tu|We|Th|Fr|Sa|Su))?,?)+)\s+(.+)$", regle)
+            if not m:
+                if re.fullmatch(r"\d{1,2}:\d{2}-\d{1,2}:\d{2}(?:,\d{1,2}:\d{2}-\d{1,2}:\d{2})*", regle):
+                    m = re.match(r"^()(.+)$", regle)
+                    jours = list(range(7))
+                else:
+                    return []
+            else:
+                jours = []
+                for part in m.group(1).strip(",").split(","):
+                    if "-" in part:
+                        a, b = [JOURS.index(x) for x in part.split("-")]
+                        jours += list(range(a, b + 1)) if a <= b else list(range(a, 7)) + list(range(0, b + 1))
+                    else:
+                        jours.append(JOURS.index(part))
+            plage = m.group(2).strip()
+            if plage in ("off", "closed"):
+                txt = "Fermé"
+            else:
+                bouts = []
+                for p in plage.split(","):
+                    a, b = p.split("-")
+                    bouts.append("%s – %s" % (_heure(a), _heure(b)))
+                txt = ", ".join(bouts)
+            for j in jours:
+                semaine[j] = txt
+    except Exception:
+        return []
+    if not semaine:
+        return []
+    lignes, j = [], 0
+    while j < 7:
+        txt = semaine.get(j, "Fermé")
+        k = j
+        while k + 1 < 7 and semaine.get(k + 1, "Fermé") == txt:
+            k += 1
+        nom = NOMS_JOURS[j].capitalize() if j == k else "%s – %s" % (NOMS_JOURS[j].capitalize(), NOMS_JOURS[k])
+        lignes.append((nom, txt))
+        j = k + 1
+    return lignes
+
+
+MISE_EN_PAGE = {"domaine": ["plein", "plein", "cadre"], "table": ["plein", "cadre", "plein"], "fleur": ["split", "cadre"],
+                "bijou": ["split", "cadre"], "atelier": ["cadre", "split", "plein"]}
+# Polices trop « tendance » remplacées par des paires classiques.
+REMPLACE_POLICES = {
+    "Bricolage+Grotesque": ("family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@300;400;500",
+                            "'Newsreader',Georgia,serif", "'Inter',system-ui,sans-serif"),
+}
+
+
+def _theme_v2(fam, nom):
+    th = dict(THEMES[fam][choisir_theme(nom, fam)])
+    for cle, (gf, titre, texte) in REMPLACE_POLICES.items():
+        if cle in th["gf"]:
+            th.update(gf=gf, titre=titre, texte=texte)
+    return th
+
+
+def _photo(ph, petit=False, alt="", eager=False):
+    src = (ph.get("src_petit") if petit else None) or ph["src"]
+    return '<img src="%s" alt="%s" loading="%s" decoding="async" referrerpolicy="no-referrer">' % (
+        esc(src), esc(alt), "eager" if eager else "lazy")
+
+
+def fabriquer(secteur, faits, textes, photos=None):
+    """Renvoie (html, nom du modèle) : modèle v2 + thème de la famille + textes vérifiés + photos d'illustration."""
+    fam, etiquette, type_ld, alcool = famille_de(secteur)
+    th = _theme_v2(fam, faits.get("nom", ""))
+    theme_nom = choisir_theme(faits.get("nom", ""), fam)
+    nom = str(faits.get("nom", "")).strip()
+    ville = _ville_courte(faits)
+    var = variante(secteur)
+    txt = dict(DEFAUTS[fam])
+    txt.update(var.get("defauts", {}))
+    txt.update({k: v for k, v in (textes or {}).items() if k in LIMITES})
+    cfg = dict(FAMILLES[fam])
+    cfg.update({k: var[k] for k in ("nav", "cta_hero", "objets", "texte_contact") if k in var})
+    kit = dict(KIT[fam])
+    kit.update(var.get("kit", {}))
+    lire = lambda n: (DOSSIER / n).read_text("utf-8")
+    photos = [p for p in (photos or []) if p.get("src", "").startswith("https://")]
+
+    graine = int(hashlib.sha1(norm(nom).encode()).hexdigest(), 16)
+    mise = MISE_EN_PAGE.get(fam, ["cadre"])[graine % len(MISE_EN_PAGE.get(fam, ["cadre"]))]
+    if not photos:
+        mise = "split"
+    classes = mise + ("" if photos else " sans-photo")
+
+    adresse = str(faits.get("adresse") or "").strip()
+    recherche = adresse or (nom + " " + ville).strip()
+    maps = "https://www.google.com/maps/search/?api=1&query=" + urllib.parse.quote(recherche)
+    tel = str(faits.get("telephone") or "").strip()
+    tel_lien = re.sub(r"[^\d+]", "", tel)
+    tel_ok = len(tel_lien) >= 10
+    mail = str(faits.get("email") or "").strip()
+    mail_ok = bool(re.fullmatch(r"[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}", mail))
+    insta = re.sub(r"^https?://(www\.)?instagram\.com/", "", str(faits.get("instagram") or "")).split("/")[0].split("?")[0].lstrip("@")
+    insta_ok = len(insta) > 1 and bool(re.fullmatch(r"[\w.]+", insta))
+    fb = str(faits.get("facebook") or "").strip()
+    fb_ok = bool(re.match(r"https?://(www\.|m\.)?facebook\.com/", fb))
+    horaires = horaires_fr(faits.get("horaires"))
+
+    nav_d = dict(cfg["nav"])
+    lab_esprit = nav_d.get("esprit", "La maison")
+    lab_offre = nav_d.get("offre") or nav_d.get("carte") or "L’offre"
+    lab_exp = kit.get("tuiles_eyebrow", "En pratique")
+    nav = "".join('<a href="#%s">%s</a>' % (a, esc(l)) for a, l in
+                  (("esprit", lab_esprit), ("offre", lab_offre), ("experience", lab_exp), ("contact", "Contact")))
+    bar_tel = ('<a class="tel" href="tel:%s">%s</a>' % (esc(tel_lien), esc(tel))) if tel_ok else \
+              ('<a class="tel" href="mailto:%s">Nous écrire</a>' % esc(mail)) if mail_ok else '<a class="tel" href="#contact">Nous contacter</a>'
+
+    # Boutons d'action : ce que le client fera vraiment (appeler, écrire, venir).
+    if tel_ok:
+        principal = ('Appeler le %s' % tel, "tel:" + tel_lien)
+    elif mail_ok:
+        principal = ("Nous écrire", "mailto:" + mail)
+    else:
+        principal = ("Nous contacter", "#contact")
+    cible = "#" + var.get("cta_cible", "esprit") if var.get("cta_cible", "esprit") != "contact" else "#offre"
+    secondaire = (cfg["cta_hero"] if var.get("cta_cible") != "contact" else "Découvrir", cible)
+    actions_hero = '<div class="actions"><a class="btn" href="%s">%s</a><a class="btn clair" href="%s">%s</a></div>' % (
+        esc(principal[1]), esc(principal[0]), esc(secondaire[1]), esc(secondaire[0]))
+    lieu = esc(etiquette + ((" · " + ville) if ville else ""))
+    alt0 = "Photo d’illustration · " + etiquette
+    if mise == "plein":
+        hero = ('<section class="hero" aria-label="Accueil"><div class="fond">%s</div><div class="wrap">'
+                '<p class="lieu">%s</p><h1>%s</h1><p class="accroche">%s</p>%s</div></section>'
+                % (_photo(photos[0], alt=alt0, eager=True), lieu, esc(nom), esc(txt["accroche"]), actions_hero))
+    elif mise == "split":
+        hero = ('<section class="hero" aria-label="Accueil"><div class="wrap grille"><div class="texte">'
+                '<p class="lieu">%s</p><h1>%s</h1><p class="accroche">%s</p>%s</div><div class="photo">%s</div></div></section>'
+                % (lieu, esc(nom), esc(txt["accroche"]), actions_hero, _photo(photos[0], alt=alt0, eager=True) if photos else ""))
+    else:
+        hero = ('<section class="hero" aria-label="Accueil"><div class="wrap"><div class="entete"><div>'
+                '<p class="lieu">%s</p><h1>%s</h1></div><div><p class="intro">%s</p>%s</div></div>'
+                '<div class="photo">%s</div></div></section>'
+                % (lieu, esc(nom), esc(txt["sous_titre"]), actions_hero, _photo(photos[0], alt=alt0, eager=True)))
+
+    # Infos pratiques
+    cases = []
+    cases.append('<div class="case"><h2>Adresse</h2><p>%s</p><p><a href="%s" target="_blank" rel="noopener">Itinéraire</a></p></div>'
+                 % (esc(adresse or ville or "Nouvelle-Aquitaine"), esc(maps)))
+    if horaires:
+        ouverts = [(j, h) for j, h in horaires if h != "Fermé"] or horaires
+        h_txt = "<br>".join("%s : %s" % (esc(j), esc(h)) for j, h in ouverts[:3])
+        cases.append('<div class="case"><h2>Horaires</h2><p>%s</p>%s</div>' % (h_txt, '<p><a href="#contact">Tous les horaires</a></p>' if len(ouverts) > 3 else ""))
+    else:
+        cases.append('<div class="case"><h2>%s</h2><p>%s</p></div>' % (
+            "Rendez-vous" if fam in ("bijou", "atelier") else "Horaires",
+            "Sur rendez-vous ou aux heures d’ouverture : contactez-nous." if fam in ("bijou", "atelier") else "Contactez-nous pour connaître nos horaires."))
+    joindre = []
+    if tel_ok:
+        joindre.append('<a href="tel:%s">%s</a>' % (esc(tel_lien), esc(tel)))
+    if mail_ok:
+        joindre.append('<a href="mailto:%s">%s</a>' % (esc(mail), esc(mail)))
+    if insta_ok and len(joindre) < 2:
+        joindre.append('<a href="https://www.instagram.com/%s/" target="_blank" rel="noopener">@%s</a>' % (esc(insta), esc(insta)))
+    cases.append('<div class="case"><h2>Nous joindre</h2><p>%s</p></div>' % ("<br>".join(joindre) or '<a href="#contact">Voir le contact</a>'))
+
+    figure = ""
+    if len(photos) >= 2:
+        figure = ('<figure class="apparait"><div class="img">%s</div><figcaption>%s</figcaption></figure>'
+                  % (_photo(photos[1], petit=True, alt="Photo d’illustration"), esc(txt["sous_titre"] if mise != "cadre" else txt["citation"])))
+    duo = ""
+    if len(photos) >= 3:
+        une = len(photos) < 4
+        duo = ('<section class="duo%s" aria-label="En images"><div class="wrap grille"><div class="a apparait">%s</div>'
+               '<div><div class="b apparait">%s</div><blockquote class="apparait">%s</blockquote></div></div></section>'
+               % (" une" if une else "", _photo(photos[2], petit=True, alt="Photo d’illustration"),
+                  "" if une else _photo(photos[3], petit=True, alt="Photo d’illustration"), esc(txt["citation"])))
+
+    coord = []
+    if adresse or ville:
+        coord.append("<dt>Adresse</dt><dd>%s</dd>" % esc(adresse or ville))
+    if tel_ok:
+        coord.append('<dt>Téléphone</dt><dd><a href="tel:%s">%s</a></dd>' % (esc(tel_lien), esc(tel)))
+    if mail_ok:
+        coord.append('<dt>Email</dt><dd><a href="mailto:%s">%s</a></dd>' % (esc(mail), esc(mail)))
+    if insta_ok:
+        coord.append('<dt>Instagram</dt><dd><a href="https://www.instagram.com/%s/" target="_blank" rel="noopener">@%s</a></dd>' % (esc(insta), esc(insta)))
+    if fb_ok:
+        coord.append('<dt>Facebook</dt><dd><a href="%s" target="_blank" rel="noopener">Notre page</a></dd>' % esc(fb))
+    if horaires:
+        coord.append("<dt>Horaires</dt><dd><table>%s</table></dd>" % "".join("<tr><td>%s</td><td>%s</td></tr>" % (esc(j), esc(h)) for j, h in horaires))
+    acts = []
+    if tel_ok:
+        acts.append('<a class="btn" href="tel:%s">Appeler</a>' % esc(tel_lien))
+    if mail_ok:
+        acts.append('<a class="btn%s" href="mailto:%s">Écrire un email</a>' % (" clair" if acts else "", esc(mail)))
+    acts.append('<a class="btn clair" href="%s" target="_blank" rel="noopener">Itinéraire</a>' % esc(maps))
+
+    carte = ""
+    try:
+        lat, lon = float(faits.get("lat")), float(faits.get("lon"))
+        bbox = "%.5f,%.5f,%.5f,%.5f" % (lon - .007, lat - .0035, lon + .007, lat + .0035)
+        carte = ('<iframe title="Plan d’accès" loading="lazy" referrerpolicy="no-referrer" '
+                 'src="https://www.openstreetmap.org/export/embed.html?bbox=%s&amp;layer=mapnik&amp;marker=%.5f,%.5f"></iframe>' % (bbox, lat, lon))
+    except (TypeError, ValueError):
+        if photos:
+            carte = _photo(photos[-1], petit=True, alt="Photo d’illustration")
+
+    credits, vus = [], []
+    for ph in photos[:4]:
+        if ph.get("auteur") not in vus:
+            vus.append(ph.get("auteur"))
+            credits.append('<a href="%s" target="_blank" rel="noopener nofollow">%s</a>' % (esc(ph.get("lien") or "#"), esc(ph.get("auteur") or "photographe")))
+    sources = sorted({str(ph.get("source") or "").split(",")[0] for ph in photos[:4]} - {""})
+    credits_txt = ("Photos d’illustration : %s%s. Elles seront remplacées par les vôtres." % (", ".join(credits), (" (" + esc(", ".join(sources)) + ")") if sources else "")) if credits else ""
+
+    initiale = _initiale(nom)
+    favicon = ("data:image/svg+xml," + urllib.parse.quote(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%s"/>'
+        '<text x="32" y="45" text-anchor="middle" font-family="Georgia,serif" font-size="40" fill="%s">%s</text></svg>'
+        % (th["vars"]["dark"], th["vars"].get("on-dark", "#fff"), esc(initiale))))
+    titre_page = "%s — %s" % (nom, etiquette) + ((" · " + ville) if ville else "")
+    desc = ("%s. %s" % (txt["accroche"].rstrip("."), txt["sous_titre"]))[:200]
+    og_img = ('<meta property="og:image" content="%s">' % esc(photos[0]["src"])) if photos else ""
+    head = (
+        '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+        '<meta name="robots" content="noindex, nofollow">'
+        "<title>%s</title><meta name=\"description\" content=\"%s\">"
+        '<meta property="og:type" content="website"><meta property="og:title" content="%s"><meta property="og:description" content="%s">%s'
+        '<meta property="og:locale" content="fr_FR"><meta name="theme-color" content="%s">'
+        '<link rel="icon" href="%s">'
+        '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?%s&display=swap">%s%s'
+        % (esc(titre_page), esc(desc), esc(titre_page), esc(desc), og_img, th["vars"]["bg"], favicon, th["gf"], _jsonld(faits, type_ld),
+           ('<link rel="preload" as="image" href="%s">' % esc(photos[0]["src"])) if photos else ""))
+    v = th["vars"]
+    css_vars = (":root{" + "".join("--%s:%s;" % (k, x) for k, x in v.items())
+                + "--f-titre:%s;--f-texte:%s;--r:%s;}" % (th["titre"], th["texte"], "0px" if fam in ("domaine", "bijou") else v.get("r", "2px")))
+
+    valeurs = {k: esc(x) for k, x in txt.items()}
+    valeurs.update({
+        "head": head, "theme_css": css_vars, "css": lire("v2.css"), "js": lire("v2.js"), "classes": classes,
+        "nom": esc(nom), "nav": nav, "bar_tel": bar_tel, "hero": hero, "infos": "".join(cases),
+        "lab_esprit": esc(lab_esprit), "lab_offre": esc(lab_offre), "lab_exp": esc(lab_exp),
+        "figure_esprit": figure, "duo": duo, "contact_texte": esc(cfg["texte_contact"]), "coordonnees": "".join(coord),
+        "contact_actions": "".join(acts), "carte": carte, "pied_lieu": esc(adresse or ville or "Nouvelle-Aquitaine"),
+        "alcool": '<p>L’abus d’alcool est dangereux pour la santé, à consommer avec modération.</p>' if alcool else "",
+        "credits": credits_txt,
+    })
+    page = lire("v2.html")
+    # un seul passage : les valeurs insérées ne sont jamais relues comme des jetons
+    page = re.sub(r"\{\{([a-z0-9_]+)\}\}", lambda m: valeurs[m.group(1)] if m.group(1) in valeurs else m.group(0), page)
+    restes = re.findall(r"\{\{[a-z0-9_]+\}\}", page)
+    if restes:
+        raise ValueError("jetons non remplis : %s" % sorted(set(restes)))
+    if not carte:
+        page = page.replace('<div class="carte apparait"></div>', "")
+    return page, "v2-%s/%s/%s" % (fam, theme_nom, mise)
