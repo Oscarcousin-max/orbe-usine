@@ -49,6 +49,7 @@ RECHERCHES = {
     "studios de yoga, pilates et coachs sportifs": ["yoga studio", "pilates", "fitness coach", "yoga class"],
     "tatoueurs et barbiers": ["barber shop", "barber haircut", "tattoo artist", "barbershop interior"],
     "plombiers, électriciens et artisans du bâtiment": ["plumber at work", "electrician working", "bathroom renovation", "modern bathroom"],
+    "poseurs de sols, parqueteurs et menuisiers": ["hardwood floor installation", "parquet floor", "wooden floor living room", "wooden window frame", "carpenter wood"],
 }
 
 _CACHE = {}
@@ -193,9 +194,9 @@ def _reserve(requete):
     return res
 
 
-def photos_pour(secteur, cle, n=4, journal=None):
+def photos_pour(secteur, cle, n=4, journal=None, recherches=None):
     """Jusqu'à n photos différentes pour ce secteur. Le même commerce (cle) obtient toujours les mêmes."""
-    recherches = RECHERCHES.get(secteur) or ["small business shop interior"]
+    recherches = list(recherches or RECHERCHES.get(secteur) or ["small business shop interior"])
     graine = int(hashlib.sha1(str(cle).encode("utf-8")).hexdigest(), 16)
     hasard = random.Random(graine)
     ordre = recherches[:]

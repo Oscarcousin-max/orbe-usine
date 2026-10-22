@@ -38,6 +38,10 @@ donc avec un lien de recherche Google, pour vérifier d'un coup d'œil.
 ## Lancer l'usine à la main
 
 Le plus simple : créer (ou modifier) le fichier `data/commande.json` avec `{"nombre": 50}` sur GitHub.
+
+**Maquettes pour UN client précis** : ajouter une liste `clients` dans la commande, par ex.
+`{"nombre": 20, "clients": [{"nom": "…", "secteur": "…", "ville": "…", "adresse": "…", "telephone": "…", "maquettes": 3}]}`.
+L’Sine fait 3 maquettes différentes (3 ambiances, 3 mises en page) et une page qui les montre côte à côte : `…/nom-du-commerce/`.
 L'usine part toute seule, fabrique ce nombre de sites, puis efface la commande.
 
 Autre possibilité :

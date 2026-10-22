@@ -42,9 +42,12 @@ URL = {  # modifiables seulement pour les tests
 }
 COMMANDE = ICI / "data" / "commande.json"  # « lance N sites maintenant » : déposé par Claude ou par toi, lu puis effacé
 NOMBRE = max(0, min(80, int(os.environ.get("NOMBRE", "20") or 0)))
+CLIENTS = []  # « fais N maquettes différentes pour CE commerce » : liste "clients" de la commande
 if COMMANDE.exists():
     try:
-        NOMBRE = max(0, min(80, int(json.loads(COMMANDE.read_text("utf-8")).get("nombre", NOMBRE))))
+        _cmd = json.loads(COMMANDE.read_text("utf-8"))
+        NOMBRE = max(0, min(80, int(_cmd.get("nombre", NOMBRE))))
+        CLIENTS = [c for c in (_cmd.get("clients") or []) if isinstance(c, dict) and c.get("nom")][:5]
     except Exception:
         pass
 PAUSE = float(os.environ.get("USINE_PAUSE", "6"))
@@ -80,6 +83,7 @@ SECTEURS = [
     ("studios de yoga, pilates et coachs sportifs", '["leisure"~"^(fitness_centre|sports_centre|dance)$"]|["sport"~"^(yoga|pilates|dance)$"]'),
     ("tatoueurs et barbiers", '["shop"~"^(tattoo|barber)$"]|["craft"="tattoo"]'),
     ("plombiers, électriciens et artisans du bâtiment", '["craft"~"^(plumber|electrician|hvac|heating_engineer|roofer|painter|plasterer|tiler|carpenter|window_construction|insulation)$"]'),
+    ("poseurs de sols, parqueteurs et menuisiers", '["craft"~"^(floorer|parquet_layer|carpenter|joiner|window_construction)$"]|["shop"~"^(flooring|carpet)$"]'),
 ]
 # La Gironde à chaque passage (c'est chez Oscar), plus un département voisin qui tourne.
 # Interroger toute la Nouvelle-Aquitaine d'un coup ramènerait toujours les mêmes
@@ -418,7 +422,7 @@ def entrelacer(fiches):
     return melange
 
 
-def fabriquer_site(fiche, faits):
+def fabriquer_site(fiche, faits, theme=None, mise=None, recherches=None, cle_photos=None):
     """Remplit le modèle de site. L'IA écrit les textes ; si elle échoue, des textes sobres prennent le relais."""
     famille = rendu.famille_de(fiche["secteur"])[0]
     brut, auteur = None, "textes de secours"
@@ -434,11 +438,11 @@ def fabriquer_site(fiche, faits):
     if brut is not None and refuses:
         journal("  %d textes écartés (faits non vérifiables), remplacés par des textes sobres : %s" % (len(refuses), ", ".join(refuses[:6])))
     try:
-        images = photos.photos_pour(fiche["secteur"], faits.get("nom", ""), journal=journal)
+        images = photos.photos_pour(fiche["secteur"], cle_photos or faits.get("nom", ""), journal=journal, recherches=recherches)
     except Exception as e:
         images = []
         journal("  photos indisponibles (%s)" % str(e)[:100])
-    html, modele_site = rendu.fabriquer(fiche["secteur"], faits, textes, images)
+    html, modele_site = rendu.fabriquer(fiche["secteur"], faits, textes, images, theme=theme, mise=mise)
     if not (4000 <= len(html) <= 240000) or "lorem ipsum" in html.lower():
         raise ValueError("site hors limites")
     return html, "modèle %s · %s" % (modele_site, auteur)
@@ -454,6 +458,8 @@ def refaire_recents(liste, jours=4):
         except ValueError:
             continue
         slug = str(it.get("site_url", "")).rstrip("/").rsplit("/", 1)[-1]
+        if it.get("source") == "commande":
+            continue  # maquettes faites à la demande : on n'y touche pas
         if quand < limite or not slug or not (DOCS / slug / "index.html").exists():
             continue
         canal, contact = it.get("canal", ""), str(it.get("contact", ""))
@@ -484,7 +490,7 @@ def nettoyer_recents(liste, jours=3):
             quand = datetime.strptime(it.get("cree_le", ""), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc).timestamp()
         except ValueError:
             quand = 0
-        if quand < limite or it.get("verif") == "sans_site":
+        if quand < limite or it.get("verif") == "sans_site" or it.get("source") == "commande":
             garde.append(it)
             continue
         lieu = [x.strip() for x in str(it.get("quartier", "")).split(",") if x.strip()]
@@ -511,6 +517,100 @@ def nettoyer_recents(liste, jours=3):
     journal("Revérification des sites récents : %d retiré(s) car le commerce a déjà un site" % retires)
 
 
+NOMS_THEMES = {"terracotta": "chaleureuse, terre cuite", "encre": "sobre, encre et papier", "vert_rose": "fraîche, vert et rose",
+               "bordeaux": "bordeaux profond", "cuivre": "cuivre", "sauge": "sauge", "poudre": "poudrée", "botanique": "botanique",
+               "vif": "vive", "noir_or": "noir et or", "nuit_argent": "nuit et argent", "rose_ivoire": "rose et ivoire",
+               "brasserie": "brasserie", "olive": "olive", "cacao": "cacao"}
+NOMS_MISES = {"plein": "grande photo plein écran", "split": "photo à côté du titre", "cadre": "photo encadrée"}
+
+
+def page_choix(nom, ville, maquettes):
+    """Petite page qui montre les maquettes côte à côte : c'est le lien envoyé au client."""
+    cartes = "".join(
+        '<a class="c" href="%s"><div class="f"><iframe src="%s" loading="lazy" tabindex="-1" title="%s"></iframe></div>'
+        '<p><b>Proposition %d</b><span>%s · %s</span></p></a>'
+        % (rendu.esc(m["url"]), rendu.esc(m["url"]), rendu.esc("Proposition %d" % (i + 1)), i + 1,
+           rendu.esc(NOMS_THEMES.get(m["theme"], m["theme"]).capitalize()), rendu.esc(NOMS_MISES.get(m["mise"], m["mise"])))
+        for i, m in enumerate(maquettes))
+    return """<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>%(nom)s — %(n)d propositions de site · ORBE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--fond:#f6f3ee;--encre:#1d1b18;--doux:#6b655c;--filet:#d9d2c6}
+*{box-sizing:border-box}body{margin:0;background:var(--fond);color:var(--encre);font:16px/1.6 Inter,system-ui,sans-serif}
+header{max-width:1200px;margin:0 auto;padding:56px 20px 24px}small{letter-spacing:.14em;text-transform:uppercase;color:var(--doux);font-size:12px}
+h1{font:400 clamp(34px,6vw,60px)/1.05 Newsreader,Georgia,serif;margin:10px 0 14px}header p{max-width:640px;color:var(--doux);margin:0}
+main{max-width:1200px;margin:0 auto;padding:16px 20px 64px;display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.c{display:block;color:inherit;text-decoration:none}.f{position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid var(--filet);background:#fff;border-radius:6px;transition:transform .3s,box-shadow .3s}
+.c:hover .f,.c:focus-visible .f{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(0,0,0,.35)}
+iframe{position:absolute;top:0;left:0;width:400%%;height:400%%;border:0;transform:scale(.25);transform-origin:0 0;pointer-events:none}
+.c p{margin:14px 0 0;display:flex;flex-direction:column}.c b{font:400 22px Newsreader,Georgia,serif}.c span{color:var(--doux);font-size:14px}
+footer{border-top:1px solid var(--filet);max-width:1200px;margin:0 auto;padding:22px 20px 40px;color:var(--doux);font-size:14px}
+a:focus-visible{outline:2px solid var(--encre);outline-offset:4px}
+</style></head><body>
+<header><small>ORBE, studio digital · pour %(nom)s%(ville)s</small><h1>%(n)d propositions de site</h1>
+<p>Trois ambiances, trois façons de présenter votre travail. Cliquez sur une proposition pour la voir en grand, sur ordinateur comme sur téléphone. Les photos sont des exemples : elles seront remplacées par les vôtres.</p></header>
+<main>%(cartes)s</main>
+<footer>Propositions réalisées par ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80</footer>
+</body></html>""" % {"nom": rendu.esc(nom), "ville": (" à " + rendu.esc(ville)) if ville else "", "n": len(maquettes), "cartes": cartes}
+
+
+def fabriquer_client(c, noms):
+    """Commande d'Oscar : plusieurs maquettes DIFFÉRENTES pour un commerce qu'il a choisi lui-même (pas de vérification)."""
+    nom = str(c["nom"]).strip()
+    secteur = c.get("secteur") if c.get("secteur") in rendu.SECTEURS else "plombiers, électriciens et artisans du bâtiment"
+    fam = rendu.famille_de(secteur)[0]
+    n = max(1, min(4, int(c.get("maquettes", 3) or 3)))
+    themes = sorted(rendu.THEMES[fam])
+    mises = ["cadre", "split", "plein"]
+    faits = {k: str(c.get(k) or "") for k in ("nom", "ville", "quartier", "adresse", "telephone", "email", "instagram",
+                                               "facebook", "horaires", "specialites", "ambiance", "histoire", "lat", "lon")}
+    faits["secteur"] = secteur
+    journal("Commande client : %s — %d maquettes (%s)" % (nom, n, secteur))
+    base = slug_libre(nom)
+    (DOCS / base).mkdir(parents=True, exist_ok=True)
+    maquettes = []
+    for i in range(n):
+        th, mi = themes[i % len(themes)], mises[i % len(mises)]
+        try:
+            html, modele = fabriquer_site({"secteur": secteur}, faits, theme=th, mise=mi,
+                                          recherches=c.get("photos"), cle_photos="%s-%d" % (nom, i + 1))
+        except Exception as e:
+            journal("  maquette %d impossible : %s" % (i + 1, e))
+            continue
+        d = DOCS / base / str(i + 1)
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "index.html").write_text(html, "utf-8")
+        maquettes.append({"url": BASE_SITE + base + "/%d/" % (i + 1), "theme": th, "mise": mi, "par": modele})
+        journal("  maquette %d prête (%s)" % (i + 1, modele))
+    if not maquettes:
+        return None
+    (DOCS / base / "index.html").write_text(page_choix(nom, faits["ville"], maquettes), "utf-8")
+    lien = BASE_SITE + base + "/"
+    ct = contact_de(faits) or ("Téléphone", faits["telephone"])
+    msg = str(c.get("message") or "").strip() or (
+        "Bonjour,\n\nJe suis Oscar, du studio ORBE à Bordeaux. J'ai pris l'initiative de préparer %d propositions de site pour %s, "
+        "à voir ici : {LIEN}\nSi l'une vous plaît, je la mets en ligne à votre nom, avec vos propres photos. "
+        "Sinon, un simple « non merci » suffit, je ne vous relancerai pas.\n\nOscar · ORBE, studio digital" % (len(maquettes), nom))
+    if "{LIEN}" not in msg:
+        msg += "\n\n{LIEN}"
+    maintenant = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    tel = verif.format_tel(faits["telephone"]) or faits["telephone"]
+    noms.add(norm(nom))
+    journal("  page de choix : " + lien)
+    return {
+        "id": "agent-" + maintenant[:10].replace("-", "") + "-" + base[:40], "source": "commande",
+        "nom": nom, "type": secteur, "quartier": ", ".join(x for x in (faits["quartier"], faits["ville"]) if x),
+        "adresse": faits["adresse"], "canal": ct[0], "contact": ct[1], "telephone": tel, "verif": "commande",
+        "preuve": (("Tél. " + tel + " · ") if tel else "") + (str(c.get("note") or "") or "Commerce choisi par Oscar."),
+        "preuve_url": str(c.get("source") or "https://www.google.com/search?q=" + urllib.parse.quote(nom + " " + faits["ville"])),
+        "objet": ("Un site pour " + nom) if ct[0] == "Email" else "",
+        "message": msg.replace("{LIEN}", lien), "site_url": lien, "maquettes": maquettes,
+        "par": "commande client · %d maquettes" % len(maquettes), "cree_le": maintenant,
+    }
+
+
 def main():
     if not (CLES["gemini"] or CLES["groq"]):
         sys.exit("Il manque la clé GEMINI_API_KEY (ou GROQ_API_KEY) dans les secrets du dépôt.")
@@ -524,6 +624,18 @@ def main():
     noms |= {norm(x.get("nom")) for x in liste.get("items", [])}
     journal("Demande : %d site(s)" % NOMBRE)
     nettoyer_recents(liste)
+    commandes = []
+    for c in CLIENTS:
+        try:
+            it = fabriquer_client(c, noms)
+        except Exception as e:
+            journal("Commande client %s impossible : %s" % (c.get("nom"), e))
+            it = None
+        if it:
+            commandes.append(it)
+    if commandes:
+        liste["items"] = (commandes + liste.get("items", []))[:400]
+        LISTE.write_text(json.dumps(liste, ensure_ascii=False, indent=1), "utf-8")
     if os.environ.get("REFAIRE", "") == "1":
         refaire_recents(liste)
     if NOMBRE == 0:  # simple mise à jour du design des sites récents

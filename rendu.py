@@ -43,6 +43,7 @@ SECTEURS = {
     "studios de yoga, pilates et coachs sportifs": ("bijou", "Studio", "SportsActivityLocation", False),
     "tatoueurs et barbiers": ("atelier", "Atelier", "HealthAndBeautyBusiness", False),
     "plombiers, électriciens et artisans du bâtiment": ("atelier", "Artisan du bâtiment", "HomeAndConstructionBusiness", False),
+    "poseurs de sols, parqueteurs et menuisiers": ("atelier", "Sols et menuiseries", "HomeAndConstructionBusiness", False),
 }
 MENU_SUR = {
     "restaurants indépendants de qualité": "La table",
@@ -350,6 +351,28 @@ VARIANTES = {
                      e2_t="Nous vous proposons", e2_d="Un diagnostic et un devis clair, sans surprise.",
                      e3_t="Nous intervenons", e3_d="Un travail soigné, un chantier laissé propre.",
                      citation="Un travail bien fait se voit longtemps.", contact_titre="Parlons de votre besoin")),
+    "poseurs de sols, parqueteurs et menuisiers": dict(
+        icones=("repere", "calendrier", "bulle"),
+        nav=[("esprit", "L’entreprise"), ("realisations", "Réalisations"), ("offre", "Savoir-faire"), ("demarche", "Votre projet")],
+        cta_hero="Demander un devis", cta_cible="contact",
+        marquee=["Parquet", "Sols", "Murs", "Menuiseries", "Finitions"],
+        remplacer=[("Un espace pour <em>vos pièces</em>", "Vos <em>réalisations</em>"),
+                   ("Les cadres ci-dessous attendent vos photos : chaque création y trouvera sa place.", "Les cadres ci-dessous attendent les photos de vos chantiers : sols posés, murs, menuiseries.")],
+        objets=["Un devis", "Pose de sol", "Menuiserie", "Autre demande"],
+        texte_contact="Un sol à poser, une pièce à rénover, une menuiserie à changer ? Décrivez-nous votre projet, nous vous rappelons.",
+        indice="entreprise de pose de revêtements de sols et de murs (parquet, sols souples, carrelage, revêtements muraux) et de menuiseries bois et PVC : conseil sur les matériaux, préparation du support, pose soignée, finitions, rénovation, devis clair. Pas de prix, pas de délai chiffré, pas de marque, pas de certification ni de label, pas d'année de création.",
+        kit=dict(tuiles_eyebrow="Votre projet", tuiles_lead="De la première visite à la dernière finition, un projet suivi simplement.",
+                 cta_eyebrow="Votre projet", cta_titre="Un sol, un mur, une menuiserie ?", cta_texte="Décrivez-nous votre projet en quelques mots : nous vous rappelons pour en parler."),
+        defauts=dict(accroche="Des sols et des menuiseries posés avec soin", sous_titre="Revêtements de sols et de murs, menuiseries bois et PVC : un savoir-faire de pose, du conseil à la finition.",
+                     esprit_titre="Le soin du détail, du support à la finition", esprit_1="Un beau sol commence bien avant la pose : nous prenons le temps de regarder votre pièce, le support et vos usages pour vous conseiller le bon matériau.",
+                     esprit_2="Ensuite vient la pose, propre et précise, puis les finitions qui font la différence. Nous laissons le chantier net.",
+                     offre_titre="Notre savoir-faire", o1_t="Revêtements de sols", o1_d="Parquet, sols souples et autres revêtements, posés sur un support bien préparé.",
+                     o2_t="Revêtements de murs", o2_d="Des murs habillés avec soin, en accord avec vos sols et votre intérieur.",
+                     o3_t="Menuiseries bois et PVC", o3_d="Des menuiseries choisies avec vous et posées dans les règles.",
+                     exp_titre="Comment se passe votre projet", e1_t="La visite", e1_d="Nous venons voir la pièce, le support, et nous écoutons vos envies.",
+                     e2_t="Le devis", e2_d="Une proposition claire, avec les matériaux conseillés et les étapes.",
+                     e3_t="La pose", e3_d="Un travail précis, des finitions soignées, un chantier laissé propre.",
+                     citation="Un sol bien posé se remarque chaque jour.", contact_titre="Parlons de votre projet")),
 }
 
 
@@ -696,8 +719,8 @@ REMPLACE_POLICES = {
 }
 
 
-def _theme_v2(fam, nom):
-    th = dict(THEMES[fam][choisir_theme(nom, fam)])
+def _theme_v2(fam, nom, theme=None):
+    th = dict(THEMES[fam][theme if theme in THEMES[fam] else choisir_theme(nom, fam)])
     for cle, (gf, titre, texte) in REMPLACE_POLICES.items():
         if cle in th["gf"]:
             th.update(gf=gf, titre=titre, texte=texte)
@@ -710,11 +733,12 @@ def _photo(ph, petit=False, alt="", eager=False):
         esc(src), esc(alt), "eager" if eager else "lazy")
 
 
-def fabriquer(secteur, faits, textes, photos=None):
-    """Renvoie (html, nom du modèle) : modèle v2 + thème de la famille + textes vérifiés + photos d'illustration."""
+def fabriquer(secteur, faits, textes, photos=None, theme=None, mise=None):
+    """Renvoie (html, nom du modèle) : modèle v2 + thème de la famille + textes vérifiés + photos d'illustration.
+    theme / mise : pour forcer une ambiance et une mise en page (commande « plusieurs maquettes pour un client »)."""
     fam, etiquette, type_ld, alcool = famille_de(secteur)
-    th = _theme_v2(fam, faits.get("nom", ""))
-    theme_nom = choisir_theme(faits.get("nom", ""), fam)
+    th = _theme_v2(fam, faits.get("nom", ""), theme)
+    theme_nom = theme if theme in THEMES[fam] else choisir_theme(faits.get("nom", ""), fam)
     nom = str(faits.get("nom", "")).strip()
     ville = _ville_courte(faits)
     var = variante(secteur)
@@ -729,7 +753,7 @@ def fabriquer(secteur, faits, textes, photos=None):
     photos = [p for p in (photos or []) if p.get("src", "").startswith("https://")]
 
     graine = int(hashlib.sha1(norm(nom).encode()).hexdigest(), 16)
-    mise = MISE_EN_PAGE.get(fam, ["cadre"])[graine % len(MISE_EN_PAGE.get(fam, ["cadre"]))]
+    mise = mise if mise in ("plein", "split", "cadre") else MISE_EN_PAGE.get(fam, ["cadre"])[graine % len(MISE_EN_PAGE.get(fam, ["cadre"]))]
     if not photos:
         mise = "split"
     classes = mise + ("" if photos else " sans-photo")
