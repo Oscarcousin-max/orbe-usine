@@ -450,6 +450,7 @@ def fabriquer_site(fiche, faits, theme=None, mise=None, recherches=None, cle_pho
 
 def refaire_recents(liste, jours=4):
     """Refait, avec les nouveaux modèles, les sites récents pas encore envoyés (même adresse, même lien)."""
+    jours = int(os.environ.get("REFAIRE_JOURS", "") or jours)
     limite = time.time() - jours * 86400
     n = 0
     for it in liste.get("items", []):

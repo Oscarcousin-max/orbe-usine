@@ -87,8 +87,8 @@ def _pexels(requete):
             continue
         out.append({"src": base + "?auto=compress&cs=tinysrgb&w=1600", "src_petit": base + "?auto=compress&cs=tinysrgb&w=900",
                     "auteur": str(p.get("photographer") or "Pexels")[:60], "lien": str(p.get("url") or "https://www.pexels.com"),
-                    "source": "Pexels"})
-    return out
+                    "source": "Pexels", "_texte": str(p.get("alt") or "")})
+    return _garder_pertinentes(out, requete)
 
 
 def _unsplash(requete):
@@ -111,13 +111,16 @@ def _unsplash(requete):
         out.append({"src": raw + sep + "w=1600&q=80&auto=format&fit=crop", "src_petit": raw + sep + "w=900&q=78&auto=format&fit=crop",
                     "auteur": str(user.get("name") or "Unsplash")[:60],
                     "lien": str((user.get("links") or {}).get("html") or "https://unsplash.com") + "?utm_source=orbe&utm_medium=referral",
-                    "source": "Unsplash"})
-    return out
+                    "source": "Unsplash",
+                    "_texte": " ".join([str(p.get("alt_description") or ""), str(p.get("description") or "")]
+                                       + [str(t.get("title") or "") for t in (p.get("tags") or [])])})
+    return _garder_pertinentes(out, requete)
 
 
 # Titres qui trahissent un document scanné, un plan ou un dessin plutôt qu'une photographie.
 PAS_UNE_PHOTO = re.compile(r"microform|review|magazine|journal|catalog|book|page|plate|poster|map|scan|"
-                           r"engraving|lithograph|drawing|diagram|logo|coat of arms|navy|army|military|urine|toilet|panoramio|\btrail\b|\bwoods\b|\b1[5-9]\d\d\b", re.I)
+                           r"engraving|lithograph|drawing|diagram|logo|coat of arms|navy|army|military|soldier|marine|aircraft|warship|urinal|sanitation|cemetery|memorial|accident|crash|"
+                           r"urine|toilet|panoramio|\btrail\b|\bwoods\b|\b1[5-9]\d\d\b", re.I)
 
 
 def _mots(requete):
@@ -126,6 +129,21 @@ def _mots(requete):
              "wooden", "installing", "installation", "builders", "building", "laying", "worker"}
     m = [w.rstrip("s") for w in re.findall(r"[a-z]+", requete.lower()) if len(w) >= 4 and w not in vides]
     return m or [w.rstrip("s") for w in re.findall(r"[a-z]+", requete.lower()) if len(w) >= 4]
+
+
+def _parle_du_sujet(texte, requete):
+    """Vrai si le texte décrivant la photo (titre, légende, mots-clés) contient un mot de la recherche."""
+    t = (texte or "").lower().replace("_", " ")
+    return any(m in t for m in _mots(requete))
+
+
+def _garder_pertinentes(photos, requete, minimum=3):
+    """Garde les photos dont la description parle du sujet. S'il y en a trop peu, on garde tout :
+    la banque d'images a déjà fait un premier tri avec la recherche."""
+    bonnes = [p for p in photos if _parle_du_sujet(p.pop("_texte", ""), requete)]
+    for p in photos:
+        p.pop("_texte", None)
+    return bonnes if len(bonnes) >= minimum else photos
 
 
 def _commons(requete):
@@ -178,8 +196,9 @@ def _openverse(requete):
             continue
         out.append({"src": src, "src_petit": src, "auteur": str(p.get("creator") or "photographe")[:60],
                     "lien": str(p.get("foreign_landing_url") or "https://openverse.org"),
-                    "source": "Openverse, CC %s" % str(p.get("license") or "").upper()})
-    return out
+                    "source": "Openverse, CC %s" % str(p.get("license") or "").upper(),
+                    "_texte": " ".join([str(p.get("title") or "")] + [str(t.get("name") or "") for t in (p.get("tags") or [])])})
+    return _garder_pertinentes(out, requete, minimum=0)
 
 
 def _reserve(requete):
@@ -188,9 +207,11 @@ def _reserve(requete):
     res = []
     for f in (_pexels, _unsplash, _openverse, _commons):
         try:
-            res = f(requete)
+            nouvelles = f(requete)
         except Exception:
-            res = []
+            nouvelles = []
+        deja = {p["src"] for p in res}
+        res += [p for p in nouvelles if p["src"] not in deja]  # on cumule les sources au lieu d'écraser
         if len(res) >= 6:
             break
         time.sleep(1)

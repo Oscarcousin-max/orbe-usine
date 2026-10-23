@@ -23,6 +23,9 @@ on:
       refaire:
         description: "Refaire les sites récents avec les nouveaux modèles ? (1 = oui)"
         default: "0"
+      jours:
+        description: "Refaire les sites des N derniers jours (si « refaire » = 1)"
+        default: "4"
 
 permissions:
   contents: write
@@ -50,6 +53,7 @@ jobs:
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
           # Une mise à jour des modèles (push) refait seulement les sites récents avec le nouveau design.
           NOMBRE: ${{ github.event.inputs.nombre || '20' }}
+          REFAIRE_JOURS: ${{ github.event.inputs.jours || '4' }}
           REFAIRE: ${{ github.event_name == 'push' && '1' || github.event.inputs.refaire || '0' }}
         run: |
           mkdir -p data
