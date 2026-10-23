@@ -1,463 +1,198 @@
-21:12:00 Demande : 0 site(s)
-21:12:00 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-21:12:00 Commande client : Artbois — 3 maquettes (poseurs de sols, parqueteurs et menuisiers)
-21:12:00     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
-21:14:38   photos : 4 (Wikimedia Commons)
-21:14:38   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
-21:17:08   photos : 4 (Wikimedia Commons)
-21:17:08   maquette 2 prête (modèle v2-atelier/terracotta/split · gemini-3.8-flash)
-21:17:08     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:17:08     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:17:27   photos : 4 (Wikimedia Commons)
-21:17:27   maquette 3 prête (modèle v2-atelier/vert_rose/plein · gemini-3.6-flash)
-21:17:27   page de choix : https://oscarcousin-max.github.io/orbe-usine/artbois-2/
-21:17:27     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:17:27     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:17:27     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:17:27     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
-21:17:27     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:17:27     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:18:04   photos : 4 (Wikimedia Commons)
-21:18:04   refait : Alain Lader (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:22:13   photos : 4 (Wikimedia Commons)
-21:22:13   refait : KM 42 (modèle v2-atelier/terracotta/split · gemini-3.8-flash)
-21:22:14     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:22:14     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:22:42   photos : 4 (Wikimedia Commons)
-21:22:42   refait : SO OR Montres & Cie (modèle v2-bijou/rose_ivoire/cadre · gemini-3.5-flash-lite)
-21:22:42     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:22:42     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:22:50   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t, e2_t
-21:23:09   photos : 4 (Wikimedia Commons)
-21:23:09   refait : Derma Care (modèle v2-bijou/noir_or/cadre · gemini-3.5-flash-lite)
-21:23:09     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:23:10     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:23:17   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_t
-21:23:17   photos : 4 (Wikimedia Commons)
-21:23:17   refait : Miroiterie Champion (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:23:17     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:23:37   photos : 4 (Wikimedia Commons)
-21:23:37   refait : Les Hangars Saint-Michel (modèle v2-atelier/vert_rose/plein · gemini-3.6-flash)
-21:23:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:23:37     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:23:45   photos : 4 (Wikimedia Commons)
-21:23:45   refait : Bijoux L'or en Soi (modèle v2-bijou/nuit_argent/cadre · gemini-3.5-flash-lite)
-21:23:45     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:23:45     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:24:12   photos : 4 (Wikimedia Commons)
-21:24:12   refait : Et Pâtes & Vous (modèle v2-table/cacao/cadre · gemini-3.5-flash-lite)
-21:24:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:24:12     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:24:40   photos : 4 (Wikimedia Commons)
-21:24:40   refait : Fée de Soie (modèle v2-bijou/noir_or/cadre · gemini-3.5-flash-lite)
-21:24:40     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:24:40     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:09   photos : 4 (Wikimedia Commons)
-21:25:09   refait : Le Potager de Bacalan (modèle v2-table/brasserie/plein · gemini-3.5-flash-lite)
-21:25:09     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:09     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:17   photos : 4 (Wikimedia Commons)
-21:25:17   refait : Luso Toitures Pinheiro (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:25:17     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:17     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:25   photos : 4 (Wikimedia Commons)
-21:25:25   refait : Charles Labonne (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:25:25     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:25     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:33   photos : 4 (Wikimedia Commons)
-21:25:33   refait : Quai des Hirondelles (modèle v2-bijou/rose_ivoire/split · gemini-3.5-flash-lite)
-21:25:33     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:33     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:41   photos : 4 (Wikimedia Commons)
-21:25:41   refait : Les délices de La Force (modèle v2-table/cacao/cadre · gemini-3.5-flash-lite)
-21:25:41     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:41     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:49   photos : 4 (Wikimedia Commons)
-21:25:49   refait : La Clinique des Chaises & des Fauteuils (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:25:49     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:49     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:57   photos : 4 (Wikimedia Commons)
-21:25:57   refait : Boo (modèle v2-bijou/noir_or/split · gemini-3.5-flash-lite)
-21:25:57     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:25:57     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:05   photos : 4 (Wikimedia Commons)
-21:26:05   refait : X tu Pelo (modèle v2-bijou/rose_ivoire/cadre · gemini-3.5-flash-lite)
-21:26:05     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:05     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:12   photos : 4 (Wikimedia Commons)
-21:26:12   refait : Chez Cao (modèle v2-table/brasserie/plein · gemini-3.5-flash-lite)
-21:26:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:13     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:20   photos : 4 (Wikimedia Commons)
-21:26:20   refait : Primeur Le Paradis du Frais (modèle v2-table/olive/plein · gemini-3.5-flash-lite)
-21:26:20     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:21     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:28   photos : 4 (Wikimedia Commons)
-21:26:28   refait : Cyril Rénov (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:26:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:28     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:37   photos : 4 (Wikimedia Commons)
-21:26:37   refait : Paradise par Émilie (modèle v2-bijou/rose_ivoire/split · gemini-3.5-flash-lite)
-21:26:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:37     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:44   photos : 4 (Wikimedia Commons)
-21:26:44   refait : Chez Polo - La Boutique à Bonbons (modèle v2-table/cacao/cadre · gemini-3.5-flash-lite)
-21:26:45     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:45     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:52   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_t
-21:26:52   photos : 4 (Wikimedia Commons)
-21:26:52   refait : Thomas Labiaule - Charpente Couverture (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:26:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:26:52     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:00   photos : 4 (Wikimedia Commons)
-21:27:00   refait : VDB (modèle v2-bijou/nuit_argent/split · gemini-3.5-flash-lite)
-21:27:00     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:00     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:08   photos : 4 (Wikimedia Commons)
-21:27:08   refait : La Vraie Liégeoise (modèle v2-table/olive/plein · gemini-3.5-flash-lite)
-21:27:08     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:08     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:16   photos : 4 (Wikimedia Commons)
-21:27:16   refait : Les Poteries de Mongi (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:27:16     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:16     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:24   photos : 4 (Wikimedia Commons)
-21:27:24   refait : le chat bleu le chat chineur (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:27:24     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:24     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:32   photos : 4 (Wikimedia Commons)
-21:27:32   refait : Mondukoa (modèle v2-table/olive/plein · gemini-3.5-flash-lite)
-21:27:32     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:32     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:40   photos : 4 (Wikimedia Commons)
-21:27:40   refait : Ebénisterie L'Orangerie (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:27:40     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:40     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:48   photos : 4 (Wikimedia Commons)
-21:27:48   refait : Warung Indo (modèle v2-table/cacao/cadre · gemini-3.5-flash-lite)
-21:27:48     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:48     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:56   photos : 4 (Wikimedia Commons)
-21:27:56   refait : L'Ecrin d'Argent (modèle v2-bijou/noir_or/cadre · gemini-3.5-flash-lite)
-21:27:56     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:27:56     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:28:25   photos : 4 (Wikimedia Commons)
-21:28:25   refait : Les Coups de Cœur de Vins-Cent (modèle v2-domaine/cuivre/plein · gemini-3.5-flash-lite)
-21:28:26     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:28:26     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:28:33   photos : 4 (Wikimedia Commons)
-21:28:33   refait : Ehia Mobilier & Design (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:28:33     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:28:33     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:28:59   photos : 4 (Wikimedia Commons)
-21:28:59   refait : Domus Thermae (modèle v2-table/olive/plein · gemini-3.5-flash-lite)
-21:28:59     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:28:59     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:07   photos : 4 (Wikimedia Commons)
-21:29:07   refait : Cédric Lavacherie (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:29:07     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:07     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:15   photos : 4 (Wikimedia Commons)
-21:29:15   refait : Les Pièces du Moulin (modèle v2-table/brasserie/plein · gemini-3.5-flash-lite)
-21:29:16     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:16     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:23   photos : 4 (Wikimedia Commons)
-21:29:23   refait : Régis Imbert (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:29:23     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:23     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:48   photos : 4 (Wikimedia Commons)
-21:29:48   refait : L'âge de l'encre (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:29:48     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:48     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:56   photos : 4 (Wikimedia Commons)
-21:29:56   refait : Graph'Ink (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:29:56     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:29:56     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:30:04   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t, citation
-21:30:22   photos : 4 (Wikimedia Commons)
-21:30:22   refait : Ken'Élec (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:30:22     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:30:40   photos : 4 (Wikimedia Commons)
-21:30:40   refait : Cursan Nicolas Peinture (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
-21:30:40     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:30:40     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:30:48   photos : 4 (Wikimedia Commons)
-21:30:48   refait : Horlogerie du Marché (modèle v2-bijou/nuit_argent/cadre · gemini-3.5-flash-lite)
-21:30:48     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:30:48     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:30:56   photos : 4 (Wikimedia Commons)
-21:30:56   refait : Aux 2 Rouleaux (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:30:56     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:30:56     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:04   photos : 4 (Wikimedia Commons)
-21:31:04   refait : D'Antan et d'Aujourd'hui (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:31:04     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:04     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:12   photos : 4 (Wikimedia Commons)
-21:31:12   refait : Nathalie Saint-Maxent (modèle v2-bijou/noir_or/split · gemini-3.5-flash-lite)
-21:31:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:12     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:19   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_t
-21:31:19   photos : 4 (Wikimedia Commons)
-21:31:19   refait : Ent Dubernet David (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:31:19     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:19     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:47   photos : 4 (Wikimedia Commons)
-21:31:47   refait : Chez Tatie Danièle (modèle v2-fleur/poudre/cadre · gemini-3.5-flash-lite)
-21:31:47     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:47     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:55   photos : 4 (Wikimedia Commons)
-21:31:55   refait : EURL Mickaël Masseteau (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:31:55     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:31:55     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:03   photos : 4 (Wikimedia Commons)
-21:32:03   refait : Gîte d'Arriguepeou (modèle v2-table/brasserie/plein · gemini-3.5-flash-lite)
-21:32:03     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:03     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:11   photos : 4 (Wikimedia Commons)
-21:32:11   refait : Villa Myrtho (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:32:11     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:11     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:19   photos : 4 (Wikimedia Commons)
-21:32:19   refait : La Rose Brune (modèle v2-bijou/rose_ivoire/split · gemini-3.5-flash-lite)
-21:32:19     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:19     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:45   photos : 4 (Wikimedia Commons)
-21:32:45   refait : Yoga Bien-Être | Hatha & Yin Yoga (modèle v2-bijou/noir_or/split · gemini-3.5-flash-lite)
-21:32:45     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:45     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:53   photos : 4 (Wikimedia Commons)
-21:32:53   refait : Vi'k'ink Tatoo (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:32:53     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:32:53     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:01   photos : 4 (Wikimedia Commons)
-21:33:01   refait : Oléron Gouach's (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:33:01     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:01     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:08   photos : 4 (Wikimedia Commons)
-21:33:08   refait : Natural Shop Bijoux (modèle v2-bijou/noir_or/cadre · gemini-3.5-flash-lite)
-21:33:09     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:09     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:16   photos : 4 (Wikimedia Commons)
-21:33:16   refait : L'original Barber (modèle v2-bijou/rose_ivoire/split · gemini-3.5-flash-lite)
-21:33:16     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:16     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:24   photos : 4 (Wikimedia Commons)
-21:33:24   refait : Studio Malikadanza (modèle v2-bijou/nuit_argent/split · gemini-3.5-flash-lite)
-21:33:24     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:25     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:32   photos : 4 (Wikimedia Commons)
-21:33:32   refait : Nicolas Pecher (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:33:32     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:32     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:40   photos : 4 (Wikimedia Commons)
-21:33:40   refait : La Cave de M. Seurin (modèle v2-domaine/cuivre/plein · gemini-3.5-flash-lite)
-21:33:40     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:41     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:48   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t, e2_t
-21:33:48   photos : 4 (Wikimedia Commons)
-21:33:48   refait : La maison d'iléa (modèle v2-bijou/rose_ivoire/cadre · gemini-3.5-flash-lite)
-21:33:48     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:48     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:56   photos : 4 (Wikimedia Commons)
-21:33:56   refait : Les Jardins de la Fremigère (modèle v2-table/brasserie/plein · gemini-3.5-flash-lite)
-21:33:56     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:33:56     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:04   photos : 4 (Wikimedia Commons)
-21:34:04   refait : LCRX - Philippe Lacroix (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:34:04     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:04     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:12   photos : 4 (Wikimedia Commons)
-21:34:12   refait : Bijouterie horlogerie Artigas (modèle v2-bijou/noir_or/cadre · gemini-3.5-flash-lite)
-21:34:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:12     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:20   photos : 4 (Wikimedia Commons)
-21:34:20   refait : La Main Froide (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:34:20     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:20     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:28   photos : 4 (Wikimedia Commons)
-21:34:28   refait : Franck et Téréza Vigneux (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:34:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:28     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:35   photos : 4 (Wikimedia Commons)
-21:34:35   refait : Pagola (modèle v2-bijou/nuit_argent/split · gemini-3.5-flash-lite)
-21:34:35     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:35     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:43   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d
-21:34:43   photos : 4 (Wikimedia Commons)
-21:34:43   refait : Ferme des Âges - Centre Caprin (modèle v2-table/cacao/cadre · gemini-3.5-flash-lite)
-21:34:43     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:43     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:52   photos : 4 (Wikimedia Commons)
-21:34:52   refait : Barghout Décors (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:34:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:52     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:34:59   photos : 4 (Wikimedia Commons)
-21:34:59   refait : Phœnix tattoo (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:34:59     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:00     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:26   photos : 4 (Wikimedia Commons)
-21:35:26   refait : Domaine de Bonaguil (modèle v2-domaine/bordeaux/plein · gemini-3.5-flash-lite)
-21:35:26     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:26     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:34   photos : 4 (Wikimedia Commons)
-21:35:34   refait : Galerie Richard Gaultier (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:35:34     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:34     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:42   photos : 4 (Wikimedia Commons)
-21:35:42   refait : Ø Shop Tattoo (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:35:42     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:42     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:51   photos : 4 (Wikimedia Commons)
-21:35:51   refait : Frederic Kazan (modèle v2-bijou/nuit_argent/cadre · gemini-3.5-flash-lite)
-21:35:51     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:51     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:59   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t, citation
-21:35:59   photos : 4 (Wikimedia Commons)
-21:35:59   refait : Reix Élec (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:35:59     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:35:59     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:07   photos : 4 (Wikimedia Commons)
-21:36:07   refait : Art Côté Création (modèle v2-fleur/botanique/split · gemini-3.5-flash-lite)
-21:36:07     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:07     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:15   photos : 4 (Wikimedia Commons)
-21:36:15   refait : Chez Boye (modèle v2-table/olive/plein · gemini-3.5-flash-lite)
-21:36:15     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:15     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:23   photos : 4 (Wikimedia Commons)
-21:36:23   refait : L'Ile d'Or (modèle v2-bijou/noir_or/split · gemini-3.5-flash-lite)
-21:36:23     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:23     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:31   photos : 4 (Wikimedia Commons)
-21:36:31   refait : Jean Marc Deriaz Peintures (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:36:31     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:31     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:56   photos : 4 (Wikimedia Commons)
-21:36:56   refait : Restaurant La Table BioEthik (modèle v2-table/cacao/cadre · gemini-3.5-flash-lite)
-21:36:56     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:36:56     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:04   photos : 4 (Wikimedia Commons)
-21:37:04   refait : Sébastien Milloch (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:37:04     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:04     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:12   photos : 4 (Wikimedia Commons)
-21:37:12   refait : Coté clouque (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:37:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:12     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:20   photos : 4 (Wikimedia Commons)
-21:37:20   refait : Artist’ink Tattoo (modèle v2-atelier/terracotta/split · gemini-3.5-flash-lite)
-21:37:20     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:20     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:28   photos : 4 (Wikimedia Commons)
-21:37:28   refait : Les Ateliers d'Aligre (modèle v2-atelier/vert_rose/plein · gemini-3.5-flash-lite)
-21:37:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:28     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:35   photos : 4 (Wikimedia Commons)
-21:37:35   refait : Artisan Joallier (modèle v2-bijou/rose_ivoire/split · gemini-3.5-flash-lite)
-21:37:35     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:36     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:43   photos : 4 (Wikimedia Commons)
-21:37:43   refait : L'Imaginarium de Sian Art (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:37:43     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:43     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:51   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t
-21:37:51   photos : 4 (Wikimedia Commons)
-21:37:51   refait : Sébastien Duffau (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:37:51     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:51     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:59   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t, citation
-21:37:59   photos : 4 (Wikimedia Commons)
-21:37:59   refait : Stéphane Rafin (modèle v2-atelier/encre/cadre · gemini-3.5-flash-lite)
-21:37:59     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:37:59     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:38:07   photos : 4 (Wikimedia Commons)
-21:38:07   refait : L'Échoppe des Halles (modèle v2-table/olive/plein · gemini-3.5-flash-lite)
-21:38:07     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:38:07     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:38:14   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o3_t
-21:38:37   photos : 4 (Wikimedia Commons)
-21:38:37   refait : Cabinet Kinemanuel (modèle v2-bijou/nuit_argent/cadre · gemini-3.5-flash-lite)
-21:38:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:38:37     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:00   photos : 4 (Wikimedia Commons)
-21:39:00   refait : Les Petits Pellegrins (modèle v2-table/olive/plein · gemini-3.5-flash-lite)
-21:39:00     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:00     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:08   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o3_t
-21:39:08   photos : 4 (Wikimedia Commons)
-21:39:08   refait : Séverine POLY (modèle v2-bijou/rose_ivoire/cadre · gemini-3.5-flash-lite)
-21:39:08     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:08     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:16   photos : 4 (Wikimedia Commons)
-21:39:16   refait : Laurent Barraud (modèle v2-table/cacao/cadre · gemini-3.5-flash-lite)
-21:39:16     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:16     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:24   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_t
-21:39:24   photos : 4 (Wikimedia Commons)
-21:39:24   refait : L'échoppe des Sens - Cave à vin - Epicerie Fine (modèle v2-domaine/cuivre/plein · gemini-3.5-flash-lite)
-21:39:24     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:24     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:32   photos : 4 (Wikimedia Commons)
-21:39:32   refait : Le Germini (modèle v2-fleur/botanique/cadre · gemini-3.5-flash-lite)
-21:39:32     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:32     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:40   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : citation
-21:39:40   photos : 4 (Wikimedia Commons)
-21:39:40   refait : Hélène Boudat (modèle v2-bijou/rose_ivoire/split · gemini-3.5-flash-lite)
-21:39:40     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:40     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:48   photos : 4 (Wikimedia Commons)
-21:39:48   refait : Château Gaillard (modèle v2-domaine/sauge/cadre · gemini-3.5-flash-lite)
-21:39:48     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:48     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:56   photos : 4 (Wikimedia Commons)
-21:39:56   refait : Jour J (modèle v2-fleur/poudre/split · gemini-3.5-flash-lite)
-21:39:56     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:39:56     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:04   photos : 4 (Wikimedia Commons)
-21:40:04   refait : L'Etabli Bijouterie Geoffrey Roqueflot (modèle v2-bijou/nuit_argent/split · gemini-3.5-flash-lite)
-21:40:04     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:04     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:12   photos : 4 (Wikimedia Commons)
-21:40:12   refait : Domaine de la Neuraye (modèle v2-domaine/cuivre/plein · gemini-3.5-flash-lite)
-21:40:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:13     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:20   photos : 4 (Wikimedia Commons)
-21:40:20   refait : F'Laure Ever (modèle v2-fleur/vif/cadre · gemini-3.5-flash-lite)
-21:40:20     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:20     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:28   photos : 4 (Wikimedia Commons)
-21:40:28   refait : Sabrina Lagüe Barrière (modèle v2-bijou/rose_ivoire/split · gemini-3.5-flash-lite)
-21:40:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:28     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:36   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
-21:40:36   photos : 4 (Wikimedia Commons)
-21:40:36   refait : Vignoble Château d'Éternes (modèle v2-domaine/cuivre/plein · gemini-3.5-flash-lite)
-21:40:36     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:36     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:44   photos : 4 (Wikimedia Commons)
-21:40:44   refait : Sadia Fleurs (modèle v2-fleur/botanique/cadre · gemini-3.5-flash-lite)
-21:40:44     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:44     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:52   photos : 4 (Wikimedia Commons)
-21:40:52   refait : Bijouterie Lescat (modèle v2-bijou/rose_ivoire/cadre · gemini-3.5-flash-lite)
-21:40:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:40:52     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:41:01   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
-21:41:01   photos : 4 (Wikimedia Commons)
-21:41:01   refait : Domaine Johann Spelty (modèle v2-domaine/sauge/cadre · gemini-3.5-flash-lite)
-21:41:01     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:41:01     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:41:09   photos : 4 (Wikimedia Commons)
-21:41:09   refait : Mademoiselles Pivoines (modèle v2-fleur/poudre/split · gemini-3.5-flash-lite)
-21:41:09     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:41:09     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:41:17   photos : 4 (Wikimedia Commons)
-21:41:17   refait : Laudate (modèle v2-bijou/noir_or/cadre · gemini-3.5-flash-lite)
-21:41:17     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:41:17     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-21:41:25   photos : 4 (Wikimedia Commons)
-21:41:25   refait : Domaine Philippe Alliet (modèle v2-domaine/bordeaux/plein · gemini-3.5-flash-lite)
-21:41:25 108 site(s) récent(s) refait(s) avec les nouveaux modèles
-21:41:25 Aucun nouveau site demandé : seulement les sites récents refaits.
+00:38:29 Demande : 20 site(s)
+00:38:29 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+00:38:29 Zones : Gironde, Corrèze, Creuse, Dordogne
+00:41:34 Carte : boulangeries et artisans du pain — 281 trouvés, 251 sans site noté et joignables
+00:41:34     modèles groq : canopylabs/orpheus-arabic-saudi, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-20b, allam-2-7b, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-safeguard-20b, openai/gpt-oss-120b, qwen/qwen3.8-27b, whisper-large-v3-turbo, whisper-large-v3
+00:41:44   33 retenus comme haut de gamme
+00:41:53   44 retenus comme haut de gamme
+00:42:05   51 retenus comme haut de gamme
+00:42:15   20 retenus comme haut de gamme
+00:43:33 Carte : boucheries, poissonneries, produits du terroir — 172 trouvés, 152 sans site noté et joignables
+00:43:44   49 retenus comme haut de gamme
+00:43:54   46 retenus comme haut de gamme
+00:44:03   25 retenus comme haut de gamme
+00:45:34 Carte : cafés et salons de thé — 102 trouvés, 94 sans site noté et joignables
+00:45:45   22 retenus comme haut de gamme
+00:45:54   23 retenus comme haut de gamme
+00:47:31 Carte : hôtels de charme — 100 trouvés, 88 sans site noté et joignables
+00:47:41   24 retenus comme haut de gamme
+00:47:49   10 retenus comme haut de gamme
+00:53:42 Carte : spas, massages et bien-être — 97 trouvés, 89 sans site noté et joignables
+00:53:52   52 retenus comme haut de gamme
+00:54:01   25 retenus comme haut de gamme
+00:55:24 Carte : opticiens et créateurs de lunettes — 23 trouvés, 21 sans site noté et joignables
+00:55:32   11 retenus comme haut de gamme
+00:55:32 435 candidats
+00:55:32 Commerce : Mère et Fille (Angoulême)
+00:55:42   écarté : Site trouvé : https://mere-fille.ca/
+00:55:42 Commerce : Antoine Jacques (?)
+00:55:48   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook, linkedin, pagesjaunes, societe). — fabrication du site…
+00:55:48     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
+00:57:16   photos : 4 (Wikimedia Commons)
+00:57:23   prêt : https://oscarcousin-max.github.io/orbe-usine/antoine-jacques/
+00:57:23 Commerce : Le Comptoir des échanges (?)
+00:57:31   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook, restaurants-de-france, tourismecorreze). — fabrication du site…
+00:57:31     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+00:58:53   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
+00:59:12   photos : 4 (Wikimedia Commons)
+00:59:20   prêt : https://oscarcousin-max.github.io/orbe-usine/le-comptoir-des-echanges/
+00:59:20 Commerce : Au Grand Hôtel de Sarlat (?)
+00:59:22   écarté : Site trouvé : https://www.au-grand-hotel-de-sarlat.com/
+00:59:22 Commerce : Cabinet de Kinésithérapie | KineLalande (La Lande-de-Fronsac)
+00:59:27   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+00:59:59     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+00:59:59     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:00:39   photos : 4 (Wikimedia Commons)
+01:00:47   prêt : https://oscarcousin-max.github.io/orbe-usine/cabinet-de-kinesitherapie-kinelalande/
+01:00:47 Commerce : Alex Opticien (?)
+01:00:55   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement doctolib, essilor, facebook, instagram). — fabrication du site…
+01:00:55     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:00:56     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:01:33   photos : 4 (Wikimedia Commons)
+01:01:40   prêt : https://oscarcousin-max.github.io/orbe-usine/alex-opticien-2/
+01:01:40 Commerce : Aux saveurs de Bryan (La Croisille-sur-Briance)
+01:01:48   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement autour-de-moi, facebook, villepratique). — fabrication du site…
+01:01:48     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:01:48     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:01:48     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:01:59     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+01:01:59     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+01:01:59     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:01:59     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:02:25   photos : 4 (Wikimedia Commons)
+01:02:33   prêt : https://oscarcousin-max.github.io/orbe-usine/aux-saveurs-de-bryan/
+01:02:33 Commerce : La fraise des pins (?)
+01:02:40   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement duckduckgo, facebook). — fabrication du site…
+01:02:40     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:02:40     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:02:40     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:02:40     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:02:48   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_d
+01:02:48   photos : 4 (Wikimedia Commons)
+01:02:55   prêt : https://oscarcousin-max.github.io/orbe-usine/la-fraise-des-pins/
+01:02:55 Commerce : Le Boudoir (?)
+01:03:09   écarté : Site trouvé : https://esearchnetwork.com/home.php?od=boudoir.com
+01:03:09 Commerce : Hôtel de l'Écu (?)
+01:03:16   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook, hotels, logishotels, petitfute). — fabrication du site…
+01:03:16     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:03:16     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:03:49   photos : 4 (Wikimedia Commons)
+01:03:57   prêt : https://oscarcousin-max.github.io/orbe-usine/hotel-de-l-ecu/
+01:03:57 Commerce : Docteur Larrue Lionel (Parentis-en-Born)
+01:04:01   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+01:04:01     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+01:04:01     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:04:02     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:04:09   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t
+01:04:09   photos : 4 (Wikimedia Commons)
+01:04:16   prêt : https://oscarcousin-max.github.io/orbe-usine/docteur-larrue-lionel/
+01:04:16 Commerce : L'atelier de l'opticien - Ao (Bordeaux)
+01:04:20   écarté : Site trouvé : https://www.atelier-opticien.fr/
+01:04:20 Commerce : La bibliothèque des pains (?)
+01:04:26   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement autour-de-moi, facebook, pagesjaunes). — fabrication du site…
+01:04:26     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:04:26     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:04:26     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:04:34   photos : 4 (Wikimedia Commons)
+01:04:42   prêt : https://oscarcousin-max.github.io/orbe-usine/la-bibliotheque-des-pains/
+01:04:42 Commerce : O Tea Kawa (Gujan-Mestras)
+01:04:46   écarté : Site trouvé : https://o-tea-kawa.grubbio.com/
+01:04:46 Commerce : Cœur de Noisette (?)
+01:04:52   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+01:04:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:04:52     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:04:52     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:05:00   photos : 4 (Wikimedia Commons)
+01:05:00     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+01:05:00     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
+01:05:07   prêt : https://oscarcousin-max.github.io/orbe-usine/cur-de-noisette/
+01:05:07 Commerce : Le Miel des Muses (?)
+01:05:09   écarté : Site trouvé : https://www.lemieldesmuses.fr/
+01:05:09 Commerce : Sophrologue Christelle Laplace (?)
+01:05:13   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+01:05:13     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:05:13     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:05:31   photos : 4 (Wikimedia Commons)
+01:05:39   prêt : https://oscarcousin-max.github.io/orbe-usine/sophrologue-christelle-laplace/
+01:05:39 Commerce : Dominati Opticien Le Pian Médoc (Le Pian-Médoc)
+01:05:44   écarté : Site trouvé : https://dominati-opticien.fr/
+01:05:44 Commerce : Eva (?)
+01:05:50   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement gouv, wikipedia, youtube). — fabrication du site…
+01:05:50     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:05:50     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:05:50     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:05:58   photos : 4 (Wikimedia Commons)
+01:05:58     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+01:06:05   prêt : https://oscarcousin-max.github.io/orbe-usine/eva/
+01:06:05 Commerce : Horti Courait Lydie (Touvérac)
+01:06:10   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook). — fabrication du site…
+01:06:10     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:06:11     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:06:16     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+01:06:23   photos : 4 (Wikimedia Commons)
+01:06:23     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+01:06:31   prêt : https://oscarcousin-max.github.io/orbe-usine/horti-courait-lydie/
+01:06:31 Commerce : Le Vrac Café (Champnétery)
+01:06:37   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+01:06:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:06:37     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:06:55   photos : 4 (Wikimedia Commons)
+01:06:55     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+01:07:02   prêt : https://oscarcousin-max.github.io/orbe-usine/le-vrac-cafe/
+01:07:02 Commerce : Le Moulin de Lascaux (?)
+01:07:10   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement en-nouvelle-aquitaine, mappy, pagesjaunes, tourisme-creuse). — fabrication du site…
+01:07:10     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:07:10     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:07:10     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:07:19   photos : 4 (Wikimedia Commons)
+01:07:19     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+01:07:26   prêt : https://oscarcousin-max.github.io/orbe-usine/le-moulin-de-lascaux/
+01:07:26 Commerce : Cabinet d'ostéopathie - Laurine Bianco et Benjamin Lafon (?)
+01:07:30   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+01:07:30     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:07:30     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:07:31     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:07:39   photos : 4 (Wikimedia Commons)
+01:07:46   prêt : https://oscarcousin-max.github.io/orbe-usine/cabinet-d-osteopathie-laurine-bianco-et-/
+01:07:46 Commerce : Pierre Lavergne (?)
+01:07:53   écarté : Site trouvé : https://pierrelavergne.com/
+01:07:53 Commerce : Chateauneuf du Pain (Eysines)
+01:08:02   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook, pagesjaunes, societe, villepratique). — fabrication du site…
+01:08:02     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:08:02     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:08:02     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:08:10   photos : 4 (Wikimedia Commons)
+01:08:10     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+01:08:17   prêt : https://oscarcousin-max.github.io/orbe-usine/chateauneuf-du-pain/
+01:08:17 Commerce : Ecoferme de l'Azuré (?)
+01:08:22   écarté : Site trouvé : https://ecofermedelazure.fr/
+01:08:22 Commerce : L'Ovalie Kafé (Nexon)
+01:08:31   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook, pagesjaunes, petitfute, restaurantguru). — fabrication du site…
+01:08:31     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:08:31     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:08:31     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:08:39   photos : 4 (Wikimedia Commons)
+01:08:39     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+01:08:46   prêt : https://oscarcousin-max.github.io/orbe-usine/l-ovalie-kafe/
+01:08:46 Commerce : Hôtel-Restaurant Ardesia (?)
+01:09:15   écarté : Site trouvé : https://www.ardesia-hautecorreze.com/
+01:09:15 Commerce : B-e Zen Concept (?)
+01:09:23   écarté : Site trouvé : https://zen-concept.fr/
+01:09:23 Commerce : Dominique Triau (Ambazac)
+01:09:28   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement 118000, annuaire-annuaire, e-pro, justacote). — fabrication du site…
+01:09:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:09:29     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:09:49   photos : 4 (Wikimedia Commons)
+01:09:49     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+01:09:56   prêt : https://oscarcousin-max.github.io/orbe-usine/dominique-triau/
+01:09:56 Commerce : Aux Carrés de Salers (?)
+01:10:02   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement 118000, cylex-locale, salers-tourisme). — fabrication du site…
+01:10:02     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:10:02     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:10:03     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+01:10:10   photos : 4 (Wikimedia Commons)
+01:10:10     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+01:10:17   prêt : https://oscarcousin-max.github.io/orbe-usine/aux-carres-de-salers/
+01:10:17 Moteurs de recherche : DuckDuckGo 25 ok / 0 bloqué, Bing 25 ok / 0 bloqué, Mojeek 0 ok / 0 bloqué
+01:10:17 Écartés car déjà un site : 11 · fermés : 0 · non vérifiables : 0
+01:10:17 Terminé : 20 site(s) prêt(s).
