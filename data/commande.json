@@ -1,0 +1,14 @@
+{
+  "nombre": 0,
+  "clients": [
+    {
+      "nom": "Coco Sheshel Loc",
+      "secteur": "traiteurs et photographes",
+      "ville": "Bordeaux",
+      "adresse": "33300 Bordeaux",
+      "maquettes": 3,
+      "specialites": "Location de matériel de réception et d'événement, à l'unité : chauffe-plats (ronds, carrés et rectangulaires), assiettes, chaises pliables, tables noires à pieds pliants. Pas de location de salle ni de buffet complet.",
+      "note": "Client de Michael Cousin (site déjà existant en version simple, à refaire en 3 propositions). Catalogue de produits avec calendrier de disponibilité par produit."
+    }
+  ]
+}
