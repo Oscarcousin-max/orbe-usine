@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1F4FFF">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>SVM Phone</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Réparation et vente de téléphones à Paris et alentours. Devis instantané, rendez-vous 7j/7, 24h/24.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<style>
+/* Layout : mobile d'abord. Un seul parcours « réserver » qui donne le prix en direct, un téléphone qui se répare à l'ouverture, des étiquettes-prix jaunes. */
+:root{
+  --glass:#EFF2F7;      /* fond, vitre froide */
+  --surface:#FFFFFF;
+  --ink:#0E1525;
+  --muted:#5A6478;
+  --line:#D9DFE9;
+  --cobalt:#1F4FFF;     /* accent : bleu écran */
+  --on-cobalt:#FFFFFF;
+  --volt:#FFE04A;       /* étiquette prix */
+  --on-volt:#16130A;
+  --ok:#14995A;
+  --danger:#D6334B;
+  --device:#0E1525;
+  --font:"Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --r-lg:22px; --r-md:14px; --r-sm:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --glass:#0A101D; --surface:#131B2C; --ink:#EDF1F8; --muted:#97A3BA; --line:#25304A;
+    --cobalt:#6E8DFF; --on-cobalt:#0A101D; --ok:#3DD68C; --danger:#FF6B80; --device:#04070E;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --glass:#0A101D; --surface:#131B2C; --ink:#EDF1F8; --muted:#97A3BA; --line:#25304A;
+  --cobalt:#6E8DFF; --on-cobalt:#0A101D; --ok:#3DD68C; --danger:#FF6B80; --device:#04070E;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--glass);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+@media (min-width:900px){body{padding-bottom:0}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--glass)}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wide{font-stretch:125%}
+h1,h2,h3{margin:0;text-wrap:balance;line-height:1}
+h2{font-size:clamp(1.9rem,6.5vw,3rem);font-weight:850;font-stretch:125%;letter-spacing:-.02em}
+p{margin:0}
+.lead{color:var(--muted);font-size:1.06rem;max-width:58ch}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 1.3em;border-radius:999px;border:0;font-weight:750;font-size:1rem;text-decoration:none;cursor:pointer;transition:transform .12s ease}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--cobalt);color:var(--on-cobalt)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.btn-snap{background:#FFFC00;color:#111}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* Étiquette prix */
+.tag{display:inline-block;background:var(--volt);color:var(--on-volt);font-weight:850;font-stretch:115%;padding:.25em .6em;border-radius:6px;transform:rotate(-3deg);font-variant-numeric:tabular-nums;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+
+/* En-tête */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--glass) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;min-height:62px}
+.logo{font-weight:900;font-stretch:125%;font-size:1.3rem;letter-spacing:-.03em;text-decoration:none}
+.logo b{color:var(--cobalt)}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:650;color:var(--muted)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.top .spacer{flex:1}
+.top nav{display:none;gap:22px;font-weight:650;font-size:.95rem}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--ink)}
+.top .btn{min-height:42px;padding:0 1em;font-size:.92rem}
+@media (min-width:900px){.top nav{display:flex}}
+
+/* Hero */
+.hero .wrap{display:grid;gap:28px;padding-block:28px 40px;align-items:center}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1.15fr .85fr;padding-block:56px 72px}}
+.hero h1{font-size:clamp(2.55rem,11vw,5rem);font-weight:900;font-stretch:125%;letter-spacing:-.035em;line-height:.92}
+.hero .lead{margin-top:16px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;padding:0;list-style:none;font-weight:650;font-size:.93rem}
+.facts li{display:flex;align-items:center;gap:7px}
+.facts svg{width:18px;height:18px;color:var(--cobalt)}
+
+/* Téléphone animé */
+.stage{display:flex;justify-content:center}
+.phone{position:relative;width:min(250px,64vw);aspect-ratio:9/19;border-radius:40px;background:var(--device);padding:9px;box-shadow:0 30px 60px -20px rgba(14,21,37,.45),inset 0 0 0 2px rgba(255,255,255,.08);cursor:pointer;border:0}
+.phone::before{content:"";position:absolute;top:16px;left:50%;width:30%;height:20px;transform:translateX(-50%);background:var(--device);border-radius:12px;z-index:3}
+.screen{position:relative;height:100%;border-radius:32px;overflow:hidden;background:linear-gradient(170deg,#2350FF 0%,#14286E 100%);color:#fff;display:flex;flex-direction:column;align-items:center;padding:54px 14px 18px;text-align:center}
+.screen .clock{font-size:3.4rem;font-weight:300;font-stretch:80%;line-height:1;letter-spacing:-.02em}
+.screen .date{font-size:.8rem;opacity:.85;margin-top:6px}
+.notif{margin-top:auto;width:100%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border-radius:16px;padding:10px 12px;text-align:left;font-size:.75rem;line-height:1.35;opacity:0;transform:translateY(10px);animation:notif .5s ease 2.5s forwards}
+.notif strong{display:block;font-size:.8rem}
+.cracks{position:absolute;inset:0;z-index:2;pointer-events:none;animation:wipe 1.6s cubic-bezier(.6,0,.3,1) .7s forwards}
+.cracks path{fill:none;stroke:#fff;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;opacity:.9}
+.cracks .shard{fill:rgba(255,255,255,.12);stroke-width:.8}
+.scan{position:absolute;left:0;right:0;top:0;height:3px;background:var(--volt);box-shadow:0 0 18px 4px rgba(255,224,74,.7);z-index:3;opacity:0;animation:scan 1.6s cubic-bezier(.6,0,.3,1) .7s forwards}
+@keyframes wipe{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(100% 0 0 0)}}
+@keyframes scan{0%{top:0;opacity:1}92%{opacity:1}100%{top:100%;opacity:0}}
+@keyframes notif{to{opacity:1;transform:none}}
+.stage .hint{position:absolute}
+.sticker-float{position:absolute;right:-14px;top:22%;z-index:4;font-size:1.05rem}
+@media (prefers-reduced-motion: reduce){.cracks,.scan{display:none}.notif{animation:none;opacity:1;transform:none}.live i{animation:none}}
+
+/* Sections */
+section.block{padding-block:56px}
+.head{display:grid;gap:12px;margin-bottom:28px}
+
+/* Parcours réservation */
+#rdv{background:var(--surface);border-block:1px solid var(--line)}
+.flow{display:grid;gap:22px}
+@media (min-width:900px){.flow{grid-template-columns:1fr 340px;align-items:start}}
+.steps{display:grid;gap:18px;min-width:0}
+.step{border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;background:var(--glass)}
+.step-t{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.step-t .n{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--glass);font-weight:800;font-size:.95rem;flex:none}
+.step.done .step-t .n{background:var(--ok);color:#fff}
+.step-t h3{font-size:1.15rem;font-weight:800;font-stretch:112%}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-weight:650;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--glass);border-color:var(--ink)}
+label.f{display:grid;gap:6px;font-weight:650;font-size:.92rem}
+.input,select.input{min-height:50px;width:100%;border-radius:var(--r-md);border:1.5px solid var(--line);background:var(--surface);padding:0 14px;font-size:1rem}
+textarea.input{padding:12px 14px;min-height:84px;resize:vertical}
+.input:focus{outline:none;border-color:var(--cobalt)}
+.grid-2{display:grid;gap:12px;margin-top:12px}
+@media (min-width:600px){.grid-2{grid-template-columns:1fr 1fr}}
+
+.pannes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:600px){.pannes{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.panne{display:grid;gap:6px;align-content:start;text-align:left;padding:14px;border-radius:var(--r-md);border:1.5px solid var(--line);background:var(--surface);cursor:pointer;min-height:118px}
+.panne svg{width:28px;height:28px;color:var(--cobalt)}
+.panne .nm{font-weight:750;line-height:1.2}
+.panne .pr{font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.panne[aria-pressed="true"]{border-color:var(--cobalt);box-shadow:0 0 0 2px var(--cobalt) inset}
+.panne[aria-pressed="true"] .pr{color:var(--ink);font-weight:750}
+
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.day{flex:none;width:66px;padding:10px 0;border-radius:var(--r-md);border:1.5px solid var(--line);background:var(--surface);cursor:pointer;display:grid;gap:2px;text-align:center}
+.day small{font-size:.75rem;color:var(--muted);font-weight:650}
+.day b{font-size:1.35rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1}
+.day[aria-pressed="true"]{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-cobalt)}
+.day[aria-pressed="true"] small{color:inherit;opacity:.85}
+.slots-g{margin-top:14px}
+.slots-g h4{margin:0 0 8px;font-size:.85rem;color:var(--muted);font-weight:650}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:8px}
+.slot{min-height:44px;border-radius:var(--r-sm);border:1.5px solid var(--line);background:var(--surface);font-weight:700;font-variant-numeric:tabular-nums;cursor:pointer}
+.slot:disabled{opacity:.38;text-decoration:line-through;cursor:not-allowed}
+.slot[aria-pressed="true"]{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-cobalt)}
+
+/* Résumé */
+.summary{position:sticky;top:calc(80px + env(safe-area-inset-top,0px));border-radius:var(--r-lg);background:var(--ink);color:var(--glass);padding:22px;display:grid;gap:14px}
+.summary .lbl{font-size:.85rem;opacity:.7;font-weight:600}
+.summary .price{font-size:2.6rem;margin-top:4px}
+.summary ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:.95rem}
+.summary li{display:flex;justify-content:space-between;gap:12px;border-top:1px solid color-mix(in srgb,var(--glass) 18%,transparent);padding-top:8px}
+.summary li span:first-child{opacity:.7}
+.summary li span:last-child{text-align:right;font-weight:650}
+.summary .note{font-size:.82rem;opacity:.7}
+.summary .btn{width:100%;background:var(--volt);color:var(--on-volt)}
+.err{color:var(--danger);font-weight:650;font-size:.92rem}
+
+/* Confirmation */
+.done-card{border-radius:var(--r-lg);border:1px solid var(--line);background:var(--glass);padding:24px;display:grid;gap:16px}
+.done-card .ok{width:56px;height:56px;border-radius:50%;background:var(--ok);display:grid;place-items:center;color:#fff}
+.done-card .ok svg{width:30px;height:30px}
+.done-card h3{font-size:1.6rem;font-weight:850;font-stretch:118%}
+.msgbox{width:100%;min-height:150px;border-radius:var(--r-md);border:1.5px solid var(--line);background:var(--surface);padding:12px;font-size:.92rem;line-height:1.45;resize:vertical}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* Comment ça marche */
+.how{display:grid;gap:14px;list-style:none;padding:0;margin:0;counter-reset:s}
+@media (min-width:760px){.how{grid-template-columns:repeat(3,1fr)}}
+.how li{counter-increment:s;padding:20px 0 0;border-top:3px solid var(--ink);display:grid;gap:6px}
+.how li::before{content:counter(s);font-size:2.6rem;font-weight:900;font-stretch:125%;color:var(--cobalt);line-height:1}
+.how b{font-size:1.15rem;font-stretch:112%}
+.how span{color:var(--muted)}
+
+/* Boutique */
+.shop{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:900px){.shop{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:14px;display:grid;gap:10px;align-content:start;min-width:0}
+.item .pic{position:relative;aspect-ratio:1;border-radius:var(--r-md);background:var(--glass);display:grid;place-items:center;overflow:hidden}
+.mini{width:34%;aspect-ratio:9/19;border-radius:14px;background:var(--device);padding:3px;box-shadow:8px 10px 20px -8px rgba(0,0,0,.35)}
+.mini i{display:block;height:100%;border-radius:11px}
+.item .pic .tag{position:absolute;right:8px;bottom:10px;font-size:1.05rem}
+.item h3{font-size:1rem;font-weight:800;line-height:1.2}
+.item p{font-size:.85rem;color:var(--muted)}
+.item .btn{min-height:42px;font-size:.88rem;padding:0 .8em;width:100%}
+.buyback{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;border-radius:var(--r-lg);border:2px dashed var(--line);padding:18px 20px}
+.buyback p{max-width:52ch}
+
+/* TikTok */
+#tiktok{background:var(--ink);color:var(--glass)}
+#tiktok .lead{color:color-mix(in srgb,var(--glass) 70%,transparent)}
+.reels{display:grid;grid-auto-flow:column;grid-auto-columns:min(62vw,240px);gap:12px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}
+@media (min-width:900px){.reels{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible}}
+.reel{scroll-snap-align:start;position:relative;aspect-ratio:9/16;border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;text-decoration:none;color:#fff}
+.reel .play{position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;backdrop-filter:blur(4px)}
+.reel .play svg{width:22px;height:22px;margin-left:3px}
+.reel b{position:relative;font-size:1rem;line-height:1.2}
+.reel small{position:relative;opacity:.8;font-size:.8rem;margin-top:4px}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.6));z-index:0}
+.reel > *{z-index:1}
+#tiktok .btn-ghost{color:var(--glass);box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--glass) 30%,transparent)}
+
+/* FAQ */
+.faq{display:grid;gap:10px;max-width:760px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:0 18px}
+.faq summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:750;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--cobalt)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding-bottom:16px;color:var(--muted)}
+
+/* Pied */
+footer{border-top:1px solid var(--line);padding-block:36px}
+footer .wrap{display:grid;gap:22px}
+@media (min-width:760px){footer .wrap{grid-template-columns:1.4fr 1fr 1fr}}
+footer h4{margin:0 0 8px;font-size:.85rem;color:var(--muted);font-weight:650}
+footer p,footer a{font-size:.95rem}
+footer .small{font-size:.82rem;color:var(--muted)}
+
+/* Barre du bas (mobile) */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));display:flex;gap:10px}
+.dock .btn{min-height:52px}
+.dock .btn-main{flex:1}
+.dock .tag{margin-left:4px;transform:rotate(-3deg);font-size:.9rem}
+@media (min-width:900px){.dock{display:none}}
+
+/* Notification (aperçu) */
+.push{position:fixed;z-index:50;top:calc(12px + env(safe-area-inset-top,0px));left:50%;width:min(380px,calc(100% - 24px));transform:translate(-50%,-140%);transition:transform .45s cubic-bezier(.2,.9,.3,1.2);background:var(--surface);color:var(--ink);border-radius:20px;box-shadow:0 20px 50px -12px rgba(0,0,0,.4);border:1px solid var(--line);padding:12px 14px;display:flex;gap:12px;align-items:flex-start}
+.push.show{transform:translate(-50%,0)}
+.push .ic{width:38px;height:38px;border-radius:10px;background:var(--cobalt);color:var(--on-cobalt);display:grid;place-items:center;font-weight:900;font-stretch:125%;flex:none;font-size:.8rem}
+.push small{display:block;color:var(--muted);font-size:.75rem}
+.push b{font-size:.92rem}
+.push p{font-size:.88rem;line-height:1.35}
+
+/* Espace SVM (agenda réparateur) */
+#pro{min-height:100vh;padding-block:24px 60px}
+.pro-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.pro-top h1{font-size:clamp(1.9rem,7vw,2.8rem);font-weight:900;font-stretch:125%;letter-spacing:-.03em}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:20px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:14px;min-width:0}
+.kpi small{color:var(--muted);font-weight:650;font-size:.8rem}
+.kpi b{display:block;font-size:1.6rem;font-weight:850;font-variant-numeric:tabular-nums;font-stretch:112%}
+.toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;margin-bottom:22px;font-weight:650}
+.sw{position:relative;width:52px;height:30px;border-radius:999px;background:var(--line);border:0;cursor:pointer;flex:none}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:left .2s}
+.sw[aria-checked="true"]{background:var(--ok)}
+.sw[aria-checked="true"]::after{left:25px}
+.agenda{display:grid;gap:22px}
+.agenda h3{font-size:1rem;font-weight:800;margin-bottom:10px;color:var(--muted)}
+.appts{display:grid;gap:10px}
+.appt{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--cobalt);border-radius:var(--r-md);padding:14px}
+.appt.st-confirme{border-left-color:var(--ok)}
+.appt.st-termine{border-left-color:var(--line);opacity:.7}
+.appt .t{font-size:1.4rem;font-weight:850;font-variant-numeric:tabular-nums;font-stretch:112%}
+.appt .who{font-weight:750}
+.appt .what{color:var(--muted);font-size:.92rem}
+.appt .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+.pill{font-size:.75rem;font-weight:750;padding:3px 9px;border-radius:999px;background:var(--glass);border:1px solid var(--line)}
+.pill.new{background:var(--cobalt);color:var(--on-cobalt);border-color:transparent}
+.pill.ok{background:var(--ok);color:#fff;border-color:transparent}
+.pill.ex{border-style:dashed}
+.appt .acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.appt .acts button{min-height:38px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-weight:700;font-size:.85rem;cursor:pointer}
+.empty{color:var(--muted);padding:16px;border:2px dashed var(--line);border-radius:var(--r-md)}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#accueil" aria-label="svm.phone, accueil">svm<b>.</b>phone</a>
+    <span class="live"><i></i>Ouvert 24h/24</span>
+    <span class="spacer"></span>
+    <nav aria-label="Menu">
+      <a href="#rdv">Réparer</a>
+      <a href="#boutique">Acheter</a>
+      <a href="#tiktok">TikTok</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="btn btn-snap" href="https://www.snapchat.com/add/svm.phone" target="_blank" rel="noopener" aria-label="Écrire sur Snapchat">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c2.9 0 5.1 2.2 5.1 5.2v2.3c.4.2 1 .1 1.5-.1.6-.2 1.1.5.5 1-.5.4-1.4.6-1.9.9.4 1.4 1.8 2.8 3.4 3.3.5.2.4.8-.1 1-.6.2-1.3.3-1.8.5-.2.4-.1 1-.6 1-.7 0-1.6-.3-2.6.2-1 .6-1.9 1.6-3.5 1.6s-2.5-1-3.5-1.6c-1-.5-1.9-.2-2.6-.2-.5 0-.4-.6-.6-1-.5-.2-1.2-.3-1.8-.5-.5-.2-.6-.8-.1-1 1.6-.5 3-1.9 3.4-3.3-.5-.3-1.4-.5-1.9-.9-.6-.5-.1-1.2.5-1 .5.2 1.1.3 1.5.1V7.4c0-3 2.2-5.2 5.1-5.2z"/></svg>
+      <span>Snap</span>
+    </a>
+  </div>
+</header>
+
+<main id="site">
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <div class="wrap">
+      <div>
+        <h1>Écran cassé&nbsp;? Réparé aujourd'hui.</h1>
+        <p class="lead">Réparation et vente de téléphones à Paris et alentours. Tu vois ton prix tout de suite, tu choisis ton heure, on s'occupe du reste. 7j/7, 24h/24.</p>
+        <div class="ctas">
+          <a class="btn btn-main" href="#rdv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            Prendre rendez-vous
+          </a>
+          <a class="btn btn-ghost" href="#rdv" data-focus="brand">Voir mon prix</a>
+        </div>
+        <ul class="facts">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Garantie 6 mois</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Écran en 30 min</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>On vient chez toi</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <button class="phone" id="phone" type="button" aria-label="Revoir l'animation de réparation">
+          <span class="sticker-float tag">dès 49&nbsp;€</span>
+          <span class="screen">
+            <span class="clock">24/7</span>
+            <span class="date">Ouvert maintenant</span>
+            <span class="notif"><strong>svm.phone · Réparé</strong>iPhone 14 Pro · écran changé en 28 min</span>
+            <svg class="cracks" id="cracks" viewBox="0 0 100 210" preserveAspectRatio="none" aria-hidden="true">
+              <path class="shard" d="M56 50 L71 47 L75 63 L61 70 Z"/>
+              <path class="shard" d="M47 40 L79 37 L88 66 L67 84 L45 73 Z" style="fill:rgba(255,255,255,.05)"/>
+              <path d="M64 58 L42 22 L33 0"/>
+              <path d="M64 58 L59 0"/>
+              <path d="M64 58 L88 31 L100 22"/>
+              <path d="M64 58 L100 71"/>
+              <path d="M64 58 L83 110 L94 150 L100 162"/>
+              <path d="M64 58 L51 101 L31 141 L18 210"/>
+              <path d="M64 58 L22 64 L0 70"/>
+              <path d="M51 101 L70 128 L78 210"/>
+              <path d="M83 110 L60 118"/>
+              <path d="M42 22 L20 30"/>
+            </svg>
+            <span class="scan" aria-hidden="true"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÉSERVATION + DEVIS -->
+  <section class="block" id="rdv">
+    <div class="wrap">
+      <div class="head">
+        <h2>Réserve ta réparation</h2>
+        <p class="lead">Choisis ton téléphone et la panne&nbsp;: le prix s'affiche directement. Ensuite tu prends ton créneau, même la nuit.</p>
+      </div>
+
+      <div class="flow" id="flow">
+        <div class="steps" id="steps">
+          <!-- 1 -->
+          <div class="step" id="s1">
+            <div class="step-t"><span class="n">1</span><h3>Ton téléphone</h3></div>
+            <div class="chips" id="brands" role="group" aria-label="Marque"></div>
+            <div class="grid-2">
+              <label class="f" for="model">Modèle
+                <select class="input" id="model" disabled><option value="">Choisis d'abord la marque</option></select>
+              </label>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="step" id="s2">
+            <div class="step-t"><span class="n">2</span><h3>La panne</h3></div>
+            <div class="pannes" id="pannes" role="group" aria-label="Panne"></div>
+          </div>
+          <!-- 3 -->
+          <div class="step" id="s3">
+            <div class="step-t"><span class="n">3</span><h3>Où et quand</h3></div>
+            <div class="chips" id="lieux" role="group" aria-label="Lieu">
+              <button type="button" class="chip" data-lieu="domicile" aria-pressed="true">Chez moi</button>
+              <button type="button" class="chip" data-lieu="rdv" aria-pressed="false">On se retrouve</button>
+            </div>
+            <p class="lead" id="lieu-note" style="font-size:.9rem;margin:10px 0 14px">Je me déplace chez toi dans Paris et alentours.</p>
+            <div class="days" id="days" role="group" aria-label="Jour"></div>
+            <div id="slots"></div>
+          </div>
+          <!-- 4 -->
+          <div class="step" id="s4">
+            <div class="step-t"><span class="n">4</span><h3>Tes infos</h3></div>
+            <form id="form" novalidate>
+              <div class="grid-2" style="margin-top:0">
+                <label class="f" for="prenom">Prénom
+                  <input class="input" id="prenom" autocomplete="given-name" placeholder="Ex. Inès">
+                </label>
+                <label class="f" for="tel">Téléphone
+                  <input class="input" id="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78">
+                </label>
+              </div>
+              <div class="grid-2" id="adresse-row">
+                <label class="f" for="adresse" style="grid-column:1/-1">Adresse
+                  <input class="input" id="adresse" autocomplete="street-address" placeholder="12 rue de Lyon, 75012 Paris">
+                </label>
+              </div>
+              <div class="grid-2">
+                <label class="f" for="note" style="grid-column:1/-1">Un détail à savoir&nbsp;? <span style="font-weight:400;color:var(--muted)">(facultatif)</span>
+                  <textarea class="input" id="note" placeholder="Ex. le tactile ne répond plus en bas de l'écran"></textarea>
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Résumé / devis -->
+        <aside class="summary" id="summary" aria-live="polite">
+          <div>
+            <div class="lbl">Ton prix</div>
+            <div class="price"><span class="tag" id="sum-price">—</span></div>
+          </div>
+          <ul>
+            <li><span>Téléphone</span><span id="sum-model">—</span></li>
+            <li><span>Panne</span><span id="sum-panne">—</span></li>
+            <li><span>Durée</span><span id="sum-duree">—</span></li>
+            <li><span>Rendez-vous</span><span id="sum-when">—</span></li>
+          </ul>
+          <p class="note">Prix indicatif, confirmé avant la réparation. Tu paies une fois que tout marche.</p>
+          <p class="err" id="err" hidden></p>
+          <button class="btn" id="confirm" type="button">Confirmer mon rendez-vous</button>
+        </aside>
+      </div>
+
+      <!-- Confirmation -->
+      <div class="done-card" id="done" hidden>
+        <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <h3 id="done-title">C'est noté&nbsp;!</h3>
+        <p class="lead" id="done-text"></p>
+        <p style="font-weight:700">Dernière étape&nbsp;: envoie ce message sur Snap pour que je te confirme.</p>
+        <textarea class="msgbox" id="msg" readonly aria-label="Message à envoyer"></textarea>
+        <div class="row">
+          <button class="btn btn-main" id="copy" type="button">Copier le message</button>
+          <a class="btn btn-snap" href="https://www.snapchat.com/add/svm.phone" target="_blank" rel="noopener">Ouvrir Snapchat</a>
+          <a class="btn btn-ghost" id="gcal" href="#" target="_blank" rel="noopener">Ajouter à mon agenda</a>
+        </div>
+        <p class="lead" style="font-size:.9rem">Snap&nbsp;: <b>svm.phone</b></p>
+        <button class="btn btn-ghost" id="again" type="button" style="justify-self:start">Faire une autre réservation</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT ÇA MARCHE -->
+  <section class="block" id="etapes">
+    <div class="wrap">
+      <div class="head"><h2>Comment ça se passe</h2></div>
+      <ol class="how">
+        <li><b>Tu vois ton prix</b><span>Pas de surprise&nbsp;: le prix s'affiche dès que tu choisis ton modèle et ta panne.</span></li>
+        <li><b>Tu choisis ton heure</b><span>Jour, soir ou nuit. Chez toi ou là où tu veux dans Paris et alentours.</span></li>
+        <li><b>C'est réparé devant toi</b><span>Tu testes, tout marche, tu paies. Garantie 6 mois sur la pièce.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- BOUTIQUE -->
+  <section class="block" id="boutique" style="padding-top:8px">
+    <div class="wrap">
+      <div class="head">
+        <h2>Téléphones à vendre</h2>
+        <p class="lead">Reconditionnés, testés et garantis. Le stock bouge vite&nbsp;: réserve le tien sur Snap.</p>
+      </div>
+      <div class="shop" id="shop"></div>
+      <div class="buyback">
+        <p><b>On rachète aussi ton ancien téléphone.</b> Envoie une photo et le modèle sur Snap, tu reçois une offre rapidement. Tu peux même le déduire d'un achat.</p>
+        <a class="btn btn-snap" href="https://www.snapchat.com/add/svm.phone" target="_blank" rel="noopener">Faire estimer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIKTOK -->
+  <section class="block" id="tiktok">
+    <div class="wrap">
+      <div class="head">
+        <h2>Les réparations en vidéo</h2>
+        <p class="lead">Toutes les réparations sont filmées sur TikTok. Regarde avant de réserver.</p>
+      </div>
+      <div class="reels" id="reels"></div>
+      <div style="margin-top:22px"><a class="btn btn-ghost" href="https://www.tiktok.com/@svm.phone" target="_blank" rel="noopener">Suivre @svm.phone sur TikTok</a></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="head"><h2>Questions fréquentes</h2></div>
+      <div class="faq">
+        <details><summary>Combien de temps dure une réparation&nbsp;?</summary><p>Un écran ou une batterie, c'est entre 20 et 40 minutes sur place. Une vitre arrière prend environ 1h30. Un téléphone tombé dans l'eau demande 24 à 48h.</p></details>
+        <details><summary>Je vais perdre mes photos et mes messages&nbsp;?</summary><p>Non, la réparation ne touche pas à tes données. Fais quand même une sauvegarde si tu peux, c'est toujours plus sûr.</p></details>
+        <details><summary>Quand est-ce que je paie&nbsp;?</summary><p>Après la réparation, une fois que tu as vérifié que tout fonctionne. Espèces, carte ou virement instantané.</p></details>
+        <details><summary>Vous venez jusqu'où&nbsp;?</summary><p>Partout dans Paris et en proche banlieue. Plus loin, écris-moi sur Snap et on trouve une solution.</p></details>
+        <details><summary>C'est garanti&nbsp;?</summary><p>Oui, 6 mois sur la pièce et la main-d'œuvre. Si le problème revient, je reviens.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <a class="logo" href="#accueil">svm<b>.</b>phone</a>
+        <p style="margin-top:8px;color:var(--muted);max-width:40ch">Réparation et vente de téléphones. Paris et alentours, 7j/7, 24h/24.</p>
+      </div>
+      <div>
+        <h4>Me contacter</h4>
+        <p>Snapchat&nbsp;: <b>svm.phone</b></p>
+        <p>TikTok&nbsp;: <b>@svm.phone</b></p>
+      </div>
+      <div>
+        <h4>Espace pro</h4>
+        <p><a href="#pro">Voir l'agenda des rendez-vous</a></p>
+        <p class="small" style="margin-top:10px">Site réalisé par ORBE</p>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- ESPACE SVM : agenda du réparateur -->
+<section id="pro" hidden>
+  <div class="wrap">
+    <div class="pro-top">
+      <div>
+        <a class="logo" href="#accueil">svm<b>.</b>phone</a>
+        <h1 style="margin-top:10px">Mes rendez-vous</h1>
+      </div>
+      <a class="btn btn-ghost" href="#accueil">Retour au site</a>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><small>Aujourd'hui</small><b id="k-today">0</b></div>
+      <div class="kpi"><small>À confirmer</small><b id="k-new">0</b></div>
+      <div class="kpi"><small>Prévu</small><b id="k-ca">0 €</b></div>
+    </div>
+    <div class="toggle">
+      <span>Me prévenir à chaque nouveau rendez-vous</span>
+      <button class="sw" id="notif-sw" role="switch" aria-checked="true" aria-label="Notifications"></button>
+    </div>
+    <div class="agenda" id="agenda"></div>
+  </div>
+</section>
+
+<!-- Barre du bas sur mobile -->
+<div class="dock" id="dock">
+  <a class="btn btn-main" href="#rdv" id="dock-main">Prendre RDV <span class="tag" id="dock-price" hidden></span></a>
+  <a class="btn btn-snap" href="https://www.snapchat.com/add/svm.phone" target="_blank" rel="noopener" aria-label="Snapchat">Snap</a>
+</div>
+
+<!-- Notification -->
+<div class="push" id="push" role="status" aria-live="polite">
+  <span class="ic">svm</span>
+  <div><small>svm.phone · maintenant</small><b id="push-t">Nouveau rendez-vous</b><p id="push-b"></p></div>
+</div>
+
+<script>
+(function(){
+  // ---------- Données (prix d'exemple, à remplacer par les vrais) ----------
+  // [écran, batterie, vitre arrière, connecteur de charge, caméra]
+  var CAT = {
+    "Apple":[
+      ["iPhone 16 Pro Max",389,119,189,109,179],["iPhone 16 Pro",349,109,179,109,169],["iPhone 16",259,99,149,99,129],
+      ["iPhone 15 Pro Max",349,99,179,99,169],["iPhone 15 Pro",319,99,169,99,159],["iPhone 15",229,89,139,89,119],
+      ["iPhone 14 Pro Max",289,89,149,89,149],["iPhone 14 Pro",259,89,139,89,139],["iPhone 14",179,79,119,79,109],
+      ["iPhone 13 Pro Max",229,79,109,79,129],["iPhone 13 Pro",199,79,99,79,119],["iPhone 13",149,69,89,69,99],
+      ["iPhone 12 / 12 Pro",129,65,79,65,89],["iPhone 11",99,59,69,59,79],["iPhone SE (2022)",79,49,null,55,59]
+    ],
+    "Samsung":[
+      ["Galaxy S24 Ultra",329,99,99,89,149],["Galaxy S24",229,89,89,79,119],["Galaxy S23 Ultra",299,89,89,85,139],
+      ["Galaxy S23",199,79,79,75,109],["Galaxy S22",179,75,75,69,99],["Galaxy A54",119,59,59,55,69],["Galaxy A34",99,55,55,55,59]
+    ],
+    "Xiaomi":[["Redmi Note 13",89,49,49,45,55],["Redmi Note 12",79,45,45,45,49],["Xiaomi 13T",159,69,69,65,89]],
+    "Google":[["Pixel 8",179,79,79,75,99],["Pixel 7",149,69,69,69,89]],
+    "Autre":[["Autre modèle",null,null,null,null,null]]
+  };
+  var PANNES = [
+    {id:"ecran", nm:"Écran cassé", i:1, d:"≈ 30 min", ic:'<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M13 7l-2.5 4 3 1.5L11 17"/>'},
+    {id:"batterie", nm:"Batterie", i:2, d:"≈ 20 min", ic:'<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10.5v3M7 10v4M10.5 10v4"/>'},
+    {id:"vitre", nm:"Vitre arrière", i:3, d:"≈ 1h30", ic:'<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><rect x="8.5" y="5" width="4.5" height="4.5" rx="1.2"/>'},
+    {id:"charge", nm:"Ne charge plus", i:4, d:"≈ 40 min", ic:'<path d="M9 2v5M15 2v5M7 7h10v4a5 5 0 0 1-10 0zM12 16v6"/>'},
+    {id:"camera", nm:"Caméra", i:5, d:"≈ 30 min", ic:'<path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>'},
+    {id:"eau", nm:"Tombé dans l'eau", fixed:39, d:"24 à 48h", ic:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>'}
+  ];
+  var SHOP = [
+    {nm:"iPhone 13", st:"128 Go · Très bon état", p:349, c:"linear-gradient(160deg,#F4C7C3,#E58E86)"},
+    {nm:"iPhone 14 Pro", st:"256 Go · Comme neuf", p:589, c:"linear-gradient(160deg,#5B4E7A,#2D2540)"},
+    {nm:"Galaxy S23", st:"128 Go · Très bon état", p:389, c:"linear-gradient(160deg,#C9D7C4,#7E9877)"},
+    {nm:"iPhone 12", st:"64 Go · Bon état", p:249, c:"linear-gradient(160deg,#BFD3EC,#6C8FBF)"}
+  ];
+  var REELS = [
+    {t:"iPhone 14 Pro : écran changé en 12 min", v:"Vidéo à venir", c:"linear-gradient(170deg,#2350FF,#0E1A4F)"},
+    {t:"Galaxy S23 Ultra tombé du 3e étage", v:"Vidéo à venir", c:"linear-gradient(170deg,#3A3F4D,#11141B)"},
+    {t:"Batterie à 72 % → 100 % en 20 min", v:"Vidéo à venir", c:"linear-gradient(170deg,#1C8C5A,#0A3A25)"},
+    {t:"Réparation à 3h du matin à Montreuil", v:"Vidéo à venir", c:"linear-gradient(170deg,#5B3D9E,#1C1236)"}
+  ];
+
+  var S = {brand:null, model:null, panne:null, lieu:"domicile", day:null, hour:null};
+  var $ = function(id){return document.getElementById(id)};
+  var JOURS = ["dim.","lun.","mar.","mer.","jeu.","ven.","sam."];
+  var MOIS = ["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
+
+  function modelRow(){ if(!S.brand||S.model===null) return null; return CAT[S.brand][S.model]; }
+  function priceOf(p){ var r=modelRow(); if(p.fixed) return p.fixed; if(!r) return undefined; return r[p.i]; }
+  function eur(n){ return n+" €"; }
+
+  // ---------- Étape 1 ----------
+  Object.keys(CAT).forEach(function(b){
+    var el=document.createElement("button"); el.type="button"; el.className="chip"; el.textContent=b; el.setAttribute("aria-pressed","false");
+    el.onclick=function(){
+      S.brand=b; S.model=null;
+      [].forEach.call($("brands").children,function(c){c.setAttribute("aria-pressed",c===el?"true":"false")});
+      var sel=$("model"); sel.disabled=false; sel.innerHTML='<option value="">Choisis ton modèle</option>';
+      CAT[b].forEach(function(m,i){var o=document.createElement("option");o.value=i;o.textContent=m[0];sel.appendChild(o)});
+      if(CAT[b].length===1){sel.value="0";S.model=0}
+      renderPannes(); update();
+    };
+    $("brands").appendChild(el);
+  });
+  $("model").onchange=function(){ S.model=this.value===""?null:+this.value; renderPannes(); update(); };
+
+  // ---------- Étape 2 ----------
+  function renderPannes(){
+    var box=$("pannes"); box.innerHTML="";
+    var r=modelRow();
+    PANNES.forEach(function(p){
+      var pr=priceOf(p), txt;
+      if(p.fixed) txt="Diagnostic dès "+eur(p.fixed);
+      else if(!r) txt="Choisis ton modèle";
+      else if(pr===null) txt=S.brand==="Autre"?"Prix sur Snap":"Non disponible";
+      else txt=eur(pr)+" · "+p.d;
+      var b=document.createElement("button"); b.type="button"; b.className="panne";
+      b.setAttribute("aria-pressed",S.panne===p.id?"true":"false");
+      b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+p.ic+'</svg><span class="nm">'+p.nm+'</span><span class="pr">'+txt+'</span>';
+      b.onclick=function(){ S.panne=p.id; renderPannes(); update(); };
+      box.appendChild(b);
+    });
+  }
+
+  // ---------- Étape 3 ----------
+  [].forEach.call($("lieux").children,function(c){
+    c.onclick=function(){
+      S.lieu=c.dataset.lieu;
+      [].forEach.call($("lieux").children,function(x){x.setAttribute("aria-pressed",x===c?"true":"false")});
+      $("lieu-note").textContent = S.lieu==="domicile" ? "Je me déplace chez toi dans Paris et alentours." : "On se retrouve dans un lieu public près de chez toi. Je t'envoie l'endroit sur Snap.";
+      $("adresse-row").hidden = S.lieu!=="domicile";
+      update();
+    };
+  });
+  function dayKey(d){return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
+  function taken(d,h){ var s=dayKey(d)+":"+h, x=0; for(var i=0;i<s.length;i++){x=(x*31+s.charCodeAt(i))%9973} return x%5===0; }
+  var DAYS=[]; (function(){ var t=new Date(); t.setHours(0,0,0,0); for(var i=0;i<12;i++){var d=new Date(t);d.setDate(t.getDate()+i);DAYS.push(d)} })();
+  DAYS.forEach(function(d,i){
+    var b=document.createElement("button"); b.type="button"; b.className="day"; b.setAttribute("aria-pressed","false");
+    var lab=i===0?"Auj.":i===1?"Dem.":JOURS[d.getDay()];
+    b.innerHTML='<small>'+lab+'</small><b>'+d.getDate()+'</b><small>'+MOIS[d.getMonth()]+'</small>';
+    b.onclick=function(){ S.day=i; S.hour=null; [].forEach.call($("days").children,function(x){x.setAttribute("aria-pressed",x===b?"true":"false")}); renderSlots(); update(); };
+    $("days").appendChild(b);
+  });
+  function renderSlots(){
+    var box=$("slots"); box.innerHTML="";
+    if(S.day===null){ return; }
+    var d=DAYS[S.day], now=new Date();
+    var groups=[["Matin",6,12],["Après-midi",12,18],["Soir",18,24],["Nuit",0,6]];
+    groups.forEach(function(g){
+      var wrap=document.createElement("div"); wrap.className="slots-g";
+      wrap.innerHTML='<h4>'+g[0]+'</h4>'; var grid=document.createElement("div"); grid.className="slots";
+      for(var h=g[1];h<g[2];h++){
+        (function(h){
+          var b=document.createElement("button"); b.type="button"; b.className="slot";
+          b.textContent=(h<10?"0":"")+h+":00";
+          var past = S.day===0 && h<=now.getHours();
+          b.disabled = past || taken(d,h);
+          if(b.disabled) b.setAttribute("aria-label",b.textContent+", pas disponible");
+          b.setAttribute("aria-pressed",S.hour===h?"true":"false");
+          b.onclick=function(){ S.hour=h; renderSlots(); update(); };
+          grid.appendChild(b);
+        })(h);
+      }
+      wrap.appendChild(grid); box.appendChild(wrap);
+    });
+  }
+  function whenText(){ if(S.day===null||S.hour===null) return null; var d=DAYS[S.day]; return JOURS[d.getDay()]+" "+d.getDate()+" "+MOIS[d.getMonth()]+" à "+(S.hour<10?"0":"")+S.hour+":00"; }
+
+  // ---------- Résumé ----------
+  function current(){
+    var p=PANNES.filter(function(x){return x.id===S.panne})[0], r=modelRow();
+    var pr=p?priceOf(p):undefined;
+    var priceTxt = !p||pr===undefined ? "—" : pr===null ? "Sur devis" : (p.fixed?"dès ":"")+eur(pr);
+    return {p:p, r:r, pr:pr, priceTxt:priceTxt};
+  }
+  function update(){
+    var c=current();
+    $("sum-price").textContent=c.priceTxt;
+    $("sum-model").textContent=c.r?c.r[0]:"—";
+    $("sum-panne").textContent=c.p?c.p.nm:"—";
+    $("sum-duree").textContent=c.p?c.p.d:"—";
+    $("sum-when").textContent=whenText()||"—";
+    $("s1").classList.toggle("done",!!c.r);
+    $("s2").classList.toggle("done",!!c.p);
+    $("s3").classList.toggle("done",whenText()!==null);
+    var dp=$("dock-price");
+    if(c.priceTxt!=="—"){ dp.hidden=false; dp.textContent=c.priceTxt; $("dock-main").firstChild.textContent="Réserver "; }
+    else { dp.hidden=true; $("dock-main").firstChild.textContent="Prendre RDV "; }
+    $("err").hidden=true;
+  }
+
+  // ---------- Confirmation ----------
+  function pad(n){return (n<10?"0":"")+n}
+  $("confirm").onclick=function(){
+    var c=current(), miss=[];
+    if(!c.r) miss.push("ton téléphone");
+    if(!c.p) miss.push("la panne");
+    if(whenText()===null) miss.push("ton créneau");
+    var prenom=$("prenom").value.trim(), tel=$("tel").value.trim(), adr=$("adresse").value.trim(), note=$("note").value.trim();
+    if(!prenom) miss.push("ton prénom");
+    if(tel.replace(/\D/g,"").length<9) miss.push("ton numéro");
+    if(S.lieu==="domicile"&&!adr) miss.push("ton adresse");
+    if(miss.length){ var e=$("err"); e.textContent="Il manque "+miss.join(", ")+"."; e.hidden=false; return; }
+
+    var when=whenText();
+    var lieuTxt = S.lieu==="domicile" ? "chez moi, "+adr : "on se retrouve (lieu à me donner)";
+    var msg = "Salut svm.phone ! Je viens de réserver sur ton site.\n\n"+
+      "• Téléphone : "+c.r[0]+"\n• Panne : "+c.p.nm+"\n• Prix affiché : "+c.priceTxt+"\n• Rendez-vous : "+when+"\n• Où : "+lieuTxt+"\n• Prénom : "+prenom+"\n• Tél : "+tel+(note?"\n• Détail : "+note:"")+"\n\nTu me confirmes ?";
+    $("msg").value=msg;
+    $("done-title").textContent="C'est noté, "+prenom+" !";
+    $("done-text").textContent="Rendez-vous "+when+" pour ton "+c.r[0]+" ("+c.p.nm.toLowerCase()+", "+c.priceTxt+").";
+
+    var d=DAYS[S.day], ds=d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate());
+    var end=new Date(d); end.setHours(S.hour+1); var de=end.getFullYear()+pad(end.getMonth()+1)+pad(end.getDate());
+    var g="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Réparation svm.phone · "+c.r[0])+
+      "&dates="+ds+"T"+pad(S.hour)+"0000/"+de+"T"+pad(end.getHours())+"0000&ctz=Europe/Paris&details="+encodeURIComponent(msg)+
+      (S.lieu==="domicile"?"&location="+encodeURIComponent(adr):"");
+    $("gcal").href=g;
+
+    // Enregistre pour l'agenda du réparateur (démo, dans ce navigateur)
+    var list=load(); list.unshift({id:Date.now(), day:dayKey(d), ts:new Date(d).setHours(S.hour), h:S.hour, who:prenom, tel:tel, model:c.r[0], panne:c.p.nm, prix:c.pr||0, prixTxt:c.priceTxt, lieu:S.lieu==="domicile"?adr:"Point de rendez-vous", st:"nouveau"});
+    save(list);
+
+    $("flow").hidden=true; $("done").hidden=false;
+    $("rdv").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+    if(notifOn()) push("Nouveau rendez-vous", prenom+" · "+c.r[0]+" · "+c.p.nm.toLowerCase()+" · "+when);
+  };
+  $("copy").onclick=function(){
+    var t=$("msg"), btn=this;
+    function ok(){btn.textContent="Message copié";setTimeout(function(){btn.textContent="Copier le message"},2200)}
+    try{ navigator.clipboard.writeText(t.value).then(ok,function(){t.focus();t.select();btn.textContent="Sélectionné, fais Copier"}); }
+    catch(e){ t.focus(); t.select(); btn.textContent="Sélectionné, fais Copier"; }
+  };
+  $("again").onclick=function(){
+    S={brand:null,model:null,panne:null,lieu:S.lieu,day:null,hour:null};
+    [].forEach.call($("brands").children,function(c){c.setAttribute("aria-pressed","false")});
+    $("model").innerHTML='<option value="">Choisis d\'abord la marque</option>'; $("model").disabled=true;
+    [].forEach.call($("days").children,function(c){c.setAttribute("aria-pressed","false")});
+    $("slots").innerHTML=""; $("note").value="";
+    renderPannes(); update(); $("done").hidden=true; $("flow").hidden=false;
+  };
+
+  // ---------- Notification ----------
+  var pushT;
+  function push(t,b){ $("push-t").textContent=t; $("push-b").textContent=b; var p=$("push"); p.classList.add("show"); clearTimeout(pushT); pushT=setTimeout(function(){p.classList.remove("show")},5200); }
+  $("push").onclick=function(){ this.classList.remove("show"); location.hash="pro"; };
+
+  // ---------- Stockage (démo locale) ----------
+  function load(){ try{ return JSON.parse(localStorage.getItem("svm_rdv")||"[]") }catch(e){ return [] } }
+  function save(l){ try{ localStorage.setItem("svm_rdv",JSON.stringify(l)) }catch(e){} }
+  function notifOn(){ try{ return localStorage.getItem("svm_notif")!=="off" }catch(e){ return true } }
+
+  // ---------- Espace SVM ----------
+  function examples(){
+    var t=new Date(); t.setHours(0,0,0,0);
+    var t1=new Date(t); t1.setDate(t.getDate()+1);
+    return [
+      {id:"e1",day:dayKey(t),ts:new Date(t).setHours(14),h:14,who:"Yanis",model:"iPhone 13",panne:"Écran cassé",prix:149,prixTxt:"149 €",lieu:"Paris 11e",st:"confirme",ex:true},
+      {id:"e2",day:dayKey(t),ts:new Date(t).setHours(19),h:19,who:"Sarah",model:"Galaxy S23",panne:"Batterie",prix:79,prixTxt:"79 €",lieu:"Saint-Denis",st:"nouveau",ex:true},
+      {id:"e3",day:dayKey(t),ts:new Date(t).setHours(23),h:23,who:"Mehdi",model:"iPhone 14 Pro",panne:"Écran cassé",prix:259,prixTxt:"259 €",lieu:"Point de rendez-vous",st:"nouveau",ex:true},
+      {id:"e4",day:dayKey(t1),ts:new Date(t1).setHours(10),h:10,who:"Clara",model:"iPhone 15",panne:"Vitre arrière",prix:139,prixTxt:"139 €",lieu:"Montreuil",st:"confirme",ex:true}
+    ];
+  }
+  var exState={};
+  function renderPro(){
+    var mine=load(), all=mine.concat(examples().map(function(e){ if(exState[e.id]) e.st=exState[e.id]; return e; }));
+    all.sort(function(a,b){return a.ts-b.ts});
+    var today=dayKey(new Date());
+    $("k-today").textContent=all.filter(function(a){return a.day===today}).length;
+    $("k-new").textContent=all.filter(function(a){return a.st==="nouveau"}).length;
+    $("k-ca").textContent=all.filter(function(a){return a.st!=="termine"}).reduce(function(s,a){return s+(a.prix||0)},0)+" €";
+    var box=$("agenda"); box.innerHTML="";
+    var byDay={}; all.forEach(function(a){(byDay[a.day]=byDay[a.day]||[]).push(a)});
+    var keys=Object.keys(byDay).sort(function(a,b){return byDay[a][0].ts-byDay[b][0].ts});
+    if(!keys.length){ box.innerHTML='<p class="empty">Aucun rendez-vous pour l\'instant. Les réservations faites sur le site arrivent ici.</p>'; return; }
+    keys.forEach(function(k){
+      var d=new Date(byDay[k][0].ts), sec=document.createElement("div");
+      var lab = k===today ? "Aujourd'hui" : JOURS[d.getDay()]+" "+d.getDate()+" "+MOIS[d.getMonth()];
+      sec.innerHTML='<h3>'+lab+'</h3>'; var list=document.createElement("div"); list.className="appts";
+      byDay[k].forEach(function(a){
+        var el=document.createElement("div"); el.className="appt st-"+a.st;
+        var stPill = a.st==="nouveau"?'<span class="pill new">À confirmer</span>':a.st==="confirme"?'<span class="pill ok">Confirmé</span>':'<span class="pill">Terminé</span>';
+        el.innerHTML='<div class="t">'+pad(a.h)+':00</div><div style="min-width:0"><div class="who"></div><div class="what"></div><div class="meta">'+stPill+'<span class="pill">'+esc(a.prixTxt)+'</span>'+(a.ex?'<span class="pill ex">Exemple</span>':'')+'</div><div class="acts"></div></div>';
+        el.querySelector(".who").textContent=a.who+(a.tel?" · "+a.tel:"");
+        el.querySelector(".what").textContent=a.model+" · "+a.panne+" · "+a.lieu;
+        var acts=el.querySelector(".acts");
+        if(a.st==="nouveau") acts.appendChild(btn("Confirmer",function(){setSt(a,"confirme")}));
+        if(a.st!=="termine") acts.appendChild(btn("Marquer terminé",function(){setSt(a,"termine")}));
+        list.appendChild(el);
+      });
+      sec.appendChild(list); box.appendChild(sec);
+    });
+  }
+  function btn(t,f){var b=document.createElement("button");b.type="button";b.textContent=t;b.onclick=f;return b}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function setSt(a,st){ if(a.ex){exState[a.id]=st} else { var l=load(); l.forEach(function(x){if(x.id===a.id)x.st=st}); save(l);} renderPro(); }
+  $("notif-sw").setAttribute("aria-checked",notifOn()?"true":"false");
+  $("notif-sw").onclick=function(){ var on=this.getAttribute("aria-checked")!=="true"; this.setAttribute("aria-checked",on?"true":"false"); try{localStorage.setItem("svm_notif",on?"on":"off")}catch(e){} if(on) push("Notifications activées","Tu seras prévenu à chaque nouvelle réservation."); };
+
+  // ---------- Vues ----------
+  function route(){
+    var pro = location.hash==="#pro";
+    $("pro").hidden=!pro; $("site").hidden=pro; $("dock").hidden=pro; $("top").hidden=pro;
+    if(pro){ renderPro(); window.scrollTo(0,0); }
+  }
+  window.addEventListener("hashchange",route);
+
+  // ---------- Boutique & TikTok ----------
+  SHOP.forEach(function(s){
+    var el=document.createElement("article"); el.className="item";
+    el.innerHTML='<div class="pic"><span class="mini"><i style="background:'+s.c+'"></i></span><span class="tag">'+eur(s.p)+'</span></div><h3>'+s.nm+'</h3><p>'+s.st+'</p><a class="btn btn-ghost" href="https://www.snapchat.com/add/svm.phone" target="_blank" rel="noopener">Réserver sur Snap</a>';
+    $("shop").appendChild(el);
+  });
+  REELS.forEach(function(r){
+    var a=document.createElement("a"); a.className="reel"; a.href="https://www.tiktok.com/@svm.phone"; a.target="_blank"; a.rel="noopener"; a.style.background=r.c;
+    a.innerHTML='<span class="play"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg></span><b>'+r.t+'</b><small>@svm.phone</small>';
+    $("reels").appendChild(a);
+  });
+
+  // ---------- Hero ----------
+  $("phone").onclick=function(){
+    var c=$("cracks"), s=document.querySelector(".scan"), n=document.querySelector(".notif");
+    [c,s,n].forEach(function(e){e.style.animation="none"; void e.offsetWidth; e.style.animation="";});
+  };
+  document.querySelectorAll('[data-focus="brand"]').forEach(function(a){ a.addEventListener("click",function(){ setTimeout(function(){ var b=$("brands").firstChild; if(b) b.focus({preventScroll:true}); },450); }); });
+
+  renderPannes(); update(); route();
+})();
+</script>
+
+</body>
+</html>
