@@ -114,7 +114,7 @@ RANG_CANAL = {"Email": 0, "Instagram": 1, "SMS": 2, "Facebook": 3, "Téléphone"
 # Overpass refuse les faux navigateurs : il veut qu'un outil se présente comme tel.
 UA_OSM = "OrbeUsine/1.0 (https://github.com/%s; societe.orbe@gmail.com)" % DEPOT
 
-CONSIGNE_MSG = """Tu écris pour Oscar, du studio digital ORBE à Bordeaux, le premier message à un commerçant pour qui il a préparé un site. Vouvoiement, chaleureux, pas vendeur. Email : 5 à 8 lignes ; SMS, Instagram ou Facebook : 4 lignes maximum. Contenu : un détail VRAI tiré de la fiche qui montre qu'Oscar connaît le commerce ; Oscar a pris l'initiative de lui préparer un site sur mesure, à voir ici : {LIEN} (écris exactement {LIEN}) ; il peut le mettre en ligne à son nom, avec ses propres photos, s'il lui plaît ; il peut simplement répondre « non merci » et ne sera pas relancé. Signature : « Oscar · ORBE, studio digital » (pour un email, ajoute « societe.orbe@gmail.com · 06 76 05 84 80 »). Pas de prix. Réponds uniquement en JSON : {"objet": "objet court et personnel pour un email, sinon vide", "message": "le message"}"""
+CONSIGNE_MSG = """Tu écris pour Oscar, du studio digital ORBE à Bordeaux, le premier message à un commerçant pour qui il a préparé un site. Vouvoiement, chaleureux, pas vendeur. Email : 5 à 8 lignes ; SMS, Instagram ou Facebook : 4 lignes maximum. Contenu : un détail VRAI tiré de la fiche qui montre qu'Oscar connaît le commerce ; Oscar a pris l'initiative de lui préparer un site sur mesure, à voir ici : {LIEN} (écris exactement {LIEN}) ; il peut le mettre en ligne à son nom, avec ses propres photos, s'il lui plaît ; il peut simplement répondre « non merci » et ne sera pas relancé. Signature : « Oscar · ORBE, studio digital » (pour un email, ajoute « societe.orbe@gmail.com · 06 72 61 66 09 »). Pas de prix. Réponds uniquement en JSON : {"objet": "objet court et personnel pour un email, sinon vide", "message": "le message"}"""
 
 
 class ErreurIA(Exception):
@@ -553,7 +553,7 @@ a:focus-visible{outline:2px solid var(--encre);outline-offset:4px}
 <header><small>ORBE, studio digital · pour %(nom)s%(ville)s</small><h1>%(n)d propositions de site</h1>
 <p>Trois ambiances, trois façons de présenter votre travail. Cliquez sur une proposition pour la voir en grand, sur ordinateur comme sur téléphone. Les photos sont des exemples : elles seront remplacées par les vôtres.</p></header>
 <main>%(cartes)s</main>
-<footer>Propositions réalisées par ORBE, studio digital · societe.orbe@gmail.com · 06 76 05 84 80</footer>
+<footer>Propositions réalisées par ORBE, studio digital · societe.orbe@gmail.com · 06 72 61 66 09</footer>
 </body></html>""" % {"nom": rendu.esc(nom), "ville": (" à " + rendu.esc(ville)) if ville else "", "n": len(maquettes), "cartes": cartes}
 
 
