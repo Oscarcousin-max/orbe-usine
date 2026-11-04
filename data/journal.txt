@@ -1,167 +1,119 @@
-02:17:50 Demande : 20 site(s)
-02:17:50 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-02:17:50 Zones : Gironde, Charente, Pyrénées-Atlantiques, Vienne
-02:17:51     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-02:22:20     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-02:26:45     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-02:26:54     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
-02:27:03     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-02:27:03   opticiens et créateurs de lunettes / Gironde + Charente + Pyrénées-Atlantiques : carte illisible (HTTP Error 502: Bad Gateway)
-02:27:03     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-02:29:07     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
-02:31:11     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-02:31:43 Carte : opticiens et créateurs de lunettes — 4 trouvés, 0 sans site noté et joignables
-02:33:27 Carte : librairies, boutiques cadeaux, créateurs — 101 trouvés, 49 sans site noté et joignables
-02:33:27     modèles groq : whisper-large-v3-turbo, canopylabs/orpheus-arabic-saudi, whisper-large-v3, openai/gpt-oss-20b, allam-2-7b, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-safeguard-20b, meta-llama/llama-prompt-guard-2-22m, qwen/qwen3.8-27b, openai/gpt-oss-120b
-02:33:37   24 retenus comme haut de gamme
-02:35:19 Carte : architectes, paysagistes, designers — 16 trouvés, 1 sans site noté et joignables
-02:37:24 Carte : studios de yoga, pilates et coachs sportifs — 64 trouvés, 4 sans site noté et joignables
-02:37:31   0 retenus comme haut de gamme
-02:40:34 Carte : tatoueurs et barbiers — 25 trouvés, 0 sans site noté et joignables
-02:42:13 Carte : plombiers, électriciens et artisans du bâtiment — 74 trouvés, 21 sans site noté et joignables
-02:42:21   5 retenus comme haut de gamme
-02:42:21 34 candidats
-02:42:21 Commerce : Quatre Saisons (Sauveterre-de-Béarn)
-02:42:52   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex-locale, facebook, instagram, mappy). — fabrication du site…
-02:42:52     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
-02:42:53     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-02:42:53     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:43:01     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-02:43:34   photos : 4 (Unsplash)
-02:43:41   prêt : https://oscarcousin-max.github.io/orbe-usine/quatre-saisons/
-02:43:41 Commerce : Groupe BCMI - Siège (?)
-02:43:48   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex-locale, hoodspot, infobel, justacote). — fabrication du site…
-02:43:49     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-02:43:49     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:44:14   photos : 4 (Unsplash)
-02:44:21   prêt : https://oscarcousin-max.github.io/orbe-usine/groupe-bcmi-siege/
-02:44:21 Commerce : Centre Aqualudique (Saint-Gervais-les-3-Clochers)
-02:44:39   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
-02:44:39     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:44:39     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:44:40     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
-02:44:40     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:44:40     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:44:48   3 textes écartés (faits non vérifiables), remplacés par des textes sobres : accroche, sous_titre, o1_t
-02:44:56   photos : 4 (Unsplash, Wikimedia Commons)
-02:45:03   prêt : https://oscarcousin-max.github.io/orbe-usine/centre-aqualudique/
-02:45:03 Commerce : Sud Atlantique Étanchéité (?)
-02:45:07   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
-02:45:07     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:45:15   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t, citation
-02:45:20   photos : 4 (Unsplash)
-02:45:27   prêt : https://oscarcousin-max.github.io/orbe-usine/sud-atlantique-etancheite/
-02:45:27 Commerce : Au Vieux Marché (Chinon)
-02:45:35   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex-locale, le-site-de, pagesjaunes). — fabrication du site…
-02:45:35     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:45:43   photos : 4 (Unsplash)
-02:45:51   prêt : https://oscarcousin-max.github.io/orbe-usine/au-vieux-marche/
-02:45:51 Commerce : Halle aux Sports (?)
-02:45:58   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement gouv, tourisme-brioudesudauvergne). — fabrication du site…
-02:45:58     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:46:06   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_t, e3_t
-02:46:06   photos : 4 (Unsplash, Wikimedia Commons)
-02:46:13   prêt : https://oscarcousin-max.github.io/orbe-usine/halle-aux-sports/
-02:46:13 Commerce : Avenir Brenne Chauffage (?)
-02:46:20   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex-locale, le-site-de, monartisan, pagesjaunes). — fabrication du site…
-02:46:20     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:46:27   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_t
-02:46:27   photos : 4 (Unsplash)
-02:46:34   prêt : https://oscarcousin-max.github.io/orbe-usine/avenir-brenne-chauffage/
-02:46:34 Commerce : Au Palais (Saint-Jean-de-Luz)
-02:46:36   écarté : Site trouvé : https://www.immobilierachat.fr/?nd=palais.fr&m=8161121919180
-02:46:36 Commerce : UDC Arrotxapea KKE (?)
-02:46:42   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
-02:46:42     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:46:50   photos : 4 (Unsplash, Wikimedia Commons)
-02:46:57   prêt : https://oscarcousin-max.github.io/orbe-usine/udc-arrotxapea-kke/
-02:46:57 Commerce : Brevier Laurent (Val-de-Cognac)
-02:47:04   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement gouv, monartisan, pappers, societe). — fabrication du site…
-02:47:04     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:47:11   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t
-02:47:11   photos : 4 (Unsplash)
-02:47:19   prêt : https://oscarcousin-max.github.io/orbe-usine/brevier-laurent/
-02:47:19 Commerce : La Chaise Longue (Saint-Pierre-d'Irube)
-02:47:20   écarté : Site trouvé : https://www.lachaiselongue.fr/
-02:47:20 Commerce : Complexe sportif (?)
-02:47:25   écarté : Site trouvé : https://complexesportifinfo.com/
-02:47:25 Commerce : Socarex Électricité (Magnac-sur-Touvre)
-02:47:30   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
-02:47:30     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:47:38   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t
-02:47:38   photos : 4 (Unsplash)
-02:47:46   prêt : https://oscarcousin-max.github.io/orbe-usine/socarex-electricite/
-02:47:46 Commerce : L'Avant-Propos (Hendaye)
-02:47:49   écarté : Site trouvé : https://www.avant-propos.fr/
-02:47:49 Commerce : Avenir Rénovation (Arzacq-Arraziguet)
-02:48:35   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement lagazettefrance, monartisan, pappers, societe). — fabrication du site…
-02:48:35     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:48:43   3 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2, e2_t, citation
-02:48:43   photos : 4 (Unsplash)
-02:48:51   prêt : https://oscarcousin-max.github.io/orbe-usine/avenir-renovation/
-02:48:51 Commerce : Bidartarak (Bidart)
-02:48:56   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex-locale, facebook, instagram). — fabrication du site…
-02:48:56     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:49:05   photos : 4 (Unsplash)
-02:49:13   prêt : https://oscarcousin-max.github.io/orbe-usine/bidartarak/
-02:49:13 Commerce : Presse de l'océan (Saint-Jean-de-Luz)
-02:49:26   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement 118000, cylex-locale, le-site-de, mappy). — fabrication du site…
-02:49:26     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:49:34   photos : 4 (Unsplash)
-02:49:41   prêt : https://oscarcousin-max.github.io/orbe-usine/presse-de-l-ocean/
-02:49:41 Commerce : Dorrea (Saint-Jean-de-Luz)
-02:49:53   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex-locale, e-pro, facebook, lagazettefrance). — fabrication du site…
-02:49:53     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:50:01   photos : 4 (Unsplash)
-02:50:09   prêt : https://oscarcousin-max.github.io/orbe-usine/dorrea/
-02:50:09 Commerce : Le Porte Plume (Saint-Jean-de-Luz)
-02:50:10   écarté : Site trouvé : https://porteplume.fr/
-02:50:10 Commerce : À livre ouvert (?)
-02:50:16   écarté : Site trouvé : https://alivreouvert.blog/
-02:50:16 Commerce : Plein Ciel (?)
-02:50:42   écarté : Site trouvé : https://pleinciel.com/views/index.html
-02:50:42 Commerce : D20 Juegos (?)
-02:50:44   écarté : Site trouvé : https://d20juegos.com/
-02:50:44 Commerce : Liber Mineralis (?)
-02:50:49   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement 118000, cylex-locale, facebook, pagesjaunes). — fabrication du site…
-02:50:49     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:50:57   photos : 4 (Unsplash)
-02:51:05   prêt : https://oscarcousin-max.github.io/orbe-usine/liber-mineralis/
-02:51:05 Commerce : L'envers du Décor (Marmande)
-02:51:08   écarté : Site trouvé : https://envers-decor.com/
-02:51:08 Commerce : Oh ! Livres vagabonds (?)
-02:51:19   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook, instagram, mappy, pagesjaunes). — fabrication du site…
-02:51:19     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:51:27   photos : 4 (Unsplash)
-02:51:35   prêt : https://oscarcousin-max.github.io/orbe-usine/oh-livres-vagabonds/
-02:51:35 Commerce : By Armelle (?)
-02:51:37   écarté : Site trouvé : https://www.armelle.com/
-02:51:37 Commerce : Ipar Haizea (?)
-02:51:38   écarté : Site trouvé : http://iparhaizea.com/
-02:51:38 Commerce : Pinturas Iturrama (Pamplona / Iruña)
-02:51:44   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex, facebook). — fabrication du site…
-02:51:44     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:51:51   photos : 4 (Unsplash)
-02:51:58   prêt : https://oscarcousin-max.github.io/orbe-usine/pinturas-iturrama/
-02:51:58 Commerce : Quai des Livres (?)
-02:52:00   écarté : Site trouvé : https://quaideslivres.fr/
-02:52:00 Commerce : El Pañuelico de Hemingway (?)
-02:52:06   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex, facebook). — fabrication du site…
-02:52:06     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:52:14   photos : 4 (Unsplash)
-02:52:21   prêt : https://oscarcousin-max.github.io/orbe-usine/el-panuelico-de-hemingway/
-02:52:21 Commerce : Un océan d'idées (?)
-02:52:26   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
-02:52:26     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:52:34   photos : 4 (Unsplash)
-02:52:41   prêt : https://oscarcousin-max.github.io/orbe-usine/un-ocean-d-idees/
-02:52:41 Commerce : Jenny'Mag (?)
-02:52:46   écarté : Site trouvé : https://jennymag.com/
-02:52:46 Commerce : Egoki Papelería Técnica (Pamplona / Iruña)
-02:52:53   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
-02:52:53     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-02:53:01   photos : 4 (Unsplash)
-02:53:08   prêt : https://oscarcousin-max.github.io/orbe-usine/egoki-papeleria-tecnica/
-02:53:08 Moteurs de recherche : DuckDuckGo 23 ok / 0 bloqué, Bing 23 ok / 0 bloqué, Mojeek 0 ok / 0 bloqué
-02:53:08 Écartés car déjà un site : 13 · fermés : 0 · non vérifiables : 0
-02:53:08 Terminé : 20 site(s) prêt(s).
+12:04:24 Demande : 20 site(s)
+12:04:24 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+12:04:24 Zones : Gironde, Haute-Vienne, Corrèze, Creuse
+12:04:25     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:06:37     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:11:06     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+12:11:39     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:13:41     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:18:10     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+12:18:34 Carte : librairies, boutiques cadeaux, créateurs — 49 trouvés, 18 sans site noté et joignables
+12:18:34     modèles groq : canopylabs/orpheus-arabic-saudi, canopylabs/orpheus-v1-english, openai/gpt-oss-safeguard-20b, allam-2-7b, meta-llama/llama-prompt-guard-2-86m, qwen/qwen3.8-27b, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-20b, whisper-large-v3, openai/gpt-oss-120b, whisper-large-v3-turbo
+12:18:42   8 retenus comme haut de gamme
+12:18:42     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:23:10     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+12:27:39     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+12:27:48     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+12:29:40 Carte : architectes, paysagistes, designers — 5 trouvés, 1 sans site noté et joignables
+12:31:05 Carte : studios de yoga, pilates et coachs sportifs — 30 trouvés, 4 sans site noté et joignables
+12:31:11   1 retenus comme haut de gamme
+12:31:12     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:35:25     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:37:24     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:37:33     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+12:39:35     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:44:05     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+12:47:58 Carte : tatoueurs et barbiers — 15 trouvés, 0 sans site noté et joignables
+12:49:39 Carte : plombiers, électriciens et artisans du bâtiment — 38 trouvés, 17 sans site noté et joignables
+12:49:46   6 retenus comme haut de gamme
+12:49:47     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:54:08     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:57:50 Carte : poseurs de sols, parqueteurs et menuisiers — 21 trouvés, 6 sans site noté et joignables
+12:57:57   1 retenus comme haut de gamme
+12:57:57 17 candidats
+12:57:57 Commerce : La Petite Librairie Sauvage (La Croisille-sur-Briance)
+12:58:06   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement autour-de-moi, facebook, petitfute, restaurants-de-france). — fabrication du site…
+12:58:06     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview, gemini-2.5-computer-use-preview-10-2025
+12:58:10     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:58:33     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:59:24   photos : 4 (Unsplash)
+12:59:32   prêt : https://oscarcousin-max.github.io/orbe-usine/la-petite-librairie-sauvage/
+12:59:32 Commerce : Parinet Parcs et Jardins (?)
+12:59:39   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+13:00:05     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:00:06     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:00:14     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:01:02   photos : 4 (Unsplash)
+13:01:10   prêt : https://oscarcousin-max.github.io/orbe-usine/parinet-parcs-et-jardins/
+13:01:10 Commerce : Joie De Vivre (?)
+13:01:12   écarté : Site trouvé : https://joiedevivre.fr/
+13:01:12 Commerce : Boussac Électricité (Boussac)
+13:01:15   écarté : Site trouvé : https://www.boussac.fr/
+13:01:15 Commerce : FL Plac (Plassac)
+13:01:23   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex-locale, mappy, obat, pagesjaunes). — fabrication du site…
+13:01:27     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:02:00     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:02:07     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:02:39   photos : 4 (Unsplash)
+13:02:47   prêt : https://oscarcousin-max.github.io/orbe-usine/fl-plac/
+13:02:47 Commerce : La conciergerie du Pont Colombier (Veyrac)
+13:02:55   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement cylex-locale, facebook, lefigaro, societe). — fabrication du site…
+13:03:31     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:03:31     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:04:13     gemini/gemini-3.6-flash : Remote end closed connection without response
+13:04:44     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:04:44     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+13:04:45     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:04:46     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:05:19   photos : 4 (Unsplash)
+13:05:27   prêt : https://oscarcousin-max.github.io/orbe-usine/la-conciergerie-du-pont-colombier/
+13:05:27 Commerce : Touterrain (?)
+13:05:33   écarté : Site trouvé : https://touterrain.bandcamp.com/
+13:05:33 Commerce : La Cabane de Nanou (?)
+13:05:36   écarté : Site trouvé : https://www.lacabanedenanou.fr/
+13:05:36 Commerce : Litaud Jean François (?)
+13:05:44   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement annuaire-inverse-france, cylex-locale, gouv, petitfute). — fabrication du site…
+13:05:48     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:05:51     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:07:10     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:07:30     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:07:34     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:08:54     gemini/gemini-3.5-flash-lite : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:09:05   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e1_d
+13:09:10   photos : 4 (Unsplash)
+13:09:18   prêt : https://oscarcousin-max.github.io/orbe-usine/litaud-jean-francois/
+13:09:18 Commerce : Librairie d'Elfes (Aixe-sur-Vienne)
+13:09:29   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook, pagesjaunes, wikihoraires). — fabrication du site…
+13:09:38     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:09:41     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:13:30   photos : 4 (Unsplash)
+13:13:37   prêt : https://oscarcousin-max.github.io/orbe-usine/librairie-d-elfes/
+13:13:37 Commerce : Jean Paul Betoulle (?)
+13:13:45   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement lepopulaire, linkedin, pappers). — fabrication du site…
+13:15:53     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:17:02     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:17:20   photos : 4 (Unsplash)
+13:17:27   prêt : https://oscarcousin-max.github.io/orbe-usine/jean-paul-betoulle/
+13:17:27 Commerce : Librairie Préférences (Tulle)
+13:18:13   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement autour-de-moi, cylex-locale, facebook, pagesjaunes). — fabrication du site…
+13:18:14     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:18:19     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:18:44   photos : 4 (Unsplash)
+13:18:51   prêt : https://oscarcousin-max.github.io/orbe-usine/librairie-preferences/
+13:18:51 Commerce : SAS Chatonnet (?)
+13:19:03   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement autour-de-moi, cylex-locale, le-site-de, pagesjaunes). — fabrication du site…
+13:19:53     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:19:54     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:20:17   photos : 4 (Unsplash)
+13:20:24   prêt : https://oscarcousin-max.github.io/orbe-usine/sas-chatonnet/
+13:20:24 Commerce : Book Lovers (?)
+13:20:58   écarté : Site trouvé : https://www.booklovers.fr/
+13:20:58 Commerce : Moreau (?)
+13:21:01   écarté : Site trouvé : https://moreau.fr/
+13:21:01 Commerce : Gimme Sound (?)
+13:21:07   écarté : Site trouvé : https://www.gimme-sound.com/
+13:21:07 Commerce : Atelier Claire-Marie Steinmetz (?)
+13:21:08   écarté : Site trouvé : https://clairemariesteinmetz.fr/
+13:21:08 Moteurs de recherche : DuckDuckGo 12 ok / 0 bloqué, Bing 12 ok / 0 bloqué, Mojeek 0 ok / 0 bloqué
+13:21:08 Écartés car déjà un site : 8 · fermés : 0 · non vérifiables : 0
+13:21:08 Terminé : 9 site(s) prêt(s).
