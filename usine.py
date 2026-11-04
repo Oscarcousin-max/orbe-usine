@@ -47,7 +47,7 @@ if COMMANDE.exists():
     try:
         _cmd = json.loads(COMMANDE.read_text("utf-8"))
         NOMBRE = max(0, min(80, int(_cmd.get("nombre", NOMBRE))))
-        CLIENTS = [c for c in (_cmd.get("clients") or []) if isinstance(c, dict) and c.get("nom")][:5]
+        CLIENTS = [c for c in (_cmd.get("clients") or []) if isinstance(c, dict) and c.get("nom")][:20]
     except Exception:
         pass
 PAUSE = float(os.environ.get("USINE_PAUSE", "6"))
@@ -59,20 +59,19 @@ BASE_SITE = os.environ.get("USINE_BASE", "https://%s.github.io/%s/" % (DEPOT.spl
 
 # Chaque secteur : le nom lisible, puis le filtre OpenStreetMap qui va le chercher.
 # Les noms doivent rester identiques à ceux de rendu.SECTEURS (c'est eux qui choisissent le modèle de site).
+# Coiffeurs, instituts de beauté et boulangeries retirés (nov. 2026) : ils ne sont jamais intéressés.
 SECTEURS = [
     ("domaines viticoles et châteaux familiaux", '["craft"="winery"]'),
     ("caves à vin et bars à vin", '["shop"="wine"]'),
     ("restaurants indépendants de qualité", '["amenity"="restaurant"]'),
     ("chambres d'hôtes et gîtes de charme", '["tourism"~"^(guest_house|chalet|apartment)$"]'),
     ("fleuristes créateurs", '["shop"="florist"]'),
-    ("pâtissiers, chocolatiers, épiceries fines", '["shop"~"^(chocolate|confectionery|pastry|deli|cheese|greengrocer)$"]'),
+    ("pâtissiers, chocolatiers, épiceries fines", '["shop"~"^(chocolate|confectionery|deli|cheese|greengrocer)$"]'),
     ("artisans d'art", '["craft"~"^(cabinet_maker|upholsterer|blacksmith|pottery|carpenter|stonemason|glaziery|sculptor|painter)$"]'),
     ("décorateurs, antiquaires, galeries", '["shop"~"^(interior_decoration|antiques|art|furniture|frame)$"]'),
     ("bijoutiers, joailliers, horlogers", '["shop"~"^(jewelry|watches)$"]'),
-    ("instituts de beauté et coiffeurs", '["shop"~"^(beauty|hairdresser)$"]'),
     ("traiteurs et photographes", '["craft"~"^(caterer|photographer)$"]'),
     ("boutiques de mode et maroquinerie", '["shop"~"^(boutique|clothes|bag|shoes|leather)$"]'),
-    ("boulangeries et artisans du pain", '["shop"="bakery"]'),
     ("boucheries, poissonneries, produits du terroir", '["shop"~"^(butcher|seafood|farm|beverages|coffee|tea|spices)$"]'),
     ("cafés et salons de thé", '["amenity"~"^(cafe|ice_cream)$"]'),
     ("hôtels de charme", '["tourism"~"^(hotel|hostel|camp_site)$"]'),
@@ -81,8 +80,9 @@ SECTEURS = [
     ("librairies, boutiques cadeaux, créateurs", '["shop"~"^(books|gift|stationery|craft|art_supplies|music|toys)$"]'),
     ("architectes, paysagistes, designers", '["office"~"^(architect|interior_designer|designer)$"]|["craft"~"^(gardener|landscaper)$"]'),
     ("studios de yoga, pilates et coachs sportifs", '["leisure"~"^(fitness_centre|sports_centre|dance)$"]|["sport"~"^(yoga|pilates|dance)$"]'),
-    ("tatoueurs et barbiers", '["shop"~"^(tattoo|barber)$"]|["craft"="tattoo"]'),
+    ("tatoueurs et barbiers", '["shop"="tattoo"]|["craft"="tattoo"]'),  # barbiers retirés (nov. 2026) : jamais intéressés
     ("plombiers, électriciens et artisans du bâtiment", '["craft"~"^(plumber|electrician|hvac|heating_engineer|roofer|painter|plasterer|tiler|carpenter|window_construction|insulation)$"]'),
+    ("réparateurs de téléphone et informatique", '["shop"~"^(mobile_phone|computer)$"]|["craft"="electronics_repair"]'),
     ("poseurs de sols, parqueteurs et menuisiers", '["craft"~"^(floorer|parquet_layer|carpenter|joiner|window_construction)$"]|["shop"~"^(flooring|carpet)$"]'),
 ]
 # La Gironde à chaque passage (c'est chez Oscar), plus un département voisin qui tourne.

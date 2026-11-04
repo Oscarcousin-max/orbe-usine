@@ -43,6 +43,7 @@ SECTEURS = {
     "studios de yoga, pilates et coachs sportifs": ("bijou", "Studio", "SportsActivityLocation", False),
     "tatoueurs et barbiers": ("atelier", "Atelier", "HealthAndBeautyBusiness", False),
     "plombiers, électriciens et artisans du bâtiment": ("atelier", "Artisan du bâtiment", "HomeAndConstructionBusiness", False),
+    "réparateurs de téléphone et informatique": ("atelier", "Réparation téléphone", "ElectronicsStore", False),
     "poseurs de sols, parqueteurs et menuisiers": ("atelier", "Sols et menuiseries", "HomeAndConstructionBusiness", False),
 }
 MENU_SUR = {

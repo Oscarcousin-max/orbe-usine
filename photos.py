@@ -49,6 +49,8 @@ RECHERCHES = {
     "studios de yoga, pilates et coachs sportifs": ["yoga studio", "pilates", "fitness coach", "yoga class"],
     "tatoueurs et barbiers": ["barber shop", "barber haircut", "tattoo artist", "barbershop interior"],
     "plombiers, électriciens et artisans du bâtiment": ["plumber at work", "electrician working", "bathroom renovation", "modern bathroom"],
+    "réparateurs de téléphone et informatique": ["smartphone repair technician", "phone screen replacement", "electronics repair workbench",
+                                                 "mobile phone repair shop", "repairing smartphone tools"],
     # Des gens qui travaillent (pose de terrasses, de parquet, menuiserie) : pas des salons, pas des paysages.
     "poseurs de sols, parqueteurs et menuisiers": ["installing wooden decking", "carpenter building wooden terrace", "deck builders working",
                                                    "laying parquet floor", "floor installer working", "carpenter at work wood",

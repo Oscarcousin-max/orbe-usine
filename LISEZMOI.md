@@ -59,7 +59,7 @@ La liste complète est dans `docs/usine.json`, et le journal du dernier passage 
 - Le rythme est la ligne `cron` de `.github/workflows/usine.yml`.
 - La zone est `MAISON` (la Gironde, prise à chaque fois) et `VOISINS`
   (les 11 autres départements, pris à tour de rôle), en haut de `usine.py`.
-- Les 23 secteurs cherchés (dont plombiers, électriciens et artisans du bâtiment) sont la liste `SECTEURS`, juste en dessous.
+- Les 23 secteurs cherchés (dont les réparateurs de téléphone ; plus de coiffeurs, d'instituts de beauté ni de boulangeries depuis novembre 2026) sont la liste `SECTEURS`, juste en dessous.
 - Les photos cherchées pour chaque secteur sont la liste `RECHERCHES` de `photos.py`.
 
 ## Le design (modèle v2, octobre 2026)
