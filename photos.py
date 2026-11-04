@@ -55,6 +55,9 @@ RECHERCHES = {
     "poseurs de sols, parqueteurs et menuisiers": ["installing wooden decking", "carpenter building wooden terrace", "deck builders working",
                                                    "laying parquet floor", "floor installer working", "carpenter at work wood",
                                                    "wooden terrace decking", "hardwood floor installation"],
+    "garages et carrosseries indépendants": ["car mechanic at work", "auto repair garage", "mechanic repairing car engine", "car body repair"],
+    "toiletteurs pour chiens": ["dog grooming", "dog groomer at work", "dog bath grooming salon", "groomed dog"],
+    "services à domicile sur devis": ["gardener at work", "hedge trimming gardener", "house cleaning service", "handyman at work"],
 }
 
 _CACHE = {}

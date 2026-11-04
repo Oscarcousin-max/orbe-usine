@@ -57,6 +57,8 @@ La liste complète est dans `docs/usine.json`, et le journal du dernier passage 
 ## Régler le rythme et la zone
 
 - Le rythme est la ligne `cron` de `.github/workflows/usine.yml`.
+- **15 nouveaux commerces par jour au plus** (novembre 2026) : réglage `MAX_PAR_JOUR` en haut de `usine.py`. Les passages de la nuit se partagent ce quota ; une commande à la main n'est pas limitée.
+- **Niches à l'essai** (liste `NICHES_TEST`, juste sous `SECTEURS`) : garages et carrosseries, toiletteurs pour chiens, services à domicile sur devis. Chaque passage en prend une seule, à tour de rôle, à côté des secteurs habituels.
 - La zone est `MAISON` (la Gironde, prise à chaque fois) et `VOISINS`
   (les 11 autres départements, pris à tour de rôle), en haut de `usine.py`.
 - Les 23 secteurs cherchés (dont les réparateurs de téléphone ; plus de coiffeurs, d'instituts de beauté ni de boulangeries depuis novembre 2026) sont la liste `SECTEURS`, juste en dessous.

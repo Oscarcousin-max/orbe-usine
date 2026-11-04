@@ -43,6 +43,7 @@ URL = {  # modifiables seulement pour les tests
 COMMANDE = ICI / "data" / "commande.json"  # « lance N sites maintenant » : déposé par Claude ou par toi, lu puis effacé
 NOMBRE = max(0, min(80, int(os.environ.get("NOMBRE", "20") or 0)))
 CLIENTS = []  # « fais N maquettes différentes pour CE commerce » : liste "clients" de la commande
+PAR_COMMANDE = COMMANDE.exists()
 if COMMANDE.exists():
     try:
         _cmd = json.loads(COMMANDE.read_text("utf-8"))
@@ -85,6 +86,16 @@ SECTEURS = [
     ("réparateurs de téléphone et informatique", '["shop"~"^(mobile_phone|computer)$"]|["craft"="electronics_repair"]'),
     ("poseurs de sols, parqueteurs et menuisiers", '["craft"~"^(floorer|parquet_layer|carpenter|joiner|window_construction)$"]|["shop"~"^(flooring|carpet)$"]'),
 ]
+# Nouvelles niches à l'essai (nov. 2026) : des métiers où le site sert à prendre des rendez-vous ou des devis.
+# Chaque passage en prend UNE, à tour de rôle, à côté des secteurs habituels : elles ne prennent pas toute la place.
+NICHES_TEST = [
+    ("garages et carrosseries indépendants", '["shop"~"^(car_repair|tyres)$"]|["craft"="car_repair"]'),
+    ("toiletteurs pour chiens", '["shop"="pet_grooming"]'),
+    ("services à domicile sur devis", '["craft"~"^(gardener|handyman|window_cleaner|cleaning)$"]|["office"="moving_company"]|["shop"="moving_company"]'),
+]
+# Rythme (nov. 2026) : 15 nouveaux commerces par jour au plus, quel que soit le nombre de passages de la nuit.
+# Ne s'applique qu'aux passages automatiques (la nuit, ou après une modification du code) : une commande à la main (commande.json, Run workflow) fait ce qu'on lui demande.
+MAX_PAR_JOUR = int(os.environ.get("MAX_PAR_JOUR", "15") or 15)
 # La Gironde à chaque passage (c'est chez Oscar), plus un département voisin qui tourne.
 # Interroger toute la Nouvelle-Aquitaine d'un coup ramènerait toujours les mêmes
 # commerces, les premiers de la liste : en découpant, chaque nuit explore ailleurs.
@@ -613,6 +624,7 @@ def fabriquer_client(c, noms):
 
 
 def main():
+    global NOMBRE
     if not (CLES["gemini"] or CLES["groq"]):
         sys.exit("Il manque la clé GEMINI_API_KEY (ou GROQ_API_KEY) dans les secrets du dépôt.")
     DOCS.mkdir(parents=True, exist_ok=True)
@@ -640,14 +652,33 @@ def main():
         LISTE.write_text(json.dumps(liste, ensure_ascii=False, indent=1), "utf-8")
     if os.environ.get("REFAIRE", "") == "1":
         refaire_recents(liste)
-    if NOMBRE == 0:  # simple mise à jour du design des sites récents
+    if os.environ.get("GITHUB_EVENT_NAME") in ("schedule", "push") and not PAR_COMMANDE:
+        # Une « journée » d'usine va de midi à midi (heure de Paris) : la nuit et le passage de fin de matinée comptent ensemble.
+        from datetime import timedelta
+        from zoneinfo import ZoneInfo
+        def journee(t):
+            return (t.astimezone(ZoneInfo("Europe/Paris")) - timedelta(hours=12)).date()
+        jour = journee(datetime.now(timezone.utc))
+        deja = 0
+        for x in liste.get("items", []):
+            try:
+                quand = datetime.strptime(x.get("cree_le", ""), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            except Exception:
+                continue
+            if x.get("source") != "commande" and journee(quand) == jour:
+                deja += 1
+        if NOMBRE > MAX_PAR_JOUR - deja:
+            NOMBRE = max(0, MAX_PAR_JOUR - deja)
+            journal("Rythme : %d déjà faits aujourd'hui, %d au plus par jour → %d pour ce passage" % (deja, MAX_PAR_JOUR, NOMBRE))
+    if NOMBRE == 0:  # simple mise à jour du design des sites récents (ou quota du jour atteint)
         LISTE.write_text(json.dumps(liste, ensure_ascii=False, indent=1), "utf-8")
-        journal("Aucun nouveau site demandé : seulement les sites récents refaits.")
+        journal("Aucun nouveau site pour ce passage : seulement les sites récents refaits.")
         return
     # Un « tour » toutes les 2 h : chaque passage (il y en a plusieurs la nuit) prend d'autres secteurs et d'autres départements.
     tour = int(time.time() // 7200)
     n_sect = max(6, min(len(SECTEURS), -(-NOMBRE * 2 // 9)))  # ~11 secteurs pour 50 sites
-    secteurs = [SECTEURS[(tour * 5 + k) % len(SECTEURS)] for k in range(n_sect)]
+    secteurs = [SECTEURS[(tour * 5 + k) % len(SECTEURS)] for k in range(n_sect - 1)]
+    secteurs.append(NICHES_TEST[tour % len(NICHES_TEST)])  # une niche à l'essai par passage
     n_voisins = 3 if NOMBRE <= 30 else 6
     voisins = [VOISINS[(tour * 3 + k) % len(VOISINS)] for k in range(n_voisins)]
     zones = [MAISON] + voisins
