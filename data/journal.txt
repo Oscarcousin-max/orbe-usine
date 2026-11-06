@@ -1,4 +1,159 @@
-02:23:48 Demande : 20 site(s)
-02:23:48 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-02:23:48 Rythme : 15 déjà faits aujourd'hui, 15 au plus par jour → 0 pour ce passage
-02:23:48 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
+12:03:49 Demande : 20 site(s)
+12:03:49 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+12:03:49 Rythme : 0 déjà faits aujourd'hui, 15 au plus par jour → 15 pour ce passage
+12:03:49 Zones : Gironde, Lot-et-Garonne, Charente, Pyrénées-Atlantiques
+12:05:18 Carte : opticiens et créateurs de lunettes — 51 trouvés, 5 sans site noté et joignables
+12:05:18     modèles groq : whisper-large-v3, meta-llama/llama-prompt-guard-2-86m, canopylabs/orpheus-arabic-saudi, canopylabs/orpheus-v1-english, openai/gpt-oss-120b, qwen/qwen3.8-27b, meta-llama/llama-prompt-guard-2-22m, allam-2-7b, whisper-large-v3-turbo, openai/gpt-oss-safeguard-20b, openai/gpt-oss-20b
+12:05:25   1 retenus comme haut de gamme
+12:06:15     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:10:44     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+12:13:09     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:13:18     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+12:15:09 Carte : librairies, boutiques cadeaux, créateurs — 96 trouvés, 27 sans site noté et joignables
+12:15:18   15 retenus comme haut de gamme
+12:16:15     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:20:43     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+12:25:00     carte overpass.private.coffee : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:25:52     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:26:52 Carte : architectes, paysagistes, designers — 17 trouvés, 3 sans site noté et joignables
+12:26:52     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:31:20     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+12:35:49     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+12:37:16 Carte : studios de yoga, pilates et coachs sportifs — 59 trouvés, 4 sans site noté et joignables
+12:37:23   0 retenus comme haut de gamme
+12:40:58 Carte : tatoueurs et barbiers — 26 trouvés, 2 sans site noté et joignables
+12:42:36     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:47:06     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+12:48:56 Carte : garages et carrosseries indépendants — 144 trouvés, 142 sans site noté et joignables
+12:49:05   23 retenus comme haut de gamme
+12:49:15   29 retenus comme haut de gamme
+12:49:23   13 retenus comme haut de gamme
+12:49:23 90 candidats
+12:49:23 Commerce : Medical Óptica Audición (Pamplona / Iruña)
+12:49:27   écarté : Site trouvé : https://medicaloptica.es/localizador
+12:49:27 Commerce : Le Coin des Poètes (Port-Sainte-Marie)
+12:49:34   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement instagram, wikihoraires). — fabrication du site…
+12:49:34     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview
+12:50:00     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:55:00     gemini/gemini-3.7-flash : The read operation timed out
+12:55:31   photos : 4 (Unsplash)
+12:55:38   prêt : https://oscarcousin-max.github.io/orbe-usine/le-coin-des-poetes/
+12:55:38 Commerce : SARL L'enclos Gascon (?)
+12:55:42   écarté : Site trouvé : https://www.lenclosgascon.fr/
+12:55:42 Commerce : Base ULM de Lavardac - Air Albret (?)
+12:55:46   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+13:00:46     gemini/gemini-3.8-flash : The read operation timed out
+13:05:46     gemini/gemini-3.7-flash : The read operation timed out
+13:06:06   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1, o3_d
+13:06:15   photos : 4 (Unsplash)
+13:06:22   prêt : https://oscarcousin-max.github.io/orbe-usine/base-ulm-de-lavardac-air-albret/
+13:06:22 Commerce : Dermapolis (?)
+13:06:26   écarté : Site trouvé : https://dermapolis.in/
+13:06:26 Commerce : De Sousa Automobiles (?)
+13:06:32   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement societe). — fabrication du site…
+13:07:21     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:07:39     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:07:46     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:08:05   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
+13:08:09   photos : 4 (Unsplash)
+13:08:17   prêt : https://oscarcousin-max.github.io/orbe-usine/de-sousa-automobiles/
+13:08:17 Commerce : L'irréfutable (?)
+13:08:22   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement amazon, lemonde). — fabrication du site…
+13:08:25     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:13:25     gemini/gemini-3.7-flash : The read operation timed out
+13:13:47   photos : 4 (Unsplash)
+13:13:54   prêt : https://oscarcousin-max.github.io/orbe-usine/l-irrefutable/
+13:13:54 Commerce : Guy Sarroste (?)
+13:13:59   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook, societe). — fabrication du site…
+13:18:59     gemini/gemini-3.8-flash : The read operation timed out
+13:23:59     gemini/gemini-3.7-flash : The read operation timed out
+13:24:28   photos : 4 (Unsplash)
+13:24:36   prêt : https://oscarcousin-max.github.io/orbe-usine/guy-sarroste/
+13:24:36 Commerce : Piscine Communautaire (?)
+13:24:42   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+13:29:43     gemini/gemini-3.8-flash : The read operation timed out
+13:34:43     gemini/gemini-3.7-flash : The read operation timed out
+13:35:04   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
+13:35:04   photos : 4 (Unsplash)
+13:35:11   prêt : https://oscarcousin-max.github.io/orbe-usine/piscine-communautaire/
+13:35:11 Commerce : Max Tattoo (Moissac)
+13:35:13   écarté : Site trouvé : https://maxtattoo.com/
+13:35:13 Commerce : Carrosserie Loubradou (?)
+13:35:22   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement annuaire-horaire, justacote, le-site-de, mairie). — fabrication du site…
+13:35:23     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:35:23     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:35:41   photos : 4 (Unsplash)
+13:35:49   prêt : https://oscarcousin-max.github.io/orbe-usine/carrosserie-loubradou/
+13:35:49 Commerce : MagnifiSens (?)
+13:35:53   écarté : Site trouvé : https://maison-magnifisens.paris/
+13:35:53 Commerce : Arbona - Paysagiste (Villeneuve-sur-Lot)
+13:35:59   écarté : Site trouvé : https://paysagistes.nosavis.com/paysagiste/lot+et+garonne-47/villeneuve+sur+lot-47300/michel+arbona-16190/
+13:35:59 Commerce : Piscine Municipale de Moncrabeau (?)
+13:36:03   écarté : Site trouvé : https://piscines.org/piscine-municipale-de-moncrabeau-47600
+13:36:03 Commerce : Garage Guibert (Châteauneuf-sur-Charente)
+13:36:05   écarté : Site trouvé : https://guibert.fr/fr/
+13:36:05 Commerce : Tiaré Lodge (Saint-Jean-de-Luz)
+13:36:12   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement autour-de-moi, facebook). — fabrication du site…
+13:36:16     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:36:19     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:36:42   photos : 4 (Unsplash)
+13:36:49   prêt : https://oscarcousin-max.github.io/orbe-usine/tiare-lodge/
+13:36:49 Commerce : Aviron Club Moissac (?)
+13:36:50   écarté : Site trouvé : https://avironclubmoissac.fr/
+13:36:50 Commerce : Carrosserie Baudry & Fils (?)
+13:36:54   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom. — fabrication du site…
+13:41:55     gemini/gemini-3.8-flash : The read operation timed out
+13:42:16     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:42:47   photos : 4 (Unsplash)
+13:42:55   prêt : https://oscarcousin-max.github.io/orbe-usine/carrosserie-baudry-fils/
+13:42:55 Commerce : Amikuz'échos Borda (?)
+13:42:59   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook). — fabrication du site…
+13:43:49     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:45:08     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:45:28   photos : 4 (Unsplash)
+13:45:35   prêt : https://oscarcousin-max.github.io/orbe-usine/amikuz-echos-borda/
+13:45:35 Commerce : Garage Simonetto Cédric (?)
+13:45:41   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement 118000, facebook, pagesjaunes, societe). — fabrication du site…
+13:45:46     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:45:49     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:46:09   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
+13:46:09   photos : 4 (Unsplash)
+13:46:16   prêt : https://oscarcousin-max.github.io/orbe-usine/garage-simonetto-cedric/
+13:46:16 Commerce : Le Khédive (?)
+13:46:31   écarté : Site trouvé : https://www.le-khedive.fr/
+13:46:31 Commerce : Garage Hiersac Automobiles (Hiersac)
+13:46:37   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement pagesjaunes, societe). — fabrication du site…
+13:46:37     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:51:37     gemini/gemini-3.7-flash : The read operation timed out
+13:52:02   photos : 4 (Unsplash)
+13:52:10   prêt : https://oscarcousin-max.github.io/orbe-usine/garage-hiersac-automobiles/
+13:52:10 Commerce : Marquette (Anglet)
+13:52:11   écarté : Site trouvé : https://www.marquette-en-ostrevant.fr/
+13:52:11 Commerce : Garage Étourneau (?)
+13:52:41   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement autour-de-moi, pagesjaunes). — fabrication du site…
+13:52:42     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:52:48     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:53:11   photos : 4 (Unsplash)
+13:53:19   prêt : https://oscarcousin-max.github.io/orbe-usine/garage-etourneau/
+13:53:19 Commerce : Jakin (?)
+13:53:23   écarté : Site trouvé : https://www.jakin.eus/
+13:53:23 Commerce : Restorfx Libourne (?)
+13:53:29   écarté : Site trouvé : https://restorfxfrance.fr/restorfx-libourne-renovation-carrosserie-2/
+13:53:29 Commerce : Marbot (Périgueux)
+13:54:19       DuckDuckGo : bloqué (200)
+13:54:22       Mojeek : HTTP Error 403: Forbidden
+13:54:26   vérifié : Vérifié sur Bing : aucun site à son nom (seulement autour-de-moi, cylex-locale, facebook, pagesjaunes). — fabrication du site…
+13:54:48   photos : 4 (Unsplash)
+13:54:55   prêt : https://oscarcousin-max.github.io/orbe-usine/marbot/
+13:54:55 Commerce : L'Atelier Mécanique (?)
+13:54:56   écarté : Site trouvé : https://mecanique.fr/
+13:54:56 Commerce : Zig Zag (Saint-Jean-de-Luz)
+13:54:56   écarté : Site trouvé : https://zigzag.com/
+13:54:56 Commerce : Carrosserie JOAO (?)
+13:55:05   vérifié : Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement autour-de-moi, pagesjaunes). — fabrication du site…
+13:55:13     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:55:59   photos : 4 (Unsplash)
+13:56:06   prêt : https://oscarcousin-max.github.io/orbe-usine/carrosserie-joao/
+13:56:06 Moteurs de recherche : DuckDuckGo 21 ok / 0 bloqué, Bing 22 ok / 0 bloqué, Mojeek 0 ok / 1 bloqué
+13:56:06 Écartés car déjà un site : 15 · fermés : 0 · non vérifiables : 0
+13:56:06 Terminé : 15 site(s) prêt(s).
