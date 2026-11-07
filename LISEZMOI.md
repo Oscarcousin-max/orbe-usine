@@ -73,3 +73,50 @@ Trois mises en page (photo plein écran, photo à côté, photo encadrée) selon
 
 Photos : Openverse puis Wikimedia Commons, sans clé. Pour des photos de qualité studio, ajoute une clé gratuite
 Pexels (`PEXELS_API_KEY`) dans Settings → Secrets → Actions : l'usine l'utilise automatiquement.
+
+---
+
+# Le Chasseur d'annonces (novembre 2026)
+
+Une deuxième chaîne, dans le même dépôt, avec les mêmes IA gratuites. Chaque matin vers 4 h 20 :
+
+1. **Le chercheur** lit les offres d'emploi publiées en France depuis 24 h pour des postes web
+   (community manager, développeur web, SEO, marketing digital, e-commerce, pub en ligne, automatisation…),
+   grâce à l'API officielle et gratuite de **France Travail**. Il lit aussi les annonces que tu colles
+   dans `data/annonces-manuelles.txt` (par exemple vues sur LinkedIn).
+2. **Le trieur** écarte d'office : cabinets de recrutement, intérim, ESN, agences concurrentes,
+   employeurs publics, entreprises anonymes, annonces trop vieilles, entreprises déjà contactées ou en `data/stop.txt`.
+3. **L'analyste** (IA) dit si c'est une vraie cible, quel service proposer et quel est le besoin.
+4. **L'auditeur** (du code, pas de l'IA) trouve le site de l'entreprise et le contrôle pour de vrai :
+   https, vitesse, affichage mobile, titre et description Google, fiche pour les IA, réseaux sociaux,
+   date du « © », formulaire ou prise de rendez-vous. Il récupère l'e-mail publié sur le site.
+   Si le site bloque les robots, il ne dit rien plutôt que de dire quelque chose de faux.
+5. **La page mini-audit** est mise en ligne pour chaque prospect noté 60 ou plus :
+   `https://oscarcousin-max.github.io/orbe-usine/audits/nom-de-l-entreprise/` (invisible sur Google).
+6. **Le messager** (IA) écrit l'e-mail (qui commence par « Je ne postule pas… »), l'invitation LinkedIn,
+   le premier message et les deux relances. La ligne « STOP » est ajoutée automatiquement.
+
+Chaque prospect a une note sur 100 ; on garde les 20 meilleurs au-dessus de 40.
+
+**Où regarder le matin :** `data/prospection/rapport_prospection.md` (le rapport lisible, avec tous les messages),
+`data/prospection/prospects_du_jour.xlsx` (le tableau), et `docs/chasseur.json` (la liste pour le QG).
+Rien n'est envoyé : c'est toi qui envoies.
+
+## Brancher France Travail (une seule fois, gratuit)
+
+1. Crée un compte sur **francetravail.io** (espace « Développeurs »), puis « Créer une application ».
+2. Abonne l'application à l'API **« Offres d'emploi v2 »**.
+3. Copie l'**identifiant client** et la **clé secrète**.
+4. Sur GitHub : Settings → Secrets and variables → Actions → New repository secret :
+   `FT_CLIENT_ID` = l'identifiant, `FT_CLIENT_SECRET` = la clé secrète.
+
+Sans ces clés, le chasseur ne lit que les annonces collées à la main.
+
+## Coller une annonce vue sur LinkedIn
+
+Ouvre `data/annonces-manuelles.txt` sur GitHub, clique sur le crayon, colle le texte de l'annonce (et son lien),
+ajoute une ligne `---`, puis « Commit changes ». Le chasseur part tout seul dans la minute.
+
+## Quelqu'un répond STOP
+
+Ajoute son entreprise ou son e-mail dans `data/stop.txt` : il ne sera plus jamais proposé.

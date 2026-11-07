@@ -1,0 +1,2 @@
+# Entreprises ou adresses e-mail qui ont répondu STOP : une par ligne.
+# Le chasseur ne les proposera plus jamais.

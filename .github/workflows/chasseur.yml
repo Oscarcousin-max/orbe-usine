@@ -1,0 +1,65 @@
+name: Chasseur d'annonces ORBE
+
+# Chaque matin vers 4 h 20 (heure de Paris), le chasseur lit les offres d'emploi web
+# publiées en France depuis 24 h, garde les meilleures entreprises, prépare un mini-audit
+# et les messages. Tout est prêt avant le robot du matin.
+#
+# Il part aussi tout seul quand tu colles une annonce dans data/annonces-manuelles.txt,
+# ou à la main : onglet « Actions » → « Chasseur d'annonces ORBE » → « Run workflow ».
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "data/annonces-manuelles.txt"
+  workflow_dispatch:
+    inputs:
+      nombre:
+        description: "Combien de prospects au maximum ?"
+        default: "20"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: chasseur
+  cancel-in-progress: false
+
+jobs:
+  chasseur:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Bibliothèque Excel
+        run: pip install openpyxl==3.1.5
+      - name: Chercher, trier, auditer, écrire
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          # Les deux clés gratuites de francetravail.io (voir LISEZMOI.md, partie « Chasseur »).
+          FT_CLIENT_ID: ${{ secrets.FT_CLIENT_ID }}
+          FT_CLIENT_SECRET: ${{ secrets.FT_CLIENT_SECRET }}
+          CHASSEUR_MAX: ${{ github.event.inputs.nombre || '20' }}
+          USINE_PAUSE: "4"
+        run: |
+          mkdir -p data
+          set -o pipefail
+          python chasseur.py 2>&1 | tee data/journal-chasseur.txt
+      - name: Mettre en ligne
+        if: always()
+        run: |
+          git config user.name "Chasseur ORBE"
+          git config user.email "chasseur-orbe@users.noreply.github.com"
+          git add -A docs/audits docs/chasseur.json data/prospection data/prospects_historique.csv data/annonces-manuelles.txt data/journal-chasseur.txt 2>/dev/null || true
+          git commit -m "Chasseur : prospects du $(date +%F)" || exit 0
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep 10
+          done
+          exit 1

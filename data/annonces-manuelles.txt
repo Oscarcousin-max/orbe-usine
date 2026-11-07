@@ -1,0 +1,3 @@
+# Colle ici des annonces vues ailleurs (LinkedIn, Indeed, Welcome to the Jungle…).
+# Une annonce par bloc : colle le texte (et le lien si tu l'as), puis une ligne avec seulement ---
+# Le chasseur les lit au prochain passage, puis vide ce fichier.
