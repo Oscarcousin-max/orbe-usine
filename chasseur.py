@@ -830,7 +830,8 @@ def maj_liste_qg(retenus):
             "preuve": "Note %d/100 · %s · publiée le %s" % (o["note"], o["source"], (o["publie_le"] or "?")[:10]),
             "preuve_url": o["lien"], "objet": m.get("objet", ""), "message": m.get("email", ""),
             "site_url": o.get("audit_url", ""), "par": m.get("par", ""), "cree_le": o["decouvert_le"],
-            "service": o["service"], "note": o["note"], "invitation_linkedin": m.get("invitation", ""),
+            "service": o["service"], "note": o["note"], "besoin": o.get("besoin", ""), "decideur": o.get("contact_nom") or o.get("decideur", ""),
+            "email": o.get("email", ""), "ville": o["ville"], "poste": o["poste"], "invitation_linkedin": m.get("invitation", ""),
             "message_linkedin": m.get("message_linkedin", ""), "relance_j4": m.get("relance_j4", ""), "relance_j10": m.get("relance_j10", ""),
         })
     liste["items"] = (nouveaux + liste.get("items", []))[:400]
