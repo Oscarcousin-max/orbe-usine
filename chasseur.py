@@ -221,6 +221,99 @@ def chercher_france_travail(debut, fin):
     return offres, ["France Travail : %d recherches, %d offres" % (appels, len(offres))]
 
 
+# --- LinkedIn (pages publiques des offres, sans compte) ------------------------------------
+LI_LISTE = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
+LI_OFFRE = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/%s"
+LI_MOTS = [
+    ("community manager", "réseaux sociaux"), ("social media manager", "réseaux sociaux"),
+    ("chargé de communication", "réseaux sociaux"), ("chargé de communication digitale", "marketing digital"),
+    ("marketing digital", "marketing digital"), ("responsable marketing", "marketing digital"),
+    ("growth marketing", "marketing digital"), ("SEO", "SEO"), ("webmaster", "site web"),
+    ("développeur wordpress", "site web"), ("chargé e-commerce", "boutique en ligne"),
+    ("responsable e-commerce", "boutique en ligne"), ("traffic manager", "publicité en ligne"),
+]
+LI_MAXI = int(os.environ.get("CHASSEUR_LINKEDIN_MAXI", "160") or 160)
+
+
+def _li_lire(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                                               "(KHTML, like Gecko) Chrome/124 Safari/537.36", "Accept-Language": "fr-FR,fr;q=0.9"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return r.read().decode("utf-8", "ignore")
+
+
+def _li_texte(h):
+    h = re.sub(r"(?i)<br\s*/?>|</(p|li|ul|h\d)>", "\n", h or "")
+    return " ".join(_html.unescape(re.sub(r"<[^>]+>", " ", h)).split())
+
+
+def _li_classe(bloc, cls):
+    m = re.search(r'class="[^"]*%s[^"]*"[^>]*>([\s\S]*?)</(?:h3|h4|span|a|div)>' % cls, bloc)
+    return _li_texte(m.group(1)) if m else ""
+
+
+def chercher_linkedin(debut, fin):
+    """Offres LinkedIn publiées en France sur la période (pages publiques, sans connexion)."""
+    secondes = max(3600, int((fin - debut).total_seconds()))
+    vus_offres, vus_ent, stop = lire_historique()
+    cartes, ids = [], set()
+    for mot, service in LI_MOTS:
+        for start in (0, 10, 20, 30):
+            url = LI_LISTE + "?" + urllib.parse.urlencode({"keywords": mot, "location": "France", "geoId": "105015875",
+                                                         "f_TPR": "r%d" % secondes, "start": start})
+            try:
+                h = _li_lire(url)
+            except Exception as e:
+                journal("  LinkedIn « %s » : %s" % (mot, court_erreur(e)))
+                break
+            morceaux = h.split('data-entity-urn="urn:li:jobPosting:')[1:]
+            for c in morceaux:
+                i = re.match(r"\d+", c).group(0)
+                if i in ids:
+                    continue
+                ids.add(i)
+                cartes.append({"id": i, "service": service, "poste": _li_classe(c, "base-search-card__title"),
+                               "entreprise": _li_classe(c, "base-search-card__subtitle"),
+                               "ville": _li_classe(c, "job-search-card__location").replace(", France", ""),
+                               "date": (re.search(r'datetime="([^"]+)"', c) or [None, ""])[1]})
+            if len(morceaux) < 10:
+                break
+            time.sleep(0.6)
+    # une offre par entreprise, sans celles déjà contactées
+    choisies, ents = [], set()
+    for c in cartes:
+        n = norm(c["entreprise"])
+        if not n or n in ents or n in vus_ent or n in stop or ("li-" + c["id"]) in vus_offres:
+            continue
+        if RECRUTEURS.search(c["entreprise"]) or CONCURRENTS.search(c["entreprise"]):
+            continue
+        ents.add(n)
+        choisies.append(c)
+    journal("LinkedIn : %d offre(s) trouvée(s), %d entreprise(s) nouvelle(s) ; lecture de %d annonce(s)"
+            % (len(cartes), len(choisies), min(len(choisies), LI_MAXI)))
+    offres = []
+    for c in choisies[:LI_MAXI]:
+        try:
+            h = _li_lire(LI_OFFRE % c["id"])
+        except Exception:
+            continue
+        m = re.search(r"show-more-less-html__markup[^>]*>([\s\S]*?)</div>", h)
+        desc = _li_texte(m.group(1)) if m else ""
+        crit = _li_texte((re.search(r"description__job-criteria-list[^>]*>([\s\S]*?)</ul>", h) or [None, ""])[1])
+        contrat = (re.search(r"Type d.emploi\s+(\S+(?: \S+)?)", crit) or re.search(r"Employment type\s+(\S+(?: \S+)?)", crit) or [None, ""])[1]
+        secteur = (re.search(r"Secteurs?\s+(.+)$", crit) or re.search(r"Industries\s+(.+)$", crit) or [None, ""])[1]
+        offres.append({
+            "source": "LinkedIn", "id_offre": "li-%s" % c["id"], "entreprise": c["entreprise"], "entreprise_desc": "",
+            "site": "", "ville": c["ville"], "code_postal": "", "poste": poste_propre(c["poste"]), "contrat": contrat,
+            "effectif": "", "secteur": secteur[:80], "code_naf": "", "description": desc[:1500],
+            "publie_le": (c["date"] + "T12:00:00+01:00") if c["date"] else "",
+            "lien": "https://www.linkedin.com/jobs/view/%s/" % c["id"], "contact_nom": "", "contact_email": "",
+            "service_mot_cle": c["service"], "manuelle": False,
+        })
+        time.sleep(0.5)
+    return offres, ["LinkedIn : %d offres lues" % len(offres)]
+
+
 def offre_france_travail(o, service):
     ent = o.get("entreprise") or {}
     lieu = o.get("lieuTravail") or {}
@@ -337,8 +430,9 @@ def trier(offres, debut, fin):
             if not d:
                 ecarter("date de publication inconnue")
                 continue
-            if not (debut <= d <= fin):
-                ecarter("publiée il y a plus de 24 h")
+            marge = timedelta(days=1) if o.get("source") == "LinkedIn" else timedelta(0)
+            if not (debut - marge <= d <= fin + marge):
+                ecarter("publiée en dehors de la période")
                 continue
         if not nom_n:
             ecarter("entreprise anonyme")
@@ -920,6 +1014,13 @@ def main():
 
     # 1. Chercher
     offres, sources = chercher_france_travail(debut, fin)
+    if os.environ.get("CHASSEUR_LINKEDIN", "1") != "0":
+        try:
+            o_li, s_li = chercher_linkedin(debut, fin)
+            offres += o_li
+            sources += s_li
+        except Exception as e:
+            journal("LinkedIn : erreur (%s)" % str(e)[:100])
     manuelles = lire_manuelles()
     if MANUELLES.exists():
         sources.append("Annonces collées à la main : %d" % len(manuelles))
