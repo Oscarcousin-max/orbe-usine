@@ -1,5 +1,7 @@
-20:46:32 Chasseur ORBE — annonces publiées du 09/10 21:46 au 08/11 21:46
-20:46:33 France Travail : connexion refusée (HTTP Error 400: Bad Request)
-20:46:33 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
-20:46:33 Après le tri : 0 candidate(s) sur 0
-20:46:33 Terminé : 0 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
+20:48:29 Chasseur ORBE — annonces publiées du 09/10 21:48 au 08/11 21:48
+20:48:30 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+20:48:30 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+20:48:30 France Travail : connexion refusée (HTTP Error 400: Bad Request)
+20:48:30 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
+20:48:30 Après le tri : 0 candidate(s) sur 0
+20:48:30 Terminé : 0 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
