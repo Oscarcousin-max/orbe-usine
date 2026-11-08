@@ -456,6 +456,46 @@ def lire(url, timeout=15):
     return page, final, time.time() - t0
 
 
+PAGES_CONTACT = ["contact", "contact/", "contactez-nous", "nous-contacter", "contact-us", "fr/contact", "mentions-legales",
+                 "mentions-legales/", "fr/mentions-legales", "legal", "a-propos", "qui-sommes-nous", "cgv"]
+
+
+def _emails_de(page):
+    """E-mails d'une page, y compris les mailto et les formes « nom [at] domaine.fr »."""
+    t = _html.unescape(page or "")
+    t = re.sub(r"\s*(?:\[at\]|\(at\)|\{at\}| at )\s*", "@", t, flags=re.I)
+    t = re.sub(r"\s*(?:\[dot\]|\(dot\)|\{dot\})\s*", ".", t, flags=re.I)
+    vus = set(EMAIL.findall(verif._texte(t) + " " + t))
+    return {e.strip(".").lower() for e in vus if not FAUX_EMAILS.search(e) and len(e) < 70}
+
+
+def emails_du_site(page, final, maxi_pages=6):
+    """Cherche les e-mails publiés : page d'accueil, puis pages contact / mentions légales (liées ou devinées)."""
+    emails = _emails_de(page)
+    if emails:
+        return emails
+    liens = re.findall(r'(?i)href=["\']([^"\'#]*(?:contact|mentions|legal|propos|equipe|team)[^"\']*)["\']', page or "")
+    essais, vus = [], set()
+    for l in liens + PAGES_CONTACT:
+        u = urllib.parse.urljoin(final, l)
+        if urllib.parse.urlsplit(u).netloc != urllib.parse.urlsplit(final).netloc or u in vus:
+            continue
+        vus.add(u)
+        essais.append(u)
+    for u in essais[:maxi_pages + 6]:
+        if maxi_pages <= 0:
+            break
+        try:
+            p2, _, _ = lire(u, timeout=10)
+        except Exception:
+            continue
+        maxi_pages -= 1
+        emails |= _emails_de(p2)
+        if emails:
+            break
+    return emails
+
+
 def auditer(o):
     """Contrôle réel du site. Renvoie une liste de constats {cle, vu, consequence, solution} + les e-mails trouvés."""
     o["site"] = trouver_site(o)
@@ -542,15 +582,7 @@ def auditer(o):
     o["reseaux"] = reseaux
     # Les e-mails publiés sont souvent sur la page contact ou les mentions légales.
     if not emails:
-        liens = re.findall(r'(?i)href=["\']([^"\'#]*(?:contact|mentions)[^"\']*)["\']', page)[:3]
-        for l in liens:
-            try:
-                p2, _, _ = lire(urllib.parse.urljoin(final, l), timeout=10)
-                emails |= {e for e in EMAIL.findall(verif._texte(p2) + " " + p2) if not FAUX_EMAILS.search(e)}
-            except Exception:
-                pass
-            if emails:
-                break
+        emails |= emails_du_site(page, final)
     return constats, emails
 
 
@@ -872,7 +904,7 @@ def maj_liste_qg(retenus):
 # =========================================================================================
 def main():
     fin = datetime.now(PARIS)
-    debut = fin - timedelta(hours=24)
+    debut = fin - timedelta(hours=max(1, min(24 * 31, int(os.environ.get("CHASSEUR_HEURES", "24") or 24))))
     journal("Chasseur ORBE — annonces publiées du %s au %s" % (debut.strftime("%d/%m %H:%M"), fin.strftime("%d/%m %H:%M")))
     if not (usine.CLES["gemini"] or usine.CLES["groq"] or usine.CLES["or"]):
         journal("Aucune clé d'IA : impossible d'analyser les annonces.")

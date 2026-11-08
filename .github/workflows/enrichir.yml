@@ -1,0 +1,34 @@
+name: Trouver les e-mails (enrichir)
+
+# Part tout seul quand on ajoute des entreprises dans data/a-enrichir.txt
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/a-enrichir.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: chasseur
+  cancel-in-progress: false
+
+jobs:
+  enrichir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 enrichir.py
+      - name: Mettre en ligne
+        run: |
+          git config user.name "usine-orbe"
+          git config user.email "usine-orbe@users.noreply.github.com"
+          git add -A data/prospection/contacts_trouves.csv data/a-enrichir.txt data/journal-chasseur.txt || true
+          git diff --cached --quiet || git commit -m "Enrichissement : e-mails trouvés"
+          git pull --rebase -q && git push
