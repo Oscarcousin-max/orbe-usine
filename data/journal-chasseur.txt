@@ -1,8 +1,381 @@
-20:56:19 Chasseur ORBE — annonces publiées du 09/10 21:56 au 08/11 21:56
-20:56:19 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
-20:56:20 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-20:56:21 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-20:56:21 France Travail : connexion refusée (HTTP Error 400: Bad Request)
-20:56:21 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
-20:56:21 Après le tri : 0 candidate(s) sur 0
-20:56:21 Terminé : 0 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
+21:07:40 Chasseur ORBE — annonces publiées du 09/10 22:07 au 08/11 22:07
+21:07:40 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
+21:07:41 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+21:07:42 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+21:07:42 France Travail : connexion refusée (HTTP Error 400: Bad Request)
+21:07:44   LinkedIn « community manager » : erreur 429
+21:07:46   LinkedIn « social media manager » : erreur 429
+21:07:48   LinkedIn « chargé de communication » : erreur 429
+21:07:48   LinkedIn « chargé de communication digitale » : erreur 429
+21:07:52   LinkedIn « marketing digital » : erreur 429
+21:07:56   LinkedIn « growth marketing » : erreur 429
+21:07:58   LinkedIn « SEO » : erreur 429
+21:08:02   LinkedIn « webmaster » : erreur 429
+21:08:16   LinkedIn « traffic manager » : erreur 429
+21:08:16 LinkedIn : 299 offre(s) trouvée(s), 221 entreprise(s) nouvelle(s) ; lecture de 160 annonce(s)
+21:09:55 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
+21:09:55 Après le tri : 135 candidate(s) sur 139
+21:09:55     modèles groq : meta-llama/llama-prompt-guard-2-86m, qwen/qwen3.8-27b, whisper-large-v3-turbo, whisper-large-v3, canopylabs/orpheus-v1-english, openai/gpt-oss-safeguard-20b, allam-2-7b, openai/gpt-oss-120b, meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-arabic-saudi, openai/gpt-oss-20b
+21:10:12     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+21:10:26     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+21:10:26     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+21:10:33     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+21:10:39     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+21:10:39     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+21:10:46     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+21:10:46     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+21:10:46     groq/openai/gpt-oss-20b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization
+21:10:46     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview
+21:12:39     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:14:53     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:14:53     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:15:22     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:15:22     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:15:22     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:15:42     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:15:42     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:16:02     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:16:02     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:16:02     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:16:02     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:16:02     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+21:18:51     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:18:51     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:18:51     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:18:51     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:18:51     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:18:51     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:18:51     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+21:18:51     modèles or : liquid/lfm-3-1.7b:free, recursive/flint-v1.0:free, xingchen-agi/xing4.0-29b-a4b:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, liquid/lfm-2.5-2.6b:free, nvidia/nemotron-3.5-lightning:free, cohere/north-mini-code:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
+21:19:28     or/liquid/lfm-3-1.7b:free : réponse vide
+21:20:47     or/liquid/lfm-3-1.7b:free : réponse vide
+21:22:35     or/liquid/lfm-3-1.7b:free : réponse vide
+21:24:03     or/liquid/lfm-3-1.7b:free : réponse vide
+21:25:03   écartée : AVICOM' — Agence de communication concurrente
+21:25:03   écartée : CEA — employeur public
+21:25:03   écartée : Imerys — poste hors périmètre digital
+21:25:03   écartée : OVHcloud — Grand groupe avec une équipe digitale entière et un poste technique/stratégique (Developer Advocacy) difficile à externaliser.
+21:25:03   écartée : Emmaüs Insert Albi — Association à but non lucratif (Emmaüs) avec un contexte social et humain spécifique, hors cible commercial standard.
+21:25:03   écartée : ZeTrace — L'annonce est publiée par ZeTrace, une agence d'intérim/recrutement, et non par l'entreprise finale.
+21:25:03   écartée : BeReal. — Société technologique internationale de plus de 100 personnes avec une forte culture interne, le poste est stratégique et opérationnel.
+21:25:03   écartée : Reworld Media — Grand groupe média (Reworld Media) avec une équipe digitale importante et des ressources internes dédiées.
+21:25:03   écartée : Zimmermann — Marque de luxe globale avec une structure internationale complexe, le poste est lié à l'image de marque et à la direction créative.
+21:25:03   écartée : Razorfish France — Agence digitale concurrente
+21:25:03   écartée : Prime Video & Amazon MGM Studios — Grand groupe avec équipe digitale interne importante
+21:25:03   écartée : WOO | groupe Olyn — Agence de publicité concurrente
+21:25:03   écartée : Groupe Olyn — Agence de publicité concurrente
+21:25:03   écartée : ALDI France — Grand groupe de distribution avec une structure marketing et communication interne importante.
+21:25:03   écartée : Groupe Ares (Association pour la Réinsertion Economique et Sociale) — Groupe associatif complexe avec une vingtaine d'entreprises, nécessitant un profil senior intégré pour gérer l'impact social.
+21:25:03   écartée : PROPHESEE — Entreprise deeptech internationale avec une forte notoriété et une équipe internationale, poste de direction de la communication corporate.
+21:25:03   écartée : Parfums Christian Dior — Grand groupe de luxe (Christian Dior) avec une structure de maison et une direction de la communication établie.
+21:25:03   écartée : EFREI - Grande école du numérique — École d'ingénieurs qui recrute un manager pour animer une équipe de 4 collaborateurs existants.
+21:25:03   écartée : Blue Search Conseil — Grand groupe avec équipe digitale
+21:25:03   écartée : Lyreco France — Grand groupe avec équipe digitale
+21:25:03   écartée : Edenred — Grand groupe multinational disposant de ses propres équipes digitales structurées.
+21:25:03   écartée : Urgo Medical France — Grand groupe de santé doté d'équipes marketing et digitales complètes.
+21:25:03   écartée : Planeta Formación Universidades — Grand groupe international (Grupo Planeta) avec équipes marketing internes.
+21:25:03   écartée : Electrolux Professional Group — Grand groupe multinational travaillant déjà avec des agences et disposant de structures internes dédiées.
+21:25:03   écartée : 3Shape — Grand groupe international d'équipements médicaux avec siège et équipes supports dédiées.
+21:25:03   écartée : Volkswagen Group Retail France — Filiale d'un très grand groupe automobile disposant d'importantes structures internes.
+21:25:03   écartée : Verifone — Multinationale technologique de grande envergure avec des équipes marketing globales.
+21:25:03   écartée : Stryker — Multinationale du dispositif médical avec des processus et équipes internes très spécialisés.
+21:25:03   écartée : Maison Alaïa — Grande maison de luxe appartenant au groupe Richemont avec équipes marketing structurées.
+21:25:03   écartée : Coloplast — Grand groupe multinational du secteur médical avec de multiples équipes marketing internes.
+21:25:03   écartée : Alibaba Cloud — Géant mondial de la tech (Alibaba) avec organisation et équipes internationales.
+21:25:03   écartée : Mouvex, a PSG brand — Filiale du groupe industriel multinational américain PSG / Dover Corporation.
+21:25:03   écartée : BPCE Solutions immobilières — Filiale directe du groupe BPCE, grand groupe bancaire de plus de 100 000 collaborateurs.
+21:25:03   écartée : IN Groupe — Grand groupe international de 4000 collaborateurs opérant pour les gouvernements et entreprises.
+21:25:03   écartée : Easyfairs — Grand groupe événementiel international disposant déjà de ses propres structures marketing.
+21:25:03   écartée : Arrow ECS France — Grand groupe mondial de distribution IT avec des équipes marketing internes structurées.
+21:25:03   écartée : Amplifon — Multinationale cotée du secteur de la santé visuelle avec des effectifs importants.
+21:25:03   écartée : Align Technology — Multinationale des équipements médicaux disposant déjà d'équipes marketing dédiées.
+21:25:03   écartée : MACIF — Grand groupe d'assurance mutualiste disposant de directions marketing dédiées.
+21:25:03   écartée : ALTIOS International — Offre publiée par un cabinet de conseil/recrutement pour un client non identifié.
+21:25:03   écartée : KNDS France — Grand groupe du secteur de la défense disposant d'une direction marketing dédiée.
+21:25:03   écartée : Tineco — Grand groupe international d'électroménager disposant d'équipes internes.
+21:25:03   écartée : Van Cleef & Arpels — Grand groupe du secteur du luxe (groupe Richemont) avec équipes internes structurées.
+21:25:03   écartée : Kaiyiee Global Talent — Cabinet de recrutement.
+21:25:03   écartée : Artefact — Société de conseil et agence data/digital concurrente.
+21:25:03   écartée : WPP Media — Groupe mondial d'agences de publicité et médias concurrent.
+21:25:03   écartée : Plus que pro — Entreprise spécialisée dans les services digitaux et le référencement (acteur concurrent).
+21:25:03   écartée : Positive — C'est un grand groupe tech/MarTech international de 400 collaborateurs avec des équipes marketing internes déjà structurées.
+21:25:03   écartée : ASight — C'est une agence marketing et acquisition concurrente qui recrute pour gérer ses propres clients.
+21:25:03   écartée : Arkée | Jaws Group — C'est une agence SEO concurrente qui recrute un consultant pour ses clients.
+21:25:03   écartée : Wonderbox — C'est un grand groupe international de 600 collaborateurs réalisant plus de 300 millions d'euros de chiffre d'affaires.
+21:25:03   écartée : Eskimoz — C'est une agence spécialisée en SEO et Search marketing concurrente.
+21:25:03   écartée : Jobgether — L'annonce provient d'une plateforme d'intermédiation pour le compte d'une entreprise partenaire non identifiée.
+21:25:03   écartée : TRANSATEL (an NTT company) — C'est un grand groupe international de télécommunications, filiale du géant mondial NTT.
+21:25:03   écartée : hyffen — C'est une agence SEO concurrente qui recrute pour son équipe interne.
+21:25:03   écartée : Publicis Media — Publicis Media est un grand groupe d'agences de communication et médias concurrent.
+21:25:03   écartée : leboncoin — Leboncoin est un très grand groupe avec d'importantes équipes digitales internes.
+21:25:03   écartée : Libération — Grand groupe de presse média doté d'équipes internes spécialisées.
+21:25:03   écartée : Numberly — Numberly est une agence de data marketing concurrente.
+21:25:03   écartée : TEAMINSIDE — Teaminside est une ESN / cabinet de régie plaçant des consultants chez des clients.
+21:25:03   écartée : WordAppeal — WordAppeal est une agence de communication et éditoriale concurrente.
+21:25:03   écartée : Département du Val d'Oise — Employeur public (administration), profil probablement peu externalisable en prestation web classique.
+21:25:03   écartée : Kicklox — Poste de développeur CMS WordPress trop technique / mission pour un client.
+21:25:03   écartée : LIXIL — Grand groupe avec probablement une équipe digitale et communication interne.
+21:25:03   écartée : CGI — ESN/cabinet de conseil avec équipe interne
+21:25:03   écartée : PROXIAD — Cabinet de services informatique recrutant développeur, cible interne ESN.
+21:25:03   écartée : Webnet — Cabinet de services informatique recrutant développeur PHP, cible interne ESN.
+21:25:03   écartée : we+ France — Cabinet de services informatique recrutant développeur Ibexa, cible interne agence.
+21:25:03   écartée : CPAM Gironde — Employeur public (CPAM), recrutement public, difficulté d'externalisation.
+21:25:03 — TRIBEKAI (Traffic Manager / Growth Marketing Manager, Villeurbanne)
+21:25:09     note 97/100 · site ok · e-mail contact@tribekai.com · constats : contact, reseaux, h1
+21:25:09 — SCHOLIA (Alternance – Créateur(trice) de Sites Web, Paris)
+21:25:13     note 97/100 · site ok · e-mail contact@scholia.fr · constats : h1
+21:25:13 — LE TEMPS DES CERISES JEANS (ASSISTANT WEB MARKETING INTERNATIONAL, Marseille)
+21:25:18     note 87/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:25:18 — SCENES CROISEES DE LOZERE (Chargé / Chargée de communication, Mende)
+21:25:23     note 95/100 · site ok · e-mail contact@scenescroisees.fr · constats : aucun
+21:25:23 — Acushnet Europe Ltd (Titleist Digital Marketing Specialist - CDI, Montataire)
+21:25:24       DuckDuckGo : bloqué (202)
+21:25:27     note 85/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:25:27 — Article 1 (Développeur Web Fullstack - Impact Social & Agilité, Paris)
+21:25:28     note 95/100 · site ok · e-mail service@article.com · constats : h1
+21:25:28 — PROMOTION SANTE AUVERGNE-RHONE-ALPES (Chargé de Communication, Lyon)
+21:25:28       DuckDuckGo : bloqué (202)
+21:25:32     note 84/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:25:32 — URBASOLAR (Chargé de communication expert /NB, Montpellier)
+21:25:40     note 94/100 · site ok · e-mail contact@urbasolar.com · constats : aucun
+21:25:40 — Wink (Growth Marketing - B2B SaaS, Ville de Paris)
+21:25:40       DuckDuckGo : bloqué (202)
+21:25:44     note 84/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:25:44 — SYSNAV (Responsable Marketing – Business Line Piéton, Vernon)
+21:25:58     note 84/100 · site ok · e-mail non trouvé · constats : aucun
+21:25:58 — Skello (Content Manager, Paris)
+21:25:59     note 93/100 · site ok · e-mail hello@skello.io · constats : aucun
+21:25:59 — UNITED WAY L'ALLIANCE (Chargé de communication junior CDI, Puteaux)
+21:26:01     note 83/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:26:01 — AMOS - Sport Business School (Directeur marketing digital & acquisition Paris, Paris)
+21:26:03     note 83/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:26:03 — Equadis (Acquisition Marketing Specialist, Lyon)
+21:26:23     note 83/100 · site ok · e-mail non trouvé · constats : description
+21:26:23 — Valoxy, Expert-Comptable mais pas que… (Responsable Marketing & Croissance – International, Lille)
+21:26:25     note 83/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:26:25 — Humanskills (Community-Led Growth Manager (Edtech), Paris)
+21:26:27     note 92/100 · site ok · e-mail jderet@gmail.com · constats : contact
+21:26:27 — VAL GARONNE AGGLOMERATION (Chargé / Chargée de communication, Marmande)
+21:26:29     note 82/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:26:29 — Qare (HCP Communication Coordinateur, Paris)
+21:26:33     note 92/100 · site ok · e-mail contact@qare.fr · constats : aucun
+21:26:33 — ADRIA (ASSOCIATION POUR LE DEVELOPPEMENT (Chargé de marketing et communication, Quimper)
+21:26:35     note 82/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:26:35 — Groupe Vauban (Responsable Marketing Terrain Automobile, Chambourcy)
+21:26:38     note 82/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:26:38 — Ligue de l'enseignement - centre confédéral (Chargé de communication digitale, Ville de Paris)
+21:26:40     note 82/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:26:40 — Stoïk (Marketing Manager (BE/NL), Paris)
+21:26:44     note 81/100 · site ok · e-mail non trouvé · constats : ia, contact, reseaux
+21:26:44 — FRUITS ROUGES & Co. (Responsable Marketing & Événementiel — Impact & Création, Laon)
+21:26:49     note 81/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:26:49 — Quitoque (SEO & GEO manager Senior, Ville de Paris)
+21:26:50     note 91/100 · site ok · e-mail partenariat@www.quitoque.fr · constats : aucun
+21:26:50 — Joko (Social Media Manager, Paris)
+21:26:55     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:26:55 — Geely Auto France (Digital Marketing Manager, Levallois-Perret)
+21:27:17     note 80/100 · site ok · e-mail non trouvé · constats : ia
+21:27:17 — Hello Watt (Rédacteur SEO & GEO, Paris)
+21:27:20     note 90/100 · site ok · e-mail thomas@edison.com · constats : aucun
+21:27:20 — Amorino (Chef de projet Web & Présence Locale, Orly)
+21:27:40     note 80/100 · site ok · e-mail non trouvé · constats : ia
+21:27:40 — GT Company (Chargé e-Commerce AgfaPhoto Print, Chessy)
+21:27:44     note 90/100 · site ok · e-mail info@gtcompany.fr · constats : reseaux
+21:27:44 — Picnic Technologies (Senior In-app Homepage Manager, Paris)
+21:27:46     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:27:46 — Coopérative U (Devenez notre futur Chargé de Communication & Community Manager !, Beaulieu-sur-Mer)
+21:27:50     note 79/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:27:50 — Audencia (Chargé de développement et d'animation de la communauté Alumni, Saint-Ouen)
+21:27:54     note 79/100 · site ok · e-mail non trouvé · constats : aucun
+21:27:54 — Cornilleau (Community Manager & Content Creator, Bonneuil-les-Eaux)
+21:27:57     note 89/100 · site ok · e-mail commercial@cornilleau.fr · constats : aucun
+21:27:57 — COMEXPOSIUM (Social Media & Digital Content specialist, Paris)
+21:28:24     note 79/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:28:24 — Département de la Mayenne (Un chargé ou une chargée de communication, Laval)
+21:28:27     note 79/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:28:27 — UNOWHY (Alternance - Chef.fe de projet marketing digital - Contenus & communication digitale, Neuilly-sur-Seine)
+21:28:37     note 89/100 · site ok · e-mail contact@unowhy.com · constats : aucun
+21:28:37 — Exail (Chargé de Communication - Navigation Défense, Saint-Germain-en-Laye)
+21:28:43     note 88/100 · site ok · e-mail support@exail.com · constats : aucun
+21:28:43 — qlub (Growth Marketing Director, Paris)
+21:28:44     note 78/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:28:44 — Brique House Brewery (Community Manager - CDI TEMPS PLEIN, Paris)
+21:28:48     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:28:48 — Groupe Léon Grosse (Social Media & Content Manager, Versailles)
+21:28:50     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:28:50 — Groupe FIDEIP (Chargé de Webmarketing SEO/GEO, Brécé)
+21:28:52     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:28:52 — EDHEC Business School (Chargé de contenu éditorial et SEO/GEO, Nice)
+21:29:19     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:29:19 — Groupe Médisup (Développeur FullStack senior, Paris, Paris et périphérie)
+21:29:23     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:29:23 — L'École Française (Apprentissage - Développeur(se) Full Stack (PHP Symfony / React), Levallois-Perret)
+21:29:30     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:29:30 — ASWO (Développeur PHP / Symfony Full Stack, Neuville-sur-Oise)
+21:29:32     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:29:32 — T&S (Technology & Strategy) (Développeur PHP/Développeuse PHP, Strasbourg)
+21:29:33     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:29:33 — Groupe Qérys (Développeur full stack, Villenave-d'Ornon)
+21:29:37     note 87/100 · site ok · e-mail contactez-nous@qerys.com · constats : aucun
+21:29:37 — Blast Club (Chargé des Communautés Locales (CDI), France)
+21:29:42     note 76/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:29:42 — Crédit Mutuel Arkéa (Chargé de communication Relations presse & Contenus éditoriaux, Le Relecq-Kerhuon)
+21:29:45     note 76/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:29:45 — FIDUCIAL (Chargé de Communication Interne, Lyon)
+21:29:50     note 86/100 · site ok · e-mail contact.web@fiducial.fr · constats : aucun
+21:29:50 — OSS Ventures (Head of Marketing & Community, Paris)
+21:29:54     note 75/100 · site ok · e-mail non trouvé · constats : aucun
+21:29:54 — RTM (Chargé de projets digital, Marseille)
+21:29:59     note 85/100 · site ok · e-mail jeandupond@gmail.com · constats : ia
+21:29:59 — Septodont (E-commerce Manager, Croissy-Beaubourg)
+21:30:12     note 75/100 · site ok · e-mail non trouvé · constats : description, reseaux
+21:30:12 — Alice & Bob (Quantum Research Community Manager, Ville de Paris)
+21:30:29     note 74/100 · site ok · e-mail non trouvé · constats : reseaux, contact
+21:30:29 — Spiko (Field Marketing & Community Lead, Paris)
+21:30:32     note 74/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:30:32 — DiliTrust (Website Manager, Paris)
+21:30:37     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:30:37 — Prodigious Paris (Développeur / développeuse Full Stack et automatisation, Aubervilliers)
+21:30:40     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:30:40 — Meilleurtaux (Développeur Web PHP, Courbevoie)
+21:30:42     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:30:42 — OuiLab - EspaceBio (Concepteur / Conceptrice informatique, Metz)
+21:30:45     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:30:45 — Tunn3l (Full Stack PHP Developer – ERP & Product Development, Villeneuve-d'Ascq)
+21:30:49     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:30:49 — Livremploi (Community Manager, Paris)
+21:30:53     note 82/100 · site ok · e-mail recrutement-drh@editis.com · constats : contact, ia, titre, description
+21:30:53 — Laboratoires Sicobel (Community Manager, Chasse-sur-Rhône)
+21:30:55     note 71/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+21:31:34     messager : Unterminated string starting at: line 5 column 23 (char 792)
+21:32:05     prêt : TRIBEKAI (97/100) · https://oscarcousin-max.github.io/orbe-usine/audits/tribekai/
+21:32:30     prêt : SCHOLIA (97/100) · https://oscarcousin-max.github.io/orbe-usine/audits/scholia/
+21:32:30     or/liquid/lfm-3-1.7b:free : 429 {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm
+21:33:26     prêt : SCENES CROISEES DE LOZERE (95/100)
+21:34:34     prêt : Article 1 (95/100) · https://oscarcousin-max.github.io/orbe-usine/audits/article-1/
+21:35:40     prêt : URBASOLAR (94/100)
+21:36:15     or/liquid/lfm-3-1.7b:free : réponse vide
+21:37:08     prêt : Skello (93/100)
+21:37:52     prêt : Humanskills (92/100) · https://oscarcousin-max.github.io/orbe-usine/audits/humanskills/
+21:38:31     prêt : Qare (92/100)
+21:39:06     or/liquid/lfm-3-1.7b:free : réponse vide
+21:39:48     prêt : Quitoque (91/100)
+21:40:28     or/liquid/lfm-3-1.7b:free : réponse vide
+21:41:17     prêt : Hello Watt (90/100)
+21:41:54     messager : pas de JSON
+21:42:39     prêt : GT Company (90/100) · https://oscarcousin-max.github.io/orbe-usine/audits/gt-company/
+21:43:16     messager : pas de JSON
+21:43:45     or/liquid/lfm-3-1.7b:free : réponse vide
+21:44:32     prêt : Cornilleau (89/100)
+21:45:07     or/liquid/lfm-3-1.7b:free : réponse vide
+21:45:43     prêt : UNOWHY (89/100)
+21:46:21     or/liquid/lfm-3-1.7b:free : réponse vide
+21:47:19     or/recursive/flint-v1.0:free : réponse vide
+21:47:20     or/xingchen-agi/xing4.0-29b-a4b:free : 429 {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-a
+21:49:21     prêt : Exail (88/100)
+21:49:57     or/liquid/lfm-3-1.7b:free : réponse vide
+21:50:38     prêt : LE TEMPS DES CERISES JEANS (87/100)
+21:51:10     prêt : Groupe Qérys (87/100)
+21:51:10     or/liquid/lfm-3-1.7b:free : 429 {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm
+21:51:50     prêt : FIDUCIAL (86/100)
+21:51:50     or/liquid/lfm-3-1.7b:free : 429 {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm
+21:52:30     prêt : Acushnet Europe Ltd (85/100)
+21:53:04     or/liquid/lfm-3-1.7b:free : réponse vide
+21:53:54     prêt : RTM (85/100) · https://oscarcousin-max.github.io/orbe-usine/audits/rtm/
+21:54:30     or/liquid/lfm-3-1.7b:free : réponse vide
+21:55:23     prêt : PROMOTION SANTE AUVERGNE-RHONE-ALPES (84/100)
+21:55:58     or/liquid/lfm-3-1.7b:free : réponse vide
+21:56:38     prêt : Wink (84/100)
+21:57:08     or/liquid/lfm-3-1.7b:free : réponse vide
+21:57:41     prêt : SYSNAV (84/100)
+21:58:20     messager : pas de JSON
+21:58:52     prêt : UNITED WAY L'ALLIANCE (83/100)
+21:58:52     or/liquid/lfm-3-1.7b:free : 429 {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unloc
+21:58:52     or/recursive/flint-v1.0:free : 429 {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unloc
+21:58:52     or/nvidia/nemotron-3.5-super-vl:free : 429 {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unloc
+21:58:52     or/dots-studio/dots-3-note-preview:free : 429 {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unloc
+21:58:52     or/liquid/lfm-2.5-2.6b:free : 429 {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unloc
+21:58:53     or/nvidia/nemotron-3.5-lightning:free : 429 {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unloc
+21:58:53     or/cohere/north-mini-code:free : 429 {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unloc
+21:58:53     messager : 429 {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credit
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : AMOS - Sport Business School (83/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Equadis (83/100) · https://oscarcousin-max.github.io/orbe-usine/audits/equadis/
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Valoxy, Expert-Comptable mais pas que… (83/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : VAL GARONNE AGGLOMERATION (82/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : ADRIA (ASSOCIATION POUR LE DEVELOPPEMENT (82/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Groupe Vauban (82/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Ligue de l'enseignement - centre confédéral (82/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Livremploi (82/100) · https://oscarcousin-max.github.io/orbe-usine/audits/livremploi/
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Stoïk (81/100) · https://oscarcousin-max.github.io/orbe-usine/audits/stoik/
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : FRUITS ROUGES & Co. (81/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Joko (80/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Geely Auto France (80/100) · https://oscarcousin-max.github.io/orbe-usine/audits/geely-auto-france/
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Amorino (80/100) · https://oscarcousin-max.github.io/orbe-usine/audits/amorino/
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Picnic Technologies (80/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Coopérative U (79/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Audencia (79/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : COMEXPOSIUM (79/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Département de la Mayenne (79/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : qlub (78/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Brique House Brewery (77/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Groupe Léon Grosse (77/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Groupe FIDEIP (77/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : EDHEC Business School (77/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : Groupe Médisup (77/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : L'École Française (77/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : ASWO (77/100)
+21:58:53     messager : aucune IA disponible
+21:58:53     messager : aucune IA disponible
+21:58:53     prêt : T&S (Technology & Strategy) (77/100)
+21:58:53 Terminé : 50 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
