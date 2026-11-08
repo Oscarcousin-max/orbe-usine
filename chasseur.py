@@ -513,7 +513,8 @@ def auditer(o):
                              consequence="Google ne sait pas bien sur quelles recherches vous montrer.",
                              solution="Un titre qui dit ce que vous faites et où, page par page."))
     if len(desc) < 50:
-        constats.append(dict(cle="description", vu="Votre page d'accueil n'a pas de description pour Google.",
+        constats.append(dict(cle="description", vu=("Votre page d'accueil n'a pas de description pour Google." if not desc
+                                                   else "La description de votre page d'accueil pour Google est très courte (« %s »)." % desc),
                              consequence="Google invente un résumé à partir de morceaux de texte : moins de clics.",
                              solution="Une description courte et donnant envie de cliquer, pour chaque page."))
     if not re.search(r"(?is)<h1[\s>]", page):
@@ -534,7 +535,7 @@ def auditer(o):
         constats.append(dict(cle="vieux", vu="Le bas de votre site indique « © %d » : il ne semble pas avoir été mis à jour depuis." % max(ans),
                              consequence="Un site qui paraît ancien inspire moins confiance.",
                              solution="Un site rafraîchi, entretenu chaque mois."))
-    if not re.search(r"(?i)<form|calendly|rendez-vous en ligne|prendre rendez-vous|r[ée]server|devis en ligne|demande de devis", page):
+    if not re.search(r"(?i)<form|calendly|d[ée]mo\b|hubspot|typeform|tally\.so|rendez-vous en ligne|prendre rendez-vous|r[ée]server|devis en ligne|demande de devis", page):
         constats.append(dict(cle="contact", vu="Nous n'avons trouvé ni formulaire, ni prise de rendez-vous, ni demande de devis en ligne.",
                              consequence="Un client prêt à vous contacter le soir ou le week-end doit attendre, ou part ailleurs.",
                              solution="Un formulaire simple, la prise de rendez-vous ou les devis automatiques."))
