@@ -93,7 +93,7 @@ Une deuxième chaîne, dans le même dépôt, avec les mêmes IA gratuites. Chaq
    Si le site bloque les robots, il ne dit rien plutôt que de dire quelque chose de faux.
 5. **La page mini-audit** est mise en ligne pour chaque prospect noté 60 ou plus :
    `https://oscarcousin-max.github.io/orbe-usine/audits/nom-de-l-entreprise/` (invisible sur Google).
-6. **Le messager** (IA) écrit l'e-mail (qui commence par « Je ne postule pas… »), l'invitation LinkedIn,
+6. **Le messager** (IA) écrit l'e-mail (qui commence par « J'ai vu que vous recrutez pour un poste de… »), l'invitation LinkedIn,
    le premier message et les deux relances. La ligne « STOP » est ajoutée automatiquement.
 
 Chaque prospect a une note sur 100 ; on garde les 20 meilleurs au-dessus de 40.
