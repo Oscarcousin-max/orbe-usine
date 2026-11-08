@@ -866,6 +866,8 @@ def main():
     refus = [o for o in candidates if not o.get("garder")]
     if refus:
         stats["ecartees"]["écartée par l'analyste"] = len(refus)
+        for o in refus:
+            journal("  écartée : %s — %s" % (o["entreprise"], o.get("raison") or "sans raison"))
     candidates = [o for o in candidates if o.get("garder")]
     candidates.sort(key=lambda o: (o["manuelle"], o["profil"] + o["urgence"] + (7 if o.get("contact_nom") else 0)), reverse=True)
 

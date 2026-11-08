@@ -56,7 +56,11 @@ jobs:
         run: |
           git config user.name "Chasseur ORBE"
           git config user.email "chasseur-orbe@users.noreply.github.com"
-          git add -A docs/audits docs/chasseur.json data/prospection data/prospects_historique.csv data/annonces-manuelles.txt data/journal-chasseur.txt 2>/dev/null || true
+          # Chaque chemin est ajouté seul : avant, un seul dossier absent (ex. docs/audits)
+          # faisait échouer tout le « git add » et rien n'était enregistré.
+          for p in docs/audits docs/chasseur.json data/prospection data/prospects_historique.csv data/annonces-manuelles.txt data/journal-chasseur.txt; do
+            if [ -e "$p" ]; then git add -A "$p"; fi
+          done
           git commit -m "Chasseur : prospects du $(date +%F)" || exit 0
           for i in 1 2 3; do
             git pull --rebase -X theirs origin main && git push && exit 0
