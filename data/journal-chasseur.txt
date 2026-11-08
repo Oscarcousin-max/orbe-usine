@@ -1,5 +1,5 @@
-19:41:27 Chasseur ORBE — annonces publiées du 07/11 20:41 au 08/11 20:41
-19:41:27 France Travail : clés absentes (FT_CLIENT_ID / FT_CLIENT_SECRET) — seules les annonces collées à la main seront lues.
-19:41:27 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
-19:41:27 Après le tri : 0 candidate(s) sur 0
-19:41:27 Terminé : 0 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
+19:55:14 Chasseur ORBE — annonces publiées du 07/11 20:55 au 08/11 20:55
+19:55:14 France Travail : clés absentes (FT_CLIENT_ID / FT_CLIENT_SECRET) — seules les annonces collées à la main seront lues.
+19:55:14 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
+19:55:14 Après le tri : 0 candidate(s) sur 0
+19:55:15 Terminé : 0 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
