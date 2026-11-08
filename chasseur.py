@@ -111,7 +111,8 @@ PUBLICS = re.compile(
     r"\bmairie\b|\bcommune d|\bville d[e' ]|conseil (?:d[ée]partemental|r[ée]gional)|\br[ée]gion\b|\bminist[eè]re|"
     r"centre hospitalier|\bCHU\b|\bh[oô]pital|universit[ée]|\blyc[ée]e\b|\bcoll[eè]ge\b|pr[ée]fecture|"
     r"communaut[ée] (?:de communes|d'agglom[ée]ration|urbaine)|\bm[ée]tropole\b|syndicat mixte|fonction publique|"
-    r"\bCCAS\b|\bSDIS\b|office de tourisme intercommunal", re.I)
+    r"\bCCAS\b|\bSDIS\b|office de tourisme intercommunal|^d[ée]partement d|\bagglom[ée]ration\b|"
+    r"[ée]cole|business school|\bCFA\b|ligue de l", re.I)
 # Codes d'activité (NAF) écartés : placement et intérim (78), agences de pub (73.11), programmation et conseil
 # informatique (62.01, 62.02 : ESN et agences web), relations publiques (70.21), administration publique (84).
 NAF_EXCLUS = ("78", "73.11", "62.01", "62.02", "70.21", "84")
@@ -605,6 +606,8 @@ def trier(offres, debut, fin):
             ecarter("activité exclue (intérim, agence, ESN, public)")
         elif HORS_SUJET.search(o["poste"]):
             ecarter("poste trop technique ou hors sujet")
+        elif re.search(r"(?i)alternan|apprenti|\bstage\b|stagiaire", o["poste"]):
+            ecarter("alternance ou stage")
         else:
             deja.add(nom_n)
             gardees.append(o)
