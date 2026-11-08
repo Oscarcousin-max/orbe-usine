@@ -6,7 +6,7 @@ for u in sys.argv[1:]:
     except Exception as e:
         print("==", u, "ERREUR", e); continue
     t = re.search(r"(?is)<title[^>]*>(.*?)</title>", h)
-    print("==", u, "| titre:", (t.group(1).strip()[:70] if t else ""), "| taille", len(h),
+    print("==", u, "| titre:", (t.group(1).strip()[:70] if t else ""), "| taille", len(h), "| h1:", len(re.findall(r"(?is)<h1[\s>]", h)),
           "| ld+json:", h.count("application/ld+json"),
           "| meta description:", bool(re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\'][^"\']{5,}', h, re.I) or re.search(r'<meta[^>]+content=["\'][^"\']{5,}["\'][^>]+name=["\']description', h, re.I)),
           "| <form:", h.lower().count("<form"),
