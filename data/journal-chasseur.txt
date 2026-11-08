@@ -1,94 +1,95 @@
-14:46:55 Chasseur ORBE — annonces publiées du 07/11 15:46 au 08/11 15:46
-14:46:55 France Travail : clés absentes (FT_CLIENT_ID / FT_CLIENT_SECRET) — seules les annonces collées à la main seront lues.
-14:46:55     modèles groq : allam-2-7b, openai/gpt-oss-120b, meta-llama/llama-prompt-guard-2-22m, whisper-large-v3-turbo, openai/gpt-oss-safeguard-20b, whisper-large-v3, openai/gpt-oss-20b, canopylabs/orpheus-arabic-saudi, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-86m, qwen/qwen3.8-27b
-14:48:31 Annonces collées à la main : 19 lue(s), 19 exploitable(s)
-14:48:31 Après le tri : 19 candidate(s) sur 19
-14:48:54 — LE CHALE BLEU (Community manager, Nice)
-14:49:09     note 84/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:09 — Brique House Brewery (brasserie artisanale) (Community Manager, Paris)
-14:49:13     note 84/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:13 — GONG (Community Manager, Saint-Nazaire)
-14:49:17     note 82/100 · site ok · e-mail non trouvé · constats : reseaux
-14:49:17 — Ramonetou (Responsable Marketing, Château-Gontier)
-14:49:17       DuckDuckGo : bloqué (202)
-14:49:26     note 82/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:26 — Solteo (Founding Marketing Manager, CDI, Paris)
-14:49:26       DuckDuckGo : bloqué (202)
-14:49:31     note 82/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:31 — Agora Lib' (Chargé de communication, événementiel et projets, Lhommaizé)
-14:49:31       DuckDuckGo : bloqué (202)
-14:49:39     note 81/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:39 — GSR MANAGER (Community manager, Gaillac)
-14:49:42     note 80/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:42 — Groupe Central Autos (Chef de Projet Performance Digitale, Saint-Fons)
-14:49:45     note 80/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:45 — MILLET INVESTIS (Chargé de communication / marketing (Community manager), Vaulx-en-Velin)
-14:49:51     note 79/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:51 — Hydratis (Responsable Communication Digitale, Paris)
-14:49:54     note 78/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:54 — Groupe Boucheries André (Chargé de Communication Digitale, Rillieux-la-Pape)
-14:49:59     note 77/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:49:59 — Sogarep (Chargé de Communication, Chargé)
-14:50:02     note 75/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:50:02 — Europa Organisation (Chargé de Marketing Digital, Toulouse)
-14:50:05     note 75/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:50:05 — My Paris Concierge (Webmaster (Claude / GitHub), Paris)
-14:50:08     note 75/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:50:08 — ARGFG (Webmaster, Montpellier)
-14:50:10     note 75/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:50:10 — France d'Or (Responsable SEO, Antibes)
-14:50:14     note 75/100 · site ok · e-mail non trouvé · constats : aucun
-14:50:14 — BDK Parfums (Chargé e-commerce, Paris)
-14:50:19     note 75/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:50:19 — Brainfield France (Responsable e-commerce marketplaces et acquisition digitale, Gers)
-14:50:22     note 75/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:50:22 — Tokimo (Chargé de Marketing Digital, Grasse)
-14:50:34     note 75/100 · site aucun ou injoignable · e-mail non trouvé · constats : pas_de_site
-14:50:34     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview
-14:54:41     prêt : LE CHALE BLEU (84/100) · https://oscarcousin-max.github.io/orbe-usine/audits/le-chale-bleu/
-14:59:05     prêt : Brique House Brewery (brasserie artisanale) (84/100) · https://oscarcousin-max.github.io/orbe-usine/audits/brique-house-brewery-brasserie-artisanal/
-15:03:40     prêt : GONG (82/100) · https://oscarcousin-max.github.io/orbe-usine/audits/gong/
-15:07:32     prêt : Ramonetou (82/100) · https://oscarcousin-max.github.io/orbe-usine/audits/ramonetou/
-15:12:32     gemini/gemini-3.8-flash : The read operation timed out
-15:17:32     gemini/gemini-3.7-flash : The read operation timed out
-15:17:47     prêt : Solteo (82/100) · https://oscarcousin-max.github.io/orbe-usine/audits/solteo/
-15:22:47     gemini/gemini-3.8-flash : The read operation timed out
-15:27:47     gemini/gemini-3.7-flash : The read operation timed out
-15:27:53     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-15:28:12     prêt : Agora Lib' (81/100) · https://oscarcousin-max.github.io/orbe-usine/audits/agora-lib/
-15:33:12     gemini/gemini-3.8-flash : The read operation timed out
-15:33:12     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:33:27     prêt : GSR MANAGER (80/100) · https://oscarcousin-max.github.io/orbe-usine/audits/gsr-manager/
-15:33:27     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:33:42     prêt : Groupe Central Autos (80/100) · https://oscarcousin-max.github.io/orbe-usine/audits/groupe-central-autos/
-15:33:43     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-15:33:58     prêt : MILLET INVESTIS (79/100) · https://oscarcousin-max.github.io/orbe-usine/audits/millet-investis/
-15:33:59     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:34:13     prêt : Hydratis (78/100) · https://oscarcousin-max.github.io/orbe-usine/audits/hydratis/
-15:34:13     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:34:28     prêt : Groupe Boucheries André (77/100) · https://oscarcousin-max.github.io/orbe-usine/audits/groupe-boucheries-andre/
-15:34:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:34:43     prêt : Sogarep (75/100) · https://oscarcousin-max.github.io/orbe-usine/audits/sogarep/
-15:34:43     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:34:51     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-15:35:07     prêt : Europa Organisation (75/100) · https://oscarcousin-max.github.io/orbe-usine/audits/europa-organisation/
-15:35:07     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:35:23     prêt : My Paris Concierge (75/100) · https://oscarcousin-max.github.io/orbe-usine/audits/my-paris-concierge/
-15:35:23     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:35:38     prêt : ARGFG (75/100) · https://oscarcousin-max.github.io/orbe-usine/audits/argfg/
-15:35:38     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:35:54     prêt : France d'Or (75/100)
-15:35:54     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:35:54     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:35:54     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:35:54     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
-15:35:54     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:35:55     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:35:55     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:36:02     prêt : BDK Parfums (75/100) · https://oscarcousin-max.github.io/orbe-usine/audits/bdk-parfums/
-15:36:02     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:36:02     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:36:02     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-15:36:17     prêt : Brainfield France (75/100) · https://oscarcousin-max.github.io/orbe-usine/audits/brainfield-france/
-15:36:25     prêt : Tokimo (75/100) · https://oscarcousin-max.github.io/orbe-usine/audits/tokimo/
-15:36:25 Terminé : 19 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
+16:22:15 Chasseur ORBE — annonces publiées du 07/11 17:22 au 08/11 17:22
+16:22:15 France Travail : clés absentes (FT_CLIENT_ID / FT_CLIENT_SECRET) — seules les annonces collées à la main seront lues.
+16:22:15     modèles groq : meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-arabic-saudi, whisper-large-v3, qwen/qwen3.8-27b, openai/gpt-oss-120b, allam-2-7b, canopylabs/orpheus-v1-english, openai/gpt-oss-20b, meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-safeguard-20b, whisper-large-v3-turbo
+16:24:08 Annonces collées à la main : 22 lue(s), 22 exploitable(s)
+16:24:08 Après le tri : 22 candidate(s) sur 22
+16:24:24     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+16:24:29   écartée : Laboratoires Sicobel (cosmétiques bio : Acorelle, Green Tribu), groupe Condat — Grand groupe avec équipe digitale déjà en place
+16:24:29 — Solteo (Founding Marketing Manager, Paris)
+16:24:30     note 96/100 · site ok · e-mail contact@solteo.fr · constats : ia, contact
+16:24:30 — Tokimo (Chargé de Marketing Digital, Grasse)
+16:24:32     note 94/100 · site ok · e-mail info@brandbucket.com · constats : aucun
+16:24:32 — Ramonetou (Responsable Marketing, Château-Gontier)
+16:24:36     note 84/100 · site ok · e-mail non trouvé · constats : ia, reseaux, vieux
+16:24:36 — Château & Village Castigno (NIRVANA - CASTIGNO), hôtel clé Michelin, restaurants et domaine viticole Castigno Vins (Chargé de communication, Assignan)
+16:25:06     site non lu (erreur de connexion) : aucun constat publié
+16:25:06     note 82/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+16:25:06 — Brainfield France (Responsable e-commerce marketplaces et acquisition digitale, Gers)
+16:25:13     note 82/100 · site ok · e-mail non trouvé · constats : contact
+16:25:13 — Groupe Central Autos (Chef de Projet Performance Digitale, Saint-Fons)
+16:25:23     note 82/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+16:25:23 — LE CHALE BLEU (Community manager, Nice)
+16:25:29     note 91/100 · site ok · e-mail bonjour@lechalebleu.fr · constats : ia
+16:25:29 — Hydratis (Responsable Communication Digitale, Paris)
+16:25:37     note 91/100 · site ok · e-mail philippe.mauzet@hydratis.com · constats : reseaux
+16:25:37 — BDK Parfums (Chargé e-commerce, Paris)
+16:25:39     note 91/100 · site ok · e-mail infos@bdkparfums.com · constats : aucun
+16:25:39 — Brique House Brewery (brasserie artisanale) (Community Manager, Paris)
+16:25:48     note 90/100 · site ok · e-mail contact@briquehouse.com · constats : ia, description
+16:25:48 — Agora Lib' (Chargé de communication, événementiel et projets, Lhommaizé)
+16:25:56     note 80/100 · site ok · e-mail non trouvé · constats : vieux
+16:25:56 — MILLET INVESTIS (Chargé de communication / marketing (Community manager), Vaulx-en-Velin)
+16:25:58     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+16:25:58 — Europa Organisation (Chargé de Marketing Digital, Toulouse)
+16:26:12     note 80/100 · site ok · e-mail non trouvé · constats : ia, lent
+16:26:12 — Le Temps des Cerises (Assistant Web Marketing International, Marseille)
+16:26:13     note 79/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+16:26:13 — GSR MANAGER (Community manager, Gaillac)
+16:26:20     note 89/100 · site ok · e-mail contact@groupesurplus.fr · constats : vieux, contact, ia
+16:26:20 — GONG (Community Manager, Saint-Nazaire)
+16:26:25     note 79/100 · site ok · e-mail non trouvé · constats : reseaux
+16:26:25 — Groupe Boucheries André (Chargé de Communication Digitale, Rillieux-la-Pape)
+16:26:31     note 79/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+16:26:31 — France d'Or (Responsable SEO, Antibes)
+16:26:32     note 79/100 · site ok · e-mail non trouvé · constats : description
+16:26:32 — Sogarep (Chargé de Communication, Chargé)
+16:26:34     note 78/100 · site ok · e-mail non trouvé · constats : contact
+16:26:34 — My Paris Concierge (Webmaster (Claude / GitHub), Paris)
+16:26:38     note 87/100 · site ok · e-mail contact@myparisconcierge.com · constats : aucun
+16:26:38 — ARGFG (Webmaster, Montpellier)
+16:26:43     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+16:26:43     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview
+16:30:41     prêt : Solteo (96/100) · https://oscarcousin-max.github.io/orbe-usine/audits/solteo/
+16:30:41     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+16:30:41     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+16:30:41     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+16:30:41     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+16:30:41     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+16:30:42     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+16:30:42     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+16:30:42     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+16:30:49     prêt : Tokimo (94/100)
+16:30:49     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+16:30:56     prêt : LE CHALE BLEU (91/100) · https://oscarcousin-max.github.io/orbe-usine/audits/le-chale-bleu/
+16:31:04     prêt : Hydratis (91/100) · https://oscarcousin-max.github.io/orbe-usine/audits/hydratis/
+16:31:11     prêt : BDK Parfums (91/100)
+16:31:26     prêt : Brique House Brewery (brasserie artisanale) (90/100) · https://oscarcousin-max.github.io/orbe-usine/audits/brique-house-brewery-brasserie-artisanal/
+16:31:26     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+16:31:26     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
+16:31:32     prêt : GSR MANAGER (89/100) · https://oscarcousin-max.github.io/orbe-usine/audits/gsr-manager/
+16:31:32     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+16:31:32     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
+16:31:38     prêt : My Paris Concierge (87/100)
+16:31:45     prêt : Ramonetou (84/100) · https://oscarcousin-max.github.io/orbe-usine/audits/ramonetou/
+16:31:45     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+16:31:46     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
+16:31:52     messager : pas de JSON
+16:31:52     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+16:31:52     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
+16:31:55     groq/openai/gpt-oss-20b : réponse vide
+16:31:55     modèles or : liquid/lfm-3-1.7b:free, recursive/flint-v1.0:free, xingchen-agi/xing4.0-29b-a4b:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, liquid/lfm-2.5-2.6b:free, nvidia/nemotron-3.5-lightning:free, cohere/north-mini-code:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
+16:32:37     prêt : Château & Village Castigno (NIRVANA - CASTIGNO), hôtel clé Michelin, restaurants et domaine viticole Castigno Vins (82/100)
+16:32:44     prêt : Brainfield France (82/100) · https://oscarcousin-max.github.io/orbe-usine/audits/brainfield-france/
+16:32:51     prêt : Groupe Central Autos (82/100)
+16:32:59     prêt : Agora Lib' (80/100) · https://oscarcousin-max.github.io/orbe-usine/audits/agora-lib/
+16:33:06     prêt : MILLET INVESTIS (80/100)
+16:33:14     prêt : Europa Organisation (80/100) · https://oscarcousin-max.github.io/orbe-usine/audits/europa-organisation/
+16:33:14     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+16:33:18     prêt : Le Temps des Cerises (79/100)
+16:33:25     prêt : GONG (79/100) · https://oscarcousin-max.github.io/orbe-usine/audits/gong/
+16:33:25     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+16:33:30     prêt : Groupe Boucheries André (79/100)
+16:33:31     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+16:33:35     prêt : France d'Or (79/100) · https://oscarcousin-max.github.io/orbe-usine/audits/france-d-or/
+16:33:43     prêt : Sogarep (78/100) · https://oscarcousin-max.github.io/orbe-usine/audits/sogarep/
+16:33:43 Terminé : 20 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
