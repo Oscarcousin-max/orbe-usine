@@ -1,3 +1,77 @@
-# Colle ici des annonces vues ailleurs (LinkedIn, Indeed, Welcome to the Jungle…).
-# Une annonce par bloc : colle le texte (et le lien si tu l'as), puis une ligne avec seulement ---
-# Le chasseur les lit au prochain passage, puis vide ce fichier.
+Entreprise : Theraclion
+Poste : Chargé(e) Marketing et Communication
+Ville : Malakoff
+Lien : https://www.linkedin.com/jobs/view/4485759194/
+Publiée le : 2026-11-02
+Missions : MedTech (traitement non invasif des varices, SONOVEIN) en phase de scale-up internationale. Supports marketing, contenus, communication digitale.
+---
+Entreprise : KLIMA SCHOOL
+Poste : Digital Marketing Manager (Growth)
+Ville : Nanterre
+Lien : https://www.linkedin.com/jobs/view/4485753615/
+Publiée le : 2026-11-02
+Missions : Startup EdTech climat, premier CDI marketing : construire la machine d'acquisition, améliorer la visibilité organique (SEO), trouver les leviers de croissance.
+---
+Entreprise : Kapp (TRIBEKAI)
+Poste : Traffic Manager / Growth Marketing Manager
+Ville : Villeurbanne
+Lien : https://www.linkedin.com/jobs/view/4483552807/
+Publiée le : 2026-10-26
+Missions : Plateformes Kapp Retail et Kapp Santé. Acquisition payante, SEO, croissance des plateformes.
+---
+Entreprise : Guideflow
+Poste : Founding Marketing Manager
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4484462875/
+Publiée le : 2026-10-28
+Missions : SaaS de démos interactives. Tout le périmètre marketing dès le premier jour : acquisition, contenus, SEO.
+---
+Entreprise : Onatera
+Poste : Head of Growth
+Ville : Aix-en-Provence
+Lien : https://www.linkedin.com/jobs/view/4474905324/
+Publiée le : 2026-10-16
+Missions : Marque de santé naturelle e-commerce. Piloter les campagnes Google Ads et Meta, optimiser le site (CRO), animer la base clients (CRM).
+---
+Entreprise : Carré Créatif
+Poste : Responsable marketing et e-commerce
+Ville : Marseille
+Lien : https://www.linkedin.com/jobs/view/4483554444/
+Publiée le : 2026-10-26
+Missions : Carrelage et aménagement intérieur haut de gamme, showroom et e-commerce. Création de poste : marketing, site e-commerce, acquisition.
+---
+Entreprise : digiRocks
+Poste : Growth & Acquisition Manager – Marché de l'art & Luxe
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4478605200/
+Publiée le : 2026-10-19
+Missions : Acquisition de vendeurs et d'acheteurs : Google Ads, Meta Ads, SEO, CRM, emailing, marketing automation.
+---
+Entreprise : Thalasseo.com
+Poste : SEO/GEO & Growth Manager
+Ville : Aix-en-Provence
+Lien : https://www.linkedin.com/jobs/view/4483026018/
+Publiée le : 2026-10-29
+Missions : Séjours bien-être (thalasso, spa). Référencement Google et IA, croissance du trafic.
+---
+Entreprise : Quatorze running
+Poste : Global marketing manager
+Ville : Saint-Germain-en-Laye
+Lien : https://www.linkedin.com/jobs/view/4488488870/
+Publiée le : 2026-11-07
+Missions : Enseigne running et trail haut de gamme. Piloter la stratégie marketing, digital et réseaux.
+---
+Entreprise : RockFi
+Poste : Marketing Manager - Partner Acquisition
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4482908000/
+Publiée le : 2026-10-25
+Missions : Family office moderne. Acquisition de conseillers partenaires : campagnes, contenus, automatisations.
+---
+Entreprise : NV GALLERY
+Poste : Chef(fe) de Projet International - E-Commerce
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4484835302/
+Publiée le : 2026-10-30
+Missions : Mobilier en ligne. Croissance e-commerce à l'international, coordination des projets.
+---
