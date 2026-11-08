@@ -137,13 +137,13 @@ N'invente jamais un fait absent de l'annonce. Réponds uniquement en JSON :
 CONSIGNE_EXTRACTION = """On te donne le texte d'une offre d'emploi copiée à la main (souvent depuis LinkedIn). Extrais seulement ce qui est écrit, sans rien deviner. Réponds uniquement en JSON :
 {"entreprise": "", "ville": "", "poste": "", "contrat": "", "date_publication": "AAAA-MM-JJ ou vide", "lien": "", "site": "adresse du site de l'entreprise si elle est écrite, sinon vide", "description": "résumé fidèle de l'annonce en 6 lignes maximum"}"""
 
-CONSIGNE_MESSAGER = """Tu écris pour « L'équipe ORBE », un studio digital français. ORBE contacte une entreprise qui publie une offre d'emploi pour lui proposer de faire ce travail en prestation, sans recrutement. On ne postule PAS : on le dit dès la première phrase.
+CONSIGNE_MESSAGER = """Tu écris pour « L'équipe ORBE », un studio digital français. ORBE contacte une entreprise qui publie une offre d'emploi pour lui proposer de faire ce travail en prestation, sans recrutement. On ne se présente jamais comme un candidat, et on ne dit pas « je ne postule pas » : on part de leur besoin.
 
 Règles : vouvoiement ; simple, direct, chaleureux, pas vendeur ; aucun prix ; aucun chiffre ni fait qui ne soit pas dans la fiche ; aucune référence client inventée ; pas de tiret long (—) ; pas de formules toutes faites (« n'hésitez pas », « je me permets », « booster », « véritable », « incontournable », « dans un monde en constante évolution »).
 
 À écrire :
 - "objet": objet d'e-mail court et précis, du type « Votre offre de {poste} : une autre option » ;
-- "email": 80 à 120 mots. Première phrase OBLIGATOIRE : « Je ne postule pas à votre offre de {poste} : je vous propose une autre solution. » Puis UN constat tiré de la fiche, l'idée que l'équipe ORBE peut prendre ce travail en charge, sans contrat ni recrutement (ne prétends jamais qu'ORBE le fait déjà pour d'autres clients), le lien du mini-audit (écris exactement {LIEN}), et une seule demande : un appel de 15 minutes. Signature : « L'équipe ORBE ». N'ajoute ni coordonnées ni ligne de désinscription : le code s'en charge ;
+- "email": 80 à 120 mots. Première phrase OBLIGATOIRE : « J'ai vu que vous recrutez pour un poste de {poste}. » Deuxième phrase : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Puis UN constat tiré de la fiche, l'idée que l'équipe ORBE peut prendre ce travail en charge, sans contrat ni recrutement (ne prétends jamais qu'ORBE le fait déjà pour d'autres clients), le lien du mini-audit (écris exactement {LIEN}) SEULEMENT s'il y en a un, et une seule demande : un appel de 15 minutes. Signature : « L'équipe ORBE ». N'ajoute ni coordonnées ni ligne de désinscription : le code s'en charge ;
 - "invitation": note d'invitation LinkedIn de 190 caractères maximum, qui cite l'offre et ne demande rien ;
 - "message_linkedin": 2 à 4 phrases après acceptation, avec le lien {LIEN} et la proposition d'un appel de 15 minutes ;
 - "relance_j4": 2 ou 3 phrases qui apportent un élément NOUVEAU tiré de la fiche (jamais « je me permets de vous relancer ») ;
@@ -687,29 +687,30 @@ def messages(o, constats, lien):
             break
     m = {k: nettoyer(v) for k, v in m.items()}
     poste = o["poste"].lower()
-    premiere = "Je ne postule pas à votre offre de %s : je vous propose une autre solution." % poste
+    premiere = ("J'ai vu que vous recrutez pour un poste de %s. Pendant ce recrutement, ou à sa place, "
+                "l'équipe ORBE peut prendre ce travail en charge." % poste)
     if not m.get("email"):  # l'IA n'a pas répondu : un modèle simple et honnête
         c = constats[0]["vu"] if constats else ""
         morceaux = ["Bonjour,", premiere]
         if c:
             morceaux.append("En regardant votre présence en ligne, nous avons noté ceci : " + c[0].lower() + c[1:])
-        morceaux.append("L'équipe ORBE peut prendre ce travail en charge pour vous, sans contrat ni recrutement.")
+        morceaux.append("Nous le faisons en prestation, sans contrat de travail, et vous gardez un seul interlocuteur.")
         if lien:
             morceaux.append("Nous avons préparé un mini-audit pour vous : {LIEN}")
         morceaux += ["Seriez-vous d'accord pour un appel de 15 minutes cette semaine ?", "L'équipe ORBE"]
         m["email"] = "\n\n".join(morceaux)
         m.setdefault("objet", "Votre offre de %s : une autre option" % poste)
         m["par"] = "modèle de secours"
-    elif "je ne postule pas" not in m["email"].lower():
+    elif "vous recrutez" not in m["email"].lower():
         m["email"] = re.sub(r"^(Bonjour[^\n]*\n+)?", lambda x: (x.group(0) or "Bonjour,\n\n") + premiere + " ", m["email"], count=1)
-    m["email"] = m["email"].replace("{LIEN}", lien).rstrip() + "\n" + CONTACT_ORBE + "\n\n" + LIGNE_STOP
+    m["email"] = (m["email"].replace("{LIEN}", lien) if lien else re.sub(r"[^\n.]*\{LIEN\}[^\n.]*\.?", "", m["email"])).rstrip() + "\n" + CONTACT_ORBE + "\n\n" + LIGNE_STOP
     m.setdefault("objet", "Votre offre de %s : une autre option" % poste)
     inv = m.get("invitation") or ("Bonjour, j'ai vu votre offre de %s. Chez ORBE, nous faisons ce travail en prestation pour des entreprises. Ravi d'échanger. L'équipe ORBE" % poste)
     m["invitation"] = inv if len(inv) <= 200 else inv[:197].rsplit(" ", 1)[0] + "..."
     for k in ("message_linkedin", "relance_j4", "relance_j10", "accroche"):
         m[k] = str(m.get(k) or "").replace("{LIEN}", lien)
     if not m["message_linkedin"]:
-        m["message_linkedin"] = ("Merci d'avoir accepté. Je ne postule pas à votre offre : nous vous proposons une autre solution. "
+        m["message_linkedin"] = ("Merci d'avoir accepté. J'ai vu votre offre : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge. "
                                  + ("Le mini-audit préparé pour vous : %s. " % lien if lien else "") + "Un appel de 15 minutes cette semaine ?")
     if not m["relance_j10"]:
         m["relance_j10"] = "Je ne vous relancerai plus. Si un jour vous préférez une prestation à un recrutement, la proposition reste valable."
