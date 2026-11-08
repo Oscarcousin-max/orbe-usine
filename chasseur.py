@@ -221,6 +221,161 @@ def chercher_france_travail(debut, fin):
     return offres, ["France Travail : %d recherches, %d offres" % (appels, len(offres))]
 
 
+# --- France Travail : le site public (l'API est fermée depuis oct. 2026) ------------------
+# On lit seulement les pages « métier » et « métier + département » que France Travail
+# publie dans ses plans du site (sitemaps) et que son robots.txt autorise. Pas de recherche
+# par mot-clé (motsCles= est interdit aux robots), une page à la fois, avec une pause.
+FT_SITE = "https://candidat.francetravail.fr"
+FT_PLAN_DEPTS = FT_SITE + "/rechercheoffre/sitemap/croisements-metiers-departements.xml"
+FT_METIERS = [
+    ("community-manager/s32m8", "réseaux sociaux"),
+    ("charge-de-marketing-digital/s32m7", "marketing digital"),
+    ("chef-de-projet-communication-digitale/s32m26", "marketing digital"),
+    ("assistant-marketing/s32m6", "marketing digital"),
+    ("directeur-marketing/s32m4", "marketing digital"),
+    ("concepteur-redacteur/s32m21", "SEO"),
+    ("traffic-manager/s32m12", "publicité en ligne"),
+    ("traffic-manager/s29m18", "publicité en ligne"),
+    ("webmestre/s32m10", "site web"),
+    ("webmaster/s29m3", "site web"),
+    ("webdesigner/s32m20", "site web"),
+    ("webdesigner/s29m21", "site web"),
+    ("chef-de-projet-web/s29m9", "site web"),
+    ("chef-de-projet-digital/s29m14", "marketing digital"),
+    ("developpeur-web/s29m2", "site web"),
+    ("integrateur/s29m6", "site web"),
+    ("concepteur-multimedia/s32m5", "réseaux sociaux"),
+]
+FT_PAGES_MAXI = int(os.environ.get("CHASSEUR_FT_PAGES", "120") or 120)
+FT_ECOLES = re.compile(r"[ée]cole|business school|\bCFA\b|formation|academy|acad[ée]mie|campus|institut|isfoi|"
+                       r"alternance|apprentissage|universit", re.I)
+
+
+def _ft_lire(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; ORBE-Chasseur/1.0)",
+                                               "Accept-Language": "fr-FR,fr;q=0.9"})
+    with urllib.request.urlopen(req, timeout=40) as r:
+        return r.read().decode("utf-8", "ignore")
+
+
+def _ft_date(txt, maintenant):
+    t = norm(txt)
+    if "aujourd" in t:
+        return maintenant
+    if "hier" in t:
+        return maintenant - timedelta(days=1)
+    if "plus de" in t:
+        return maintenant - timedelta(days=45)
+    m = re.search(r"(\d+)\s*jour", t)
+    return maintenant - timedelta(days=int(m.group(1))) if m else None
+
+
+def _ft_cartes(h, service, maintenant):
+    cartes = []
+    for bloc in h.split('<li data-id-offre="')[1:]:
+        i = re.match(r"[0-9A-Z]+", bloc)
+        if not i:
+            continue
+        sous = (re.search(r'class="subtext"[^>]*>([\s\S]*?)</p>', bloc) or [None, ""])[1]
+        ent, _, lieu = sous.partition("<span")
+        ent, lieu = _li_texte(ent).rstrip(" -"), _li_texte("<span" + lieu)
+        date = _ft_date(_li_texte((re.search(r'class="date"[^>]*>([\s\S]*?)</p>', bloc) or [None, ""])[1]), maintenant)
+        cartes.append({
+            "id": i.group(0), "service": service, "entreprise": ent.strip(), "lieu": lieu.strip(),
+            "poste": _li_classe(bloc, "media-heading-title"), "description": _li_classe(bloc, "description"),
+            "contrat": _li_texte((re.search(r'class="contrat visible-xs"[^>]*>([\s\S]*?)</p>', bloc) or [None, ""])[1]),
+            "date": date,
+        })
+    return cartes
+
+
+def chercher_france_travail_site(debut, fin):
+    """Offres publiées sur la période, lues sur les pages publiques autorisées de candidat.francetravail.fr."""
+    maintenant = datetime.now(PARIS)
+    vus_offres, vus_ent, stop = lire_historique()
+    pages, cartes, ids, pleins = 0, [], set(), []
+    erreurs = 0
+    # 1. Les pages nationales de chaque métier (les 20 offres les plus récentes)
+    for chemin, service in FT_METIERS:
+        try:
+            h = _ft_lire(FT_SITE + "/offres/emploi/" + chemin)
+        except Exception as e:
+            erreurs += 1
+            journal("  France Travail (site) « %s » : %s" % (chemin, court_erreur(e)))
+            if erreurs >= 4:
+                break
+            continue
+        pages += 1
+        lot = _ft_cartes(h, service, maintenant)
+        if len(lot) >= 20:
+            pleins.append((chemin, service))  # plus de 20 offres : on ira voir département par département
+        for c in lot:
+            if c["id"] not in ids:
+                ids.add(c["id"])
+                cartes.append(c)
+        time.sleep(1.5)
+    # 2. Les pages « métier + département », chaque jour à partir d'un département différent
+    if pleins and pages < FT_PAGES_MAXI and erreurs < 4:
+        try:
+            plan = _ft_lire(FT_PLAN_DEPTS)
+            urls = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", plan)
+        except Exception as e:
+            urls = []
+            journal("  France Travail (site) : plan des départements illisible (%s)" % court_erreur(e))
+        file = []
+        for chemin, service in pleins:
+            slug, code = chemin.split("/")
+            liste = [u for u in urls if "/offres/emploi/%s/" % slug in u and re.search(r"/%sd[0-9ab]+$" % code, u, re.I)]
+            if liste:
+                k = maintenant.timetuple().tm_yday % len(liste)
+                file.append([(u, service) for u in liste[k:] + liste[:k]])
+        # on alterne les métiers pour que chacun ait sa part du budget de pages
+        while file and pages < FT_PAGES_MAXI and erreurs < 4:
+            for f in list(file):
+                if not f:
+                    file.remove(f)
+                    continue
+                url, service = f.pop(0)
+                try:
+                    h = _ft_lire(url)
+                except Exception:
+                    erreurs += 1
+                    continue
+                pages += 1
+                for c in _ft_cartes(h, service, maintenant):
+                    if c["id"] not in ids:
+                        ids.add(c["id"])
+                        cartes.append(c)
+                time.sleep(1.5)
+                if pages >= FT_PAGES_MAXI:
+                    break
+    # 3. Tri : sur la période, une offre par entreprise, sans écoles ni intérim
+    offres, ents = [], set()
+    for c in cartes:
+        n = norm(c["entreprise"])
+        if not n or n in ents or n in vus_ent or n in stop or ("ft-" + c["id"]) in vus_offres:
+            continue
+        if c["date"] is None or c["date"] < debut - timedelta(days=1) or c["date"] > fin + timedelta(days=1):
+            continue
+        if RECRUTEURS.search(c["entreprise"]) or CONCURRENTS.search(c["entreprise"]) or FT_ECOLES.search(c["entreprise"] + " " + c["poste"]):
+            continue
+        ents.add(n)
+        dep, _, ville = c["lieu"].partition(" - ")
+        ville = ville.strip() or c["lieu"]
+        offres.append({
+            "source": "France Travail", "id_offre": "ft-%s" % c["id"], "entreprise": c["entreprise"], "entreprise_desc": "",
+            "site": "", "ville": ville.title() if ville.isupper() else ville, "code_postal": dep.strip() if dep.strip().isdigit() else "",
+            "poste": poste_propre(c["poste"]), "contrat": c["contrat"].split(" - ")[0].strip(), "effectif": "",
+            "secteur": "", "code_naf": "", "description": c["description"][:1500],
+            "publie_le": c["date"].strftime("%Y-%m-%dT12:00:00+01:00"),
+            "lien": FT_SITE + "/offres/recherche/detail/%s" % c["id"], "contact_nom": "", "contact_email": "",
+            "service_mot_cle": c["service"], "manuelle": False,
+        })
+    journal("France Travail (site) : %d page(s) lue(s), %d offre(s), %d entreprise(s) nouvelle(s) sur la période"
+            % (pages, len(cartes), len(offres)))
+    return offres, ["France Travail (site) : %d pages, %d offres retenues" % (pages, len(offres))]
+
+
 # --- LinkedIn (pages publiques des offres, sans compte) ------------------------------------
 LI_LISTE = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
 LI_OFFRE = "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/%s"
@@ -1019,6 +1174,14 @@ def main():
 
     # 1. Chercher
     offres, sources = chercher_france_travail(debut, fin)
+    if not offres and os.environ.get("CHASSEUR_FT_SITE", "1") != "0":
+        # l'API ne répond plus : on lit le site public à la place
+        try:
+            o_ft, s_ft = chercher_france_travail_site(debut, fin)
+            offres += o_ft
+            sources += s_ft
+        except Exception as e:
+            journal("France Travail (site) : erreur (%s)" % str(e)[:100])
     if os.environ.get("CHASSEUR_LINKEDIN", "1") != "0":
         try:
             o_li, s_li = chercher_linkedin(debut, fin)
