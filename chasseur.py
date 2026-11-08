@@ -724,9 +724,14 @@ def choisir_constats(constats, service):
 
 def choisir_email(emails, o):
     """L'adresse la plus utile : celle de l'annonce, sinon une adresse du domaine de l'entreprise."""
-    if o.get("contact_email") and EMAIL.fullmatch(o["contact_email"]):
-        return o["contact_email"]
     dom = verif._hote(o.get("site") or "")
+    c = (o.get("contact_email") or "").strip()
+    # Adresse de l'annonce : écartée si c'est un modèle (ton@email.com), une adresse RGPD,
+    # ou une messagerie gratuite (marc@gmail.com) alors que l'entreprise a son propre site.
+    gratuite = re.search(r"@(gmail|hotmail|outlook|yahoo|live|icloud|orange|free|sfr|laposte)\.", c, re.I)
+    if c and EMAIL.fullmatch(c) and not FAUX_EMAILS.search(c) and not (gratuite and dom):
+        return c
+    emails = {e for e in emails if not FAUX_EMAILS.search(e)}
     liste = sorted(emails, key=lambda e: (0 if dom and e.lower().endswith("@" + dom) else 1,
                                           0 if re.match(r"(?i)(contact|bonjour|hello|info|direction|accueil)@", e) else 1, len(e)))
     return liste[0] if liste else ""
