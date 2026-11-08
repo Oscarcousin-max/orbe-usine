@@ -407,14 +407,24 @@ def trouver_site(o):
     if o.get("site"):
         url = o["site"] if o["site"].startswith("http") else "https://" + o["site"]
         return url
-    q = "%s %s" % (o["entreprise"], o["ville"])
+    nom_court = re.sub(r"\s*\(.*?\)", "", o["entreprise"]).strip() or o["entreprise"]
+    # 1. On essaie d'abord les adresses évidentes (nom.fr, nom.com…), vérifiées en lisant la page :
+    #    ça marche même quand les moteurs de recherche bloquent le robot.
+    try:
+        direct = verif.essai_domaines(nom_court, o["ville"])
+    except Exception:
+        direct = ""
+    if direct:
+        u = urllib.parse.urlsplit(direct)
+        return "%s://%s/" % (u.scheme or "https", u.netloc)
+    q = "%s %s" % (nom_court, o["ville"])
     resultats, _ = verif.chercher(q, journal, voulu=1)
     for url, _titre, _ in resultats[:6]:
         h = verif._hote(url)
         if not h or verif._est_annuaire(h):
             continue
         try:
-            ok, final, _ = verif.page_parle_de(url, o["entreprise"], o["ville"])
+            ok, final, _ = verif.page_parle_de(url, nom_court, o["ville"])
         except Exception:
             ok, final = False, ""
         if ok:
