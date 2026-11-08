@@ -1,8 +1,8 @@
 # Rapport quotidien de prospection ORBE
 
-- **Date :** 08/11/2026 20:55
-- **Période analysée :** du 07/11 20:55 au 08/11 20:55 (heure de Paris)
-- **Sources consultées :** France Travail : non branché (clés manquantes) · Annonces collées à la main : 0
+- **Date :** 08/11/2026 21:46
+- **Période analysée :** du 09/10 21:46 au 08/11 21:46 (heure de Paris)
+- **Sources consultées :** France Travail : connexion refusée (HTTP Error 400: Bad Request) · Annonces collées à la main : 0
 - **Annonces lues :** 0
 - **Analysées par l'IA :** 0
 - **Prospects retenus :** 0

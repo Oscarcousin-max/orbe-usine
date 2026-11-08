@@ -1,5 +1,5 @@
-19:55:14 Chasseur ORBE — annonces publiées du 07/11 20:55 au 08/11 20:55
-19:55:14 France Travail : clés absentes (FT_CLIENT_ID / FT_CLIENT_SECRET) — seules les annonces collées à la main seront lues.
-19:55:14 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
-19:55:14 Après le tri : 0 candidate(s) sur 0
-19:55:15 Terminé : 0 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
+20:46:32 Chasseur ORBE — annonces publiées du 09/10 21:46 au 08/11 21:46
+20:46:33 France Travail : connexion refusée (HTTP Error 400: Bad Request)
+20:46:33 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
+20:46:33 Après le tri : 0 candidate(s) sur 0
+20:46:33 Terminé : 0 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
