@@ -1,143 +1,63 @@
-17:13:26 Chasseur ORBE — annonces publiées du 07/11 18:13 au 08/11 18:13
-17:13:26 France Travail : clés absentes (FT_CLIENT_ID / FT_CLIENT_SECRET) — seules les annonces collées à la main seront lues.
-17:13:26     modèles groq : meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-20b, allam-2-7b, openai/gpt-oss-120b, whisper-large-v3-turbo, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-safeguard-20b, canopylabs/orpheus-arabic-saudi, whisper-large-v3, qwen/qwen3.8-27b, canopylabs/orpheus-v1-english
-17:16:48 Annonces collées à la main : 41 lue(s), 41 exploitable(s)
-17:16:48 Après le tri : 41 candidate(s) sur 41
-17:17:05     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:17:20     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:17:20     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
-17:17:27     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:17:31   écartée : Theraclion — Scale‑up MedTech avec besoins stratégiques internes
-17:17:31   écartée : KLIMA SCHOOL — Startup recherche à construire une équipe interne d’acquisition
-17:17:31   écartée : Digital 113 — Entreprise concurrente du secteur digital
-17:17:31   écartée : Kapp (TRIBEKAI) — Besoin d’un profil technique interne complet pour la gestion du trafic
-17:17:31   écartée : Guideflow — Recherche un manager marketing complet, rôle stratégique interne.
-17:17:31   écartée : Onatera — Poste senior couvrant stratégie d’acquisition globale, difficile à externaliser.
-17:17:31   écartée : Carré Créatif — Responsable marketing et e‑commerce complet, besoin d’un poste interne.
-17:17:31   écartée : digiRocks — Poste de Growth & Acquisition Manager couvrant l’ensemble des leviers, rôle interne requis.
-17:17:31   écartée : Thalasseo.com — Recherche un manager SEO/GEO dédié, fonction stratégique interne.
-17:17:31   écartée : Quatorze running — poste senior de direction marketing interne, difficile à externaliser
-17:17:31   écartée : RockFi — poste de manager interne dédié à l’acquisition de partenaires, peu propice à l’externalisation
-17:17:31   écartée : NV GALLERY — poste de chef de projet interne pour coordination internationale, difficile à externaliser
-17:17:31 — Bleu Robotics (Marketing & Communication, Paris)
-17:17:34     note 97/100 · site ok · e-mail contact@bleu-robotics.com · constats : ia, contact
-17:17:34 — Pôle Textile Alsace (Chargé de référencement Web SEO/SEA/GEO, Mulhouse)
-17:17:37     note 86/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:17:37 — PALAMATIC PROCESS (Chargé de Webmarketing SEO/GEO, Brécé)
-17:17:41     note 96/100 · site ok · e-mail contact@palamatic.fr · constats : ia
-17:17:41 — Secrets d'Entraineurs (Community Manager, Haute-Loire)
-17:17:44     note 95/100 · site ok · e-mail ton@email.com · constats : aucun
-17:17:44 — Qileo (Brand, Content & Community Lead, Joinville-le-Pont)
-17:17:47     note 94/100 · site ok · e-mail dpo@qileo.com · constats : aucun
-17:17:47 — Tiime (Chargé de performance web, Paris)
-17:17:50     note 94/100 · site ok · e-mail contact@tiime.fr · constats : aucun
-17:17:50 — LCF Outdoor (Responsable Marketing Opérationnel, Dardilly)
-17:17:58     note 84/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:17:58 — Tikamoon (Traffic Manager Paid Social, Englos)
-17:17:59     note 84/100 · site ok · e-mail non trouvé · constats : aucun
-17:17:59 — Les Œufs Geslin (Responsable communication, Chauché)
-17:18:06     note 94/100 · site ok · e-mail communication@geslin.fr · constats : aucun
-17:18:06 — adaption (Founding Growth Marketer, Paris)
-17:18:33     note 83/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:18:33 — MS Vacances Campings Clubs (Chargé de Communication Digitale & Marketing, Longeville-sur-Mer)
-17:18:39     note 83/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:18:39 — iara (Social Media Manager, Paris)
-17:18:44     note 93/100 · site ok · e-mail hello@iarabeauty.com · constats : aucun
-17:18:44 — SkyVisor (Marketing & Communication Manager, Paris)
-17:18:49     note 83/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:18:49 — Parallel (Marketing Manager, Paris)
-17:18:52     note 93/100 · site ok · e-mail contact@parallel.fr · constats : description, ia, contact, h1
-17:18:52 — Groupe Bourassin (Super U Côte d'Azur) (Chargé de Communication & Community Manager, Beaulieu-sur-Mer)
-17:19:42     note 83/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:19:42 — Montpellier Sotheby's International Realty (Chargé de marketing et communication, Montpellier)
-17:19:47     note 82/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:19:47 — Fluxym (Chargé de Marketing Digital - Lead Generation B2B, Paris)
-17:19:52     note 81/100 · site ok · e-mail non trouvé · constats : aucun
-17:19:52 — Cimalpes (Chargé de Communication Senior, Albertville)
-17:19:57     note 91/100 · site ok · e-mail cim@cimalpes.fr · constats : ia
-17:19:57 — 24/7 Services - Remplacement en pharmacie (Responsable Communications & Projets Créatifs, Briançon)
-17:20:00     note 91/100 · site ok · e-mail teamrh@24-7services.eu · constats : aucun
-17:20:00 — RCM (SAGA Mercedes-Benz) (Audience & Community Manager, Belleville-sur-Vie)
-17:20:13     note 81/100 · site ok · e-mail non trouvé · constats : ia
-17:20:13 — KONCRETE (Chargé de marketing et communication, Paris)
-17:20:14     note 90/100 · site ok · e-mail contact@koncrete.fr · constats : aucun
-17:20:14 — Mozaik par Toutapprendre (Responsable e-commerce, Boulogne-Billancourt)
-17:20:17     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:20:17 — Boulangerie Ange (Chargé de Communication senior, Aix-en-Provence)
-17:20:36     note 80/100 · site ok · e-mail non trouvé · constats : description, vieux, h1
-17:20:36 — Maison Junot (Chargé de Marketing Digital Confirmé, Paris)
-17:20:41     note 79/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:20:41 — Bocage (Coordinateur E-Commerce, Montrevault-sur-Èvre)
-17:20:45     note 77/100 · site ok · e-mail non trouvé · constats : ia
-17:20:45 — Sabre Paris (Responsable E-commerce, Aigremont)
-17:20:48     note 87/100 · site ok · e-mail communication@sabre-paris.com · constats : h1
-17:20:48 — Surprise Paris (Responsable E-Commerce, Paris)
-17:20:50     note 87/100 · site ok · e-mail hello@surprise-paris.com · constats : aucun
-17:20:50 — Maison Riviera Art (Responsable E-commerce / Gestionnaire de stock digital, Antibes)
-17:21:20     note 75/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:21:20 — BPAC ULTRASONIC (Gestionnaire catalogue e-commerce & marketplaces, Vern-sur-Seiche)
-17:21:25     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-17:21:25     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview
-17:24:26     prêt : Bleu Robotics (97/100) · https://oscarcousin-max.github.io/orbe-usine/audits/bleu-robotics/
-17:24:29     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-17:24:30     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:24:46     prêt : PALAMATIC PROCESS (96/100) · https://oscarcousin-max.github.io/orbe-usine/audits/palamatic-process/
-17:24:46     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:25:03     prêt : Secrets d'Entraineurs (95/100)
-17:25:03     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:25:04     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:25:04     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:25:04     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
-17:25:04     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:25:04     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:25:04     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:25:12     prêt : Qileo (94/100)
-17:25:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:25:12     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-17:25:20     prêt : Tiime (94/100)
-17:25:28     prêt : Les Œufs Geslin (94/100)
-17:25:35     prêt : iara (93/100)
-17:25:41     prêt : Parallel (93/100) · https://oscarcousin-max.github.io/orbe-usine/audits/parallel/
-17:25:48     prêt : Cimalpes (91/100) · https://oscarcousin-max.github.io/orbe-usine/audits/cimalpes/
-17:25:49     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:25:54     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:25:59     prêt : 24/7 Services - Remplacement en pharmacie (91/100)
-17:26:06     prêt : KONCRETE (90/100)
-17:26:13     prêt : Sabre Paris (87/100) · https://oscarcousin-max.github.io/orbe-usine/audits/sabre-paris/
-17:26:13     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:26:18     prêt : Surprise Paris (87/100)
-17:26:26     prêt : Pôle Textile Alsace (86/100)
-17:26:26     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:26:31     prêt : LCF Outdoor (84/100)
-17:26:31     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:26:31     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
-17:26:37     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:26:42     prêt : Tikamoon (84/100)
-17:26:50     prêt : adaption (83/100)
-17:26:58     prêt : MS Vacances Campings Clubs (83/100)
-17:26:58     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:27:03     prêt : SkyVisor (83/100)
-17:27:03     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:27:08     prêt : Groupe Bourassin (Super U Côte d'Azur) (83/100)
-17:27:08     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:27:08     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
-17:27:13     prêt : Montpellier Sotheby's International Realty (82/100)
-17:27:21     prêt : Fluxym (81/100)
-17:27:28     prêt : RCM (SAGA Mercedes-Benz) (81/100) · https://oscarcousin-max.github.io/orbe-usine/audits/rcm-saga-mercedes-benz/
-17:27:28     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:27:34     prêt : Mozaik par Toutapprendre (80/100)
-17:27:34     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:27:34     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
-17:27:37     groq/openai/gpt-oss-20b : réponse vide
-17:27:37     modèles or : liquid/lfm-3-1.7b:free, recursive/flint-v1.0:free, xingchen-agi/xing4.0-29b-a4b:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, liquid/lfm-2.5-2.6b:free, nvidia/nemotron-3.5-lightning:free, cohere/north-mini-code:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
-17:28:11     prêt : Boulangerie Ange (80/100) · https://oscarcousin-max.github.io/orbe-usine/audits/boulangerie-ange/
-17:28:12     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:28:17     prêt : Maison Junot (79/100)
-17:28:17     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:28:22     prêt : Bocage (77/100) · https://oscarcousin-max.github.io/orbe-usine/audits/bocage/
-17:28:22     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:28:22     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
-17:28:28     prêt : Maison Riviera Art (75/100)
-17:28:28     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-17:28:33     prêt : BPAC ULTRASONIC (73/100)
-17:28:33 Terminé : 29 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
+17:29:21 Chasseur ORBE — annonces publiées du 07/11 18:29 au 08/11 18:29
+17:29:21 France Travail : clés absentes (FT_CLIENT_ID / FT_CLIENT_SECRET) — seules les annonces collées à la main seront lues.
+17:29:21     modèles groq : meta-llama/llama-prompt-guard-2-86m, qwen/qwen3.8-27b, canopylabs/orpheus-arabic-saudi, whisper-large-v3, whisper-large-v3-turbo, openai/gpt-oss-120b, allam-2-7b, canopylabs/orpheus-v1-english, openai/gpt-oss-20b, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-safeguard-20b
+17:29:22     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+17:30:06     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+17:30:11 Annonces collées à la main : 11 lue(s), 11 exploitable(s)
+17:30:11 Après le tri : 11 candidate(s) sur 11
+17:30:17     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+17:30:23 — Guideflow (Founding Marketing Manager, Paris)
+17:30:23     note 98/100 · site ok · e-mail contact@guideflow.com · constats : aucun
+17:30:23 — KLIMA SCHOOL (Digital Marketing Manager (Growth), Nanterre)
+17:30:24     note 97/100 · site ok · e-mail admissions@klimaschool.com · constats : contact
+17:30:24 — Theraclion (Chargé Marketing et Communication, Malakoff)
+17:30:28     note 85/100 · site ok · e-mail non trouvé · constats : contact, reseaux
+17:30:28 — Carré Créatif (Responsable marketing et e-commerce, Marseille)
+17:30:35     note 85/100 · site ok · e-mail non trouvé · constats : aucun
+17:30:35 — Thalasseo.com (SEO/GEO & Growth Manager, Aix-en-Provence)
+17:30:40     note 95/100 · site ok · e-mail marc@gmail.com · constats : aucun
+17:30:40 — Onatera (Head of Growth, Aix-en-Provence)
+17:30:44     note 84/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+17:30:44 — digiRocks (Growth & Acquisition Manager – Marché de l'art & Luxe, Paris)
+17:30:50     note 94/100 · site ok · e-mail herve@digirocks.fr · constats : aucun
+17:30:50 — Kapp (TRIBEKAI) (Traffic Manager / Growth Marketing Manager, Villeurbanne)
+17:31:03     note 93/100 · site ok · e-mail contact@kapp-process.com · constats : contact, description, ia, h1
+17:31:03 — Quatorze running (Global marketing manager, Saint-Germain-en-Laye)
+17:31:04     note 89/100 · site ok · e-mail contact@quatorzerunning.com · constats : aucun
+17:31:04 — RockFi (Marketing Manager - Partner Acquisition, Paris)
+17:31:05     note 88/100 · site ok · e-mail contact@rockfi.fr · constats : aucun
+17:31:05 — NV GALLERY (Chef(fe) de Projet International - E-Commerce, Paris)
+17:31:07     note 88/100 · site ok · e-mail info@nvgallery.com · constats : aucun
+17:31:07     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview
+17:31:07     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+17:31:07     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+17:31:08     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+17:31:08     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+17:31:08     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+17:31:08     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+17:31:08     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+17:31:08     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+17:31:13     prêt : Guideflow (98/100)
+17:31:13     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+17:31:14     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+17:31:19     prêt : KLIMA SCHOOL (97/100) · https://oscarcousin-max.github.io/orbe-usine/audits/klima-school/
+17:31:19     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+17:31:30     prêt : Thalasseo.com (95/100)
+17:31:30     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+17:31:35     prêt : digiRocks (94/100)
+17:31:40     prêt : Kapp (TRIBEKAI) (93/100) · https://oscarcousin-max.github.io/orbe-usine/audits/kapp-tribekai/
+17:31:40     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+17:31:43     groq/openai/gpt-oss-20b : réponse vide
+17:31:43     modèles or : liquid/lfm-3-1.7b:free, recursive/flint-v1.0:free, xingchen-agi/xing4.0-29b-a4b:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, liquid/lfm-2.5-2.6b:free, nvidia/nemotron-3.5-lightning:free, cohere/north-mini-code:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
+17:31:43     or/liquid/lfm-3-1.7b:free : 429 {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm
+17:32:30     prêt : Quatorze running (89/100)
+17:32:35     prêt : RockFi (88/100)
+17:32:40     prêt : NV GALLERY (88/100)
+17:32:45     prêt : Theraclion (85/100) · https://oscarcousin-max.github.io/orbe-usine/audits/theraclion/
+17:32:45     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+17:32:51     messager : pas de JSON
+17:32:52     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+17:32:58     prêt : Carré Créatif (85/100)
+17:32:58     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+17:33:09     prêt : Onatera (84/100)
+17:33:10 Terminé : 11 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
