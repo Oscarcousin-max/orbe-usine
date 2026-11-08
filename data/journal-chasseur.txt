@@ -1,0 +1,18 @@
+13:08:47 Chasseur ORBE — annonces publiées du 07/11 14:08 au 08/11 14:08
+13:08:47 France Travail : clés absentes (FT_CLIENT_ID / FT_CLIENT_SECRET) — seules les annonces collées à la main seront lues.
+13:08:47     modèles groq : openai/gpt-oss-safeguard-20b, qwen/qwen3.8-27b, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-20b, whisper-large-v3, meta-llama/llama-prompt-guard-2-86m, canopylabs/orpheus-arabic-saudi, whisper-large-v3-turbo, canopylabs/orpheus-v1-english, allam-2-7b, openai/gpt-oss-120b
+13:09:32 Annonces collées à la main : 9 lue(s), 9 exploitable(s)
+13:09:32 Après le tri : 9 candidate(s) sur 9
+13:09:44   écartée : Bachca — Recherche un CDI interne, pas une prestation externalisée
+13:09:44   écartée : Château & Village Castigno (NIRVANA - CASTIGNO), hôtel clé Michelin, restaurants et domaine viticole Castigno Vins — Offre d'embauche d'un chargé de communication interne
+13:09:44   écartée : ASAPE Formation (ASAPE DIGITAL), organisme de formation — Poste CDI interne, l'entreprise veut un salarié
+13:09:44   écartée : PALAMATIC PROCESS (groupe FIDEIP) — Déjà une équipe marketing de 5 personnes, recrutement interne prévu
+13:09:44   écartée : Le Temps des Cerises — Recherche un assistant web marketing en interne
+13:09:44   écartée : Il Popolo (restaurant italien du groupe La Côte et L'Arête) — Alternance, poste d'apprentissage interne
+13:09:44   écartée : Moulin Créole (SARL CARAIBE) — Alternance, recrutement interne d'un community manager/événementiel
+13:09:44   écartée : Laboratoires Sicobel — Poste en CDI interne de community manager
+13:09:44 — Cornilleau (tables de tennis de table et mobilier de jeu) (Community Manager & Content Creator, Bonneuil-les-Eaux)
+13:09:46     note 90/100 · site ok · e-mail commercial@cornilleau.fr · constats : aucun
+13:09:46     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview
+13:14:08     prêt : Cornilleau (tables de tennis de table et mobilier de jeu) (90/100)
+13:14:08 Terminé : 1 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
