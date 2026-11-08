@@ -45,7 +45,7 @@ jobs:
           # Les deux clés gratuites de francetravail.io (voir LISEZMOI.md, partie « Chasseur »).
           FT_CLIENT_ID: ${{ secrets.FT_CLIENT_ID }}
           FT_CLIENT_SECRET: ${{ secrets.FT_CLIENT_SECRET }}
-          CHASSEUR_MAX: ${{ github.event.inputs.nombre || '20' }}
+          CHASSEUR_MAX: ${{ github.event.inputs.nombre || '50' }}
           USINE_PAUSE: "4"
         run: |
           mkdir -p data

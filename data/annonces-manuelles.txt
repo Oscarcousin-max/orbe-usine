@@ -1,3 +1,287 @@
-# Colle ici des annonces vues ailleurs (LinkedIn, Indeed, Welcome to the Jungle…).
-# Une annonce par bloc : colle le texte (et le lien si tu l'as), puis une ligne avec seulement ---
-# Le chasseur les lit au prochain passage, puis vide ce fichier.
+Entreprise : Secrets d'Entraineurs
+Poste : Community Manager
+Ville : Haute-Loire
+Lien : https://www.linkedin.com/jobs/view/4479390322/
+Publiée le : 2026-10-16
+Missions : Animer la communauté du club et les réseaux sociaux (Instagram, LinkedIn, YouTube) : calendrier éditorial, publications, modération, mise en avant des membres et experts. Petite équipe.
+---
+Entreprise : Qileo
+Poste : Brand, Content & Community Lead
+Ville : Joinville-le-Pont
+Lien : https://www.linkedin.com/jobs/view/4487338814/
+Publiée le : 2026-11-05
+Missions : Compte pro pour TPE de 1 à 15 salariés. Nouvelle identité fin 2026 : construire la marque, les contenus et la communauté.
+---
+Entreprise : KONCRETE
+Poste : Chargé(e) de marketing et communication
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4483276523/
+Publiée le : 2026-10-27
+Missions : Place de marché du vrac (granulats, sable, transport) en forte croissance, 40 personnes. Marketing, communication, acquisition.
+---
+Entreprise : Theraclion
+Poste : Chargé(e) Marketing et Communication
+Ville : Malakoff
+Lien : https://www.linkedin.com/jobs/view/4485759194/
+Publiée le : 2026-11-02
+Missions : MedTech (traitement non invasif des varices, SONOVEIN) en phase de scale-up internationale. Supports marketing, contenus, communication digitale.
+---
+Entreprise : Montpellier Sotheby's International Realty
+Poste : Chargé de marketing et communication
+Ville : Montpellier
+Lien : https://www.linkedin.com/jobs/view/4481966746/
+Publiée le : 2026-10-12
+Missions : Agence immobilière de prestige. Plan marketing, calendrier éditorial, animation des réseaux sociaux, rédaction, valorisation des biens.
+---
+Entreprise : KLIMA SCHOOL
+Poste : Digital Marketing Manager (Growth)
+Ville : Nanterre
+Lien : https://www.linkedin.com/jobs/view/4485753615/
+Publiée le : 2026-11-02
+Missions : Startup EdTech climat, premier CDI marketing : construire la machine d'acquisition, améliorer la visibilité organique (SEO), trouver les leviers de croissance.
+---
+Entreprise : Digital 113
+Poste : Responsable Acquisition & Marketing Digital
+Ville : Toulouse
+Lien : https://www.linkedin.com/jobs/view/4486645933/
+Publiée le : 2026-11-07
+Missions : Stratégie d'acquisition pour générer des leads, campagnes digitales, contenus, visibilité, usage d'agents IA.
+---
+Entreprise : Kapp (TRIBEKAI)
+Poste : Traffic Manager / Growth Marketing Manager
+Ville : Villeurbanne
+Lien : https://www.linkedin.com/jobs/view/4483552807/
+Publiée le : 2026-10-26
+Missions : Plateformes Kapp Retail et Kapp Santé. Acquisition payante, SEO, croissance des plateformes.
+---
+Entreprise : Fluxym
+Poste : Chargé de Marketing Digital - Lead Generation B2B
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4485377759/
+Publiée le : 2026-11-02
+Missions : Société de services en digitalisation Finance et Achats. Génération de leads B2B, campagnes, emailing, contenus.
+---
+Entreprise : adaption
+Poste : Founding Growth Marketer
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4486294484/
+Publiée le : 2026-11-06
+Missions : Startup IA. Paid, SEO et AEO, lifecycle, lancements et analytics.
+---
+Entreprise : Guideflow
+Poste : Founding Marketing Manager
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4484462875/
+Publiée le : 2026-10-28
+Missions : SaaS de démos interactives. Tout le périmètre marketing dès le premier jour : acquisition, contenus, SEO.
+---
+Entreprise : Onatera
+Poste : Head of Growth
+Ville : Aix-en-Provence
+Lien : https://www.linkedin.com/jobs/view/4474905324/
+Publiée le : 2026-10-16
+Missions : Marque de santé naturelle e-commerce. Piloter les campagnes Google Ads et Meta, optimiser le site (CRO), animer la base clients (CRM).
+---
+Entreprise : Carré Créatif
+Poste : Responsable marketing et e-commerce
+Ville : Marseille
+Lien : https://www.linkedin.com/jobs/view/4483554444/
+Publiée le : 2026-10-26
+Missions : Carrelage et aménagement intérieur haut de gamme, showroom et e-commerce. Création de poste : marketing, site e-commerce, acquisition.
+---
+Entreprise : Maison Junot
+Poste : Chargé de Marketing Digital Confirmé
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4486866318/
+Publiée le : 2026-11-03
+Missions : Immobilier de prestige, 24 agences. Marketing digital, campagnes, réseaux sociaux, site.
+---
+Entreprise : digiRocks
+Poste : Growth & Acquisition Manager – Marché de l'art & Luxe
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4478605200/
+Publiée le : 2026-10-19
+Missions : Acquisition de vendeurs et d'acheteurs : Google Ads, Meta Ads, SEO, CRM, emailing, marketing automation.
+---
+Entreprise : Thalasseo.com
+Poste : SEO/GEO & Growth Manager
+Ville : Aix-en-Provence
+Lien : https://www.linkedin.com/jobs/view/4483026018/
+Publiée le : 2026-10-29
+Missions : Séjours bien-être (thalasso, spa). Référencement Google et IA, croissance du trafic.
+---
+Entreprise : Pôle Textile Alsace
+Poste : Chargé de référencement Web SEO/SEA/GEO
+Ville : Mulhouse
+Lien : https://www.linkedin.com/jobs/view/4481736591/
+Publiée le : 2026-10-20
+Missions : Industriel textile. Rédaction et optimisation de contenus techniques pour la visibilité en France et à l'international, SEO, SEA.
+---
+Entreprise : PALAMATIC PROCESS
+Poste : Chargé de Webmarketing SEO/GEO
+Ville : Brécé
+Lien : https://www.linkedin.com/jobs/view/4486341990/
+Publiée le : 2026-11-02
+Missions : Déployer la stratégie SEO/GEO, optimiser les contenus des sites pour générer des leads, outils d'aide à la vente.
+---
+Entreprise : Tiime
+Poste : Chargé de performance web
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4476004582/
+Publiée le : 2026-11-02
+Missions : Super app pour entrepreneurs et experts-comptables. Performance du site, SEO, conversion.
+---
+Entreprise : MS Vacances Campings Clubs
+Poste : Chargé(e) de Communication Digitale & Marketing (CDD)
+Ville : Longeville-sur-Mer
+Lien : https://www.linkedin.com/jobs/view/4487390320/
+Publiée le : 2026-11-07
+Missions : Campings familiaux. Communication digitale, réseaux sociaux, contenus, site.
+---
+Entreprise : iara
+Poste : Social Media Manager, CDI / Freelance
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4480063034/
+Publiée le : 2026-10-22
+Missions : App beauté (rendez-vous + réseau social). Piloter et faire grandir la stratégie social media déjà en place. Ouvert au freelance.
+---
+Entreprise : SkyVisor
+Poste : Marketing & Communication Manager
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4485752206/
+Publiée le : 2026-11-02
+Missions : Startup logiciel pour éolien et photovoltaïque. Marketing, contenus, communication, site.
+---
+Entreprise : Parallel
+Poste : Marketing Manager
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4488440459/
+Publiée le : 2026-11-06
+Missions : Startup d'agents IA pour l'administratif des hôpitaux. Marketing, acquisition, contenus.
+---
+Entreprise : LCF Outdoor
+Poste : Responsable Marketing Opérationnel
+Ville : Dardilly
+Lien : https://www.linkedin.com/jobs/view/4487728884/
+Publiée le : 2026-11-06
+Missions : Marque de chaussettes outdoor fabriquées en France. Marketing opérationnel, réseaux, e-commerce.
+---
+Entreprise : Quatorze running
+Poste : Global marketing manager
+Ville : Saint-Germain-en-Laye
+Lien : https://www.linkedin.com/jobs/view/4488488870/
+Publiée le : 2026-11-07
+Missions : Enseigne running et trail haut de gamme. Piloter la stratégie marketing, digital et réseaux.
+---
+Entreprise : RockFi
+Poste : Marketing Manager - Partner Acquisition
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4482908000/
+Publiée le : 2026-10-25
+Missions : Family office moderne. Acquisition de conseillers partenaires : campagnes, contenus, automatisations.
+---
+Entreprise : Bocage
+Poste : Coordinateur E-Commerce
+Ville : Montrevault-sur-Èvre
+Lien : https://www.linkedin.com/jobs/view/4482937641/
+Publiée le : 2026-10-26
+Missions : Marque de chaussures. Piloter le site e-commerce au quotidien : performance, expérience client, contenus.
+---
+Entreprise : Sabre Paris
+Poste : Responsable E-commerce
+Ville : Aigremont
+Lien : https://www.linkedin.com/jobs/view/4479811214/
+Publiée le : 2026-10-15
+Missions : Couverts de table haut de gamme. Développer le e-commerce, fiches produits, acquisition.
+---
+Entreprise : Maison Riviera Art
+Poste : Responsable E-commerce / Gestionnaire de stock digital
+Ville : Antibes
+Lien : https://www.linkedin.com/jobs/view/4486589536/
+Publiée le : 2026-11-04
+Missions : Vente de tableaux anciens, modernes et lithographies. Développer la présence en ligne et gérer un catalogue de plusieurs centaines d'œuvres.
+---
+Entreprise : BPAC ULTRASONIC
+Poste : Gestionnaire catalogue e-commerce & marketplaces
+Ville : Vern-sur-Seiche
+Lien : https://www.linkedin.com/jobs/view/4480485548/
+Publiée le : 2026-10-20
+Missions : TPE de bacs à ultrasons. Fiches produits, catalogue e-commerce et marketplaces.
+---
+Entreprise : Surprise Paris
+Poste : Responsable E-Commerce
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4486797531/
+Publiée le : 2026-11-05
+Missions : Mode. Performance e-commerce, acquisition, contenu, eCRM, SEO.
+---
+Entreprise : NV GALLERY
+Poste : Chef(fe) de Projet International - E-Commerce
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4484835302/
+Publiée le : 2026-10-30
+Missions : Mobilier en ligne. Croissance e-commerce à l'international, coordination des projets.
+---
+Entreprise : Mozaik par Toutapprendre
+Poste : Responsable e-commerce
+Ville : Boulogne-Billancourt
+Lien : https://www.linkedin.com/jobs/view/4486907542/
+Publiée le : 2026-11-05
+Missions : Plateforme e-commerce d'offres loisirs et contenus numériques pour CSE et médiathèques. Performance commerciale de la plateforme.
+---
+Entreprise : Tikamoon
+Poste : Traffic Manager Paid Social
+Ville : Englos
+Lien : https://www.linkedin.com/jobs/view/4484468806/
+Publiée le : 2026-10-28
+Missions : Meubles en bois massif vendus en ligne. Campagnes publicitaires Meta, TikTok, Pinterest.
+---
+Entreprise : Cimalpes
+Poste : Chargé(e) de Communication Senior
+Ville : Albertville
+Lien : https://www.linkedin.com/jobs/view/4483847694/
+Publiée le : 2026-10-28
+Missions : Immobilier de montagne haut de gamme. Projets de communication, rayonnement de la marque, contenus.
+---
+Entreprise : Boulangerie Ange
+Poste : Chargé de Communication senior
+Ville : Aix-en-Provence
+Lien : https://www.linkedin.com/jobs/view/4488400320/
+Publiée le : 2026-11-06
+Missions : Réseau de boulangeries. Stratégie de communication, RP et médias pour les marques du groupe, notoriété.
+---
+Entreprise : Bleu Robotics
+Poste : Marketing & Communication
+Ville : Paris
+Lien : https://www.linkedin.com/jobs/view/4478599077/
+Publiée le : 2026-10-12
+Missions : Startup IA pour robots industriels. Marketing, communication, contenus, site.
+---
+Entreprise : Les Œufs Geslin
+Poste : Responsable communication
+Ville : Chauché
+Lien : https://www.linkedin.com/jobs/view/4486654538/
+Publiée le : 2026-11-07
+Missions : Entreprise familiale agroalimentaire (œufs), 250 personnes, Vendée. Communication externe et digitale.
+---
+Entreprise : 24/7 Services - Remplacement en pharmacie
+Poste : Responsable Communications & Projets Créatifs
+Ville : Briançon
+Lien : https://www.linkedin.com/jobs/view/4485860482/
+Publiée le : 2026-11-05
+Missions : Création et diffusion sur les réseaux, posts, visuels, newsletters, webinaires pour partenaires et pharmaciens.
+---
+Entreprise : Groupe Bourassin (Super U Côte d'Azur)
+Poste : Chargé(e) de Communication & Community Manager
+Ville : Beaulieu-sur-Mer
+Lien : https://www.linkedin.com/jobs/view/4480854257/
+Publiée le : 2026-10-17
+Missions : 3 Super U et 1 Weldom sur la Côte d'Azur (Nice, Beaulieu, Plascassier). Communication moderne, réseaux sociaux des magasins.
+---
+Entreprise : RCM (SAGA Mercedes-Benz)
+Poste : Audience & Community Manager
+Ville : Belleville-sur-Vie
+Lien : https://www.linkedin.com/jobs/view/4484935894/
+Publiée le : 2026-10-30
+Missions : Groupe de distribution automobile et nautique (Mercedes-Benz, Toyota, Porsche, Beneteau). Développer les audiences et animer les communautés.
+---
