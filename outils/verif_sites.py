@@ -5,7 +5,8 @@ for u in sys.argv[1:]:
         h = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "ignore")
     except Exception as e:
         print("==", u, "ERREUR", e); continue
-    print("==", u, "| taille", len(h),
+    t = re.search(r"(?is)<title[^>]*>(.*?)</title>", h)
+    print("==", u, "| titre:", (t.group(1).strip()[:70] if t else ""), "| taille", len(h),
           "| ld+json:", h.count("application/ld+json"),
           "| meta description:", bool(re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\'][^"\']{5,}', h, re.I) or re.search(r'<meta[^>]+content=["\'][^"\']{5,}["\'][^>]+name=["\']description', h, re.I)),
           "| <form:", h.lower().count("<form"),
