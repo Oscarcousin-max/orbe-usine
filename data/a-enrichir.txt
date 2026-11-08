@@ -1,11 +1,1 @@
 # Une entreprise par ligne : Nom ; Ville ; site (facultatif)
-Onatera ; Aix-en-Provence ; https://www.onatera.com/
-Maison Junot ; Paris ; https://www.junot.fr/
-LCF Outdoor (Tismail) ; Troyes ; https://www.tismail.com/
-LCF Outdoor ; Troyes ; https://www.lachaussettedefrance.com/
-MS Vacances Campings Clubs ; Longeville-sur-Mer ; https://www.ms-vacances.com/
-SkyVisor ; Paris ; https://skyvisor.ai/
-Mozaik par Toutapprendre ; Boulogne-Billancourt ; https://www.toutapprendre.com/
-BPAC ULTRASONIC ; Vern-sur-Seiche ; https://www.bpac.fr/
-Montpellier Sotheby's International Realty ; Montpellier ; https://www.sothebysrealty-france.com/
-Thalasseo.com ; Aix-en-Provence ; https://www.thalasseo.com/
