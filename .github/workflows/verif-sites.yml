@@ -1,0 +1,13 @@
+name: Vérifier des sites
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "URLs séparées par des espaces"
+        required: true
+jobs:
+  verif:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 outils/verif_sites.py ${{ github.event.inputs.urls }}
