@@ -168,6 +168,13 @@ def jeton_france_travail():
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
                 return json.loads(r.read().decode("utf-8"))["access_token"]
+        except urllib.error.HTTPError as e:
+            try:
+                detail = e.read().decode("utf-8", "ignore")[:200]
+            except Exception:
+                detail = ""
+            journal("France Travail : jeton refusé (portée « %s ») : %s %s" % (portee, e.code, detail))
+            derniere = e
         except Exception as e:
             derniere = e
     raise derniere
