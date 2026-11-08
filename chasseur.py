@@ -435,10 +435,10 @@ def auditer(o):
     constats, emails = [], set()
     annee = datetime.now(PARIS).year
     if not o["site"]:
+        # Ne pas trouver le site ne prouve PAS qu'il n'existe pas (moteur de recherche bloqué, nom ambigu…).
+        # On n'affirme donc rien : pas de constat, pas d'audit, l'e-mail part sans lien.
         o["site_ok"] = False
-        constats.append(dict(cle="pas_de_site", vu="Nous n'avons trouvé aucun site internet à votre nom.",
-                             consequence="Les clients qui vous cherchent sur Google ou ChatGPT tombent sur des annuaires, ou sur vos concurrents.",
-                             solution="Un site clair, rapide et à votre image, avec vos coordonnées et vos services."))
+        o["site_non_verifiable"] = True
         return constats, emails
     page = None
     for essai in range(2):
@@ -456,10 +456,10 @@ def auditer(o):
             erreur = e
         time.sleep(5)
     if page is None:
+        # Un site qui ne s'ouvre pas pour notre robot s'ouvre souvent très bien pour un humain : on n'affirme rien.
         o["site_ok"] = False
-        constats.append(dict(cle="injoignable", vu="Votre site ne s'est pas ouvert lors de nos deux visites (%s)." % court_erreur(erreur),
-                             consequence="Un visiteur qui tombe sur une page d'erreur part chez un concurrent.",
-                             solution="Remettre le site en ligne de façon fiable, avec une surveillance automatique."))
+        o["site_non_verifiable"] = True
+        journal("    site non lu (%s) : aucun constat publié" % court_erreur(erreur))
         return constats, emails
     o["site_ok"] = True
     o["site"] = final or o["site"]
