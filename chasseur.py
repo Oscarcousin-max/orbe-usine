@@ -161,6 +161,7 @@ INTERDITS = re.compile(r"n'h[ée]sitez pas|je me permets|booster|v[ée]ritable|i
 # =========================================================================================
 def jeton_france_travail():
     derniere = None
+    journal("France Travail : identifiant %d caractères (commence par PAR_ : %s), clé secrète %d caractères" % (len(FT_ID), "oui" if FT_ID.startswith("PAR_") else "non", len(FT_SECRET)))
     for portee in ("api_offresdemploiv2 o2dsoffre", "api_offresdemploiv2"):  # selon l'ancienneté du compte
         corps = urllib.parse.urlencode({"grant_type": "client_credentials", "client_id": FT_ID,
                                         "client_secret": FT_SECRET, "scope": portee}).encode()
