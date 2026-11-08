@@ -122,7 +122,8 @@ HORS_SUJET = re.compile(r"\bdata (?:engineer|scien|analyst)|cybers[ée]curit|dev
 CONSIGNE_ANALYSTE = """Tu aides ORBE, un petit studio digital français, à trouver des clients. ORBE ne cherche PAS d'emploi : il propose aux entreprises qui recrutent un profil web de faire ce travail en prestation, sans recrutement.
 
 On te donne une liste numérotée d'offres d'emploi réelles. Pour chacune, décide :
-- "garder": true si c'est une entreprise qui pourrait acheter la prestation à la place du recrutement ; false sinon (cabinet de recrutement, intérim, ESN, agence web/marketing/communication concurrente, employeur public, grand groupe avec une équipe digitale entière, poste trop technique ou sans rapport, stage d'observation, offre floue) ;
+IMPORTANT : TOUTES ces offres sont des recrutements internes (CDI, CDD, alternance, stage). C'est exactement la cible d'ORBE. « C'est un poste interne », « l'entreprise veut un salarié » ou « c'est une alternance » ne sont JAMAIS des raisons d'écarter.
+- "garder": true si c'est une entreprise qui pourrait acheter la prestation à la place du recrutement (y compris quand elle a déjà un ou deux marketeurs) ; false seulement dans ces cas (cabinet de recrutement, intérim, ESN, agence web/marketing/communication concurrente, employeur public, grand groupe avec une équipe digitale entière, poste trop technique ou sans rapport, stage d'observation, offre floue) ;
 - "raison": une phrase courte ;
 - "service": le service ORBE qui correspond le mieux, EXACTEMENT un de : site web, SEO, réseaux sociaux, marketing digital, publicité en ligne, boutique en ligne, automatisations ;
 - "besoin": le besoin réel exprimé, en une phrase simple, SANS rien inventer ;
