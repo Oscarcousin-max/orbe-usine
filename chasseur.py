@@ -402,6 +402,23 @@ RESEAUX = {"Instagram": "instagram.com", "Facebook": "facebook.com", "LinkedIn":
            "YouTube": "youtube.com"}
 
 
+GENERIQUES = {"le", "la", "les", "l", "groupe", "group", "sas", "sarl", "sa", "the", "et", "de", "des", "du"}
+
+
+def site_correspond(url, nom):
+    """Le nom de l'entreprise doit se lire dans l'adresse du site (évite les sites à vendre, france.fr…)."""
+    h = verif._hote(url) or ""
+    h = re.sub(r"^www\.", "", h)
+    h = re.sub(r"\.[a-z]{2,6}$", "", h).replace("-", "").replace(".", "")
+    mots = [m for m in verif.norm(nom).split() if m not in GENERIQUES]
+    if not mots:
+        return False
+    cands = ["".join(mots), "".join(mots[:2])]
+    if len(mots[0]) >= 7:
+        cands.append(mots[0])
+    return any(c and c in h for c in cands)
+
+
 def trouver_site(o):
     """Le site de l'entreprise : celui de l'annonce, sinon une recherche (nom + ville) vérifiée."""
     if o.get("site"):
@@ -414,20 +431,20 @@ def trouver_site(o):
         direct = verif.essai_domaines(nom_court, o["ville"])
     except Exception:
         direct = ""
-    if direct:
+    if direct and site_correspond(direct, nom_court):
         u = urllib.parse.urlsplit(direct)
         return "%s://%s/" % (u.scheme or "https", u.netloc)
     q = "%s %s" % (nom_court, o["ville"])
     resultats, _ = verif.chercher(q, journal, voulu=1)
     for url, _titre, _ in resultats[:6]:
         h = verif._hote(url)
-        if not h or verif._est_annuaire(h):
+        if not h or verif._est_annuaire(h) or not site_correspond(url, nom_court):
             continue
         try:
             ok, final, _ = verif.page_parle_de(url, nom_court, o["ville"])
         except Exception:
             ok, final = False, ""
-        if ok:
+        if ok and site_correspond(final or url, nom_court):
             u = urllib.parse.urlsplit(final or url)
             return "%s://%s/" % (u.scheme or "https", u.netloc)
     return ""
