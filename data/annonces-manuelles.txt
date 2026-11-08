@@ -1,3 +1,59 @@
 # Colle ici des annonces vues ailleurs (LinkedIn, Indeed, Welcome to the Jungle…).
 # Une annonce par bloc : colle le texte (et le lien si tu l'as), puis une ligne avec seulement ---
 # Le chasseur les lit au prochain passage, puis vide ce fichier.
+Entreprise : Bachca (marque d'accessoires de beauté)
+Poste : Community Manager H/F, CDI, Nantes, 25-28 k€, prise de poste janvier 2027
+Lien : https://www.linkedin.com/jobs/view/4486182261/
+Publiée sur LinkedIn le 3 novembre 2026.
+Missions : stratégie éditoriale Instagram, TikTok, Pinterest ; création de contenus photo et vidéo (Reels, stories), shootings ; animation de la communauté ; collaborations avec créateurs de contenu et influenceurs ; suivi des performances. Sous la responsabilité de la Responsable Communication.
+---
+Entreprise : Château & Village Castigno (NIRVANA - CASTIGNO), hôtel clé Michelin, restaurants et domaine viticole Castigno Vins
+Site : castigno.com
+Poste : Chargé(e) de communication (H/F), temps plein, Assignan (34360)
+Lien : https://www.linkedin.com/jobs/view/4486361067/
+Publiée sur LinkedIn le 3 novembre 2026.
+Missions : ligne éditoriale et planning ; photos et vidéos pour réseaux sociaux et site internet ; photos des plateformes de réservation (Booking, D-EDGE, Zenchef) ; publications Facebook, Instagram, LinkedIn ; campagnes Meta et Google Ads ; newsletters Brevo ; influenceurs ; mise à jour du site internet ; réponses aux avis Google, TripAdvisor, Booking et fiches Google ; relations presse ; budget de communication.
+---
+Entreprise : ASAPE Formation (ASAPE DIGITAL), organisme de formation
+Poste : Chargé de communication digitale et production de contenus (H/F), CDI, Mirepoix-sur-Tarn (31340)
+Lien : https://www.linkedin.com/jobs/view/4486982386/
+Publiée sur LinkedIn le 6 novembre 2026.
+Missions : campagnes Meta Ads et Google Ads ; tunnels de conversion, landing pages, formulaires et séquences de relance ; tracking ; calendrier éditorial Instagram, TikTok, LinkedIn, Facebook, YouTube ; tournage et montage vidéo ; vidéos pédagogiques pour les formations ; automatisation avec l'IA ; reporting. Objectif : générer des contacts qualifiés grâce au digital.
+---
+Entreprise : PALAMATIC PROCESS (groupe FIDEIP), fabricant de lignes de manutention de poudres
+Site : palamaticprocess.com
+Poste : Chargé de Webmarketing SEO/GEO F/H, Brécé (35530), sur site
+Lien : https://www.linkedin.com/jobs/view/4486193560/
+Publiée sur LinkedIn le 3 novembre 2026 (plusieurs annonces SEO/GEO la même semaine).
+Missions : intégrer et optimiser les contenus des sites web ; stratégie SEO et GEO (référencement dans les moteurs de recherche génératifs) ; SEA sur Google et YouTube ; outils d'IA générative ; production d'outils d'aide à la vente ; génération de leads qualifiés. Équipe marketing de 5 personnes, responsable Sarah.
+---
+Entreprise : Le Temps des Cerises (jeans, marque de mode)
+Poste : Assistant Web Marketing International, Marseille
+Lien : https://www.linkedin.com/jobs/view/4484689944/
+Publiée sur LinkedIn le 4 novembre 2026.
+Missions : newsletters B2C et B2B ; animation commerciale du site e-commerce ; pages CMS ; optimisation SEO ; traduction du site en anglais et allemand ; mise à jour du blog selon les directives SEO / GEO. Rattaché au responsable e-commerce.
+---
+Entreprise : Il Popolo (restaurant italien du groupe La Côte et L'Arête)
+Poste : Alternance Community manager H/F, Montauban (82000)
+Lien : https://www.linkedin.com/jobs/view/4486569440/
+Publiée sur LinkedIn le 5 novembre 2026.
+Missions : créer photos, vidéos, stories et reels ; animer les réseaux et la communauté ; suivre les résultats ; plus administratif et service en salle. Nouveau concept de cuisine italienne artisanale pour 2027, accompagné par le service marketing du siège.
+---
+Entreprise : Moulin Créole (SARL CARAIBE), restaurant créole
+Poste : Community manager & chargé(e) évènementiel en alternance (H/F), 33 rue du Moulin Vert, Paris 14e
+Lien : https://www.linkedin.com/jobs/view/4486704082/
+Publiée sur LinkedIn le 4 novembre 2026.
+Missions : organisation d'événements BtoC et BtoB ; visibilité sur les réseaux sociaux ; création de contenus ; analyse des performances ; partenariats ; prospection et fidélisation.
+---
+Entreprise : Laboratoires Sicobel (cosmétiques bio : Acorelle, Green Tribu), groupe Condat
+Poste : Community Manager - F/H, Chasse-sur-Rhône (38670), sur site
+Lien : https://www.linkedin.com/jobs/view/4488127408/
+Publiée sur LinkedIn le 6 novembre 2026.
+Missions : comptes sociaux des marques (Instagram, TikTok, Facebook, Snapchat) ; lignes éditoriales et calendriers ; contenus Reels, TikTok, UGC ; modération ; influence ; articles pour le site e-commerce ; KPI et campagnes Meta Ads.
+---
+Entreprise : Cornilleau (tables de tennis de table et mobilier de jeu)
+Poste : Community Manager & Content Creator (h/f), Bonneuil-les-Eaux (60120)
+Lien : https://www.linkedin.com/jobs/view/4475226221/
+Republiée sur LinkedIn le 4 novembre 2026.
+Missions : stratégie éditoriale Instagram, Facebook, TikTok, Pinterest, LinkedIn ; création photo, vidéo, formats courts ; animation des communautés ; influence, UGC, partenariats ; sponsoring de publications ; coordination internationale ; reporting.
+---
