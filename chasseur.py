@@ -8,19 +8,21 @@ Chaque matin, tout seul et gratuitement :
                   + les annonces que tu colles toi-même dans data/annonces-manuelles.txt
                   (par exemple celles vues sur LinkedIn).
 2. LE TRIEUR      écarte d'office les cabinets de recrutement, l'intérim, les ESN, les agences
-                  concurrentes, les employeurs publics et les entreprises déjà contactées.
+                  concurrentes, les employeurs publics, les entreprises déjà contactées,
+                  les grands groupes et (annuaire officiel des entreprises) celles de 50 salariés
+                  et plus, et les métiers qu'ORBE ne fait pas (développement d'appli, com interne…).
 3. L'ANALYSTE     (une IA gratuite) lit chaque annonce : est-ce une vraie cible ? quel service
                   ORBE lui proposer ? quel est le besoin, en une phrase ?
 4. L'AUDITEUR     trouve le site de l'entreprise et le contrôle POUR DE VRAI (code, pas IA) :
                   vitesse, affichage mobile, titre Google, réseaux sociaux, date de mise à jour…
                   Il récupère aussi l'e-mail publié sur le site. Puis il fabrique la page
                   « mini-audit » en ligne (GitHub Pages), avec seulement des constats vérifiés.
-5. LE MESSAGER    (une IA gratuite) écrit l'e-mail, l'invitation LinkedIn, le premier message
-                  et les deux relances. Le code ajoute la ligne « STOP » (CNIL).
+5. LE MESSAGER    (du code, pas d'IA) écrit l'e-mail, l'invitation LinkedIn, le premier message
+                  et les deux relances sur des modèles fixes et relus. Ligne « STOP » incluse (CNIL).
 6. LE RAPPORT     note chaque prospect sur 100, garde les 20 meilleurs, écrit le rapport du jour,
                   les fichiers CSV / Excel, et la liste lue par le QG (docs/chasseur.json).
 
-Rien n'est envoyé : c'est toi qui envoies, après avoir regardé.
+Rien n'est envoyé ici : l'envoi (20 par jour, étalés) est fait par la tâche « Envoyeur ORBE ».
 Mêmes IA que l'usine (Gemini, Groq, OpenRouter qui se relaient), mêmes clés, aucun frais.
 """
 import csv
@@ -57,7 +59,8 @@ FT_JETON_URL = os.environ.get("FT_JETON_URL", "https://entreprise.francetravail.
 FT_RECHERCHE = os.environ.get("FT_RECHERCHE_URL", "https://api.francetravail.io/partenaire/offresdemploi/v2/offres/search")
 PARIS = timezone(timedelta(hours=1))  # heure d'hiver ; l'écart d'une heure en été ne change rien au tri des 24 h
 
-CONTACT_ORBE = "societe.orbe@gmail.com · 06 72 61 66 09"
+EMAIL_ORBE = os.environ.get("ORBE_EMAIL", "").strip() or "societe.orbe@gmail.com"
+CONTACT_ORBE = EMAIL_ORBE + " · 06 72 61 66 09"
 LIGNE_STOP = "Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP."
 
 # --- Ce qu'on cherche ------------------------------------------------------------------
@@ -117,18 +120,33 @@ PUBLICS = re.compile(
 # informatique (62.01, 62.02 : ESN et agences web), relations publiques (70.21), administration publique (84).
 NAF_EXCLUS = ("78", "73.11", "62.01", "62.02", "70.21", "84")
 HORS_SUJET = re.compile(r"\bdata (?:engineer|scien|analyst)|cybers[ée]curit|devops|\bjava\b|\.net\b|\bc\+\+|"
-                        r"embarqu|\bSAP\b|mainframe|cobol|ing[ée]nieur (?:syst[eè]me|r[ée]seau)", re.I)
+                        r"embarqu|\bSAP\b|mainframe|cobol|ing[ée]nieur (?:syst[eè]me|r[ée]seau)|"
+                        # Novembre 2026 : métiers qu'ORBE ne fait pas (applications, com interne, direction…)
+                        r"full ?-?stack|back ?-?end|front ?-?end|\bphp\b|symfony|laravel|\breact\b|angular|\bvue\.?js|node|python|"
+                        r"d[ée]veloppeu(?:r|se) (?:logiciel|application|mobile|ios|android)|\bios\b|android|"
+                        r"communication interne|relations? presse|[ée]v[ée]nementiel|\bCRM\b|\bdata\b|product (?:owner|manager)|"
+                        r"\bhead of|directeur|directrice|\bdirector\b|\bVP\b|international|alumni|in-?app|"
+                        r"commercial|business developer|account manager|\bsales\b", re.I)
+# Grandes structures : elles ont leur propre équipe, elles n'achètent pas à un petit studio.
+GRANDS = re.compile(r"\bgroupe\b|\bgroup\b|holding|coop[ée]rative u|super ?u\b|hyper ?u\b|leclerc|carrefour|intermarch|auchan|"
+                    r"lidl|casino|monoprix|decathlon|\b(?:ltd|inc|gmbh|plc|llc)\b|business school|universit|"
+                    r"sotheby|mercedes|renault|peugeot|volkswagen|\bbmw\b|toyota|geely|fiducial|editis|"
+                    r"boulangerie ange|brioche dor[ée]e|franchise", re.I)
+TAILLE_MAXI = 49  # salariés : au-delà, on n'écrit pas
+# Codes INSEE « tranche d'effectif » à partir de 50 salariés.
+TRANCHES_GRANDES = {"21", "22", "31", "32", "41", "42", "51", "52", "53"}
+API_ENTREPRISES = "https://recherche-entreprises.api.gouv.fr/search"
 
 # --- Consignes données aux IA -------------------------------------------------------------
 CONSIGNE_ANALYSTE = """Tu aides ORBE, un petit studio digital français, à trouver des clients. ORBE ne cherche PAS d'emploi : il propose aux entreprises qui recrutent un profil web de faire ce travail en prestation, sans recrutement.
 
 On te donne une liste numérotée d'offres d'emploi réelles. Pour chacune, décide :
 IMPORTANT : TOUTES ces offres sont des recrutements internes (CDI, CDD, alternance, stage). C'est exactement la cible d'ORBE. « C'est un poste interne », « l'entreprise veut un salarié » ou « c'est une alternance », « poste senior », « rôle stratégique », « poste de direction », « difficile à externaliser », « besoin d'un profil interne » ou « l'entreprise veut construire une équipe » ne sont JAMAIS des raisons d'écarter : un dirigeant qui recrute peut toujours confier tout ou partie du travail à un prestataire en attendant ou à la place.
-- "garder": true si c'est une entreprise qui pourrait acheter la prestation à la place du recrutement (y compris quand elle a déjà un ou deux marketeurs) ; false seulement dans ces cas (cabinet de recrutement, intérim, ESN, agence web/marketing/communication concurrente, employeur public, grand groupe avec une équipe digitale entière, poste trop technique ou sans rapport, stage d'observation, offre floue) ;
+- "garder": true si c'est une entreprise qui pourrait acheter la prestation à la place du recrutement (y compris quand elle a déjà un ou deux marketeurs) ; false seulement dans ces cas (cabinet de recrutement, intérim, ESN, agence web/marketing/communication concurrente, employeur public, association nationale, école, entreprise de plus de 50 salariés, grand groupe, chaîne ou réseau de franchises, start-up qui monte une équipe marketing, poste trop technique ou sans rapport : développement d'application ou de logiciel, communication interne, événementiel, relations presse, CRM, data, poste de direction ; stage d'observation, offre floue) ;
 - "raison": une phrase courte ;
 - "service": le service ORBE qui correspond le mieux, EXACTEMENT un de : site web, SEO, réseaux sociaux, marketing digital, publicité en ligne, boutique en ligne, automatisations ;
 - "besoin": le besoin réel exprimé, en une phrase simple, SANS rien inventer ;
-- "profil": de 0 à 20 (20 = petite ou moyenne entreprise, un seul poste web, pas d'équipe en place, besoin récurrent) ;
+- "profil": de 0 à 20 (20 = petite entreprise de moins de 20 salariés, dirigée par son fondateur, un seul poste web, pas d'équipe en place, besoin concret : site, réseaux sociaux, SEO, pub, boutique en ligne ; 0 = grande structure) ;
 - "urgence": de 0 à 5 (5 = « dès que possible », « urgent », démarrage immédiat) ;
 - "decideur": la fonction probable de la personne qui décide (ex. « gérant », « responsable marketing »), ou "" si inconnu.
 
@@ -137,24 +155,6 @@ N'invente jamais un fait absent de l'annonce. Réponds uniquement en JSON :
 
 CONSIGNE_EXTRACTION = """On te donne le texte d'une offre d'emploi copiée à la main (souvent depuis LinkedIn). Extrais seulement ce qui est écrit, sans rien deviner. Réponds uniquement en JSON :
 {"entreprise": "", "ville": "", "poste": "", "contrat": "", "date_publication": "AAAA-MM-JJ ou vide", "lien": "", "site": "adresse du site de l'entreprise si elle est écrite, sinon vide", "description": "résumé fidèle de l'annonce en 6 lignes maximum"}"""
-
-CONSIGNE_MESSAGER = """Tu écris pour « L'équipe ORBE », un studio digital français. ORBE contacte une entreprise qui publie une offre d'emploi pour lui proposer de faire ce travail en prestation, sans recrutement. On ne se présente jamais comme un candidat, et on ne dit pas « je ne postule pas » : on part de leur besoin.
-
-Règles : vouvoiement ; simple, direct, chaleureux, pas vendeur ; aucun prix ; aucun chiffre ni fait qui ne soit pas dans la fiche ; aucune référence client inventée ; pas de tiret long (—) ; pas de formules toutes faites (« n'hésitez pas », « je me permets », « booster », « véritable », « incontournable », « dans un monde en constante évolution »).
-
-À écrire :
-- "objet": objet d'e-mail court et précis, du type « Votre offre de {poste} : une autre option » ;
-- "email": 80 à 120 mots. Première phrase OBLIGATOIRE : « J'ai vu que vous recrutez pour un poste de {poste}. » Deuxième phrase : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Puis UN constat tiré de la fiche, l'idée que l'équipe ORBE peut prendre ce travail en charge, sans contrat ni recrutement (ne prétends jamais qu'ORBE le fait déjà pour d'autres clients), le lien du mini-audit (écris exactement {LIEN}) SEULEMENT s'il y en a un, et une seule demande : un appel de 15 minutes. Signature : « L'équipe ORBE ». N'ajoute ni coordonnées ni ligne de désinscription : le code s'en charge ;
-- "invitation": note d'invitation LinkedIn de 190 caractères maximum, qui cite l'offre et ne demande rien ;
-- "message_linkedin": 2 à 4 phrases après acceptation, avec le lien {LIEN} et la proposition d'un appel de 15 minutes ;
-- "relance_j4": 2 ou 3 phrases qui apportent un élément NOUVEAU tiré de la fiche (jamais « je me permets de vous relancer ») ;
-- "relance_j10": 2 phrases pour clore poliment : on ne relancera plus, la proposition reste valable ;
-- "accroche": une phrase d'accroche commerciale personnalisée.
-
-Réponds uniquement en JSON : {"objet": "", "email": "", "invitation": "", "message_linkedin": "", "relance_j4": "", "relance_j10": "", "accroche": ""}"""
-
-INTERDITS = re.compile(r"n'h[ée]sitez pas|je me permets|booster|v[ée]ritable|incontournable|en constante [ée]volution|"
-                       r"plongeons|r[ée]volutionn|propuls|au c[œo]eur de|cl[ée] en main|sublimer", re.I)
 
 
 # =========================================================================================
@@ -602,6 +602,10 @@ def trier(offres, debut, fin):
             ecarter("agence concurrente")
         elif PUBLICS.search(o["entreprise"] + " " + o["entreprise_desc"]):
             ecarter("employeur public")
+        elif GRANDS.search(o["entreprise"]):
+            ecarter("grand groupe ou chaîne")
+        elif trop_grande_ft(o.get("effectif")):
+            ecarter("50 salariés ou plus")
         elif o.get("code_naf") and o["code_naf"].startswith(NAF_EXCLUS):
             ecarter("activité exclue (intérim, agence, ESN, public)")
         elif HORS_SUJET.search(o["poste"]):
@@ -612,6 +616,61 @@ def trier(offres, debut, fin):
             deja.add(nom_n)
             gardees.append(o)
     return gardees, ecartees
+
+
+def trop_grande_ft(effectif):
+    """France Travail écrit l'effectif en clair (« 50 à 99 salariés ») : vrai à partir de 50."""
+    m = re.search(r"(\d[\d ]*)", str(effectif or ""))
+    return bool(m) and int(m.group(1).replace(" ", "")) > TAILLE_MAXI
+
+
+def _mots(t):
+    return {m for m in norm(t).split() if len(m) > 2 and m not in GENERIQUES}
+
+
+def taille_entreprise(o):
+    """Cherche l'entreprise dans l'annuaire officiel gratuit (recherche-entreprises.api.gouv.fr).
+    Renvoie (trop_grande, texte) ; (False, "") si on ne la trouve pas : dans le doute, on garde."""
+    nom = re.sub(r"\(.*?\)", " ", o["entreprise"]).strip()
+    mots = _mots(nom)
+    if not mots:
+        return False, ""
+    url = API_ENTREPRISES + "?" + urllib.parse.urlencode({"q": nom, "per_page": 5, "page": 1})
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "orbe-chasseur", "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=12) as r:
+            res = json.loads(r.read().decode("utf-8")).get("results") or []
+    except Exception:
+        return False, ""
+    finally:
+        time.sleep(0.3)  # l'annuaire accepte 7 requêtes par seconde
+    for e in res:
+        noms = " ".join(str(e.get(k) or "") for k in ("nom_complet", "nom_raison_sociale", "sigle"))
+        if not (mots & _mots(noms)) or len(mots & _mots(noms)) < min(2, len(mots)):
+            continue
+        tranche = str(e.get("tranche_effectif_salarie") or "")
+        cat = str(e.get("categorie_entreprise") or "")
+        texte = "%s salariés (code %s), %s" % ("50+" if tranche in TRANCHES_GRANDES else "moins de 50", tranche or "?", cat or "?")
+        return (tranche in TRANCHES_GRANDES or cat in ("ETI", "GE")), texte
+    return False, ""
+
+
+def filtrer_taille(offres):
+    """Écarte les entreprises de 50 salariés et plus. Renvoie (gardées, nombre écarté)."""
+    gardees, ecart = [], 0
+    for o in offres:
+        if o["manuelle"]:
+            gardees.append(o)
+            continue
+        grande, texte = taille_entreprise(o)
+        if texte:
+            o["effectif"] = o.get("effectif") or texte
+        if grande:
+            ecart += 1
+            journal("  trop grande : %s (%s)" % (o["entreprise"], texte))
+        else:
+            gardees.append(o)
+    return gardees, ecart
 
 
 # =========================================================================================
@@ -880,18 +939,37 @@ def choisir_constats(constats, service):
     return sorted(constats, key=lambda c: ordre.index(c["cle"]) if c["cle"] in ordre else 99)[:4]
 
 
+MAUVAIS_DEBUTS = re.compile(r"^(?:recrut\w*|rh|drh|hr|jobs?|careers?|carriere|emploi\w*|candidat\w*|talents?|dpo|rgpd|privacy|"
+                            r"support|sav|service|partenariat|partners?|presse|press|media|admissions?|compta|factur|"
+                            r"commande|order|abuse|webmaster|postmaster|newsletter|unsubscribe|ton|votre|your|nom|prenom|"
+                            r"jean ?dupont|jeandupond|marc)(?:[._-]|$)", re.I)
+GRATUITES = re.compile(r"@(gmail|googlemail|hotmail|outlook|yahoo|live|icloud|orange|free|sfr|laposte|wanadoo|aol|gmx|proton)\.", re.I)
+
+
+def email_valable(e, dom):
+    """Une adresse d'entreprise lisible par un humain qui décide : du même domaine que le site,
+    jamais une messagerie gratuite (souvent un exemple recopié), jamais RH, RGPD, support ou presse."""
+    e = (e or "").strip().lower()
+    if not EMAIL.fullmatch(e) or FAUX_EMAILS.search(e) or GRATUITES.search(e):
+        return False
+    local, _, domaine = e.partition("@")
+    if MAUVAIS_DEBUTS.match(local) or domaine.startswith("www."):
+        return False
+    if dom and not (domaine == dom or domaine.endswith("." + dom) or dom.endswith("." + domaine)):
+        return False
+    return True
+
+
 def choisir_email(emails, o):
     """L'adresse la plus utile : celle de l'annonce, sinon une adresse du domaine de l'entreprise."""
-    dom = verif._hote(o.get("site") or "")
+    dom = verif._hote(o.get("site") or "").lower().removeprefix("www.") if o.get("site_ok") else ""
     c = (o.get("contact_email") or "").strip()
-    # Adresse de l'annonce : écartée si c'est un modèle (ton@email.com), une adresse RGPD,
-    # ou une messagerie gratuite (marc@gmail.com) alors que l'entreprise a son propre site.
-    gratuite = re.search(r"@(gmail|hotmail|outlook|yahoo|live|icloud|orange|free|sfr|laposte)\.", c, re.I)
-    if c and EMAIL.fullmatch(c) and not FAUX_EMAILS.search(c) and not (gratuite and dom):
+    if c and email_valable(c, dom):
         return c
-    emails = {e for e in emails if not FAUX_EMAILS.search(e)}
-    liste = sorted(emails, key=lambda e: (0 if dom and e.lower().endswith("@" + dom) else 1,
-                                          0 if re.match(r"(?i)(contact|bonjour|hello|info|direction|accueil)@", e) else 1, len(e)))
+    if not dom:  # sans site vérifié, on ne peut pas savoir si l'adresse est la bonne
+        return ""
+    liste = sorted((e for e in emails if email_valable(e, dom)),
+                   key=lambda e: (0 if re.match(r"(?i)(direction|dirigeant|gerant|bonjour|hello|contact|info|accueil)@", e) else 1, len(e)))
     return liste[0] if liste else ""
 
 
@@ -970,12 +1048,12 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:13px}
 <section class="offre"><h2>Plutôt qu'un recrutement</h2>
 <p>L'équipe ORBE peut prendre ce travail en charge pour vous. Concrètement : %(service)s. Sans contrat de travail, sans période d'essai, avec un interlocuteur unique.</p>
 <p>Le plus simple : un appel de 15 minutes pour voir si c'est utile pour vous.</p>
-<a class="btn" href="mailto:societe.orbe@gmail.com?subject=%(sujet)s">Écrire à l'équipe ORBE</a></section>
+<a class="btn" href="mailto:%(mail)s?subject=%(sujet)s">Écrire à l'équipe ORBE</a></section>
 </main>
-<footer class="wrap">ORBE, studio digital · societe.orbe@gmail.com · 06 72 61 66 09<br>Constats relevés automatiquement le %(date)s sur les pages publiques de votre site. Cette page n'est pas référencée sur les moteurs de recherche.</footer>
+<footer class="wrap">ORBE, studio digital · %(mail)s · 06 72 61 66 09<br>Constats relevés automatiquement le %(date)s sur les pages publiques de votre site. Cette page n'est pas référencée sur les moteurs de recherche.</footer>
 </body></html>""" % dict(ent=e(o["entreprise"]), date=date, poste=e(o["poste"].lower()), site=site, besoin=e(o["besoin"]),
                          lignes=lignes, service=e(SERVICES.get(service, service)),
-                         sujet=urllib.parse.quote("Mini-audit " + o["entreprise"]))
+                         sujet=urllib.parse.quote("Mini-audit " + o["entreprise"]), mail=e(EMAIL_ORBE))
 
 
 # =========================================================================================
@@ -987,59 +1065,60 @@ def nettoyer(t):
     return re.sub(r"[ \t]+", " ", t).strip()
 
 
+def _poste_court(o):
+    p = re.sub(r"\s*[-–—(/]\s*(?:h ?/ ?f|f ?/ ?h|cdi|cdd|temps plein|temps partiel)\b.*$", "", o["poste"], flags=re.I)
+    return re.sub(r"\s+", " ", p).strip().lower() or o["poste"].lower()
+
+
+def _phrase(t):
+    t = nettoyer(t).rstrip(" .")
+    return (t[0].lower() + t[1:]) if t else ""
+
+
 def messages(o, constats, lien):
-    """lien = adresse du mini-audit, ou vide s'il n'y en a pas (note de 40 à 59)."""
-    consigne = CONSIGNE_MESSAGER.replace("{poste}", o["poste"].lower())
-    if not lien:
-        consigne = consigne.replace(", le lien du mini-audit (écris exactement {LIEN})", "").replace(", avec le lien {LIEN}", "")
-    fiche = ("Entreprise : %s\nVille : %s\nPoste recherché : %s (%s)\nBesoin : %s\nService ORBE proposé : %s\n"
-             "Constats vérifiés sur leur site :\n%s\nLien du mini-audit : {LIEN}") % (
-        o["entreprise"], o["ville"], o["poste"], o["contrat"], o["besoin"], SERVICES.get(o["service"], o["service"]),
-        "\n".join("- " + c["vu"] for c in constats) or "- (aucun)")
-    if not lien:
-        fiche = fiche.replace("\nLien du mini-audit : {LIEN}", "\nPas de mini-audit : ne mets aucun lien.")
-    m = {}
-    for essai in range(2):
-        try:
-            txt, _, modele = ia([("gemini", "", False), ("groq", "", False), ("or", "deepseek", False)],
-                                consigne, fiche)
-            m = lire_json(txt)
-            m["par"] = modele
-        except Exception as e:
-            journal("    messager : %s" % str(e)[:80])
-            m = {}
-        if m.get("email") and not INTERDITS.search(" ".join(str(v) for v in m.values())):
-            break
-    m = {k: nettoyer(v) for k, v in m.items()}
-    poste = o["poste"].lower()
-    premiere = ("J'ai vu que vous recrutez pour un poste de %s. Pendant ce recrutement, ou à sa place, "
-                "l'équipe ORBE peut prendre ce travail en charge." % poste)
-    if not m.get("email"):  # l'IA n'a pas répondu : un modèle simple et honnête
-        c = constats[0]["vu"] if constats else ""
-        morceaux = ["Bonjour,", premiere]
-        if c:
-            morceaux.append("En regardant votre présence en ligne, nous avons noté ceci : " + c[0].lower() + c[1:])
-        morceaux.append("Nous le faisons en prestation, sans contrat de travail, et vous gardez un seul interlocuteur.")
-        if lien:
-            morceaux.append("Nous avons préparé un mini-audit pour vous : {LIEN}")
-        morceaux += ["Seriez-vous d'accord pour un appel de 15 minutes cette semaine ?", "L'équipe ORBE"]
-        m["email"] = "\n\n".join(morceaux)
-        m.setdefault("objet", "Votre offre de %s : une autre option" % poste)
-        m["par"] = "modèle de secours"
-    elif "vous recrutez" not in m["email"].lower():
-        m["email"] = re.sub(r"^(Bonjour[^\n]*\n+)?", lambda x: (x.group(0) or "Bonjour,\n\n") + premiere + " ", m["email"], count=1)
-    m["email"] = (m["email"].replace("{LIEN}", lien) if lien else re.sub(r"[^\n.]*\{LIEN\}[^\n.]*\.?", "", m["email"])).rstrip() + "\n" + CONTACT_ORBE + "\n\n" + LIGNE_STOP
-    m.setdefault("objet", "Votre offre de %s : une autre option" % poste)
-    inv = m.get("invitation") or ("Bonjour, j'ai vu votre offre de %s. Chez ORBE, nous faisons ce travail en prestation pour des entreprises. Ravi d'échanger. L'équipe ORBE" % poste)
-    m["invitation"] = inv if len(inv) <= 200 else inv[:197].rsplit(" ", 1)[0] + "..."
-    for k in ("message_linkedin", "relance_j4", "relance_j10", "accroche"):
-        m[k] = str(m.get(k) or "").replace("{LIEN}", lien)
-    if not m["message_linkedin"]:
-        m["message_linkedin"] = ("Merci d'avoir accepté. J'ai vu votre offre : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge. "
-                                 + ("Le mini-audit préparé pour vous : %s. " % lien if lien else "") + "Un appel de 15 minutes cette semaine ?")
-    if not m["relance_j10"]:
-        m["relance_j10"] = "Je ne vous relancerai plus. Si un jour vous préférez une prestation à un recrutement, la proposition reste valable."
-    return m
+    """Novembre 2026 : tous les messages sont écrits par le code, sur un modèle simple et relu.
+    Les textes écrits par l'IA sortaient en un seul bloc, sans « Bonjour », avec des tournures bizarres.
+    lien = adresse du mini-audit, ou vide s'il n'y en a pas (note de 40 à 59)."""
+    poste = _poste_court(o)
+    service = SERVICES.get(o["service"], o["service"])
+    c = _phrase(constats[0]["vu"]) if constats else ""
+    sig = "Bien cordialement,\nL'équipe ORBE\n" + CONTACT_ORBE
+
+    corps = ["Bonjour,",
+             "J'ai vu que vous recrutez pour un poste de %s. Pendant ce recrutement, ou à sa place, "
+             "l'équipe ORBE peut prendre ce travail en charge en prestation (%s)." % (poste, service)]
+    if c and lien:
+        corps.append("En regardant votre site, nous avons noté un point simple à améliorer : %s. "
+                     "Nos observations sont ici : %s" % (c, lien))
+    elif c:
+        corps.append("En regardant votre site, nous avons noté un point simple à améliorer : %s." % c)
+    elif lien:
+        corps.append("Nous avons regardé votre site, nos observations sont ici : %s" % lien)
+    corps += ["Seriez-vous ouvert à un appel de 15 minutes cette semaine ?", sig, LIGNE_STOP]
+
+    nom = re.sub(r"\s*\(.*?\)", "", o["entreprise"]).strip() or o["entreprise"]
+    invitation = ("Bonjour, j'ai vu votre offre de %s chez %s. Chez ORBE, nous prenons ce travail en charge "
+                  "en prestation. Ravi d'échanger." % (poste, nom))
+    if len(invitation) > 200:
+        invitation = "Bonjour, j'ai vu votre offre de %s. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger." % poste
+    if len(invitation) > 200:
+        invitation = "Bonjour, j'ai vu votre offre d'emploi. Chez ORBE, nous prenons ce type de travail en charge en prestation. Ravi d'échanger."
+    return {
+        "objet": "Votre recrutement : %s" % (poste[:1].upper() + poste[1:]),
+        "email": "\n\n".join(corps),
+        "invitation": invitation,
+        "message_linkedin": ("Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de %s : pendant ce recrutement, "
+                             "ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. " % poste
+                             + ("Nos observations sur votre site : %s " % lien if lien else "")
+                             + "Auriez-vous 15 minutes cette semaine pour en parler ?"),
+        "relance_j4": ("Bonjour,\n\nJe reviens vers vous au sujet de votre recrutement pour le poste de %s. "
+                       "Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour %s, sans engagement. "
+                       "Un simple « oui » en réponse suffit.\n\n%s\n\n%s" % (poste, nom, sig, LIGNE_STOP)),
+        "relance_j10": ("Bonjour,\n\nC'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, "
+                        "notre proposition reste valable.\n\n%s" % sig),
+        "accroche": "Recrute un poste de %s : ORBE peut le faire en prestation." % poste,
+        "par": "modèle ORBE",
+    }
 
 
 # =========================================================================================
@@ -1201,6 +1280,10 @@ def main():
     # 2. Trier
     candidates, stats["ecartees"] = trier(offres, debut, fin)
     journal("Après le tri : %d candidate(s) sur %d" % (len(candidates), len(offres)))
+    candidates, n_grandes = filtrer_taille(candidates)
+    if n_grandes:
+        stats["ecartees"]["50 salariés ou plus (annuaire des entreprises)"] = n_grandes
+    journal("Après le contrôle de taille : %d candidate(s)" % len(candidates))
 
     # 3. Analyser (IA), puis classer avant l'audit (l'audit est le plus lent)
     candidates = analyser(candidates)

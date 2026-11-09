@@ -85,7 +85,10 @@ Une deuxième chaîne, dans le même dépôt, avec les mêmes IA gratuites. Chaq
    grâce à l'API officielle et gratuite de **France Travail**. Il lit aussi les annonces que tu colles
    dans `data/annonces-manuelles.txt` (par exemple vues sur LinkedIn).
 2. **Le trieur** écarte d'office : cabinets de recrutement, intérim, ESN, agences concurrentes,
-   employeurs publics, entreprises anonymes, annonces trop vieilles, entreprises déjà contactées ou en `data/stop.txt`.
+   employeurs publics, entreprises anonymes, annonces trop vieilles, entreprises déjà contactées ou en `data/stop.txt`,
+   grands groupes et chaînes, entreprises de **50 salariés ou plus** (vérifié dans l'annuaire officiel gratuit
+   recherche-entreprises.api.gouv.fr), et les métiers qu'ORBE ne fait pas (développement d'appli, com interne,
+   événementiel, postes de direction…).
 3. **L'analyste** (IA) dit si c'est une vraie cible, quel service proposer et quel est le besoin.
 4. **L'auditeur** (du code, pas de l'IA) trouve le site de l'entreprise et le contrôle pour de vrai :
    https, vitesse, affichage mobile, titre et description Google, fiche pour les IA, réseaux sociaux,
@@ -100,7 +103,8 @@ Chaque prospect a une note sur 100 ; on garde les 20 meilleurs au-dessus de 40.
 
 **Où regarder le matin :** `data/prospection/rapport_prospection.md` (le rapport lisible, avec tous les messages),
 `data/prospection/prospects_du_jour.xlsx` (le tableau), et `docs/chasseur.json` (la liste pour le QG).
-Rien n'est envoyé : c'est toi qui envoies.
+L'envoi n'est pas fait ici : la tâche planifiée « Envoyeur ORBE » envoie 20 e-mails par jour (10 vers 9 h, 10 vers 14 h),
+espacés de quelques minutes, puis une seule relance 3 jours plus tard.
 
 ## Brancher France Travail (une seule fois, gratuit)
 
