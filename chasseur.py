@@ -941,7 +941,8 @@ def choisir_constats(constats, service):
 
 MAUVAIS_DEBUTS = re.compile(r"^(?:recrut\w*|rh|drh|hr|jobs?|careers?|carriere|emploi\w*|candidat\w*|talents?|dpo|rgpd|privacy|"
                             r"support|sav|service|partenariat|partners?|presse|press|media|admissions?|compta|factur|"
-                            r"commande|order|abuse|webmaster|postmaster|newsletter|unsubscribe|ton|votre|your|nom|prenom|"
+                            r"commande|order|abuse|phishing|security|securite|legal|juridique|feedback|dpd|reservations?|booking|"
+                            r"webmaster|postmaster|newsletter|unsubscribe|ton|votre|your|nom|prenom|"
                             r"jean ?dupont|jeandupond|marc)(?:[._-]|$)", re.I)
 GRATUITES = re.compile(r"@(gmail|googlemail|hotmail|outlook|yahoo|live|icloud|orange|free|sfr|laposte|wanadoo|aol|gmx|proton)\.", re.I)
 
