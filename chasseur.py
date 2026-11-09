@@ -943,7 +943,7 @@ MAUVAIS_DEBUTS = re.compile(r"^(?:recrut\w*|rh|drh|hr|jobs?|careers?|carriere|em
                             r"support|sav|service|partenariat|partners?|presse|press|media|admissions?|compta|factur|"
                             r"commande|order|abuse|phishing|security|securite|legal|juridique|feedback|dpd|reservations?|booking|"
                             r"webmaster|postmaster|newsletter|unsubscribe|ton|votre|your|nom|prenom|"
-                            r"jean ?dupont|jeandupond|marc)(?:[._-]|$)", re.I)
+                            r"jean ?dupont|jeandupond|john ?doe|jane ?doe|exemple|example|marc)(?:[._-]|$)", re.I)
 GRATUITES = re.compile(r"@(gmail|googlemail|hotmail|outlook|yahoo|live|icloud|orange|free|sfr|laposte|wanadoo|aol|gmx|proton)\.", re.I)
 
 
@@ -966,7 +966,10 @@ def choisir_email(emails, o):
     dom = verif._hote(o.get("site") or "").lower().removeprefix("www.") if o.get("site_ok") else ""
     c = (o.get("contact_email") or "").strip()
     if c and email_valable(c, dom):
-        return c
+        # Sans site vérifié, l'adresse de l'annonce doit au moins porter le nom de l'entreprise
+        # (sinon c'est souvent un exemple recopié, ex. john.doe@toulouse.fr).
+        if dom or any(m in c.split("@")[1].lower() for m in _mots(o["entreprise"]) if len(m) > 3):
+            return c
     if not dom:  # sans site vérifié, on ne peut pas savoir si l'adresse est la bonne
         return ""
     liste = sorted((e for e in emails if email_valable(e, dom)),
