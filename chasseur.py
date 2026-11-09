@@ -387,15 +387,26 @@ LI_MOTS = [
     ("growth marketing", "marketing digital"), ("SEO", "SEO"), ("webmaster", "site web"),
     ("développeur wordpress", "site web"), ("chargé e-commerce", "boutique en ligne"),
     ("responsable e-commerce", "boutique en ligne"), ("traffic manager", "publicité en ligne"),
+    # Novembre 2026 : postes que recrutent surtout les petites entreprises
+    ("assistant marketing", "marketing digital"), ("chargé de marketing", "marketing digital"),
+    ("assistant communication", "réseaux sociaux"), ("webdesigner", "site web"),
+    ("rédacteur web", "SEO"), ("content manager", "réseaux sociaux"), ("chargé de projet web", "site web"),
 ]
 LI_MAXI = int(os.environ.get("CHASSEUR_LINKEDIN_MAXI", "160") or 160)
 
 
-def _li_lire(url):
+def _li_lire(url, essais=3):
+    """LinkedIn répond « 429 » quand on va trop vite : on attend de plus en plus longtemps puis on réessaie."""
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                                                "(KHTML, like Gecko) Chrome/124 Safari/537.36", "Accept-Language": "fr-FR,fr;q=0.9"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode("utf-8", "ignore")
+    for n in range(essais):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.read().decode("utf-8", "ignore")
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or n == essais - 1:
+                raise
+            time.sleep(20 * (n + 1))
 
 
 def _li_texte(h):
@@ -434,7 +445,7 @@ def chercher_linkedin(debut, fin):
                                "date": (re.search(r'datetime="([^"]+)"', c) or [None, ""])[1]})
             if len(morceaux) < 10:
                 break
-            time.sleep(0.6)
+            time.sleep(2.5)
     # une offre par entreprise, sans celles déjà contactées
     choisies, ents = [], set()
     for c in cartes:
@@ -466,7 +477,7 @@ def chercher_linkedin(debut, fin):
             "lien": "https://www.linkedin.com/jobs/view/%s/" % c["id"], "contact_nom": "", "contact_email": "",
             "service_mot_cle": c["service"], "manuelle": False,
         })
-        time.sleep(0.5)
+        time.sleep(1.5)
     return offres, ["LinkedIn : %d offres lues" % len(offres)]
 
 

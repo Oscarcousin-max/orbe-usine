@@ -17,7 +17,7 @@ on:
     inputs:
       nombre:
         description: "Combien de prospects au maximum ?"
-        default: "20"
+        default: "40"
       heures:
         description: "Annonces publiées depuis combien d'heures ? (24 = un jour, 720 = un mois)"
         default: "24"
@@ -49,7 +49,7 @@ jobs:
           FT_CLIENT_ID: ${{ secrets.FT_CLIENT_ID || vars.FT_CLIENT_ID }}
           FT_CLIENT_SECRET: ${{ secrets.FT_CLIENT_SECRET || vars.FT_CLIENT_SECRET }}
           CHASSEUR_HEURES: ${{ github.event.inputs.heures || '168' }}
-          CHASSEUR_MAX: ${{ github.event.inputs.nombre || '20' }}
+          CHASSEUR_MAX: ${{ github.event.inputs.nombre || '40' }}
           USINE_PAUSE: "4"
           ORBE_EMAIL: ${{ vars.ORBE_EMAIL }}
         run: |
