@@ -126,12 +126,13 @@ HORS_SUJET = re.compile(r"\bdata (?:engineer|scien|analyst)|cybers[ée]curit|dev
                         r"d[ée]veloppeu(?:r|se) (?:logiciel|application|mobile|ios|android)|\bios\b|android|"
                         r"communication interne|relations? presse|[ée]v[ée]nementiel|\bCRM\b|\bdata\b|product (?:owner|manager)|"
                         r"\bhead of|directeur|directrice|\bdirector\b|\bVP\b|international|alumni|in-?app|"
-                        r"commercial|business developer|account manager|\bsales\b", re.I)
+                        r"commercial|business developer|account manager|\bsales\b|consultant|product marketing|demand gen|"
+                        r"growth lead|head of growth|founding growth", re.I)
 # Grandes structures : elles ont leur propre équipe, elles n'achètent pas à un petit studio.
 GRANDS = re.compile(r"\bgroupe\b|\bgroup\b|holding|coop[ée]rative u|super ?u\b|hyper ?u\b|leclerc|carrefour|intermarch|auchan|"
                     r"lidl|casino|monoprix|decathlon|\b(?:ltd|inc|gmbh|plc|llc)\b|business school|universit|"
                     r"sotheby|mercedes|renault|peugeot|volkswagen|\bbmw\b|toyota|geely|fiducial|editis|"
-                    r"boulangerie ange|brioche dor[ée]e|franchise", re.I)
+                    r"boulangerie ange|brioche dor[ée]e|franchise|global talent|talents?\b|sapiance|\balan\b|payhawk|\bvidal\b|\burgo\b", re.I)
 TAILLE_MAXI = 49  # salariés : au-delà, on n'écrit pas
 # Codes INSEE « tranche d'effectif » à partir de 50 salariés.
 TRANCHES_GRANDES = {"21", "22", "31", "32", "41", "42", "51", "52", "53"}
@@ -952,7 +953,7 @@ def choisir_constats(constats, service):
 
 MAUVAIS_DEBUTS = re.compile(r"^(?:recrut\w*|rh|drh|hr|jobs?|careers?|carriere|emploi\w*|candidat\w*|talents?|dpo|rgpd|privacy|"
                             r"support|sav|service|partenariat|partners?|presse|press|media|admissions?|compta|factur|"
-                            r"commande|order|abuse|phishing|security|securite|legal|juridique|feedback|dpd|reservations?|booking|"
+                            r"commande|order|sales|ventes?|abuse|phishing|security|securite|legal|juridique|feedback|dpd|reservations?|booking|"
                             r"webmaster|postmaster|newsletter|unsubscribe|ton|votre|your|nom|prenom|"
                             r"jean[ ._-]?dupon[dt]|john[ ._-]?doe|jane[ ._-]?doe|exemple|example|marc)(?:[._-]|$)", re.I)
 GRATUITES = re.compile(r"@(gmail|googlemail|hotmail|outlook|yahoo|live|icloud|orange|free|sfr|laposte|wanadoo|aol|gmx|proton)\.", re.I)
