@@ -1,10 +1,183 @@
-22:06:18 Chasseur ORBE — annonces publiées du 09/10 23:06 au 08/11 23:06
-22:06:18 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
-22:06:18 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-22:06:19 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-22:06:19 France Travail : connexion refusée (HTTP Error 400: Bad Request)
-22:06:19   France Travail (site) « community-manager/s32m8 » : erreur 500
-22:06:22   France Travail (site) « chef-de-projet-communication-digitale/s32m26 » : erreur 500
-22:06:22   France Travail (site) « assistant-marketing/s32m6 » : erreur 500
-22:06:27   France Travail (site) « traffic-manager/s32m12 » : erreur 500
-22:06:27 France Travail (site) : 3 page(s) lue(s), 53 offre(s), 33 entreprise(s) nouvelle(s) sur la période
+11:52:57 Chasseur ORBE — annonces publiées du 02/11 12:52 au 09/11 12:52
+11:52:57 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
+11:52:58 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+11:52:58 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+11:52:58 France Travail : connexion refusée (HTTP Error 400: Bad Request)
+11:53:15   France Travail (site) « traffic-manager/s32m12 » : erreur 500
+11:53:23   France Travail (site) « webdesigner/s32m20 » : erreur 500
+11:53:34   France Travail (site) « integrateur/s29m6 » : erreur 500
+11:53:50 France Travail (site) : 17 page(s) lue(s), 220 offre(s), 55 entreprise(s) nouvelle(s) sur la période
+11:53:50   LinkedIn « community manager » : erreur 429
+11:53:55   LinkedIn « chargé de communication » : erreur 429
+11:53:56   LinkedIn « chargé de communication digitale » : erreur 429
+11:53:56   LinkedIn « marketing digital » : erreur 429
+11:53:59   LinkedIn « responsable marketing » : erreur 429
+11:54:01   LinkedIn « growth marketing » : erreur 429
+11:54:01   LinkedIn « SEO » : erreur 429
+11:54:01   LinkedIn « webmaster » : erreur 429
+11:54:01   LinkedIn « développeur wordpress » : erreur 429
+11:54:01   LinkedIn « chargé e-commerce » : erreur 429
+11:54:02   LinkedIn « responsable e-commerce » : erreur 429
+11:54:05   LinkedIn « traffic manager » : erreur 429
+11:54:05 LinkedIn : 134 offre(s) trouvée(s), 98 entreprise(s) nouvelle(s) ; lecture de 98 annonce(s)
+11:54:31 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
+11:54:31 Après le tri : 62 candidate(s) sur 84
+11:54:31     modèles groq : canopylabs/orpheus-arabic-saudi, openai/gpt-oss-safeguard-20b, meta-llama/llama-prompt-guard-2-86m, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-22m, whisper-large-v3-turbo, whisper-large-v3, qwen/qwen3.8-27b, openai/gpt-oss-120b, openai/gpt-oss-20b, allam-2-7b
+11:54:58     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+11:55:04     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+11:55:04     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+11:55:11     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+11:55:11     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+11:55:17     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+11:55:23     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+11:55:23     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+11:55:28   écartée : COM'SCORING — Agence déjà spécialisée, peu susceptible d'externaliser ce poste
+11:55:28   écartée : PACIFICO ERIC — Poste orienté vente live, pas clairement lié à une prestation digitale externalisable
+11:55:28   écartée : LEADSEN RH — Stage, ne correspond pas à un besoin d'achat de prestation
+11:55:28   écartée : EDITIONS TECHNIQUES POUR L'AUTOMOBILE ET — Grand groupe avec équipe digitale interne, peu susceptible d'externaliser
+11:55:28   écartée : Collective.work — Proposition de prestation déjà, pas besoin d'acheter une autre
+11:55:28   écartée : Free-Work — poste technique hors périmètre web
+11:55:28   écartée : SIZE UP — agence de marketing cherchant à renforcer son équipe interne
+11:55:28   écartée : Oscaro — grand acteur e‑commerce disposant déjà d’une équipe acquisition
+11:55:28   écartée : Temporis Experts & Cadres Roubaix — annonce diffusée par un cabinet de recrutement
+11:55:28   écartée : Paritel — poste commercial, pas de besoin web interne
+11:55:28   écartée : PRESTANOVA — PRESTANOVA est une ESN qui place ses collaborateurs chez des clients industriels.
+11:55:28   écartée : EVEA — EVEA est une agence de communication concurrente d'ORBE.
+11:55:28   écartée : Audika_France — Audika est un grand groupe avec 1400 collaborateurs et une structure digitale établie.
+11:55:28   écartée : Audika — Audika est un grand groupe avec une équipe digitale interne structurée.
+11:55:28   écartée : CNAM AUVERGNE RHONE ALPES — employeur public
+11:55:28   écartée : AGENCE FRANCAISE DE TRADUCTION ET DE COMMUNICATION — agence concurrente
+11:55:28   écartée : CNRS — poste de recherche, pas besoin digital
+11:55:28   écartée : Reworld Media — grand groupe media avec équipe digitale interne
+11:55:28   écartée : Zimmermann — marque de luxe avec équipe marketing interne
+11:55:28   écartée : AVICOM' — agence concurrente
+11:55:28   écartée : Marianne Education — groupe media avec équipe digitale interne
+11:55:28   écartée : Make Sense — agence concurrente
+11:55:28   écartée : Cast AI — entreprise tech avec équipe digitale interne
+11:55:28   écartée : Le Jardin d'Acclimatation — employeur public
+11:55:28   écartée : Volkswagen Group Retail France — Grand groupe international avec une structure marketing établie
+11:55:28   écartée : Maison Alaïa — Maison de luxe avec une équipe marketing et communication existante
+11:55:28   écartée : Sapiance — Annonce publiée par un cabinet de recrutement (Sapiance)
+11:55:28   écartée : Alibaba Cloud — Multinationale technologique avec une structure marketing complexe
+11:55:28   écartée : Verkada — Entreprise technologique bien établie avec une forte présence marketing
+11:55:28   écartée : IN Groupe — Grand groupe international avec 4000 collaborateurs
+11:55:28   écartée : Akiem — Poste opérationnel logistique sans rapport avec le web ou le marketing
+11:55:28   écartée : NGE - BTP — poste non lié au digital, aucune nécessité de services web ou marketing
+11:55:28   écartée : CLASQUIN — poste de responsable maritime, pas de besoin de services web ou marketing
+11:55:28   écartée : agap2 — responsable transport logistique, pas de besoin de services web ou marketing
+11:55:28   écartée : Eiffage Génie Civil — responsable topographe, pas de besoin de services web ou marketing
+11:55:28   écartée : GE Provence et Languedoc — technicien logistique, pas de besoin de services web ou marketing
+11:55:28 — YML DIFFUSION (Chargé de projet digital, Sautron)
+11:55:31     note 87/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:55:31 — ALTESSE TOILETTAGE (COMMUNITY MANAGER, Sainte-Marie)
+11:55:34     note 86/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:55:34 — Plus que pro (Webdesigner, Obernai)
+11:55:45     note 85/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:55:45 — PARTHENA CONSULTANT (Chargé de Contenus, Boulogne Billancourt)
+11:55:51     note 94/100 · site ok · e-mail contact@parthena.com · constats : aucun
+11:55:51 — HUMEET (Chef de projet marketing digital, Lyon 3e Arrondissement)
+11:56:22     note 94/100 · site ok · e-mail support@humeetapp.com · constats : aucun
+11:56:22 — IPSUMEDIA (DÉVELOPPEUR(EUSE) INFORMATIQUE ET WEB, Chateaurenard)
+11:56:26     note 94/100 · site ok · e-mail contact@ipsumedia.com · constats : description, ia
+11:56:26 — MAITRISE TECHNOLOGIQUE (Développeur(se) polyvalent, Saint-Maximin-la-Sainte-Baume)
+11:56:30     note 93/100 · site ok · e-mail pbagnpg@znvgevfr-grpuabybtvdhr.pbz · constats : aucun
+11:56:30 — PARIS VIA (Employé Commercial et marketing digital, Drancy)
+11:56:32     note 90/100 · site ok · e-mail reservation@parisvia.com · constats : aucun
+11:56:32 — LOEMA (Développeur Full Stack expert / senior, Marseille)
+11:56:35     note 90/100 · site ok · e-mail feedback@loema.com · constats : contact, ia, reseaux
+11:56:35 — VOYAGEXPERT (Développeur Full Stack - CDI - NANTES, Nantes)
+11:56:38     note 90/100 · site ok · e-mail contact@voyagexpert.com · constats : contact
+11:56:38 — OK METAL SARL (Chargé de communication marketing français anglais, Nogent-sur-Seine)
+11:56:51     note 90/100 · site ok · e-mail info@pok-fire.com · constats : titre, description, ia, contact
+11:56:51 — MEDIA IMMO (Webdesigner, Corbeil Essonnes)
+11:56:55     note 82/100 · site ok · e-mail support@media-immo.fr · constats : titre, h1, ia, reseaux
+11:56:55 — MUTUELLE VIASANTE (Développeur Full Stack Web & Mobile, Labège)
+11:57:00     note 78/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:57:00 — LACO (Assistant Marketing et Communication, Hoerdt)
+11:57:05     note 87/100 · site ok · e-mail info@lacoshop.com · constats : ia
+11:57:05 — VITALYS (Rédacteur(trice) Web SEO/GEO, Lyon 3e Arrondissement)
+11:57:07       DuckDuckGo : bloqué (202)
+11:57:10     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:57:10 — AFTRAL (CONCEPTEUR GRAPHISTE MULTIMÉDIA, Paris)
+11:57:14     note 86/100 · site ok · e-mail dpd@aftral.com · constats : h1
+11:57:14 — Groupe Kyka (Growth Manager: Data-Driven Growth & CRM Leader, Paris)
+11:57:15       DuckDuckGo : bloqué (202)
+11:57:18     note 76/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:57:18 — KAROIL (Assistant Web Marketing et Communication, Montreuil)
+11:57:32     note 75/100 · site ok · e-mail non trouvé · constats : ia, vieux
+11:57:32 — K-TEX (Assistant marketing, Ste Foy Les Lyon)
+11:57:32       DuckDuckGo : bloqué (202)
+11:57:35     note 75/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:57:35 — Eureka Éducation (Traffic Manager, Toulouse)
+11:57:44     note 85/100 · site ok · e-mail 202413061226.66ph8qk6pwbj@shared-p100-i19.d.sp1-brevo.net · constats : contact
+11:57:44 — GROUPE MONDIAL TISSUS GMT (Assistant en Marketing Digital et Relation Commerciale, Rillieux La Pape)
+11:57:47     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:57:47 — MARECHAL ELECTRIC (Responsable Acquisition digitale - Webmaster technique (B2B), St Maurice)
+11:57:51     note 83/100 · site ok · e-mail contact@marechal.com · constats : aucun
+11:57:51 — Teads (Junior Campaign Manager, Paris)
+11:57:51     note 83/100 · site ok · e-mail phishing@teads.com · constats : contact
+11:57:51 — KWS FRANCE (Responsable Marketing France, Roye)
+11:57:57     note 72/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:57:57 — Franprix (Chef de Projet Communication Événementielle B2B, Courbevoie)
+11:58:04     note 70/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:58:04 — FRANCK PROVOST (Chef(fe) de projets senior trade marketing, Neuilly Sur Seine)
+11:58:08     note 70/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:58:08     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts, gemini-robotics-er-2-preview
+11:58:57     prêt : PARTHENA CONSULTANT (94/100)
+12:03:57     gemini/gemini-3.8-flash : The read operation timed out
+12:06:55     prêt : HUMEET (94/100)
+12:11:55     gemini/gemini-3.8-flash : The read operation timed out
+12:13:41     prêt : IPSUMEDIA (94/100) · https://oscarcousin-max.github.io/orbe-usine/audits/ipsumedia/
+12:13:45     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:18:45     gemini/gemini-3.7-flash : The read operation timed out
+12:19:20     prêt : MAITRISE TECHNOLOGIQUE (93/100)
+12:24:20     gemini/gemini-3.8-flash : The read operation timed out
+12:28:30     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:28:31     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:28:50     prêt : PARIS VIA (90/100)
+12:33:50     gemini/gemini-3.8-flash : The read operation timed out
+12:38:50     gemini/gemini-3.7-flash : The read operation timed out
+12:39:24     prêt : LOEMA (90/100) · https://oscarcousin-max.github.io/orbe-usine/audits/loema/
+12:39:32     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:44:07     prêt : VOYAGEXPERT (90/100) · https://oscarcousin-max.github.io/orbe-usine/audits/voyagexpert/
+12:48:37     prêt : OK METAL SARL (90/100) · https://oscarcousin-max.github.io/orbe-usine/audits/ok-metal-sarl/
+12:50:56     prêt : YML DIFFUSION (87/100)
+12:51:02     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:51:05     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:51:24     prêt : LACO (87/100) · https://oscarcousin-max.github.io/orbe-usine/audits/laco/
+12:56:24     gemini/gemini-3.8-flash : The read operation timed out
+13:01:24     gemini/gemini-3.7-flash : The read operation timed out
+13:06:50     gemini/gemini-3.8-flash : The read operation timed out
+13:06:51     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:07:09     prêt : ALTESSE TOILETTAGE (86/100)
+13:07:09     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:07:11     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:07:50     prêt : AFTRAL (86/100) · https://oscarcousin-max.github.io/orbe-usine/audits/aftral/
+13:07:50     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:07:50     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:08:38     prêt : Plus que pro (85/100)
+13:08:38     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:08:38     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:09:05     prêt : Eureka Éducation (85/100) · https://oscarcousin-max.github.io/orbe-usine/audits/eureka-education/
+13:09:05     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:09:06     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:11:03     prêt : MARECHAL ELECTRIC (83/100)
+13:11:03     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:11:03     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:11:21     prêt : Teads (83/100) · https://oscarcousin-max.github.io/orbe-usine/audits/teads/
+13:11:21     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:11:21     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:12:15     prêt : MEDIA IMMO (82/100) · https://oscarcousin-max.github.io/orbe-usine/audits/media-immo/
+13:12:15     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:12:15     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:12:52     prêt : MUTUELLE VIASANTE (78/100)
+13:12:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:17:52     gemini/gemini-3.7-flash : The read operation timed out
+13:18:32     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+13:18:53     prêt : VITALYS (77/100)
+13:18:53     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:18:53     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:19:33     prêt : Groupe Kyka (76/100)
+13:19:33     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:19:33     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+13:19:57     prêt : KAROIL (75/100) · https://oscarcousin-max.github.io/orbe-usine/audits/karoil/
