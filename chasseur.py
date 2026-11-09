@@ -943,7 +943,7 @@ MAUVAIS_DEBUTS = re.compile(r"^(?:recrut\w*|rh|drh|hr|jobs?|careers?|carriere|em
                             r"support|sav|service|partenariat|partners?|presse|press|media|admissions?|compta|factur|"
                             r"commande|order|abuse|phishing|security|securite|legal|juridique|feedback|dpd|reservations?|booking|"
                             r"webmaster|postmaster|newsletter|unsubscribe|ton|votre|your|nom|prenom|"
-                            r"jean ?dupont|jeandupond|john ?doe|jane ?doe|exemple|example|marc)(?:[._-]|$)", re.I)
+                            r"jean[ ._-]?dupon[dt]|john[ ._-]?doe|jane[ ._-]?doe|exemple|example|marc)(?:[._-]|$)", re.I)
 GRATUITES = re.compile(r"@(gmail|googlemail|hotmail|outlook|yahoo|live|icloud|orange|free|sfr|laposte|wanadoo|aol|gmx|proton)\.", re.I)
 
 
