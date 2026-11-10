@@ -1,213 +1,338 @@
-11:26:53 Chasseur ORBE — annonces publiées du 03/11 12:26 au 10/11 12:26
-11:26:53 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
-11:26:54 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-11:26:54 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-11:26:54 France Travail : connexion refusée (HTTP Error 400: Bad Request)
-11:31:25 France Travail (site) : 120 page(s) lue(s), 773 offre(s), 148 entreprise(s) nouvelle(s) sur la période
-11:35:46 LinkedIn : 495 offre(s) trouvée(s), 359 entreprise(s) nouvelle(s) ; lecture de 160 annonce(s)
-11:40:53 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
-11:40:53 Après le tri : 149 candidate(s) sur 308
-11:40:56   trop grande : PARTHENA CONSULTANT (50+ salariés (code 22), ETI)
-11:40:59   trop grande : EDITIONS TECHNIQUES POUR L'AUTOMOBILE ET (50+ salariés (code 41), ETI)
-11:41:00   trop grande : Emeria (50+ salariés (code 22), GE)
-11:41:01   trop grande : KAROIL (moins de 50 salariés (code 12), ETI)
-11:41:02   trop grande : MARECHAL ELECTRIC (50+ salariés (code 22), ETI)
-11:41:04   trop grande : Le Courrier de l'Ouest (50+ salariés (code 22), ETI)
-11:41:04   trop grande : Eureka Éducation (50+ salariés (code 22), ETI)
-11:41:07   trop grande : EVEA (moins de 50 salariés (code 12), ETI)
-11:41:11   trop grande : COMAT (50+ salariés (code 22), PME)
-11:41:12   trop grande : SOTREM SEO (50+ salariés (code 21), PME)
-11:41:14   trop grande : AFTRAL (50+ salariés (code 51), ETI)
-11:41:15   trop grande : AGENCE FRANCAISE DE TRADUCTION ET DE COMMUNICATION (50+ salariés (code 21), PME)
-11:41:16   trop grande : CNRS (50+ salariés (code 53), GE)
-11:41:16   trop grande : Silkhom (50+ salariés (code 21), PME)
-11:41:17   trop grande : EDEN AUTO SERVICES - PAU (50+ salariés (code 22), ETI)
-11:41:18   trop grande : Hager SAS (50+ salariés (code 32), ETI)
-11:41:20   trop grande : APRIL (50+ salariés (code 22), ETI)
-11:41:23   trop grande : Automobile Club de l'Ouest (50+ salariés (code 32), ETI)
-11:41:25   trop grande : MGEN (50+ salariés (code 51), GE)
-11:41:26   trop grande : Hexanet (50+ salariés (code 22), ETI)
-11:41:27   trop grande : BUT (moins de 50 salariés (code 12), GE)
-11:41:29   trop grande : MACIF (50+ salariés (code 53), GE)
-11:41:29   trop grande : Askell (50+ salariés (code 22), ETI)
-11:41:32   trop grande : ORANGE (50+ salariés (code 53), GE)
-11:41:33   trop grande : WINAMAX (50+ salariés (code 32), ETI)
-11:41:33   trop grande : Imerys (50+ salariés (code 32), ETI)
-11:41:35   trop grande : Alpes Isère Habitat (50+ salariés (code 41), ETI)
-11:41:36   trop grande : TEAMINSIDE (moins de 50 salariés (code 12), ETI)
-11:41:37   trop grande : Centric Software (50+ salariés (code 22), GE)
-11:41:40   trop grande : Habitat et Humanisme Ile-de-France (50+ salariés (code 21), PME)
-11:41:41   trop grande : Météo-France (50+ salariés (code 51), ETI)
-11:41:44   trop grande : SOLIHA (50+ salariés (code 21), PME)
-11:41:46   trop grande : NVIDIA (50+ salariés (code 21), PME)
-11:41:47   trop grande : Grand Paris Seine Ouest (GPSO) (50+ salariés (code 42), ETI)
-11:41:47   trop grande : Vallée Sud - Grand Paris (50+ salariés (code 42), ETI)
-11:41:48   trop grande : Reworld Media (50+ salariés (code 31), ETI)
-11:41:50   trop grande : CoSpirit (50+ salariés (code 22), ETI)
-11:41:50   trop grande : Christian Dior Couture (50+ salariés (code 51), GE)
-11:41:51   trop grande : BeReal. (moins de 50 salariés (code 11), ETI)
-11:41:54   trop grande : INSA Lyon - Institut National des Sciences Appliquées de Lyon (50+ salariés (code 42), ETI)
-11:41:59   trop grande : Altonéo (50+ salariés (code 22), PME)
-11:42:00   trop grande : Denjean & Associés (50+ salariés (code 22), PME)
-11:42:01   trop grande : SOFRILOG (50+ salariés (code 22), ETI)
-11:42:02   trop grande : STATION F (moins de 50 salariés (code 12), ETI)
-11:42:04   trop grande : Prose On Pixels France (50+ salariés (code 22), ETI)
-11:42:05   trop grande : VINCI Concessions (50+ salariés (code 22), GE)
-11:42:06   trop grande : Aéroports de Lyon (50+ salariés (code 32), GE)
-11:42:07   trop grande : Eiffage Énergie Systèmes (50+ salariés (code 41), GE)
-11:42:09   trop grande : CEVA Logistics (50+ salariés (code 51), GE)
-11:42:11   trop grande : TotalEnergies (50+ salariés (code 42), GE)
-11:42:11   trop grande : CNAM GRAND EST (50+ salariés (code 31), PME)
-11:42:14   trop grande : Lyreco France (50+ salariés (code 42), ETI)
-11:42:16   trop grande : Infopro Digital (moins de 50 salariés (code NN), ETI)
-11:42:17   trop grande : Voodoo (50+ salariés (code 22), ETI)
-11:42:18   trop grande : Fnac Darty (moins de 50 salariés (code 11), GE)
-11:42:20   trop grande : Lydia Solutions (Lydia - Sumeria) (50+ salariés (code 32), ETI)
-11:42:22   trop grande : OGC Nice (50+ salariés (code 32), GE)
-11:42:23   trop grande : Crédit Coopératif (50+ salariés (code 42), GE)
-11:42:23   trop grande : Klanik (50+ salariés (code 32), ETI)
-11:42:25   trop grande : Coloplast (50+ salariés (code 32), ETI)
-11:42:26   trop grande : Alibaba Cloud (moins de 50 salariés (code 11), ETI)
-11:42:28   trop grande : KNDS France (50+ salariés (code 51), GE)
-11:42:29   trop grande : Axis Communications (50+ salariés (code 21), ETI)
-11:42:29   trop grande : BRICO DEPOT (50+ salariés (code 52), GE)
-11:42:31   trop grande : FrogPubs (50+ salariés (code 31), PME)
-11:42:32   trop grande : Castalie (50+ salariés (code 22), PME)
-11:42:33   trop grande : Brevo (50+ salariés (code 32), ETI)
-11:42:34   trop grande : Shiseido (moins de 50 salariés (code 12), ETI)
-11:42:35   trop grande : CCI GRAND EST (50+ salariés (code 41), ETI)
-11:42:35   trop grande : Ecolab (50+ salariés (code 32), ETI)
-11:42:36   trop grande : Parfums Christian Dior (50+ salariés (code 51), GE)
-11:42:37   trop grande : Orus (50+ salariés (code 21), PME)
-11:42:38   trop grande : Isabel Marant (50+ salariés (code 21), ETI)
-11:42:40   trop grande : Qonto (50+ salariés (code 41), ETI)
-11:42:40   trop grande : Payfit (50+ salariés (code 41), ETI)
-11:42:41   trop grande : Wonderbox (moins de 50 salariés (code 03), ETI)
-11:42:42   trop grande : AUDIKA (50+ salariés (code 31), ETI)
-11:42:45   trop grande : Forward Global (moins de 50 salariés (code 12), ETI)
-11:42:47   trop grande : ALTEN (50+ salariés (code 52), GE)
-11:42:48   trop grande : Septodont (50+ salariés (code 41), ETI)
-11:42:49   trop grande : Kicklox (moins de 50 salariés (code 11), ETI)
-11:42:50   trop grande : Thélem assurances (50+ salariés (code 41), ETI)
-11:42:50 Après le contrôle de taille : 67 candidate(s)
-11:42:50     modèles groq : whisper-large-v3-turbo, whisper-large-v3, canopylabs/orpheus-v1-english, allam-2-7b, canopylabs/orpheus-arabic-saudi, meta-llama/llama-prompt-guard-2-86m, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-120b, openai/gpt-oss-safeguard-20b, openai/gpt-oss-20b, qwen/qwen3.8-27b
-11:43:15     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-11:43:21     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-11:43:21     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
-11:43:28   analyste : paquet 5 sans réponse (Expecting ',' delimiter: line 1 column 1001 (char 1000))
-11:43:28     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-11:43:43     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-11:43:49     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-11:43:49     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
-11:43:55   écartée : COM'SCORING — Agence qui recrute pour renforcer son équipe interne
-11:43:55   écartée : J D E AGENCY — Agence digitale qui veut un Social Media Manager en interne
-11:43:55   écartée : PACIFICO ERIC — Poste commercial orienté vente en live, pas un besoin de prestation digitale classique
-11:43:55   écartée : LEADSEN RH — Offre de stage / CDD, cible d’apprentissage, pas un client potentiel de prestation
-11:43:55   écartée : EPCC SALINE ROYALE D'ARC ET SENANS — Poste centré sur la communication interne et la gestion CRM, difficile à externaliser
-11:43:55   écartée : FRANCK PROVOST — Grand groupe avec 15 000 collaborateurs, poste senior de trade marketing interne
-11:43:55   écartée : SIZE UP — Agence de marketing qui recrute un Traffic & Acquisition Manager en interne
-11:43:55   écartée : PRESTANOVA — poste trop technique, hors des services d'ORBE
-11:43:55   écartée : IPSUMEDIA — besoin d'un développeur informatique et web, pas lié aux services d'ORBE
-11:43:55   écartée : MAITRISE TECHNOLOGIQUE — poste de développeur polyvalent sur systèmes embarqués, hors champ d'ORBE
-11:43:55   écartée : EFFICIENT SOLUTION — poste très technique (Linux, Docker, Kubernetes) ne correspond pas aux services d'ORBE
-11:43:55   écartée : CARSAT ALSACE-MOSELLE — employeur public, exclu selon les critères
-11:43:55   écartée : CONNECTING VALUES — poste d'intégrateur GTB‑GTC très technique, hors services d'ORBE
-11:43:55   écartée : ATEK — poste d'opérateur monteur intégrateur électronique, pas lié aux services d'ORBE
-11:43:55   écartée : Safran - CDI — grand groupe et poste très technique, hors cible d'ORBE
-11:43:55   écartée : I-CAN SERVICES — Le besoin porte sur de l'animation terrain, hors du champ des services digitaux d'ORBE
-11:43:55   écartée : Digital School of Paris — Employeur scolaire, moins propice à l'externalisation de ce type de poste
-11:43:55   écartée : Aroma Zone / Hyteck — Poste scientifique et technique (valorisation scientifique) sans lien avec les services web/marketings d'ORBE.
-11:43:55   écartée : Emmaüs Insert Albi — L'employeur est une association (Emmaüs), ce qui est exclu par les critères.
-11:43:55   écartée : H Company — L'entreprise est une scale-up technologique de plus de 100 salariés, hors cible petite entreprise.
-11:43:55   écartée : Jobgether — Poste de Developer Relations (influence technique/dev ecosystem) sans rapport direct avec les services marketing web standards d'ORBE.
-11:43:55   écartée : ClickHouse — Poste de DevRel/Events pour une grande structure logicielle, sans rapport avec les services d'ORBE.
-11:43:55   écartée : CENTRE SOCIO CULTUREL DES HAUTS DU LYONNAIS — L'employeur est un Centre Socio Culturel (association/structure à but non lucratif), exclu des cibles.
-11:43:55   écartée : Marine Nationale — L'employeur est la Marine Nationale (employeur public), exclu des cibles.
-11:43:55   écartée : SOLIHA AISNE — L'employeur est une association (SOLIH A), exclu des cibles.
-11:43:55   écartée : LOGICOMIX — Gestion opérationnelle complexe d'un portefeuille de 180 chaînes nécessitant une présence interne dédiée.
-11:43:55   écartée : Adtitude — Adtitude est un studio créatif concurrent spécialisé dans la production de social ads.
-11:43:55   écartée : Cast AI — Poste de communication corporate pour une plateforme logicielle, relevant de la communication interne/entreprise.
-11:43:55   écartée : SPSTN - Service de Prévention et de Santé au Travail National — Le SPSTN est un service public dédié à la santé au travail, employeur public/institutionnel.
-11:43:55   écartée : BETC — BETC/Havas est une agence de communication concurrente.
-11:43:55   écartée : BETC ASIA — BETC/Havas est une agence de communication concurrente.
-11:43:55   écartée : VINCI — VINCI est un grand groupe (plus de 50 salariés) et le poste concerne la communication interne/entreprise.
-11:43:55   écartée : ELSAN — ELSAN est un grand groupe de santé (réseau d'hôpitaux) et le poste est territorial/stratégique.
-11:43:55   écartée : Ataguise — Cabinet de recrutement, difficile à externaliser
-11:43:55   écartée : Cabinet EKINOX — Cabinet de recrutement, externalisation peu pertinente
-11:43:55   écartée : O2 - N°1 du service à la personne — Grande structure du groupe Oui Care, entreprise de plus de 50 salariés
-11:43:55   écartée : Stryker — Grand groupe international (Stryker) et poste de direction marketing stratégique.
-11:43:55   écartée : Arrow ECS France — Société de distribution IT faisant partie d'un grand groupe (Arrow Electronics).
-11:43:55   écartée : Johnson & Johnson MedTech — Multinationale de la santé (Johnson & Johnson) et poste régional (EMEA).
-11:43:55   écartée : Alltricks — Entreprise du retail sportif avec une équipe marketing existante et un poste rattaché à un directeur.
-11:43:55   écartée : Qlik — Entreprise de logiciels (Qlik) de plus de 50 salariés (Gartner Leader, Fortune 500).
-11:43:55   écartée : Respire — Start-up en phase de croissance avec des agences déjà en place et un périmètre e-commerce complexe.
-11:43:55   écartée : Once For All France — SaaS B2B avec une direction marketing structurée et un besoin d'expertise SEO interne.
-11:43:55   écartée : Greenly — Poste technique de développement/ingénierie (AI Content Engineer) sans rapport avec le marketing digital classique.
-11:43:55   écartée : LIXIL — Grand groupe, recrutement interne, pas de service à externaliser
-11:43:55 — LSA (Content Manager Digital, Chécy)
-11:43:57     note 88/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-11:43:57 — Gesec (Chargé de communication digitale et projets Web, Saint-Avertin)
-11:44:06     note 91/100 · site ok · e-mail infos@gesec.fr · constats : aucun
-11:44:06 — Ekosport (Community Manager, Saint-Alban-Leysse)
-11:44:08     note 92/100 · site ok · e-mail info@ekosport.fr · constats : ia
-11:44:08 — ASAPE DIGITAL (Chargé de communication digitale et production de contenus, Mirepoix-sur-Tarn)
-11:44:15     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-11:44:15 — Maison Alaïa (Marketing Manager, Paris)
-11:44:41     note 90/100 · site ok · e-mail serviceclient@maison-alaia.com · constats : h1
-11:44:41 — CIMEM (Ref GR MMD MANAGER MARKETING DIGITAL, Tarare)
-11:44:44     note 79/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-11:44:44 — PEPEETE (Responsable E-commerce et Digital, Torcy)
-11:44:45     note 79/100 · site ok · e-mail non trouvé · constats : contact, ia
-11:44:45 — Kosbiotic (Responsable Influence & Réseaux Sociaux Bilingue Italien - Français - Marché Italien - CDI, Versailles)
-11:44:48     note 79/100 · site ok · e-mail non trouvé · constats : titre
-11:44:48 — LM5P - Le Mouton à 5 Pattes (Chef de Projet Marketing Produit, Orange)
-11:44:50     note 79/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-11:44:50 — BONJOUR PARIS (Community manager, Paris)
-11:44:57     note 87/100 · site ok · e-mail bonjour@bonjour.paris · constats : ia, description, h1
-11:44:57 — CIRCULAR CONSULTING FRANCE (Responsable Marketing France - agroalimentaire (CDI), Lyon)
-11:45:09     note 77/100 · site ok · e-mail non trouvé · constats : description
-11:45:09 — Planeta Formación Universidades (Spécialiste en marketing numérique, Ville de Paris)
-11:45:21     note 77/100 · site ok · e-mail non trouvé · constats : description, ia, contact, reseaux
-11:45:21 — Green-Got (Lead Acquisition B2C, Paris)
-11:45:28     note 87/100 · site ok · e-mail contact@green-got.com · constats : contact
-11:45:28 — Shine (Paid Social & Affiliate Manager, France, Paris)
-11:45:29     note 85/100 · site ok · e-mail contact@shine.fr · constats : aucun
-11:45:29 — Maison des Communes de la Vendée (Chargé d'animation du réseau Secrétaire Général de Mairie, La Roche-sur-Yon)
-11:45:32     note 66/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-11:45:32 — Zimmermann (Social Media Manager, Ville de Paris)
-11:45:37     note 66/100 · site ok · e-mail non trouvé · constats : h1
-11:45:37 — OW Ocean Winds (Stakeholder Associate, Nantes)
-11:45:41     note 66/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-11:45:41 — Current AI (Communications Manager, Ville de Paris)
-11:45:46     note 66/100 · site ok · e-mail non trouvé · constats : reseaux, ia, description, h1
-11:45:46 — °Arcane (Team Lead Paid Social Media (H-F), Ville de Paris)
-11:45:53     note 66/100 · site ok · e-mail non trouvé · constats : reseaux, contact, ia
-11:45:53 — Anker Innovations (Public Relations Manager, Paris et périphérie)
-11:45:56     note 66/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-11:45:56 — Hyatt (CDI : Responsable Marketing, Paris)
-11:45:59     note 66/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
-11:45:59 — Make Sense (Social Ads Manager Meta Ads E-commerce, Bondues)
-11:46:01     note 66/100 · site ok · e-mail non trouvé · constats : aucun
-11:46:01     prêt : Ekosport (92/100) · https://oscarcousin-max.github.io/orbe-usine/audits/ekosport/
-11:46:01     prêt : Gesec (91/100)
-11:46:01     prêt : Maison Alaïa (90/100) · https://oscarcousin-max.github.io/orbe-usine/audits/maison-alaia/
-11:46:01     prêt : LSA (88/100)
-11:46:01     prêt : BONJOUR PARIS (87/100) · https://oscarcousin-max.github.io/orbe-usine/audits/bonjour-paris/
-11:46:01     prêt : Green-Got (87/100) · https://oscarcousin-max.github.io/orbe-usine/audits/green-got/
-11:46:01     prêt : Shine (85/100)
-11:46:01     prêt : ASAPE DIGITAL (80/100)
-11:46:01     prêt : CIMEM (79/100)
-11:46:01     prêt : PEPEETE (79/100) · https://oscarcousin-max.github.io/orbe-usine/audits/pepeete/
-11:46:01     prêt : Kosbiotic (79/100) · https://oscarcousin-max.github.io/orbe-usine/audits/kosbiotic/
-11:46:01     prêt : LM5P - Le Mouton à 5 Pattes (79/100)
-11:46:01     prêt : CIRCULAR CONSULTING FRANCE (77/100) · https://oscarcousin-max.github.io/orbe-usine/audits/circular-consulting-france/
-11:46:01     prêt : Planeta Formación Universidades (77/100) · https://oscarcousin-max.github.io/orbe-usine/audits/planeta-formacion-universidades/
-11:46:01     prêt : Maison des Communes de la Vendée (66/100)
-11:46:01     prêt : Zimmermann (66/100) · https://oscarcousin-max.github.io/orbe-usine/audits/zimmermann/
-11:46:01     prêt : OW Ocean Winds (66/100)
-11:46:01     prêt : Current AI (66/100) · https://oscarcousin-max.github.io/orbe-usine/audits/current-ai/
-11:46:01     prêt : °Arcane (66/100) · https://oscarcousin-max.github.io/orbe-usine/audits/arcane/
-11:46:01     prêt : Anker Innovations (66/100)
-11:46:01     prêt : Hyatt (66/100)
-11:46:01     prêt : Make Sense (66/100)
-11:46:02 Terminé : 22 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
+22:14:22 Chasseur ORBE — annonces publiées du 11/10 23:14 au 10/11 23:14
+22:14:22 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
+22:14:22 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+22:14:23 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+22:14:23 France Travail : connexion refusée (HTTP Error 400: Bad Request)
+22:18:58 France Travail (site) : 120 page(s) lue(s), 773 offre(s), 296 entreprise(s) nouvelle(s) sur la période
+22:28:30 LinkedIn : 619 offre(s) trouvée(s), 398 entreprise(s) nouvelle(s) ; lecture de 160 annonce(s)
+22:41:04 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
+22:41:04 Après le tri : 223 candidate(s) sur 455
+22:41:08   trop grande : PARTHENA CONSULTANT (50+ salariés (code 22), ETI)
+22:41:13   trop grande : EDITIONS TECHNIQUES POUR L'AUTOMOBILE ET (50+ salariés (code 41), ETI)
+22:41:15   trop grande : Emeria (50+ salariés (code 22), GE)
+22:41:16   trop grande : KAROIL (moins de 50 salariés (code 12), ETI)
+22:41:19   trop grande : SYNNEO (50+ salariés (code 21), PME)
+22:41:20   trop grande : NANTEUROP FL (50+ salariés (code 21), PME)
+22:41:22   trop grande : KWS FRANCE (50+ salariés (code 31), ETI)
+22:41:23   trop grande : MARECHAL ELECTRIC (50+ salariés (code 22), ETI)
+22:41:27   trop grande : Le Courrier de l'Ouest (50+ salariés (code 22), ETI)
+22:41:28   trop grande : Walter Learning (50+ salariés (code 21), PME)
+22:41:29   trop grande : 1 2 3 PARE BRISE (moins de 50 salariés (code 02), ETI)
+22:41:31   trop grande : Eureka Éducation (50+ salariés (code 22), ETI)
+22:41:33   trop grande : Oscaro (50+ salariés (code 32), GE)
+22:41:37   trop grande : Efrei Paris (50+ salariés (code 32), ETI)
+22:41:39   trop grande : Digitaleo (50+ salariés (code 21), PME)
+22:41:42   trop grande : Azureva (50+ salariés (code 32), ETI)
+22:41:45   trop grande : EVEA (moins de 50 salariés (code 12), ETI)
+22:41:46   trop grande : INSTIT SUPERIEUR REEDUC PSYCHOMOT RELAXA (50+ salariés (code 21), PME)
+22:41:53   trop grande : COMAT (50+ salariés (code 22), PME)
+22:41:53   trop grande : SOTREM SEO (50+ salariés (code 21), PME)
+22:41:56   trop grande : NEPTUNE RH (moins de 50 salariés (code 02), ETI)
+22:42:00   trop grande : AFTRAL (50+ salariés (code 51), ETI)
+22:42:01   trop grande : AGENCE FRANCAISE DE TRADUCTION ET DE COMMUNICATION (50+ salariés (code 21), PME)
+22:42:02   trop grande : CNRS (50+ salariés (code 53), GE)
+22:42:04   trop grande : Silkhom (50+ salariés (code 21), PME)
+22:42:05   trop grande : EDEN AUTO SERVICES - PAU (50+ salariés (code 22), ETI)
+22:42:08   trop grande : Hager SAS (50+ salariés (code 32), ETI)
+22:42:12   trop grande : Wurth Elektronik France (50+ salariés (code 31), ETI)
+22:42:14   trop grande : Optimark (50+ salariés (code 42), ETI)
+22:42:16   trop grande : APRIL (50+ salariés (code 22), ETI)
+22:42:17   trop grande : CONDICHEF (50+ salariés (code 22), ETI)
+22:42:18   trop grande : ALGOE (50+ salariés (code 22), PME)
+22:42:21   trop grande : AFPICL (50+ salariés (code 41), ETI)
+22:42:22   trop grande : Cegid (50+ salariés (code 51), ETI)
+22:42:23   trop grande : Berger-Levrault (50+ salariés (code 42), ETI)
+22:42:26   trop grande : ALBEA COSMETICS SERVICES (50+ salariés (code 21), ETI)
+22:42:27   trop grande : Automobile Club de l'Ouest (50+ salariés (code 32), ETI)
+22:42:28   trop grande : COMPAGNIE DES ALPES (50+ salariés (code 31), GE)
+22:42:29   trop grande : Automatique et Industrie (50+ salariés (code 22), ETI)
+22:42:30   trop grande : McCormick Retail Services (50+ salariés (code 42), ETI)
+22:42:32   trop grande : OXFAM FRANCE - AGIR ICI (50+ salariés (code 21), PME)
+22:42:35   trop grande : MGEN (50+ salariés (code 51), GE)
+22:42:36   trop grande : Sinclair Ressources (50+ salariés (code 21), PME)
+22:42:36   trop grande : BIGMAT FRANCE (50+ salariés (code 21), ETI)
+22:42:37   trop grande : COMPTOIR DES VOYAGES (50+ salariés (code 22), ETI)
+22:42:38   trop grande : Brioche Pasquier Châtelet (50+ salariés (code 32), ETI)
+22:42:39   trop grande : Hexanet (50+ salariés (code 22), ETI)
+22:42:40   trop grande : BUT (moins de 50 salariés (code 12), GE)
+22:42:41   trop grande : DECHRA VETERINARY PRODUCTS SAS (50+ salariés (code 21), ETI)
+22:42:43   trop grande : JCDecaux (50+ salariés (code 51), ETI)
+22:42:44   trop grande : Orano (moins de 50 salariés (code 02), GE)
+22:42:46   trop grande : Qualiconsult (50+ salariés (code 41), ETI)
+22:42:47   trop grande : Macif (50+ salariés (code 53), GE)
+22:42:53   trop grande : Askell (50+ salariés (code 22), ETI)
+22:42:54   trop grande : Chausson Materiaux (50+ salariés (code 51), ETI)
+22:42:56   trop grande : ORANGE (50+ salariés (code 53), GE)
+22:42:57   trop grande : Delta Plus (50+ salariés (code 41), ETI)
+22:42:58   trop grande : Crédit Mutuel Océan (50+ salariés (code 42), GE)
+22:43:00   trop grande : Mutuelle de Poitiers (50+ salariés (code 32), ETI)
+22:43:01   trop grande : Teisseire (moins de 50 salariés (code 01), ETI)
+22:43:03   trop grande : WINAMAX (50+ salariés (code 32), ETI)
+22:43:04   trop grande : Ubisoft (50+ salariés (code 42), GE)
+22:43:05   trop grande : Alice & Bob (50+ salariés (code 22), PME)
+22:43:07   trop grande : Imerys (50+ salariés (code 32), ETI)
+22:43:10   trop grande : Alpes Isère Habitat (50+ salariés (code 41), ETI)
+22:43:16   trop grande : TEAMINSIDE (moins de 50 salariés (code 12), ETI)
+22:43:17   trop grande : BeReal. (moins de 50 salariés (code 11), ETI)
+22:43:18   trop grande : Reworld Media (50+ salariés (code 31), ETI)
+22:43:20   trop grande : BRICO DEPOT (50+ salariés (code 52), GE)
+22:43:21   trop grande : Fremantle France (50+ salariés (code 21), GE)
+22:43:23   trop grande : Maisons du Monde (moins de 50 salariés (code 11), ETI)
+22:43:24   trop grande : CoSpirit (50+ salariés (code 22), ETI)
+22:43:25   trop grande : Christian Dior Couture (50+ salariés (code 51), GE)
+22:43:28   trop grande : VINCI Concessions (50+ salariés (code 22), GE)
+22:43:29   trop grande : Aéroports de Lyon (50+ salariés (code 32), GE)
+22:43:30   trop grande : PROPHESEE (50+ salariés (code 22), PME)
+22:43:31   trop grande : Le Jardin d'Acclimatation (50+ salariés (code 22), GE)
+22:43:34   trop grande : POMONA (50+ salariés (code 52), GE)
+22:43:35   trop grande : Eiffage Énergie Systèmes (50+ salariés (code 41), GE)
+22:43:36   trop grande : CEVA Logistics (50+ salariés (code 51), GE)
+22:43:37   trop grande : Denjean & Associés (50+ salariés (code 22), PME)
+22:43:38   trop grande : CNAM GRAND EST (50+ salariés (code 31), PME)
+22:43:39   trop grande : EssilorLuxottica (50+ salariés (code 21), GE)
+22:43:44   trop grande : Météo-France (50+ salariés (code 51), ETI)
+22:43:47   trop grande : Lyreco France (50+ salariés (code 42), ETI)
+22:43:49   trop grande : Infopro Digital (moins de 50 salariés (code NN), ETI)
+22:43:53   trop grande : Voodoo (50+ salariés (code 22), ETI)
+22:43:53   trop grande : Uriach (50+ salariés (code 21), ETI)
+22:43:54   trop grande : Verifone (50+ salariés (code 22), PME)
+22:43:56   trop grande : Coloplast (50+ salariés (code 32), ETI)
+22:43:57   trop grande : Alibaba Cloud (moins de 50 salariés (code 11), ETI)
+22:43:58   trop grande : BPCE Solutions immobilières (50+ salariés (code 22), GE)
+22:44:00   trop grande : Amplifon (50+ salariés (code 42), ETI)
+22:44:02   trop grande : STATION F (moins de 50 salariés (code 12), ETI)
+22:44:03   trop grande : Align Technology (50+ salariés (code 22), ETI)
+22:44:05   trop grande : KNDS France (50+ salariés (code 51), GE)
+22:44:06   trop grande : Van Cleef & Arpels (50+ salariés (code 21), GE)
+22:44:09   trop grande : GL events (moins de 50 salariés (code 11), GE)
+22:44:10   trop grande : Pleyce (50+ salariés (code 21), PME)
+22:44:13   trop grande : Lydia Solutions (Lydia - Sumeria) (50+ salariés (code 32), ETI)
+22:44:14   trop grande : Edenred France (50+ salariés (code 42), GE)
+22:44:16   trop grande : Wonderbox (moins de 50 salariés (code 03), ETI)
+22:44:17   trop grande : Publicis Media (50+ salariés (code 42), GE)
+22:44:18   trop grande : FONCIA (50+ salariés (code 31), GE)
+22:44:19   trop grande : Numberly (50+ salariés (code 32), ETI)
+22:44:20   trop grande : Axess Adcom (50+ salariés (code 21), PME)
+22:44:22   trop grande : SAFTI (moins de 50 salariés (code 12), ETI)
+22:44:23   trop grande : Payfit (50+ salariés (code 41), ETI)
+22:44:24   trop grande : Orus (50+ salariés (code 21), PME)
+22:44:24 Après le contrôle de taille : 114 candidate(s)
+22:44:24     modèles groq : whisper-large-v3, qwen/qwen3.8-27b, whisper-large-v3-turbo, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-86m, allam-2-7b, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-120b, openai/gpt-oss-20b, openai/gpt-oss-safeguard-20b, canopylabs/orpheus-arabic-saudi
+22:44:41     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+22:44:57     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+22:45:03     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+22:45:03     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+22:45:10     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+22:45:10     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+22:45:12     groq/openai/gpt-oss-20b : réponse vide
+22:45:12     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts
+22:45:13     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+22:45:13     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+22:45:37     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+22:45:37     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+22:45:44   analyste : paquet 9 sans réponse (Expecting ',' delimiter: line 1 column 1254 (char 1253))
+22:45:44     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+22:45:44     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+22:45:44     groq/openai/gpt-oss-20b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization
+22:45:44     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+22:45:44     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+22:46:17     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+22:46:17     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+22:46:17     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+22:46:18     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+22:46:18     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+22:46:18     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+22:46:18     modèles or : thinkingmachines/inkling-2-small:free, liquid/lfm-3-1.7b:free, recursive/flint-v1.0:free, xingchen-agi/xing4.0-29b-a4b:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, liquid/lfm-2.5-2.6b:free, nvidia/nemotron-3.5-lightning:free, cohere/north-mini-code:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
+22:46:18     or/thinkingmachines/inkling-2-small:free : 403 {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agenti
+22:46:18   analyste : paquet 12 sans réponse (403 {"error":{"message":"thinkingmachines/inkling-2-small:free is only available)
+22:46:18     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+22:46:18     or/thinkingmachines/inkling-2-small:free : 403 {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agenti
+22:46:18   analyste : paquet 13 sans réponse (403 {"error":{"message":"thinkingmachines/inkling-2-small:free is only available)
+22:46:18     or/thinkingmachines/inkling-2-small:free : 403 {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agenti
+22:46:18   analyste : paquet 14 sans réponse (403 {"error":{"message":"thinkingmachines/inkling-2-small:free is only available)
+22:46:19     or/thinkingmachines/inkling-2-small:free : 403 {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agenti
+22:46:19   analyste : paquet 15 sans réponse (403 {"error":{"message":"thinkingmachines/inkling-2-small:free is only available)
+22:46:19   écartée : AGENCY CAR FRANCE — Réseau de franchises, besoin interne de community manager difficile à externaliser
+22:46:19   écartée : MN DIGITAL — Agence digitale qui recrute pour internaliser la création de visuels et l'animation
+22:46:19   écartée : COM'SCORING — Agence en pleine croissance qui veut un poste interne pour le pôle community management
+22:46:19   écartée : SARL LABORATOIRE L & M — Offre de formation, pas de besoin de prestation externalisée
+22:46:19   écartée : LEADSEN RH — Stage, donc pas un besoin de prestation externalisée
+22:46:19   écartée : ELVATUS — poste de formation, pas besoin de prestation digitale
+22:46:19   écartée : MEDIA-START — startup en phase de constitution d'équipe marketing
+22:46:19   écartée : EPCC SALINE ROYALE D'ARC ET SENANS — poste centré sur CRM et communication interne
+22:46:19   écartée : REMAKS — poste de direction marketing
+22:46:19   écartée : SOCIETE POUR L'EXPLOITATION ET LE DEVELO — poste de trade marketing, peu lié aux services d'ORBE
+22:46:19   écartée : FRANCK PROVOST — poste senior trade marketing, hors périmètre d'ORBE
+22:46:19   écartée : SESVANDERHAVE FRANCE — SESVANDERHAVE est un grand groupe industriel international, bien au-delà de 50 salariés.
+22:46:19   écartée : SIZE UP — Size Up est une agence de marketing et de communication, concurrent direct d'ORBE.
+22:46:19   écartée : Temporis Experts & Cadres Roubaix — L'annonce est publiée par Temporis, un cabinet de recrutement/intérim.
+22:46:19   écartée : Eram siège — Eram est un grand groupe de prêt-à-porter, structure bien supérieure à 50 salariés.
+22:46:19   écartée : PROFIL CIBLE — PROFIL CIBLE est une agence de recrutement, l'entreprise qui recrute est un client externe non identifié clairement comme petite structure locale apte à sous-traiter immédiatement.
+22:46:19   écartée : ARGFG — ARGFG est une association nationale (Association pour la Recherche et la Gestion des Fonds de la Fédération Française de Football), cible exclue.
+22:46:19   écartée : LES ROCHETTES - Pharmacie Elsie Santé — poste logistique, pas lié au web
+22:46:19   écartée : EXVENTYS — poste technique de développement, difficile à externaliser
+22:46:19   écartée : PRESTANOVA — chef de projet IT industriel, rôle trop technique
+22:46:19   écartée : IPSUMEDIA — développeur informatique et web, rôle technique
+22:46:19   écartée : ALPES DEIS — développeur/designer front web, rôle technique
+22:46:19   écartée : MAITRISE TECHNOLOGIQUE — développeur polyvalent, rôle technique
+22:46:19   écartée : EFFICIENT SOLUTION — Poste technique de développement et d'infrastructure (Linux, Docker, Kubernetes) sans rapport avec les services web/marketing d'ORBE.
+22:46:19   écartée : CARSAT ALSACE-MOSELLE — Employeur public (organisme de Sécurité sociale) et poste intégré à la gestion des systèmes d'information interne.
+22:46:19   écartée : CONNECTING VALUES — Poste technique spécialisé dans la gestion technique des bâtiments (GTB-GTC), hors périmètre web/marketing.
+22:46:19   écartée : ATEK — Poste industriel de montage et intégration électronique, sans lien avec le digital ou le marketing.
+22:46:19   écartée : I C A INTEGRAL CONCEPT AUDIOVISUEL — Poste technique audiovisuel (intégration de systèmes son/image), distinct des services de communication digitale.
+22:46:19   écartée : FRAMACOLD — Poste de développement/intégration de logiciel (ERP), considéré comme trop technique et sans rapport avec les services ORBE.
+22:46:19   écartée : VETAGRO SUP — Employeur dans le secteur de l'éducation/formation (VETAGRO SUP) et poste pédagogique, hors cible commerciale.
+22:46:19   écartée : LARI — Poste hybride combinant travail physique en magasin (manutention, mise en rayon) et marketing, hors périmètre des services spécialisés d'ORBE.
+22:46:19   écartée : SYSDECO SYSTEMES DEVELOPPEM CONCEPTIONS — Poste trop technique, non adapté aux services web
+22:46:19   écartée : Le Mercato de l'Emploi — Poste de vente, pas de besoin de prestation web
+22:46:19   écartée : Safran - CDI — Intégration système, hors domaine web
+22:46:19   écartée : GBO HUMAN RESOURCES — Chef de produit industriel, hors web
+22:46:19   écartée : CAISSE FEDERALE DE CREDIT MUTUEL — Chef de produit bancaire, hors web
+22:46:19   écartée : T&S — Poste de gestion de produit industriel hors périmètre web et marketing.
+22:46:19   écartée : I-CAN SERVICES — Offre déposée par une agence de communication pour de l'animation terrain.
+22:46:19   écartée : Adsearch — Offre publiée par un cabinet de recrutement (Adsearch).
+22:46:19   écartée : Keltis — Offre publiée par un cabinet de recrutement (Keltis).
+22:46:19   écartée : AVNIR IMT — Poste ultra-technique d'administration de logiciel d'ingénierie 3D.
+22:46:19   écartée : TalenX — Offre publiée par un cabinet de recrutement et poste hors périmètre web (SAV/froid).
+22:46:19   écartée : Le CAB' BFC — poste technique d'intégration de machines, non lié au web
+22:46:19   écartée : STATE OF MIND (ALEGRIA SAS) — responsable e‑commerce et stratégie digitale, rôle de direction, difficile à externaliser
+22:46:19   écartée : Act Digital France — développeur Go & IA, poste trop technique
+22:46:19   écartée : Mercato de l'emploi — responsable communication et marketing, fonction de direction interne
+22:46:19   écartée : JP FAUCHÉ INVESTISSEMENTS — développeur d’applications web/mobile, poste technique
+22:46:19   écartée : Blast Club — Start-up avec équipe community déjà structurée et rôle axé sur l'animation de réseau physique.
+22:46:19   écartée : OVHcloud — Grand groupe et poste ultra-technique de Developer Advocate.
+22:46:19   écartée : Emmaüs Insert Albi — Association d'insertion sociale et gestion d'un lieu de vie physique.
+22:46:19   écartée : Razorfish France — Agence marketing et communication concurrente (Publicis France).
+22:46:19   écartée : MIISTA — Poste orienté relations publiques, évènementiel VIP et gestion de showroom physique.
+22:46:19   écartée : REVONS NOS VILLAGES — Association locale et poste d'animation socioculturelle sans lien avec le web.
+22:46:19   écartée : Adapty.io — Entreprise de plus de 50 salariés et poste très technique (Developer Advocate).
+22:46:19   écartée : FRATERCITE POUR UNE REGIE DES QUARTIERS — Structure d'insertion par l'activité économique (IAE) et animation sociale.
+22:46:19   écartée : H Company — Entreprise tech internationale de plus de 100 salariés.
+22:46:19   écartée : Wellhub — Grand groupe international de plus de 2 000 salariés.
+22:46:19   écartée : Popeyes France — Grande chaîne de restauration rapide et réseau de franchises.
+22:46:19   écartée : Prime Video & Amazon MGM Studios — Grand groupe multinational (Amazon / Prime Video).
+22:46:19   écartée : THE GENIUS COMMUNITY — Cabinet de conseil et de prestation de services.
+22:46:19   écartée : American Vintage Officiel — Grande marque de prêt-à-porter de plus de 50 salariés avec réseau de boutiques.
+22:46:19   écartée : Hilo by Aktiia — Scale-up internationale ayant levé 96M$.
+22:46:19   écartée : Temu — Géant mondial du e-commerce.
+22:46:19 — Eole (Administrateur(trice) Réseaux Sociaux / Vendeur(euse) PàP, Mulhouse)
+22:46:21     note 85/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:46:21 — PHARMACIE DU JARDIN DE L'ETAT (Blogueur / Blogueuse vidéo, Saint-Denis)
+22:46:25     note 94/100 · site ok · e-mail contact@pharmaciedujardin.re · constats : reseaux, ia
+22:46:25 — DIGITAL INDIAN OCEAN (Social Media Manager (SMM), La Possession)
+22:46:29     note 83/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:46:29 — ZENDA CLUB (Traffic Manager Web / Acquisition Digitale, Montreal La Cluse)
+22:46:35     note 92/100 · site ok · e-mail contact@zenda-club.com · constats : reseaux, h1
+22:46:35 — ARKTEOS (Webdesigner / intégrateur Weg & Communication digitale, Guérande)
+22:47:06     note 81/100 · site ok · e-mail non trouvé · constats : lent, contact
+22:47:06 — Olivier Mery (Community Manager - CDI - Mode, Lyon 1er Arrondissement)
+22:47:09     note 81/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:47:09 — LUNDI MATIN (Chargé de Marketing Digital B2B, Montpellier)
+22:47:13     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:47:13 — O'MY EMPLOI (CHEF DE PROJETS DIGITAUX ET PRODUCTION DE CONTENUS, Martinique)
+22:47:54     note 80/100 · site ok · e-mail non trouvé · constats : ia, contact, vieux
+22:47:54 — BAMBOO EDITION (RESPONSABLE MARKETING DIGITAL & ACQUISITION, Charnay-lès-Mâcon)
+22:47:58     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:47:58 — PERFHOMME Lyon (Chargé / Chargée marketing digital, Lyon 3e Arrondissement)
+22:48:07     note 89/100 · site ok · e-mail reseau-rh@perfhomme.com · constats : description, vieux
+22:48:07 — M.C.S SERVICES Myparisconcierge (Webmaster Claude / GitHub, Paris)
+22:48:09     note 85/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:48:09 — MP BIOMEDICALS (Responsable Marketing, Illkirch-Graffenstaden)
+22:48:15     note 85/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:48:15 — NOURA TRAITEUR (Social media manager - Responsable des médias sociaux, Paris (Dept.))
+22:48:20     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:48:20 — Digital School of Paris (Community manager, Paris)
+22:48:28     note 87/100 · site ok · e-mail contact@parisdigitalschool.com · constats : aucun
+22:48:28 — Distrib 20 (Créateur-trice de Contenu Content Manager - Community Manager, Paris 19e Arrondissement)
+22:48:57     note 77/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:48:57 — GROUPEMENT D EMPLOYEURS DES CAVES PERR (Assistant / Assistante marketing, Orange)
+22:49:00     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:49:00 — LES EMAUX DE BRIARE (Assistant / Assistante marketing, Paris 07)
+22:49:02     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:49:02 — AMERICAN VINTAGE (Social Media Manager - CDD 10 Mois, Signes)
+22:49:07     note 73/100 · site ok · e-mail non trouvé · constats : reseaux
+22:49:07 — Astek (Chef de Projet Produit Industriel, Toulon)
+22:49:27     note 73/100 · site ok · e-mail non trouvé · constats : h1
+22:49:27 — Linman (Responsable Category Management - Compte Clé (CDI), Vendée)
+22:49:36     note 73/100 · site ok · e-mail non trouvé · constats : aucun
+22:49:36 — TEAM Y (Chef de projet / intégrateur, Roche-sur-Yon)
+22:49:44     note 73/100 · site ok · e-mail non trouvé · constats : contact, titre, h1, ia
+22:49:44 — VINCI (Chargé de communication, Villognon)
+22:49:54     note 73/100 · site ok · e-mail non trouvé · constats : aucun
+22:49:54 — CATL (Public Relations Specialist, Ville de Paris)
+22:50:04     note 73/100 · site ok · e-mail non trouvé · constats : reseaux, vieux, contact, ia
+22:50:04 — Cheval Blanc (Responsable Marketing & Communication, Saint-Tropez)
+22:50:36     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:50:36 — Genesis (Chef(fe) de Projet Marketing et Communication Genesis, La Garenne-Colombes)
+22:50:40     note 73/100 · site ok · e-mail non trouvé · constats : contact
+22:50:40 — AssoConnect (Growth Marketer, Marseille)
+22:50:44     note 73/100 · site ok · e-mail non trouvé · constats : aucun
+22:50:44 — Cabinet EKINOX (Responsable acquisition digitale senior, e-commerce, Paris)
+22:50:48     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:50:48 — TRANSATEL (an NTT company) (Responsable Marketing Digital Senior pour Ubigi, Courbevoie)
+22:50:53     note 73/100 · site ok · e-mail non trouvé · constats : aucun
+22:50:53 — 3Shape (Marketing Specialist, Île-de-France)
+22:50:56     note 83/100 · site ok · e-mail info@3shape.com · constats : ia
+22:50:56 — GEODIS (Responsable Paid Media et Marketing Automation, Levallois-Perret)
+22:51:06     note 73/100 · site ok · e-mail non trouvé · constats : aucun
+22:51:06 — ALTIOS International (Marketing Manager - France, Annecy)
+22:51:14     note 73/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:51:14 — Riot (Growth Manager Inbound, Paris)
+22:51:19     note 73/100 · site ok · e-mail non trouvé · constats : description, contact
+22:51:19 — Vocca (Senior Growth Manager - 60 à 75K package + BSPCE, Paris)
+22:51:21     note 83/100 · site ok · e-mail contact@vocca.com · constats : aucun
+22:51:21 — Positive (Senior SEO/GEO, Lyon)
+22:51:52     note 83/100 · site ok · e-mail contact@positivegroup.com · constats : aucun
+22:51:52 — JJA (CDI - Chef de projet SEO/GEO, Gonesse)
+22:51:58     note 73/100 · site ok · e-mail non trouvé · constats : h1
+22:51:58 — OREGON PRODUCTIONS (Assistant / Assistante community manager, Brignoles)
+22:52:25     note 66/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:52:25 — CCFD-Terre Solidaire (Chargé de communication et campagnes publicitaires, Île-de-France)
+22:52:34     note 66/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:52:34 — Relief International (Assistant en Communication Digitale, Montrouge)
+22:52:38     note 66/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+22:52:38 — Stryker (Marketing Manager: Neurovascular France, Bordeaux)
+22:53:02     note 76/100 · site ok · e-mail infosmi@stryker.com · constats : description, ia, contact, reseaux
+22:53:02 — datashake (Team Lead SEO / GEO, Ville de Paris)
+22:53:03     note 76/100 · site ok · e-mail hello@datashake.fr · constats : aucun
+22:53:03     prêt : PHARMACIE DU JARDIN DE L'ETAT (94/100) · https://oscarcousin-max.github.io/orbe-usine/audits/pharmacie-du-jardin-de-l-etat/
+22:53:03     prêt : ZENDA CLUB (92/100) · https://oscarcousin-max.github.io/orbe-usine/audits/zenda-club/
+22:53:03     prêt : PERFHOMME Lyon (89/100) · https://oscarcousin-max.github.io/orbe-usine/audits/perfhomme-lyon/
+22:53:03     prêt : Digital School of Paris (87/100)
+22:53:03     prêt : Eole (85/100)
+22:53:03     prêt : M.C.S SERVICES Myparisconcierge (85/100)
+22:53:03     prêt : MP BIOMEDICALS (85/100)
+22:53:03     prêt : DIGITAL INDIAN OCEAN (83/100)
+22:53:03     prêt : 3Shape (83/100) · https://oscarcousin-max.github.io/orbe-usine/audits/3shape/
+22:53:03     prêt : Vocca (83/100)
+22:53:03     prêt : Positive (83/100)
+22:53:03     prêt : ARKTEOS (81/100) · https://oscarcousin-max.github.io/orbe-usine/audits/arkteos/
+22:53:03     prêt : Olivier Mery (81/100)
+22:53:03     prêt : LUNDI MATIN (80/100)
+22:53:03     prêt : O'MY EMPLOI (80/100) · https://oscarcousin-max.github.io/orbe-usine/audits/o-my-emploi/
+22:53:03     prêt : BAMBOO EDITION (80/100)
+22:53:03     prêt : GROUPEMENT D EMPLOYEURS DES CAVES PERR (80/100)
+22:53:03     prêt : LES EMAUX DE BRIARE (80/100)
+22:53:03     prêt : NOURA TRAITEUR (77/100)
+22:53:03     prêt : Distrib 20 (77/100)
+22:53:03     prêt : Stryker (76/100) · https://oscarcousin-max.github.io/orbe-usine/audits/stryker/
+22:53:03     prêt : datashake (76/100)
+22:53:03     prêt : AMERICAN VINTAGE (73/100) · https://oscarcousin-max.github.io/orbe-usine/audits/american-vintage/
+22:53:03     prêt : Astek (73/100) · https://oscarcousin-max.github.io/orbe-usine/audits/astek/
+22:53:03     prêt : Linman (73/100)
+22:53:03     prêt : TEAM Y (73/100) · https://oscarcousin-max.github.io/orbe-usine/audits/team-y/
+22:53:03     prêt : VINCI (73/100)
+22:53:03     prêt : CATL (73/100) · https://oscarcousin-max.github.io/orbe-usine/audits/catl/
+22:53:03     prêt : Cheval Blanc (73/100)
+22:53:03     prêt : Genesis (73/100) · https://oscarcousin-max.github.io/orbe-usine/audits/genesis/
+22:53:03     prêt : AssoConnect (73/100)
+22:53:03     prêt : Cabinet EKINOX (73/100)
+22:53:03     prêt : TRANSATEL (an NTT company) (73/100)
+22:53:03     prêt : GEODIS (73/100)
+22:53:03     prêt : ALTIOS International (73/100)
+22:53:03     prêt : Riot (73/100) · https://oscarcousin-max.github.io/orbe-usine/audits/riot/
+22:53:03     prêt : JJA (73/100) · https://oscarcousin-max.github.io/orbe-usine/audits/jja/
+22:53:03     prêt : OREGON PRODUCTIONS (66/100)
+22:53:03     prêt : CCFD-Terre Solidaire (66/100)
+22:53:03     prêt : Relief International (66/100)
+22:53:04 Terminé : 40 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
