@@ -640,20 +640,32 @@ def _mots(t):
     return {m for m in norm(t).split() if len(m) > 2 and m not in GENERIQUES}
 
 
+def _nom_gerant(e):
+    """Premier dirigeant « personne physique » de l'annuaire, écrit « Prénom Nom » (ex. « Julie Martin »)."""
+    for d in e.get("dirigeants") or []:
+        if str(d.get("type_dirigeant") or "") != "personne physique":
+            continue
+        prenom = str(d.get("prenoms") or "").split(" ")[0].strip()
+        nom = str(d.get("nom") or "").strip()
+        if prenom and nom and len(prenom) > 1:
+            return "%s %s" % (prenom.title(), "-".join(x.capitalize() for x in nom.lower().split("-")).title())
+    return ""
+
+
 def taille_entreprise(o):
     """Cherche l'entreprise dans l'annuaire officiel gratuit (recherche-entreprises.api.gouv.fr).
-    Renvoie (trop_grande, texte) ; (False, "") si on ne la trouve pas : dans le doute, on garde."""
+    Renvoie (trop_grande, texte, gerant) ; (False, "", "") si on ne la trouve pas."""
     nom = re.sub(r"\(.*?\)", " ", o["entreprise"]).strip()
     mots = _mots(nom)
     if not mots:
-        return False, ""
+        return False, "", ""
     url = API_ENTREPRISES + "?" + urllib.parse.urlencode({"q": nom, "per_page": 5, "page": 1})
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "orbe-chasseur", "Accept": "application/json"})
         with urllib.request.urlopen(req, timeout=12) as r:
             res = json.loads(r.read().decode("utf-8")).get("results") or []
     except Exception:
-        return False, ""
+        return False, "", ""
     finally:
         time.sleep(0.3)  # l'annuaire accepte 7 requêtes par seconde
     for e in res:
@@ -663,20 +675,26 @@ def taille_entreprise(o):
         tranche = str(e.get("tranche_effectif_salarie") or "")
         cat = str(e.get("categorie_entreprise") or "")
         texte = "%s salariés (code %s), %s" % ("50+" if tranche in TRANCHES_GRANDES else "moins de 50", tranche or "?", cat or "?")
-        return (tranche in TRANCHES_GRANDES or cat in ("ETI", "GE")), texte
-    return False, ""
+        return (tranche in TRANCHES_GRANDES or cat in ("ETI", "GE")), texte, _nom_gerant(e)
+    return False, "", ""
 
 
 def filtrer_taille(offres):
-    """Écarte les entreprises de 50 salariés et plus. Renvoie (gardées, nombre écarté)."""
+    """Écarte les entreprises de 50 salariés et plus, et note le nom du gérant
+    (pour écrire « Bonjour Julie Martin » au lieu de « Bonjour »). Renvoie (gardées, nombre écarté)."""
     gardees, ecart = [], 0
     for o in offres:
         if o["manuelle"]:
+            o["annuaire_ok"] = True
             gardees.append(o)
             continue
-        grande, texte = taille_entreprise(o)
+        grande, texte, gerant = taille_entreprise(o)
+        o["annuaire_ok"] = bool(texte)
         if texte:
             o["effectif"] = o.get("effectif") or texte
+        if gerant and not o.get("contact_nom"):
+            o["contact_nom"] = gerant
+            o["gerant_annuaire"] = True
         if grande:
             ecart += 1
             journal("  trop grande : %s (%s)" % (o["entreprise"], texte))
@@ -1082,8 +1100,13 @@ def nettoyer(t):
 
 
 def _poste_court(o):
-    p = re.sub(r"\s*[-–—(/]\s*(?:h ?/ ?f|f ?/ ?h|cdi|cdd|temps plein|temps partiel)\b.*$", "", o["poste"], flags=re.I)
-    return re.sub(r"\s+", " ", p).strip().lower() or o["poste"].lower()
+    p = poste_propre(o["poste"])
+    p = re.sub(r"\s*[-–—(/]\s*(?:h ?/ ?f|f ?/ ?h|cdi|cdd|temps plein|temps partiel)\b.*$", "", p, flags=re.I)
+    p = re.sub(r"\s*/\s*[a-z]{1,3}\s*$", "", p, flags=re.I)        # « expert /nb » -> « expert »
+    if len(p) > 40:  # « manager b2b – scale-up benefits » -> « manager b2b »
+        p = re.split(r"\s+[-–—|:]\s+", p)[0]
+    p = re.sub(r"\s+", " ", p).strip(" -–—,/").lower()
+    return p or o["poste"].lower()
 
 
 def _phrase(t):
@@ -1091,49 +1114,66 @@ def _phrase(t):
     return (t[0].lower() + t[1:]) if t else ""
 
 
+def _salutation(o):
+    """« Bonjour Julie Martin, » si on connaît la personne, sinon « Bonjour, »."""
+    n = re.sub(r"(?i)^(m\.|mme|mr|mrs|madame|monsieur)\s+", "", (o.get("contact_nom") or "").strip())
+    n = " ".join(n.split())
+    if n and 3 <= len(n) <= 40 and not EMAIL.search(n) and not re.search(r"(?i)service|ressources|rh\b|recrut|equipe|équipe", n):
+        n = " ".join(m.title() if (m.isupper() or m.islower()) else m for m in n.split())
+        return "Bonjour %s," % n, True
+    return "Bonjour,", False
+
+
 def messages(o, constats, lien):
-    """Novembre 2026 : tous les messages sont écrits par le code, sur un modèle simple et relu.
-    Les textes écrits par l'IA sortaient en un seul bloc, sans « Bonjour », avec des tournures bizarres.
+    """Novembre 2026 : « candidature en prestation ». ORBE répond à l'offre comme un candidat,
+    mais dit dès la première ligne que c'est une équipe en prestation (personne ne se sent piégé).
+    Une candidature est transmise à la personne qui recrute, même envoyée à contact@ ou info@.
     lien = adresse du mini-audit, ou vide s'il n'y en a pas (note de 40 à 59)."""
     poste = _poste_court(o)
+    Poste = poste[:1].upper() + poste[1:]
     service = SERVICES.get(o["service"], o["service"])
     c = _phrase(constats[0]["vu"]) if constats else ""
-    sig = "Bien cordialement,\nL'équipe ORBE\n" + CONTACT_ORBE
-
-    corps = ["Bonjour,",
-             "J'ai vu que vous recrutez pour un poste de %s. Pendant ce recrutement, ou à sa place, "
-             "l'équipe ORBE peut prendre ce travail en charge en prestation (%s)." % (poste, service)]
-    if c and lien:
-        corps.append("En regardant votre site, nous avons noté un point simple à améliorer : %s. "
-                     "Nos observations sont ici : %s" % (c, lien))
-    elif c:
-        corps.append("En regardant votre site, nous avons noté un point simple à améliorer : %s." % c)
-    elif lien:
-        corps.append("Nous avons regardé votre site, nos observations sont ici : %s" % lien)
-    corps += ["Seriez-vous ouvert à un appel de 15 minutes cette semaine ?", sig, LIGNE_STOP]
-
+    bonjour, nominatif = _salutation(o)
     nom = re.sub(r"\s*\(.*?\)", "", o["entreprise"]).strip() or o["entreprise"]
-    invitation = ("Bonjour, j'ai vu votre offre de %s chez %s. Chez ORBE, nous prenons ce travail en charge "
-                  "en prestation. Ravi d'échanger." % (poste, nom))
+    sig = "Bien cordialement,\nOscar, pour l'équipe ORBE\nORBE, studio digital\n" + CONTACT_ORBE
+
+    corps = [bonjour]
+    if not nominatif:
+        corps.append("(Pourriez-vous transmettre cette candidature à la personne qui s'occupe de ce recrutement ? Merci.)")
+    corps.append("Je réponds à votre offre de %s, avec une formule un peu différente : c'est l'équipe ORBE qui prend "
+                 "le poste, en prestation au mois." % poste)
+    corps.append("Concrètement, nous prenons en charge : %s. Nous pouvons démarrer sous une semaine, sans recrutement ni période d'essai, "
+                 "et vous arrêtez quand vous voulez. Nos formules commencent à 490 € par mois." % service)
+    if c and lien:
+        corps.append("En regardant votre site, j'ai remarqué que %s. J'ai noté ici ce que nous ferions : %s" % (c, lien))
+    elif c:
+        corps.append("En regardant votre site, j'ai remarqué que %s." % c)
+    elif lien:
+        corps.append("J'ai regardé votre site et noté ici ce que nous ferions : %s" % lien)
+    corps += ["Seriez-vous d'accord pour un échange de 15 minutes, au téléphone ou en visio ?", sig, LIGNE_STOP]
+
+    invitation = ("Bonjour, je réponds à votre offre de %s chez %s : l'équipe ORBE peut prendre ce poste en prestation, "
+                  "dès la semaine prochaine. Ravi d'échanger." % (poste, nom))
     if len(invitation) > 200:
-        invitation = "Bonjour, j'ai vu votre offre de %s. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger." % poste
+        invitation = ("Bonjour, je réponds à votre offre de %s : l'équipe ORBE peut prendre ce poste en prestation. "
+                      "Ravi d'échanger." % poste)
     if len(invitation) > 200:
-        invitation = "Bonjour, j'ai vu votre offre d'emploi. Chez ORBE, nous prenons ce type de travail en charge en prestation. Ravi d'échanger."
+        invitation = "Bonjour, je réponds à votre offre : l'équipe ORBE peut prendre ce poste en prestation. Ravi d'échanger."
     return {
-        "objet": "Votre recrutement : %s" % (poste[:1].upper() + poste[1:]),
+        "objet": "Candidature en prestation : %s" % Poste,
         "email": "\n\n".join(corps),
         "invitation": invitation,
-        "message_linkedin": ("Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de %s : pendant ce recrutement, "
-                             "ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. " % poste
-                             + ("Nos observations sur votre site : %s " % lien if lien else "")
+        "message_linkedin": ("Merci d'avoir accepté. Je vous propose une autre façon de pourvoir votre poste de %s : "
+                             "l'équipe ORBE le prend en charge en prestation, au mois, sans recrutement (à partir de 490 €). " % poste
+                             + ("Ce que nous ferions pour votre site : %s " % lien if lien else "")
                              + "Auriez-vous 15 minutes cette semaine pour en parler ?"),
-        "relance_j4": ("Bonjour,\n\nJe reviens vers vous au sujet de votre recrutement pour le poste de %s. "
-                       "Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour %s, sans engagement. "
-                       "Un simple « oui » en réponse suffit.\n\n%s\n\n%s" % (poste, nom, sig, LIGNE_STOP)),
-        "relance_j10": ("Bonjour,\n\nC'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, "
-                        "notre proposition reste valable.\n\n%s" % sig),
-        "accroche": "Recrute un poste de %s : ORBE peut le faire en prestation." % poste,
-        "par": "modèle ORBE",
+        "relance_j4": ("%s\n\nJe me permets de revenir vers vous au sujet de ma candidature en prestation pour le poste de %s. "
+                       "Si le poste n'est pas encore pourvu, je peux vous envoyer gratuitement 3 idées concrètes pour %s. "
+                       "Un simple « oui » en réponse suffit.\n\n%s\n\n%s" % (bonjour, poste, nom, sig, LIGNE_STOP)),
+        "relance_j10": ("%s\n\nC'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, "
+                        "notre proposition reste valable.\n\n%s" % (bonjour, sig)),
+        "accroche": "Recrute un poste de %s : ORBE se porte candidat en prestation." % poste,
+        "par": "modèle ORBE (candidature)",
     }
 
 
@@ -1310,6 +1350,12 @@ def main():
         for o in refus:
             journal("  écartée : %s — %s" % (o["entreprise"], o.get("raison") or "sans raison"))
     candidates = [o for o in candidates if o.get("garder")]
+    # Novembre 2026 : Hyatt, Zimmermann, Anker passaient quand l'IA était en panne et que l'annuaire
+    # ne les trouvait pas. Sans aucune des deux vérifications, on n'écrit pas.
+    inconnues = [o for o in candidates if not o.get("analyse_par") and not o.get("annuaire_ok")]
+    if inconnues:
+        stats["ecartees"]["taille inconnue (ni IA ni annuaire)"] = len(inconnues)
+        candidates = [o for o in candidates if o not in inconnues]
     candidates.sort(key=lambda o: (o["manuelle"], o["profil"] + o["urgence"] + (7 if o.get("contact_nom") else 0)), reverse=True)
 
     # 4. Auditer, noter
