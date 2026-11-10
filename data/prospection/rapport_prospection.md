@@ -1,54 +1,57 @@
 # Rapport quotidien de prospection ORBE
 
-- **Date :** 09/11/2026 21:40
-- **Période analysée :** du 26/10 21:16 au 09/11 21:16 (heure de Paris)
-- **Sources consultées :** France Travail : connexion refusée (HTTP Error 400: Bad Request) · France Travail (site) : 25 pages, 88 offres retenues · LinkedIn : 160 offres lues · Annonces collées à la main : 0
-- **Annonces lues :** 248
-- **Analysées par l'IA :** 85
-- **Prospects retenus :** 21
+- **Date :** 10/11/2026 12:46
+- **Période analysée :** du 03/11 12:26 au 10/11 12:26 (heure de Paris)
+- **Sources consultées :** France Travail : connexion refusée (HTTP Error 400: Bad Request) · France Travail (site) : 120 pages, 148 offres retenues · LinkedIn : 160 offres lues · Annonces collées à la main : 0
+- **Annonces lues :** 308
+- **Analysées par l'IA :** 67
+- **Prospects retenus :** 22
 
-**Écartées :** 50 salariés ou plus (annuaire des entreprises) (71), écartée par l'analyste (64), poste trop technique ou hors sujet (46), grand groupe ou chaîne (16), cabinet de recrutement, intérim ou ESN (12), employeur public (9), publiée en dehors de la période (4), alternance ou stage (3), déjà contactée ou en double (2)
+**Écartées :** 50 salariés ou plus (annuaire des entreprises) (82), poste trop technique ou hors sujet (70), écartée par l'analyste (45), publiée en dehors de la période (36), grand groupe ou chaîne (24), cabinet de recrutement, intérim ou ESN (15), employeur public (8), alternance ou stage (4), déjà contactée ou en double (2)
 
 ## Les meilleurs prospects
 
 | # | Entreprise | Ville | Besoin | Décideur | Publié le | Note | Annonce | Mini-audit |
 |---|---|---|---|---|---|---|---|---|
-| 1 | LA RIBOULDINGUE | Vanosc | gérer les réseaux sociaux et produire des vidéos promotionnelles | responsable marketing | 2026-10-28 | **92** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/215TMGB) | - |
-| 2 | Sapiance | Paris et périphérie | Structurer et déployer la stratégie marketing pour renforcer la visibilité et soutenir la croissance | Direction Marketing et Commerciale | 2026-11-06 | **92** | [voir](https://www.linkedin.com/jobs/view/4486978880/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/sapiance/) |
-| 3 | ZeTrace | Lille | Construire et animer une communauté d’influence autour de la marque sur les réseaux sociaux. | Directeur Marketing | 2026-10-27 | **90** | [voir](https://www.linkedin.com/jobs/view/4484034992/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/zetrace/) |
-| 4 | Thermosphr | Paris | Accélérer l'expansion commerciale et scaler l'organisation via le marketing | Fondateur / CEO | 2026-11-09 | **90** | [voir](https://www.linkedin.com/jobs/view/4487924327/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/thermosphr/) |
-| 5 | KatchMe | Ville de Paris | construire branding, générer leads et accroître visibilité B2B | CEO | 2026-11-03 | **88** | [voir](https://www.linkedin.com/jobs/view/4486068224/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/katchme/) |
-| 6 | Payhawk | Paris | génération de demande et leads | CEO | 2026-11-07 | **88** | [voir](https://www.linkedin.com/jobs/view/4393511738/) | - |
-| 7 | Alan | Paris | croissance et acquisition | CEO | 2026-10-28 | **88** | [voir](https://www.linkedin.com/jobs/view/4484717121/) | - |
-| 8 | I LOVE CHABLIS | Chablis | animer les communautés en ligne et valoriser les crus de la cave | gérant | 2026-10-29 | **85** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/215VHGG) | - |
-| 9 | LITY | Bordeaux | Créer et diffuser des campagnes de communication street, guerrilla et viral pour accroître la notoriété | responsable marketing | 2026-11-02 | **85** | [voir](https://www.linkedin.com/jobs/view/4486417674/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/lity/) |
-| 10 | LEADDY | Annecy | gérer les campagnes Google Ads des clients | responsable acquisition | 2026-11-02 | **85** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/215YFGY) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/leaddy/) |
-| 11 | TERRALEC | Behren Les Forbach | Concevoir des maquettes UX/UI. | gérant | 2026-10-28 | **82** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/215TKDG) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/terralec/) |
-| 12 | hyffen | Paris | consultant SEO/GEO pour soutenir croissance | non trouvé | 2026-11-03 | **81** | [voir](https://www.linkedin.com/jobs/view/4486099208/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/hyffen/) |
-| 13 | Urgo Medical France | Chenôve | Déployer et piloter des campagnes digitales multicanales | responsable marketing | 2026-11-04 | **80** | [voir](https://www.linkedin.com/jobs/view/4476288235/) | - |
-| 14 | YORK | La Garde | soutenir les actions marketing et les campagnes promotionnelles | responsable marketing | 2026-10-27 | **79** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/215SCMW) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/york/) |
-| 15 | SODITECc | Narbonne | Gérer le marketing et la communication, soutenir la prospection | responsable marketing | 2026-11-03 | **79** | [voir](https://www.linkedin.com/jobs/view/4486888003/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/soditecc/) |
-| 16 | VIDAL | Issy-les-Moulineaux | Coordonner et mettre en œuvre des campagnes multicanales | responsable marketing | 2026-11-03 | **78** | [voir](https://www.linkedin.com/jobs/view/4487003694/) | - |
-| 17 | Kaiyiee Global Talent | Ville de Paris | développer plans marketing, budgets et contenus localisés | CEO | 2026-10-28 | **78** | [voir](https://www.linkedin.com/jobs/view/4482293169/) | - |
-| 18 | Dotfile | Ville de Paris | stimuler la croissance et acquisition produit | CEO | 2026-10-28 | **78** | [voir](https://www.linkedin.com/jobs/view/4484465727/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/dotfile/) |
-| 19 | Simaero | Tremblay-en-France | optimiser le funnel marketing et l'automatisation | Marketing & Communications Director | 2026-11-06 | **78** | [voir](https://www.linkedin.com/jobs/view/4488154930/) | - |
-| 20 | MILLION VICTORIES | Villeurbanne | développer la visibilité et la croissance du produit | responsable marketing | 2026-11-05 | **70** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/216BXRV) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/million-victories/) |
-| 21 | illicado | Croix | acquisition B2C/B2B via SEO/GEO | non trouvé | 2026-11-04 | **68** | [voir](https://www.linkedin.com/jobs/view/4486372445/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/illicado/) |
+| 1 | Ekosport | Saint-Alban-Leysse | animation des réseaux sociaux et création de contenu | gérant | 2026-11-04 | **92** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/8536364) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/ekosport/) |
+| 2 | Gesec | Saint-Avertin | Gestion de site web et coordination de projets digitaux | non trouvé | 2026-11-09 | **91** | [voir](https://www.linkedin.com/jobs/view/4488891144/) | - |
+| 3 | Maison Alaïa | Paris | Mettre en œuvre la stratégie marketing 360° pour les collections et les ouvertures de magasins | directeur marketing | 2026-11-05 | **90** | [voir](https://www.linkedin.com/jobs/view/4486749230/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/maison-alaia/) |
+| 4 | LSA | Chécy | Stratégie de contenus orientée business, génération d’opportunités commerciales | responsable marketing | 2026-11-06 | **88** | [voir](https://www.linkedin.com/jobs/view/4486237641/) | - |
+| 5 | BONJOUR PARIS | Paris | gérer les communications sur tous les supports, notamment pour la boulangerie | gérant | 2026-11-10 | **87** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/216GQWZ) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/bonjour-paris/) |
+| 6 | Green-Got | Paris | Acquérir des clients B2C pour les services financiers | responsable marketing | 2026-11-10 | **87** | [voir](https://www.linkedin.com/jobs/view/4487465102/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/green-got/) |
+| 7 | Shine | Paris | Gérer les campagnes publicitaires sur les réseaux sociaux et les programmes d’affiliation | responsable marketing | 2026-11-04 | **85** | [voir](https://www.linkedin.com/jobs/view/4469321264/) | - |
+| 8 | ASAPE DIGITAL | Mirepoix-sur-Tarn | Piloter des campagnes d'acquisition et développer la présence sur les réseaux sociaux | gérant | 2026-11-05 | **80** | [voir](https://www.linkedin.com/jobs/view/4486982386/) | - |
+| 9 | CIMEM | Tarare | pilotage de la performance digitale du groupe | directeur marketing | 2026-11-04 | **79** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/8523849) | - |
+| 10 | PEPEETE | Torcy | développer et gérer la boutique en ligne ainsi que la stratégie digitale | gérant | 2026-11-05 | **79** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/8556940) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/pepeete/) |
+| 11 | Kosbiotic | Versailles | développer la présence influence et réseaux sociaux sur le marché italien | responsable marketing | 2026-11-04 | **79** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/8531657) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/kosbiotic/) |
+| 12 | LM5P - Le Mouton à 5 Pattes | Orange | développer le marketing produit et le positionnement | directeur marketing | 2026-11-06 | **79** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/8595011) | - |
+| 13 | CIRCULAR CONSULTING FRANCE | Lyon | développer la stratégie marketing en France pour le secteur agroalimentaire | directeur | 2026-11-04 | **77** | [voir](https://candidat.francetravail.fr/offres/recherche/detail/8554282) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/circular-consulting-france/) |
+| 14 | Planeta Formación Universidades | Ville de Paris | Développer le marketing numérique pour attirer des étudiants | responsable marketing | 2026-11-06 | **77** | [voir](https://www.linkedin.com/jobs/view/4486245265/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/planeta-formacion-universidades/) |
+| 15 | Maison des Communes de la Vendée | La Roche-sur-Yon | Chargé d'animation du réseau Secrétaire Général de Mairie | non trouvé | 2026-11-05 | **66** | [voir](https://www.linkedin.com/jobs/view/4486767463/) | - |
+| 16 | Zimmermann | Ville de Paris | Social Media Manager | non trouvé | 2026-11-05 | **66** | [voir](https://www.linkedin.com/jobs/view/4475785881/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/zimmermann/) |
+| 17 | OW Ocean Winds | Nantes | Stakeholder Associate | non trouvé | 2026-11-05 | **66** | [voir](https://www.linkedin.com/jobs/view/4485827829/) | - |
+| 18 | Current AI | Ville de Paris | Communications Manager | non trouvé | 2026-11-09 | **66** | [voir](https://www.linkedin.com/jobs/view/4488865404/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/current-ai/) |
+| 19 | °Arcane | Ville de Paris | Team Lead Paid Social Media (H-F) | non trouvé | 2026-11-06 | **66** | [voir](https://www.linkedin.com/jobs/view/4486952998/) | [ouvrir](https://oscarcousin-max.github.io/orbe-usine/audits/arcane/) |
+| 20 | Anker Innovations | Paris et périphérie | Public Relations Manager | non trouvé | 2026-11-05 | **66** | [voir](https://www.linkedin.com/jobs/view/4487779175/) | - |
+| 21 | Hyatt | Paris | CDI : Responsable Marketing | non trouvé | 2026-11-10 | **66** | [voir](https://www.linkedin.com/jobs/view/4489443434/) | - |
+| 22 | Make Sense | Bondues | Social Ads Manager Meta Ads E-commerce | non trouvé | 2026-11-08 | **66** | [voir](https://www.linkedin.com/jobs/view/4487103212/) | - |
 
 ## Messages prêts à envoyer
 
-### 1. LA RIBOULDINGUE — 92/100 (priorité maximale)
+### 1. Ekosport — 92/100 (priorité maximale)
 
-- Poste : Community Manager & Vidéaste · CDI · Vanosc
+- Poste : Community Manager · CDD · Saint-Alban-Leysse
 - Service à proposer : **réseaux sociaux**
-- E-mail : contact@ribouldingue.com · Site : https://www.ribouldingue.com/
+- E-mail : info@ekosport.fr · Site : https://www.ekosport.fr/
 
-**Objet :** Votre recrutement : Community manager & vidéaste
+**Objet :** Votre recrutement : Community manager
 
 ```
 Bonjour,
 
-J'ai vu que vous recrutez pour un poste de community manager & vidéaste. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+J'ai vu que vous recrutez pour un poste de community manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+En regardant votre site, nous avons noté un point simple à améliorer : votre site ne donne pas aux moteurs et aux IA de fiche descriptive de votre entreprise. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/ekosport/
 
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
@@ -59,39 +62,13 @@ societe.orbe@gmail.com · 06 72 61 66 09
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
 
-**Accroche :** Recrute un poste de community manager & vidéaste : ORBE peut le faire en prestation.
+**Invitation LinkedIn (141/200) :** Bonjour, j'ai vu votre offre de community manager chez Ekosport. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
 
-### 2. Sapiance — 92/100 (priorité maximale)
-
-- Poste : Responsable Marketing · Temps plein · Paris et périphérie
-- Service à proposer : **marketing digital**
-- E-mail : info@sapiance.com · Site : https://www.sapiance.com/
-
-**Objet :** Votre recrutement : Responsable marketing
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de responsable marketing. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
-
-En regardant votre site, nous avons noté un point simple à améliorer : votre site ne donne pas aux moteurs et aux IA de fiche descriptive de votre entreprise. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/sapiance/
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Invitation LinkedIn (145/200) :** Bonjour, j'ai vu votre offre de responsable marketing chez Sapiance. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
-
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de responsable marketing : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/sapiance/ Auriez-vous 15 minutes cette semaine pour en parler ?
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de community manager : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/ekosport/ Auriez-vous 15 minutes cette semaine pour en parler ?
 
 **Relance J+4 :** Bonjour,
 
-Je reviens vers vous au sujet de votre recrutement pour le poste de responsable marketing. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Sapiance, sans engagement. Un simple « oui » en réponse suffit.
+Je reviens vers vous au sujet de votre recrutement pour le poste de community manager. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Ekosport, sans engagement. Un simple « oui » en réponse suffit.
 
 Bien cordialement,
 L'équipe ORBE
@@ -107,22 +84,20 @@ Bien cordialement,
 L'équipe ORBE
 societe.orbe@gmail.com · 06 72 61 66 09
 
-**Accroche :** Recrute un poste de responsable marketing : ORBE peut le faire en prestation.
+**Accroche :** Recrute un poste de community manager : ORBE peut le faire en prestation.
 
-### 3. ZeTrace — 90/100 (priorité maximale)
+### 2. Gesec — 91/100 (priorité maximale)
 
-- Poste : Responsable Social Media & Influence · Temps plein · Lille
-- Service à proposer : **réseaux sociaux**
-- E-mail : communication@zetrace.com · Site : https://www.zetrace.com/
+- Poste : Chargé de communication digitale et projets Web · Temps plein · Saint-Avertin
+- Service à proposer : **site web**
+- E-mail : infos@gesec.fr · Site : https://www.gesec.fr/
 
-**Objet :** Votre recrutement : Responsable social media & influence
+**Objet :** Votre recrutement : Chargé de communication digitale et projets web
 
 ```
 Bonjour,
 
-J'ai vu que vous recrutez pour un poste de responsable social media & influence. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
-
-En regardant votre site, nous avons noté un point simple à améliorer : nous n'avons trouvé ni formulaire, ni prise de rendez-vous, ni demande de devis en ligne. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/zetrace/
+J'ai vu que vous recrutez pour un poste de chargé de communication digitale et projets web. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (création ou refonte du site, puis entretien chaque mois).
 
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
@@ -133,35 +108,13 @@ societe.orbe@gmail.com · 06 72 61 66 09
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
 
-**Invitation LinkedIn (159/200) :** Bonjour, j'ai vu votre offre de responsable social media & influence chez ZeTrace. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+**Accroche :** Recrute un poste de chargé de communication digitale et projets web : ORBE peut le faire en prestation.
 
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de responsable social media & influence : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/zetrace/ Auriez-vous 15 minutes cette semaine pour en parler ?
-
-**Relance J+4 :** Bonjour,
-
-Je reviens vers vous au sujet de votre recrutement pour le poste de responsable social media & influence. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour ZeTrace, sans engagement. Un simple « oui » en réponse suffit.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-
-**Relance J+10 :** Bonjour,
-
-C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-**Accroche :** Recrute un poste de responsable social media & influence : ORBE peut le faire en prestation.
-
-### 4. Thermosphr — 90/100 (priorité maximale)
+### 3. Maison Alaïa — 90/100 (priorité maximale)
 
 - Poste : Marketing Manager · Temps plein · Paris
 - Service à proposer : **marketing digital**
-- E-mail : info@thermosphr.com · Site : https://fr.thermosphr.com/
+- E-mail : serviceclient@maison-alaia.com · Site : https://www.maison-alaia.com/
 
 **Objet :** Votre recrutement : Marketing manager
 
@@ -170,7 +123,7 @@ Bonjour,
 
 J'ai vu que vous recrutez pour un poste de marketing manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
 
-En regardant votre site, nous avons noté un point simple à améliorer : le titre de votre page d'accueil sur Google est très court (« Accueil »). Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/thermosphr/
+En regardant votre site, nous avons noté un point simple à améliorer : votre page d'accueil n'a pas de titre principal lisible par Google. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/maison-alaia/
 
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
@@ -181,13 +134,13 @@ societe.orbe@gmail.com · 06 72 61 66 09
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
 
-**Invitation LinkedIn (143/200) :** Bonjour, j'ai vu votre offre de marketing manager chez Thermosphr. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+**Invitation LinkedIn (145/200) :** Bonjour, j'ai vu votre offre de marketing manager chez Maison Alaïa. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
 
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de marketing manager : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/thermosphr/ Auriez-vous 15 minutes cette semaine pour en parler ?
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de marketing manager : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/maison-alaia/ Auriez-vous 15 minutes cette semaine pour en parler ?
 
 **Relance J+4 :** Bonjour,
 
-Je reviens vers vous au sujet de votre recrutement pour le poste de marketing manager. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Thermosphr, sans engagement. Un simple « oui » en réponse suffit.
+Je reviens vers vous au sujet de votre recrutement pour le poste de marketing manager. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Maison Alaïa, sans engagement. Un simple « oui » en réponse suffit.
 
 Bien cordialement,
 L'équipe ORBE
@@ -205,107 +158,35 @@ societe.orbe@gmail.com · 06 72 61 66 09
 
 **Accroche :** Recrute un poste de marketing manager : ORBE peut le faire en prestation.
 
-### 5. KatchMe — 88/100 (priorité maximale)
+### 4. LSA — 88/100 (priorité maximale)
 
-- Poste : Marketing & Acquisition Manager B2B – Scale-up benefits · Temps plein · Ville de Paris
+- Poste : Content Manager Digital · Temps plein · Chécy
 - Service à proposer : **marketing digital**
-- E-mail : contact@katchme.fr · Site : https://www.katchme.fr/
-
-**Objet :** Votre recrutement : Marketing & acquisition manager b2b – scale-up benefits
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de marketing & acquisition manager b2b – scale-up benefits. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
-
-En regardant votre site, nous avons noté un point simple à améliorer : nous n'avons trouvé ni formulaire, ni prise de rendez-vous, ni demande de devis en ligne. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/katchme/
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Invitation LinkedIn (178/200) :** Bonjour, j'ai vu votre offre de marketing & acquisition manager b2b – scale-up benefits chez KatchMe. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
-
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de marketing & acquisition manager b2b – scale-up benefits : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/katchme/ Auriez-vous 15 minutes cette semaine pour en parler ?
-
-**Relance J+4 :** Bonjour,
-
-Je reviens vers vous au sujet de votre recrutement pour le poste de marketing & acquisition manager b2b – scale-up benefits. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour KatchMe, sans engagement. Un simple « oui » en réponse suffit.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-
-**Relance J+10 :** Bonjour,
-
-C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-**Accroche :** Recrute un poste de marketing & acquisition manager b2b – scale-up benefits : ORBE peut le faire en prestation.
-
-### 6. Payhawk — 88/100 (priorité maximale)
-
-- Poste : Demand Generation Manager · Temps plein · Paris
-- Service à proposer : **publicité en ligne**
-- E-mail : sales@payhawk.com · Site : https://payhawk.com/en-us
-
-**Objet :** Votre recrutement : Demand generation manager
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de demand generation manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (création et suivi des campagnes Google et Meta).
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Accroche :** Recrute un poste de demand generation manager : ORBE peut le faire en prestation.
-
-### 7. Alan — 88/100 (priorité maximale)
-
-- Poste : Founding Growth - Alan Precision · Temps plein · Paris
-- Service à proposer : **marketing digital**
-- E-mail : contact@alan.com · Site : https://alan.com/
-
-**Objet :** Votre recrutement : Founding growth - alan precision
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de founding growth - alan precision. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Accroche :** Recrute un poste de founding growth - alan precision : ORBE peut le faire en prestation.
-
-### 8. I LOVE CHABLIS — 85/100 (priorité maximale)
-
-- Poste : Community manager · Profession libérale · Chablis
-- Service à proposer : **réseaux sociaux**
 - E-mail : non trouvé · Site : non trouvé
+
+**Objet :** Votre recrutement : Content manager digital
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de content manager digital. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Accroche :** Recrute un poste de content manager digital : ORBE peut le faire en prestation.
+
+### 5. BONJOUR PARIS — 87/100 (priorité maximale)
+
+- Poste : Community manager · CDI · Paris
+- Service à proposer : **réseaux sociaux**
+- E-mail : bonjour@bonjour.paris · Site : https://bonjour.paris/fr
 
 **Objet :** Votre recrutement : Community manager
 
@@ -314,6 +195,8 @@ Bonjour,
 
 J'ai vu que vous recrutez pour un poste de community manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
 
+En regardant votre site, nous avons noté un point simple à améliorer : votre site ne donne pas aux moteurs et aux IA de fiche descriptive de votre entreprise. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/bonjour-paris/
+
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
 Bien cordialement,
@@ -322,23 +205,45 @@ societe.orbe@gmail.com · 06 72 61 66 09
 
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
+
+**Invitation LinkedIn (146/200) :** Bonjour, j'ai vu votre offre de community manager chez BONJOUR PARIS. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de community manager : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/bonjour-paris/ Auriez-vous 15 minutes cette semaine pour en parler ?
+
+**Relance J+4 :** Bonjour,
+
+Je reviens vers vous au sujet de votre recrutement pour le poste de community manager. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour BONJOUR PARIS, sans engagement. Un simple « oui » en réponse suffit.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+
+**Relance J+10 :** Bonjour,
+
+C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
 
 **Accroche :** Recrute un poste de community manager : ORBE peut le faire en prestation.
 
-### 9. LITY — 85/100 (priorité maximale)
+### 6. Green-Got — 87/100 (priorité maximale)
 
-- Poste : Responsable Communication & Campagnes créatives (Street, Guérilla, Viral) – CDI – Bordeaux · Temps plein · Bordeaux
+- Poste : Lead Acquisition B2C · Temps plein · Paris
 - Service à proposer : **marketing digital**
-- E-mail : non trouvé · Site : https://lity.so/
+- E-mail : contact@green-got.com · Site : https://green-got.com/
 
-**Objet :** Votre recrutement : Responsable communication & campagnes créatives (street, guérilla, viral)
+**Objet :** Votre recrutement : Lead acquisition b2c
 
 ```
 Bonjour,
 
-J'ai vu que vous recrutez pour un poste de responsable communication & campagnes créatives (street, guérilla, viral). Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
+J'ai vu que vous recrutez pour un poste de lead acquisition b2c. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
 
-En regardant votre site, nous avons noté un point simple à améliorer : nous n'avons trouvé ni formulaire, ni prise de rendez-vous, ni demande de devis en ligne. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/lity/
+En regardant votre site, nous avons noté un point simple à améliorer : nous n'avons trouvé ni formulaire, ni prise de rendez-vous, ni demande de devis en ligne. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/green-got/
 
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
@@ -349,13 +254,13 @@ societe.orbe@gmail.com · 06 72 61 66 09
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
 
-**Invitation LinkedIn (193/200) :** Bonjour, j'ai vu votre offre de responsable communication & campagnes créatives (street, guérilla, viral) chez LITY. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+**Invitation LinkedIn (145/200) :** Bonjour, j'ai vu votre offre de lead acquisition b2c chez Green-Got. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
 
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de responsable communication & campagnes créatives (street, guérilla, viral) : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/lity/ Auriez-vous 15 minutes cette semaine pour en parler ?
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de lead acquisition b2c : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/green-got/ Auriez-vous 15 minutes cette semaine pour en parler ?
 
 **Relance J+4 :** Bonjour,
 
-Je reviens vers vous au sujet de votre recrutement pour le poste de responsable communication & campagnes créatives (street, guérilla, viral). Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour LITY, sans engagement. Un simple « oui » en réponse suffit.
+Je reviens vers vous au sujet de votre recrutement pour le poste de lead acquisition b2c. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Green-Got, sans engagement. Un simple « oui » en réponse suffit.
 
 Bien cordialement,
 L'équipe ORBE
@@ -371,22 +276,20 @@ Bien cordialement,
 L'équipe ORBE
 societe.orbe@gmail.com · 06 72 61 66 09
 
-**Accroche :** Recrute un poste de responsable communication & campagnes créatives (street, guérilla, viral) : ORBE peut le faire en prestation.
+**Accroche :** Recrute un poste de lead acquisition b2c : ORBE peut le faire en prestation.
 
-### 10. LEADDY — 85/100 (priorité maximale)
+### 7. Shine — 85/100 (priorité maximale)
 
-- Poste : Consultant SEA / Traffic Manager Google Ads confirmé · CDI · Annecy
+- Poste : Paid Social & Affiliate Manager, France · Temps plein · Paris
 - Service à proposer : **publicité en ligne**
-- E-mail : anthony@leaddy.fr · Site : https://www.leaddy.fr/
+- E-mail : contact@shine.fr · Site : https://www.shine.fr/
 
-**Objet :** Votre recrutement : Consultant sea / traffic manager google ads confirmé
+**Objet :** Votre recrutement : Paid social & affiliate manager, france
 
 ```
 Bonjour,
 
-J'ai vu que vous recrutez pour un poste de consultant sea / traffic manager google ads confirmé. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (création et suivi des campagnes Google et Meta).
-
-En regardant votre site, nous avons noté un point simple à améliorer : votre site ne donne pas aux moteurs et aux IA de fiche descriptive de votre entreprise. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/leaddy/
+J'ai vu que vous recrutez pour un poste de paid social & affiliate manager, france. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (création et suivi des campagnes Google et Meta).
 
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
@@ -397,282 +300,20 @@ societe.orbe@gmail.com · 06 72 61 66 09
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
 
-**Invitation LinkedIn (174/200) :** Bonjour, j'ai vu votre offre de consultant sea / traffic manager google ads confirmé chez LEADDY. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+**Accroche :** Recrute un poste de paid social & affiliate manager, france : ORBE peut le faire en prestation.
 
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de consultant sea / traffic manager google ads confirmé : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/leaddy/ Auriez-vous 15 minutes cette semaine pour en parler ?
+### 8. ASAPE DIGITAL — 80/100 (priorité maximale)
 
-**Relance J+4 :** Bonjour,
-
-Je reviens vers vous au sujet de votre recrutement pour le poste de consultant sea / traffic manager google ads confirmé. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour LEADDY, sans engagement. Un simple « oui » en réponse suffit.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-
-**Relance J+10 :** Bonjour,
-
-C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-**Accroche :** Recrute un poste de consultant sea / traffic manager google ads confirmé : ORBE peut le faire en prestation.
-
-### 11. TERRALEC — 82/100 (priorité maximale)
-
-- Poste : Webdesigner UI/UX · CDI · Behren Les Forbach
-- Service à proposer : **site web**
-- E-mail : non trouvé · Site : https://www.terralec.co.uk/
-
-**Objet :** Votre recrutement : Webdesigner ui/ux
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de webdesigner ui/ux. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (création ou refonte du site, puis entretien chaque mois).
-
-En regardant votre site, nous avons noté un point simple à améliorer : votre page d'accueil n'a pas de titre principal lisible par Google. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/terralec/
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Invitation LinkedIn (141/200) :** Bonjour, j'ai vu votre offre de webdesigner ui/ux chez TERRALEC. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
-
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de webdesigner ui/ux : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/terralec/ Auriez-vous 15 minutes cette semaine pour en parler ?
-
-**Relance J+4 :** Bonjour,
-
-Je reviens vers vous au sujet de votre recrutement pour le poste de webdesigner ui/ux. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour TERRALEC, sans engagement. Un simple « oui » en réponse suffit.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-
-**Relance J+10 :** Bonjour,
-
-C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-**Accroche :** Recrute un poste de webdesigner ui/ux : ORBE peut le faire en prestation.
-
-### 12. hyffen — 81/100 (priorité maximale)
-
-- Poste : Consultant SEO / GEO - full remote · Temps plein · Paris
-- Service à proposer : **SEO**
-- E-mail : contact@hyffen.com · Site : https://www.hyffen.com/
-
-**Objet :** Votre recrutement : Consultant seo / geo - full remote
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de consultant seo / geo - full remote. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (référencement Google suivi chaque mois et visibilité dans les réponses des IA (ChatGPT…)).
-
-En regardant votre site, nous avons noté un point simple à améliorer : votre site ne donne pas aux moteurs et aux IA de fiche descriptive de votre entreprise. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/hyffen/
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Invitation LinkedIn (156/200) :** Bonjour, j'ai vu votre offre de consultant seo / geo - full remote chez hyffen. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
-
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de consultant seo / geo - full remote : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/hyffen/ Auriez-vous 15 minutes cette semaine pour en parler ?
-
-**Relance J+4 :** Bonjour,
-
-Je reviens vers vous au sujet de votre recrutement pour le poste de consultant seo / geo - full remote. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour hyffen, sans engagement. Un simple « oui » en réponse suffit.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-
-**Relance J+10 :** Bonjour,
-
-C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-**Accroche :** Recrute un poste de consultant seo / geo - full remote : ORBE peut le faire en prestation.
-
-### 13. Urgo Medical France — 80/100 (priorité maximale)
-
-- Poste : Chargé de Marketing Digital · Temps plein · Chenôve
-- Service à proposer : **marketing digital**
-- E-mail : non trouvé · Site : https://urgomedical.fr/
-
-**Objet :** Votre recrutement : Chargé de marketing digital
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de chargé de marketing digital. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Accroche :** Recrute un poste de chargé de marketing digital : ORBE peut le faire en prestation.
-
-### 14. YORK — 79/100 (intéressant)
-
-- Poste : Assistant Marketing · CDD · La Garde
-- Service à proposer : **marketing digital**
-- E-mail : non trouvé · Site : https://york-lubricants.com/fr-fr
-
-**Objet :** Votre recrutement : Assistant marketing
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de assistant marketing. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
-
-En regardant votre site, nous avons noté un point simple à améliorer : votre site ne donne pas aux moteurs et aux IA de fiche descriptive de votre entreprise. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/york/
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Invitation LinkedIn (139/200) :** Bonjour, j'ai vu votre offre de assistant marketing chez YORK. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
-
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de assistant marketing : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/york/ Auriez-vous 15 minutes cette semaine pour en parler ?
-
-**Relance J+4 :** Bonjour,
-
-Je reviens vers vous au sujet de votre recrutement pour le poste de assistant marketing. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour YORK, sans engagement. Un simple « oui » en réponse suffit.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-
-**Relance J+10 :** Bonjour,
-
-C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-**Accroche :** Recrute un poste de assistant marketing : ORBE peut le faire en prestation.
-
-### 15. SODITECc — 79/100 (intéressant)
-
-- Poste : Chargé de marketing & communication · Temps plein · Narbonne
-- Service à proposer : **marketing digital**
-- E-mail : non trouvé · Site : https://www.soditecc.com/
-
-**Objet :** Votre recrutement : Chargé de marketing & communication
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de chargé de marketing & communication. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
-
-En regardant votre site, nous avons noté un point simple à améliorer : nous n'avons trouvé ni formulaire, ni prise de rendez-vous, ni demande de devis en ligne. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/soditecc/
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Invitation LinkedIn (159/200) :** Bonjour, j'ai vu votre offre de chargé de marketing & communication chez SODITECc. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
-
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de chargé de marketing & communication : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/soditecc/ Auriez-vous 15 minutes cette semaine pour en parler ?
-
-**Relance J+4 :** Bonjour,
-
-Je reviens vers vous au sujet de votre recrutement pour le poste de chargé de marketing & communication. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour SODITECc, sans engagement. Un simple « oui » en réponse suffit.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-
-**Relance J+10 :** Bonjour,
-
-C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-**Accroche :** Recrute un poste de chargé de marketing & communication : ORBE peut le faire en prestation.
-
-### 16. VIDAL — 78/100 (intéressant)
-
-- Poste : Chef de projet communication pharmaceutique · Temps plein · Issy-les-Moulineaux
-- Service à proposer : **marketing digital**
-- E-mail : non trouvé · Site : https://www.vidal.fr/
-
-**Objet :** Votre recrutement : Chef de projet communication pharmaceutique
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de chef de projet communication pharmaceutique. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Accroche :** Recrute un poste de chef de projet communication pharmaceutique : ORBE peut le faire en prestation.
-
-### 17. Kaiyiee Global Talent — 78/100 (intéressant)
-
-- Poste : Product Marketing Manager KY-YAQL · Temps plein · Ville de Paris
+- Poste : Chargé de communication digitale et production de contenus · Temps plein · Mirepoix-sur-Tarn
 - Service à proposer : **marketing digital**
 - E-mail : non trouvé · Site : non trouvé
 
-**Objet :** Votre recrutement : Product marketing manager ky-yaql
+**Objet :** Votre recrutement : Chargé de communication digitale et production de contenus
 
 ```
 Bonjour,
 
-J'ai vu que vous recrutez pour un poste de product marketing manager ky-yaql. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
+J'ai vu que vous recrutez pour un poste de chargé de communication digitale et production de contenus. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
 
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
@@ -683,68 +324,20 @@ societe.orbe@gmail.com · 06 72 61 66 09
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
 
-**Accroche :** Recrute un poste de product marketing manager ky-yaql : ORBE peut le faire en prestation.
+**Accroche :** Recrute un poste de chargé de communication digitale et production de contenus : ORBE peut le faire en prestation.
 
-### 18. Dotfile — 78/100 (intéressant)
+### 9. CIMEM — 79/100 (intéressant)
 
-- Poste : Growth Lead · Temps plein · Ville de Paris
+- Poste : Ref GR MMD MANAGER MARKETING DIGITAL · CDI · Tarare
 - Service à proposer : **marketing digital**
-- E-mail : non trouvé · Site : https://dotfile.com/
-
-**Objet :** Votre recrutement : Growth lead
-
-```
-Bonjour,
-
-J'ai vu que vous recrutez pour un poste de growth lead. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
-
-En regardant votre site, nous avons noté un point simple à améliorer : votre site ne donne pas aux moteurs et aux IA de fiche descriptive de votre entreprise. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/dotfile/
-
-Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-```
-
-**Invitation LinkedIn (134/200) :** Bonjour, j'ai vu votre offre de growth lead chez Dotfile. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
-
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de growth lead : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/dotfile/ Auriez-vous 15 minutes cette semaine pour en parler ?
-
-**Relance J+4 :** Bonjour,
-
-Je reviens vers vous au sujet de votre recrutement pour le poste de growth lead. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Dotfile, sans engagement. Un simple « oui » en réponse suffit.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
-
-**Relance J+10 :** Bonjour,
-
-C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
-
-Bien cordialement,
-L'équipe ORBE
-societe.orbe@gmail.com · 06 72 61 66 09
-
-**Accroche :** Recrute un poste de growth lead : ORBE peut le faire en prestation.
-
-### 19. Simaero — 78/100 (intéressant)
-
-- Poste : Growth & Marketing Operations Manager · Temps plein · Tremblay-en-France
-- Service à proposer : **automatisations**
 - E-mail : non trouvé · Site : non trouvé
 
-**Objet :** Votre recrutement : Growth & marketing operations manager
+**Objet :** Votre recrutement : Ref gr mmd manager marketing digital
 
 ```
 Bonjour,
 
-J'ai vu que vous recrutez pour un poste de growth & marketing operations manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (automatisations et petits outils sur mesure (devis, relances, prise de rendez-vous)).
+J'ai vu que vous recrutez pour un poste de ref gr mmd manager marketing digital. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
 
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
@@ -755,22 +348,116 @@ societe.orbe@gmail.com · 06 72 61 66 09
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
 
-**Accroche :** Recrute un poste de growth & marketing operations manager : ORBE peut le faire en prestation.
+**Accroche :** Recrute un poste de ref gr mmd manager marketing digital : ORBE peut le faire en prestation.
 
-### 20. MILLION VICTORIES — 70/100 (intéressant)
+### 10. PEPEETE — 79/100 (intéressant)
 
-- Poste : Product Marketing Manager · CDI · Villeurbanne
+- Poste : Responsable E-commerce et Digital · CDI · Torcy
+- Service à proposer : **boutique en ligne**
+- E-mail : non trouvé · Site : https://pepeete.com/
+
+**Objet :** Votre recrutement : Responsable e-commerce et digital
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de responsable e-commerce et digital. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (création de la boutique en ligne et des fiches produits).
+
+En regardant votre site, nous avons noté un point simple à améliorer : nous n'avons trouvé ni formulaire, ni prise de rendez-vous, ni demande de devis en ligne. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/pepeete/
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Invitation LinkedIn (156/200) :** Bonjour, j'ai vu votre offre de responsable e-commerce et digital chez PEPEETE. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de responsable e-commerce et digital : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/pepeete/ Auriez-vous 15 minutes cette semaine pour en parler ?
+
+**Relance J+4 :** Bonjour,
+
+Je reviens vers vous au sujet de votre recrutement pour le poste de responsable e-commerce et digital. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour PEPEETE, sans engagement. Un simple « oui » en réponse suffit.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+
+**Relance J+10 :** Bonjour,
+
+C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+**Accroche :** Recrute un poste de responsable e-commerce et digital : ORBE peut le faire en prestation.
+
+### 11. Kosbiotic — 79/100 (intéressant)
+
+- Poste : Responsable Influence & Réseaux Sociaux Bilingue Italien - Français - Marché Italien - CDI · CDI · Versailles
+- Service à proposer : **réseaux sociaux**
+- E-mail : non trouvé · Site : https://kosbiotic.com/
+
+**Objet :** Votre recrutement : Responsable influence & réseaux sociaux bilingue italien - français - marché italien
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de responsable influence & réseaux sociaux bilingue italien - français - marché italien. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+En regardant votre site, nous avons noté un point simple à améliorer : le titre de votre page d'accueil sur Google est très court (« Kosbiotic »). Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/kosbiotic/
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Invitation LinkedIn (194/200) :** Bonjour, j'ai vu votre offre de responsable influence & réseaux sociaux bilingue italien - français - marché italien. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de responsable influence & réseaux sociaux bilingue italien - français - marché italien : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/kosbiotic/ Auriez-vous 15 minutes cette semaine pour en parler ?
+
+**Relance J+4 :** Bonjour,
+
+Je reviens vers vous au sujet de votre recrutement pour le poste de responsable influence & réseaux sociaux bilingue italien - français - marché italien. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Kosbiotic, sans engagement. Un simple « oui » en réponse suffit.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+
+**Relance J+10 :** Bonjour,
+
+C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+**Accroche :** Recrute un poste de responsable influence & réseaux sociaux bilingue italien - français - marché italien : ORBE peut le faire en prestation.
+
+### 12. LM5P - Le Mouton à 5 Pattes — 79/100 (intéressant)
+
+- Poste : Chef de Projet Marketing Produit · CDI · Orange
 - Service à proposer : **marketing digital**
-- E-mail : non trouvé · Site : https://millionvictories.com/
+- E-mail : non trouvé · Site : non trouvé
 
-**Objet :** Votre recrutement : Product marketing manager
+**Objet :** Votre recrutement : Chef de projet marketing produit
 
 ```
 Bonjour,
 
-J'ai vu que vous recrutez pour un poste de product marketing manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
-
-En regardant votre site, nous avons noté un point simple à améliorer : votre page d'accueil n'a pas de description pour Google. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/million-victories/
+J'ai vu que vous recrutez pour un poste de chef de projet marketing produit. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
 
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
@@ -781,13 +468,39 @@ societe.orbe@gmail.com · 06 72 61 66 09
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
 
-**Invitation LinkedIn (158/200) :** Bonjour, j'ai vu votre offre de product marketing manager chez MILLION VICTORIES. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+**Accroche :** Recrute un poste de chef de projet marketing produit : ORBE peut le faire en prestation.
 
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de product marketing manager : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/million-victories/ Auriez-vous 15 minutes cette semaine pour en parler ?
+### 13. CIRCULAR CONSULTING FRANCE — 77/100 (intéressant)
+
+- Poste : Responsable Marketing France - agroalimentaire (CDI) · CDI · Lyon
+- Service à proposer : **marketing digital**
+- E-mail : non trouvé · Site : https://www.circular-commercial.fr/
+
+**Objet :** Votre recrutement : Responsable marketing france - agroalimentaire
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de responsable marketing france - agroalimentaire. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
+
+En regardant votre site, nous avons noté un point simple à améliorer : votre page d'accueil n'a pas de description pour Google. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/circular-consulting-france/
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Invitation LinkedIn (188/200) :** Bonjour, j'ai vu votre offre de responsable marketing france - agroalimentaire chez CIRCULAR CONSULTING FRANCE. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de responsable marketing france - agroalimentaire : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/circular-consulting-france/ Auriez-vous 15 minutes cette semaine pour en parler ?
 
 **Relance J+4 :** Bonjour,
 
-Je reviens vers vous au sujet de votre recrutement pour le poste de product marketing manager. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour MILLION VICTORIES, sans engagement. Un simple « oui » en réponse suffit.
+Je reviens vers vous au sujet de votre recrutement pour le poste de responsable marketing france - agroalimentaire. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour CIRCULAR CONSULTING FRANCE, sans engagement. Un simple « oui » en réponse suffit.
 
 Bien cordialement,
 L'équipe ORBE
@@ -803,22 +516,22 @@ Bien cordialement,
 L'équipe ORBE
 societe.orbe@gmail.com · 06 72 61 66 09
 
-**Accroche :** Recrute un poste de product marketing manager : ORBE peut le faire en prestation.
+**Accroche :** Recrute un poste de responsable marketing france - agroalimentaire : ORBE peut le faire en prestation.
 
-### 21. illicado — 68/100 (intéressant)
+### 14. Planeta Formación Universidades — 77/100 (intéressant)
 
-- Poste : SEO / GEO Manager · Temps plein · Croix
-- Service à proposer : **SEO**
-- E-mail : non trouvé · Site : https://recrutement.illicado.com/
+- Poste : Spécialiste en marketing numérique · Temps plein · Ville de Paris
+- Service à proposer : **marketing digital**
+- E-mail : non trouvé · Site : https://planetaformacionuniversidades.com/
 
-**Objet :** Votre recrutement : Seo / geo manager
+**Objet :** Votre recrutement : Spécialiste en marketing numérique
 
 ```
 Bonjour,
 
-J'ai vu que vous recrutez pour un poste de seo / geo manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (référencement Google suivi chaque mois et visibilité dans les réponses des IA (ChatGPT…)).
+J'ai vu que vous recrutez pour un poste de spécialiste en marketing numérique. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (SEO, publicités et automatisations, pilotés par la même équipe).
 
-En regardant votre site, nous avons noté un point simple à améliorer : votre site ne donne pas aux moteurs et aux IA de fiche descriptive de votre entreprise. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/illicado/
+En regardant votre site, nous avons noté un point simple à améliorer : votre page d'accueil n'a pas de description pour Google. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/planeta-formacion-universidades/
 
 Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
 
@@ -829,13 +542,13 @@ societe.orbe@gmail.com · 06 72 61 66 09
 Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
 ```
 
-**Invitation LinkedIn (141/200) :** Bonjour, j'ai vu votre offre de seo / geo manager chez illicado. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+**Invitation LinkedIn (181/200) :** Bonjour, j'ai vu votre offre de spécialiste en marketing numérique chez Planeta Formación Universidades. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
 
-**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de seo / geo manager : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/illicado/ Auriez-vous 15 minutes cette semaine pour en parler ?
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de spécialiste en marketing numérique : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/planeta-formacion-universidades/ Auriez-vous 15 minutes cette semaine pour en parler ?
 
 **Relance J+4 :** Bonjour,
 
-Je reviens vers vous au sujet de votre recrutement pour le poste de seo / geo manager. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour illicado, sans engagement. Un simple « oui » en réponse suffit.
+Je reviens vers vous au sujet de votre recrutement pour le poste de spécialiste en marketing numérique. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Planeta Formación Universidades, sans engagement. Un simple « oui » en réponse suffit.
 
 Bien cordialement,
 L'équipe ORBE
@@ -851,5 +564,269 @@ Bien cordialement,
 L'équipe ORBE
 societe.orbe@gmail.com · 06 72 61 66 09
 
-**Accroche :** Recrute un poste de seo / geo manager : ORBE peut le faire en prestation.
+**Accroche :** Recrute un poste de spécialiste en marketing numérique : ORBE peut le faire en prestation.
+
+### 15. Maison des Communes de la Vendée — 66/100 (intéressant)
+
+- Poste : Chargé d'animation du réseau Secrétaire Général de Mairie · Temps plein · La Roche-sur-Yon
+- Service à proposer : **réseaux sociaux**
+- E-mail : non trouvé · Site : non trouvé
+
+**Objet :** Votre recrutement : Chargé d'animation du réseau secrétaire général de mairie
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de chargé d'animation du réseau secrétaire général de mairie. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Accroche :** Recrute un poste de chargé d'animation du réseau secrétaire général de mairie : ORBE peut le faire en prestation.
+
+### 16. Zimmermann — 66/100 (intéressant)
+
+- Poste : Social Media Manager · Temps plein · Ville de Paris
+- Service à proposer : **réseaux sociaux**
+- E-mail : non trouvé · Site : https://zimmermann.fr/
+
+**Objet :** Votre recrutement : Social media manager
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de social media manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+En regardant votre site, nous avons noté un point simple à améliorer : votre page d'accueil n'a pas de titre principal lisible par Google. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/zimmermann/
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Invitation LinkedIn (146/200) :** Bonjour, j'ai vu votre offre de social media manager chez Zimmermann. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de social media manager : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/zimmermann/ Auriez-vous 15 minutes cette semaine pour en parler ?
+
+**Relance J+4 :** Bonjour,
+
+Je reviens vers vous au sujet de votre recrutement pour le poste de social media manager. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Zimmermann, sans engagement. Un simple « oui » en réponse suffit.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+
+**Relance J+10 :** Bonjour,
+
+C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+**Accroche :** Recrute un poste de social media manager : ORBE peut le faire en prestation.
+
+### 17. OW Ocean Winds — 66/100 (intéressant)
+
+- Poste : Stakeholder Associate · Temps plein · Nantes
+- Service à proposer : **réseaux sociaux**
+- E-mail : non trouvé · Site : non trouvé
+
+**Objet :** Votre recrutement : Stakeholder associate
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de stakeholder associate. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Accroche :** Recrute un poste de stakeholder associate : ORBE peut le faire en prestation.
+
+### 18. Current AI — 66/100 (intéressant)
+
+- Poste : Communications Manager · Temps plein · Ville de Paris
+- Service à proposer : **réseaux sociaux**
+- E-mail : non trouvé · Site : https://current.fr/
+
+**Objet :** Votre recrutement : Communications manager
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de communications manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+En regardant votre site, nous avons noté un point simple à améliorer : votre site ne renvoie vers aucun réseau social. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/current-ai/
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Invitation LinkedIn (148/200) :** Bonjour, j'ai vu votre offre de communications manager chez Current AI. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de communications manager : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/current-ai/ Auriez-vous 15 minutes cette semaine pour en parler ?
+
+**Relance J+4 :** Bonjour,
+
+Je reviens vers vous au sujet de votre recrutement pour le poste de communications manager. Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour Current AI, sans engagement. Un simple « oui » en réponse suffit.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+
+**Relance J+10 :** Bonjour,
+
+C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+**Accroche :** Recrute un poste de communications manager : ORBE peut le faire en prestation.
+
+### 19. °Arcane — 66/100 (intéressant)
+
+- Poste : Team Lead Paid Social Media (H-F) · Temps plein · Ville de Paris
+- Service à proposer : **réseaux sociaux**
+- E-mail : non trouvé · Site : https://arcane.fr/
+
+**Objet :** Votre recrutement : Team lead paid social media (h-f)
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de team lead paid social media (h-f). Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+En regardant votre site, nous avons noté un point simple à améliorer : votre site ne renvoie vers aucun réseau social. Nos observations sont ici : https://oscarcousin-max.github.io/orbe-usine/audits/arcane/
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Invitation LinkedIn (156/200) :** Bonjour, j'ai vu votre offre de team lead paid social media (h-f) chez °Arcane. Chez ORBE, nous prenons ce travail en charge en prestation. Ravi d'échanger.
+
+**Après acceptation :** Merci d'avoir accepté. J'ai vu que vous recrutez pour un poste de team lead paid social media (h-f) : pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation. Nos observations sur votre site : https://oscarcousin-max.github.io/orbe-usine/audits/arcane/ Auriez-vous 15 minutes cette semaine pour en parler ?
+
+**Relance J+4 :** Bonjour,
+
+Je reviens vers vous au sujet de votre recrutement pour le poste de team lead paid social media (h-f). Si cela peut vous aider, nous pouvons vous envoyer 2 ou 3 idées concrètes pour °Arcane, sans engagement. Un simple « oui » en réponse suffit.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+
+**Relance J+10 :** Bonjour,
+
+C'est mon dernier message à ce sujet. Si un jour vous préférez une prestation à un recrutement, notre proposition reste valable.
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+**Accroche :** Recrute un poste de team lead paid social media (h-f) : ORBE peut le faire en prestation.
+
+### 20. Anker Innovations — 66/100 (intéressant)
+
+- Poste : Public Relations Manager · Temps plein · Paris et périphérie
+- Service à proposer : **réseaux sociaux**
+- E-mail : non trouvé · Site : non trouvé
+
+**Objet :** Votre recrutement : Public relations manager
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de public relations manager. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Accroche :** Recrute un poste de public relations manager : ORBE peut le faire en prestation.
+
+### 21. Hyatt — 66/100 (intéressant)
+
+- Poste : CDI : Responsable Marketing · Temps plein · Paris
+- Service à proposer : **réseaux sociaux**
+- E-mail : non trouvé · Site : non trouvé
+
+**Objet :** Votre recrutement : Cdi : responsable marketing
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de cdi : responsable marketing. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Accroche :** Recrute un poste de cdi : responsable marketing : ORBE peut le faire en prestation.
+
+### 22. Make Sense — 66/100 (intéressant)
+
+- Poste : Social Ads Manager Meta Ads E-commerce · Temps plein · Bondues
+- Service à proposer : **réseaux sociaux**
+- E-mail : non trouvé · Site : https://make-sense.fr/
+
+**Objet :** Votre recrutement : Social ads manager meta ads e-commerce
+
+```
+Bonjour,
+
+J'ai vu que vous recrutez pour un poste de social ads manager meta ads e-commerce. Pendant ce recrutement, ou à sa place, l'équipe ORBE peut prendre ce travail en charge en prestation (gestion des réseaux sociaux : publications, calendrier, vidéos courtes).
+
+Seriez-vous ouvert à un appel de 15 minutes cette semaine ?
+
+Bien cordialement,
+L'équipe ORBE
+societe.orbe@gmail.com · 06 72 61 66 09
+
+Si vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.
+```
+
+**Accroche :** Recrute un poste de social ads manager meta ads e-commerce : ORBE peut le faire en prestation.
 
