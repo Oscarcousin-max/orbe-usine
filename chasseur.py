@@ -249,7 +249,7 @@ FT_METIERS = [
     ("concepteur-multimedia/s32m5", "réseaux sociaux"),
 ]
 FT_PAGES_MAXI = int(os.environ.get("CHASSEUR_FT_PAGES", "120") or 120)
-FT_ECOLES = re.compile(r"[ée]cole|business school|\bCFA\b|formation|academy|acad[ée]mie|campus|institut|isfoi|"
+FT_ECOLES = re.compile(r"[ée]cole|\bschool\b|business school|\bCFA\b|formation|academy|acad[ée]mie|campus|institut|isfoi|"
                        r"alternance|apprentissage|universit", re.I)
 
 
@@ -614,6 +614,8 @@ def trier(offres, debut, fin):
             ecarter("agence concurrente")
         elif PUBLICS.search(o["entreprise"] + " " + o["entreprise_desc"]):
             ecarter("employeur public")
+        elif FT_ECOLES.search(o["entreprise"]):
+            ecarter("école ou organisme de formation")
         elif GRANDS.search(o["entreprise"]):
             ecarter("grand groupe ou chaîne")
         elif trop_grande_ft(o.get("effectif")):
@@ -646,20 +648,48 @@ def _nom_gerant(e):
         if str(d.get("type_dirigeant") or "") != "personne physique":
             continue
         prenom = str(d.get("prenoms") or "").split(" ")[0].strip()
-        nom = str(d.get("nom") or "").strip()
+        nom = re.sub(r"\s*\(.*?\)", "", str(d.get("nom") or "")).strip()  # « Peruzzi (Gatel) » -> « Peruzzi »
+        if re.search(r"(?i)diffusible|inconnu", prenom + nom):
+            continue
         if prenom and nom and len(prenom) > 1:
             return "%s %s" % (prenom.title(), "-".join(x.capitalize() for x in nom.lower().split("-")).title())
     return ""
 
 
+IDF = {"75", "77", "78", "91", "92", "93", "94", "95"}
+MOTS_LIEU_VIDES = {"ville", "arrondissement", "dept", "france", "peripherie", "region", "metropole", "cedex", "sur", "les", "lès"}
+
+
+def _meme_lieu(e, ville):
+    """Vrai si l'entreprise de l'annuaire est bien dans la ville de l'annonce (siège ou un établissement).
+    Sans ce contrôle, « 3Shape » ou « VINCI » tombaient sur une petite société homonyme, avec un autre gérant."""
+    v = norm(ville)
+    if not v:
+        return False
+    mots_v = {m for m in v.replace("-", " ").split() if len(m) > 2 and m not in MOTS_LIEU_VIDES}
+    lieux = [e.get("siege") or {}] + list(e.get("matching_etablissements") or [])
+    for l in lieux:
+        com = norm(l.get("libelle_commune") or "")
+        dep = str(l.get("departement") or l.get("code_postal") or "")[:2]
+        mots_c = {m for m in com.replace("-", " ").split() if len(m) > 2 and m not in MOTS_LIEU_VIDES}
+        if mots_v & mots_c:
+            return True
+        if ("ile de france" in v or "idf" in v) and dep in IDF:
+            return True
+    return False
+
+
 def taille_entreprise(o):
     """Cherche l'entreprise dans l'annuaire officiel gratuit (recherche-entreprises.api.gouv.fr).
-    Renvoie (trop_grande, texte, gerant) ; (False, "", "") si on ne la trouve pas."""
+    Renvoie (trop_grande, texte, gerant). texte vide = entreprise pas trouvée avec certitude.
+    - si une seule des sociétés au même nom est une grande entreprise (ETI, GE, 50 salariés et plus) : trop grande
+      (une marque connue qui a un petit homonyme est presque toujours la grande) ;
+    - le gérant n'est pris que si la société est dans la ville de l'annonce."""
     nom = re.sub(r"\(.*?\)", " ", o["entreprise"]).strip()
     mots = _mots(nom)
     if not mots:
         return False, "", ""
-    url = API_ENTREPRISES + "?" + urllib.parse.urlencode({"q": nom, "per_page": 5, "page": 1})
+    url = API_ENTREPRISES + "?" + urllib.parse.urlencode({"q": nom, "per_page": 10, "page": 1})
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "orbe-chasseur", "Accept": "application/json"})
         with urllib.request.urlopen(req, timeout=12) as r:
@@ -668,14 +698,21 @@ def taille_entreprise(o):
         return False, "", ""
     finally:
         time.sleep(0.3)  # l'annuaire accepte 7 requêtes par seconde
+    memes = []
     for e in res:
         noms = " ".join(str(e.get(k) or "") for k in ("nom_complet", "nom_raison_sociale", "sigle"))
-        if not (mots & _mots(noms)) or len(mots & _mots(noms)) < min(2, len(mots)):
-            continue
+        if (mots & _mots(noms)) and len(mots & _mots(noms)) >= min(2, len(mots)):
+            memes.append(e)
+    for e in memes:
         tranche = str(e.get("tranche_effectif_salarie") or "")
         cat = str(e.get("categorie_entreprise") or "")
-        texte = "%s salariés (code %s), %s" % ("50+" if tranche in TRANCHES_GRANDES else "moins de 50", tranche or "?", cat or "?")
-        return (tranche in TRANCHES_GRANDES or cat in ("ETI", "GE")), texte, _nom_gerant(e)
+        if tranche in TRANCHES_GRANDES or cat in ("ETI", "GE"):
+            return True, "50+ salariés (code %s), %s" % (tranche or "?", cat or "?"), ""
+    for e in memes:
+        if _meme_lieu(e, o.get("ville")):
+            tranche = str(e.get("tranche_effectif_salarie") or "")
+            cat = str(e.get("categorie_entreprise") or "")
+            return False, "moins de 50 salariés (code %s), %s" % (tranche or "?", cat or "?"), _nom_gerant(e)
     return False, "", ""
 
 
@@ -1352,9 +1389,11 @@ def main():
     candidates = [o for o in candidates if o.get("garder")]
     # Novembre 2026 : Hyatt, Zimmermann, Anker passaient quand l'IA était en panne et que l'annuaire
     # ne les trouvait pas. Sans aucune des deux vérifications, on n'écrit pas.
-    inconnues = [o for o in candidates if not o.get("analyse_par") and not o.get("annuaire_ok")]
+    # 11 nov. 2026 : règle stricte « moins de 50 salariés » : une entreprise que l'annuaire ne trouve pas
+    # dans la ville de l'annonce est écartée (sa taille est inconnue). Les annonces collées à la main restent.
+    inconnues = [o for o in candidates if not o.get("annuaire_ok")]
     if inconnues:
-        stats["ecartees"]["taille inconnue (ni IA ni annuaire)"] = len(inconnues)
+        stats["ecartees"]["taille inconnue (pas trouvée dans l'annuaire)"] = len(inconnues)
         candidates = [o for o in candidates if o not in inconnues]
     candidates.sort(key=lambda o: (o["manuelle"], o["profil"] + o["urgence"] + (7 if o.get("contact_nom") else 0)), reverse=True)
 
