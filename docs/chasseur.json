@@ -1,6 +1,35 @@
 {
  "items": [
   {
+   "id": "chasseur-20261112-greenly",
+   "nom": "Greenly",
+   "type": "Recrute : AI Content Engineer",
+   "quartier": "Paris",
+   "adresse": "",
+   "canal": "Email",
+   "contact": "hello@greenly.earth",
+   "telephone": "",
+   "verif": "priorité maximale",
+   "preuve": "Note 83/100 · LinkedIn · publiée le 2026-11-06",
+   "preuve_url": "https://www.linkedin.com/jobs/view/4487357158/",
+   "objet": "Candidature en prestation : Ai content engineer",
+   "message": "Bonjour Aviel Seban,\n\nJe réponds à votre offre de ai content engineer, avec une formule un peu différente : c'est l'équipe ORBE qui prend le poste, en prestation au mois.\n\nConcrètement, nous prenons en charge : référencement Google suivi chaque mois et visibilité dans les réponses des IA (ChatGPT…). Nous pouvons démarrer sous une semaine, sans recrutement ni période d'essai, et vous arrêtez quand vous voulez. Nos formules commencent à 490 € par mois.\n\nSeriez-vous d'accord pour un échange de 15 minutes, au téléphone ou en visio ?\n\nBien cordialement,\nOscar, pour l'équipe ORBE\nORBE, studio digital\nsociete.orbe@gmail.com · 06 72 61 66 09\n\nSi vous ne souhaitez plus recevoir nos messages, répondez simplement STOP.",
+   "site_url": "",
+   "par": "modèle ORBE (candidature)",
+   "cree_le": "2026-11-12T13:03:50+0100",
+   "service": "SEO",
+   "note": 83,
+   "besoin": "AI Content Engineer",
+   "decideur": "Aviel Seban",
+   "email": "hello@greenly.earth",
+   "ville": "Paris",
+   "poste": "AI Content Engineer",
+   "invitation_linkedin": "",
+   "message_linkedin": "",
+   "relance_j4": "",
+   "relance_j10": ""
+  },
+  {
    "id": "chasseur-20261111-lemaire",
    "nom": "LEMAIRE",
    "type": "Recrute : Assistant / Assistante community manager",
@@ -6294,5 +6323,5 @@
    "relance_j10": ""
   }
  ],
- "maj": "2026-11-11T11:38:11Z"
+ "maj": "2026-11-12T12:04:02Z"
 }
