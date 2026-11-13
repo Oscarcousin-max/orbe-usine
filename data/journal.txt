@@ -1,4 +1,4 @@
-17:44:35 Demande : 20 site(s)
-17:44:35 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-17:44:35 Rythme : 15 déjà faits aujourd'hui, 15 au plus par jour → 0 pour ce passage
-17:44:35 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
+02:36:48 Demande : 20 site(s)
+02:36:48 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+02:36:48 Rythme : 15 déjà faits aujourd'hui, 15 au plus par jour → 0 pour ce passage
+02:36:48 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
