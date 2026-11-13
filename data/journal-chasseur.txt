@@ -1,137 +1,151 @@
-11:33:20 Chasseur ORBE — annonces publiées du 05/11 12:33 au 12/11 12:33
-11:33:20 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
-11:33:21 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-11:33:21 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-11:33:21 France Travail : connexion refusée (HTTP Error 400: Bad Request)
-11:38:28 France Travail (site) : 120 page(s) lue(s), 758 offre(s), 115 entreprise(s) nouvelle(s) sur la période
-11:44:36 LinkedIn : 497 offre(s) trouvée(s), 341 entreprise(s) nouvelle(s) ; lecture de 160 annonce(s)
-11:53:49 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
-11:53:49 Après le tri : 125 candidate(s) sur 275
-11:53:54   trop grande : EDITIONS TECHNIQUES POUR L'AUTOMOBILE ET (50+ salariés (code 41), ETI)
-11:53:57   trop grande : Emeria (50+ salariés (code 22), GE)
-11:53:58   trop grande : KAROIL (50+ salariés (code 12), ETI)
-11:54:03   trop grande : FRANCK PROVOST (50+ salariés (code 41), ETI)
-11:54:04   trop grande : Le Courrier de l'Ouest (50+ salariés (code 22), ETI)
-11:54:05   trop grande : UPTOO (50+ salariés (code 21), PME)
-11:54:07   trop grande : Eureka Éducation (50+ salariés (code 22), ETI)
-11:54:11   trop grande : AFTRAL (50+ salariés (code 51), ETI)
-11:54:11   trop grande : AGENCE FRANCAISE DE TRADUCTION ET DE COMMUNICATION (50+ salariés (code 21), PME)
-11:54:13   trop grande : CNRS (50+ salariés (code 53), GE)
-11:54:14   trop grande : EDEN AUTO SERVICES - PAU (50+ salariés (code 22), ETI)
-11:54:16   trop grande : Hager SAS (50+ salariés (code 32), ETI)
-11:54:22   trop grande : BDO (50+ salariés (code 22), ETI)
-11:54:23   trop grande : MGEN (50+ salariés (code 51), GE)
-11:54:26   trop grande : HELPEVIA (50+ salariés (code 21), PME)
-11:54:28   trop grande : McCormick Retail Services (50+ salariés (code 42), ETI)
-11:54:29   trop grande : MACIF (50+ salariés (code 53), GE)
-11:54:30   trop grande : Askell (50+ salariés (code 22), ETI)
-11:54:31   trop grande : ORANGE (50+ salariés (code 53), GE)
-11:54:34   trop grande : Imerys (50+ salariés (code 32), ETI)
-11:54:35   trop grande : Alpes Isère Habitat (50+ salariés (code 41), ETI)
-11:54:37   trop grande : TEAMINSIDE (50+ salariés (code 12), ETI)
-11:54:41   trop grande : Centric Software (50+ salariés (code 22), GE)
-11:54:42   trop grande : Grand Delta Habitat (50+ salariés (code 41), GE)
-11:54:44   trop grande : Habitat et Humanisme Ile-de-France (50+ salariés (code 21), PME)
-11:54:48   trop grande : Météo-France (50+ salariés (code 51), ETI)
-11:54:49   trop grande : BRICO DEPOT (50+ salariés (code 52), GE)
-11:54:54   trop grande : BeReal. (50+ salariés (code 11), ETI)
-11:54:55   trop grande : Reworld Media (50+ salariés (code 31), ETI)
-11:54:57   trop grande : Fremantle France (50+ salariés (code 21), GE)
-11:54:58   trop grande : Maisons du Monde (50+ salariés (code 11), ETI)
-11:55:00   trop grande : Altonéo (50+ salariés (code 22), PME)
-11:55:04   trop grande : VINCI Concessions (50+ salariés (code 22), GE)
-11:55:05   trop grande : VINCI (50+ salariés (code 32), GE)
-11:55:07   trop grande : EDF (50+ salariés (code 53), GE)
-11:55:08   trop grande : VINCI Airports (50+ salariés (code 22), GE)
-11:55:09   trop grande : Orano (50+ salariés (code 02), GE)
-11:55:10   trop grande : Eiffage Énergie Systèmes (50+ salariés (code 41), GE)
-11:55:12   trop grande : Framatome (50+ salariés (code 53), GE)
-11:55:13   trop grande : CNAM GRAND EST (50+ salariés (code 31), PME)
-11:55:15   trop grande : CEVA Logistics (50+ salariés (code 51), GE)
-11:55:16   trop grande : ELSAN (50+ salariés (code 31), PME)
-11:55:17   trop grande : l'Alliance Française (50+ salariés (code 21), PME)
-11:55:18   trop grande : Boucheron (50+ salariés (code 32), GE)
-11:55:20   trop grande : CCI GRAND EST (50+ salariés (code 41), ETI)
-11:55:21   trop grande : Clinique Saint Martin Vesoul (50+ salariés (code 21), GE)
-11:55:25   trop grande : Hermès (50+ salariés (code 52), GE)
-11:55:26   trop grande : CNED (50+ salariés (code 42), ETI)
-11:55:27   trop grande : EssilorLuxottica (50+ salariés (code 21), GE)
-11:55:29   trop grande : Forsk (50+ salariés (code 22), PME)
-11:55:30   trop grande : Lyreco France (50+ salariés (code 42), ETI)
-11:55:33   trop grande : Infopro Digital (50+ salariés (code NN), ETI)
-11:55:34   trop grande : ISAGRI (50+ salariés (code 42), ETI)
-11:55:37   trop grande : Lydia Solutions (Lydia - Sumeria) (50+ salariés (code 32), ETI)
-11:55:38   trop grande : OGC Nice (50+ salariés (code 32), GE)
-11:55:40   trop grande : Crédit Coopératif (50+ salariés (code 42), GE)
-11:55:41   trop grande : Klanik (50+ salariés (code 32), ETI)
-11:55:43   trop grande : Numberly (50+ salariés (code 32), ETI)
-11:55:43   trop grande : Tencent (50+ salariés (code 12), ETI)
-11:55:46   trop grande : Alibaba Cloud (50+ salariés (code 11), ETI)
-11:55:47   trop grande : Stryker (50+ salariés (code 41), ETI)
-11:55:49   trop grande : Ecolab (50+ salariés (code 32), ETI)
-11:55:50   trop grande : KNDS France (50+ salariés (code 51), GE)
-11:55:54   trop grande : Castalie (50+ salariés (code 22), PME)
-11:55:56   trop grande : Brevo (50+ salariés (code 32), ETI)
-11:55:59   trop grande : Treatwell (50+ salariés (code 21), PME)
-11:56:00   trop grande : AMOREPACIFIC (50+ salariés (code 21), PME)
-11:56:01   trop grande : Voodoo (50+ salariés (code 22), ETI)
-11:56:03   trop grande : Orus (50+ salariés (code 21), PME)
-11:56:04   trop grande : Flotte (50+ salariés (code 21), PME)
-11:56:05   trop grande : Payfit (50+ salariés (code 41), ETI)
-11:56:06   trop grande : Wonderbox (50+ salariés (code 03), ETI)
-11:56:07   trop grande : FONCIA (50+ salariés (code 31), GE)
-11:56:09   trop grande : AUDIKA (50+ salariés (code 31), ETI)
-11:56:12   trop grande : STATION F (50+ salariés (code 12), ETI)
-11:56:16   trop grande : ALTEN (50+ salariés (code 52), GE)
-11:56:18   trop grande : Septodont (50+ salariés (code 41), ETI)
-11:56:19   trop grande : Kicklox (50+ salariés (code 11), ETI)
-11:56:20   trop grande : Thélem assurances (50+ salariés (code 41), ETI)
-11:56:22   trop grande : CHAUSSEA (50+ salariés (code 51), ETI)
-11:56:23 Après le contrôle de taille : 45 candidate(s)
-11:56:23     modèles groq : canopylabs/orpheus-v1-english, openai/gpt-oss-120b, whisper-large-v3, whisper-large-v3-turbo, allam-2-7b, meta-llama/llama-prompt-guard-2-86m, canopylabs/orpheus-arabic-saudi, meta-llama/llama-prompt-guard-2-22m, qwen/qwen3.8-27b, openai/gpt-oss-safeguard-20b, openai/gpt-oss-20b
-11:56:41     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-11:56:41     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
-11:56:47   analyste : paquet 3 sans réponse (Expecting ',' delimiter: line 1 column 208 (char 207))
-11:56:55     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-11:57:02   analyste : paquet 5 sans réponse (Expecting ',' delimiter: line 1 column 1359 (char 1358))
-11:57:02     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-11:57:02     groq/openai/gpt-oss-20b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization
-11:57:02     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts
-11:58:36     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-12:03:36     gemini/gemini-3.7-flash : The read operation timed out
-12:03:37     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-12:03:37     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-12:03:37     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
-12:03:38     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-12:03:38     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-12:03:38     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-12:03:38     modèles or : baidu/ernie-5.5-flash-preview:free, thinkingmachines/inkling-2-small:free, liquid/lfm-3-1.7b:free, recursive/flint-v1.0:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, liquid/lfm-2.5-2.6b:free, nvidia/nemotron-3.5-lightning:free, cohere/north-mini-code:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
-12:03:50   écartée : SARL LABORATOIRE L & M — poste de formation, pas de besoin en services web d'ORBE
-12:03:50   écartée : LEADSEN RH — offre de stage, non ciblée pour une prestation
-12:03:50   écartée : ELVATUS — poste de formateur, pas de prestation web demandée
-12:03:50   écartée : EPCC SALINE ROYALE D'ARC ET SENANS — poste centré sur communication interne et CRM, difficile à externaliser
-12:03:50   écartée : SIZE UP — entreprise déjà une agence marketing, concurrente potentielle
-12:03:50   écartée : EFFICIENT SOLUTION — poste technique d’ingénierie système, hors périmètre d'ORBE
-12:03:50   écartée : CARSAT ALSACE-MOSELLE — employeur public, exclu selon les critères
-12:03:50   écartée : Safran - CDI — Poste technique d'intégration système, hors du périmètre digital d'ORBE
-12:03:50   écartée : I-CAN SERVICES — Agence de communication recherchant des animateurs terrain, activité hors digital
-12:03:50   écartée : Canonical — Poste technique de Community Engineer, hors du scope digital marketing d'ORBE
-12:03:50   écartée : Metabase — Poste très technique orienté développeurs, pas pertinent pour les services d'ORBE
-12:03:50   écartée : Info Jeunes Lorient - BIJ — Organisme public/association, poste de service social, hors cible d'ORBE
-12:03:50   écartée : CENTRE SOCIO CULTUREL DES HAUTS DU LYONNAIS — Association locale/public, projet d'espace de vie sociale, pas lié aux services digitaux d'ORBE
-12:03:50   écartée : Mouvex, a PSG brand — Grande entreprise industrielle (>50 salariés)
-12:03:50   écartée : ITER Organization — Organisation internationale de grande taille
-12:03:50   écartée : Ataguise — Cabinet de recrutement
-12:03:50   écartée : Cabinet EKINOX — Cabinet de recrutement de cadres
-12:03:50   écartée : b2wise — Stage d'observation
-12:03:50   écartée : O2 - N°1 du service à la personne — Grand groupe du secteur services à la personne
-12:03:50   écartée : BD — Multinationale de plus de 50 salariés
-12:03:50   écartée : Millboard France — Entreprise de plus de 50 salariés
-12:03:50   écartée : amo — Poste d'ingénierie de moteur de recherche très technique, sans rapport avec les services d'ORBE, dans une plateforme de réseaux sociaux.
-12:03:50   écartée : Pragmatike — Offre publiée par un cabinet pour le compte d'un leader mondial de l'hôtellerie de luxe, grand groupe.
-12:03:50   écartée : Agence LunaWeb — Agence web concurrente qui recrute un développeur back-end pour ses propres projets.
-12:03:50   écartée : Limpide — Agence digitale qui recrute un chef de projet pour piloter ses propres projets web.
-12:03:50 — Greenly (AI Content Engineer, Paris)
-12:04:02     note 83/100 · site ok · e-mail hello@greenly.earth · constats : aucun
-12:04:02     prêt : Greenly (83/100)
-12:04:02 Terminé : 1 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
+11:17:55 Chasseur ORBE — annonces publiées du 06/11 12:17 au 13/11 12:17
+11:17:55 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
+11:17:56 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+11:17:56 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+11:17:56 France Travail : connexion refusée (HTTP Error 400: Bad Request)
+11:22:39 France Travail (site) : 120 page(s) lue(s), 737 offre(s), 111 entreprise(s) nouvelle(s) sur la période
+11:26:25 LinkedIn : 477 offre(s) trouvée(s), 340 entreprise(s) nouvelle(s) ; lecture de 160 annonce(s)
+11:31:13 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
+11:31:13 Après le tri : 131 candidate(s) sur 271
+11:31:15   trop grande : ALTER EGO SAINT PAUL 1225 (50+ salariés (code 01), GE)
+11:31:16   trop grande : SEM 47 (50+ salariés (code 21), GE)
+11:31:19   trop grande : ETABLISSEMENT PUBLIC DU CAPITOLE (50+ salariés (code 41), ETI)
+11:31:21   trop grande : Emeria (50+ salariés (code 22), GE)
+11:31:23   trop grande : LA BOULANGERE & CO (50+ salariés (code 32), ETI)
+11:31:25   trop grande : INNOCEAN France (50+ salariés (code 21), PME)
+11:31:26   trop grande : Hilti France (50+ salariés (code 42), ETI)
+11:31:27   trop grande : Le Courrier de l'Ouest (50+ salariés (code 22), ETI)
+11:31:31   trop grande : UPTOO (50+ salariés (code 21), PME)
+11:31:33   trop grande : AFTRAL (50+ salariés (code 51), ETI)
+11:31:34   trop grande : AGENCE FRANCAISE DE TRADUCTION ET DE COMMUNICATION (50+ salariés (code 21), PME)
+11:31:35   trop grande : CNRS (50+ salariés (code 53), GE)
+11:31:37   trop grande : Hager SAS (50+ salariés (code 32), ETI)
+11:31:41   trop grande : Otteo (50+ salariés (code 21), PME)
+11:31:42   trop grande : HELPEVIA (50+ salariés (code 21), PME)
+11:31:43   trop grande : McCormick Retail Services (50+ salariés (code 42), ETI)
+11:31:44   trop grande : BPCE Solutions informatiques (50+ salariés (code 51), GE)
+11:31:45   trop grande : MACIF (50+ salariés (code 53), GE)
+11:31:46   trop grande : Askell (50+ salariés (code 22), ETI)
+11:31:48   trop grande : ORANGE (50+ salariés (code 53), GE)
+11:31:49   trop grande : LHH (50+ salariés (code 41), GE)
+11:31:50   trop grande : MOUVEX (50+ salariés (code 22), ETI)
+11:31:53   trop grande : Alpes Isère Habitat (50+ salariés (code 41), ETI)
+11:31:54   trop grande : Agence Régionale de Santé (ARS) Île-de-France (50+ salariés (code 42), ETI)
+11:31:55   trop grande : TEAMINSIDE (50+ salariés (code 12), ETI)
+11:32:11   trop grande : Grand Delta Habitat (50+ salariés (code 41), GE)
+11:32:12   trop grande : Habitat et Humanisme Ile-de-France (50+ salariés (code 21), PME)
+11:32:14   trop grande : TotalEnergies (50+ salariés (code 42), GE)
+11:32:16   trop grande : Météo-France (50+ salariés (code 51), ETI)
+11:32:16   trop grande : BRICO DEPOT (50+ salariés (code 52), GE)
+11:32:19   trop grande : Maisons du Monde (50+ salariés (code 11), ETI)
+11:32:20   trop grande : NVIDIA (50+ salariés (code 21), PME)
+11:32:21   trop grande : Fremantle France (50+ salariés (code 21), GE)
+11:32:22   trop grande : BeReal. (50+ salariés (code 11), ETI)
+11:32:23   trop grande : Reworld Media (50+ salariés (code 31), ETI)
+11:32:26   trop grande : LABORATOIRE NATIVE (50+ salariés (code 32), ETI)
+11:32:29   trop grande : EUROAPI (50+ salariés (code 01), ETI)
+11:32:32   trop grande : Altonéo (50+ salariés (code 22), PME)
+11:32:35   trop grande : VINCI Concessions (50+ salariés (code 22), GE)
+11:32:36   trop grande : VINCI (50+ salariés (code 32), GE)
+11:32:37   trop grande : EDF (50+ salariés (code 53), GE)
+11:32:38   trop grande : Orano (50+ salariés (code 02), GE)
+11:32:39   trop grande : OLRY COLLECTION (50+ salariés (code NN), ETI)
+11:32:40   trop grande : Eiffage Énergie Systèmes (50+ salariés (code 41), GE)
+11:32:41   trop grande : Framatome (50+ salariés (code 53), GE)
+11:32:43   trop grande : Boucheron (50+ salariés (code 32), GE)
+11:32:44   trop grande : l'Alliance Française (50+ salariés (code 21), PME)
+11:32:45   trop grande : CCI GRAND EST (50+ salariés (code 41), ETI)
+11:32:48   trop grande : Clinique Saint Martin Vesoul (50+ salariés (code 21), GE)
+11:32:50   trop grande : Kerogo Finance (50+ salariés (code 02), ETI)
+11:32:55   trop grande : EssilorLuxottica (50+ salariés (code 21), GE)
+11:32:56   trop grande : Forsk (50+ salariés (code 22), PME)
+11:32:59   trop grande : Lyreco France (50+ salariés (code 42), ETI)
+11:33:01   trop grande : Infopro Digital (50+ salariés (code NN), ETI)
+11:33:02   trop grande : ISAGRI (50+ salariés (code 42), ETI)
+11:33:04   trop grande : Lydia Solutions (Lydia - Sumeria) (50+ salariés (code 32), ETI)
+11:33:05   trop grande : OGC Nice (50+ salariés (code 32), GE)
+11:33:05   trop grande : Crédit Coopératif (50+ salariés (code 42), GE)
+11:33:07   trop grande : Puig (50+ salariés (code 41), ETI)
+11:33:07   trop grande : Numberly (50+ salariés (code 32), ETI)
+11:33:08   trop grande : Tencent (50+ salariés (code 12), ETI)
+11:33:09   trop grande : Voodoo (50+ salariés (code 22), ETI)
+11:33:13   trop grande : Stryker (50+ salariés (code 41), ETI)
+11:33:14   trop grande : Oliver Wyman (50+ salariés (code 32), ETI)
+11:33:15   trop grande : Align Technology (50+ salariés (code 22), ETI)
+11:33:16   trop grande : Ecolab (50+ salariés (code 32), ETI)
+11:33:21   trop grande : Castalie (50+ salariés (code 22), PME)
+11:33:23   trop grande : Treatwell (50+ salariés (code 21), PME)
+11:33:24   trop grande : AMOREPACIFIC (50+ salariés (code 21), PME)
+11:33:26   trop grande : BIOCODEX (50+ salariés (code 41), ETI)
+11:33:28   trop grande : KLEPIERRE (50+ salariés (code 01), ETI)
+11:33:29   trop grande : Orus (50+ salariés (code 21), PME)
+11:33:30   trop grande : Alma (50+ salariés (code 32), ETI)
+11:33:31   trop grande : Payfit (50+ salariés (code 41), ETI)
+11:33:33   trop grande : Wonderbox (50+ salariés (code 03), ETI)
+11:33:34   trop grande : FONCIA (50+ salariés (code 31), GE)
+11:33:35   trop grande : AUDIKA (50+ salariés (code 31), ETI)
+11:33:37   trop grande : STATION F (50+ salariés (code 12), ETI)
+11:33:41   trop grande : Septodont (50+ salariés (code 41), ETI)
+11:33:43   trop grande : Groupama Assurances Mutuelles (50+ salariés (code 42), GE)
+11:33:43   trop grande : Kicklox (50+ salariés (code 11), ETI)
+11:33:46   trop grande : CHAUSSEA (50+ salariés (code 51), ETI)
+11:33:46 Après le contrôle de taille : 49 candidate(s)
+11:33:46     modèles groq : meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-20b, openai/gpt-oss-safeguard-20b, canopylabs/orpheus-arabic-saudi, whisper-large-v3-turbo, canopylabs/orpheus-v1-english, allam-2-7b, whisper-large-v3, openai/gpt-oss-120b, qwen/qwen3.8-27b, meta-llama/llama-prompt-guard-2-22m
+11:34:13     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+11:34:19     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+11:34:20     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+11:34:26     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+11:34:32     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+11:34:32     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+11:34:37   écartée : ARES — Poste senior stratégique de communication, difficile à externaliser
+11:34:37   écartée : ELVATUS — Offre de prestation de formation, le candidat propose un service, pas un besoin client
+11:34:37   écartée : CRAN — Besoin de production vidéo interne, hors périmètre des services d'ORBE
+11:34:37   écartée : EPCC SALINE ROYALE D'ARC ET SENANS — Poste centré sur la gestion CRM et bases de données, hors périmètre d'ORBE
+11:34:37   écartée : EFFICIENT SOLUTION — Poste technique d'intégration système, pas lié aux services d'ORBE
+11:34:37   écartée : Le Mercato de l'Emploi — Poste commercial de promotion de ventes, hors périmètre digital
+11:34:37   écartée : SARL LABORATOIRE L & M — poste de formateur en réseaux sociaux, besoin de formation interne, pas de service web à externaliser
+11:34:37   écartée : Canonical — poste technique de Community Engineer lié au développement logiciel, hors périmètre des services d’ORBE
+11:34:37   écartée : CENTRE SOCIO CULTUREL DES HAUTS DU LYONNAIS — poste d’animation sociale et de tiers‑lieu, sans rapport avec les services web ou marketing digital
+11:34:37   écartée : ClickHouse — poste DevRel Engineer orienté événements et communauté technique, trop technique et événementiel
+11:34:37   écartée : Habitat et Humanisme — grande association nationale avec de nombreuses structures, >50 salariés, hors cible d’ORBE
+11:34:37   écartée : Centric Software — grand groupe logiciel, >50 salariés, poste interne de planification marketing, non ciblé
+11:34:37   écartée : ESPACE BERTHAUDIERE/ESPACE PRAINET — Poste purement social et de pilotage de projets locaux, aucun besoin digital lié aux services d'ORBE.
+11:34:37   écartée : Popeyes France — Grande chaîne de restauration (franchise) qui recrute un SM manager interne.
+11:34:37   écartée : Jobgether — Entreprise de plateforme en ligne qui souhaite un manager interne pour communauté et événements.
+11:34:37   écartée : Tinder — Grand groupe international (Tinder) qui crée un poste senior interne de MarComms.
+11:34:37   écartée : Mozza — Agence de design qui recrute un growth marketing manager, concurrent potentiel d'ORBE.
+11:34:37   écartée : Cheval Blanc — Hôtel de luxe avec une structure importante, poste interne de responsable marketing & communication.
+11:34:37   écartée : Kolsquare | B Corp™ — SaaS spécialisé en influence marketing qui recrute un manager interne, concurrent potentiel.
+11:34:37   écartée : Mouvex, a PSG brand — Fabricant industriel qui crée un poste interne de responsable marketing & communication.
+11:34:37   écartée : ITER Organization — Employeur public international (ITER Organization) et poste stratégique de direction.
+11:34:37   écartée : WILD WILD SEARCH — L'annonce est publiée par un cabinet de recrutement (Wild Wild Search) pour un client.
+11:34:37   écartée : Ataguise — L'annonce est publiée par un cabinet de recrutement (Ataguise) pour une marque de bijoux.
+11:34:37   écartée : Artur'in — Artur'in est une agence de services marketing concurrente d'ORBE.
+11:34:37   écartée : Cabinet EKINOX — L'annonce est publiée par un cabinet de recrutement de cadres (Cabinet EKINOX).
+11:34:37   écartée : CONSTRUCTYS — Constructys est une grande structure de conseil en ingénierie (grand groupe).
+11:34:37   écartée : BD — Waters Corporation est un grand groupe international de fabrication d'équipements médicaux.
+11:34:37   écartée : Marsh Agency — entreprise >50 salariés
+11:34:37   écartée : AGIRIS — entreprise >50 salariés
+11:34:37   écartée : Alltricks — entreprise >50 salariés
+11:34:37   écartée : Qlik — entreprise >50 salariés
+11:34:37   écartée : Repligen Corporation — entreprise >50 salariés
+11:34:37   écartée : Mozilla — Mozilla est une organisation à but non lucratif et un grand groupe technologique.
+11:34:37   écartée : Sinch — Sinch est un grand groupe international en télécommunications.
+11:34:37   écartée : LIXIL — LIXIL/GROHE est un grand groupe industriel international.
+11:34:37   écartée : Size Up — Size Up est une agence de marketing et de communication concurrente.
+11:34:37   écartée : TheFork, a Tripadvisor company — TheFork est une grande plateforme en ligne et le poste est en sécurité applicative (hors périmètre).
+11:34:37   écartée : Pragmatike — Pragmatike est une agence de conseil et l'annonce concerne un client grand groupe hôtelier.
+11:34:37   écartée : Agence LunaWeb — LunaWeb est une agence web concurrente.
+11:34:37 — FALHI VOYAGES (Chargé de communication et marketing digital, Marseille)
+11:34:43     note 80/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:34:43 — Swapn (Chargé de performance web, Nancy)
+11:34:48     note 95/100 · site ok · e-mail bonjour@swapn.fr · constats : aucun
+11:34:48 — Villageois (Responsable marketing - Brand & Acqui, Aix-en-Provence)
+11:35:15     note 83/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:35:15 — INTERNATIONAL BURGER'S COMPANY (Community manager, Venissieux)
+11:35:19     note 79/100 · site non lisible (protégé) · e-mail non trouvé · constats : aucun
+11:35:19     prêt : Swapn (95/100)
+11:35:19     prêt : Villageois (83/100)
+11:35:19     prêt : FALHI VOYAGES (80/100)
+11:35:19     prêt : INTERNATIONAL BURGER'S COMPANY (79/100)
+11:35:19 Terminé : 4 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
