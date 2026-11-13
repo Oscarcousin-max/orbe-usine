@@ -1,4 +1,145 @@
-02:36:48 Demande : 20 site(s)
-02:36:48 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-02:36:48 Rythme : 15 déjà faits aujourd'hui, 15 au plus par jour → 0 pour ce passage
-02:36:48 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
+12:08:43 Demande : 20 site(s)
+12:08:43 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+12:08:43 Rythme : 0 déjà faits aujourd'hui, 15 au plus par jour → 15 pour ce passage
+12:08:43 Zones : Gironde, Landes, Lot-et-Garonne, Charente
+12:11:33 Carte : réparateurs de téléphone et informatique — 24 trouvés, 24 sans site noté et joignables
+12:11:33     modèles groq : allam-2-7b, meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-safeguard-20b, whisper-large-v3, canopylabs/orpheus-arabic-saudi, qwen/qwen3.8-27b, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-120b, openai/gpt-oss-20b, whisper-large-v3-turbo
+12:11:41   10 retenus comme haut de gamme
+12:11:41     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:16:13     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+12:18:11     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:18:20     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+12:20:09 Carte : poseurs de sols, parqueteurs et menuisiers — 37 trouvés, 11 sans site noté et joignables
+12:20:16   3 retenus comme haut de gamme
+12:22:25 Carte : domaines viticoles et châteaux familiaux — 25 trouvés, 1 sans site noté et joignables
+12:25:08 Carte : caves à vin et bars à vin — 33 trouvés, 0 sans site noté et joignables
+12:26:21 Carte : restaurants indépendants de qualité — 898 trouvés, 757 sans site noté et joignables
+12:26:30   29 retenus comme haut de gamme
+12:26:42   40 retenus comme haut de gamme
+12:26:52   39 retenus comme haut de gamme
+12:27:04   39 retenus comme haut de gamme
+12:27:04     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+12:29:20     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:31:30     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+12:33:34 Carte : garages et carrosseries indépendants — 133 trouvés, 106 sans site noté et joignables
+12:33:45   27 retenus comme haut de gamme
+12:33:54   20 retenus comme haut de gamme
+12:33:54 208 candidats
+12:33:54 Commerce : Francis TEYSSIER (?)
+12:33:55       DuckDuckGo : bloqué (202)
+12:33:58       Mojeek : HTTP Error 403: Forbidden
+12:34:00   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:34:00     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts
+12:38:20     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:38:35     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:39:03   photos : 4 (Unsplash)
+12:39:10   prêt : https://oscarcousin-max.github.io/orbe-usine/francis-teyssier/
+12:39:10 Commerce : Etcheverria (Salies-de-Béarn)
+12:39:11       DuckDuckGo : bloqué (202)
+12:39:15       Mojeek : HTTP Error 403: Forbidden
+12:39:16   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:39:21     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:40:00     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:40:27   photos : 4 (Unsplash)
+12:40:35   prêt : https://oscarcousin-max.github.io/orbe-usine/etcheverria/
+12:40:35 Commerce : Château Caillivet (Mazères)
+12:40:36   écarté : Site trouvé : https://chateaucaillivet.fr/
+12:40:36 Commerce : Mia Storia (Valence)
+12:40:38       DuckDuckGo : bloqué (202)
+12:40:41       Mojeek : HTTP Error 403: Forbidden
+12:40:43   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:41:10     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:41:14     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:41:39   photos : 4 (Unsplash)
+12:41:47   prêt : https://oscarcousin-max.github.io/orbe-usine/mia-storia/
+12:41:47 Commerce : Garage Moura (?)
+12:41:48   écarté : Site trouvé : https://www.moura.com.br/
+12:41:48 Commerce : JH Repairs (Angoulême)
+12:42:04   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:42:25     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:42:33     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:42:54   photos : 4 (Unsplash, Wikimedia Commons)
+12:43:02   prêt : https://oscarcousin-max.github.io/orbe-usine/jh-repairs/
+12:43:02 Commerce : SARL Métallerie des Luys (?)
+12:43:04   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:43:06     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:43:19     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:43:45   photos : 4 (Unsplash)
+12:43:52   prêt : https://oscarcousin-max.github.io/orbe-usine/sarl-metallerie-des-luys/
+12:43:52 Commerce : La Canotte (?)
+12:44:20   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:45:38     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:45:43     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:46:00   photos : 4 (Unsplash, Wikimedia Commons)
+12:46:07   prêt : https://oscarcousin-max.github.io/orbe-usine/la-canotte/
+12:46:07 Commerce : Excellence automobiles (?)
+12:46:10   écarté : Site trouvé : https://excellenceauto.auto-gestion.net/
+12:46:10 Commerce : Enekra (?)
+12:46:11   écarté : Site trouvé : https://enekra.fr/
+12:46:11 Commerce : Futurol (Golfech)
+12:46:12   écarté : Site trouvé : https://futurol.fr/
+12:46:12 Commerce : Couleur Terroir (Léon)
+12:46:13   écarté : Site trouvé : https://couleurterroir.fr/
+12:46:13 Commerce : Lux Auto (Biscarrosse)
+12:47:16   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:47:17     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:47:29     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:47:54   photos : 4 (Unsplash)
+12:48:01   prêt : https://oscarcousin-max.github.io/orbe-usine/lux-auto/
+12:48:01 Commerce : Légende Informatique (?)
+12:48:04   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:53:04     gemini/gemini-3.8-flash : The read operation timed out
+12:54:10     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:54:50   photos : 4 (Unsplash)
+12:54:57   prêt : https://oscarcousin-max.github.io/orbe-usine/legende-informatique/
+12:54:57 Commerce : Ibaïa Café (?)
+12:55:01   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:55:03     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:55:05     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:55:22   photos : 4 (Unsplash)
+12:55:30   prêt : https://oscarcousin-max.github.io/orbe-usine/ibaia-cafe/
+12:55:30 Commerce : Garage Lévêque (Biscarrosse)
+12:55:32   écarté : Site trouvé : https://leveque.fr/
+12:55:32 Commerce : Ets Lestrade - GITEM (Mont de Marsan)
+12:55:34   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:55:34     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:55:38     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:55:58   photos : 4 (Unsplash, Wikimedia Commons)
+12:56:05   prêt : https://oscarcousin-max.github.io/orbe-usine/ets-lestrade-gitem/
+12:56:05 Commerce : Bouledogue Café (Marthon)
+12:56:06   écarté : Site trouvé : https://bouledogue.fr/
+12:56:06 Commerce : Garage BERNARDIN Patrick (Longré)
+12:56:08   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:56:15     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:56:17     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:56:35   photos : 4 (Unsplash)
+12:56:43   prêt : https://oscarcousin-max.github.io/orbe-usine/garage-bernardin-patrick/
+12:56:43 Commerce : ACTECH Informatique (Blanquefort)
+12:56:45   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:56:50     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:57:04     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:57:26   photos : 4 (Unsplash, Wikimedia Commons)
+12:57:34   prêt : https://oscarcousin-max.github.io/orbe-usine/actech-informatique/
+12:57:34 Commerce : Le Gigourit (Villognon)
+12:57:36   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:57:42     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:57:42     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:58:02   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_d
+12:58:02   photos : 4 (Unsplash)
+12:58:09   prêt : https://oscarcousin-max.github.io/orbe-usine/le-gigourit/
+12:58:09 Commerce : Garage Bineau Ralph (Paizay-Naudouin-Embourie)
+12:58:12   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:58:12     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:58:28   photos : 4 (Unsplash)
+12:58:35   prêt : https://oscarcousin-max.github.io/orbe-usine/garage-bineau-ralph/
+12:58:35 Commerce : iMobile Center (?)
+12:58:38   écarté : Site trouvé : https://imobilecenter.com/
+12:58:38 Commerce : Le Relais de la Chalosse (CAUNA)
+12:58:40   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+12:58:56     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:59:12   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e1_d
+12:59:12   photos : 4 (Unsplash, Wikimedia Commons)
+12:59:20   prêt : https://oscarcousin-max.github.io/orbe-usine/le-relais-de-la-chalosse/
+12:59:20 Moteurs de recherche : DuckDuckGo 0 ok / 3 bloqué, Bing 15 ok / 0 bloqué, Mojeek 0 ok / 3 bloqué
+12:59:20 Écartés car déjà un site : 9 · fermés : 0 · non vérifiables : 0
+12:59:20 Terminé : 15 site(s) prêt(s).
