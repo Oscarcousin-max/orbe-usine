@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORBE — Sites vitrines pour artisans et commerçants · Bordeaux</title>
+<meta name="description" content="ORBE crée et gère le site de votre entreprise : un site vitrine clair, rapide, trouvé sur Google, avec devis automatiques et prise de rendez-vous en option. Bordeaux et Gironde.">
+<meta property="og:title" content="ORBE — Votre site, fait pour vous, géré pour vous">
+<meta property="og:description" content="Sites vitrines pour artisans et commerçants. Mise en place 250 €, puis 25 € par mois tout compris.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2311161f'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23fff' stroke-width='6'/%3E%3Ccircle cx='43' cy='21' r='5' fill='%233d6cff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"ORBE","description":"Studio digital : sites vitrines, devis automatiques et prise de rendez-vous pour artisans et commerçants.","email":"societe.orbe@gmail.com","telephone":"+33672616609","areaServed":"Gironde","address":{"@type":"PostalAddress","addressLocality":"Bordeaux","addressCountry":"FR"}}
+</script>
+<style>
+:root{--encre:#11161f;--gris:#5b6472;--filet:#e6e8ec;--fond:#fafaf8;--blanc:#fff;--bleu:#3d6cff;--bleu2:#2a55e0;--doux:#eef2ff;
+--serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--encre);background:var(--fond);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+:focus-visible{outline:3px solid var(--bleu);outline-offset:3px}
+header{position:sticky;top:0;z-index:40;background:rgba(250,250,248,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--filet)}
+.barre{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:.55rem;font-weight:700;letter-spacing:.14em;text-decoration:none;font-size:1.05rem}
+.logo svg{width:30px;height:30px}
+nav{display:flex;gap:1.8rem;align-items:center}
+nav a{text-decoration:none;font-size:.94rem;font-weight:500;color:var(--gris)}
+nav a:hover{color:var(--encre)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.35rem;border-radius:12px;font-weight:600;text-decoration:none;font-size:.96rem;transition:background .2s,transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-bleu{background:var(--bleu);color:#fff!important}
+.btn-bleu:hover{background:var(--bleu2)}
+.btn-blanc{background:var(--blanc);border:1px solid var(--filet)}
+nav .btn{padding:.55rem 1rem}
+.hero{padding:clamp(4rem,10vw,7.5rem) 0 clamp(3rem,7vw,5rem)}
+.sur{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bleu)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,7vw,5.6rem);line-height:1;letter-spacing:-.01em;margin:1rem 0 1.4rem;max-width:14ch}
+h1 em{color:var(--bleu)}
+.hero p{font-size:1.15rem;color:var(--gris);max-width:54ch}
+.actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.preuves{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:2.6rem;color:var(--gris);font-size:.92rem}
+.preuves span::before{content:"✓";color:var(--bleu);font-weight:700;margin-right:.45rem}
+section{padding:clamp(4rem,9vw,7rem) 0;border-top:1px solid var(--filet)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.05;margin:.6rem 0 1rem}
+.intro{color:var(--gris);max-width:60ch}
+/* offre */
+.offre{display:grid;grid-template-columns:1.25fr 1fr;gap:1.5rem;margin-top:2.8rem;align-items:stretch}
+.carte{background:var(--blanc);border:1px solid var(--filet);border-radius:22px;padding:2.2rem}
+.principale{border:2px solid var(--encre);position:relative}
+.badge{position:absolute;top:-13px;left:2rem;background:var(--encre);color:#fff;font-size:.75rem;font-weight:600;padding:.3rem .8rem;border-radius:999px;letter-spacing:.04em}
+.carte h3{font-size:1.35rem;margin-bottom:.4rem}
+.prix{display:flex;align-items:baseline;gap:.6rem;margin:1.2rem 0 .3rem;flex-wrap:wrap}
+.prix b{font-family:var(--serif);font-weight:400;font-size:3.2rem;line-height:1}
+.prix span{color:var(--gris)}
+.puis{font-size:1.05rem;margin-bottom:1.4rem}
+.puis b{color:var(--bleu)}
+ul.liste{list-style:none;display:grid;gap:.65rem;margin:1.2rem 0 1.8rem}
+ul.liste li{padding-left:1.7rem;position:relative;color:#2b3340}
+ul.liste li::before{content:"";position:absolute;left:0;top:.5em;width:.95rem;height:.55rem;border-left:2px solid var(--bleu);border-bottom:2px solid var(--bleu);transform:rotate(-45deg)}
+.options{display:grid;gap:1rem}
+.opt{background:var(--blanc);border:1px solid var(--filet);border-radius:18px;padding:1.5rem 1.6rem}
+.opt h4{font-size:1.08rem;margin-bottom:.3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.opt h4 small{font-weight:500;color:var(--bleu);font-size:.85rem}
+.opt p{color:var(--gris);font-size:.95rem}
+/* réalisations */
+.reals{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.8rem}
+.real{background:var(--blanc);border:1px solid var(--filet);border-radius:22px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+a.real:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(17,22,31,.08)}
+.apercu{height:230px;display:flex;align-items:flex-end;padding:1.4rem;color:#fff;position:relative}
+.apercu.bois{background:linear-gradient(135deg,#2b1d14,#6b4a2f 60%,#d9a066)}
+.apercu.devis{background:linear-gradient(135deg,#11161f,#24345c 60%,#3d6cff)}
+.apercu b{font-family:var(--serif);font-weight:400;font-size:2.1rem;line-height:1}
+.apercu .lignes{position:absolute;right:1.4rem;top:1.4rem;display:grid;gap:7px;width:42%}
+.apercu .lignes i{display:block;height:9px;border-radius:5px;background:rgba(255,255,255,.28)}
+.apercu .lignes i:nth-child(2){width:80%}.apercu .lignes i:nth-child(3){width:60%}
+.real .txt{padding:1.5rem 1.6rem 1.8rem}
+.real .txt small{color:var(--bleu);font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.real h3{font-size:1.2rem;margin:.3rem 0 .4rem}
+.real p{color:var(--gris);font-size:.95rem}
+/* étapes */
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.6rem}
+.etape{padding-top:1.1rem;border-top:2px solid var(--encre)}
+.etape b{font-family:var(--serif);font-weight:400;font-size:2rem;color:var(--bleu)}
+.etape h3{font-size:1.08rem;margin:.2rem 0 .3rem}
+.etape p{color:var(--gris);font-size:.96rem}
+/* faq */
+details{border-bottom:1px solid var(--filet);padding:1.2rem 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"+";color:var(--bleu);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--gris);margin-top:.6rem;max-width:70ch}
+.faq{max-width:820px;margin-top:2rem}
+/* contact */
+.contact{background:var(--encre);color:#fff;border-top:0}
+.contact .intro{color:rgba(255,255,255,.72)}
+.contact .sur{color:#8fa8ff}
+.contact-grille{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.contact .btn-blanc{background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
+footer{background:var(--encre);color:rgba(255,255,255,.55);font-size:.86rem;padding:0 0 2.4rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.12);padding-top:1.6rem}
+.apparait{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.apparait.vu{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.apparait{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:860px){nav a:not(.btn){display:none}.offre,.reals,.etapes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap barre">
+  <a class="logo" href="#" aria-label="ORBE, accueil"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#11161f"/><circle cx="32" cy="32" r="15" fill="none" stroke="#fff" stroke-width="6"/><circle cx="43" cy="21" r="5" fill="#3d6cff"/></svg>ORBE</a>
+  <nav aria-label="Menu principal">
+   <a href="#offre">L'offre</a>
+   <a href="#realisations">Réalisations</a>
+   <a href="#questions">Questions</a>
+   <a class="btn btn-bleu" href="#contact">Nous écrire</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<div class="hero">
+ <div class="wrap">
+  <span class="sur">Studio digital · Bordeaux</span>
+  <h1>Votre site, fait pour vous, <em>géré pour vous.</em></h1>
+  <p>ORBE crée le site de votre entreprise, le met en ligne et s'en occupe ensuite. Vous continuez votre métier, vos clients vous trouvent et vous contactent.</p>
+  <div class="actions">
+   <a class="btn btn-bleu" href="#contact">Recevoir une maquette gratuite</a>
+   <a class="btn btn-blanc" href="#offre">Voir l'offre</a>
+  </div>
+  <div class="preuves"><span>Maquette offerte avant de décider</span><span>Sans engagement de durée</span><span>Un interlocuteur à Bordeaux</span></div>
+ </div>
+</div>
+
+<section id="offre">
+ <div class="wrap">
+  <span class="sur">L'offre</span>
+  <h2>Une seule formule. Deux options si vous en avez besoin.</h2>
+  <p class="intro">Pas de catalogue compliqué : un site vitrine complet, que nous gardons à jour pour vous chaque mois.</p>
+  <div class="offre">
+   <div class="carte principale apparait">
+    <span class="badge">Le site vitrine</span>
+    <h3>Votre site, en ligne et entretenu</h3>
+    <div class="prix"><b>250 €</b><span>de mise en place</span></div>
+    <p class="puis">puis <b>25 € par mois</b>, tout compris</p>
+    <ul class="liste">
+     <li>Un site sur mesure, à vos couleurs, avec vos photos</li>
+     <li>Lisible sur téléphone, rapide, bien présenté sur Google</li>
+     <li>Boutons Appeler, Écrire et Itinéraire, formulaire de contact</li>
+     <li>Hébergement, nom de domaine et sécurité inclus</li>
+     <li>Vos modifications de textes et de photos faites par nous</li>
+     <li>Arrêt possible quand vous voulez</li>
+    </ul>
+    <a class="btn btn-bleu" href="#contact">Demander ma maquette</a>
+   </div>
+   <div class="options">
+    <div class="opt apparait"><h4>Option devis automatiques <small>prix sur demande</small></h4><p>Vos clients font leur demande en ligne, vous recevez une demande complète. Et un devis resté sans réponse est relancé tout seul, poliment, au bon moment.</p></div>
+    <div class="opt apparait"><h4>Option prise de rendez-vous <small>prix sur demande</small></h4><p>Vos clients réservent un créneau sur votre site. Vous et eux recevez une confirmation et un rappel : moins d'oublis, moins d'appels.</p></div>
+    <div class="opt apparait"><h4>Comment on travaille</h4><p>Nous préparons d'abord une maquette de votre site, offerte. Si elle vous plaît, nous la finalisons avec vos textes et vos photos, puis nous la mettons en ligne.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="realisations">
+ <div class="wrap">
+  <span class="sur">Réalisations</span>
+  <h2>Ce que nous avons fait pour nos clients.</h2>
+  <p class="intro">Deux entreprises du bois en Gironde, deux besoins différents.</p>
+  <div class="reals">
+   <a class="real apparait" href="artbois-33/">
+    <div class="apercu bois"><b>Artbois</b><div class="lignes"><i></i><i></i><i></i></div></div>
+    <div class="txt"><small>Site vitrine · Bègles</small><h3>Poseur de terrasses, bardage et sols</h3><p>Un site pour les particuliers : les quatre métiers, les essences de bois, la méthode et une demande de devis en un geste depuis le téléphone.</p></div>
+   </a>
+   <div class="real apparait">
+    <div class="apercu devis"><b>Relance des devis</b><div class="lignes"><i></i><i></i><i></i></div></div>
+    <div class="txt"><small>Automatisation · Gironde</small><h3>Négociant en bois</h3><p>Chaque devis envoyé est suivi. Sans réponse après cinq jours ouvrés, une relance personnalisée part toute seule, une seule fois. Mise en place en cours.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="methode">
+ <div class="wrap">
+  <span class="sur">Comment ça se passe</span>
+  <h2>Trois étapes, et c'est en ligne.</h2>
+  <div class="etapes">
+   <div class="etape apparait"><b>01</b><h3>On vous prépare une maquette</h3><p>Offerte, à partir de ce que vous faites. Vous voyez votre site avant de dire oui.</p></div>
+   <div class="etape apparait"><b>02</b><h3>On la finalise avec vous</h3><p>Vos textes, vos photos, vos horaires. Vous validez chaque page.</p></div>
+   <div class="etape apparait"><b>03</b><h3>On met en ligne et on s'en occupe</h3><p>Votre nom de domaine, l'hébergement, les mises à jour : tout est géré.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="questions">
+ <div class="wrap">
+  <span class="sur">Questions</span>
+  <h2>Ce qu'on nous demande souvent.</h2>
+  <div class="faq">
+   <details><summary>Le site m'appartient-il ?</summary><p>Le nom de domaine est à votre nom. Si vous arrêtez l'abonnement, nous vous remettons les fichiers de votre site.</p></details>
+   <details><summary>Je n'ai pas de photos, est-ce un problème ?</summary><p>Non. Nous démarrons avec des photos d'illustration et les remplaçons par les vôtres dès que vous les avez, même prises au téléphone.</p></details>
+   <details><summary>Combien de temps pour être en ligne ?</summary><p>En général une à deux semaines après votre accord, selon le temps de réunir vos textes et vos photos.</p></details>
+   <details><summary>Que comprennent les 25 € par mois ?</summary><p>L'hébergement, le nom de domaine, la sécurité, les sauvegardes et vos petites modifications (textes, photos, horaires).</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <span class="sur">Contact</span>
+  <h2>Parlez-nous de votre entreprise.</h2>
+  <p class="intro">Dites-nous ce que vous faites et où vous êtes : nous vous préparons une maquette de votre site, offerte, sans engagement.</p>
+  <div class="contact-grille">
+   <a class="btn btn-bleu" href="mailto:societe.orbe@gmail.com?subject=Une%20maquette%20pour%20mon%20entreprise">societe.orbe@gmail.com</a>
+   <a class="btn btn-blanc" href="tel:+33672616609">06 72 61 66 09</a>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© ORBE, studio digital · Bordeaux</span><span>TVA non applicable, art. 293 B du CGI</span></div></footer>
+<script>
+(function(){if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.apparait').forEach(function(el){io.observe(el)})}else document.querySelectorAll('.apparait').forEach(function(el){el.classList.add('vu')})})();
+</script>
+</body>
+</html>
