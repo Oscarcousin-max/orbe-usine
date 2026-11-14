@@ -108,6 +108,11 @@ select option{color:#000}
 textarea{min-height:110px;resize:vertical}
 .ligne{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .note{font-size:.82rem;opacity:.7}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:1rem}
+legend{font-family:var(--serif);font-size:1.2rem;color:var(--miel);margin-bottom:.6rem}
+.accord{display:flex;gap:.7rem;align-items:flex-start;font-weight:400;font-size:.88rem;line-height:1.45}
+.accord input{width:auto;margin-top:.2rem;accent-color:var(--miel)}
+.accord a{color:var(--miel)}
 footer{background:#1c130d;color:rgba(246,239,230,.7);padding:2.5rem 0;font-size:.88rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 .apparait{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
@@ -264,19 +269,56 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
    </ul>
   </div>
   <form id="form-devis" novalidate>
+   <fieldset><legend>Vous</legend>
    <div class="ligne">
-    <label>Votre nom<input name="nom" autocomplete="name" required></label>
-    <label>Votre téléphone<input name="tel" type="tel" autocomplete="tel" required></label>
+    <label>Nom et prénom *<input name="nom" autocomplete="name" required></label>
+    <label>Téléphone *<input name="tel" type="tel" autocomplete="tel" required></label>
    </div>
    <div class="ligne">
-    <label>Votre projet
-     <select name="projet"><option>Terrasse bois</option><option>Bardage</option><option>Parquet, stratifié ou vinyle</option><option>Revêtement mural</option><option>Autre</option></select>
+    <label>E-mail<input name="email" type="email" autocomplete="email"></label>
+    <label>Être recontacté par
+     <select name="contact"><option>Téléphone</option><option>E-mail</option><option>SMS</option></select>
     </label>
-    <label>Ville du chantier<input name="ville" autocomplete="address-level2"></label>
    </div>
-   <label>Quelques mots sur le projet<textarea name="message" placeholder="Surface approximative, bois souhaité, délai…"></textarea></label>
+   <label>Le meilleur moment pour vous joindre
+    <select name="moment"><option>Peu importe</option><option>Le matin</option><option>Le midi</option><option>L'après-midi</option><option>En fin de journée</option></select>
+   </label>
+   </fieldset>
+   <fieldset><legend>Le chantier</legend>
+   <div class="ligne">
+    <label>Type de projet *
+     <select name="projet" required><option value="">Choisir…</option><option>Terrasse bois</option><option>Terrasse bord de piscine</option><option>Bardage</option><option>Parquet (pose)</option><option>Parquet (rénovation, ponçage, vitrification)</option><option>Stratifié ou vinyle</option><option>Revêtement mural</option><option>Autre</option></select>
+    </label>
+    <label>Neuf ou rénovation
+     <select name="nature"><option>Je ne sais pas</option><option>Pose neuve</option><option>Remplacement d'un ancien revêtement</option><option>Rénovation de l'existant</option></select>
+    </label>
+   </div>
+   <div class="ligne">
+    <label>Ville du chantier *<input name="ville" autocomplete="address-level2" required></label>
+    <label>Code postal<input name="cp" inputmode="numeric" autocomplete="postal-code" maxlength="5"></label>
+   </div>
+   <div class="ligne">
+    <label>Surface approximative (m²)<input name="surface" type="number" min="1" inputmode="numeric" placeholder="Ex. 40"></label>
+    <label>Bois souhaité
+     <select name="bois"><option>À conseiller</option><option>Ipé</option><option>Cumaru</option><option>Padouk</option><option>Itaúba</option><option>Muiracatiara</option><option>Pin classe IV</option><option>Douglas</option><option>Chêne</option><option>Autre</option></select>
+    </label>
+   </div>
+   <div class="ligne">
+    <label>Quand souhaitez-vous les travaux ?
+     <select name="delai"><option>Pas encore décidé</option><option>Le plus tôt possible</option><option>D'ici 1 à 3 mois</option><option>D'ici 3 à 6 mois</option><option>Dans plus de 6 mois</option></select>
+    </label>
+    <label>Budget envisagé
+     <select name="budget"><option>Je ne sais pas encore</option><option>Moins de 3 000 €</option><option>3 000 à 8 000 €</option><option>8 000 à 15 000 €</option><option>Plus de 15 000 €</option></select>
+    </label>
+   </div>
+   <label>Votre projet en quelques mots<textarea name="message" placeholder="Accès au chantier, dimensions, bois existant à retirer, piscine, étage…"></textarea></label>
+   <label>Comment nous avez-vous connus ?
+    <select name="source"><option>Non précisé</option><option>Bouche-à-oreille</option><option>Instagram</option><option>Recherche Google</option><option>Un ancien client</option><option>Autre</option></select>
+   </label>
+   </fieldset>
+   <label class="accord"><input type="checkbox" name="accord" required> J'accepte qu'Artbois utilise ces informations pour me recontacter au sujet de ma demande. <a href="confidentialite/">Politique de confidentialité</a> *</label>
    <div class="actions" style="margin-top:.4rem"><button class="btn btn-miel" type="submit" data-via="mail">Envoyer par e-mail</button><button class="btn btn-ligne" type="submit" data-via="sms">Envoyer par SMS</button></div>
-   <p class="note">Le bouton prépare votre message (e-mail ou SMS) avec votre demande : il ne reste qu'à l'envoyer.</p>
+   <p class="note">* champs obligatoires. Le bouton prépare votre message (e-mail ou SMS) avec votre demande : il ne reste qu'à l'envoyer. Par e-mail, vous pouvez joindre des photos du lieu.</p>
   </form>
  </div>
 </section>
@@ -285,7 +327,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 <footer>
  <div class="wrap">
   <span>© ARTBOIS SAS · SIREN 839 489 341 · 06 29 85 75 97 · sas.arbois@gmail.com</span>
-  <span>Site réalisé par ORBE, studio digital</span>
+  <span><a href="confidentialite/">Politique de confidentialité</a> · Site réalisé par ORBE, studio digital</span>
  </div>
 </footer>
 
@@ -302,12 +344,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
   document.querySelectorAll('.apparait').forEach(function(el){io.observe(el)});
  } else document.querySelectorAll('.apparait').forEach(function(el){el.classList.add('vu')});
  document.getElementById('form-devis').addEventListener('submit',function(e){
-  e.preventDefault();var d=new FormData(this);
-  if(!d.get('nom')||!d.get('tel')){this.querySelector('.note').textContent='Indiquez au moins votre nom et votre téléphone.';return}
-  var corps='Nom : '+d.get('nom')+'\nTél : '+d.get('tel')+'\nProjet : '+d.get('projet')+'\nVille : '+(d.get('ville')||'')+'\n'+(d.get('message')||'');
+  e.preventDefault();var d=new FormData(this),n=this.querySelector('.note');
+  if(!d.get('nom')||!d.get('tel')||!d.get('projet')||!d.get('ville')){n.textContent='Merci de remplir les champs marqués d\u2019une étoile : nom, téléphone, type de projet et ville.';return}
+  if(!d.get('accord')){n.textContent='Merci de cocher la case d\u2019accord pour que nous puissions vous recontacter.';return}
+  var L=[['Nom',d.get('nom')],['Téléphone',d.get('tel')],['E-mail',d.get('email')],['À recontacter par',d.get('contact')],['Moment',d.get('moment')],
+         ['Projet',d.get('projet')],['Neuf ou rénovation',d.get('nature')],['Ville',(d.get('ville')||'')+' '+(d.get('cp')||'')],['Surface',d.get('surface')?d.get('surface')+' m²':''],
+         ['Bois souhaité',d.get('bois')],['Délai',d.get('delai')],['Budget',d.get('budget')],['Connu par',d.get('source')]];
+  var corps=L.filter(function(x){return x[1]&&String(x[1]).trim()}).map(function(x){return x[0]+' : '+x[1]}).join('\n')+(d.get('message')?'\n\n'+d.get('message'):'');
   var via=(e.submitter&&e.submitter.dataset.via)||'mail';
   if(via==='sms') window.location.href='sms:+33629857597?&body='+encodeURIComponent('Demande de devis Artbois\n'+corps);
-  else window.location.href='mailto:sas.arbois@gmail.com?subject='+encodeURIComponent('Demande de devis : '+d.get('projet'))+'&body='+encodeURIComponent(corps);
+  else window.location.href='mailto:sas.arbois@gmail.com?subject='+encodeURIComponent('Demande de devis : '+d.get('projet')+' à '+d.get('ville'))+'&body='+encodeURIComponent(corps);
  });
 })();
 </script>
