@@ -1,134 +1,237 @@
-11:25:51 Demande : 20 site(s)
-11:25:51 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-11:25:51 Rythme : 0 déjà faits aujourd'hui, 15 au plus par jour → 15 pour ce passage
-11:25:51 Zones : Gironde, Landes, Lot-et-Garonne, Charente
-11:25:52     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-11:27:55     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
-11:31:46 Carte : décorateurs, antiquaires, galeries — 56 trouvés, 19 sans site noté et joignables
-11:31:47     modèles groq : meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-v1-english, whisper-large-v3-turbo, whisper-large-v3, canopylabs/orpheus-arabic-saudi, meta-llama/llama-prompt-guard-2-86m, qwen/qwen3.8-27b, openai/gpt-oss-safeguard-20b, allam-2-7b, openai/gpt-oss-20b, openai/gpt-oss-120b
-11:31:55   6 retenus comme haut de gamme
-11:32:50     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-11:37:18     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-11:39:24     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-11:39:33     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
-11:39:42     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-11:39:42   bijoutiers, joailliers, horlogers / Charente : carte illisible (HTTP Error 502: Bad Gateway)
-11:39:42 Carte : bijoutiers, joailliers, horlogers — 31 trouvés, 0 sans site noté et joignables
-11:40:48 Carte : traiteurs et photographes — 23 trouvés, 0 sans site noté et joignables
-11:42:21 Carte : boutiques de mode et maroquinerie — 215 trouvés, 158 sans site noté et joignables
-11:42:31   30 retenus comme haut de gamme
-11:42:41   37 retenus comme haut de gamme
-11:42:50   25 retenus comme haut de gamme
-11:43:49 Carte : boucheries, poissonneries, produits du terroir — 342 trouvés, 252 sans site noté et joignables
-11:44:00   41 retenus comme haut de gamme
-11:44:12   37 retenus comme haut de gamme
-11:44:21   25 retenus comme haut de gamme
-11:44:32   33 retenus comme haut de gamme
-11:48:19 Carte : services à domicile sur devis — 24 trouvés, 6 sans site noté et joignables
-11:48:25   1 retenus comme haut de gamme
-11:48:25 235 candidats
-11:48:25 Commerce : Les Accords Ephémères Décoration (Bayonne)
-11:48:26       DuckDuckGo : bloqué (202)
-11:48:30       Mojeek : HTTP Error 403: Forbidden
-11:48:31   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-11:48:31     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts
-11:48:42     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-11:49:08     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-11:49:41   photos : 4 (Unsplash, Wikimedia Commons)
-11:49:49   prêt : https://oscarcousin-max.github.io/orbe-usine/les-accords-ephemeres-decoration/
-11:49:49 Commerce : Nat's Dressing (?)
-11:49:49       DuckDuckGo : bloqué (202)
-11:49:53       Mojeek : HTTP Error 403: Forbidden
-11:49:54   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-11:50:00     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-11:55:00     gemini/gemini-3.7-flash : The read operation timed out
-11:55:25   photos : 4 (Unsplash)
-11:55:33   prêt : https://oscarcousin-max.github.io/orbe-usine/nat-s-dressing/
-11:55:33 Commerce : La Ferme du Tilhet (Habas)
-11:55:33       DuckDuckGo : bloqué (202)
-11:55:37       Mojeek : HTTP Error 403: Forbidden
-11:55:39   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-11:56:49     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-11:57:05     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-11:57:32   photos : 4 (Unsplash)
-11:57:40   prêt : https://oscarcousin-max.github.io/orbe-usine/la-ferme-du-tilhet/
-11:57:40 Commerce : Allo Nettoyage JC Service (Saint-Paul-lès-Dax)
-11:57:42   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-11:57:42     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-11:57:44     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-11:58:15   photos : 4 (Unsplash)
-11:58:22   prêt : https://oscarcousin-max.github.io/orbe-usine/allo-nettoyage-jc-service/
-11:58:22 Commerce : Korner (Saint-Pierre-d'Irube)
-11:58:23   écarté : Site trouvé : https://korner.fr/
-11:58:23 Commerce : Olatua (?)
-11:58:30   écarté : Site trouvé : https://olatua.com/
-11:58:30 Commerce : Le miel de Michèle Sangla (Bégaar)
-11:58:32   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-11:58:33     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-12:00:19     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-12:00:40   photos : 4 (Unsplash)
-12:00:48   prêt : https://oscarcousin-max.github.io/orbe-usine/le-miel-de-michele-sangla/
-12:00:48 Commerce : Story (?)
-12:00:50   écarté : Site trouvé : https://www.story.fr/
-12:00:50 Commerce : Beausoleil (Anglet)
-12:00:54   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-12:01:09     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-12:06:09     gemini/gemini-3.7-flash : The read operation timed out
-12:06:30   photos : 4 (Unsplash)
-12:06:38   prêt : https://oscarcousin-max.github.io/orbe-usine/beausoleil/
-12:06:38 Commerce : Pom d'Amou (Amou)
-12:06:40   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-12:11:40     gemini/gemini-3.8-flash : The read operation timed out
-12:11:45     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-12:12:03   photos : 4 (Unsplash)
-12:12:10   prêt : https://oscarcousin-max.github.io/orbe-usine/pom-d-amou/
-12:12:10 Commerce : Sud Mobilier Chr (?)
-12:12:13   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-12:17:13     gemini/gemini-3.8-flash : The read operation timed out
-12:22:13     gemini/gemini-3.7-flash : The read operation timed out
-12:23:08   photos : 4 (Unsplash, Wikimedia Commons)
-12:23:16   prêt : https://oscarcousin-max.github.io/orbe-usine/sud-mobilier-chr/
-12:23:16 Commerce : Soie et coton (?)
-12:23:20   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-12:26:50   photos : 4 (Unsplash)
-12:26:57   prêt : https://oscarcousin-max.github.io/orbe-usine/soie-et-coton/
-12:26:57 Commerce : Le Jardin Bio (?)
-12:26:59   écarté : Site trouvé : https://www.leanature.com/fr_fr/nos-marques/jardin-bio-etic.html
-12:26:59 Commerce : H&H (Saint-Pierre-du-Mont)
-12:27:00   vérifié : Vérifié sur Bing : aucun site à son nom (seulement netflix, wikipedia). — fabrication du site…
-12:27:00     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-12:27:00     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-12:27:18   photos : 4 (Unsplash, Wikimedia Commons)
-12:27:26   prêt : https://oscarcousin-max.github.io/orbe-usine/h-h/
-12:27:26 Commerce : Le dressing de Lina (?)
-12:27:28   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-12:27:29     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-12:27:52   photos : 4 (Unsplash)
-12:27:59   prêt : https://oscarcousin-max.github.io/orbe-usine/le-dressing-de-lina/
-12:27:59 Commerce : Les Jardins De Méderic (?)
-12:28:01   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-12:28:01     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-12:28:20   photos : 4 (Unsplash)
-12:28:27   prêt : https://oscarcousin-max.github.io/orbe-usine/les-jardins-de-mederic/
-12:28:27 Commerce : Léo (?)
-12:28:29   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-12:28:29     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-12:29:07   photos : 4 (Unsplash, Wikimedia Commons)
-12:29:14   prêt : https://oscarcousin-max.github.io/orbe-usine/leo/
-12:29:14 Commerce : Mel (?)
-12:29:16   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-12:29:16     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-12:29:35   photos : 4 (Unsplash)
-12:29:42   prêt : https://oscarcousin-max.github.io/orbe-usine/mel/
-12:29:42 Commerce : La Belle du Marsan (Bougue)
-12:29:43   écarté : Site trouvé : https://labelledumarsan.fr/
-12:29:43 Commerce : La Maison Bohème (Saint-Vincent-de-Tyrosse)
-12:29:47   écarté : Site trouvé : https://www.boheme.fr/fr/
-12:29:47 Commerce : Serge Bousquié Apiculteur récoltant (Mont-de-Marsan)
-12:29:49   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-12:34:49     gemini/gemini-3.8-flash : The read operation timed out
-12:35:16   photos : 4 (Unsplash)
-12:35:23   prêt : https://oscarcousin-max.github.io/orbe-usine/serge-bousquie-apiculteur-recoltant/
-12:35:23 Moteurs de recherche : DuckDuckGo 0 ok / 3 bloqué, Bing 15 ok / 0 bloqué, Mojeek 0 ok / 3 bloqué
-12:35:23 Écartés car déjà un site : 6 · fermés : 0 · non vérifiables : 0
-12:35:23 Terminé : 15 site(s) prêt(s).
+12:35:33 Demande : 20 site(s)
+12:35:33 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+12:35:33     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts
+12:36:37     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+12:36:37     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:37:06   photos : 4 (Unsplash)
+12:37:06   refait : Francis TEYSSIER (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
+12:37:06     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:37:33   photos : 4 (Unsplash)
+12:37:33   refait : Etcheverria (modèle v2-atelier/vert_rose/plein · gemini-3.6-flash)
+12:37:33     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:37:33     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:37:33     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+12:37:33     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:37:34     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:37:34     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:37:34     modèles groq : whisper-large-v3-turbo, openai/gpt-oss-safeguard-20b, meta-llama/llama-prompt-guard-2-86m, canopylabs/orpheus-v1-english, openai/gpt-oss-120b, openai/gpt-oss-20b, canopylabs/orpheus-arabic-saudi, whisper-large-v3, meta-llama/llama-prompt-guard-2-22m, allam-2-7b, qwen/qwen3.8-27b
+12:37:41     groq/openai/gpt-oss-120b : réponse vide
+12:37:56   photos : 4 (Unsplash)
+12:37:56   refait : Mia Storia (modèle v2-table/olive/plein · qwen/qwen3.8-27b)
+12:38:21   photos : 4 (Unsplash, Wikimedia Commons)
+12:38:21   refait : JH Repairs (modèle v2-atelier/vert_rose/plein · gemini-3.6-flash)
+12:38:42   photos : 4 (Unsplash)
+12:38:42   refait : SARL Métallerie des Luys (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
+12:38:42     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+12:38:51   photos : 4 (Unsplash, Wikimedia Commons)
+12:38:51   refait : La Canotte (modèle v2-table/cacao/cadre · openai/gpt-oss-120b)
+12:39:03   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
+12:39:09   photos : 4 (Unsplash)
+12:39:09   refait : Lux Auto (modèle v2-atelier/terracotta/split · openai/gpt-oss-120b)
+12:39:19   photos : 4 (Unsplash)
+12:39:19   refait : Légende Informatique (modèle v2-atelier/vert_rose/plein · openai/gpt-oss-120b)
+12:39:29   photos : 4 (Unsplash)
+12:39:29   refait : Ibaïa Café (modèle v2-table/brasserie/plein · openai/gpt-oss-120b)
+12:39:38   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2, e3_t
+12:39:38   photos : 4 (Unsplash, Wikimedia Commons)
+12:39:38   refait : Ets Lestrade - GITEM (modèle v2-atelier/vert_rose/plein · openai/gpt-oss-120b)
+12:39:48   photos : 4 (Unsplash)
+12:39:48   refait : Garage BERNARDIN Patrick (modèle v2-atelier/terracotta/split · openai/gpt-oss-120b)
+12:39:48     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:39:55   photos : 4 (Unsplash, Wikimedia Commons)
+12:39:55   refait : ACTECH Informatique (modèle v2-atelier/terracotta/split · qwen/qwen3.8-27b)
+12:39:55     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:40:03   photos : 4 (Unsplash)
+12:40:03   refait : Le Gigourit (modèle v2-table/olive/plein · qwen/qwen3.8-27b)
+12:40:14   photos : 4 (Unsplash)
+12:40:14   refait : Garage Bineau Ralph (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+12:40:14     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:40:22   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d, citation
+12:40:22   photos : 4 (Unsplash, Wikimedia Commons)
+12:40:22   refait : Le Relais de la Chalosse (modèle v2-table/olive/plein · qwen/qwen3.8-27b)
+12:40:35   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_d
+12:40:40   photos : 4 (Unsplash)
+12:40:40   refait : La Terre est Belle (modèle v2-table/brasserie/plein · openai/gpt-oss-120b)
+12:40:40     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:40:50   photos : 4 (Unsplash)
+12:40:50   refait : Carrosserie Nicollas (modèle v2-atelier/terracotta/split · qwen/qwen3.8-27b)
+12:41:07   photos : 4 (Unsplash)
+12:41:07   refait : Bohémian Bazar (modèle v2-bijou/rose_ivoire/cadre · openai/gpt-oss-120b)
+12:41:07     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:41:14   photos : 4 (Unsplash)
+12:41:14   refait : Boucherie, Charcuterie : La tête de l'art (modèle v2-table/olive/plein · qwen/qwen3.8-27b)
+12:41:14     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:41:14     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+12:41:17     groq/openai/gpt-oss-20b : réponse vide
+12:41:17     modèles or : inclusionai/ling-3.2-flash:free, baidu/ernie-5.5-flash-preview:free, thinkingmachines/inkling-2-small:free, liquid/lfm-3-1.7b:free, particle-ai/particle-1:free, recursive/flint-v1.0:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, nvidia/nemotron-3.5-lightning:free, cohere/north-mini-code:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
+12:48:56   photos : 4 (Unsplash)
+12:48:56   refait : Garage Lerouge (modèle v2-atelier/vert_rose/plein · inclusionai/ling-3.2-flash:free)
+12:49:16   photos : 4 (Unsplash)
+12:49:16   refait : La P'tite Boutique (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+12:49:23     groq/openai/gpt-oss-120b : réponse vide
+12:49:30   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_t
+12:49:30   photos : 4 (Unsplash)
+12:49:30   refait : Les Maraichers du Chêne Vert (modèle v2-table/olive/plein · qwen/qwen3.8-27b)
+12:49:40   photos : 4 (Unsplash)
+12:49:40   refait : Garage Yannick Marsaloux (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+12:49:49   photos : 4 (Unsplash)
+12:49:49   refait : Stylman (modèle v2-bijou/nuit_argent/split · openai/gpt-oss-120b)
+12:49:55     groq/openai/gpt-oss-120b : réponse vide
+12:50:02   photos : 4 (Unsplash)
+12:50:02   refait : Aunis Débosselage (modèle v2-atelier/terracotta/split · qwen/qwen3.8-27b)
+12:50:02     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:50:10   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_d
+12:50:10   photos : 4 (Unsplash)
+12:50:10   refait : Déco Ré (modèle v2-atelier/encre/cadre · qwen/qwen3.8-27b)
+12:50:10     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:50:10     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+12:50:13     groq/openai/gpt-oss-20b : réponse vide
+12:52:54   photos : 4 (Unsplash)
+12:52:54   refait : Chez Mumu IØ (modèle v2-table/cacao/cadre · inclusionai/ling-3.2-flash:free)
+12:53:04   photos : 4 (Unsplash)
+12:53:04   refait : Miga Automobile (modèle v2-atelier/vert_rose/plein · openai/gpt-oss-120b)
+12:53:14   photos : 4 (Unsplash)
+12:53:14   refait : Locyca's (modèle v2-bijou/nuit_argent/split · openai/gpt-oss-120b)
+12:53:24   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
+12:53:24   photos : 4 (Unsplash)
+12:53:24   refait : Maison Réglin Corain (modèle v2-table/brasserie/plein · openai/gpt-oss-120b)
+12:53:47   photos : 4 (Unsplash, Wikimedia Commons)
+12:53:47   refait : Cabane Papyjotte (modèle v2-table/olive/plein · openai/gpt-oss-120b)
+12:54:02   photos : 4 (Unsplash)
+12:54:02   refait : Pétales de fleurs (modèle v2-fleur/vif/split · openai/gpt-oss-120b)
+12:54:28   photos : 4 (Unsplash, Wikimedia Commons)
+12:54:28   refait : Ferme de Coustète (modèle v2-table/cacao/cadre · openai/gpt-oss-120b)
+12:54:39   photos : 4 (Unsplash, Wikimedia Commons)
+12:54:39   refait : Albatros Résidence (modèle v2-table/olive/plein · openai/gpt-oss-120b)
+12:54:39     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:54:46   photos : 4 (Unsplash, Wikimedia Commons)
+12:54:46   refait : Maryse Hirigoyen (modèle v2-table/cacao/cadre · qwen/qwen3.8-27b)
+12:54:46     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:54:53   photos : 4 (Unsplash, Wikimedia Commons)
+12:54:53   refait : Brocante des Halles (modèle v2-atelier/encre/cadre · qwen/qwen3.8-27b)
+12:55:15   photos : 4 (Unsplash, Wikimedia Commons)
+12:55:15   refait : Vivien Jardins et Services (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+12:55:26   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_d
+12:55:26   photos : 4 (Unsplash, Wikimedia Commons)
+12:55:26   refait : Location - Hauquin Vincent et Jade (modèle v2-table/cacao/cadre · openai/gpt-oss-120b)
+12:55:26     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:55:33   photos : 4 (Unsplash, Wikimedia Commons)
+12:55:33   refait : La Petite Astuce (modèle v2-atelier/encre/cadre · qwen/qwen3.8-27b)
+12:55:43   photos : 4 (Unsplash, Wikimedia Commons)
+12:55:43   refait : Location - Alonso Manuel (modèle v2-table/olive/plein · openai/gpt-oss-120b)
+12:55:43     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:55:43     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
+12:55:45     groq/openai/gpt-oss-20b : réponse vide
+12:56:58   photos : 4 (Unsplash, Wikimedia Commons)
+12:56:58   refait : La Beurrée (modèle v2-table/brasserie/plein · inclusionai/ling-3.2-flash:free)
+12:57:10   photos : 4 (Unsplash, Wikimedia Commons)
+12:57:10   refait : Location - Lalanne Eliane (modèle v2-table/cacao/cadre · openai/gpt-oss-120b)
+12:57:20   photos : 4 (Unsplash, Wikimedia Commons)
+12:57:20   refait : A Brandelys n°2 (modèle v2-table/cacao/cadre · openai/gpt-oss-120b)
+12:57:31   photos : 4 (Unsplash, Wikimedia Commons)
+12:57:31   refait : Maine Belon (modèle v2-table/olive/plein · openai/gpt-oss-120b)
+12:57:41   photos : 4 (Unsplash, Wikimedia Commons)
+12:57:41   refait : Les loges du canal du midi (modèle v2-table/olive/plein · openai/gpt-oss-120b)
+12:57:41     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:57:57   photos : 4 (Unsplash, Wikimedia Commons)
+12:57:57   refait : Eliane Monnin Sculpteur céramiste (modèle v2-atelier/vert_rose/plein · qwen/qwen3.8-27b)
+12:58:07   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_d
+12:58:07   photos : 4 (Unsplash)
+12:58:07   refait : Carroserie NH Auto (modèle v2-atelier/terracotta/split · openai/gpt-oss-120b)
+12:58:18   photos : 4 (Unsplash, Wikimedia Commons)
+12:58:18   refait : Le Claveau (modèle v2-table/brasserie/plein · openai/gpt-oss-120b)
+12:58:29   photos : 4 (Unsplash, Wikimedia Commons)
+12:58:29   refait : Gasnategia (modèle v2-table/olive/plein · openai/gpt-oss-120b)
+12:58:29     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:58:36   photos : 4 (Unsplash)
+12:58:36   refait : Carrosserie Belhartz (modèle v2-atelier/vert_rose/plein · qwen/qwen3.8-27b)
+12:58:46   photos : 4 (Unsplash)
+12:58:46   refait : La pile d'assiettes (modèle v2-table/brasserie/plein · openai/gpt-oss-120b)
+12:58:46     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:58:53   photos : 4 (Unsplash, Wikimedia Commons)
+12:58:53   refait : Chez Brigitte Millet (modèle v2-table/cacao/cadre · qwen/qwen3.8-27b)
+12:59:04   photos : 4 (Unsplash, Wikimedia Commons)
+12:59:04   refait : Tapissier-décorateur Franck Broto (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+12:59:04     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:59:11   photos : 4 (Unsplash)
+12:59:11   refait : L'Aygo (modèle v2-table/cacao/cadre · qwen/qwen3.8-27b)
+12:59:11     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:59:18   photos : 4 (Unsplash, Wikimedia Commons)
+12:59:18   refait : Chez Bettina (modèle v2-table/brasserie/plein · qwen/qwen3.8-27b)
+12:59:18     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:59:18     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+12:59:26   textes de l'IA indisponibles (pas de JSON) : textes de secours
+12:59:26   photos : 4 (Unsplash, Wikimedia Commons)
+12:59:26   refait : Ferme Ithurrieta (modèle v2-table/cacao/cadre · openai/gpt-oss-20b)
+12:59:39   textes de l'IA indisponibles (pas de JSON) : textes de secours
+12:59:39   photos : 4 (Unsplash, Wikimedia Commons)
+12:59:39   refait : Albert Trounday (modèle v2-atelier/terracotta/split · openai/gpt-oss-120b)
+12:59:39     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:59:46   photos : 4 (Unsplash)
+12:59:46   refait : Garage AD Lacassagne (modèle v2-atelier/encre/cadre · qwen/qwen3.8-27b)
+12:59:46     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+12:59:46     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Rate limit reached for model `qwen/qwen3.8-27b` in organization `
+12:59:49     groq/openai/gpt-oss-20b : réponse vide
+13:00:49   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
+13:00:49   photos : 4 (Unsplash, Wikimedia Commons)
+13:00:49   refait : Artemisia (modèle v2-table/cacao/cadre · inclusionai/ling-3.2-flash:free)
+13:01:01   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1, e3_d
+13:01:01   photos : 4 (Unsplash, Wikimedia Commons)
+13:01:01   refait : OUSTAU'BIO (modèle v2-table/brasserie/plein · openai/gpt-oss-120b)
+13:01:01 60 site(s) récent(s) refait(s) avec les nouveaux modèles
+13:01:01 Rythme : 0 déjà faits aujourd'hui, 5 au plus par jour → 5 pour ce passage
+13:01:01 Zones : Gironde
+13:01:02     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+13:02:45 Carte : peintres, plaquistes, carreleurs et menuisiers alu — 10 trouvés, 2 sans site noté et joignables
+13:02:46     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+13:07:14     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+13:11:42     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+13:11:52     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+13:12:58 Carte : paysagistes et créateurs de jardins — 0 trouvés, 0 sans site noté et joignables
+13:13:28 Carte : ébénistes et artisans du bois — 7 trouvés, 1 sans site noté et joignables
+13:13:29     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+13:15:25     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+13:19:54     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+13:20:03     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+13:21:34 Carte : réparateurs de téléphone et informatique — 14 trouvés, 10 sans site noté et joignables
+13:21:41   3 retenus comme haut de gamme
+13:21:42     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+13:23:34     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+13:28:03     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+13:28:12     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+13:29:13 Carte : poseurs de sols, parqueteurs et menuisiers — 13 trouvés, 3 sans site noté et joignables
+13:30:12 Carte : garages et carrosseries indépendants — 47 trouvés, 35 sans site noté et joignables
+13:30:21   20 retenus comme haut de gamme
+13:30:21 29 candidats
+13:30:21 Commerce : Mistermenuiserie Mérignac (33) (?)
+13:30:21       DuckDuckGo : bloqué (202)
+13:30:25       Mojeek : HTTP Error 403: Forbidden
+13:30:26   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+13:30:44   photos : 4 (Unsplash)
+13:30:51   prêt : https://oscarcousin-max.github.io/orbe-usine/mistermenuiserie-merignac-33/
+13:30:51 Commerce : Carboland (?)
+13:30:53       DuckDuckGo : bloqué (202)
+13:30:57       Mojeek : HTTP Error 403: Forbidden
+13:30:58   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+13:31:12   photos : 4 (Unsplash, Wikimedia Commons)
+13:31:20   prêt : https://oscarcousin-max.github.io/orbe-usine/carboland/
+13:31:20 Commerce : ABI@INFO (?)
+13:31:22   écarté : Site trouvé : https://www.abi-info.fr/
+13:31:22 Commerce : CM Menuiserie (?)
+13:31:50       DuckDuckGo : bloqué (202)
+13:31:54       Mojeek : HTTP Error 403: Forbidden
+13:31:55   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+13:32:07   photos : 4 (Unsplash)
+13:32:14   prêt : https://oscarcousin-max.github.io/orbe-usine/cm-menuiserie/
+13:32:14 Commerce : Villenave Pneus Services (Villenave-d'Ornon)
+13:32:16   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+13:32:28   photos : 4 (Unsplash)
+13:32:35   prêt : https://oscarcousin-max.github.io/orbe-usine/villenave-pneus-services/
+13:32:35 Commerce : Sld bat (?)
+13:32:37   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+13:32:46   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
+13:32:46   photos : 4 (Unsplash)
+13:32:54   prêt : https://oscarcousin-max.github.io/orbe-usine/sld-bat/
+13:32:54 Moteurs de recherche : DuckDuckGo 0 ok / 3 bloqué, Bing 5 ok / 0 bloqué, Mojeek 0 ok / 3 bloqué
+13:32:54 Écartés car déjà un site : 1 · fermés : 0 · non vérifiables : 0
+13:32:54 Terminé : 5 site(s) prêt(s).
