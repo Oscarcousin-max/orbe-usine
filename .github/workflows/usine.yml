@@ -2,8 +2,7 @@ name: Usine à sites ORBE
 
 on:
   schedule:
-    - cron: "17 22,0,2,4 * * *"   # toute la nuit : vers 0 h 15, 2 h 15, 4 h 15 et 6 h 15 (heure de Paris), prêt avant le robot du matin
-    - cron: "43 9 * * *"    # et un second passage vers 11 h 45 : d'autres secteurs, d'autres départements
+    - cron: "17 22,2 * * *"   # 14 nov. 2026 : deux passages la nuit (vers 0 h 15 et 4 h 15, heure de Paris), 5 sites par jour au plus
   push:
     branches: [main]
     paths:

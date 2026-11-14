@@ -317,7 +317,7 @@ def chercher_france_travail_site(debut, fin):
                 cartes.append(c)
         time.sleep(1.5)
     # 2. Les pages « métier + département », chaque jour à partir d'un département différent
-    if pleins and pages < FT_PAGES_MAXI and erreurs < 4:
+    if (pleins or ZONE_DEPTS) and pages < FT_PAGES_MAXI and erreurs < 4:
         try:
             plan = _ft_lire(FT_PLAN_DEPTS)
             urls = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", plan)
@@ -325,9 +325,16 @@ def chercher_france_travail_site(debut, fin):
             urls = []
             journal("  France Travail (site) : plan des départements illisible (%s)" % court_erreur(e))
         file = []
-        for chemin, service in pleins:
+        for chemin, service in (FT_METIERS if ZONE_DEPTS else pleins):
             slug, code = chemin.split("/")
             liste = [u for u in urls if "/offres/emploi/%s/" % slug in u and re.search(r"/%sd[0-9ab]+$" % code, u, re.I)]
+            if ZONE_DEPTS:  # 14 nov. 2026 : seulement nos départements, la Gironde en premier
+                rang = {d: i for i, d in enumerate(ZONE_DEPTS)}
+                liste = [u for u in liste if re.search(r"d([0-9ab]+)$", u, re.I).group(1).lower() in rang]
+                liste.sort(key=lambda u: rang[re.search(r"d([0-9ab]+)$", u, re.I).group(1).lower()])
+                if liste:
+                    file.append([(u, service) for u in liste])
+                continue
             if liste:
                 k = maintenant.timetuple().tm_yday % len(liste)
                 file.append([(u, service) for u in liste[k:] + liste[:k]])
@@ -656,6 +663,8 @@ def _nom_gerant(e):
     return ""
 
 
+# 14 nov. 2026 : on ne garde que les entreprises proches (Nouvelle-Aquitaine, Gironde d'abord).
+ZONE_DEPTS = [d.strip() for d in os.environ.get("CHASSEUR_DEPTS", "33,24,40,47,17,16,64,86,79,87,19,23").split(",") if d.strip()]
 IDF = {"75", "77", "78", "91", "92", "93", "94", "95"}
 MOTS_LIEU_VIDES = {"ville", "arrondissement", "dept", "france", "peripherie", "region", "metropole", "cedex", "sur", "les", "lès"}
 
@@ -673,9 +682,9 @@ def _meme_lieu(e, ville):
         dep = str(l.get("departement") or l.get("code_postal") or "")[:2]
         mots_c = {m for m in com.replace("-", " ").split() if len(m) > 2 and m not in MOTS_LIEU_VIDES}
         if mots_v & mots_c:
-            return True
+            return dep or True
         if ("ile de france" in v or "idf" in v) and dep in IDF:
-            return True
+            return dep or True
     return False
 
 
@@ -709,7 +718,10 @@ def taille_entreprise(o):
         if tranche in TRANCHES_GRANDES or cat in ("ETI", "GE"):
             return True, "50+ salariés (code %s), %s" % (tranche or "?", cat or "?"), ""
     for e in memes:
-        if _meme_lieu(e, o.get("ville")):
+        lieu = _meme_lieu(e, o.get("ville"))
+        if lieu:
+            if isinstance(lieu, str):
+                o["dep"] = lieu
             tranche = str(e.get("tranche_effectif_salarie") or "")
             cat = str(e.get("categorie_entreprise") or "")
             return False, "moins de 50 salariés (code %s), %s" % (tranche or "?", cat or "?"), _nom_gerant(e)
@@ -1057,6 +1069,10 @@ def noter(o):
         "urgence": o.get("urgence", 0),
     }
     o["note"] = sum(points.values())
+    # 14 nov. 2026 : un site lu sans aucun défaut trouvé = rien de concret à leur montrer, donc pas prioritaire
+    if o.get("site_ok") and not o.get("constats"):
+        o["note"] = min(o["note"], 55)
+        points["rien à leur montrer (site sans défaut trouvé)"] = 0
     o["detail_note"] = points
     o["priorite"] = ("priorité maximale" if o["note"] >= 80 else "intéressant" if o["note"] >= 60
                      else "secondaire" if o["note"] >= 40 else "non retenu")
@@ -1377,6 +1393,15 @@ def main():
     if n_grandes:
         stats["ecartees"]["50 salariés ou plus (annuaire des entreprises)"] = n_grandes
     journal("Après le contrôle de taille : %d candidate(s)" % len(candidates))
+    # 14 nov. 2026 : seulement les entreprises proches (département vérifié dans l'annuaire, ou code postal de l'annonce)
+    if ZONE_DEPTS:
+        def _dep(o):
+            return str(o.get("dep") or o.get("code_postal") or "")[:2]
+        loin = [o for o in candidates if not o["manuelle"] and _dep(o) not in ZONE_DEPTS]
+        if loin:
+            stats["ecartees"]["hors Nouvelle-Aquitaine"] = len(loin)
+            candidates = [o for o in candidates if o not in loin]
+        journal("Après le contrôle de la zone (%s) : %d candidate(s)" % (", ".join(ZONE_DEPTS), len(candidates)))
 
     # 3. Analyser (IA), puis classer avant l'audit (l'audit est le plus lent)
     candidates = analyser(candidates)

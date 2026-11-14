@@ -60,6 +60,15 @@ RECHERCHES = {
     "services à domicile sur devis": ["gardener at work", "hedge trimming gardener", "house cleaning service", "handyman at work"],
 }
 
+# 14 nov. 2026 : photos des nouveaux métiers du recentrage
+RECHERCHES.update({
+    "charpentiers, couvreurs et maçons": ["carpenter roof framing", "roofer at work", "timber frame construction", "stone mason at work"],
+    "plombiers, électriciens et chauffagistes": ["plumber at work", "electrician working", "heating engineer boiler", "modern bathroom"],
+    "peintres, plaquistes, carreleurs et menuisiers alu": ["painter painting wall", "tiler laying tiles", "plasterer at work", "window installation"],
+    "paysagistes et créateurs de jardins": ["landscape gardener at work", "garden landscaping", "landscape garden", "garden design"],
+    "ébénistes et artisans du bois": ["woodworking workshop", "cabinet maker at work", "carpenter hands wood", "craftsman tools"],
+})
+
 _CACHE = {}
 
 

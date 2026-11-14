@@ -445,6 +445,19 @@ VARIANTES = {
                      citation="Le travail bien fait, c'est celui qu'on n'a pas à refaire.", contact_titre="Parlons de votre besoin")),
 }
 
+# 14 nov. 2026 : nouveaux métiers du recentrage, habillés comme le métier le plus proche.
+ALIAS_SECTEURS = {
+    "charpentiers, couvreurs et maçons": "plombiers, électriciens et artisans du bâtiment",
+    "plombiers, électriciens et chauffagistes": "plombiers, électriciens et artisans du bâtiment",
+    "peintres, plaquistes, carreleurs et menuisiers alu": "plombiers, électriciens et artisans du bâtiment",
+    "paysagistes et créateurs de jardins": "architectes, paysagistes, designers",
+    "ébénistes et artisans du bois": "artisans d'art",
+}
+for _n, _o in ALIAS_SECTEURS.items():
+    for _d in (SECTEURS, VARIANTES):
+        if _o in _d and _n not in _d:
+            _d[_n] = _d[_o]
+
 
 # Visuel du bandeau pour les secteurs du modèle « bijou » qui ne vendent pas de bijoux : une perle de verre.
 ORBE_SVG = ('<svg viewBox="0 0 300 300" role="img" aria-label="Sphère de verre illustrée"><defs>'

@@ -61,7 +61,19 @@ BASE_SITE = os.environ.get("USINE_BASE", "https://%s.github.io/%s/" % (DEPOT.spl
 # Chaque secteur : le nom lisible, puis le filtre OpenStreetMap qui va le chercher.
 # Les noms doivent rester identiques à ceux de rendu.SECTEURS (c'est eux qui choisissent le modèle de site).
 # Coiffeurs, instituts de beauté et boulangeries retirés (nov. 2026) : ils ne sont jamais intéressés.
+# Novembre 2026 (recentrage) : seulement les artisans du bois et du bâtiment, et les réparateurs de téléphone.
+# C'est le milieu qu'on connaît, et ce sont des métiers où un site sert vraiment (devis, rendez-vous).
+# Les anciens secteurs (vin, restaurants, boutiques, bien-être…) sont gardés plus bas dans ANCIENS_SECTEURS.
 SECTEURS = [
+    ("poseurs de sols, parqueteurs et menuisiers", '["craft"~"^(floorer|parquet_layer|carpenter|joiner|window_construction)$"]|["shop"~"^(flooring|carpet)$"]'),
+    ("charpentiers, couvreurs et maçons", '["craft"~"^(carpenter|roofer|builder|stonemason|scaffolder)$"]'),
+    ("plombiers, électriciens et chauffagistes", '["craft"~"^(plumber|electrician|hvac|heating_engineer)$"]'),
+    ("peintres, plaquistes, carreleurs et menuisiers alu", '["craft"~"^(painter|plasterer|tiler|insulation|window_construction|glaziery)$"]'),
+    ("paysagistes et créateurs de jardins", '["craft"~"^(gardener|landscaper)$"]|["office"="landscape_architect"]'),
+    ("ébénistes et artisans du bois", '["craft"~"^(cabinet_maker|upholsterer|sawmill|blacksmith)$"]'),
+    ("réparateurs de téléphone et informatique", '["shop"~"^(mobile_phone|computer)$"]|["craft"="electronics_repair"]'),
+]
+ANCIENS_SECTEURS = [
     ("domaines viticoles et châteaux familiaux", '["craft"="winery"]'),
     ("caves à vin et bars à vin", '["shop"="wine"]'),
     ("restaurants indépendants de qualité", '["amenity"="restaurant"]'),
@@ -90,12 +102,11 @@ SECTEURS = [
 # Chaque passage en prend UNE, à tour de rôle, à côté des secteurs habituels : elles ne prennent pas toute la place.
 NICHES_TEST = [
     ("garages et carrosseries indépendants", '["shop"~"^(car_repair|tyres)$"]|["craft"="car_repair"]'),
-    ("toiletteurs pour chiens", '["shop"="pet_grooming"]'),
     ("services à domicile sur devis", '["craft"~"^(gardener|handyman|window_cleaner|cleaning)$"]|["office"="moving_company"]|["shop"="moving_company"]'),
 ]
-# Rythme (nov. 2026) : 15 nouveaux commerces par jour au plus, quel que soit le nombre de passages de la nuit.
+# Rythme (14 nov. 2026) : 5 nouveaux commerces par jour au plus, mais bien faits (avant : 15), quel que soit le nombre de passages de la nuit.
 # Ne s'applique qu'aux passages automatiques (la nuit, ou après une modification du code) : une commande à la main (commande.json, Run workflow) fait ce qu'on lui demande.
-MAX_PAR_JOUR = int(os.environ.get("MAX_PAR_JOUR", "15") or 15)
+MAX_PAR_JOUR = int(os.environ.get("MAX_PAR_JOUR", "5") or 5)
 # La Gironde à chaque passage (c'est chez Oscar), plus un département voisin qui tourne.
 # Interroger toute la Nouvelle-Aquitaine d'un coup ramènerait toujours les mêmes
 # commerces, les premiers de la liste : en découpant, chaque nuit explore ailleurs.
@@ -103,7 +114,9 @@ MAISON = ("Gironde", "44.19,-1.30,45.58,0.32")
 # Bordeaux et sa couronne, fouillés en plus à chaque passage (là où il y a le plus de commerces).
 BORDEAUX = ("Bordeaux Métropole", "44.74,-0.74,44.96,-0.42")
 BASSIN = ("Bassin d'Arcachon et Médoc", "44.45,-1.35,45.35,-0.85")
-VOISINS = [
+# 14 nov. 2026 : on reste en Gironde (on peut y aller, on connaît). Les départements voisins sont gardés ici, en pause.
+VOISINS = []
+VOISINS_EN_PAUSE = [
     ("Dordogne", "44.57,0.03,45.72,1.45"),
     ("Charente-Maritime", "45.09,-1.56,46.38,-0.03"),
     ("Landes", "43.47,-1.52,44.54,-0.03"),
@@ -679,7 +692,7 @@ def main():
     n_sect = max(6, min(len(SECTEURS), -(-NOMBRE * 2 // 9)))  # ~11 secteurs pour 50 sites
     secteurs = [SECTEURS[(tour * 5 + k) % len(SECTEURS)] for k in range(n_sect - 1)]
     secteurs.append(NICHES_TEST[tour % len(NICHES_TEST)])  # une niche à l'essai par passage
-    n_voisins = 3 if NOMBRE <= 30 else 6
+    n_voisins = min(3 if NOMBRE <= 30 else 6, len(VOISINS))
     voisins = [VOISINS[(tour * 3 + k) % len(VOISINS)] for k in range(n_voisins)]
     zones = [MAISON] + voisins
     journal("Zones : " + ", ".join(z for z, _ in zones))

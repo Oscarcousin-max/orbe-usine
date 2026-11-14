@@ -1,5 +1,11 @@
 # Usine à sites ORBE
 
+> **Recentrage du 14 novembre 2026** — l'usine fait **5 maquettes par jour au plus**, **en Gironde seulement**,
+> pour les **artisans du bois et du bâtiment** (poseurs de sols, menuisiers, charpentiers, couvreurs, plombiers,
+> électriciens, peintres, paysagistes, ébénistes) et les **réparateurs de téléphone**. Deux passages la nuit.
+> Le Chasseur ne garde que les **petites entreprises de Nouvelle-Aquitaine** (10 par jour au plus) et **n'envoie plus rien tout seul** :
+> l'Envoyeur est en pause, tu relis et tu envoies toi-même depuis le QG.
+
 Chaque nuit, vers 0 h 15, cette usine travaille toute seule et gratuitement :
 
 1. elle lit la carte **OpenStreetMap** pour trouver, en Gironde et dans un département
