@@ -1,4 +1,286 @@
-09:31:51 Demande : 20 site(s)
-09:31:51 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-09:31:51 Rythme : 5 déjà faits aujourd'hui, 5 au plus par jour → 0 pour ce passage
-09:31:51 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
+19:05:13 Demande : 20 site(s)
+19:05:13 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+19:05:13     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts
+19:05:16     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:09:28   photos : 4 (Unsplash)
+19:09:28   refait : Mistermenuiserie Mérignac (33) (modèle v2-atelier/vert_rose/plein · gemini-3.7-flash)
+19:13:58   photos : 4 (Unsplash)
+19:13:58   refait : Carboland (modèle v2-atelier/vert_rose/plein · gemini-3.8-flash)
+19:14:00     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:14:03     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:14:23   photos : 4 (Unsplash)
+19:14:23   refait : CM Menuiserie (modèle v2-atelier/terracotta/split · gemini-3.6-flash)
+19:16:56   photos : 4 (Unsplash)
+19:16:56   refait : Villenave Pneus Services (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
+19:19:37   photos : 4 (Unsplash)
+19:19:37   refait : Sld bat (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
+19:24:37     gemini/gemini-3.8-flash : The read operation timed out
+19:24:41     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:25:08   photos : 4 (Unsplash)
+19:25:08   refait : Francis TEYSSIER (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
+19:29:38   photos : 4 (Unsplash)
+19:29:38   refait : Etcheverria (modèle v2-atelier/vert_rose/plein · gemini-3.8-flash)
+19:33:22   photos : 4 (Unsplash)
+19:33:22   refait : Mia Storia (modèle v2-table/olive/plein · gemini-3.8-flash)
+19:37:09   photos : 4 (Unsplash, Wikimedia Commons)
+19:37:09   refait : JH Repairs (modèle v2-atelier/vert_rose/plein · gemini-3.8-flash)
+19:40:11   photos : 4 (Unsplash)
+19:40:11   refait : SARL Métallerie des Luys (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
+19:45:11     gemini/gemini-3.8-flash : The read operation timed out
+19:50:12     gemini/gemini-3.7-flash : The read operation timed out
+19:50:28   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o3_d
+19:50:28   photos : 4 (Unsplash, Wikimedia Commons)
+19:50:28   refait : La Canotte (modèle v2-table/cacao/cadre · gemini-3.6-flash)
+19:50:31     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:55:34   photos : 4 (Unsplash)
+19:55:34   refait : Lux Auto (modèle v2-atelier/terracotta/split · gemini-3.7-flash)
+19:55:39     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:55:43     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:56:00   photos : 4 (Unsplash)
+19:56:00   refait : Légende Informatique (modèle v2-atelier/vert_rose/plein · gemini-3.6-flash)
+19:56:00     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:56:01     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:56:18   photos : 4 (Unsplash)
+19:56:18   refait : Ibaïa Café (modèle v2-table/brasserie/plein · gemini-3.6-flash)
+19:56:18     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:56:18     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:56:34   photos : 4 (Unsplash, Wikimedia Commons)
+19:56:34   refait : Ets Lestrade - GITEM (modèle v2-atelier/vert_rose/plein · gemini-3.6-flash)
+20:00:15   photos : 4 (Unsplash)
+20:00:15   refait : Garage BERNARDIN Patrick (modèle v2-atelier/terracotta/split · gemini-3.8-flash)
+20:03:17   photos : 4 (Unsplash, Wikimedia Commons)
+20:03:17   refait : ACTECH Informatique (modèle v2-atelier/terracotta/split · gemini-3.8-flash)
+20:03:17     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:06:39   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_d
+20:06:39   photos : 4 (Unsplash)
+20:06:39   refait : Le Gigourit (modèle v2-table/olive/plein · gemini-3.7-flash)
+20:06:39     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:06:39     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:06:53   photos : 4 (Unsplash)
+20:06:53   refait : Garage Bineau Ralph (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
+20:06:53     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:06:54     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:07:09   photos : 4 (Unsplash, Wikimedia Commons)
+20:07:09   refait : Le Relais de la Chalosse (modèle v2-table/olive/plein · gemini-3.6-flash)
+20:07:10     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:07:10     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:07:32   photos : 4 (Unsplash)
+20:07:32   refait : La Terre est Belle (modèle v2-table/brasserie/plein · gemini-3.6-flash)
+20:07:33     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:07:33     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:07:50   photos : 4 (Unsplash)
+20:07:50   refait : Carrosserie Nicollas (modèle v2-atelier/terracotta/split · gemini-3.6-flash)
+20:07:50     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:07:50     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:08:11   photos : 4 (Unsplash)
+20:08:11   refait : Bohémian Bazar (modèle v2-bijou/rose_ivoire/cadre · gemini-3.6-flash)
+20:10:35   photos : 4 (Unsplash)
+20:10:35   refait : Boucherie, Charcuterie : La tête de l'art (modèle v2-table/olive/plein · gemini-3.8-flash)
+20:10:35     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:10:36     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:10:52   photos : 4 (Unsplash)
+20:10:52   refait : Garage Lerouge (modèle v2-atelier/vert_rose/plein · gemini-3.6-flash)
+20:10:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:10:53     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:11:26   photos : 4 (Unsplash)
+20:11:26   refait : La P'tite Boutique (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
+20:15:34   photos : 4 (Unsplash)
+20:15:34   refait : Les Maraichers du Chêne Vert (modèle v2-table/olive/plein · gemini-3.8-flash)
+20:15:34     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:15:34     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:15:55   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_d
+20:15:55   photos : 4 (Unsplash)
+20:15:55   refait : Garage Yannick Marsaloux (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
+20:17:51   photos : 4 (Unsplash)
+20:17:51   refait : Stylman (modèle v2-bijou/nuit_argent/split · gemini-3.8-flash)
+20:17:52     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:17:52     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:18:07   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
+20:18:07   photos : 4 (Unsplash)
+20:18:07   refait : Aunis Débosselage (modèle v2-atelier/terracotta/split · gemini-3.6-flash)
+20:18:07     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:18:07     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:18:23   photos : 4 (Unsplash)
+20:18:23   refait : Déco Ré (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
+20:18:24     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:18:24     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:18:42   photos : 4 (Unsplash)
+20:18:42   refait : Chez Mumu IØ (modèle v2-table/cacao/cadre · gemini-3.6-flash)
+20:23:42     gemini/gemini-3.8-flash : The read operation timed out
+20:23:42     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:23:59   photos : 4 (Unsplash)
+20:23:59   refait : Miga Automobile (modèle v2-atelier/vert_rose/plein · gemini-3.6-flash)
+20:28:59     gemini/gemini-3.8-flash : The read operation timed out
+20:28:59     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:29:02     gemini/gemini-3.6-flash : réponse vide
+20:29:21   photos : 4 (Unsplash)
+20:29:21   refait : Locyca's (modèle v2-bijou/nuit_argent/split · gemini-3.5-flash)
+20:29:21     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:29:21     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:29:21     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:29:41   photos : 4 (Unsplash)
+20:29:41   refait : Maison Réglin Corain (modèle v2-table/brasserie/plein · gemini-3.5-flash)
+20:29:41     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:29:41     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:29:41     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:02   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e1_d
+20:30:18   photos : 4 (Unsplash, Wikimedia Commons)
+20:30:18   refait : Location - Lalanne Eliane (modèle v2-table/cacao/cadre · gemini-3.5-flash)
+20:30:18     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:18     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:18     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:18     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:18     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+20:30:19     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:19     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:19     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:19     modèles groq : allam-2-7b, whisper-large-v3, qwen/qwen3.8-27b, meta-llama/llama-prompt-guard-2-86m, canopylabs/orpheus-v1-english, openai/gpt-oss-120b, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-safeguard-20b, openai/gpt-oss-20b, canopylabs/orpheus-arabic-saudi, whisper-large-v3-turbo
+20:30:28   photos : 4 (Unsplash, Wikimedia Commons)
+20:30:28   refait : A Brandelys n°2 (modèle v2-table/cacao/cadre · openai/gpt-oss-120b)
+20:30:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:29     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:29     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:29     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:30:38   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_d
+20:30:54   photos : 4 (Unsplash, Wikimedia Commons)
+20:30:54   refait : Maine Belon (modèle v2-table/olive/plein · openai/gpt-oss-120b)
+20:31:04   photos : 4 (Unsplash, Wikimedia Commons)
+20:31:04   refait : Les loges du canal du midi (modèle v2-table/olive/plein · openai/gpt-oss-120b)
+20:31:04 39 site(s) récent(s) refait(s) avec les nouveaux modèles
+20:31:04 Rythme : 0 déjà faits aujourd'hui, 10 au plus par jour → 10 pour ce passage
+20:31:04 Départements : 33, 72, 73, 74, 75
+20:31:46     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+20:34:12     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+20:38:40     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+20:40:45     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+20:45:13     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+20:49:01 Carte : cuisinistes et salles de bain — 9 sans site noté et joignables
+20:49:09     note trop basse (< 50) : 1
+20:49:21     note trop basse (< 50) : 2
+20:49:21     écarté : entreprise fermée : 1
+20:49:21   5 notés 50/100 ou plus
+20:50:11     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+20:52:21     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+20:56:39     carte overpass.private.coffee : HTTP Error 502: Bad Gateway  (nouvel essai)
+20:57:56     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+20:59:59     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+21:04:28     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+21:05:48 Carte : poseurs de sols, parqueteurs et menuisiers — 27 sans site noté et joignables
+21:05:51     écarté : 20 salariés ou plus : 1
+21:06:11     note trop basse (< 50) : 3
+21:06:11     écarté : pas de numéro français joignable : 1
+21:06:16     écarté : 20 salariés ou plus : 1
+21:06:16     écarté : entreprise fermée : 1
+21:06:30     note trop basse (< 50) : 2
+21:06:30     écarté : 20 à 49 salariés : 1
+21:06:30     écarté : entreprise fermée : 1
+21:06:30   16 notés 50/100 ou plus
+21:07:55     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+21:12:24     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+21:16:34     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+21:16:44     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+21:16:52     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+21:16:52   charpentiers, couvreurs et maçons / 73 : carte illisible (HTTP Error 502: Bad Gateway)
+21:16:53     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+21:18:32     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+21:23:01     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+21:24:46     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+21:25:15 Carte : charpentiers, couvreurs et maçons — 28 sans site noté et joignables
+21:25:26     note trop basse (< 50) : 3
+21:25:26     écarté : 20 salariés ou plus : 1
+21:25:26     écarté : 20 à 49 salariés : 1
+21:25:36     note trop basse (< 50) : 3
+21:25:59     note trop basse (< 50) : 3
+21:25:59     écarté : 20 salariés ou plus : 1
+21:25:59     écarté : entreprise fermée : 1
+21:25:59   15 notés 50/100 ou plus
+21:27:56     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+21:32:24     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+21:34:21     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+21:34:30     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+21:36:05 Carte : ébénistes et artisans du bois — 16 sans site noté et joignables
+21:36:17     note trop basse (< 50) : 2
+21:36:17     écarté : entreprise fermée : 1
+21:36:17     écarté : 20 à 49 salariés : 1
+21:36:19     écarté : pas de numéro français joignable : 4
+21:36:19     note trop basse (< 50) : 2
+21:36:24     note trop basse (< 50) : 2
+21:36:24     écarté : entreprise fermée : 2
+21:36:24   2 notés 50/100 ou plus
+21:36:25     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+21:40:53     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+21:45:02     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+21:45:11     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+21:49:41     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+21:54:10     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+21:58:11 Carte : serruriers et vitriers — 7 sans site noté et joignables
+21:58:18     écarté : entreprise fermée : 2
+21:58:41     note trop basse (< 50) : 2
+21:58:41   3 notés 50/100 ou plus
+21:58:41 41 candidats
+21:58:41 Commerce : Cuisines et Agencements par les Tontons (Pessac)
+21:58:42       DuckDuckGo : bloqué (202)
+21:58:45       Mojeek : HTTP Error 403: Forbidden
+21:58:47   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+21:59:04   photos : 4 (Unsplash)
+21:59:11   prêt : https://oscarcousin-max.github.io/orbe-usine/cuisines-et-agencements-par-les-tontons/
+21:59:11 Commerce : Batihome (?)
+21:59:19       DuckDuckGo : bloqué (202)
+21:59:23       Mojeek : HTTP Error 403: Forbidden
+21:59:24   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+21:59:47   photos : 4 (Unsplash, Wikimedia Commons)
+21:59:54   prêt : https://oscarcousin-max.github.io/orbe-usine/batihome/
+21:59:54 Commerce : Au Fil du Bois (?)
+21:59:57   écarté : Site trouvé : https://aufildubois.fr/
+21:59:57 Commerce : Bois Debout (Rouez)
+22:00:00       DuckDuckGo : bloqué (202)
+22:00:04       Mojeek : HTTP Error 403: Forbidden
+22:00:05   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+22:00:12     groq/openai/gpt-oss-120b : réponse vide
+22:00:12     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
+22:00:15     groq/openai/gpt-oss-20b : réponse vide
+22:00:15     modèles or : inclusionai/ling-3.2-flash:free, baidu/ernie-5.5-flash-preview:free, thinkingmachines/inkling-2-small:free, liquid/lfm-3-1.7b:free, particle-ai/particle-1:free, recursive/flint-v1.0:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, nvidia/nemotron-3.5-lightning:free, cohere/north-mini-code:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
+22:04:04   photos : 4 (Unsplash)
+22:04:11   prêt : https://oscarcousin-max.github.io/orbe-usine/bois-debout/
+22:04:11 Commerce : Accès Sécurité (?)
+22:04:14   écarté : Site trouvé : https://www.acces-securite.fr/
+22:04:14 Commerce : Médoc Cuisine (?)
+22:04:15   écarté : Site trouvé : https://www.medoc-cuisine.com/
+22:04:15 Commerce : Apibois74 (Bons-en-Chablais)
+22:04:17   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+22:04:30   textes de l'IA indisponibles (pas de JSON) : textes de secours
+22:04:30   photos : 4 (Unsplash)
+22:04:37   prêt : https://oscarcousin-max.github.io/orbe-usine/apibois74/
+22:04:37 Commerce : Félisaz Jean et Fils (?)
+22:04:40   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+22:04:49   photos : 4 (Unsplash)
+22:04:56   prêt : https://oscarcousin-max.github.io/orbe-usine/felisaz-jean-et-fils/
+22:04:56 Commerce : Pena Serrurerie (?)
+22:05:01   écarté : Site trouvé : https://www.pena-serrurerie.com/
+22:05:01 Commerce : Vercauteren (?)
+22:05:04   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+22:05:13   photos : 4 (Unsplash)
+22:05:21   prêt : https://oscarcousin-max.github.io/orbe-usine/vercauteren/
+22:05:21 Commerce : Sillé Menuiserie (?)
+22:05:24   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+22:05:36   textes de l'IA indisponibles (pas de JSON) : textes de secours
+22:05:42   photos : 4 (Unsplash)
+22:05:50   prêt : https://oscarcousin-max.github.io/orbe-usine/sille-menuiserie/
+22:05:50 Commerce : ABP Sécurité 2000 (Bordeaux)
+22:05:54   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+22:06:10   photos : 4 (Unsplash)
+22:06:18   prêt : https://oscarcousin-max.github.io/orbe-usine/abp-securite-2000/
+22:06:18 Commerce : Éric Collomb Création (?)
+22:06:19   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+22:06:30   photos : 4 (Unsplash)
+22:06:37   prêt : https://oscarcousin-max.github.io/orbe-usine/eric-collomb-creation/
+22:06:37 Commerce : Attila (?)
+22:06:40   écarté : Site trouvé : https://www.attila.fr/
+22:06:40 Commerce : Sauvageot Menuiserie Charpente Bois (Bons-en-Chablais)
+22:06:42   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+22:06:53   photos : 4 (Unsplash)
+22:06:53     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+22:07:00   prêt : https://oscarcousin-max.github.io/orbe-usine/sauvageot-menuiserie-charpente-bois/
+22:07:00 Moteurs de recherche : DuckDuckGo 0 ok / 3 bloqué, Bing 10 ok / 0 bloqué, Mojeek 0 ok / 3 bloqué
+22:07:00 Écartés car déjà un site : 5 · fermés : 0 · non vérifiables : 0
+22:07:00 Terminé : 10 site(s) prêt(s).
