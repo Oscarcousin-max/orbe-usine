@@ -62,6 +62,9 @@ RECHERCHES = {
 
 # 14 nov. 2026 : photos des nouveaux métiers du recentrage
 RECHERCHES.update({
+    "cuisinistes et salles de bain": ["modern kitchen interior", "bathroom renovation", "kitchen installation", "walk-in shower tiles"],
+    "piscinistes et pergolas": ["swimming pool garden", "pool construction", "pergola terrace", "outdoor pool house"],
+    "serruriers et vitriers": ["locksmith at work", "door lock repair", "glazier window glass", "metal door workshop"],
     "charpentiers, couvreurs et maçons": ["carpenter roof framing", "roofer at work", "timber frame construction", "stone mason at work"],
     "plombiers, électriciens et chauffagistes": ["plumber at work", "electrician working", "heating engineer boiler", "modern bathroom"],
     "peintres, plaquistes, carreleurs et menuisiers alu": ["painter painting wall", "tiler laying tiles", "plasterer at work", "window installation"],

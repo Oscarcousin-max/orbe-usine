@@ -452,6 +452,10 @@ ALIAS_SECTEURS = {
     "peintres, plaquistes, carreleurs et menuisiers alu": "plombiers, électriciens et artisans du bâtiment",
     "paysagistes et créateurs de jardins": "architectes, paysagistes, designers",
     "ébénistes et artisans du bois": "artisans d'art",
+    # 15 nov. 2026 : métiers à gros chantiers ajoutés au profil du bon client (cible.py).
+    "cuisinistes et salles de bain": "décorateurs, antiquaires, galeries",
+    "piscinistes et pergolas": "architectes, paysagistes, designers",
+    "serruriers et vitriers": "plombiers, électriciens et artisans du bâtiment",
 }
 for _n, _o in ALIAS_SECTEURS.items():
     for _d in (SECTEURS, VARIANTES):

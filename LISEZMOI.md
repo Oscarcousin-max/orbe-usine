@@ -1,5 +1,15 @@
 # Usine à sites ORBE
 
+> **Recentrage du 15 novembre 2026 : le profil du bon client** (fichier `cible.py`).
+> Après 100 appels sans intérêt, l'usine ne choisit plus « des commerces sans site » au hasard.
+> Elle cherche **dans toute la France** (la Gironde à chaque passage + 4 départements qui tournent)
+> des **artisans à gros chantiers** (cuisinistes, menuisiers, couvreurs, chauffagistes, piscinistes…),
+> vérifie chacun dans **l'annuaire officiel des entreprises** et lui donne une **note sur 100** :
+> métier rentable, **portable du patron**, **1 à 19 salariés**, **créée il y a moins de 3 ans**…
+> Sont écartés : associations, mairies, santé, sociétés civiles, entreprises fermées ou de 20 salariés et plus,
+> numéros étrangers ou en 08, enseignes connues. Seuls les **50/100 et plus** deviennent des maquettes
+> (10 par jour au plus), avec la note, ses raisons et le nom du gérant, affichés dans le QG.
+
 > **Recentrage du 14 novembre 2026** — l'usine fait **5 maquettes par jour au plus**, **en Gironde seulement**,
 > pour les **artisans du bois et du bâtiment** (poseurs de sols, menuisiers, charpentiers, couvreurs, plombiers,
 > électriciens, peintres, paysagistes, ébénistes) et les **réparateurs de téléphone**. Deux passages la nuit.

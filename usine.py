@@ -106,7 +106,7 @@ NICHES_TEST = [
 ]
 # Rythme (14 nov. 2026) : 5 nouveaux commerces par jour au plus, mais bien faits (avant : 15), quel que soit le nombre de passages de la nuit.
 # Ne s'applique qu'aux passages automatiques (la nuit, ou après une modification du code) : une commande à la main (commande.json, Run workflow) fait ce qu'on lui demande.
-MAX_PAR_JOUR = int(os.environ.get("MAX_PAR_JOUR", "5") or 5)
+MAX_PAR_JOUR = int(os.environ.get("MAX_PAR_JOUR", "10") or 10)  # 15 nov. 2026 : 10 par jour, mais tous notés 50/100 ou plus (cible.py)
 # La Gironde à chaque passage (c'est chez Oscar), plus un département voisin qui tourne.
 # Interroger toute la Nouvelle-Aquitaine d'un coup ramènerait toujours les mêmes
 # commerces, les premiers de la liste : en découpant, chaque nuit explore ailleurs.
@@ -138,7 +138,7 @@ RANG_CANAL = {"Email": 0, "Instagram": 1, "SMS": 2, "Facebook": 3, "Téléphone"
 # Overpass refuse les faux navigateurs : il veut qu'un outil se présente comme tel.
 UA_OSM = "OrbeUsine/1.0 (https://github.com/%s; societe.orbe@gmail.com)" % DEPOT
 
-CONSIGNE_MSG = """Tu écris pour Oscar, du studio digital ORBE à Bordeaux, le premier message à un commerçant pour qui il a préparé un site. Vouvoiement, chaleureux, pas vendeur. Email : 5 à 8 lignes ; SMS, Instagram ou Facebook : 4 lignes maximum. Contenu : un détail VRAI tiré de la fiche qui montre qu'Oscar connaît le commerce ; Oscar a pris l'initiative de lui préparer un site sur mesure, à voir ici : {LIEN} (écris exactement {LIEN}) ; il peut le mettre en ligne à son nom, avec ses propres photos, s'il lui plaît ; il peut simplement répondre « non merci » et ne sera pas relancé. Signature : « Oscar · ORBE, studio digital » (pour un email, ajoute « societe.orbe@gmail.com · 06 72 61 66 09 »). Pas de prix. Réponds uniquement en JSON : {"objet": "objet court et personnel pour un email, sinon vide", "message": "le message"}"""
+CONSIGNE_MSG = """Tu écris pour Oscar, du studio digital ORBE à Bordeaux, le message à un artisan pour qui il a préparé une page. Vouvoiement, chaleureux, pas vendeur. Si la fiche donne un « gerant », commence par « Bonjour » suivi de son prénom et nom. Email : 5 à 8 lignes ; SMS, Instagram ou Facebook : 4 lignes maximum. Angle (15 nov. 2026) : un artisan sur un chantier rate des appels, et chaque appel raté est un chantier qui part chez un autre ; Oscar lui a préparé une page à son nom qui rattrape ces clients (bouton d'appel, demande de devis, et un SMS automatique quand il ne peut pas décrocher). Contenu : un détail VRAI tiré de la fiche qui montre qu'Oscar connaît l'entreprise ; la page est à voir ici : {LIEN} (écris exactement {LIEN}) ; il peut le mettre en ligne à son nom, avec ses propres photos, s'il lui plaît ; il peut simplement répondre « non merci » et ne sera pas relancé. Signature : « Oscar · ORBE, studio digital » (pour un email, ajoute « societe.orbe@gmail.com · 06 72 61 66 09 »). Pas de prix. Réponds uniquement en JSON : {"objet": "objet court et personnel pour un email, sinon vide", "message": "le message"}"""
 
 
 class ErreurIA(Exception):
@@ -186,8 +186,11 @@ def overpass(filtre, bboxes, limite=2500):
     # à l'intérieur des filtres (« beauty|hairdresser ») : couper partout cassait toutes les recherches (erreur 400).
     morceaux = re.split(r"(?<=\])\|(?=\[)", filtre)
     bboxes = [bboxes] if isinstance(bboxes, str) else bboxes
-    parts = "".join("nwr%s%s%s%s(%s);" % (f, sans_site, ferme, contact, b) for f in morceaux for b in bboxes)
-    q = "[out:json][timeout:240];(%s);out tags center %d;" % (parts, limite)
+    # Une zone est soit un rectangle « lat,lon,lat,lon », soit un département « FR-33 » (toute la France, 15 nov. 2026).
+    aires = "".join('area["ISO3166-2"="%s"]->.z%d;' % (b, i) for i, b in enumerate(bboxes) if b.startswith("FR-"))
+    lieu = {b: ("area.z%d" % i if b.startswith("FR-") else b) for i, b in enumerate(bboxes)}
+    parts = "".join("nwr%s%s%s%s(%s);" % (f, sans_site, ferme, contact, lieu[b]) for f in morceaux for b in bboxes)
+    q = "[out:json][timeout:240];%s(%s);out tags center %d;" % (aires, parts, limite)
     # Le serveur principal est souvent saturé (502) : on réessaie, puis on change de serveur.
     derniere = None
     for essai, serveur in enumerate([OVERPASS, MIROIR_OSM] + AUTRES_OSM + [OVERPASS]):
@@ -636,6 +639,19 @@ def fabriquer_client(c, noms):
     }
 
 
+import cible  # 15 nov. 2026 : le profil du bon client et la note sur 100
+
+# 15 nov. 2026 : on remplace les secteurs par les métiers à gros chantiers de cible.py, dans toute la France.
+SECTEURS = [(m, f) for m, f, _ in cible.METIERS]
+NICHES_TEST = []
+
+
+def zones_du_tour(tour, n=4):
+    """La Gironde à chaque passage, plus n départements qui tournent sur toute la France."""
+    autres = [d for d in cible.DEPARTEMENTS if d != cible.MAISON]
+    return [cible.MAISON] + [autres[(tour * n + k) % len(autres)] for k in range(n)]
+
+
 def main():
     global NOMBRE
     if not (CLES["gemini"] or CLES["groq"]):
@@ -689,41 +705,45 @@ def main():
         return
     # Un « tour » toutes les 2 h : chaque passage (il y en a plusieurs la nuit) prend d'autres secteurs et d'autres départements.
     tour = int(time.time() // 7200)
-    n_sect = max(6, min(len(SECTEURS), -(-NOMBRE * 2 // 9)))  # ~11 secteurs pour 50 sites
-    secteurs = [SECTEURS[(tour * 5 + k) % len(SECTEURS)] for k in range(n_sect - 1)]
-    secteurs.append(NICHES_TEST[tour % len(NICHES_TEST)])  # une niche à l'essai par passage
-    n_voisins = min(3 if NOMBRE <= 30 else 6, len(VOISINS))
-    voisins = [VOISINS[(tour * 3 + k) % len(VOISINS)] for k in range(n_voisins)]
-    zones = [MAISON] + voisins
-    journal("Zones : " + ", ".join(z for z, _ in zones))
+    # 15 nov. 2026 : les métiers les plus rentables d'abord, et 5 départements par passage (Gironde + 4 qui tournent).
+    n_sect = max(5, min(len(SECTEURS), -(-NOMBRE * 2 // 5)))
+    secteurs = SECTEURS[:3] + [SECTEURS[3 + (tour * 2 + k) % (len(SECTEURS) - 3)] for k in range(n_sect - 3)]
+    zones = [(d, "FR-" + d) for d in zones_du_tour(tour)]
+    journal("Départements : " + ", ".join(z for z, _ in zones))
     nouveaux = []
 
     # 1. Candidats : de vrais commerces lus sur la carte OpenStreetMap.
     candidats = []
     for sect, filtre in secteurs:
         bruts = []
-        for i in range(0, len(zones), 3):  # 3 départements par requête : assez gros pour aller vite, assez petit pour ne pas saturer
-            paquet = zones[i:i + 3]
+        neufs = []
+        for dep, aire in zones:  # un département à la fois : on sait où chercher dans l'annuaire
             try:
-                bruts += overpass(filtre, [b for _, b in paquet])
+                bruts = overpass(filtre, [aire])
             except Exception as e:
-                journal("  %s / %s : carte illisible (%s)" % (sect, " + ".join(z for z, _ in paquet), str(e)[:120]))
-        neufs = [fiche_osm(e, sect) for e in bruts]
+                journal("  %s / %s : carte illisible (%s)" % (sect, dep, str(e)[:120]))
+                continue
+            for e in bruts:
+                f = fiche_osm(e, sect)
+                f["dep"] = cible.departement_du_cp(re.search(r"\b\d{5}\b", f["adresse"]).group(0)) if re.search(r"\b\d{5}\b", f["adresse"]) else dep
+                neufs.append(f)
         neufs = [f for f in neufs if f["nom"] and norm(f["nom"]) not in noms and contact_de(f)]
         vus = set()
         neufs = [f for f in neufs if not (norm(f["nom"]) in vus or vus.add(norm(f["nom"])))]
         import random as _r
         _r.Random(tour).shuffle(neufs)  # sinon la carte rend toujours les mêmes en premier
-        journal("Carte : %s — %d trouvés, %d sans site noté et joignables" % (sect, len(bruts), len(neufs)))
+        journal("Carte : %s — %d sans site noté et joignables" % (sect, len(neufs)))
         if not neufs:
             continue
-        retenus = trier_haut_de_gamme(neufs[:240], sect)
-        # Ceux qui ont un téléphone d'abord (Oscar veut le numéro), puis par moyen de contact préféré.
-        retenus.sort(key=lambda f: (0 if f.get("telephone") else 1, RANG_CANAL.get(contact_de(f)[0], 9)))
+        # 15 nov. 2026 : plus de tri « haut de gamme » par IA. Chaque fiche est vérifiée dans l'annuaire officiel et notée.
+        retenus = []
+        for dep in sorted({f["dep"] for f in neufs}):
+            retenus += cible.qualifier([f for f in neufs if f["dep"] == dep], dep, journal, limite=40)
+        journal("  %d notés %d/100 ou plus" % (len(retenus), cible.SEUIL))
         candidats += retenus
 
     # 2. Un commerce par secteur à tour de rôle, pour ne pas faire 15 fleuristes.
-    candidats = entrelacer(candidats)
+    candidats = entrelacer(sorted(candidats, key=lambda f: -f.get("note", 0)))
     journal("%d candidats" % len(candidats))
 
     # 3 et 4. Vérifier qu'il n'a VRAIMENT pas de site, fabriquer le site, écrire le message
@@ -763,7 +783,7 @@ def main():
         m = {}
         try:
             txt, _, _ = ia([("groq", "", False), ("gemini", "", False), ("or", "deepseek", False)], CONSIGNE_MSG,
-                           "Canal : %s\nFiche : %s" % (ct[0], json.dumps({k: x for k, x in faits.items() if k not in ("lat", "lon")}, ensure_ascii=False)))
+                           "Canal : %s\nFiche : %s" % (ct[0], json.dumps(dict({k: x for k, x in faits.items() if k not in ("lat", "lon")}, gerant=fiche.get("gerant", "")), ensure_ascii=False)))
             m = lire_json(txt)
         except Exception as e:
             journal("  message par défaut (%s)" % e)
@@ -785,6 +805,10 @@ def main():
                 " ".join(x for x in (nom, fiche.get("ville") or "") if x)),
             "objet": str(m.get("objet") or ("Un site pour " + nom)) if ct[0] == "Email" else "",
             "message": msg.replace("{LIEN}", lien), "site_url": lien, "par": modele, "cree_le": maintenant,
+            # 15 nov. 2026 : la note et ses raisons, pour savoir pourquoi on appelle (affichées dans le QG).
+            "note": fiche.get("note", 0), "pourquoi": " · ".join(fiche.get("pourquoi") or []),
+            "gerant": fiche.get("gerant", ""), "siren": fiche.get("siren", ""), "creation": fiche.get("creation", ""),
+            "departement": fiche.get("dep", ""),
         })
         journal("  prêt : " + lien)
         # On enregistre au fur et à mesure : si le passage est coupé, rien n'est perdu.
