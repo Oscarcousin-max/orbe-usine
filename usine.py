@@ -614,7 +614,10 @@ def fabriquer_client(c, noms):
         journal("  maquette %d prête (%s)" % (i + 1, modele))
     if not maquettes:
         return None
-    (DOCS / base / "index.html").write_text(page_choix(nom, faits["ville"], maquettes), "utf-8")
+    if len(maquettes) == 1:  # 16 nov. 2026 : une seule maquette (prospects du jour) → elle est la page elle-même
+        (DOCS / base / "index.html").write_text((DOCS / base / "1" / "index.html").read_text("utf-8"), "utf-8")
+    else:
+        (DOCS / base / "index.html").write_text(page_choix(nom, faits["ville"], maquettes), "utf-8")
     lien = BASE_SITE + base + "/"
     ct = contact_de(faits) or ("Téléphone", faits["telephone"])
     msg = str(c.get("message") or "").strip() or (
@@ -636,6 +639,9 @@ def fabriquer_client(c, noms):
         "objet": ("Un site pour " + nom) if ct[0] == "Email" else "",
         "message": msg.replace("{LIEN}", lien), "site_url": lien, "maquettes": maquettes,
         "par": "commande client · %d maquettes" % len(maquettes), "cree_le": maintenant,
+        # 16 nov. 2026 : les prospects trouvés chaque jour par Claude arrivent notés, comme ceux de cible.py
+        "note": int(c["score"]) if str(c.get("score") or "").isdigit() else None,
+        "pourquoi": str(c.get("pourquoi") or ""), "gerant": str(c.get("gerant") or ""),
     }
 
 
