@@ -48,7 +48,7 @@ if COMMANDE.exists():
     try:
         _cmd = json.loads(COMMANDE.read_text("utf-8"))
         NOMBRE = max(0, min(80, int(_cmd.get("nombre", NOMBRE))))
-        CLIENTS = [c for c in (_cmd.get("clients") or []) if isinstance(c, dict) and c.get("nom")][:20]
+        CLIENTS = [c for c in (_cmd.get("clients") or []) if isinstance(c, dict) and c.get("nom")][:60]  # 17 nov. 2026 : 60 au plus (tournée)
     except Exception:
         pass
 PAUSE = float(os.environ.get("USINE_PAUSE", "6"))
@@ -685,7 +685,7 @@ def main():
         ids = {x["id"] for x in commandes}  # une commande refaite remplace l'ancienne fiche du même client
         liste["items"] = (commandes + [x for x in liste.get("items", []) if x.get("id") not in ids])[:400]
         LISTE.write_text(json.dumps(liste, ensure_ascii=False, indent=1), "utf-8")
-    if os.environ.get("REFAIRE", "") == "1":
+    if os.environ.get("REFAIRE", "") == "1" and not PAR_COMMANDE:  # 17 nov. 2026 : une commande ne refait pas les anciens sites (plus rapide)
         refaire_recents(liste)
     if os.environ.get("GITHUB_EVENT_NAME") in ("schedule", "push") and not PAR_COMMANDE:
         # Une « journée » d'usine va de midi à midi (heure de Paris) : la nuit et le passage de fin de matinée comptent ensemble.
