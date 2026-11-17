@@ -1,4 +1,186 @@
-04:33:36 Demande : 20 site(s)
-04:33:36 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-04:33:36 Rythme : 10 déjà faits aujourd'hui, 10 au plus par jour → 0 pour ce passage
-04:33:36 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
+19:10:17 Demande : 0 site(s)
+19:10:17 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+19:10:17 Commande client : Bylec33 — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:10:18     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts
+19:10:34     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:10:38     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:10:42     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:10:49     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:10:49     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+19:10:50     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:10:50     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:10:50     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:10:50     modèles groq : meta-llama/llama-prompt-guard-2-86m, allam-2-7b, whisper-large-v3-turbo, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-120b, openai/gpt-oss-safeguard-20b, qwen/qwen3.8-27b, openai/gpt-oss-20b, whisper-large-v3, canopylabs/orpheus-arabic-saudi
+19:11:07   photos : 4 (Unsplash)
+19:11:07   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:11:07   page de choix : https://oscarcousin-max.github.io/orbe-usine/bylec33/
+19:11:07 Commande client : GMB Thermique — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:11:13     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:11:14     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:11:17     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:11:27     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:11:30     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:11:43   textes de l'IA indisponibles (pas de JSON) : textes de secours
+19:11:43   photos : 4 (Unsplash)
+19:11:43   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:11:43   page de choix : https://oscarcousin-max.github.io/orbe-usine/gmb-thermique/
+19:11:43 Commande client : Alexandre Baptiste — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:11:47     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:11:52     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:16:52     gemini/gemini-3.6-flash : The read operation timed out
+19:16:53     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:17:14   photos : 4 (Unsplash)
+19:17:14   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-flash-latest)
+19:17:14   page de choix : https://oscarcousin-max.github.io/orbe-usine/alexandre-baptiste/
+19:17:14 Commande client : Plomberie Pouysegur — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:17:22     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:17:27     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:17:28     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:17:28     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:17:47   photos : 4 (Unsplash)
+19:17:47   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-flash-latest)
+19:17:47   page de choix : https://oscarcousin-max.github.io/orbe-usine/plomberie-pouysegur/
+19:17:47 Commande client : R2PCS — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:21:43     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:21:48     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:26:48     gemini/gemini-3.6-flash : The read operation timed out
+19:28:05     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:28:10     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:28:21   photos : 4 (Unsplash)
+19:28:21   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:28:21   page de choix : https://oscarcousin-max.github.io/orbe-usine/r2pcs/
+19:28:21 Commande client : Plaquiste Zone Habitat — 1 maquettes (peintres, plaquistes, carreleurs et menuisiers alu)
+19:30:05   photos : 4 (Unsplash)
+19:30:05   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
+19:30:05   page de choix : https://oscarcousin-max.github.io/orbe-usine/plaquiste-zone-habitat/
+19:30:05 Commande client : Nouvelle Aquitaine Couverture — 1 maquettes (charpentiers, couvreurs et maçons)
+19:30:24   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
+19:30:30   photos : 4 (Unsplash)
+19:30:30   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
+19:30:30   page de choix : https://oscarcousin-max.github.io/orbe-usine/nouvelle-aquitaine-couverture/
+19:30:30 Commande client : EM ELEC — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:30:49   photos : 4 (Unsplash)
+19:30:49   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
+19:30:49   page de choix : https://oscarcousin-max.github.io/orbe-usine/em-elec/
+19:30:49 Commande client : AL'EAU — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:31:02   photos : 4 (Unsplash)
+19:31:02   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
+19:31:02   page de choix : https://oscarcousin-max.github.io/orbe-usine/al-eau/
+19:31:02 Commande client : Angelby électricité — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:31:16   photos : 4 (Unsplash)
+19:31:16   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
+19:31:16   page de choix : https://oscarcousin-max.github.io/orbe-usine/angelby-electricite/
+19:31:16 Commande client : Ets. Lakehal — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:31:34   photos : 4 (Unsplash)
+19:31:34   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
+19:31:34   page de choix : https://oscarcousin-max.github.io/orbe-usine/ets-lakehal/
+19:31:34 Commande client : Cerqueira Plomberie — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:31:34     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:31:59   photos : 4 (Unsplash)
+19:31:59   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.7-flash)
+19:31:59   page de choix : https://oscarcousin-max.github.io/orbe-usine/cerqueira-plomberie/
+19:31:59 Commande client : GCH Bâtiment — 1 maquettes (peintres, plaquistes, carreleurs et menuisiers alu)
+19:31:59     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:32:00     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:32:01     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:32:01     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:32:01     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:32:11   photos : 4 (Unsplash)
+19:32:11   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:32:11   page de choix : https://oscarcousin-max.github.io/orbe-usine/gch-batiment/
+19:32:11 Commande client : Alpay Plomberie — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:32:11     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:34:15   photos : 4 (Unsplash)
+19:34:15   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.7-flash)
+19:34:15   page de choix : https://oscarcousin-max.github.io/orbe-usine/alpay-plomberie/
+19:34:15 Commande client : Da Cunha Alexandre — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:37:03     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:37:03     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:37:04     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:39:37     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:39:37     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:39:48   photos : 4 (Unsplash)
+19:39:48   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:39:48   page de choix : https://oscarcousin-max.github.io/orbe-usine/da-cunha-alexandre/
+19:39:48 Commande client : Tricolore Energies — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:39:48     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:39:48     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:39:49     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:39:49     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:39:54     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:40:02   photos : 4 (Unsplash)
+19:40:02   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:40:02   page de choix : https://oscarcousin-max.github.io/orbe-usine/tricolore-energies/
+19:40:02 Commande client : L.C Plomberie 33 — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:40:02     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:02     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:02     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:40:03     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:03     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:13   photos : 4 (Unsplash)
+19:40:13   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:40:13   page de choix : https://oscarcousin-max.github.io/orbe-usine/l-c-plomberie-33/
+19:40:13 Commande client : Chauffplomberie33 — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:40:13     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:13     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:14     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:40:17     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:40:33   photos : 4 (Unsplash)
+19:40:33   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:40:33   page de choix : https://oscarcousin-max.github.io/orbe-usine/chauffplomberie33/
+19:40:33 Commande client : PK Agencement — 1 maquettes (poseurs de sols, parqueteurs et menuisiers)
+19:40:36     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:40:36     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:36     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:36     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:52   photos : 4 (Unsplash)
+19:40:52   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:40:52   page de choix : https://oscarcousin-max.github.io/orbe-usine/pk-agencement/
+19:40:52 Commande client : Electrotec — 1 maquettes (plombiers, électriciens et chauffagistes)
+19:40:57     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:40:57     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:40:57     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:41:10   photos : 4 (Unsplash)
+19:41:10   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:41:10   page de choix : https://oscarcousin-max.github.io/orbe-usine/electrotec/
+19:41:10 Commande client : Mac Elfrick — 1 maquettes (charpentiers, couvreurs et maçons)
+19:41:10     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:41:12     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+19:41:12     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:41:22   photos : 4 (Unsplash)
+19:41:22   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
+19:41:22   page de choix : https://oscarcousin-max.github.io/orbe-usine/mac-elfrick/
+19:41:22 Commande client : LA PIZZ — 1 maquettes (restaurants indépendants de qualité)
+19:41:22     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:41:22     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:41:22     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+19:41:34   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_1
+19:41:42   photos : 4 (Unsplash)
+19:41:42   maquette 1 prête (modèle v2-table/brasserie/cadre · openai/gpt-oss-120b)
+19:41:42   page de choix : https://oscarcousin-max.github.io/orbe-usine/la-pizz/
+19:41:42 Commande client : Chez Bernadette — 1 maquettes (restaurants indépendants de qualité)
+19:41:52   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t
+19:41:52   photos : 4 (Unsplash)
+19:41:52   maquette 1 prête (modèle v2-table/brasserie/cadre · openai/gpt-oss-120b)
+19:41:52   page de choix : https://oscarcousin-max.github.io/orbe-usine/chez-bernadette/
+19:41:52 Commande client : La Roma Pizza — 1 maquettes (restaurants indépendants de qualité)
+19:42:02   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : citation
+19:42:02   photos : 4 (Unsplash, Wikimedia Commons)
+19:42:02   maquette 1 prête (modèle v2-table/brasserie/cadre · openai/gpt-oss-120b)
+19:42:02   page de choix : https://oscarcousin-max.github.io/orbe-usine/la-roma-pizza/
+19:42:02 Commande client : CRYOLAZ — 1 maquettes (instituts de beauté et coiffeurs)
+19:42:02     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+19:42:14   photos : 4 (Unsplash)
+19:42:14   maquette 1 prête (modèle v2-bijou/noir_or/cadre · qwen/qwen3.8-27b)
+19:42:14   page de choix : https://oscarcousin-max.github.io/orbe-usine/cryolaz/
+19:42:14 Commande client : LM COIFFURE — 1 maquettes (instituts de beauté et coiffeurs)
+19:42:25   photos : 4 (Unsplash)
+19:42:25   maquette 1 prête (modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b)
+19:42:25   page de choix : https://oscarcousin-max.github.io/orbe-usine/lm-coiffure/
+19:42:25 Commande client : F. Création Optique — 1 maquettes (opticiens et créateurs de lunettes)
+19:42:25     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
+19:42:33   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_t, e3_t
+19:42:38   photos : 4 (Unsplash)
+19:42:38   maquette 1 prête (modèle v2-bijou/noir_or/cadre · qwen/qwen3.8-27b)
+19:42:38   page de choix : https://oscarcousin-max.github.io/orbe-usine/f-creation-optique/
+19:42:38 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
