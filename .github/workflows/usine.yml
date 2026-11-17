@@ -63,8 +63,12 @@ jobs:
         run: |
           git config user.name "Usine ORBE"
           git config user.email "usine-orbe@users.noreply.github.com"
+          # 17 nov. 2026 : si une nouvelle commande est arrivée pendant le passage, on la garde (sinon conflit et rien n'est mis en ligne)
+          git fetch -q origin main || true
+          if git cat-file -e origin/main:data/commande.json 2>/dev/null && ! git diff --quiet "$GITHUB_SHA" origin/main -- data/commande.json; then
+            git checkout origin/main -- data/commande.json
+          fi
           git add -A docs data
-          git rm -q --cached data/commande.json 2>/dev/null || true
           git commit -m "Usine : sites du $(date +%F)" || exit 0
           git pull --rebase -X theirs origin main || true
           git push
