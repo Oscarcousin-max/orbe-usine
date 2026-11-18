@@ -1,6 +1,48 @@
 {
  "items": [
   {
+   "id": "agent-20261118-cb-bijoux",
+   "source": "commande",
+   "nom": "CB Bijoux",
+   "type": "bijoutiers, joailliers, horlogers",
+   "quartier": "Rue Bouffard, Bordeaux",
+   "adresse": "12 rue Bouffard, 33000 Bordeaux",
+   "canal": "Email",
+   "contact": "cbbijoux@orange.fr",
+   "telephone": "05 56 52 92 80",
+   "verif": "commande",
+   "preuve": "Tél. 05 56 52 92 80 · Rencontrée en personne le 18/11/2026. Portable : 06 86 07 95 36. Ancien site cbbijoux.com (domaine à elle). Elle a peur de se faire arnaquer : ton très rassurant.",
+   "preuve_url": "https://www.google.com/search?q=CB%20Bijoux%20Bordeaux",
+   "objet": "Un site pour CB Bijoux",
+   "message": "Bonjour Madame Gelebart,\n\nNous sommes passés vous voir aujourd'hui dans votre boutique de la rue Bouffard, merci encore pour votre accueil. Comme promis, nous vous avons préparé quelques propositions de site pour CB Bijoux, à voir ici : https://oscarcousin-max.github.io/orbe-usine/cb-bijoux/\n\nC'est gratuit et sans aucun engagement : vous ne payez rien tant que vous n'avez pas validé le site final, et votre nom de domaine cbbijoux.com reste à votre nom. Nous vous joignons aussi un petit document qui explique noir sur blanc comment nous travaillons.\n\nSi une proposition vous plaît, nous l'adaptons avec vos propres photos et vos horaires. Sinon, un simple « non merci » suffit.\n\nBien à vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 72 61 66 09",
+   "site_url": "https://oscarcousin-max.github.io/orbe-usine/cb-bijoux/",
+   "maquettes": [
+    {
+     "url": "https://oscarcousin-max.github.io/orbe-usine/cb-bijoux/1/",
+     "theme": "noir_or",
+     "mise": "cadre",
+     "par": "modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b"
+    },
+    {
+     "url": "https://oscarcousin-max.github.io/orbe-usine/cb-bijoux/2/",
+     "theme": "nuit_argent",
+     "mise": "split",
+     "par": "modèle v2-bijou/nuit_argent/split · openai/gpt-oss-120b"
+    },
+    {
+     "url": "https://oscarcousin-max.github.io/orbe-usine/cb-bijoux/3/",
+     "theme": "rose_ivoire",
+     "mise": "plein",
+     "par": "modèle v2-bijou/rose_ivoire/plein · openai/gpt-oss-120b"
+    }
+   ],
+   "par": "commande client · 3 maquettes",
+   "cree_le": "2026-11-18T17:58:38Z",
+   "note": 70,
+   "pourquoi": "rencontrée en boutique le 18/11 · intéressée par un site · un peu méfiante, à rassurer",
+   "gerant": "Chantal Gelebart"
+  },
+  {
    "id": "agent-20261118-td-renovation",
    "source": "commande",
    "nom": "TD Rénovation",
@@ -8108,24 +8150,6 @@
    "site_url": "https://oscarcousin-max.github.io/orbe-usine/marine-fouan/",
    "par": "modèle v2-bijou/nuit_argent/split · gemini-3.5-flash-lite",
    "cree_le": "2026-11-02T02:00:14Z"
-  },
-  {
-   "id": "agent-20261102-boulangerie-le-fournil-de-st-gence",
-   "nom": "Boulangerie Le Fournil de St Gence",
-   "type": "boulangeries et artisans du pain",
-   "quartier": "Saint-Gence",
-   "adresse": "1 Rue de l'Ancienne École, 87510 Saint-Gence",
-   "canal": "Email",
-   "contact": "lefournildesaintgence@orange.fr",
-   "telephone": "05 55 31 33 45",
-   "verif": "sans_site",
-   "preuve": "Tél. 05 55 31 33 45 · Vérifié sur DuckDuckGo et Bing : aucun site à son nom (seulement facebook).",
-   "preuve_url": "https://www.google.com/search?q=Boulangerie%20Le%20Fournil%20de%20St%20Gence%20Saint-Gence",
-   "objet": "Votre nouveau site web sur mesure",
-   "message": "Bonjour à l'équipe de la Boulangerie Le Fournil de St Gence,\nJ’ai remarqué que vous ouvrez chaque jour de 07h30 à 12h30 et que vous proposez du pain artisanal à Saint‑Gence.\nJ’ai donc pris l’initiative de vous préparer un site web sur mesure, que vous pouvez découvrir ici : https://oscarcousin-max.github.io/orbe-usine/boulangerie-le-fournil-de-st-gence/\nVous pourrez le mettre en ligne à votre nom, y ajouter vos propres photos et le gérer comme vous le souhaitez.\nSi cela ne vous convient pas, il suffit de répondre « non merci » et vous ne serez plus relancé.\nAu plaisir d’échanger avec vous,\nOscar · ORBE, studio digital\nsociete.orbe@gmail.com · 06 76 05 84 80",
-   "site_url": "https://oscarcousin-max.github.io/orbe-usine/boulangerie-le-fournil-de-st-gence/",
-   "par": "modèle v2-table/brasserie/plein · gemini-3.5-flash-lite",
-   "cree_le": "2026-11-02T02:00:47Z"
   }
  ],
  "maj": "2026-11-18T04:42:27Z"
