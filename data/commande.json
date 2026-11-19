@@ -1,0 +1,89 @@
+{
+  "nombre": 0,
+  "clients": [
+    {
+      "nom": "Chabrillanges",
+      "secteur": "charpentiers, couvreurs et maçons",
+      "ville": "Uzerche",
+      "adresse": "14 route d'Espartignac, 19140 Uzerche",
+      "telephone": "06 78 65 04 40",
+      "maquettes": 1,
+      "score": 70,
+      "gerant": "Jérôme Chabrillanges",
+      "pourquoi": "couvreur · portable du patron · sans salarié · créée en 2019",
+      "note": "Téléphone et adresse lus sur PagesJaunes ; données légales (EURL, SIREN 879658417, NAF 43.91B) lues sur origami-entreprises.fr (reprise SIRENE), annuaire officiel bloqué ; aucun site propre trouvé.",
+      "source": "https://www.pagesjaunes.fr/pros/60567298",
+      "specialites": "Couverture et travaux d'isolation"
+    },
+    {
+      "nom": "J'décors Peinture",
+      "secteur": "peintres, plaquistes, carreleurs et menuisiers alu",
+      "ville": "Villognon",
+      "adresse": "1 impasse du Marais, 16230 Villognon",
+      "telephone": "07 88 13 26 74",
+      "maquettes": 1,
+      "score": 64,
+      "gerant": "Julien Guilloteau",
+      "pourquoi": "peintre décorateur · portable du patron · entrepreneur individuel · créée en 06/2025, se lance",
+      "note": "Fiche PagesJaunes (SIRET 94169471300012, NAF 43.34Z) ; gérant d'après ses réponses aux avis ; Facebook seulement, pas de site ; annuaire officiel non vérifié (accès bloqué ce jour) ; SIRET lu sur les mentions légales PagesJaunes.",
+      "source": "https://www.pagesjaunes.fr/pros/64316938",
+      "specialites": "Peinture intérieure et extérieure, façades, sols, remise en état après dégât des eaux, papier peint, peinture au pistolet, badigeon à la chaux"
+    },
+    {
+      "nom": "TP'LEC",
+      "secteur": "plombiers, électriciens et chauffagistes",
+      "ville": "Artiguelouve",
+      "adresse": "6 lotissement Mulas, 64230 Artiguelouve",
+      "telephone": "06 13 82 29 35",
+      "maquettes": 1,
+      "score": 56,
+      "gerant": "",
+      "pourquoi": "électricien · portable du patron · SARL · créée en 2022",
+      "note": "Fiche PagesJaunes (SARL, SIREN 913641163, NAF 43.21A) ; seul lien « site » = sfr.fr, aucun domaine propre ; annuaire officiel non vérifié (accès bloqué ce jour) ; SIRET lu sur les mentions légales PagesJaunes.",
+      "source": "https://www.pagesjaunes.fr/pros/54216130",
+      "specialites": "Électricité générale, installation électrique, maison connectée, alarmes"
+    },
+    {
+      "nom": "A&C Home Expert",
+      "secteur": "peintres, plaquistes, carreleurs et menuisiers alu",
+      "ville": "Poitiers",
+      "adresse": "44 avenue du 8 Mai 1945, 86000 Poitiers",
+      "telephone": "06 51 95 71 56",
+      "maquettes": 1,
+      "score": 52,
+      "gerant": "Charly Guillot",
+      "pourquoi": "rénovation peinture-placo-carrelage · portable du patron · SAS · créée en 2023",
+      "note": "Fiche PagesJaunes (SAS, SIREN 977965011, NAF 43.31Z) ; président d'après l'annonce légale 2023 ; Facebook seulement ; annuaire officiel non vérifié (accès bloqué ce jour) ; SIRET lu sur les mentions légales PagesJaunes.",
+      "source": "https://www.pagesjaunes.fr/pros/63215609",
+      "specialites": "Rénovation générale : peinture, plaquisterie, carrelage, sols, salles de bain ; ECO-Artisan RGE"
+    },
+    {
+      "nom": "K&co Concept",
+      "secteur": "peintres, plaquistes, carreleurs et menuisiers alu",
+      "ville": "Vouneuil-sous-Biard",
+      "adresse": "17 allée du Lac, 86580 Vouneuil-sous-Biard",
+      "telephone": "06 17 42 39 81",
+      "maquettes": 1,
+      "score": 52,
+      "gerant": "",
+      "pourquoi": "peintre · portable du patron · SASU · créée en 2022",
+      "note": "Fiche PagesJaunes (SASU Kévin Chaumé, SIREN 912782588, NAF 43.34Z) ; Facebook seulement ; annuaire officiel non vérifié (accès bloqué ce jour) ; SIRET lu sur les mentions légales PagesJaunes.",
+      "source": "https://www.pagesjaunes.fr/pros/61707549",
+      "specialites": "Entreprise de peinture"
+    },
+    {
+      "nom": "CVC + Solutions",
+      "secteur": "plombiers, électriciens et chauffagistes",
+      "ville": "Limoges",
+      "adresse": "23 rue Fernand Malinvaud, 87000 Limoges",
+      "telephone": "06 62 63 39 36",
+      "maquettes": 1,
+      "score": 51,
+      "gerant": "",
+      "pourquoi": "plombier-chauffagiste · portable du patron · SARL · créée en 2022",
+      "note": "Fiche PagesJaunes (SARL, SIRET 90848451200011) ; aucun domaine propre trouvé ; annuaire officiel non vérifié (accès bloqué ce jour) ; SIRET lu sur les mentions légales PagesJaunes.",
+      "source": "https://www.pagesjaunes.fr/pros/61638625",
+      "specialites": "Plomberie, dépannage, chauffe-eau, rénovation de salle de bain, ventilation, chauffage, climatisation, pompes à chaleur, poêles à bois"
+    }
+  ]
+}
