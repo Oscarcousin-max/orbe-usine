@@ -1,131 +1,151 @@
-19:09:42 Demande : 0 site(s)
-19:09:42 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-19:09:42 Commande client : EBC — 1 maquettes (charpentiers, couvreurs et maçons)
-19:09:42     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts
-19:14:42     gemini/gemini-3.8-flash : The read operation timed out
-19:19:42     gemini/gemini-3.7-flash : The read operation timed out
-19:19:43     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:19:44     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:19:44     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
-19:19:51     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:19:51     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:19:51     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:19:51     modèles groq : qwen/qwen3.8-27b, openai/gpt-oss-safeguard-20b, meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-120b, canopylabs/orpheus-v1-english, whisper-large-v3-turbo, meta-llama/llama-prompt-guard-2-22m, allam-2-7b, whisper-large-v3, canopylabs/orpheus-arabic-saudi, openai/gpt-oss-20b
-19:20:09   photos : 4 (Unsplash)
-19:20:09   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-19:20:09   page de choix : https://oscarcousin-max.github.io/orbe-usine/ebc/
-19:20:09 Commande client : Concept Bois K. — 1 maquettes (charpentiers, couvreurs et maçons)
-19:20:10     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:25:11     gemini/gemini-3.7-flash : The read operation timed out
-19:25:12     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:25:13     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:25:13     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:25:25   photos : 4 (Unsplash)
-19:25:25   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-19:25:25   page de choix : https://oscarcousin-max.github.io/orbe-usine/concept-bois-k/
-19:25:25 Commande client : GMT — 1 maquettes (charpentiers, couvreurs et maçons)
-19:26:08     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:26:10     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:26:11     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:26:12     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:26:13     gemini/gemini-flash-latest : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:26:24   photos : 4 (Unsplash)
-19:26:24   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-19:26:24   page de choix : https://oscarcousin-max.github.io/orbe-usine/gmt/
-19:26:24 Commande client : Mbois&Zinc — 1 maquettes (charpentiers, couvreurs et maçons)
-19:31:24     gemini/gemini-3.8-flash : The read operation timed out
-19:36:24     gemini/gemini-3.7-flash : The read operation timed out
-19:36:33     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:36:50     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:41:50     gemini/gemini-flash-latest : The read operation timed out
-19:42:00   photos : 4 (Unsplash)
-19:42:00   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-19:42:00   page de choix : https://oscarcousin-max.github.io/orbe-usine/mbois-zinc/
-19:42:00 Commande client : L'électricien de Gironde — 1 maquettes (plombiers, électriciens et chauffagistes)
-19:47:00     gemini/gemini-3.8-flash : The read operation timed out
-19:52:01     gemini/gemini-3.7-flash : The read operation timed out
-19:52:02     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:52:15     gemini/gemini-3.5-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:52:15     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:52:27   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_d
-19:52:33   photos : 4 (Unsplash)
-19:52:33   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-19:52:33   page de choix : https://oscarcousin-max.github.io/orbe-usine/l-electricien-de-gironde/
-19:52:33 Commande client : Julien Tissie — 1 maquettes (charpentiers, couvreurs et maçons)
-19:52:36     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:57:36     gemini/gemini-3.7-flash : The read operation timed out
-19:58:41   photos : 4 (Unsplash)
-19:58:41   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
-19:58:41   page de choix : https://oscarcousin-max.github.io/orbe-usine/julien-tissie/
-19:58:41 Commande client : Lescarret Paysage — 1 maquettes (paysagistes et créateurs de jardins)
-19:58:41     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:58:41     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:59:03   photos : 4 (Unsplash)
-19:59:03   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
-19:59:03   page de choix : https://oscarcousin-max.github.io/orbe-usine/lescarret-paysage/
-19:59:03 Commande client : Ceram Unique — 1 maquettes (peintres, plaquistes, carreleurs et menuisiers alu)
-19:59:31   photos : 4 (Unsplash)
-19:59:31   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
-19:59:31   page de choix : https://oscarcousin-max.github.io/orbe-usine/ceram-unique/
-19:59:31 Commande client : Amperelec 33 — 1 maquettes (plombiers, électriciens et chauffagistes)
-20:00:12   photos : 4 (Unsplash)
-20:00:12   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
-20:00:12   page de choix : https://oscarcousin-max.github.io/orbe-usine/amperelec-33/
-20:00:12 Commande client : Chadeau Laurent — 1 maquettes (charpentiers, couvreurs et maçons)
-20:00:29   photos : 4 (Unsplash)
-20:00:29   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
-20:00:29   page de choix : https://oscarcousin-max.github.io/orbe-usine/chadeau-laurent/
-20:00:29 Commande client : BSL Peinture — 1 maquettes (peintres, plaquistes, carreleurs et menuisiers alu)
-20:00:50   photos : 4 (Unsplash)
-20:00:50   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
-20:00:50   page de choix : https://oscarcousin-max.github.io/orbe-usine/bsl-peinture/
-20:00:50 Commande client : Wilfried Batisse — 1 maquettes (charpentiers, couvreurs et maçons)
-20:00:50     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-20:05:50     gemini/gemini-3.5-flash : The read operation timed out
-20:06:02   photos : 4 (Unsplash)
-20:06:02   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-20:06:02   page de choix : https://oscarcousin-max.github.io/orbe-usine/wilfried-batisse/
-20:06:02 Commande client : RM Zinguerie — 1 maquettes (charpentiers, couvreurs et maçons)
-20:06:02     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-20:06:02     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-20:06:09     groq/openai/gpt-oss-120b : réponse vide
-20:06:16   photos : 4 (Unsplash)
-20:06:16   maquette 1 prête (modèle v2-atelier/encre/cadre · qwen/qwen3.8-27b)
-20:06:16   page de choix : https://oscarcousin-max.github.io/orbe-usine/rm-zinguerie/
-20:06:16 Commande client : JD Plaquiste — 1 maquettes (peintres, plaquistes, carreleurs et menuisiers alu)
-20:06:27   photos : 4 (Unsplash)
-20:06:27   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-20:06:27   page de choix : https://oscarcousin-max.github.io/orbe-usine/jd-plaquiste/
-20:06:27 Commande client : JST Concept — 1 maquettes (peintres, plaquistes, carreleurs et menuisiers alu)
-20:06:27     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-20:06:35   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o1_d
-20:06:35   photos : 4 (Unsplash)
-20:06:35   maquette 1 prête (modèle v2-atelier/encre/cadre · qwen/qwen3.8-27b)
-20:06:35   page de choix : https://oscarcousin-max.github.io/orbe-usine/jst-concept/
-20:06:35 Commande client : Axel Pollet — 1 maquettes (charpentiers, couvreurs et maçons)
-20:06:47   textes de l'IA indisponibles (pas de JSON) : textes de secours
-20:06:47   photos : 4 (Unsplash)
-20:06:47   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-20:06:47   page de choix : https://oscarcousin-max.github.io/orbe-usine/axel-pollet/
-20:06:47 Commande client : Ohm Multiservices — 1 maquettes (plombiers, électriciens et chauffagistes)
-20:06:48     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-20:06:48     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
-20:06:50     groq/openai/gpt-oss-20b : réponse vide
-20:06:50     modèles or : inclusionai/ling-3.2-flash:free, baidu/ernie-5.5-flash-preview:free, thinkingmachines/inkling-2-small:free, liquid/lfm-3-1.7b:free, particle-ai/particle-1:free, recursive/flint-v1.0:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, nvidia/nemotron-3.5-lightning:free, cohere/north-mini-code:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
-20:13:13   photos : 4 (Unsplash)
-20:13:13   maquette 1 prête (modèle v2-atelier/encre/cadre · inclusionai/ling-3.2-flash:free)
-20:13:13   page de choix : https://oscarcousin-max.github.io/orbe-usine/ohm-multiservices/
-20:13:13 Commande client : DG Confort — 1 maquettes (plombiers, électriciens et chauffagistes)
-20:13:23   2 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2, e3_t
-20:13:23   photos : 4 (Unsplash)
-20:13:23   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-20:13:23   page de choix : https://oscarcousin-max.github.io/orbe-usine/dg-confort/
-20:13:23 Commande client : CP Systeme — 1 maquettes (plombiers, électriciens et chauffagistes)
-20:13:35   photos : 4 (Unsplash)
-20:13:35   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-20:13:35   page de choix : https://oscarcousin-max.github.io/orbe-usine/cp-systeme/
-20:13:35 Commande client : Debowski Paysages — 1 maquettes (paysagistes et créateurs de jardins)
-20:13:46   photos : 4 (Unsplash)
-20:13:46   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-20:13:46   page de choix : https://oscarcousin-max.github.io/orbe-usine/debowski-paysages/
-20:13:46 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
+03:35:01 Demande : 20 site(s)
+03:35:01 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+03:35:01 Rythme : 0 déjà faits aujourd'hui, 10 au plus par jour → 10 pour ce passage
+03:35:01 Départements : 33, 38, 39, 40, 41
+03:35:01     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+03:39:30     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+03:43:54     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:44:53     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:46:23     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+03:50:52     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+03:53:07     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:53:16     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+03:53:24     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+03:53:24   cuisinistes et salles de bain / 39 : carte illisible (HTTP Error 502: Bad Gateway)
+03:54:03     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+03:58:25     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:02:49     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:03:17 Carte : cuisinistes et salles de bain — 9 sans site noté et joignables
+04:03:18     note trop basse (< 50) : 1
+04:03:21     note trop basse (< 50) : 3
+04:03:21     écarté : pas de numéro français joignable : 1
+04:03:24     note trop basse (< 50) : 1
+04:03:24     écarté : 20 salariés ou plus : 1
+04:03:24   2 notés 50/100 ou plus
+04:06:56 Carte : poseurs de sols, parqueteurs et menuisiers — 30 sans site noté et joignables
+04:06:57     écarté : 20 salariés ou plus : 1
+04:07:09     note trop basse (< 50) : 7
+04:07:09     écarté : entreprise fermée : 2
+04:07:09     écarté : 20 à 49 salariés : 1
+04:07:09     écarté : association, organisme public ou société civile : 1
+04:07:13     note trop basse (< 50) : 1
+04:07:15     écarté : entreprise fermée : 1
+04:07:15     note trop basse (< 50) : 1
+04:07:15   15 notés 50/100 ou plus
+04:08:33     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:10:33     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:15:02     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+04:15:11     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+04:16:04     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:18:11     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:22:29     carte overpass.private.coffee : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:23:37 Carte : charpentiers, couvreurs et maçons — 33 sans site noté et joignables
+04:23:42     note trop basse (< 50) : 2
+04:23:42     écarté : 20 à 49 salariés : 2
+04:23:42     écarté : 20 salariés ou plus : 1
+04:23:48     note trop basse (< 50) : 2
+04:23:48     écarté : 20 à 49 salariés : 2
+04:23:51     note trop basse (< 50) : 1
+04:23:51     écarté : pas de numéro français joignable : 1
+04:23:51     écarté : 20 à 49 salariés : 1
+04:23:54     note trop basse (< 50) : 2
+04:23:54     écarté : 20 salariés ou plus : 1
+04:23:57     note trop basse (< 50) : 3
+04:23:57     écarté : entreprise fermée : 1
+04:23:57   14 notés 50/100 ou plus
+04:23:57     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:29:24     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:33:50     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:38:18     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+04:38:27     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+04:39:52 Carte : peintres, plaquistes, carreleurs et menuisiers alu — 25 sans site noté et joignables
+04:40:03     note trop basse (< 50) : 9
+04:40:03     écarté : entreprise fermée : 2
+04:40:03     écarté : association, organisme public ou société civile : 1
+04:40:05     note trop basse (< 50) : 2
+04:40:06     note trop basse (< 50) : 2
+04:40:08     écarté : entreprise fermée : 1
+04:40:08   8 notés 50/100 ou plus
+04:43:45     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:48:14     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+04:50:13     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:50:22     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+04:52:07 Carte : paysagistes et créateurs de jardins — 3 sans site noté et joignables
+04:52:09     écarté : association, organisme public ou société civile : 1
+04:52:10     écarté : 20 salariés ou plus : 1
+04:52:10   1 notés 50/100 ou plus
+04:52:10 40 candidats
+04:52:10 Commerce : La Boutique du Menuisier (?)
+04:53:02   écarté : Site trouvé : https://laboutiquedumenuisier.fr/
+04:53:02 Commerce : Raison Home (?)
+04:53:04   écarté : Site trouvé : https://www.raisonhome.com/fr/
+04:53:04 Commerce : Chanussot Père et Fils (?)
+04:53:04       DuckDuckGo : bloqué (202)
+04:53:08       Mojeek : HTTP Error 403: Forbidden
+04:53:10   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+04:53:10     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, gemini-4-neon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview
+04:55:07   photos : 4 (Unsplash)
+04:55:07     modèles groq : openai/gpt-oss-20b, allam-2-7b, canopylabs/orpheus-arabic-saudi, qwen/qwen3.8-27b, meta-llama/llama-prompt-guard-2-22m, whisper-large-v3-turbo, canopylabs/orpheus-v1-english, whisper-large-v3, openai/gpt-oss-120b, meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-safeguard-20b
+04:55:14   prêt : https://oscarcousin-max.github.io/orbe-usine/chanussot-pere-et-fils/
+04:55:14 Commerce : Val de Seille Paysage (?)
+04:55:15       DuckDuckGo : bloqué (202)
+04:55:18       Mojeek : HTTP Error 403: Forbidden
+04:55:20   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:00:20     gemini/gemini-3.8-flash : The read operation timed out
+05:01:57   photos : 4 (Unsplash)
+05:02:04   prêt : https://oscarcousin-max.github.io/orbe-usine/val-de-seille-paysage/
+05:02:04 Commerce : Ciecierski (?)
+05:02:05       DuckDuckGo : bloqué (202)
+05:02:08       Mojeek : HTTP Error 403: Forbidden
+05:02:10   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:02:10     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:07:10     gemini/gemini-3.7-flash : The read operation timed out
+05:08:18   photos : 4 (Unsplash)
+05:08:26   prêt : https://oscarcousin-max.github.io/orbe-usine/ciecierski/
+05:08:26 Commerce : EM Cuisines & Ameublements (?)
+05:08:28   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:08:28     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:08:28     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:08:49   photos : 4 (Unsplash)
+05:08:57   prêt : https://oscarcousin-max.github.io/orbe-usine/em-cuisines-ameublements/
+05:08:57 Commerce : Lancelon (?)
+05:08:59   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:08:59     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:13:59     gemini/gemini-3.7-flash : The read operation timed out
+05:13:59     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:13:59     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:13:59     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
+05:14:00     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:14:00     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:14:00     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:14:09   photos : 4 (Unsplash)
+05:14:16   prêt : https://oscarcousin-max.github.io/orbe-usine/lancelon/
+05:14:16 Commerce : Paulin Lionnel Charpente (Cuvier)
+05:14:18   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:14:18     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:14:18     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:16:17   photos : 4 (Unsplash)
+05:16:24   prêt : https://oscarcousin-max.github.io/orbe-usine/paulin-lionnel-charpente/
+05:16:24 Commerce : Cf cab (?)
+05:16:26   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:16:26     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:17:07   photos : 4 (Unsplash)
+05:17:14   prêt : https://oscarcousin-max.github.io/orbe-usine/cf-cab/
+05:17:14 Commerce : Lopes rénovation (?)
+05:17:17   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:18:37   photos : 4 (Unsplash)
+05:18:44   prêt : https://oscarcousin-max.github.io/orbe-usine/lopes-renovation/
+05:18:44 Commerce : Gsr Fermetures (?)
+05:18:47   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:22:05   photos : 4 (Unsplash)
+05:22:12   prêt : https://oscarcousin-max.github.io/orbe-usine/gsr-fermetures/
+05:22:12 Commerce : Renov Rhône Alpes (?)
+05:22:14   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:22:14     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:22:14     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:22:14     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:22:25   photos : 4 (Unsplash)
+05:22:32   prêt : https://oscarcousin-max.github.io/orbe-usine/renov-rhone-alpes/
+05:22:32 Moteurs de recherche : DuckDuckGo 0 ok / 3 bloqué, Bing 10 ok / 0 bloqué, Mojeek 0 ok / 3 bloqué
+05:22:32 Écartés car déjà un site : 2 · fermés : 0 · non vérifiables : 0
+05:22:32 Terminé : 10 site(s) prêt(s).
