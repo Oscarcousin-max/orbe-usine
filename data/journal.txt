@@ -1,87 +1,35 @@
-19:55:38 Demande : 0 site(s)
-19:55:38 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-19:55:38 Commande client : Boutique Marcelle — 1 maquettes (boutiques de mode et maroquinerie)
-19:55:38     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, gemini-4-neon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview
-19:55:38     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:55:38     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:56:33   photos : 4 (Unsplash)
-19:56:33   maquette 1 prête (modèle v2-bijou/noir_or/cadre · gemini-3.6-flash)
-19:56:33   page de choix : https://oscarcousin-max.github.io/orbe-usine/boutique-marcelle/
-19:56:33 Commande client : MONO — 1 maquettes (boutiques de mode et maroquinerie)
-19:56:33     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:56:33     gemini/gemini-3.5-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:56:33     gemini/gemini-2.5-flash : 404 { "error": { "code": 404, "message": "This model models/gemini-2.5-flash is no longer 
-20:01:33     gemini/gemini-flash-latest : The read operation timed out
-20:01:33     gemini/gemini-omni-1.1-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-20:01:33     gemini/gemini-omni-1.2-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-20:01:34     modèles groq : allam-2-7b, whisper-large-v3-turbo, whisper-large-v3, openai/gpt-oss-20b, meta-llama/llama-prompt-guard-2-22m, meta-llama/llama-prompt-guard-2-86m, canopylabs/orpheus-arabic-saudi, qwen/qwen3.8-27b, openai/gpt-oss-safeguard-20b, openai/gpt-oss-120b, canopylabs/orpheus-v1-english
-20:01:44   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e2_d
-20:01:44   photos : 4 (Unsplash)
-20:01:44   maquette 1 prête (modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b)
-20:01:44   page de choix : https://oscarcousin-max.github.io/orbe-usine/mono/
-20:01:44 Commande client : Je Me Souviens — 1 maquettes (librairies, boutiques cadeaux, créateurs)
-20:01:44     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-20:01:45     gemini/gemini-flash-latest : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-20:02:06   photos : 4 (Unsplash)
-20:02:06   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-20:02:06   page de choix : https://oscarcousin-max.github.io/orbe-usine/je-me-souviens/
-20:02:06 Commande client : Freep'Show Vintage — 1 maquettes (boutiques de mode et maroquinerie)
-20:02:18   photos : 4 (Unsplash)
-20:02:18   maquette 1 prête (modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b)
-20:02:18   page de choix : https://oscarcousin-max.github.io/orbe-usine/freep-show-vintage/
-20:02:18 Commande client : Chamade — 1 maquettes (boutiques de mode et maroquinerie)
-20:02:28   photos : 4 (Unsplash)
-20:02:28   maquette 1 prête (modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b)
-20:02:28   page de choix : https://oscarcousin-max.github.io/orbe-usine/chamade/
-20:02:28 Commande client : Crème Fraîche — 1 maquettes (boutiques de mode et maroquinerie)
-20:02:35     groq/openai/gpt-oss-120b : réponse vide
-20:02:42   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_t
-20:02:42   photos : 4 (Unsplash)
-20:02:42   maquette 1 prête (modèle v2-bijou/noir_or/cadre · qwen/qwen3.8-27b)
-20:02:42   page de choix : https://oscarcousin-max.github.io/orbe-usine/creme-fraiche/
-20:02:42 Commande client : Vintage Paradise — 1 maquettes (boutiques de mode et maroquinerie)
-20:02:42     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-20:02:42     groq/qwen/qwen3.8-27b : 429 {"error":{"message":"Request too large for model `qwen/qwen3.8-27b` in organization `o
-20:02:45     groq/openai/gpt-oss-20b : réponse vide
-20:02:45     modèles or : inclusionai/ling-3.2-flash:free, baidu/ernie-5.5-flash-preview:free, liquid/lfm-3-1.7b:free, particle-ai/particle-1:free, recursive/flint-v1.0:free, nvidia/nemotron-3.5-super-vl:free, dots-studio/dots-3-note-preview:free, nvidia/nemotron-3.5-lightning:free, nvidia/nemotron-3-ultra-550b-a55b:free, nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, google/gemma-4-26b-a4b-it:free, google/gemma-4-31b-it:free
-20:02:45     or/inclusionai/ling-3.2-flash:free : 429 {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"inclusiona
-20:03:24   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : o2_t
-20:03:24   photos : 4 (Unsplash)
-20:03:24   maquette 1 prête (modèle v2-bijou/noir_or/cadre · baidu/ernie-5.5-flash-preview:free)
-20:03:24   page de choix : https://oscarcousin-max.github.io/orbe-usine/vintage-paradise/
-20:03:24 Commande client : Leilou Shop — 1 maquettes (boutiques de mode et maroquinerie)
-20:03:34   photos : 4 (Unsplash)
-20:03:34   maquette 1 prête (modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b)
-20:03:34   page de choix : https://oscarcousin-max.github.io/orbe-usine/leilou-shop/
-20:03:34 Commande client : Frip' Confit — 1 maquettes (boutiques de mode et maroquinerie)
-20:03:45   photos : 4 (Unsplash)
-20:03:45   maquette 1 prête (modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b)
-20:03:45   page de choix : https://oscarcousin-max.github.io/orbe-usine/frip-confit/
-20:03:45 Commande client : Jolie Môme — 1 maquettes (bijoutiers, joailliers, horlogers)
-20:04:06   photos : 4 (Unsplash, Wikimedia Commons)
-20:04:06   maquette 1 prête (modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b)
-20:04:06   page de choix : https://oscarcousin-max.github.io/orbe-usine/jolie-mome/
-20:04:06 Commande client : tintamarre — 1 maquettes (librairies, boutiques cadeaux, créateurs)
-20:04:17   photos : 4 (Unsplash)
-20:04:17   maquette 1 prête (modèle v2-atelier/encre/cadre · openai/gpt-oss-120b)
-20:04:17   page de choix : https://oscarcousin-max.github.io/orbe-usine/tintamarre/
-20:04:17 Commande client : Canaille Vintage — 1 maquettes (boutiques de mode et maroquinerie)
-20:04:27   photos : 4 (Unsplash)
-20:04:27   maquette 1 prête (modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b)
-20:04:27   page de choix : https://oscarcousin-max.github.io/orbe-usine/canaille-vintage/
-20:04:27 Commande client : Peau d'Anne — 1 maquettes (boutiques de mode et maroquinerie)
-20:04:27     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-20:04:35   photos : 4 (Unsplash)
-20:04:35   maquette 1 prête (modèle v2-bijou/noir_or/cadre · qwen/qwen3.8-27b)
-20:04:35   page de choix : https://oscarcousin-max.github.io/orbe-usine/peau-d-anne/
-20:04:35 Commande client : Madame Plus — 1 maquettes (boutiques de mode et maroquinerie)
-20:04:45   photos : 4 (Unsplash)
-20:04:45   maquette 1 prête (modèle v2-bijou/noir_or/cadre · openai/gpt-oss-120b)
-20:04:45   page de choix : https://oscarcousin-max.github.io/orbe-usine/madame-plus/
-20:04:45 Commande client : Impulsive — 1 maquettes (boutiques de mode et maroquinerie)
-20:04:45     groq/openai/gpt-oss-120b : 429 {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organizatio
-20:04:52   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : e3_d
-20:04:52   photos : 4 (Unsplash)
-20:04:52   maquette 1 prête (modèle v2-bijou/noir_or/cadre · qwen/qwen3.8-27b)
-20:04:52   page de choix : https://oscarcousin-max.github.io/orbe-usine/impulsive/
-20:04:52 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
+20:05:54 Demande : 0 site(s)
+20:05:54 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+20:05:54 Commande client : La Cave des Moines — 1 maquettes (caves à vin et bars à vin)
+20:05:54     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, gemini-4-neon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview
+20:06:15     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+20:08:09     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+20:08:43   photos : 4 (Unsplash)
+20:08:43   maquette 1 prête (modèle v2-domaine/bordeaux/cadre · gemini-3.6-flash)
+20:08:43   page de choix : https://oscarcousin-max.github.io/orbe-usine/la-cave-des-moines/
+20:08:43 Commande client : Cordonnerie Soares — 1 maquettes (artisans d'art)
+20:08:45     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+20:08:45     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:10:14   photos : 4 (Unsplash)
+20:10:14   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
+20:10:14   page de choix : https://oscarcousin-max.github.io/orbe-usine/cordonnerie-soares/
+20:10:14 Commande client : Le Dahlia by Estelle — 1 maquettes (fleuristes créateurs)
+20:10:14     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:10:48   photos : 4 (Unsplash)
+20:10:48   maquette 1 prête (modèle v2-fleur/botanique/cadre · gemini-3.6-flash)
+20:10:48   page de choix : https://oscarcousin-max.github.io/orbe-usine/le-dahlia-by-estelle/
+20:10:48 Commande client : Earthen d'Atelier — 1 maquettes (artisans d'art)
+20:10:49     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:11:34   photos : 4 (Unsplash)
+20:11:34   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.5-flash)
+20:11:34   page de choix : https://oscarcousin-max.github.io/orbe-usine/earthen-d-atelier/
+20:11:34 Commande client : Atelier Christophe Otero — 1 maquettes (décorateurs, antiquaires, galeries)
+20:12:25   photos : 4 (Unsplash, Wikimedia Commons)
+20:12:25   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
+20:12:25   page de choix : https://oscarcousin-max.github.io/orbe-usine/atelier-christophe-otero/
+20:12:25 Commande client : Studio Art Tattoo — 1 maquettes (tatoueurs et barbiers)
+20:12:25     gemini/gemini-3.6-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+20:12:59   photos : 4 (Unsplash)
+20:12:59   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.5-flash)
+20:12:59   page de choix : https://oscarcousin-max.github.io/orbe-usine/studio-art-tattoo/
+20:12:59 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
