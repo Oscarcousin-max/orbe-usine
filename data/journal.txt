@@ -1,62 +1,56 @@
-19:07:07 Demande : 0 site(s)
-19:07:07 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-19:07:07 Commande client : KD Piscines — 1 maquettes (piscinistes et pergolas)
-19:07:07     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, gemini-4-neon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview
-19:07:10     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:08:04   photos : 4 (Unsplash)
-19:08:04   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.7-flash)
-19:08:04   page de choix : https://oscarcousin-max.github.io/orbe-usine/kd-piscines/
-19:08:04 Commande client : Cap Bassin — 1 maquettes (piscinistes et pergolas)
-19:11:19   photos : 4 (Unsplash)
-19:11:19   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
-19:11:19   page de choix : https://oscarcousin-max.github.io/orbe-usine/cap-bassin/
-19:11:19 Commande client : MD Piscine et Jardin — 1 maquettes (piscinistes et pergolas)
-19:16:24   photos : 4 (Unsplash)
-19:16:24   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
-19:16:24   page de choix : https://oscarcousin-max.github.io/orbe-usine/md-piscine-et-jardin/
-19:16:24 Commande client : Acropierre — 1 maquettes (charpentiers, couvreurs et maçons)
-19:20:30   photos : 4 (Unsplash)
-19:20:30   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
-19:20:30   page de choix : https://oscarcousin-max.github.io/orbe-usine/acropierre/
-19:20:30 Commande client : ECB — 1 maquettes (charpentiers, couvreurs et maçons)
-19:20:54   photos : 4 (Unsplash)
-19:20:54   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
-19:20:54   page de choix : https://oscarcousin-max.github.io/orbe-usine/ecb/
-19:20:54 Commande client : SF Paysage 24 — 1 maquettes (paysagistes et créateurs de jardins)
-19:21:28   photos : 4 (Unsplash)
-19:21:28   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
-19:21:28   page de choix : https://oscarcousin-max.github.io/orbe-usine/sf-paysage-24/
-19:21:28 Commande client : S.T Paysage — 1 maquettes (paysagistes et créateurs de jardins)
-19:25:01   photos : 4 (Unsplash)
-19:25:01   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
-19:25:01   page de choix : https://oscarcousin-max.github.io/orbe-usine/s-t-paysage/
-19:25:01 Commande client : BN Service — 1 maquettes (paysagistes et créateurs de jardins)
-19:25:04     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:27:43   photos : 4 (Unsplash)
-19:27:43   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.7-flash)
-19:27:43   page de choix : https://oscarcousin-max.github.io/orbe-usine/bn-service/
-19:27:43 Commande client : Grande Aquitaine Piscines — 1 maquettes (piscinistes et pergolas)
-19:29:25   photos : 4 (Unsplash)
-19:29:25   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.8-flash)
-19:29:25   page de choix : https://oscarcousin-max.github.io/orbe-usine/grande-aquitaine-piscines/
-19:29:25 Commande client : L'Ebénisterie du Roy — 1 maquettes (ébénistes et artisans du bois)
-19:29:26     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:31:51   photos : 4 (Unsplash)
-19:31:51   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.7-flash)
-19:31:51   page de choix : https://oscarcousin-max.github.io/orbe-usine/l-ebenisterie-du-roy/
-19:31:51 Commande client : Meubles Brun — 1 maquettes (ébénistes et artisans du bois)
-19:31:52     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-19:35:51   photos : 4 (Unsplash)
-19:35:51   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.7-flash)
-19:35:51   page de choix : https://oscarcousin-max.github.io/orbe-usine/meubles-brun/
-19:35:51 Commande client : Serrurerie Pouyanne — 1 maquettes (serruriers et vitriers)
-19:40:51     gemini/gemini-3.8-flash : The read operation timed out
-19:42:47   photos : 4 (Unsplash)
-19:42:47   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.7-flash)
-19:42:47   page de choix : https://oscarcousin-max.github.io/orbe-usine/serrurerie-pouyanne/
-19:42:47 Commande client : Serimetal 86 — 1 maquettes (serruriers et vitriers)
-19:42:47     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
-19:45:39   photos : 4 (Unsplash)
-19:45:39   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.7-flash)
-19:45:39   page de choix : https://oscarcousin-max.github.io/orbe-usine/serimetal-86/
-19:45:40 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
+02:16:56 Demande : 20 site(s)
+02:16:56 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+02:16:56 Rythme : 0 déjà faits aujourd'hui, 10 au plus par jour → 10 pour ce passage
+02:16:56 Départements : 33, 87, 88, 89, 90
+02:20:03     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+02:22:27     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+02:26:55     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+02:27:04     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+02:27:54 Carte : cuisinistes et salles de bain — 7 sans site noté et joignables
+02:27:55     note trop basse (< 50) : 1
+02:28:00     note trop basse (< 50) : 5
+02:28:00     écarté : 20 à 49 salariés : 1
+02:28:00   0 notés 50/100 ou plus
+02:30:04     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
+02:33:46 Carte : poseurs de sols, parqueteurs et menuisiers — 9 sans site noté et joignables
+02:33:47     écarté : 20 salariés ou plus : 1
+02:33:48     note trop basse (< 50) : 1
+02:33:51     note trop basse (< 50) : 4
+02:33:51     écarté : entreprise fermée : 1
+02:33:53     note trop basse (< 50) : 1
+02:33:53     écarté : 20 salariés ou plus : 1
+02:33:53   0 notés 50/100 ou plus
+02:35:04     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+02:37:35     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+02:42:03     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+02:42:13     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+02:43:53     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+02:45:35 Carte : charpentiers, couvreurs et maçons — 13 sans site noté et joignables
+02:45:40     note trop basse (< 50) : 2
+02:45:40     écarté : 20 à 49 salariés : 2
+02:45:40     écarté : 20 salariés ou plus : 1
+02:45:44     note trop basse (< 50) : 4
+02:45:44     écarté : entreprise fermée : 2
+02:45:45     note trop basse (< 50) : 1
+02:45:46   1 notés 50/100 ou plus
+02:47:48     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+02:52:16     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+02:54:37     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+02:54:46     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+02:54:54     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+02:54:54   peintres, plaquistes, carreleurs et menuisiers alu / 89 : carte illisible (HTTP Error 502: Bad Gateway)
+02:55:25 Carte : peintres, plaquistes, carreleurs et menuisiers alu — 3 sans site noté et joignables
+02:55:28     note trop basse (< 50) : 2
+02:55:29     note trop basse (< 50) : 1
+02:55:29   0 notés 50/100 ou plus
+03:00:25 Carte : paysagistes et créateurs de jardins — 3 sans site noté et joignables
+03:00:26     note trop basse (< 50) : 1
+03:00:26     écarté : pas de numéro français joignable : 1
+03:00:28     note trop basse (< 50) : 1
+03:00:28   0 notés 50/100 ou plus
+03:00:28 1 candidats
+03:00:28 Commerce : Valli sarl (?)
+03:00:29   écarté : Site trouvé : https://www.valli.fr/
+03:00:29 Moteurs de recherche : DuckDuckGo 0 ok / 0 bloqué, Bing 0 ok / 0 bloqué, Mojeek 0 ok / 0 bloqué
+03:00:29 Écartés car déjà un site : 1 · fermés : 0 · non vérifiables : 0
+03:00:29 Terminé : 0 site(s) prêt(s).
