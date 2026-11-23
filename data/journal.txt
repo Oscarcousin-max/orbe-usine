@@ -1,32 +1,103 @@
-18:49:07 Demande : 0 site(s)
-18:49:07 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-18:49:07 Commande client : Fripology — 1 maquettes (boutiques de mode et maroquinerie)
-18:49:07     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, gemini-4-neon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview
-18:49:27   photos : 4 (Unsplash)
-18:49:27   maquette 1 prête (modèle v2-bijou/noir_or/cadre · gemini-3.8-flash)
-18:49:27   page de choix : https://oscarcousin-max.github.io/orbe-usine/fripology/
-18:49:27 Commande client : MiAM — 1 maquettes (pâtissiers, chocolatiers, épiceries fines)
-18:50:22   photos : 4 (Unsplash, Wikimedia Commons)
-18:50:22   maquette 1 prête (modèle v2-table/brasserie/cadre · gemini-3.8-flash)
-18:50:22   page de choix : https://oscarcousin-max.github.io/orbe-usine/miam/
-18:50:22 Commande client : La Martinerie — 1 maquettes (boutiques de mode et maroquinerie)
-18:51:13   photos : 4 (Unsplash)
-18:51:13   maquette 1 prête (modèle v2-bijou/noir_or/cadre · gemini-3.8-flash)
-18:51:13   page de choix : https://oscarcousin-max.github.io/orbe-usine/la-martinerie/
-18:51:13 Commande client : Richy's — 1 maquettes (boutiques de mode et maroquinerie)
-18:51:48   photos : 4 (Unsplash)
-18:51:48   maquette 1 prête (modèle v2-bijou/noir_or/cadre · gemini-3.8-flash)
-18:51:48   page de choix : https://oscarcousin-max.github.io/orbe-usine/richy-s/
-18:51:48 Commande client : Ô Bordelais — 1 maquettes (librairies, boutiques cadeaux, créateurs)
-18:54:03     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-18:54:14     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-18:55:21   photos : 4 (Unsplash)
-18:55:21   maquette 1 prête (modèle v2-atelier/encre/cadre · gemini-3.6-flash)
-18:55:21   page de choix : https://oscarcousin-max.github.io/orbe-usine/o-bordelais/
-18:55:21 Commande client : Micheline — 1 maquettes (boutiques de mode et maroquinerie)
-18:55:24     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-18:55:27     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-18:55:59   photos : 4 (Unsplash)
-18:55:59   maquette 1 prête (modèle v2-bijou/noir_or/cadre · gemini-3.6-flash)
-18:55:59   page de choix : https://oscarcousin-max.github.io/orbe-usine/micheline/
-18:55:59 Aucun nouveau site pour ce passage : seulement les sites récents refaits.
+02:51:46 Demande : 20 site(s)
+02:51:46 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+02:51:46 Rythme : 4 déjà faits aujourd'hui, 10 au plus par jour → 6 pour ce passage
+02:51:46 Départements : 33, 40, 41, 42, 43
+02:51:46     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+02:56:14     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+03:00:40     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:00:49     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+03:00:57     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:00:57   cuisinistes et salles de bain / 33 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
+03:00:58     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:02:53     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:05:13     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:05:51     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:08:13     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:10:44     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:11:07     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:13:37     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:15:50     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:15:59     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+03:16:07     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:16:07   cuisinistes et salles de bain / 42 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
+03:16:07     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:20:24 Carte : cuisinistes et salles de bain — 2 sans site noté et joignables
+03:20:25     note trop basse (< 50) : 1
+03:20:25     écarté : 20 salariés ou plus : 1
+03:20:25   0 notés 50/100 ou plus
+03:20:25     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:24:53     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+03:27:41     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:29:52     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:32:07     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:36:35     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+03:37:15     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:41:44     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+03:45:59     carte overpass.private.coffee : HTTP Error 502: Bad Gateway  (nouvel essai)
+03:46:53     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:47:01     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:47:01   poseurs de sols, parqueteurs et menuisiers / 42 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
+03:47:01     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:47:22 Carte : poseurs de sols, parqueteurs et menuisiers — 4 sans site noté et joignables
+03:47:23     écarté : 20 salariés ou plus : 1
+03:47:24     note trop basse (< 50) : 1
+03:47:25     note trop basse (< 50) : 1
+03:47:25     écarté : entreprise fermée : 1
+03:47:25   0 notés 50/100 ou plus
+03:47:25     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:49:34     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:52:08     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+03:56:36     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+03:58:30     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+03:58:53     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:01:49     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:06:03     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:08:09     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:12:37     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+04:17:05     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+04:17:33 Carte : charpentiers, couvreurs et maçons — 8 sans site noté et joignables
+04:17:37     note trop basse (< 50) : 2
+04:17:37     écarté : 20 à 49 salariés : 2
+04:17:37     écarté : 20 salariés ou plus : 1
+04:17:39     note trop basse (< 50) : 2
+04:17:39     écarté : 20 salariés ou plus : 1
+04:17:39   0 notés 50/100 ou plus
+04:17:40     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:22:08     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+04:24:19     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:24:47     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:29:15     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+04:31:14     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:35:25     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:39:46     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:41:58     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:42:07     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+04:42:15     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:42:15   peintres, plaquistes, carreleurs et menuisiers alu / 42 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
+04:42:15     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:44:39     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:49:08     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+04:49:40 Carte : peintres, plaquistes, carreleurs et menuisiers alu — 3 sans site noté et joignables
+04:49:41     note trop basse (< 50) : 2
+04:49:43     note trop basse (< 50) : 1
+04:49:43   0 notés 50/100 ou plus
+04:49:44     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:52:59     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+04:57:27     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+05:01:56     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+05:02:55     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
+05:03:03     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+05:03:03   paysagistes et créateurs de jardins / 40 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
+05:03:03     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+05:05:59     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+05:08:51     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+05:09:38     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
+05:11:57     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+05:14:24 Carte : paysagistes et créateurs de jardins — 1 sans site noté et joignables
+05:14:25   1 notés 50/100 ou plus
+05:14:25 1 candidats
+05:14:25 Commerce : Daniel Moquet (?)
+05:14:27   écarté : Site trouvé : https://www.daniel-moquet.fr/
+05:14:27 Moteurs de recherche : DuckDuckGo 0 ok / 0 bloqué, Bing 0 ok / 0 bloqué, Mojeek 0 ok / 0 bloqué
+05:14:27 Écartés car déjà un site : 1 · fermés : 0 · non vérifiables : 0
+05:14:27 Terminé : 0 site(s) prêt(s).
