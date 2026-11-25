@@ -1,212 +1,102 @@
-06:06:03 Demande : 20 site(s)
-06:06:03 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-06:06:03 Rythme : 0 déjà faits aujourd'hui, 10 au plus par jour → 10 pour ce passage
-06:06:03 Départements : 33, 01, 02, 03, 04
-06:06:03     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-06:10:31     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-06:13:04     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-06:13:57     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
-06:14:05     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-06:14:05   cuisinistes et salles de bain / 33 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
-06:14:05     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-06:18:34     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-06:23:02     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-06:23:27     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-06:24:07     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
-06:26:30     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-06:26:50     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-06:31:19     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-06:35:47     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-06:36:16     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-06:39:12 Carte : cuisinistes et salles de bain — 7 sans site noté et joignables
-06:39:14     note trop basse (< 50) : 3
-06:39:14     écarté : entreprise fermée : 1
-06:39:15     note trop basse (< 50) : 1
-06:39:16   2 notés 50/100 ou plus
-06:39:16     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-06:43:44     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-06:48:06     carte overpass.private.coffee : HTTP Error 502: Bad Gateway  (nouvel essai)
-06:48:36     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-06:53:04     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-06:57:32     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-06:58:02     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:02:31     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-07:06:59     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-07:07:29     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:11:57     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-07:16:26     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-07:16:57     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:19:19     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
-07:23:47     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-07:23:56     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
-07:24:04     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:24:04   poseurs de sols, parqueteurs et menuisiers / 04 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
-07:24:04 Carte : poseurs de sols, parqueteurs et menuisiers — 15 sans site noté et joignables
-07:24:07     note trop basse (< 50) : 1
-07:24:08     note trop basse (< 50) : 1
-07:24:12     note trop basse (< 50) : 3
-07:24:12     écarté : entreprise fermée : 2
-07:24:13     écarté : 20 salariés ou plus : 1
-07:24:13   7 notés 50/100 ou plus
-07:24:14     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:28:42     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-07:31:52     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:36:20     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-07:40:41     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-07:40:50     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
-07:40:58     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:40:58   charpentiers, couvreurs et maçons / 01 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
-07:40:58     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:43:13     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:43:53     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
-07:48:21     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-07:48:46     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:51:00 Carte : charpentiers, couvreurs et maçons — 9 sans site noté et joignables
-07:51:02     note trop basse (< 50) : 3
-07:51:02     écarté : entreprise fermée : 1
-07:51:06     note trop basse (< 50) : 2
-07:51:06     écarté : 20 à 49 salariés : 2
-07:51:06     écarté : 20 salariés ou plus : 1
-07:51:06   0 notés 50/100 ou plus
-07:51:06     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:55:34     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-07:57:51     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-07:58:48     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
-07:58:57     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-07:58:57   garages et carrosseries indépendants / 33 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
-07:58:57     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:03:25     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-08:07:12     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:11:40     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-08:14:01     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-08:14:46     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:19:14     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-08:23:43     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-08:23:51     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
-08:24:00     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:24:00   garages et carrosseries indépendants / 03 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
-08:24:00     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:27:10 Carte : garages et carrosseries indépendants — 28 sans site noté et joignables
-08:27:15     note trop basse (< 50) : 3
-08:27:26     note trop basse (< 50) : 9
-08:27:26     écarté : entreprise fermée : 1
-08:27:26     écarté : 20 salariés ou plus : 1
-08:27:26   14 notés 50/100 ou plus
-08:27:27     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:29:40     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
-08:34:08     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-08:34:17     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
-08:34:26     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:34:26   réparateurs de téléphone et informatique / 33 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
-08:34:26     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:38:54     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-08:43:22     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-08:44:28     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
-08:44:36     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:44:36   réparateurs de téléphone et informatique / 01 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
-08:44:36     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:47:54     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:52:23     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-08:56:51     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-08:57:00     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
-08:57:08     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-08:57:08   réparateurs de téléphone et informatique / 03 : carte illisible (<urlopen error [Errno 101] Network is unreachable>)
-08:57:08     carte overpass-api.de : <urlopen error [Errno 101] Network is unreachable> (nouvel essai)
-09:01:36     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-09:06:05     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-09:06:51 Carte : réparateurs de téléphone et informatique — 2 sans site noté et joignables
-09:06:52     note trop basse (< 50) : 2
-09:06:52   0 notés 50/100 ou plus
-09:06:52 23 candidats
-09:06:52 Commerce : Garage des 5 Cols (?)
-09:06:52       DuckDuckGo : bloqué (202)
-09:06:56       Mojeek : HTTP Error 403: Forbidden
-09:06:57   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:06:57     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, gemini-4-neon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview
-09:06:58     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:07:17     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:08:03   photos : 4 (Unsplash)
-09:08:03     modèles groq : openai/gpt-oss-20b, openai/gpt-oss-safeguard-20b, meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-arabic-saudi, whisper-large-v3-turbo, openai/gpt-oss-120b, whisper-large-v3, meta-llama/llama-prompt-guard-2-86m, qwen/qwen3.8-27b, allam-2-7b, canopylabs/orpheus-v1-english
-09:08:10   prêt : https://oscarcousin-max.github.io/orbe-usine/garage-des-5-cols/
-09:08:10 Commerce : Chambaron Cuisines (?)
-09:08:13   écarté : Site trouvé : https://www.chambaroncuisines.fr/
-09:08:13 Commerce : Deborde Bruno Menuiserie (?)
-09:08:13       DuckDuckGo : bloqué (202)
-09:08:16       Mojeek : HTTP Error 403: Forbidden
-09:08:18   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:09:33     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:09:34     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:10:54   photos : 4 (Unsplash)
-09:11:01   prêt : https://oscarcousin-max.github.io/orbe-usine/deborde-bruno-menuiserie/
-09:11:01 Commerce : RJ Méca (?)
-09:11:03   écarté : Site trouvé : https://www.rj-meca.fr/
-09:11:03 Commerce : Sagne cuisines (Digne-les-Bains)
-09:11:27       DuckDuckGo : bloqué (202)
-09:11:31       Mojeek : HTTP Error 403: Forbidden
-09:11:32   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:11:33     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:11:49     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:13:38   photos : 4 (Unsplash)
-09:13:46   prêt : https://oscarcousin-max.github.io/orbe-usine/sagne-cuisines/
-09:13:46 Commerce : AIMT (?)
-09:13:47   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:15:03     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:15:08     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:15:50   photos : 4 (Unsplash)
-09:15:57   prêt : https://oscarcousin-max.github.io/orbe-usine/aimt/
-09:15:57 Commerce : Jumbo Pneus (?)
-09:15:58   écarté : Site trouvé : https://www.jumbopneus.fr/
-09:15:58 Commerce : Aluteck (?)
-09:16:05   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:16:12     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:16:57     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:19:23   photos : 4 (Unsplash)
-09:19:32   prêt : https://oscarcousin-max.github.io/orbe-usine/aluteck/
-09:19:32 Commerce : BS Pneus (?)
-09:19:33   écarté : Site trouvé : https://www.pneus.fr/
-09:19:33 Commerce : Vichy Fenêtres (?)
-09:19:40   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:19:44     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:23:50     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:24:09   photos : 4 (Unsplash)
-09:24:16   prêt : https://oscarcousin-max.github.io/orbe-usine/vichy-fenetres/
-09:24:16 Commerce : Carrosserie Renardat (Corbières-en-Provence)
-09:24:18   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:24:22     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:26:17     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:26:40   photos : 4 (Unsplash)
-09:26:48   prêt : https://oscarcousin-max.github.io/orbe-usine/carrosserie-renardat/
-09:26:48 Commerce : Creacier (?)
-09:26:49   écarté : Site trouvé : https://www.creacier.fr/
-09:26:49 Commerce : Carrosserie Martin (?)
-09:26:50   écarté : Site trouvé : https://www.carrosseriemartin.com/
-09:26:50 Commerce : AZ Ouvertures (?)
-09:26:52   écarté : Site trouvé : https://www.ouvertures.com/
-09:26:52 Commerce : HRY Depannage - HRY Production (Bellenglise)
-09:26:54   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:27:48     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:32:48     gemini/gemini-3.7-flash : The read operation timed out
-09:33:45   photos : 4 (Unsplash)
-09:33:52   prêt : https://oscarcousin-max.github.io/orbe-usine/hry-depannage-hry-production/
-09:33:52 Commerce : Maison Amato (?)
-09:33:53   écarté : Site trouvé : https://maison-amato.com/
-09:33:53 Commerce : Des Garages (Château-Thierry)
-09:33:56   écarté : Site trouvé : http://garages.com/
-09:33:56 Commerce : SAS PHENIX (Bohain-en-Vermandois)
-09:34:24   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:34:25     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:34:31     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:35:43   photos : 4 (Unsplash)
-09:35:50   prêt : https://oscarcousin-max.github.io/orbe-usine/sas-phenix/
-09:35:50 Commerce : Meca Motors (?)
-09:35:51   écarté : Site trouvé : https://motortv86.wixsite.com/mecamotors
-09:35:51 Commerce : Garage Chabot (?)
-09:35:53   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-09:39:28     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:39:29     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:39:30     gemini/gemini-3.6-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
-09:40:59   photos : 4 (Unsplash)
-09:41:07   prêt : https://oscarcousin-max.github.io/orbe-usine/garage-chabot/
-09:41:07 Moteurs de recherche : DuckDuckGo 0 ok / 3 bloqué, Bing 10 ok / 0 bloqué, Mojeek 0 ok / 3 bloqué
-09:41:07 Écartés car déjà un site : 10 · fermés : 0 · non vérifiables : 0
-09:41:07 Terminé : 10 site(s) prêt(s).
+04:54:43 Demande : 20 site(s)
+04:54:43 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+04:54:43 Rythme : 0 déjà faits aujourd'hui, 10 au plus par jour → 10 pour ce passage
+04:54:43 Départements : 33, 45, 46, 47, 48
+04:54:44     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:59:13     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+05:03:41     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+05:06:44 Carte : cuisinistes et salles de bain — 3 sans site noté et joignables
+05:06:45     note trop basse (< 50) : 1
+05:06:46     écarté : 20 salariés ou plus : 1
+05:06:46     note trop basse (< 50) : 1
+05:06:46   0 notés 50/100 ou plus
+05:07:31     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+05:11:46     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+05:14:13     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+05:18:41     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+05:20:29 Carte : poseurs de sols, parqueteurs et menuisiers — 12 sans site noté et joignables
+05:20:31     écarté : 20 salariés ou plus : 1
+05:20:36     note trop basse (< 50) : 5
+05:20:38   6 notés 50/100 ou plus
+05:24:10     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
+05:28:38     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+05:33:07     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+05:34:01     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
+05:34:51 Carte : charpentiers, couvreurs et maçons — 27 sans site noté et joignables
+05:34:56     note trop basse (< 50) : 2
+05:34:56     écarté : 20 à 49 salariés : 2
+05:34:56     écarté : 20 salariés ou plus : 1
+05:35:04     note trop basse (< 50) : 8
+05:35:09     note trop basse (< 50) : 3
+05:35:09     écarté : 20 à 49 salariés : 1
+05:35:09   10 notés 50/100 ou plus
+05:36:55     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
+05:41:24     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+05:45:53     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+05:46:01     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+05:48:48 Carte : ébénistes et artisans du bois — 2 sans site noté et joignables
+05:48:49     note trop basse (< 50) : 1
+05:48:49   1 notés 50/100 ou plus
+05:48:49     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+05:55:29 Carte : serruriers et vitriers — 5 sans site noté et joignables
+05:55:31     écarté : entreprise fermée : 2
+05:55:31     note trop basse (< 50) : 1
+05:55:31     note trop basse (< 50) : 1
+05:55:31     écarté : pas de numéro français joignable : 1
+05:55:31   0 notés 50/100 ou plus
+05:55:31 17 candidats
+05:55:31 Commerce : Sologne rénovation 45 (?)
+05:55:36   écarté : Site trouvé : https://www.sologne-renovation.fr/
+05:55:36 Commerce : EURL Fouillac Sylvain (?)
+05:55:37       DuckDuckGo : bloqué (202)
+05:55:40       Mojeek : HTTP Error 403: Forbidden
+05:55:42   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:55:42     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, gemini-4-neon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview
+05:55:48     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+05:55:55     gemini/gemini-3.7-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+05:56:19   photos : 4 (Unsplash)
+05:56:19     modèles groq : qwen/qwen3.8-27b, openai/gpt-oss-20b, meta-llama/llama-prompt-guard-2-22m, whisper-large-v3-turbo, meta-llama/llama-prompt-guard-2-86m, openai/gpt-oss-safeguard-20b, allam-2-7b, whisper-large-v3, canopylabs/orpheus-arabic-saudi, openai/gpt-oss-120b, canopylabs/orpheus-v1-english
+05:56:26   prêt : https://oscarcousin-max.github.io/orbe-usine/eurl-fouillac-sylvain/
+05:56:26 Commerce : Atelier de Bajou (?)
+05:56:27   écarté : Site trouvé : https://www.bajou.fr/fr/
+05:56:27 Commerce : 270 Agency (?)
+05:56:30       DuckDuckGo : bloqué (202)
+05:56:34       Mojeek : HTTP Error 403: Forbidden
+05:56:35   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:56:38     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+05:56:38     gemini/gemini-3.7-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:56:55   photos : 4 (Unsplash)
+05:57:02   prêt : https://oscarcousin-max.github.io/orbe-usine/270-agency/
+05:57:02 Commerce : Charrier (Sully-sur-Loire)
+05:57:29       DuckDuckGo : bloqué (202)
+05:57:33       Mojeek : HTTP Error 403: Forbidden
+05:57:34   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:57:39     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+05:57:54   photos : 4 (Unsplash)
+05:58:01   prêt : https://oscarcousin-max.github.io/orbe-usine/charrier/
+05:58:01 Commerce : Renov Centre (?)
+05:58:03   écarté : Site trouvé : https://mieuxrenover.com/
+05:58:03 Commerce : J.C.H. Sodistores (Chécy)
+05:58:05   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:58:05     gemini/gemini-3.8-flash : 429 { "error": { "code": 429, "message": "You exceeded your current quota, please check yo
+05:58:22   photos : 4 (Unsplash)
+05:58:30   prêt : https://oscarcousin-max.github.io/orbe-usine/j-c-h-sodistores/
+05:58:30 Commerce : Daliguet (?)
+05:58:31   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:58:46   photos : 4 (Unsplash)
+05:58:53   prêt : https://oscarcousin-max.github.io/orbe-usine/daliguet/
+05:58:53 Commerce : Homkia (?)
+05:58:55   écarté : Site trouvé : https://www.homkia.fr/
+05:58:55 Commerce : Béton Val de Loire (Sandillon)
+05:58:57   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:59:19   photos : 4 (Unsplash)
+05:59:26   prêt : https://oscarcousin-max.github.io/orbe-usine/beton-val-de-loire/
+05:59:26 Commerce : Armando Ferreira (?)
+05:59:28   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:59:43   photos : 4 (Unsplash)
+05:59:50   prêt : https://oscarcousin-max.github.io/orbe-usine/armando-ferreira/
+05:59:50 Commerce : Les Maisons Vigery (?)
+05:59:54   écarté : Site trouvé : https://maisons-vigery.com/
+05:59:54 Moteurs de recherche : DuckDuckGo 0 ok / 3 bloqué, Bing 7 ok / 0 bloqué, Mojeek 0 ok / 3 bloqué
+05:59:54 Écartés car déjà un site : 5 · fermés : 0 · non vérifiables : 0
+05:59:54 Terminé : 7 site(s) prêt(s).
