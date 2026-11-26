@@ -1,98 +1,95 @@
-13:14:57 Chasseur ORBE — annonces publiées du 18/11 14:14 au 25/11 14:14
-13:14:57 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
-13:14:58 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-13:14:58 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
-13:14:58 France Travail : connexion refusée (HTTP Error 400: Bad Request)
-13:17:55 France Travail (site) : 77 page(s) lue(s), 361 offre(s), 74 entreprise(s) nouvelle(s) sur la période
-13:19:18   LinkedIn « community manager » : erreur 429
-13:20:18   LinkedIn « social media manager » : erreur 429
-13:22:28   LinkedIn « chargé de communication » : erreur 429
-13:24:50   LinkedIn « responsable marketing » : erreur 429
-13:27:02   LinkedIn « SEO » : erreur 429
-13:28:48   LinkedIn « webmaster » : erreur 429
-13:32:17   LinkedIn « développeur wordpress » : erreur 429
-13:33:49   LinkedIn « responsable e-commerce » : erreur 429
-13:35:35   LinkedIn « traffic manager » : erreur 429
-13:37:01   LinkedIn « assistant marketing » : erreur 429
-13:38:48   LinkedIn « chargé de marketing » : erreur 429
-13:39:53   LinkedIn « assistant communication » : erreur 429
-13:42:19   LinkedIn « webdesigner » : erreur 429
-13:42:54 LinkedIn : 325 offre(s) trouvée(s), 259 entreprise(s) nouvelle(s) ; lecture de 160 annonce(s)
-13:53:42 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
-13:53:42 Après le tri : 121 candidate(s) sur 233
-13:53:43   trop grande : IMPLID PARTNERS (50+ salariés (code 21), ETI)
-13:53:45   trop grande : LEO LAGRANGE PETITE ENFANCE PAYS DE GEX (50+ salariés (code 22), ETI)
-13:53:47   trop grande : TRANSPORTS GALTIER (50+ salariés (code 21), PME)
-13:53:48   trop grande : PRINTERREA (50+ salariés (code 22), PME)
-13:53:49   trop grande : LEBRUN SA (50+ salariés (code 22), PME)
-13:53:55   trop grande : Nexton (50+ salariés (code 32), ETI)
-13:53:57   trop grande : FRANCE MEDIAS MONDE (50+ salariés (code 42), ETI)
-13:54:01   trop grande : DASSAULT AVIATION (50+ salariés (code 53), GE)
-13:54:02   trop grande : DOMINO RH (50+ salariés (code 03), ETI)
-13:54:03   trop grande : HELLOASSO (50+ salariés (code 22), GE)
-13:54:04   trop grande : TERRA LACTA (50+ salariés (code 22), ETI)
-13:54:05   trop grande : CASSIOPEA (50+ salariés (code NN), ETI)
-13:54:08   trop grande : WINAMAX (50+ salariés (code 32), ETI)
-13:54:10   trop grande : implid (50+ salariés (code NN), ETI)
-13:54:11   trop grande : Thales (50+ salariés (code 42), GE)
-13:54:12   trop grande : Ubisoft (50+ salariés (code 42), GE)
-13:54:13   trop grande : Inserm (50+ salariés (code 52), GE)
-13:54:14   trop grande : Octapharma France (50+ salariés (code 12), ETI)
-13:54:15   trop grande : SEPTEO (50+ salariés (code 31), ETI)
-13:54:16   trop grande : ASSOCIATION DE LA CLINIQUE DES AUGUSTINE (50+ salariés (code 32), ETI)
-13:54:18   trop grande : Dalkia (50+ salariés (code 53), GE)
-13:54:19   trop grande : Réseau DEF (50+ salariés (code 12), ETI)
-13:54:23   trop grande : L-Acoustics (50+ salariés (code 32), ETI)
-13:54:24   trop grande : Adrénaline (50+ salariés (code 21), ETI)
-13:54:26   trop grande : Parfums Christian Dior (50+ salariés (code 51), GE)
-13:54:27   trop grande : VINCI Energies en France (50+ salariés (code 12), GE)
-13:54:28   trop grande : Greenweez (50+ salariés (code 21), GE)
-13:54:28   trop grande : PROPHESEE (50+ salariés (code 22), PME)
-13:54:30   trop grande : Fremantle France (50+ salariés (code 21), GE)
-13:54:31   trop grande : Hachette Livre (50+ salariés (code 42), GE)
-13:54:33   trop grande : Lefebvre Dalloz (50+ salariés (code 22), ETI)
-13:54:39   trop grande : Daikin France (50+ salariés (code 41), ETI)
-13:54:40   trop grande : Centric Software (50+ salariés (code 22), GE)
-13:54:43   trop grande : HEC Paris (50+ salariés (code 12), ETI)
-13:54:45   trop grande : JULBO (50+ salariés (code 21), ETI)
-13:54:47   trop grande : Bigblue (50+ salariés (code 21), PME)
-13:54:49   trop grande : Younited (50+ salariés (code 32), ETI)
-13:54:51   trop grande : Santen (50+ salariés (code 21), PME)
-13:54:52   trop grande : ISAGRI (50+ salariés (code 42), ETI)
-13:54:53   trop grande : Lacoste (50+ salariés (code 41), ETI)
-13:54:54   trop grande : WiiSmile (50+ salariés (code 12), ETI)
-13:54:55   trop grande : Klanik (50+ salariés (code 32), ETI)
-13:54:55   trop grande : Walter Learning (50+ salariés (code 21), PME)
-13:54:58   trop grande : Finaxy (50+ salariés (code 12), ETI)
-13:54:58   trop grande : CSL (50+ salariés (code NN), ETI)
-13:55:00   trop grande : Voodoo (50+ salariés (code 22), ETI)
-13:55:01   trop grande : Edenred France (50+ salariés (code 42), GE)
-13:55:03   trop grande : Qonto (50+ salariés (code 41), ETI)
-13:55:04   trop grande : Pennylane (50+ salariés (code 32), ETI)
-13:55:05   trop grande : Assurances Mutuelles de Picardie - AMP (50+ salariés (code 21), PME)
-13:55:06   trop grande : WordAppeal (50+ salariés (code 12), GE)
-13:55:07   trop grande : DiliTrust (50+ salariés (code 22), PME)
-13:55:08   trop grande : Kicklox (50+ salariés (code 11), ETI)
-13:55:10   trop grande : Etablissements BARILLET (50+ salariés (code 11), ETI)
-13:55:11   trop grande : Webnet (50+ salariés (code 22), PME)
-13:55:14   trop grande : Interparfums (50+ salariés (code 32), ETI)
-13:55:15   trop grande : Sacet (50+ salariés (code 11), ETI)
-13:55:16   trop grande : Vente-unique.com (50+ salariés (code 31), ETI)
-13:55:17   trop grande : Weldom (50+ salariés (code 41), GE)
-13:55:19   trop grande : Aigle (50+ salariés (code 11), GE)
-13:55:21   trop grande : Fnac Darty (50+ salariés (code 11), GE)
-13:55:22   trop grande : Essor (50+ salariés (code 21), PME)
-13:55:25   trop grande : eXalt (50+ salariés (code 12), ETI)
-13:55:26   trop grande : Zadig&Voltaire (50+ salariés (code 41), ETI)
-13:55:26   trop grande : Publicis Media (50+ salariés (code 42), GE)
-13:55:27   trop grande : GEODIS (50+ salariés (code 01), GE)
-13:55:28   trop grande : VINCI (50+ salariés (code NN), GE)
-13:55:29   trop grande : LISEA (50+ salariés (code 12), ETI)
-13:55:30   trop grande : Transports Cobigo (50+ salariés (code 22), PME)
-13:55:31   trop grande : Eiffage Route (50+ salariés (code 42), GE)
-13:55:31 Après le contrôle de taille : 51 candidate(s)
-13:55:31 Après le contrôle de la zone (33, 24, 40, 47, 17, 16, 64, 86, 79, 87, 19, 23) : 2 candidate(s)
-13:55:31     modèles groq : openai/gpt-oss-safeguard-20b, openai/gpt-oss-120b, meta-llama/llama-prompt-guard-2-86m, qwen/qwen3.8-27b, allam-2-7b, meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-v1-english, openai/gpt-oss-20b, whisper-large-v3, whisper-large-v3-turbo, canopylabs/orpheus-arabic-saudi
-13:55:36   écartée : Signe Plus — poste trop technique (infrastructure réseau et sécurité) hors périmètre web/marketing
-13:55:36   écartée : Wasabi Corner — poste stratégique de chef de produit marketing, difficile à externaliser
-13:55:36 Terminé : 0 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
+12:55:21 Chasseur ORBE — annonces publiées du 19/11 13:55 au 26/11 13:55
+12:55:21 France Travail : identifiant 81 caractères (commence par PAR_ : oui), clé secrète 64 caractères
+12:55:21 France Travail : jeton refusé (portée « api_offresdemploiv2 o2dsoffre ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+12:55:22 France Travail : jeton refusé (portée « api_offresdemploiv2 ») : 400 {"error_description":"Client authentication failed","error":"invalid_client"}
+12:55:22 France Travail : connexion refusée (HTTP Error 400: Bad Request)
+12:58:16 France Travail (site) : 77 page(s) lue(s), 360 offre(s), 68 entreprise(s) nouvelle(s) sur la période
+13:03:08   LinkedIn « marketing digital » : erreur 429
+13:04:12   LinkedIn « responsable marketing » : erreur 429
+13:05:55   LinkedIn « webmaster » : erreur 429
+13:07:46   LinkedIn « chargé e-commerce » : erreur 429
+13:11:10   LinkedIn « chargé de marketing » : erreur 429
+13:12:50   LinkedIn « webdesigner » : erreur 429
+13:14:44 LinkedIn : 443 offre(s) trouvée(s), 337 entreprise(s) nouvelle(s) ; lecture de 160 annonce(s)
+13:30:29 Annonces collées à la main : 0 lue(s), 0 exploitable(s)
+13:30:29 Après le tri : 130 candidate(s) sur 225
+13:30:30   trop grande : IMPLID PARTNERS (50+ salariés (code 21), ETI)
+13:30:31   trop grande : LEO LAGRANGE PETITE ENFANCE PAYS DE GEX (50+ salariés (code 22), ETI)
+13:30:33   trop grande : COMPAGNIE DE SAINT-GOBAIN (50+ salariés (code 31), GE)
+13:30:35   trop grande : TRANSPORTS GALTIER (50+ salariés (code 21), PME)
+13:30:40   trop grande : Nexton (50+ salariés (code 32), ETI)
+13:30:41   trop grande : FRANCE MEDIAS MONDE (50+ salariés (code 42), ETI)
+13:30:44   trop grande : FIFTEEN (50+ salariés (code 22), GE)
+13:30:47   trop grande : DASSAULT AVIATION (50+ salariés (code 53), GE)
+13:30:49   trop grande : Berger-Levrault (50+ salariés (code 42), ETI)
+13:30:49   trop grande : HELLOASSO (50+ salariés (code 22), GE)
+13:30:50   trop grande : TERRA LACTA (50+ salariés (code 22), ETI)
+13:30:53   trop grande : CASSIOPEA (50+ salariés (code NN), ETI)
+13:30:54   trop grande : Paris FC (50+ salariés (code 01), GE)
+13:30:56   trop grande : implid (50+ salariés (code NN), ETI)
+13:30:57   trop grande : Ubisoft (50+ salariés (code 42), GE)
+13:30:59   trop grande : WINAMAX (50+ salariés (code 32), ETI)
+13:31:00   trop grande : Imerys (50+ salariés (code 32), ETI)
+13:31:02   trop grande : Harmonie Mutuelle (50+ salariés (code 51), GE)
+13:31:03   trop grande : Daikin France (50+ salariés (code 41), ETI)
+13:31:05   trop grande : VEYLIUM (50+ salariés (code 21), PME)
+13:31:06   trop grande : Centric Software (50+ salariés (code 22), GE)
+13:31:09   trop grande : Greenweez (50+ salariés (code 21), GE)
+13:31:10   trop grande : SEPTEO (50+ salariés (code 31), ETI)
+13:31:11   trop grande : Fremantle France (50+ salariés (code 21), GE)
+13:31:13   trop grande : Reworld Media (50+ salariés (code 32), ETI)
+13:31:14   trop grande : Payplug (50+ salariés (code 32), GE)
+13:31:16   trop grande : CoSpirit (50+ salariés (code 22), ETI)
+13:31:17   trop grande : Christian Dior Couture (50+ salariés (code 51), GE)
+13:31:20   trop grande : Bigblue (50+ salariés (code 21), PME)
+13:31:20   trop grande : RCM (50+ salariés (code 21), ETI)
+13:31:21   trop grande : Algoé (50+ salariés (code 22), PME)
+13:31:23   trop grande : Dalkia (50+ salariés (code 53), GE)
+13:31:24   trop grande : Shiseido (50+ salariés (code 12), ETI)
+13:31:25   trop grande : Inserm (50+ salariés (code 52), GE)
+13:31:25   trop grande : Octapharma France (50+ salariés (code 12), ETI)
+13:31:28   trop grande : PICOTY (50+ salariés (code 31), ETI)
+13:31:29   trop grande : L-Acoustics (50+ salariés (code 32), ETI)
+13:31:30   trop grande : VINCI Energies (50+ salariés (code 21), GE)
+13:31:31   trop grande : Boucheron (50+ salariés (code 32), GE)
+13:31:32   trop grande : Adrénaline (50+ salariés (code 21), ETI)
+13:31:33   trop grande : CCI Provence-Alpes-Côte d'Azur (50+ salariés (code 42), ETI)
+13:31:34   trop grande : VINCI Energies en France (50+ salariés (code 12), GE)
+13:31:35   trop grande : Lefebvre Dalloz (50+ salariés (code 22), ETI)
+13:31:36   trop grande : Hachette Livre (50+ salariés (code 42), GE)
+13:31:38   trop grande : TotalEnergies (50+ salariés (code 42), GE)
+13:31:40   trop grande : Ipsen (50+ salariés (code 03), GE)
+13:31:42   trop grande : ASSOCIATION DE LA CLINIQUE DES AUGUSTINE (50+ salariés (code 32), ETI)
+13:31:43   trop grande : Cromology (50+ salariés (code 41), ETI)
+13:31:45   trop grande : HEC Paris (50+ salariés (code 12), ETI)
+13:31:46   trop grande : JULBO (50+ salariés (code 21), ETI)
+13:31:48   trop grande : Getaround (50+ salariés (code 22), PME)
+13:31:49   trop grande : Voodoo (50+ salariés (code 22), ETI)
+13:31:51   trop grande : Younited (50+ salariés (code 32), ETI)
+13:31:52   trop grande : ISAGRI (50+ salariés (code 42), ETI)
+13:31:53   trop grande : BPCE Solutions immobilières (50+ salariés (code 22), GE)
+13:31:54   trop grande : Align Technology (50+ salariés (code 22), ETI)
+13:31:56   trop grande : Edenred France (50+ salariés (code 42), GE)
+13:31:57   trop grande : NATUROPERA (50+ salariés (code NN), ETI)
+13:31:58   trop grande : WiiSmile (50+ salariés (code 12), ETI)
+13:32:01   trop grande : Qonto (50+ salariés (code 41), ETI)
+13:32:01   trop grande : Assurances Mutuelles de Picardie - AMP (50+ salariés (code 21), PME)
+13:32:03   trop grande : In&motion (50+ salariés (code 21), PME)
+13:32:04   trop grande : Voyage Privé (50+ salariés (code NN), ETI)
+13:32:06   trop grande : Publicis Media (50+ salariés (code 42), GE)
+13:32:06   trop grande : ManoMano (50+ salariés (code 32), ETI)
+13:32:07   trop grande : Numberly (50+ salariés (code 32), ETI)
+13:32:08   trop grande : SAFTI (50+ salariés (code 12), ETI)
+13:32:09   trop grande : Orange (50+ salariés (code 53), GE)
+13:32:10   trop grande : AUDIKA (50+ salariés (code 31), ETI)
+13:32:12   trop grande : SGS (50+ salariés (code NN), GE)
+13:32:13   trop grande : DiliTrust (50+ salariés (code 22), PME)
+13:32:14   trop grande : Kicklox (50+ salariés (code 11), ETI)
+13:32:15   trop grande : WordAppeal (50+ salariés (code 12), GE)
+13:32:15 Après le contrôle de taille : 57 candidate(s)
+13:32:15 Après le contrôle de la zone (33, 24, 40, 47, 17, 16, 64, 86, 79, 87, 19, 23) : 3 candidate(s)
+13:32:15     modèles groq : canopylabs/orpheus-arabic-saudi, qwen/qwen3.8-27b, allam-2-7b, openai/gpt-oss-20b, whisper-large-v3, openai/gpt-oss-safeguard-20b, openai/gpt-oss-120b, whisper-large-v3-turbo, meta-llama/llama-prompt-guard-2-22m, meta-llama/llama-prompt-guard-2-86m, canopylabs/orpheus-v1-english
+13:32:21   écartée : Signe Plus — poste technique réseau et sécurité, hors services d'ORBE
+13:32:21   écartée : FHF — employeur public, difficile à externaliser
+13:32:21   écartée : CH Esquirol de Limoges — employeur public, difficile à externaliser
+13:32:22 Terminé : 0 prospect(s) retenu(s), rapport dans data/prospection/rapport_prospection.md
