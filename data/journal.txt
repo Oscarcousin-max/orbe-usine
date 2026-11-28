@@ -1,79 +1,126 @@
-04:17:48 Demande : 20 site(s)
-04:17:48 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
-04:17:48 Rythme : 0 déjà faits aujourd'hui, 10 au plus par jour → 10 pour ce passage
-04:17:48 Départements : 33, 46, 47, 48, 49
-04:18:41     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
-04:23:10     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-04:25:45     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-04:26:59     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
-04:31:27     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-04:33:39     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-04:34:02     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-04:38:30     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-04:40:05 Carte : cuisinistes et salles de bain — 1 sans site noté et joignables
-04:40:06     note trop basse (< 50) : 1
-04:40:06   0 notés 50/100 ou plus
-04:40:07     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-04:44:35     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-04:49:03     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-04:49:31     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
-04:50:26     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-04:56:47 Carte : poseurs de sols, parqueteurs et menuisiers — 4 sans site noté et joignables
-04:56:49     écarté : 20 salariés ou plus : 1
-04:56:51     note trop basse (< 50) : 1
-04:56:51   2 notés 50/100 ou plus
-04:56:51     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-05:01:20     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-05:03:34     carte overpass.private.coffee : HTTP Error 504: Gateway Timeout  (nouvel essai)
-05:07:08 Carte : charpentiers, couvreurs et maçons — 13 sans site noté et joignables
-05:07:13     note trop basse (< 50) : 3
-05:07:13     écarté : 20 à 49 salariés : 1
-05:07:13     écarté : 20 salariés ou plus : 1
-05:07:16     note trop basse (< 50) : 3
-05:07:16     écarté : 20 à 49 salariés : 1
-05:07:18     note trop basse (< 50) : 2
-05:07:18   2 notés 50/100 ou plus
-05:07:19     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-05:10:18     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
-05:14:27     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-05:18:56     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-05:23:24     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-05:24:17 Carte : ébénistes et artisans du bois — 2 sans site noté et joignables
-05:24:19     note trop basse (< 50) : 1
-05:24:19   1 notés 50/100 ou plus
-05:25:48     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
-05:30:17     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
-05:34:45     carte overpass.private.coffee : The read operation timed out (nouvel essai)
-05:39:10 Carte : serruriers et vitriers — 3 sans site noté et joignables
-05:39:11     écarté : entreprise fermée : 2
-05:39:12     écarté : 20 salariés ou plus : 1
-05:39:12   0 notés 50/100 ou plus
-05:39:12 5 candidats
-05:39:12 Commerce : Ouest Concept Agencement (Rochefort-sur-Loire)
-05:39:13       DuckDuckGo : bloqué (202)
-05:39:16       Mojeek : HTTP Error 403: Forbidden
-05:39:18   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-05:39:18     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, gemini-4-neon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview
-05:41:44   photos : 4 (Unsplash)
-05:41:44     modèles groq : openai/gpt-oss-20b, qwen/qwen3.8-27b, meta-llama/llama-prompt-guard-2-22m, openai/gpt-oss-safeguard-20b, whisper-large-v3-turbo, openai/gpt-oss-120b, whisper-large-v3, canopylabs/orpheus-arabic-saudi, canopylabs/orpheus-v1-english, meta-llama/llama-prompt-guard-2-86m, allam-2-7b
-05:41:52   prêt : https://oscarcousin-max.github.io/orbe-usine/ouest-concept-agencement/
-05:41:52 Commerce : Leveque & Cie (Les Ponts-de-Cé)
-05:41:52       DuckDuckGo : bloqué (202)
-05:41:55       Mojeek : HTTP Error 403: Forbidden
-05:41:57   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-05:43:05   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
-05:43:10   photos : 4 (Unsplash)
-05:43:18   prêt : https://oscarcousin-max.github.io/orbe-usine/leveque-cie/
-05:43:18 Commerce : Scierie Rétif (?)
-05:43:18   écarté : Site trouvé : https://www.scierie-retif.com/
-05:43:18 Commerce : Régis Lepron (?)
-05:43:19       DuckDuckGo : bloqué (202)
-05:43:22       Mojeek : HTTP Error 403: Forbidden
-05:43:24   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
-05:45:43   photos : 4 (Unsplash)
-05:45:50   prêt : https://oscarcousin-max.github.io/orbe-usine/regis-lepron/
-05:45:50 Commerce : Les Provinciales (?)
-05:45:55   écarté : Site trouvé : https://www.lesprovinciales.fr/
-05:45:55 Moteurs de recherche : DuckDuckGo 0 ok / 3 bloqué, Bing 3 ok / 0 bloqué, Mojeek 0 ok / 3 bloqué
-05:45:55 Écartés car déjà un site : 2 · fermés : 0 · non vérifiables : 0
-05:45:55 Terminé : 3 site(s) prêt(s).
+03:56:47 Demande : 20 site(s)
+03:56:47 Revérification des sites récents : 0 retiré(s) car le commerce a déjà un site
+03:56:47 Rythme : 0 déjà faits aujourd'hui, 10 au plus par jour → 10 pour ce passage
+03:56:47 Départements : 33, 90, 91, 92, 93
+03:56:48     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:01:14     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:03:50     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:06:09     carte overpass.private.coffee : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:06:18     carte maps.mail.ru : HTTP Error 504: Gateway Time-out  (nouvel essai)
+04:09:12 Carte : cuisinistes et salles de bain — 6 sans site noté et joignables
+04:09:13     écarté : nom d'organisme, de santé ou d'enseigne : 1
+04:09:13     note trop basse (< 50) : 1
+04:09:15     note trop basse (< 50) : 1
+04:09:15     écarté : 20 salariés ou plus : 1
+04:09:15     note trop basse (< 50) : 2
+04:09:15   0 notés 50/100 ou plus
+04:09:46     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:11:08     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:13:06     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:15:57     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:20:26     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+04:20:54 Carte : poseurs de sols, parqueteurs et menuisiers — 11 sans site noté et joignables
+04:20:55     écarté : 20 salariés ou plus : 1
+04:20:59     note trop basse (< 50) : 2
+04:21:02     note trop basse (< 50) : 1
+04:21:02   7 notés 50/100 ou plus
+04:22:31     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:24:40     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:29:08     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+04:29:42     carte maps.mail.ru : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:29:50     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:29:50   charpentiers, couvreurs et maçons / 90 : carte illisible (HTTP Error 502: Bad Gateway)
+04:29:51     carte overpass-api.de : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:32:26     carte overpass.kumi.systems : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:36:54     carte overpass.private.coffee : The read operation timed out (nouvel essai)
+04:38:54 Carte : charpentiers, couvreurs et maçons — 27 sans site noté et joignables
+04:38:58     note trop basse (< 50) : 2
+04:38:58     écarté : 20 à 49 salariés : 2
+04:38:58     écarté : 20 salariés ou plus : 1
+04:39:04     note trop basse (< 50) : 6
+04:39:13     note trop basse (< 50) : 4
+04:39:13     écarté : entreprise fermée : 2
+04:39:13   10 notés 50/100 ou plus
+04:42:19 Carte : peintres, plaquistes, carreleurs et menuisiers alu — 13 sans site noté et joignables
+04:42:23     note trop basse (< 50) : 3
+04:42:23     écarté : entreprise fermée : 1
+04:42:28     note trop basse (< 50) : 3
+04:42:28     écarté : entreprise fermée : 1
+04:42:28   5 notés 50/100 ou plus
+04:46:03     carte overpass-api.de : HTTP Error 504: Gateway Timeout  (nouvel essai)
+04:50:31     carte overpass.kumi.systems : The read operation timed out (nouvel essai)
+04:54:51     carte overpass.private.coffee : HTTP Error 502: Bad Gateway  (nouvel essai)
+04:56:00 Carte : paysagistes et créateurs de jardins — 3 sans site noté et joignables
+04:56:01     note trop basse (< 50) : 1
+04:56:02     note trop basse (< 50) : 1
+04:56:02   1 notés 50/100 ou plus
+04:56:02 23 candidats
+04:56:02 Commerce : Bois Concept (?)
+04:56:04   écarté : Site trouvé : https://bois-concept.fr/
+04:56:04 Commerce : Rénovation Décor (?)
+04:56:06       DuckDuckGo : bloqué (202)
+04:56:09       Mojeek : HTTP Error 403: Forbidden
+04:56:11   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+04:56:11     modèles gemini : gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-preview-tts, gemini-2.5-pro-preview-tts, gemma-4-26b-a4b-it, gemma-4-31b-it, gemini-flash-latest, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3-pro-image-preview, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-nano-banana-2.1, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.5-transcribe, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-4-argon, gemini-4-carbon, gemini-4-hydrogen, gemini-4-neon, lyria-3-clip-preview, lyria-3-pro-preview, lyria-3.5, gemini-3.1-flash-tts-preview
+04:56:51   photos : 4 (Unsplash)
+04:56:51     modèles groq : whisper-large-v3-turbo, allam-2-7b, openai/gpt-oss-safeguard-20b, whisper-large-v3, canopylabs/orpheus-v1-english, openai/gpt-oss-120b, meta-llama/llama-prompt-guard-2-22m, canopylabs/orpheus-arabic-saudi, openai/gpt-oss-20b, qwen/qwen3.8-27b, meta-llama/llama-prompt-guard-2-86m
+04:56:58   prêt : https://oscarcousin-max.github.io/orbe-usine/renovation-decor/
+04:56:58 Commerce : Les fleurs du bien (?)
+04:57:04       DuckDuckGo : bloqué (202)
+04:57:07       Mojeek : HTTP Error 403: Forbidden
+04:57:09   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+04:58:27     gemini/gemini-3.8-flash : 503 { "error": { "code": 503, "message": "This model is currently experiencing high demand
+04:59:35   photos : 4 (Unsplash)
+04:59:42   prêt : https://oscarcousin-max.github.io/orbe-usine/les-fleurs-du-bien/
+04:59:42 Commerce : Menuiserie Huet (?)
+04:59:45       DuckDuckGo : bloqué (202)
+04:59:49       Mojeek : HTTP Error 403: Forbidden
+04:59:50   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:01:47   photos : 4 (Unsplash)
+05:01:54   prêt : https://oscarcousin-max.github.io/orbe-usine/menuiserie-huet/
+05:01:54 Commerce : Artisan Bruno Couverture (?)
+05:01:56   écarté : Site trouvé : https://www.artisan-bruno-couverture.com/
+05:01:56 Commerce : Cyril Lasry (Montrouge)
+05:01:58   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:03:18   photos : 4 (Unsplash)
+05:03:26   prêt : https://oscarcousin-max.github.io/orbe-usine/cyril-lasry/
+05:03:26 Commerce : Elf Habitat (?)
+05:03:29   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:04:40   photos : 4 (Unsplash)
+05:04:47   prêt : https://oscarcousin-max.github.io/orbe-usine/elf-habitat/
+05:04:47 Commerce : IDF couverture et toiture (?)
+05:04:47   écarté : Site trouvé : https://idf-couverture-toiture.fr/
+05:04:47 Commerce : Pro'Habitat (?)
+05:04:50   écarté : Site trouvé : https://www.prohabitat.fr/
+05:04:50 Commerce : Rémy Gautier (?)
+05:04:52   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:05:47   photos : 4 (Unsplash)
+05:05:54   prêt : https://oscarcousin-max.github.io/orbe-usine/remy-gautier/
+05:05:54 Commerce : TSC Bati Pro Services (MAISSE)
+05:05:56   écarté : Site trouvé : https://www.tscbatiproservices.fr/
+05:05:56 Commerce : TECHNIQUES DE FERMETURES (Igny)
+05:05:58   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:06:37   photos : 4 (Unsplash)
+05:06:45   prêt : https://oscarcousin-max.github.io/orbe-usine/techniques-de-fermetures/
+05:06:45 Commerce : Lb Concept (?)
+05:06:45   écarté : Site trouvé : https://concept.com/
+05:06:45 Commerce : La Maison Des Travaux (?)
+05:06:57   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:08:23   1 textes écartés (faits non vérifiables), remplacés par des textes sobres : esprit_2
+05:08:33   photos : 4 (Unsplash, Wikimedia Commons)
+05:08:40   prêt : https://oscarcousin-max.github.io/orbe-usine/la-maison-des-travaux/
+05:08:40 Commerce : Setrab (?)
+05:08:45   écarté : Site trouvé : https://www.setrab.com/
+05:08:45 Commerce : Demsay (?)
+05:08:46   écarté : Site trouvé : https://www.demsay.com/
+05:08:46 Commerce : BRM (?)
+05:08:47   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:09:18   photos : 4 (Unsplash, Wikimedia Commons)
+05:09:25   prêt : https://oscarcousin-max.github.io/orbe-usine/brm/
+05:09:25 Commerce : Maçonnerie Perrot (?)
+05:09:28   vérifié : Vérifié sur Bing : aucun site à son nom. — fabrication du site…
+05:10:12   photos : 4 (Unsplash, Wikimedia Commons)
+05:10:20   prêt : https://oscarcousin-max.github.io/orbe-usine/maconnerie-perrot/
+05:10:20 Moteurs de recherche : DuckDuckGo 0 ok / 3 bloqué, Bing 10 ok / 0 bloqué, Mojeek 0 ok / 3 bloqué
+05:10:20 Écartés car déjà un site : 8 · fermés : 0 · non vérifiables : 0
+05:10:20 Terminé : 10 site(s) prêt(s).
